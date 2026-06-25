@@ -12,10 +12,15 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     /**
-     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     private String availabilityDomain;
+    /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    private String externalLocationZone;
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
@@ -59,11 +64,18 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb() {}
     /**
-     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
+    }
+    /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    public String externalLocationZone() {
+        return this.externalLocationZone;
     }
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -132,6 +144,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String externalLocationZone;
         private Integer lagTimeInSeconds;
         private String lifecycleDetails;
         private String maintenanceTargetComponent;
@@ -144,6 +157,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.externalLocationZone = defaults.externalLocationZone;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceTargetComponent = defaults.maintenanceTargetComponent;
@@ -160,6 +174,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb", "availabilityDomain");
             }
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocationZone(String externalLocationZone) {
+            if (externalLocationZone == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb", "externalLocationZone");
+            }
+            this.externalLocationZone = externalLocationZone;
             return this;
         }
         @CustomType.Setter
@@ -229,6 +251,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
         public GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.externalLocationZone = externalLocationZone;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceTargetComponent = maintenanceTargetComponent;

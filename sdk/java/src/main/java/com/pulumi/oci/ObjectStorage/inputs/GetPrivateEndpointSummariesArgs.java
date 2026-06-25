@@ -18,9 +18,17 @@ public final class GetPrivateEndpointSummariesArgs extends com.pulumi.resources.
 
     public static final GetPrivateEndpointSummariesArgs Empty = new GetPrivateEndpointSummariesArgs();
 
+    /**
+     * The ID of the compartment in which to list private endpoints.
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
@@ -32,9 +40,17 @@ public final class GetPrivateEndpointSummariesArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public Output<String> namespace() {
         return this.namespace;
     }
@@ -65,11 +81,23 @@ public final class GetPrivateEndpointSummariesArgs extends com.pulumi.resources.
             $ = new GetPrivateEndpointSummariesArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to list private endpoints.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to list private endpoints.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
@@ -87,11 +115,23 @@ public final class GetPrivateEndpointSummariesArgs extends com.pulumi.resources.
             return filters(List.of(filters));
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
         }

@@ -1549,6 +1549,10 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     """
     (Updatable) The path to be used as fallback after OAuth2.
     """
+    login_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+    """
     logout_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The path to be used as logout.
@@ -1600,6 +1604,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
                  type: pulumi.Input[_builtins.str],
                  client_details: pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs']] = None,
                  fallback_redirect_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_path: pulumi.Input[Optional[_builtins.str]] = None,
                  logout_path: pulumi.Input[Optional[_builtins.str]] = None,
                  max_expiry_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
                  response_code: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1615,6 +1620,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the Validation failure Policy.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[_builtins.str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
+        :param pulumi.Input[_builtins.str] login_path: (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
         :param pulumi.Input[_builtins.str] logout_path: (Updatable) The path to be used as logout.
         :param pulumi.Input[_builtins.int] max_expiry_duration_in_hours: (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
         :param pulumi.Input[_builtins.str] response_code: (Updatable) HTTP response code, can include context variables.
@@ -1632,6 +1638,8 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
             pulumi.set(__self__, "client_details", client_details)
         if fallback_redirect_path is not None:
             pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
+        if login_path is not None:
+            pulumi.set(__self__, "login_path", login_path)
         if logout_path is not None:
             pulumi.set(__self__, "logout_path", logout_path)
         if max_expiry_duration_in_hours is not None:
@@ -1690,6 +1698,18 @@ class DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolic
     @fallback_redirect_path.setter
     def fallback_redirect_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_redirect_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loginPath")
+    def login_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+        """
+        return pulumi.get(self, "login_path")
+
+    @login_path.setter
+    def login_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "login_path", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutPath")
@@ -3821,6 +3841,10 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     """
     (Updatable) The path to be used as fallback after OAuth2.
     """
+    login_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+    """
     logout_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The path to be used as logout.
@@ -3872,6 +3896,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  type: pulumi.Input[_builtins.str],
                  client_details: pulumi.Input[Optional['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs']] = None,
                  fallback_redirect_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 login_path: pulumi.Input[Optional[_builtins.str]] = None,
                  logout_path: pulumi.Input[Optional[_builtins.str]] = None,
                  max_expiry_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
                  response_code: pulumi.Input[Optional[_builtins.str]] = None,
@@ -3887,6 +3912,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the Validation failure Policy.
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs'] client_details: (Updatable) Client App Credential details.
         :param pulumi.Input[_builtins.str] fallback_redirect_path: (Updatable) The path to be used as fallback after OAuth2.
+        :param pulumi.Input[_builtins.str] login_path: (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
         :param pulumi.Input[_builtins.str] logout_path: (Updatable) The path to be used as logout.
         :param pulumi.Input[_builtins.int] max_expiry_duration_in_hours: (Updatable) The duration for which the OAuth2 success token should be cached before it is fetched again.
         :param pulumi.Input[_builtins.str] response_code: (Updatable) HTTP response code, can include context variables.
@@ -3904,6 +3930,8 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
             pulumi.set(__self__, "client_details", client_details)
         if fallback_redirect_path is not None:
             pulumi.set(__self__, "fallback_redirect_path", fallback_redirect_path)
+        if login_path is not None:
+            pulumi.set(__self__, "login_path", login_path)
         if logout_path is not None:
             pulumi.set(__self__, "logout_path", logout_path)
         if max_expiry_duration_in_hours is not None:
@@ -3962,6 +3990,18 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
     @fallback_redirect_path.setter
     def fallback_redirect_path(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "fallback_redirect_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loginPath")
+    def login_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+        """
+        return pulumi.get(self, "login_path")
+
+    @login_path.setter
+    def login_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "login_path", value)
 
     @_builtins.property
     @pulumi.getter(name="logoutPath")

@@ -256,21 +256,29 @@ public class Zone extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * The authoritative nameservers for the zone.
+     * 
+     */
     @Export(name="nameservers", refs={List.class,ZoneNameserver.class}, tree="[0,1]")
     private Output<List<ZoneNameserver>> nameservers;
 
+    /**
+     * @return The authoritative nameservers for the zone.
+     * 
+     */
     public Output<List<ZoneNameserver>> nameservers() {
         return this.nameservers;
     }
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     @Export(name="resolutionMode", refs={String.class}, tree="[0]")
     private Output<String> resolutionMode;
 
     /**
-     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     public Output<String> resolutionMode() {

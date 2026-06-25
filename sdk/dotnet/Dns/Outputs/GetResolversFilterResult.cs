@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class GetResolversFilterResult
     {
+        /// <summary>
+        /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

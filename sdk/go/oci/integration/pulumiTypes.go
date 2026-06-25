@@ -3448,10 +3448,13 @@ func (o GetIntegrationInstanceNetworkEndpointDetailRuntimeAllowlistedHttpVcnArra
 
 type GetIntegrationInstancePrivateEndpointOutboundConnection struct {
 	// Indicates if all traffic should go through configured outbound connection
-	IsAllOutboundTrafficPrivate bool     `pulumi:"isAllOutboundTrafficPrivate"`
-	NsgIds                      []string `pulumi:"nsgIds"`
-	OutboundConnectionType      string   `pulumi:"outboundConnectionType"`
-	SubnetId                    string   `pulumi:"subnetId"`
+	IsAllOutboundTrafficPrivate bool `pulumi:"isAllOutboundTrafficPrivate"`
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType string `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // GetIntegrationInstancePrivateEndpointOutboundConnectionInput is an input type that accepts GetIntegrationInstancePrivateEndpointOutboundConnectionArgs and GetIntegrationInstancePrivateEndpointOutboundConnectionOutput values.
@@ -3467,10 +3470,13 @@ type GetIntegrationInstancePrivateEndpointOutboundConnectionInput interface {
 
 type GetIntegrationInstancePrivateEndpointOutboundConnectionArgs struct {
 	// Indicates if all traffic should go through configured outbound connection
-	IsAllOutboundTrafficPrivate pulumi.BoolInput        `pulumi:"isAllOutboundTrafficPrivate"`
-	NsgIds                      pulumi.StringArrayInput `pulumi:"nsgIds"`
-	OutboundConnectionType      pulumi.StringInput      `pulumi:"outboundConnectionType"`
-	SubnetId                    pulumi.StringInput      `pulumi:"subnetId"`
+	IsAllOutboundTrafficPrivate pulumi.BoolInput `pulumi:"isAllOutboundTrafficPrivate"`
+	// One or more Network security group Ids. This is an optional argument.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The type of Outbound Connection.
+	OutboundConnectionType pulumi.StringInput `pulumi:"outboundConnectionType"`
+	// Customer Private Network VCN Subnet OCID. This is a required argument.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
 func (GetIntegrationInstancePrivateEndpointOutboundConnectionArgs) ElementType() reflect.Type {
@@ -3531,16 +3537,19 @@ func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) IsAllOutb
 	}).(pulumi.BoolOutput)
 }
 
+// One or more Network security group Ids. This is an optional argument.
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// The type of Outbound Connection.
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) OutboundConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string {
 		return v.OutboundConnectionType
 	}).(pulumi.StringOutput)
 }
 
+// Customer Private Network VCN Subnet OCID. This is a required argument.
 func (o GetIntegrationInstancePrivateEndpointOutboundConnectionOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancePrivateEndpointOutboundConnection) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -3674,6 +3683,7 @@ func (o GetIntegrationInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIn
 type GetIntegrationInstancesIntegrationInstance struct {
 	// A list of alternate custom endpoints used for the integration instance URL.
 	AlternateCustomEndpoints []GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           string                                                              `pulumi:"attachmentType"`
 	// A list of associated attachments to other services
 	Attachments []GetIntegrationInstancesIntegrationInstanceAttachment `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
@@ -3726,6 +3736,8 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	NetworkEndpointDetails []GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId string `pulumi:"processAutomationLogGroupId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -3759,6 +3771,7 @@ type GetIntegrationInstancesIntegrationInstanceInput interface {
 type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	// A list of alternate custom endpoints used for the integration instance URL.
 	AlternateCustomEndpoints GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayInput `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           pulumi.StringInput                                                          `pulumi:"attachmentType"`
 	// A list of associated attachments to other services
 	Attachments GetIntegrationInstancesIntegrationInstanceAttachmentArrayInput `pulumi:"attachments"`
 	// The ID of the compartment in which to list resources.
@@ -3811,6 +3824,8 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	NetworkEndpointDetails GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput `pulumi:"privateEndpointOutboundConnections"`
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId pulumi.StringInput `pulumi:"processAutomationLogGroupId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -3886,6 +3901,10 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) AlternateCustomEndpoin
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint {
 		return v.AlternateCustomEndpoints
 	}).(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointArrayOutput)
+}
+
+func (o GetIntegrationInstancesIntegrationInstanceOutput) AttachmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.AttachmentType }).(pulumi.StringOutput)
 }
 
 // A list of associated attachments to other services
@@ -4040,6 +4059,11 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) PrivateEndpointOutboun
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection {
 		return v.PrivateEndpointOutboundConnections
 	}).(GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+func (o GetIntegrationInstancesIntegrationInstanceOutput) ProcessAutomationLogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.ProcessAutomationLogGroupId }).(pulumi.StringOutput)
 }
 
 // Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{

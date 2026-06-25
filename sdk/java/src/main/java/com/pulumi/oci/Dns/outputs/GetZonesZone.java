@@ -61,9 +61,13 @@ public final class GetZonesZone {
      * 
      */
     private String name;
+    /**
+     * @return The authoritative nameservers for the zone.
+     * 
+     */
     private List<GetZonesZoneNameserver> nameservers;
     /**
-     * @return The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * @return The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     private String resolutionMode;
@@ -172,11 +176,15 @@ public final class GetZonesZone {
     public String name() {
         return this.name;
     }
+    /**
+     * @return The authoritative nameservers for the zone.
+     * 
+     */
     public List<GetZonesZoneNameserver> nameservers() {
         return this.nameservers;
     }
     /**
-     * @return The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * @return The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     public String resolutionMode() {

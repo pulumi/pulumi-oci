@@ -689,9 +689,12 @@ func (o ObjectLifecyclePolicyRuleObjectNameFilterPtrOutput) InclusionPrefixes() 
 }
 
 type PrivateEndpointAccessTarget struct {
-	Bucket        string `pulumi:"bucket"`
+	// (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+	Bucket string `pulumi:"bucket"`
+	// (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
 	CompartmentId string `pulumi:"compartmentId"`
-	Namespace     string `pulumi:"namespace"`
+	// (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+	Namespace string `pulumi:"namespace"`
 }
 
 // PrivateEndpointAccessTargetInput is an input type that accepts PrivateEndpointAccessTargetArgs and PrivateEndpointAccessTargetOutput values.
@@ -706,9 +709,12 @@ type PrivateEndpointAccessTargetInput interface {
 }
 
 type PrivateEndpointAccessTargetArgs struct {
-	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Namespace     pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
 func (PrivateEndpointAccessTargetArgs) ElementType() reflect.Type {
@@ -762,14 +768,17 @@ func (o PrivateEndpointAccessTargetOutput) ToPrivateEndpointAccessTargetOutputWi
 	return o
 }
 
+// (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
 func (o PrivateEndpointAccessTargetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
 func (o PrivateEndpointAccessTargetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
 func (o PrivateEndpointAccessTargetOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v PrivateEndpointAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -3095,9 +3104,11 @@ func (o GetPreauthrequestsPreauthenticatedRequestArrayOutput) Index(i pulumi.Int
 }
 
 type GetPrivateEndpointAccessTarget struct {
-	Bucket        string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// The compartment ID in which the private endpoint resource exists in.
 	CompartmentId string `pulumi:"compartmentId"`
-	Namespace     string `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace string `pulumi:"namespace"`
 }
 
 // GetPrivateEndpointAccessTargetInput is an input type that accepts GetPrivateEndpointAccessTargetArgs and GetPrivateEndpointAccessTargetOutput values.
@@ -3112,9 +3123,11 @@ type GetPrivateEndpointAccessTargetInput interface {
 }
 
 type GetPrivateEndpointAccessTargetArgs struct {
-	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The compartment ID in which the private endpoint resource exists in.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Namespace     pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
 func (GetPrivateEndpointAccessTargetArgs) ElementType() reflect.Type {
@@ -3172,10 +3185,12 @@ func (o GetPrivateEndpointAccessTargetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// The compartment ID in which the private endpoint resource exists in.
 func (o GetPrivateEndpointAccessTargetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace used for the request.
 func (o GetPrivateEndpointAccessTargetOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -3201,6 +3216,7 @@ func (o GetPrivateEndpointAccessTargetArrayOutput) Index(i pulumi.IntInput) GetP
 }
 
 type GetPrivateEndpointSummariesFilter struct {
+	// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -3218,6 +3234,7 @@ type GetPrivateEndpointSummariesFilterInput interface {
 }
 
 type GetPrivateEndpointSummariesFilterArgs struct {
+	// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -3274,6 +3291,7 @@ func (o GetPrivateEndpointSummariesFilterOutput) ToGetPrivateEndpointSummariesFi
 	return o
 }
 
+// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
 func (o GetPrivateEndpointSummariesFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3309,23 +3327,33 @@ func (o GetPrivateEndpointSummariesFilterArrayOutput) Index(i pulumi.IntInput) G
 type GetPrivateEndpointSummariesPrivateEndpointSummary struct {
 	AccessTargets      []GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget `pulumi:"accessTargets"`
 	AdditionalPrefixes []string                                                        `pulumi:"additionalPrefixes"`
-	CompartmentId      string                                                          `pulumi:"compartmentId"`
-	CreatedBy          string                                                          `pulumi:"createdBy"`
-	DefinedTags        map[string]string                                               `pulumi:"definedTags"`
-	Etag               string                                                          `pulumi:"etag"`
-	Fqdns              map[string]map[string]map[string]string                         `pulumi:"fqdns"`
-	FreeformTags       map[string]string                                               `pulumi:"freeformTags"`
-	Id                 string                                                          `pulumi:"id"`
-	Name               string                                                          `pulumi:"name"`
-	Namespace          string                                                          `pulumi:"namespace"`
-	NsgIds             []string                                                        `pulumi:"nsgIds"`
-	Prefix             string                                                          `pulumi:"prefix"`
-	PrivateEndpointIp  string                                                          `pulumi:"privateEndpointIp"`
-	SecurityAttributes map[string]string                                               `pulumi:"securityAttributes"`
-	State              string                                                          `pulumi:"state"`
-	SubnetId           string                                                          `pulumi:"subnetId"`
-	TimeCreated        string                                                          `pulumi:"timeCreated"`
-	TimeModified       string                                                          `pulumi:"timeModified"`
+	// The ID of the compartment in which to list private endpoints.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy   string            `pulumi:"createdBy"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The entity tag for the Private Endpoint.
+	Etag string `pulumi:"etag"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns        map[string]map[string]map[string]string `pulumi:"fqdns"`
+	FreeformTags map[string]string                       `pulumi:"freeformTags"`
+	Id           string                                  `pulumi:"id"`
+	// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+	Name string `pulumi:"name"`
+	// The Object Storage namespace used for the request.
+	Namespace string   `pulumi:"namespace"`
+	NsgIds    []string `pulumi:"nsgIds"`
+	// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+	Prefix             string            `pulumi:"prefix"`
+	PrivateEndpointIp  string            `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State    string `pulumi:"state"`
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified string `pulumi:"timeModified"`
 }
 
 // GetPrivateEndpointSummariesPrivateEndpointSummaryInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryArgs and GetPrivateEndpointSummariesPrivateEndpointSummaryOutput values.
@@ -3342,23 +3370,33 @@ type GetPrivateEndpointSummariesPrivateEndpointSummaryInput interface {
 type GetPrivateEndpointSummariesPrivateEndpointSummaryArgs struct {
 	AccessTargets      GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArrayInput `pulumi:"accessTargets"`
 	AdditionalPrefixes pulumi.StringArrayInput                                                 `pulumi:"additionalPrefixes"`
-	CompartmentId      pulumi.StringInput                                                      `pulumi:"compartmentId"`
-	CreatedBy          pulumi.StringInput                                                      `pulumi:"createdBy"`
-	DefinedTags        pulumi.StringMapInput                                                   `pulumi:"definedTags"`
-	Etag               pulumi.StringInput                                                      `pulumi:"etag"`
-	Fqdns              pulumi.StringMapMapMapInput                                             `pulumi:"fqdns"`
-	FreeformTags       pulumi.StringMapInput                                                   `pulumi:"freeformTags"`
-	Id                 pulumi.StringInput                                                      `pulumi:"id"`
-	Name               pulumi.StringInput                                                      `pulumi:"name"`
-	Namespace          pulumi.StringInput                                                      `pulumi:"namespace"`
-	NsgIds             pulumi.StringArrayInput                                                 `pulumi:"nsgIds"`
-	Prefix             pulumi.StringInput                                                      `pulumi:"prefix"`
-	PrivateEndpointIp  pulumi.StringInput                                                      `pulumi:"privateEndpointIp"`
-	SecurityAttributes pulumi.StringMapInput                                                   `pulumi:"securityAttributes"`
-	State              pulumi.StringInput                                                      `pulumi:"state"`
-	SubnetId           pulumi.StringInput                                                      `pulumi:"subnetId"`
-	TimeCreated        pulumi.StringInput                                                      `pulumi:"timeCreated"`
-	TimeModified       pulumi.StringInput                                                      `pulumi:"timeModified"`
+	// The ID of the compartment in which to list private endpoints.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy   pulumi.StringInput    `pulumi:"createdBy"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The entity tag for the Private Endpoint.
+	Etag pulumi.StringInput `pulumi:"etag"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns        pulumi.StringMapMapMapInput `pulumi:"fqdns"`
+	FreeformTags pulumi.StringMapInput       `pulumi:"freeformTags"`
+	Id           pulumi.StringInput          `pulumi:"id"`
+	// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+	Name pulumi.StringInput `pulumi:"name"`
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringInput      `pulumi:"namespace"`
+	NsgIds    pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+	Prefix             pulumi.StringInput    `pulumi:"prefix"`
+	PrivateEndpointIp  pulumi.StringInput    `pulumi:"privateEndpointIp"`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State    pulumi.StringInput `pulumi:"state"`
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified pulumi.StringInput `pulumi:"timeModified"`
 }
 
 func (GetPrivateEndpointSummariesPrivateEndpointSummaryArgs) ElementType() reflect.Type {
@@ -3422,10 +3460,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) AdditionalPrefi
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) []string { return v.AdditionalPrefixes }).(pulumi.StringArrayOutput)
 }
 
+// The ID of the compartment in which to list private endpoints.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
@@ -3434,10 +3474,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) DefinedTags() p
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// The entity tag for the Private Endpoint.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Etag() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Etag }).(pulumi.StringOutput)
 }
 
+// The object representing FQDN details formed using prefix and additionalPrefixes.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Fqdns() pulumi.StringMapMapMapOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) map[string]map[string]map[string]string {
 		return v.Fqdns
@@ -3452,10 +3494,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Id() pulumi.Str
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace used for the request.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -3464,6 +3508,7 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) NsgIds() pulumi
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.Prefix }).(pulumi.StringOutput)
 }
@@ -3478,6 +3523,7 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) SecurityAttribu
 	}).(pulumi.StringMapOutput)
 }
 
+// The lifecycle state of the private endpoint resource.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.State }).(pulumi.StringOutput)
 }
@@ -3486,10 +3532,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) SubnetId() pulu
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummary) string { return v.TimeModified }).(pulumi.StringOutput)
 }
@@ -3515,9 +3563,11 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput) Index(i pu
 }
 
 type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget struct {
-	Bucket        string `pulumi:"bucket"`
+	Bucket string `pulumi:"bucket"`
+	// The ID of the compartment in which to list private endpoints.
 	CompartmentId string `pulumi:"compartmentId"`
-	Namespace     string `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace string `pulumi:"namespace"`
 }
 
 // GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput is an input type that accepts GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs and GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput values.
@@ -3532,9 +3582,11 @@ type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetInput interfac
 }
 
 type GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs struct {
-	Bucket        pulumi.StringInput `pulumi:"bucket"`
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The ID of the compartment in which to list private endpoints.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	Namespace     pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
 func (GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetArgs) ElementType() reflect.Type {
@@ -3592,10 +3644,12 @@ func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) Buc
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
+// The ID of the compartment in which to list private endpoints.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace used for the request.
 func (o GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget) string { return v.Namespace }).(pulumi.StringOutput)
 }

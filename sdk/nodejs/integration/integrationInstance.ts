@@ -118,6 +118,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
     declare public readonly alternateCustomEndpoints: pulumi.Output<outputs.Integration.IntegrationInstanceAlternateCustomEndpoint[]>;
+    declare public readonly attachmentType: pulumi.Output<string | undefined>;
     /**
      * A list of associated attachments to other services
      */
@@ -229,6 +230,10 @@ export class IntegrationInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly privateEndpointOutboundConnections: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
     /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     */
+    declare public /*out*/ readonly processAutomationLogGroupId: pulumi.Output<string>;
+    /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * "oracle-zpr.sensitivity.value" = "low"
      * "oracle-zpr.sensitivity.mode" = "enforce"
@@ -278,6 +283,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as IntegrationInstanceState | undefined;
             resourceInputs["alternateCustomEndpoints"] = state?.alternateCustomEndpoints;
+            resourceInputs["attachmentType"] = state?.attachmentType;
             resourceInputs["attachments"] = state?.attachments;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["consumptionModel"] = state?.consumptionModel;
@@ -307,6 +313,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["messagePacks"] = state?.messagePacks;
             resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
             resourceInputs["privateEndpointOutboundConnections"] = state?.privateEndpointOutboundConnections;
+            resourceInputs["processAutomationLogGroupId"] = state?.processAutomationLogGroupId;
             resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["state"] = state?.state;
@@ -332,6 +339,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
                 throw new Error("Missing required property 'messagePacks'");
             }
             resourceInputs["alternateCustomEndpoints"] = args?.alternateCustomEndpoints;
+            resourceInputs["attachmentType"] = args?.attachmentType;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["consumptionModel"] = args?.consumptionModel;
             resourceInputs["convertInstanceTrigger"] = args?.convertInstanceTrigger;
@@ -365,6 +373,7 @@ export class IntegrationInstance extends pulumi.CustomResource {
             resourceInputs["instanceUrl"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateEndpointOutboundConnections"] = undefined /*out*/;
+            resourceInputs["processAutomationLogGroupId"] = undefined /*out*/;
             resourceInputs["stateMessage"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -384,6 +393,7 @@ export interface IntegrationInstanceState {
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
     alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[] | undefined>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * A list of associated attachments to other services
      */
@@ -495,6 +505,10 @@ export interface IntegrationInstanceState {
      */
     privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[] | undefined>;
     /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     */
+    processAutomationLogGroupId?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * "oracle-zpr.sensitivity.value" = "low"
      * "oracle-zpr.sensitivity.mode" = "enforce"
@@ -539,6 +553,7 @@ export interface IntegrationInstanceArgs {
      * (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
      */
     alternateCustomEndpoints?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceAlternateCustomEndpoint>[] | undefined>;
+    attachmentType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment Identifier.
      */

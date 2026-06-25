@@ -8,9 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
-import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolverEndpointsResolverEndpoint {
@@ -19,6 +18,11 @@ public final class GetResolverEndpointsResolverEndpoint {
      * 
      */
     private String compartmentId;
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> definedTags;
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
@@ -29,6 +33,16 @@ public final class GetResolverEndpointsResolverEndpoint {
      * 
      */
     private String forwardingAddress;
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> freeformTags;
+    /**
+     * @return The Terraform ID of the resolver endpoint.
+     * 
+     */
+    private String id;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
@@ -53,7 +67,12 @@ public final class GetResolverEndpointsResolverEndpoint {
      * @return An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      * 
      */
-    private @Nullable List<String> nsgIds;
+    private List<String> nsgIds;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    private String peId;
     /**
      * @return The OCID of the target resolver.
      * 
@@ -63,7 +82,12 @@ public final class GetResolverEndpointsResolverEndpoint {
      * @return Value must be `PRIVATE` when listing private name resolver endpoints.
      * 
      */
-    private @Nullable String scope;
+    private String scope;
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
     /**
      * @return The canonical absolute URL of the resource.
      * 
@@ -89,6 +113,11 @@ public final class GetResolverEndpointsResolverEndpoint {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    private String vnicId;
 
     private GetResolverEndpointsResolverEndpoint() {}
     /**
@@ -97,6 +126,13 @@ public final class GetResolverEndpointsResolverEndpoint {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> definedTags() {
+        return this.definedTags;
     }
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
@@ -111,6 +147,20 @@ public final class GetResolverEndpointsResolverEndpoint {
      */
     public String forwardingAddress() {
         return this.forwardingAddress;
+    }
+    /**
+     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> freeformTags() {
+        return this.freeformTags;
+    }
+    /**
+     * @return The Terraform ID of the resolver endpoint.
+     * 
+     */
+    public String id() {
+        return this.id;
     }
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -145,7 +195,14 @@ public final class GetResolverEndpointsResolverEndpoint {
      * 
      */
     public List<String> nsgIds() {
-        return this.nsgIds == null ? List.of() : this.nsgIds;
+        return this.nsgIds;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public String peId() {
+        return this.peId;
     }
     /**
      * @return The OCID of the target resolver.
@@ -158,8 +215,15 @@ public final class GetResolverEndpointsResolverEndpoint {
      * @return Value must be `PRIVATE` when listing private name resolver endpoints.
      * 
      */
-    public Optional<String> scope() {
-        return Optional.ofNullable(this.scope);
+    public String scope() {
+        return this.scope;
+    }
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * @return The canonical absolute URL of the resource.
@@ -196,6 +260,13 @@ public final class GetResolverEndpointsResolverEndpoint {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public String vnicId() {
+        return this.vnicId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -207,38 +278,50 @@ public final class GetResolverEndpointsResolverEndpoint {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private Map<String,String> definedTags;
         private String endpointType;
         private String forwardingAddress;
+        private Map<String,String> freeformTags;
+        private String id;
         private Boolean isForwarding;
         private Boolean isListening;
         private String listeningAddress;
         private String name;
-        private @Nullable List<String> nsgIds;
+        private List<String> nsgIds;
+        private String peId;
         private String resolverId;
-        private @Nullable String scope;
+        private String scope;
+        private Map<String,String> securityAttributes;
         private String self;
         private String state;
         private String subnetId;
         private String timeCreated;
         private String timeUpdated;
+        private String vnicId;
         public Builder() {}
         public Builder(GetResolverEndpointsResolverEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTags = defaults.definedTags;
     	      this.endpointType = defaults.endpointType;
     	      this.forwardingAddress = defaults.forwardingAddress;
+    	      this.freeformTags = defaults.freeformTags;
+    	      this.id = defaults.id;
     	      this.isForwarding = defaults.isForwarding;
     	      this.isListening = defaults.isListening;
     	      this.listeningAddress = defaults.listeningAddress;
     	      this.name = defaults.name;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.peId = defaults.peId;
     	      this.resolverId = defaults.resolverId;
     	      this.scope = defaults.scope;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.self = defaults.self;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.vnicId = defaults.vnicId;
         }
 
         @CustomType.Setter
@@ -247,6 +330,14 @@ public final class GetResolverEndpointsResolverEndpoint {
               throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(Map<String,String> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "definedTags");
+            }
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -263,6 +354,22 @@ public final class GetResolverEndpointsResolverEndpoint {
               throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "forwardingAddress");
             }
             this.forwardingAddress = forwardingAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder id(String id) {
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -298,13 +405,23 @@ public final class GetResolverEndpointsResolverEndpoint {
             return this;
         }
         @CustomType.Setter
-        public Builder nsgIds(@Nullable List<String> nsgIds) {
-
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "nsgIds");
+            }
             this.nsgIds = nsgIds;
             return this;
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
+        public Builder peId(String peId) {
+            if (peId == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "peId");
+            }
+            this.peId = peId;
+            return this;
         }
         @CustomType.Setter
         public Builder resolverId(String resolverId) {
@@ -315,9 +432,19 @@ public final class GetResolverEndpointsResolverEndpoint {
             return this;
         }
         @CustomType.Setter
-        public Builder scope(@Nullable String scope) {
-
+        public Builder scope(String scope) {
+            if (scope == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "scope");
+            }
             this.scope = scope;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
             return this;
         }
         @CustomType.Setter
@@ -360,23 +487,37 @@ public final class GetResolverEndpointsResolverEndpoint {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder vnicId(String vnicId) {
+            if (vnicId == null) {
+              throw new MissingRequiredPropertyException("GetResolverEndpointsResolverEndpoint", "vnicId");
+            }
+            this.vnicId = vnicId;
+            return this;
+        }
         public GetResolverEndpointsResolverEndpoint build() {
             final var _resultValue = new GetResolverEndpointsResolverEndpoint();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
             _resultValue.endpointType = endpointType;
             _resultValue.forwardingAddress = forwardingAddress;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
             _resultValue.isForwarding = isForwarding;
             _resultValue.isListening = isListening;
             _resultValue.listeningAddress = listeningAddress;
             _resultValue.name = name;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.peId = peId;
             _resultValue.resolverId = resolverId;
             _resultValue.scope = scope;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.self = self;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vnicId = vnicId;
             return _resultValue;
         }
     }

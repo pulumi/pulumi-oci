@@ -163,6 +163,9 @@ class GetResolverResult:
     @_builtins.property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> _builtins.str:
+        """
+        The OCID of the resolver.
+        """
         return pulumi.get(self, "resolver_id")
 
     @_builtins.property

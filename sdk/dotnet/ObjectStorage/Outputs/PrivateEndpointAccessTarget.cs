@@ -13,8 +13,17 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     [OutputType]
     public sealed class PrivateEndpointAccessTarget
     {
+        /// <summary>
+        /// (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        /// </summary>
         public readonly string Bucket;
+        /// <summary>
+        /// (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        /// </summary>
         public readonly string Namespace;
 
         [OutputConstructor]

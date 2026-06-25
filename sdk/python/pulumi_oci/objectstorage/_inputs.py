@@ -475,8 +475,17 @@ class ObjectLifecyclePolicyRuleObjectNameFilterArgs:
 
 class PrivateEndpointAccessTargetArgsDict(TypedDict):
     bucket: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+    """
     compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+    """
     namespace: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+    """
 
 @pulumi.input_type
 class PrivateEndpointAccessTargetArgs:
@@ -484,6 +493,11 @@ class PrivateEndpointAccessTargetArgs:
                  bucket: pulumi.Input[_builtins.str],
                  compartment_id: pulumi.Input[_builtins.str],
                  namespace: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] bucket: (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "namespace", namespace)
@@ -491,6 +505,9 @@ class PrivateEndpointAccessTargetArgs:
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        """
         return pulumi.get(self, "bucket")
 
     @bucket.setter
@@ -500,6 +517,9 @@ class PrivateEndpointAccessTargetArgs:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -509,6 +529,9 @@ class PrivateEndpointAccessTargetArgs:
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -907,6 +930,9 @@ class GetPreauthrequestsFilterArgs:
 
 class GetPrivateEndpointSummariesFilterArgsDict(TypedDict):
     name: _builtins.str
+    """
+    The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+    """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
 
@@ -916,6 +942,9 @@ class GetPrivateEndpointSummariesFilterArgs:
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -924,6 +953,9 @@ class GetPrivateEndpointSummariesFilterArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @name.setter

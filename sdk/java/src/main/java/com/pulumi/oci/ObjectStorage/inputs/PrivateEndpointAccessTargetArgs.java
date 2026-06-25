@@ -14,23 +14,47 @@ public final class PrivateEndpointAccessTargetArgs extends com.pulumi.resources.
 
     public static final PrivateEndpointAccessTargetArgs Empty = new PrivateEndpointAccessTargetArgs();
 
+    /**
+     * (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+     * 
+     */
     @Import(name="bucket", required=true)
     private Output<String> bucket;
 
+    /**
+     * @return (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+     * 
+     */
     public Output<String> bucket() {
         return this.bucket;
     }
 
+    /**
+     * (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
+    /**
+     * @return (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
 
+    /**
+     * (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+     * 
+     */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
+    /**
+     * @return (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+     * 
+     */
     public Output<String> namespace() {
         return this.namespace;
     }
@@ -61,29 +85,65 @@ public final class PrivateEndpointAccessTargetArgs extends com.pulumi.resources.
             $ = new PrivateEndpointAccessTargetArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param bucket (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(Output<String> bucket) {
             $.bucket = bucket;
             return this;
         }
 
+        /**
+         * @param bucket (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bucket(String bucket) {
             return bucket(Output.of(bucket));
         }
 
+        /**
+         * @param compartmentId (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param namespace (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
 
+        /**
+         * @param namespace (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
         }

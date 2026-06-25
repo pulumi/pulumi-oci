@@ -34,6 +34,9 @@ namespace Pulumi.Oci.Dns.Outputs
         /// The displayName of a resource.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Read-only array of endpoints for the resolver.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetResolversResolverEndpointResult> Endpoints;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -47,6 +50,9 @@ namespace Pulumi.Oci.Dns.Outputs
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
         public readonly bool IsProtected;
+        /// <summary>
+        /// The OCID of the resolver.
+        /// </summary>
         public readonly string ResolverId;
         public readonly ImmutableArray<Outputs.GetResolversResolverRuleResult> Rules;
         /// <summary>

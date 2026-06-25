@@ -113,9 +113,10 @@ type Zone struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// The name of the zone.
-	Name        pulumi.StringOutput       `pulumi:"name"`
+	Name pulumi.StringOutput `pulumi:"name"`
+	// The authoritative nameservers for the zone.
 	Nameservers ZoneNameserverArrayOutput `pulumi:"nameservers"`
-	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode pulumi.StringOutput `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringOutput `pulumi:"scope"`
@@ -211,9 +212,10 @@ type zoneState struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
 	// The name of the zone.
-	Name        *string          `pulumi:"name"`
+	Name *string `pulumi:"name"`
+	// The authoritative nameservers for the zone.
 	Nameservers []ZoneNameserver `pulumi:"nameservers"`
-	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode *string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope *string `pulumi:"scope"`
@@ -274,9 +276,10 @@ type ZoneState struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
 	// The name of the zone.
-	Name        pulumi.StringPtrInput
+	Name pulumi.StringPtrInput
+	// The authoritative nameservers for the zone.
 	Nameservers ZoneNameserverArrayInput
-	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringPtrInput
@@ -338,7 +341,7 @@ type zoneArgs struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the zone.
 	Name *string `pulumi:"name"`
-	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode *string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope *string `pulumi:"scope"`
@@ -385,7 +388,7 @@ type ZoneArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The name of the zone.
 	Name pulumi.StringPtrInput
-	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringPtrInput
@@ -548,11 +551,12 @@ func (o ZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// The authoritative nameservers for the zone.
 func (o ZoneOutput) Nameservers() ZoneNameserverArrayOutput {
 	return o.ApplyT(func(v *Zone) ZoneNameserverArrayOutput { return v.Nameservers }).(ZoneNameserverArrayOutput)
 }
 
-// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 func (o ZoneOutput) ResolutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Zone) pulumi.StringOutput { return v.ResolutionMode }).(pulumi.StringOutput)
 }

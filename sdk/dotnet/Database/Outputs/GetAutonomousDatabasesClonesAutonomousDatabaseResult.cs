@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
         /// <summary>
-        /// The availability domain where the Autonomous AI Database Serverless instance is located.
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
@@ -308,7 +308,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
         /// <summary>
-        /// Autonomous Data Guard standby database details.* `AvailabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
         /// <summary>
@@ -428,7 +428,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SourceId;
         /// <summary>
-        /// **Deprecated** Autonomous Data Guard standby database details.* `AvailabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>

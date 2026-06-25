@@ -27,6 +27,11 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
      */
     private String fallbackRedirectPath;
     /**
+     * @return The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    private String loginPath;
+    /**
      * @return The path to be used as logout.
      * 
      */
@@ -101,6 +106,13 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
      */
     public String fallbackRedirectPath() {
         return this.fallbackRedirectPath;
+    }
+    /**
+     * @return The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    public String loginPath() {
+        return this.loginPath;
     }
     /**
      * @return The path to be used as logout.
@@ -198,6 +210,7 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
     public static final class Builder {
         private List<GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail> clientDetails;
         private String fallbackRedirectPath;
+        private String loginPath;
         private String logoutPath;
         private Integer maxExpiryDurationInHours;
         private String responseCode;
@@ -215,6 +228,7 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
     	      Objects.requireNonNull(defaults);
     	      this.clientDetails = defaults.clientDetails;
     	      this.fallbackRedirectPath = defaults.fallbackRedirectPath;
+    	      this.loginPath = defaults.loginPath;
     	      this.logoutPath = defaults.logoutPath;
     	      this.maxExpiryDurationInHours = defaults.maxExpiryDurationInHours;
     	      this.responseCode = defaults.responseCode;
@@ -246,6 +260,14 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
               throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "fallbackRedirectPath");
             }
             this.fallbackRedirectPath = fallbackRedirectPath;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loginPath(String loginPath) {
+            if (loginPath == null) {
+              throw new MissingRequiredPropertyException("GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy", "loginPath");
+            }
+            this.loginPath = loginPath;
             return this;
         }
         @CustomType.Setter
@@ -357,6 +379,7 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicy();
             _resultValue.clientDetails = clientDetails;
             _resultValue.fallbackRedirectPath = fallbackRedirectPath;
+            _resultValue.loginPath = loginPath;
             _resultValue.logoutPath = logoutPath;
             _resultValue.maxExpiryDurationInHours = maxExpiryDurationInHours;
             _resultValue.responseCode = responseCode;

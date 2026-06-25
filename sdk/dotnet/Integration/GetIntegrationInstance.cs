@@ -127,6 +127,7 @@ namespace Pulumi.Oci.Integration
         /// A list of alternate custom endpoints used for the integration instance URL.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstanceAlternateCustomEndpointResult> AlternateCustomEndpoints;
+        public readonly string AttachmentType;
         /// <summary>
         /// A list of associated attachments to other services
         /// </summary>
@@ -225,6 +226,10 @@ namespace Pulumi.Oci.Integration
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult> PrivateEndpointOutboundConnections;
         /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        /// </summary>
+        public readonly string ProcessAutomationLogGroupId;
+        /// <summary>
         /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
         /// "oracle-zpr.sensitivity.value" = "low"
         /// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -260,6 +265,8 @@ namespace Pulumi.Oci.Integration
         [OutputConstructor]
         private GetIntegrationInstanceResult(
             ImmutableArray<Outputs.GetIntegrationInstanceAlternateCustomEndpointResult> alternateCustomEndpoints,
+
+            string attachmentType,
 
             ImmutableArray<Outputs.GetIntegrationInstanceAttachmentResult> attachments,
 
@@ -323,6 +330,8 @@ namespace Pulumi.Oci.Integration
 
             ImmutableArray<Outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult> privateEndpointOutboundConnections,
 
+            string processAutomationLogGroupId,
+
             ImmutableDictionary<string, string> securityAttributes,
 
             string shape,
@@ -338,6 +347,7 @@ namespace Pulumi.Oci.Integration
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
+            AttachmentType = attachmentType;
             Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
@@ -369,6 +379,7 @@ namespace Pulumi.Oci.Integration
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
             PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            ProcessAutomationLogGroupId = processAutomationLogGroupId;
             SecurityAttributes = securityAttributes;
             Shape = shape;
             State = state;

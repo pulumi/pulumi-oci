@@ -68,6 +68,10 @@ public final class GetResolverResult {
      * 
      */
     private Boolean isProtected;
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     private String resolverId;
     /**
      * @return Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
@@ -167,6 +171,10 @@ public final class GetResolverResult {
     public Boolean isProtected() {
         return this.isProtected;
     }
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     public String resolverId() {
         return this.resolverId;
     }

@@ -12,12 +12,21 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
 
     public sealed class PrivateEndpointAccessTargetGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        /// </summary>
         [Input("bucket", required: true)]
         public Input<string> Bucket { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 

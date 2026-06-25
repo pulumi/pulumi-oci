@@ -10,17 +10,41 @@ import java.util.Objects;
 
 @CustomType
 public final class PrivateEndpointAccessTarget {
+    /**
+     * @return (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+     * 
+     */
     private String bucket;
+    /**
+     * @return (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+     * 
+     */
     private String compartmentId;
+    /**
+     * @return (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+     * 
+     */
     private String namespace;
 
     private PrivateEndpointAccessTarget() {}
+    /**
+     * @return (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+     * 
+     */
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return (Updatable) Specifies the target namespace that&#39;s to be allowed to egress from the private endpoint.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }

@@ -76,7 +76,7 @@ type GetResolversArgs struct {
 
 // A collection of values returned by getResolvers.
 type GetResolversResult struct {
-	// The OCID of the owning compartment.
+	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The display name of the resolver.
 	DisplayName *string              `pulumi:"displayName"`
@@ -133,7 +133,7 @@ func (o GetResolversResultOutput) ToGetResolversResultOutputWithContext(ctx cont
 	return o
 }
 
-// The OCID of the owning compartment.
+// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 func (o GetResolversResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

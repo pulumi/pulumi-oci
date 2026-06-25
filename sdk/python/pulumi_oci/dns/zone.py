@@ -65,7 +65,7 @@ class ZoneArgs:
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         """
@@ -212,7 +212,7 @@ class ZoneArgs:
     @pulumi.getter(name="resolutionMode")
     def resolution_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         """
         return pulumi.get(self, "resolution_mode")
 
@@ -296,7 +296,8 @@ class _ZoneState:
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[Sequence[pulumi.Input['ZoneNameserverArgs']]] nameservers: The authoritative nameservers for the zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.int] serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -481,6 +482,9 @@ class _ZoneState:
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ZoneNameserverArgs']]]]:
+        """
+        The authoritative nameservers for the zone.
+        """
         return pulumi.get(self, "nameservers")
 
     @nameservers.setter
@@ -491,7 +495,7 @@ class _ZoneState:
     @pulumi.getter(name="resolutionMode")
     def resolution_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         """
         return pulumi.get(self, "resolution_mode")
 
@@ -705,7 +709,7 @@ class Zone(pulumi.CustomResource):
                
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the private view containing the zone. This value will be null for zones in the global DNS, which are publicly resolvable and not part of a private view.
         :param pulumi.Input[_builtins.str] zone_type: The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
@@ -891,7 +895,8 @@ class Zone(pulumi.CustomResource):
                **Example:** `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[_builtins.str] name: The name of the zone.
-        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
+        :param pulumi.Input[_builtins.str] resolution_mode: (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.int] serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -1025,13 +1030,16 @@ class Zone(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> pulumi.Output[Sequence['outputs.ZoneNameserver']]:
+        """
+        The authoritative nameservers for the zone.
+        """
         return pulumi.get(self, "nameservers")
 
     @_builtins.property
     @pulumi.getter(name="resolutionMode")
     def resolution_mode(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         """
         return pulumi.get(self, "resolution_mode")
 

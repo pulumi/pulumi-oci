@@ -218,7 +218,7 @@ namespace Pulumi.Oci.Dns
     public sealed class GetResolversResult
     {
         /// <summary>
-        /// The OCID of the owning compartment.
+        /// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

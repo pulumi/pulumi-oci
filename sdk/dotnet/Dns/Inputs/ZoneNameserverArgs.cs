@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Dns.Inputs
 
     public sealed class ZoneNameserverArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The hostname of the nameserver.
+        /// </summary>
         [Input("hostname")]
         public Input<string>? Hostname { get; set; }
 

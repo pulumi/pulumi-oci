@@ -26,6 +26,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
      * 
      */
     private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+    private String attachmentType;
     /**
      * @return A list of associated attachments to other services
      * 
@@ -145,6 +146,11 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
     /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    private String processAutomationLogGroupId;
+    /**
      * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
      * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
@@ -190,6 +196,9 @@ public final class GetIntegrationInstancesIntegrationInstance {
      */
     public List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
+    }
+    public String attachmentType() {
+        return this.attachmentType;
     }
     /**
      * @return A list of associated attachments to other services
@@ -370,6 +379,13 @@ public final class GetIntegrationInstancesIntegrationInstance {
         return this.privateEndpointOutboundConnections;
     }
     /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    public String processAutomationLogGroupId() {
+        return this.processAutomationLogGroupId;
+    }
+    /**
      * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
      * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
@@ -432,6 +448,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     @CustomType.Builder
     public static final class Builder {
         private List<GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint> alternateCustomEndpoints;
+        private String attachmentType;
         private List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments;
         private String compartmentId;
         private String consumptionModel;
@@ -462,6 +479,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         private Integer messagePacks;
         private List<GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail> networkEndpointDetails;
         private List<GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
+        private String processAutomationLogGroupId;
         private Map<String,String> securityAttributes;
         private String shape;
         private String state;
@@ -473,6 +491,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public Builder(GetIntegrationInstancesIntegrationInstance defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.alternateCustomEndpoints = defaults.alternateCustomEndpoints;
+    	      this.attachmentType = defaults.attachmentType;
     	      this.attachments = defaults.attachments;
     	      this.compartmentId = defaults.compartmentId;
     	      this.consumptionModel = defaults.consumptionModel;
@@ -503,6 +522,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
     	      this.messagePacks = defaults.messagePacks;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
     	      this.privateEndpointOutboundConnections = defaults.privateEndpointOutboundConnections;
+    	      this.processAutomationLogGroupId = defaults.processAutomationLogGroupId;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
@@ -522,6 +542,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
         }
         public Builder alternateCustomEndpoints(GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpoint... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+        @CustomType.Setter
+        public Builder attachmentType(String attachmentType) {
+            if (attachmentType == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "attachmentType");
+            }
+            this.attachmentType = attachmentType;
+            return this;
         }
         @CustomType.Setter
         public Builder attachments(List<GetIntegrationInstancesIntegrationInstanceAttachment> attachments) {
@@ -782,6 +810,14 @@ public final class GetIntegrationInstancesIntegrationInstance {
             return privateEndpointOutboundConnections(List.of(privateEndpointOutboundConnections));
         }
         @CustomType.Setter
+        public Builder processAutomationLogGroupId(String processAutomationLogGroupId) {
+            if (processAutomationLogGroupId == null) {
+              throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "processAutomationLogGroupId");
+            }
+            this.processAutomationLogGroupId = processAutomationLogGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             if (securityAttributes == null) {
               throw new MissingRequiredPropertyException("GetIntegrationInstancesIntegrationInstance", "securityAttributes");
@@ -840,6 +876,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
         public GetIntegrationInstancesIntegrationInstance build() {
             final var _resultValue = new GetIntegrationInstancesIntegrationInstance();
             _resultValue.alternateCustomEndpoints = alternateCustomEndpoints;
+            _resultValue.attachmentType = attachmentType;
             _resultValue.attachments = attachments;
             _resultValue.compartmentId = compartmentId;
             _resultValue.consumptionModel = consumptionModel;
@@ -870,6 +907,7 @@ public final class GetIntegrationInstancesIntegrationInstance {
             _resultValue.messagePacks = messagePacks;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
             _resultValue.privateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            _resultValue.processAutomationLogGroupId = processAutomationLogGroupId;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
             _resultValue.state = state;

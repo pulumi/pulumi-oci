@@ -15,22 +15,62 @@ import java.util.Objects;
 public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     private List<GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget> accessTargets;
     private List<String> additionalPrefixes;
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     private String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     private String createdBy;
     private Map<String,String> definedTags;
+    /**
+     * @return The entity tag for the Private Endpoint.
+     * 
+     */
     private String etag;
+    /**
+     * @return The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     private Map<String,Map<String,Map<String,String>>> fqdns;
     private Map<String,String> freeformTags;
     private String id;
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     private String name;
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     private String namespace;
     private List<String> nsgIds;
+    /**
+     * @return The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+     * 
+     */
     private String prefix;
     private String privateEndpointIp;
     private Map<String,String> securityAttributes;
+    /**
+     * @return The lifecycle state of the private endpoint resource.
+     * 
+     */
     private String state;
     private String subnetId;
+    /**
+     * @return The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     private String timeCreated;
+    /**
+     * @return The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     private String timeModified;
 
     private GetPrivateEndpointSummariesPrivateEndpointSummary() {}
@@ -40,18 +80,34 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     public List<String> additionalPrefixes() {
         return this.additionalPrefixes;
     }
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     public String createdBy() {
         return this.createdBy;
     }
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return The entity tag for the Private Endpoint.
+     * 
+     */
     public String etag() {
         return this.etag;
     }
+    /**
+     * @return The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     public Map<String,Map<String,Map<String,String>>> fqdns() {
         return this.fqdns;
     }
@@ -61,15 +117,27 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     public String name() {
         return this.name;
     }
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
     public List<String> nsgIds() {
         return this.nsgIds;
     }
+    /**
+     * @return The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+     * 
+     */
     public String prefix() {
         return this.prefix;
     }
@@ -79,15 +147,27 @@ public final class GetPrivateEndpointSummariesPrivateEndpointSummary {
     public Map<String,String> securityAttributes() {
         return this.securityAttributes;
     }
+    /**
+     * @return The lifecycle state of the private endpoint resource.
+     * 
+     */
     public String state() {
         return this.state;
     }
     public String subnetId() {
         return this.subnetId;
     }
+    /**
+     * @return The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public String timeModified() {
         return this.timeModified;
     }

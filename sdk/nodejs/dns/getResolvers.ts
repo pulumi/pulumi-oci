@@ -75,7 +75,7 @@ export interface GetResolversArgs {
  */
 export interface GetResolversResult {
     /**
-     * The OCID of the owning compartment.
+     * The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
      */
     readonly compartmentId: string;
     /**

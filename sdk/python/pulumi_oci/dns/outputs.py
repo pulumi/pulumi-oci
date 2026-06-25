@@ -742,22 +742,34 @@ class ResolverEndpoint(dict):
         suggest = None
         if key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "definedTags":
+            suggest = "defined_tags"
         elif key == "endpointType":
             suggest = "endpoint_type"
         elif key == "forwardingAddress":
             suggest = "forwarding_address"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
         elif key == "isForwarding":
             suggest = "is_forwarding"
         elif key == "isListening":
             suggest = "is_listening"
         elif key == "listeningAddress":
             suggest = "listening_address"
+        elif key == "peId":
+            suggest = "pe_id"
+        elif key == "resolverId":
+            suggest = "resolver_id"
+        elif key == "securityAttributes":
+            suggest = "security_attributes"
         elif key == "subnetId":
             suggest = "subnet_id"
         elif key == "timeCreated":
             suggest = "time_created"
         elif key == "timeUpdated":
             suggest = "time_updated"
+        elif key == "vnicId":
+            suggest = "vnic_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ResolverEndpoint. Access the value via the '{suggest}' property getter instead.")
@@ -772,37 +784,61 @@ class ResolverEndpoint(dict):
 
     def __init__(__self__, *,
                  compartment_id: Optional[_builtins.str] = None,
+                 defined_tags: Optional[Mapping[str, _builtins.str]] = None,
                  endpoint_type: Optional[_builtins.str] = None,
                  forwarding_address: Optional[_builtins.str] = None,
+                 freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 id: Optional[_builtins.str] = None,
                  is_forwarding: Optional[_builtins.bool] = None,
                  is_listening: Optional[_builtins.bool] = None,
                  listening_address: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
+                 pe_id: Optional[_builtins.str] = None,
+                 resolver_id: Optional[_builtins.str] = None,
+                 security_attributes: Optional[Mapping[str, _builtins.str]] = None,
                  self: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
-                 time_updated: Optional[_builtins.str] = None):
+                 time_updated: Optional[_builtins.str] = None,
+                 vnic_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str compartment_id: (Updatable) The OCID of the owning compartment.
+        :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Operations": {"CostCenter": "42"}}`
         :param _builtins.str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
         :param _builtins.str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+               
+               **Example:** `{"Department": "Finance"}`
+        :param _builtins.str id: The OCID of the resolver.
         :param _builtins.bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param _builtins.bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
         :param _builtins.str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         :param _builtins.str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        :param _builtins.str pe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        :param _builtins.str resolver_id: The OCID of the target resolver.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The current state of the resource.
         :param _builtins.str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param _builtins.str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param _builtins.str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if endpoint_type is not None:
             pulumi.set(__self__, "endpoint_type", endpoint_type)
         if forwarding_address is not None:
             pulumi.set(__self__, "forwarding_address", forwarding_address)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
         if is_forwarding is not None:
             pulumi.set(__self__, "is_forwarding", is_forwarding)
         if is_listening is not None:
@@ -811,6 +847,12 @@ class ResolverEndpoint(dict):
             pulumi.set(__self__, "listening_address", listening_address)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if pe_id is not None:
+            pulumi.set(__self__, "pe_id", pe_id)
+        if resolver_id is not None:
+            pulumi.set(__self__, "resolver_id", resolver_id)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if self is not None:
             pulumi.set(__self__, "self", self)
         if state is not None:
@@ -821,6 +863,8 @@ class ResolverEndpoint(dict):
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if vnic_id is not None:
+            pulumi.set(__self__, "vnic_id", vnic_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -829,6 +873,16 @@ class ResolverEndpoint(dict):
         (Updatable) The OCID of the owning compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Operations": {"CostCenter": "42"}}`
+        """
+        return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
@@ -845,6 +899,24 @@ class ResolverEndpoint(dict):
         An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         """
         return pulumi.get(self, "forwarding_address")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+
+        **Example:** `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the resolver.
+        """
+        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="isForwarding")
@@ -877,6 +949,30 @@ class ResolverEndpoint(dict):
         The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="peId")
+    def pe_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "pe_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resolverId")
+    def resolver_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the target resolver.
+        """
+        return pulumi.get(self, "resolver_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -917,6 +1013,14 @@ class ResolverEndpoint(dict):
         The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "vnic_id")
 
 
 @pulumi.output_type
@@ -2114,12 +2218,18 @@ class ZoneExternalMaster(dict):
 class ZoneNameserver(dict):
     def __init__(__self__, *,
                  hostname: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str hostname: The hostname of the nameserver.
+        """
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
 
     @_builtins.property
     @pulumi.getter
     def hostname(self) -> Optional[_builtins.str]:
+        """
+        The hostname of the nameserver.
+        """
         return pulumi.get(self, "hostname")
 
 
@@ -2362,43 +2472,64 @@ class GetResolverAttachedViewResult(dict):
 class GetResolverEndpointResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
                  endpoint_type: _builtins.str,
                  forwarding_address: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
                  is_forwarding: _builtins.bool,
                  is_listening: _builtins.bool,
                  listening_address: _builtins.str,
                  name: _builtins.str,
+                 pe_id: _builtins.str,
+                 resolver_id: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  self: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  time_created: _builtins.str,
-                 time_updated: _builtins.str):
+                 time_updated: _builtins.str,
+                 vnic_id: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
         :param _builtins.str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str id: The OCID of the resolver.
         :param _builtins.bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param _builtins.bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
         :param _builtins.str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         :param _builtins.str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        :param _builtins.str pe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        :param _builtins.str resolver_id: The OCID of the target resolver.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The current state of the resource.
         :param _builtins.str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param _builtins.str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param _builtins.str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         pulumi.set(__self__, "forwarding_address", forwarding_address)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
         pulumi.set(__self__, "listening_address", listening_address)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pe_id", pe_id)
+        pulumi.set(__self__, "resolver_id", resolver_id)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "self", self)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vnic_id", vnic_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2407,6 +2538,14 @@ class GetResolverEndpointResult(dict):
         The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
@@ -2423,6 +2562,22 @@ class GetResolverEndpointResult(dict):
         An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         """
         return pulumi.get(self, "forwarding_address")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the resolver.
+        """
+        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="isForwarding")
@@ -2455,6 +2610,30 @@ class GetResolverEndpointResult(dict):
         The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="peId")
+    def pe_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "pe_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resolverId")
+    def resolver_id(self) -> _builtins.str:
+        """
+        The OCID of the target resolver.
+        """
+        return pulumi.get(self, "resolver_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -2496,6 +2675,14 @@ class GetResolverEndpointResult(dict):
         """
         return pulumi.get(self, "time_updated")
 
+    @_builtins.property
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "vnic_id")
+
 
 @pulumi.output_type
 class GetResolverEndpointsFilterResult(dict):
@@ -2534,54 +2721,70 @@ class GetResolverEndpointsFilterResult(dict):
 class GetResolverEndpointsResolverEndpointResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
                  endpoint_type: _builtins.str,
                  forwarding_address: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
                  is_forwarding: _builtins.bool,
                  is_listening: _builtins.bool,
                  listening_address: _builtins.str,
                  name: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str],
+                 pe_id: _builtins.str,
                  resolver_id: _builtins.str,
+                 scope: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  self: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
-                 nsg_ids: Optional[Sequence[_builtins.str]] = None,
-                 scope: Optional[_builtins.str] = None):
+                 vnic_id: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
         :param _builtins.str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str id: The Terraform ID of the resolver endpoint.
         :param _builtins.bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         :param _builtins.bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
         :param _builtins.str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
         :param _builtins.str name: The name of a resource.
+        :param Sequence[_builtins.str] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
+        :param _builtins.str pe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
         :param _builtins.str resolver_id: The OCID of the target resolver.
+        :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The state of a resource.
         :param _builtins.str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param _builtins.str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
-        :param Sequence[_builtins.str] nsg_ids: An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
-        :param _builtins.str scope: Value must be `PRIVATE` when listing private name resolver endpoints.
+        :param _builtins.str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         pulumi.set(__self__, "forwarding_address", forwarding_address)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
         pulumi.set(__self__, "listening_address", listening_address)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "pe_id", pe_id)
         pulumi.set(__self__, "resolver_id", resolver_id)
+        pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "self", self)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
-        if nsg_ids is not None:
-            pulumi.set(__self__, "nsg_ids", nsg_ids)
-        if scope is not None:
-            pulumi.set(__self__, "scope", scope)
+        pulumi.set(__self__, "vnic_id", vnic_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2590,6 +2793,14 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
@@ -2606,6 +2817,22 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         """
         return pulumi.get(self, "forwarding_address")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The Terraform ID of the resolver endpoint.
+        """
+        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="isForwarding")
@@ -2640,12 +2867,44 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="peId")
+    def pe_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "pe_id")
+
+    @_builtins.property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> _builtins.str:
         """
         The OCID of the target resolver.
         """
         return pulumi.get(self, "resolver_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        Value must be `PRIVATE` when listing private name resolver endpoints.
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -2688,20 +2947,12 @@ class GetResolverEndpointsResolverEndpointResult(dict):
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
-    @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> _builtins.str:
         """
-        An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
         """
-        return pulumi.get(self, "nsg_ids")
-
-    @_builtins.property
-    @pulumi.getter
-    def scope(self) -> Optional[_builtins.str]:
-        """
-        Value must be `PRIVATE` when listing private name resolver endpoints.
-        """
-        return pulumi.get(self, "scope")
+        return pulumi.get(self, "vnic_id")
 
 
 @pulumi.output_type
@@ -2774,6 +3025,9 @@ class GetResolversFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2782,6 +3036,9 @@ class GetResolversFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -2821,9 +3078,11 @@ class GetResolversResolverResult(dict):
         :param _builtins.str default_view_id: The OCID of the default view.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: The displayName of a resource.
+        :param Sequence['GetResolversResolverEndpointArgs'] endpoints: Read-only array of endpoints for the resolver.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str id: The OCID of a resource.
         :param _builtins.bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
+        :param _builtins.str resolver_id: The OCID of the resolver.
         :param _builtins.str scope: Value must be `PRIVATE` when listing private resolvers.
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The state of a resource.
@@ -2896,6 +3155,9 @@ class GetResolversResolverResult(dict):
     @_builtins.property
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetResolversResolverEndpointResult']:
+        """
+        Read-only array of endpoints for the resolver.
+        """
         return pulumi.get(self, "endpoints")
 
     @_builtins.property
@@ -2925,6 +3187,9 @@ class GetResolversResolverResult(dict):
     @_builtins.property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> _builtins.str:
+        """
+        The OCID of the resolver.
+        """
         return pulumi.get(self, "resolver_id")
 
     @_builtins.property
@@ -2989,36 +3254,64 @@ class GetResolversResolverAttachedViewResult(dict):
 class GetResolversResolverEndpointResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
                  endpoint_type: _builtins.str,
                  forwarding_address: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
                  is_forwarding: _builtins.bool,
                  is_listening: _builtins.bool,
                  listening_address: _builtins.str,
                  name: _builtins.str,
+                 pe_id: _builtins.str,
+                 resolver_id: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  self: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  time_created: _builtins.str,
-                 time_updated: _builtins.str):
+                 time_updated: _builtins.str,
+                 vnic_id: _builtins.str):
         """
         :param _builtins.str compartment_id: The OCID of the compartment the resource belongs to.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str endpoint_type: The type of resolver endpoint. VNIC is currently the only supported type.
+        :param _builtins.str forwarding_address: An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str id: The OCID of a resource.
+        :param _builtins.bool is_forwarding: A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+        :param _builtins.bool is_listening: A Boolean flag indicating whether or not the resolver endpoint is for listening.
+        :param _builtins.str listening_address: An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+        :param _builtins.str name: The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        :param _builtins.str pe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        :param _builtins.str resolver_id: The OCID of the resolver.
+        :param Mapping[str, _builtins.str] security_attributes: [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.str state: The state of a resource.
+        :param _builtins.str subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
         :param _builtins.str time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param _builtins.str time_updated: The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
+        :param _builtins.str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         pulumi.set(__self__, "forwarding_address", forwarding_address)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_forwarding", is_forwarding)
         pulumi.set(__self__, "is_listening", is_listening)
         pulumi.set(__self__, "listening_address", listening_address)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pe_id", pe_id)
+        pulumi.set(__self__, "resolver_id", resolver_id)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "self", self)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "vnic_id", vnic_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -3029,34 +3322,100 @@ class GetResolversResolverEndpointResult(dict):
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
     @pulumi.getter(name="endpointType")
     def endpoint_type(self) -> _builtins.str:
+        """
+        The type of resolver endpoint. VNIC is currently the only supported type.
+        """
         return pulumi.get(self, "endpoint_type")
 
     @_builtins.property
     @pulumi.getter(name="forwardingAddress")
     def forwarding_address(self) -> _builtins.str:
+        """
+        An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
+        """
         return pulumi.get(self, "forwarding_address")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of a resource.
+        """
+        return pulumi.get(self, "id")
 
     @_builtins.property
     @pulumi.getter(name="isForwarding")
     def is_forwarding(self) -> _builtins.bool:
+        """
+        A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+        """
         return pulumi.get(self, "is_forwarding")
 
     @_builtins.property
     @pulumi.getter(name="isListening")
     def is_listening(self) -> _builtins.bool:
+        """
+        A Boolean flag indicating whether or not the resolver endpoint is for listening.
+        """
         return pulumi.get(self, "is_listening")
 
     @_builtins.property
     @pulumi.getter(name="listeningAddress")
     def listening_address(self) -> _builtins.str:
+        """
+        An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+        """
         return pulumi.get(self, "listening_address")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="peId")
+    def pe_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "pe_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resolverId")
+    def resolver_id(self) -> _builtins.str:
+        """
+        The OCID of the resolver.
+        """
+        return pulumi.get(self, "resolver_id")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -3077,6 +3436,9 @@ class GetResolversResolverEndpointResult(dict):
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
+        """
+        The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
+        """
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
@@ -3094,6 +3456,14 @@ class GetResolversResolverEndpointResult(dict):
         The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "vnic_id")
 
 
 @pulumi.output_type
@@ -5102,7 +5472,8 @@ class GetZonesZoneResult(dict):
         :param _builtins.str id: The OCID of the zone.
         :param _builtins.bool is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param _builtins.str name: A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-        :param _builtins.str resolution_mode: The resolution mode of a zone defines behavior related to how query responses can be handled.
+        :param Sequence['GetZonesZoneNameserverArgs'] nameservers: The authoritative nameservers for the zone.
+        :param _builtins.str resolution_mode: The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         :param _builtins.str scope: Specifies to operate only on resources that have a matching DNS scope.
         :param _builtins.str self: The canonical absolute URL of the resource.
         :param _builtins.int serial: The current serial of the zone. As seen in the zone's SOA record.
@@ -5211,13 +5582,16 @@ class GetZonesZoneResult(dict):
     @_builtins.property
     @pulumi.getter
     def nameservers(self) -> Sequence['outputs.GetZonesZoneNameserverResult']:
+        """
+        The authoritative nameservers for the zone.
+        """
         return pulumi.get(self, "nameservers")
 
     @_builtins.property
     @pulumi.getter(name="resolutionMode")
     def resolution_mode(self) -> _builtins.str:
         """
-        The resolution mode of a zone defines behavior related to how query responses can be handled.
+        The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         """
         return pulumi.get(self, "resolution_mode")
 
@@ -5728,11 +6102,17 @@ class GetZonesZoneExternalMasterResult(dict):
 class GetZonesZoneNameserverResult(dict):
     def __init__(__self__, *,
                  hostname: _builtins.str):
+        """
+        :param _builtins.str hostname: The hostname of the nameserver.
+        """
         pulumi.set(__self__, "hostname", hostname)
 
     @_builtins.property
     @pulumi.getter
     def hostname(self) -> _builtins.str:
+        """
+        The hostname of the nameserver.
+        """
         return pulumi.get(self, "hostname")
 
 

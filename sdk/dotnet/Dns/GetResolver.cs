@@ -190,6 +190,9 @@ namespace Pulumi.Oci.Dns
         /// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         /// </summary>
         public readonly bool IsProtected;
+        /// <summary>
+        /// The OCID of the resolver.
+        /// </summary>
         public readonly string ResolverId;
         /// <summary>
         /// Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.

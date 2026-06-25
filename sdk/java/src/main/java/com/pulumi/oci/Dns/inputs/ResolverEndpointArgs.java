@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -29,6 +30,25 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,String>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
     }
 
     /**
@@ -59,6 +79,40 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> forwardingAddress() {
         return Optional.ofNullable(this.forwardingAddress);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * The OCID of the resolver.
+     * 
+     */
+    @Import(name="id")
+    private @Nullable Output<String> id;
+
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
+    public Optional<Output<String>> id() {
+        return Optional.ofNullable(this.id);
     }
 
     /**
@@ -119,6 +173,51 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    @Import(name="peId")
+    private @Nullable Output<String> peId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Optional<Output<String>> peId() {
+        return Optional.ofNullable(this.peId);
+    }
+
+    /**
+     * The OCID of the target resolver.
+     * 
+     */
+    @Import(name="resolverId")
+    private @Nullable Output<String> resolverId;
+
+    /**
+     * @return The OCID of the target resolver.
+     * 
+     */
+    public Optional<Output<String>> resolverId() {
+        return Optional.ofNullable(this.resolverId);
+    }
+
+    /**
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
     }
 
     /**
@@ -196,21 +295,43 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    @Import(name="vnicId")
+    private @Nullable Output<String> vnicId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Optional<Output<String>> vnicId() {
+        return Optional.ofNullable(this.vnicId);
+    }
+
     private ResolverEndpointArgs() {}
 
     private ResolverEndpointArgs(ResolverEndpointArgs $) {
         this.compartmentId = $.compartmentId;
+        this.definedTags = $.definedTags;
         this.endpointType = $.endpointType;
         this.forwardingAddress = $.forwardingAddress;
+        this.freeformTags = $.freeformTags;
+        this.id = $.id;
         this.isForwarding = $.isForwarding;
         this.isListening = $.isListening;
         this.listeningAddress = $.listeningAddress;
         this.name = $.name;
+        this.peId = $.peId;
+        this.resolverId = $.resolverId;
+        this.securityAttributes = $.securityAttributes;
         this.self = $.self;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.vnicId = $.vnicId;
     }
 
     public static Builder builder() {
@@ -253,6 +374,31 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,String> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param endpointType The type of resolver endpoint. VNIC is currently the only supported type.
          * 
          * @return builder
@@ -292,6 +438,52 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder forwardingAddress(String forwardingAddress) {
             return forwardingAddress(Output.of(forwardingAddress));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param id The OCID of the resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder id(@Nullable Output<String> id) {
+            $.id = id;
+            return this;
+        }
+
+        /**
+         * @param id The OCID of the resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder id(String id) {
+            return id(Output.of(id));
         }
 
         /**
@@ -376,6 +568,69 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param peId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peId(@Nullable Output<String> peId) {
+            $.peId = peId;
+            return this;
+        }
+
+        /**
+         * @param peId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peId(String peId) {
+            return peId(Output.of(peId));
+        }
+
+        /**
+         * @param resolverId The OCID of the target resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolverId(@Nullable Output<String> resolverId) {
+            $.resolverId = resolverId;
+            return this;
+        }
+
+        /**
+         * @param resolverId The OCID of the target resolver.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resolverId(String resolverId) {
+            return resolverId(Output.of(resolverId));
+        }
+
+        /**
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**
@@ -481,6 +736,27 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param vnicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicId(@Nullable Output<String> vnicId) {
+            $.vnicId = vnicId;
+            return this;
+        }
+
+        /**
+         * @param vnicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vnicId(String vnicId) {
+            return vnicId(Output.of(vnicId));
         }
 
         public ResolverEndpointArgs build() {

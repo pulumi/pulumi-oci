@@ -158,14 +158,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     @Import(name="resolutionMode")
     private @Nullable Output<String> resolutionMode;
 
     /**
-     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     public Optional<Output<String>> resolutionMode() {
@@ -461,7 +461,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
          * 
          * @return builder
          * 

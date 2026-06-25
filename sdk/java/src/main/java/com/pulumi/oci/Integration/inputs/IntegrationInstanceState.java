@@ -41,6 +41,13 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.alternateCustomEndpoints);
     }
 
+    @Import(name="attachmentType")
+    private @Nullable Output<String> attachmentType;
+
+    public Optional<Output<String>> attachmentType() {
+        return Optional.ofNullable(this.attachmentType);
+    }
+
     /**
      * A list of associated attachments to other services
      * 
@@ -461,6 +468,21 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    @Import(name="processAutomationLogGroupId")
+    private @Nullable Output<String> processAutomationLogGroupId;
+
+    /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    public Optional<Output<String>> processAutomationLogGroupId() {
+        return Optional.ofNullable(this.processAutomationLogGroupId);
+    }
+
+    /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * &#34;oracle-zpr.sensitivity.value&#34; = &#34;low&#34;
      * &#34;oracle-zpr.sensitivity.mode&#34; = &#34;enforce&#34;
@@ -581,6 +603,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
 
     private IntegrationInstanceState(IntegrationInstanceState $) {
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
+        this.attachmentType = $.attachmentType;
         this.attachments = $.attachments;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
@@ -610,6 +633,7 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
         this.messagePacks = $.messagePacks;
         this.networkEndpointDetails = $.networkEndpointDetails;
         this.privateEndpointOutboundConnections = $.privateEndpointOutboundConnections;
+        this.processAutomationLogGroupId = $.processAutomationLogGroupId;
         this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
         this.state = $.state;
@@ -666,6 +690,15 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder alternateCustomEndpoints(IntegrationInstanceAlternateCustomEndpointArgs... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+
+        public Builder attachmentType(@Nullable Output<String> attachmentType) {
+            $.attachmentType = attachmentType;
+            return this;
+        }
+
+        public Builder attachmentType(String attachmentType) {
+            return attachmentType(Output.of(attachmentType));
         }
 
         /**
@@ -1291,6 +1324,27 @@ public final class IntegrationInstanceState extends com.pulumi.resources.Resourc
          */
         public Builder privateEndpointOutboundConnections(IntegrationInstancePrivateEndpointOutboundConnectionArgs... privateEndpointOutboundConnections) {
             return privateEndpointOutboundConnections(List.of(privateEndpointOutboundConnections));
+        }
+
+        /**
+         * @param processAutomationLogGroupId OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processAutomationLogGroupId(@Nullable Output<String> processAutomationLogGroupId) {
+            $.processAutomationLogGroupId = processAutomationLogGroupId;
+            return this;
+        }
+
+        /**
+         * @param processAutomationLogGroupId OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processAutomationLogGroupId(String processAutomationLogGroupId) {
+            return processAutomationLogGroupId(Output.of(processAutomationLogGroupId));
         }
 
         /**

@@ -25,6 +25,12 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string>? FallbackRedirectPath { get; set; }
 
         /// <summary>
+        /// (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+        /// </summary>
+        [Input("loginPath")]
+        public Input<string>? LoginPath { get; set; }
+
+        /// <summary>
         /// (Updatable) The path to be used as logout.
         /// </summary>
         [Input("logoutPath")]

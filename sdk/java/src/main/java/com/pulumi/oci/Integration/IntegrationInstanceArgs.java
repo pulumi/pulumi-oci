@@ -38,6 +38,13 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.alternateCustomEndpoints);
     }
 
+    @Import(name="attachmentType")
+    private @Nullable Output<String> attachmentType;
+
+    public Optional<Output<String>> attachmentType() {
+        return Optional.ofNullable(this.attachmentType);
+    }
+
     /**
      * (Updatable) Compartment Identifier.
      * 
@@ -436,6 +443,7 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
 
     private IntegrationInstanceArgs(IntegrationInstanceArgs $) {
         this.alternateCustomEndpoints = $.alternateCustomEndpoints;
+        this.attachmentType = $.attachmentType;
         this.compartmentId = $.compartmentId;
         this.consumptionModel = $.consumptionModel;
         this.convertInstanceTrigger = $.convertInstanceTrigger;
@@ -511,6 +519,15 @@ public final class IntegrationInstanceArgs extends com.pulumi.resources.Resource
          */
         public Builder alternateCustomEndpoints(IntegrationInstanceAlternateCustomEndpointArgs... alternateCustomEndpoints) {
             return alternateCustomEndpoints(List.of(alternateCustomEndpoints));
+        }
+
+        public Builder attachmentType(@Nullable Output<String> attachmentType) {
+            $.attachmentType = attachmentType;
+            return this;
+        }
+
+        public Builder attachmentType(String attachmentType) {
+            return attachmentType(Output.of(attachmentType));
         }
 
         /**

@@ -128,6 +128,9 @@ namespace Pulumi.Oci.Integration
         [Output("alternateCustomEndpoints")]
         public Output<ImmutableArray<Outputs.IntegrationInstanceAlternateCustomEndpoint>> AlternateCustomEndpoints { get; private set; } = null!;
 
+        [Output("attachmentType")]
+        public Output<string?> AttachmentType { get; private set; } = null!;
+
         /// <summary>
         /// A list of associated attachments to other services
         /// </summary>
@@ -297,6 +300,12 @@ namespace Pulumi.Oci.Integration
         public Output<ImmutableArray<Outputs.IntegrationInstancePrivateEndpointOutboundConnection>> PrivateEndpointOutboundConnections { get; private set; } = null!;
 
         /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        /// </summary>
+        [Output("processAutomationLogGroupId")]
+        public Output<string> ProcessAutomationLogGroupId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
         /// "oracle-zpr.sensitivity.value" = "low"
         /// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -406,6 +415,9 @@ namespace Pulumi.Oci.Integration
             get => _alternateCustomEndpoints ?? (_alternateCustomEndpoints = new InputList<Inputs.IntegrationInstanceAlternateCustomEndpointArgs>());
             set => _alternateCustomEndpoints = value;
         }
+
+        [Input("attachmentType")]
+        public Input<string>? AttachmentType { get; set; }
 
         /// <summary>
         /// (Updatable) Compartment Identifier.
@@ -621,6 +633,9 @@ namespace Pulumi.Oci.Integration
             set => _alternateCustomEndpoints = value;
         }
 
+        [Input("attachmentType")]
+        public Input<string>? AttachmentType { get; set; }
+
         [Input("attachments")]
         private InputList<Inputs.IntegrationInstanceAttachmentGetArgs>? _attachments;
 
@@ -834,6 +849,12 @@ namespace Pulumi.Oci.Integration
             get => _privateEndpointOutboundConnections ?? (_privateEndpointOutboundConnections = new InputList<Inputs.IntegrationInstancePrivateEndpointOutboundConnectionGetArgs>());
             set => _privateEndpointOutboundConnections = value;
         }
+
+        /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        /// </summary>
+        [Input("processAutomationLogGroupId")]
+        public Input<string>? ProcessAutomationLogGroupId { get; set; }
 
         [Input("securityAttributes")]
         private InputMap<string>? _securityAttributes;

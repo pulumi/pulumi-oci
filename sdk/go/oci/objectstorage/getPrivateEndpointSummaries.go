@@ -11,6 +11,44 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+//
+// Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+// and does not contain fields like the user-defined metadata.
+//
+// ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+// `opc-next-page` value with the `page` request parameter.
+//
+// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/objectstorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := objectstorage.GetPrivateEndpointSummaries(ctx, &objectstorage.GetPrivateEndpointSummariesArgs{
+//				CompartmentId: compartmentId,
+//				Namespace:     namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetPrivateEndpointSummaries(ctx *pulumi.Context, args *GetPrivateEndpointSummariesArgs, opts ...pulumi.InvokeOption) (*GetPrivateEndpointSummariesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPrivateEndpointSummariesResult
@@ -23,18 +61,23 @@ func GetPrivateEndpointSummaries(ctx *pulumi.Context, args *GetPrivateEndpointSu
 
 // A collection of arguments for invoking getPrivateEndpointSummaries.
 type GetPrivateEndpointSummariesArgs struct {
+	// The ID of the compartment in which to list private endpoints.
 	CompartmentId string                              `pulumi:"compartmentId"`
 	Filters       []GetPrivateEndpointSummariesFilter `pulumi:"filters"`
-	Namespace     string                              `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace string `pulumi:"namespace"`
 }
 
 // A collection of values returned by getPrivateEndpointSummaries.
 type GetPrivateEndpointSummariesResult struct {
+	// The compartment ID in which the private endpoint resource exists in.
 	CompartmentId string                              `pulumi:"compartmentId"`
 	Filters       []GetPrivateEndpointSummariesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                       string                                              `pulumi:"id"`
-	Namespace                string                                              `pulumi:"namespace"`
+	Id string `pulumi:"id"`
+	// The Object Storage namespace in which the private endpoint resides.
+	Namespace string `pulumi:"namespace"`
+	// The list of private_endpoint_summaries.
 	PrivateEndpointSummaries []GetPrivateEndpointSummariesPrivateEndpointSummary `pulumi:"privateEndpointSummaries"`
 }
 
@@ -49,9 +92,11 @@ func GetPrivateEndpointSummariesOutput(ctx *pulumi.Context, args GetPrivateEndpo
 
 // A collection of arguments for invoking getPrivateEndpointSummaries.
 type GetPrivateEndpointSummariesOutputArgs struct {
+	// The ID of the compartment in which to list private endpoints.
 	CompartmentId pulumi.StringInput                          `pulumi:"compartmentId"`
 	Filters       GetPrivateEndpointSummariesFilterArrayInput `pulumi:"filters"`
-	Namespace     pulumi.StringInput                          `pulumi:"namespace"`
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
 func (GetPrivateEndpointSummariesOutputArgs) ElementType() reflect.Type {
@@ -73,6 +118,7 @@ func (o GetPrivateEndpointSummariesResultOutput) ToGetPrivateEndpointSummariesRe
 	return o
 }
 
+// The compartment ID in which the private endpoint resource exists in.
 func (o GetPrivateEndpointSummariesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -86,10 +132,12 @@ func (o GetPrivateEndpointSummariesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace in which the private endpoint resides.
 func (o GetPrivateEndpointSummariesResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// The list of private_endpoint_summaries.
 func (o GetPrivateEndpointSummariesResultOutput) PrivateEndpointSummaries() GetPrivateEndpointSummariesPrivateEndpointSummaryArrayOutput {
 	return o.ApplyT(func(v GetPrivateEndpointSummariesResult) []GetPrivateEndpointSummariesPrivateEndpointSummary {
 		return v.PrivateEndpointSummaries

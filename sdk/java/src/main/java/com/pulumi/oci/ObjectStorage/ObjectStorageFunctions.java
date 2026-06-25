@@ -2391,33 +2391,473 @@ public final class ObjectStorageFunctions {
     public static CompletableFuture<GetPreauthrequestsResult> getPreauthrequestsPlain(GetPreauthrequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPreauthrequests:getPreauthrequests", TypeShape.of(GetPreauthrequestsResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given private endpoint in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPe = ObjectStorageFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .name(peName)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args) {
         return getPrivateEndpoint(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given private endpoint in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPe = ObjectStorageFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .name(peName)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args) {
         return getPrivateEndpointPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given private endpoint in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPe = ObjectStorageFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .name(peName)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given private endpoint in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPe = ObjectStorageFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .name(peName)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointResult> getPrivateEndpoint(GetPrivateEndpointArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets the current representation of the given private endpoint in the given Object Storage namespace.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPe = ObjectStorageFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
+     *             .name(peName)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointResult> getPrivateEndpointPlain(GetPrivateEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", TypeShape.of(GetPrivateEndpointResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPes = ObjectStorageFunctions.getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args) {
         return getPrivateEndpointSummaries(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPes = ObjectStorageFunctions.getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointSummariesResult> getPrivateEndpointSummariesPlain(GetPrivateEndpointSummariesPlainArgs args) {
         return getPrivateEndpointSummariesPlain(args, InvokeOptions.Empty);
     }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPes = ObjectStorageFunctions.getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPes = ObjectStorageFunctions.getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetPrivateEndpointSummariesResult> getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
     }
+    /**
+     * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+     * 
+     * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+     * and does not contain fields like the user-defined metadata.
+     * 
+     * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+     * `opc-next-page` value with the `page` request parameter.
+     * 
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetPrivateEndpointSummariesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPes = ObjectStorageFunctions.getPrivateEndpointSummaries(GetPrivateEndpointSummariesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespace)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static CompletableFuture<GetPrivateEndpointSummariesResult> getPrivateEndpointSummariesPlain(GetPrivateEndpointSummariesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", TypeShape.of(GetPrivateEndpointSummariesResult.class), args, Utilities.withVersion(options));
     }

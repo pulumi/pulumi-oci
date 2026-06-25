@@ -11,16 +11,32 @@ import java.util.Objects;
 @CustomType
 public final class GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget {
     private String bucket;
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     private String compartmentId;
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     private String namespace;
 
     private GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTarget() {}
     public String bucket() {
         return this.bucket;
     }
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }

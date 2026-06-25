@@ -261,6 +261,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private List<GetAutonomousDatabaseEncryptionKey> encryptionKeys;
     /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    private String externalLocationZone;
+    /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
@@ -1092,6 +1097,13 @@ public final class GetAutonomousDatabaseResult {
         return this.encryptionKeys;
     }
     /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    public String externalLocationZone() {
+        return this.externalLocationZone;
+    }
+    /**
      * @return Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */
@@ -1891,6 +1903,7 @@ public final class GetAutonomousDatabaseResult {
         private List<GetAutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntries;
         private List<GetAutonomousDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private List<GetAutonomousDatabaseEncryptionKey> encryptionKeys;
+        private String externalLocationZone;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,String> freeformTags;
         private String id;
@@ -2057,6 +2070,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.encryptionKeyHistoryEntries = defaults.encryptionKeyHistoryEntries;
     	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.encryptionKeys = defaults.encryptionKeys;
+    	      this.externalLocationZone = defaults.externalLocationZone;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -2586,6 +2600,14 @@ public final class GetAutonomousDatabaseResult {
         }
         public Builder encryptionKeys(GetAutonomousDatabaseEncryptionKey... encryptionKeys) {
             return encryptionKeys(List.of(encryptionKeys));
+        }
+        @CustomType.Setter
+        public Builder externalLocationZone(String externalLocationZone) {
+            if (externalLocationZone == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "externalLocationZone");
+            }
+            this.externalLocationZone = externalLocationZone;
+            return this;
         }
         @CustomType.Setter
         public Builder failedDataRecoveryInSeconds(Integer failedDataRecoveryInSeconds) {
@@ -3615,6 +3637,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.encryptionKeyHistoryEntries = encryptionKeyHistoryEntries;
             _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.encryptionKeys = encryptionKeys;
+            _resultValue.externalLocationZone = externalLocationZone;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

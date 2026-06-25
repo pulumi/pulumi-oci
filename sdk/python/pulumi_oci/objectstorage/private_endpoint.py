@@ -37,6 +37,23 @@ class PrivateEndpointArgs:
                  state: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a PrivateEndpoint resource.
+
+        :param pulumi.Input[Sequence[pulumi.Input['PrivateEndpointAccessTargetArgs']]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
+        :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]] fqdns: The object representing FQDN details formed using prefix and additionalPrefixes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] name: The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
         """
         pulumi.set(__self__, "access_targets", access_targets)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -65,6 +82,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="accessTargets")
     def access_targets(self) -> pulumi.Input[Sequence[pulumi.Input['PrivateEndpointAccessTargetArgs']]]:
+        """
+        (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        """
         return pulumi.get(self, "access_targets")
 
     @access_targets.setter
@@ -74,6 +94,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ID of the compartment in which to create the private endpoint.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -83,6 +106,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -92,6 +118,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter
     def prefix(self) -> pulumi.Input[_builtins.str]:
+        """
+        The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -101,6 +130,12 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -110,6 +145,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="additionalPrefixes")
     def additional_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        """
         return pulumi.get(self, "additional_prefixes")
 
     @additional_prefixes.setter
@@ -119,6 +157,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -128,6 +169,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter
     def fqdns(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]]:
+        """
+        The object representing FQDN details formed using prefix and additionalPrefixes.
+        """
         return pulumi.get(self, "fqdns")
 
     @fqdns.setter
@@ -137,6 +181,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -146,6 +193,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -155,6 +205,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -164,6 +217,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
@@ -182,6 +238,9 @@ class PrivateEndpointArgs:
     @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The lifecycle state of the private endpoint resource.
+        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -212,6 +271,27 @@ class _PrivateEndpointState:
                  time_modified: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering PrivateEndpoint resources.
+
+        :param pulumi.Input[Sequence[pulumi.Input['PrivateEndpointAccessTargetArgs']]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
+        :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] etag: The entity tag for the Private Endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]] fqdns: The object representing FQDN details formed using prefix and additionalPrefixes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] name: The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] time_created: The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        :param pulumi.Input[_builtins.str] time_modified: The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         """
         if access_targets is not None:
             pulumi.set(__self__, "access_targets", access_targets)
@@ -253,6 +333,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="accessTargets")
     def access_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PrivateEndpointAccessTargetArgs']]]]:
+        """
+        (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        """
         return pulumi.get(self, "access_targets")
 
     @access_targets.setter
@@ -262,6 +345,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="additionalPrefixes")
     def additional_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        """
         return pulumi.get(self, "additional_prefixes")
 
     @additional_prefixes.setter
@@ -271,6 +357,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of the compartment in which to create the private endpoint.
+        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -280,6 +369,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        """
         return pulumi.get(self, "created_by")
 
     @created_by.setter
@@ -289,6 +381,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -298,6 +393,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def etag(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The entity tag for the Private Endpoint.
+        """
         return pulumi.get(self, "etag")
 
     @etag.setter
@@ -307,6 +405,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def fqdns(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]]:
+        """
+        The object representing FQDN details formed using prefix and additionalPrefixes.
+        """
         return pulumi.get(self, "fqdns")
 
     @fqdns.setter
@@ -316,6 +417,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -325,6 +429,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -334,6 +441,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
     @namespace.setter
@@ -343,6 +453,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -352,6 +465,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        """
         return pulumi.get(self, "prefix")
 
     @prefix.setter
@@ -361,6 +477,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @private_endpoint_ip.setter
@@ -379,6 +498,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The lifecycle state of the private endpoint resource.
+        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -388,6 +510,12 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -397,6 +525,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -406,6 +537,9 @@ class _PrivateEndpointState:
     @_builtins.property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_modified")
 
     @time_modified.setter
@@ -435,10 +569,59 @@ class PrivateEndpoint(pulumi.CustomResource):
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
-        Create a PrivateEndpoint resource with the given unique name, props, and options.
+        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+        It enables private network access from a specified subnet to Object Storage without traversing the public internet.
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage/private_endpoint
+
+        Creates an Object Storage Private Endpoint in a specified subnet, with access scoping for namespace, compartment, and bucket.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        pe = oci.objectstorage.PrivateEndpoint("pe",
+            compartment_id=compartment_ocid,
+            namespace=namespace_name,
+            name=pe_name,
+            subnet_id=test_subnet1["id"],
+            prefix=dns_prefix,
+            access_targets=[{
+                "namespace": "*",
+                "compartment_id": "*",
+                "bucket": "*",
+            }])
+        ```
+
+        ## Import
+
+        Private endpoints can be imported using the `namespaceName` and the `name` of the private endpoint.
+
+        ```sh
+        $ pulumi import oci:ObjectStorage/privateEndpoint:PrivateEndpoint test_pe "n/{namespaceName}/pe/{peName}"
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]] fqdns: The object representing FQDN details formed using prefix and additionalPrefixes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] name: The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -447,7 +630,40 @@ class PrivateEndpoint(pulumi.CustomResource):
                  args: PrivateEndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        Create a PrivateEndpoint resource with the given unique name, props, and options.
+        This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+        It enables private network access from a specified subnet to Object Storage without traversing the public internet.
+
+        Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage/private_endpoint
+
+        Creates an Object Storage Private Endpoint in a specified subnet, with access scoping for namespace, compartment, and bucket.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        pe = oci.objectstorage.PrivateEndpoint("pe",
+            compartment_id=compartment_ocid,
+            namespace=namespace_name,
+            name=pe_name,
+            subnet_id=test_subnet1["id"],
+            prefix=dns_prefix,
+            access_targets=[{
+                "namespace": "*",
+                "compartment_id": "*",
+                "bucket": "*",
+            }])
+        ```
+
+        ## Import
+
+        Private endpoints can be imported using the `namespaceName` and the `name` of the private endpoint.
+
+        ```sh
+        $ pulumi import oci:ObjectStorage/privateEndpoint:PrivateEndpoint test_pe "n/{namespaceName}/pe/{peName}"
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param PrivateEndpointArgs args: The arguments to use to populate this resource's properties.
@@ -550,6 +766,26 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict']]]] access_targets: (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] additional_prefixes: A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
+        :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] etag: The entity tag for the Private Endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]] fqdns: The object representing FQDN details formed using prefix and additionalPrefixes.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] name: The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] time_created: The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        :param pulumi.Input[_builtins.str] time_modified: The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -578,66 +814,105 @@ class PrivateEndpoint(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="accessTargets")
     def access_targets(self) -> pulumi.Output[Sequence['outputs.PrivateEndpointAccessTarget']]:
+        """
+        (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartment_id and bucket.
+        """
         return pulumi.get(self, "access_targets")
 
     @_builtins.property
     @pulumi.getter(name="additionalPrefixes")
     def additional_prefixes(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        """
         return pulumi.get(self, "additional_prefixes")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The ID of the compartment in which to create the private endpoint.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter
     def etag(self) -> pulumi.Output[_builtins.str]:
+        """
+        The entity tag for the Private Endpoint.
+        """
         return pulumi.get(self, "etag")
 
     @_builtins.property
     @pulumi.getter
     def fqdns(self) -> pulumi.Output[Optional[Mapping[str, Mapping[str, Mapping[str, _builtins.str]]]]]:
+        """
+        The object representing FQDN details formed using prefix and additionalPrefixes.
+        """
         return pulumi.get(self, "fqdns")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        """
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
     @pulumi.getter
     def prefix(self) -> pulumi.Output[_builtins.str]:
+        """
+        The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        """
         return pulumi.get(self, "prefix")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointIp")
     def private_endpoint_ip(self) -> pulumi.Output[_builtins.str]:
+        """
+        The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        """
         return pulumi.get(self, "private_endpoint_ip")
 
     @_builtins.property
@@ -648,20 +923,35 @@ class PrivateEndpoint(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
+        """
+        The lifecycle state of the private endpoint resource.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_modified")
 

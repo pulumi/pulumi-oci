@@ -263,6 +263,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly encryptionKeyLocationDetails: pulumi.Output<outputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail[]>;
     /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     */
+    declare public /*out*/ readonly externalLocationZone: pulumi.Output<string>;
+    /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
     declare public /*out*/ readonly failedDataRecoveryInSeconds: pulumi.Output<number>;
@@ -817,6 +821,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["encryptionKey"] = state?.encryptionKey;
             resourceInputs["encryptionKeyHistoryEntries"] = state?.encryptionKeyHistoryEntries;
             resourceInputs["encryptionKeyLocationDetails"] = state?.encryptionKeyLocationDetails;
+            resourceInputs["externalLocationZone"] = state?.externalLocationZone;
             resourceInputs["failedDataRecoveryInSeconds"] = state?.failedDataRecoveryInSeconds;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["inMemoryAreaInGbs"] = state?.inMemoryAreaInGbs;
@@ -1049,6 +1054,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["disasterRecoveryRegionType"] = undefined /*out*/;
             resourceInputs["encryptionKeyHistoryEntries"] = undefined /*out*/;
             resourceInputs["encryptionKeyLocationDetails"] = undefined /*out*/;
+            resourceInputs["externalLocationZone"] = undefined /*out*/;
             resourceInputs["failedDataRecoveryInSeconds"] = undefined /*out*/;
             resourceInputs["inMemoryAreaInGbs"] = undefined /*out*/;
             resourceInputs["infrastructureType"] = undefined /*out*/;
@@ -1326,6 +1332,10 @@ export interface AutonomousDatabaseState {
      * Types of providers supported for managing database encryption keys
      */
     encryptionKeyLocationDetails?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseEncryptionKeyLocationDetail>[] | undefined>;
+    /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     */
+    externalLocationZone?: pulumi.Input<string | undefined>;
     /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */

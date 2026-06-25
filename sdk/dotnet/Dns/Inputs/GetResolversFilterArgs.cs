@@ -12,6 +12,9 @@ namespace Pulumi.Oci.Dns.Inputs
 
     public sealed class GetResolversFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

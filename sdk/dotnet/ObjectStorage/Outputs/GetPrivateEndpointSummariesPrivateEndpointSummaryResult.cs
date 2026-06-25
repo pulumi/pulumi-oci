@@ -15,22 +15,52 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     {
         public readonly ImmutableArray<Outputs.GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult> AccessTargets;
         public readonly ImmutableArray<string> AdditionalPrefixes;
+        /// <summary>
+        /// The ID of the compartment in which to list private endpoints.
+        /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        /// </summary>
         public readonly string CreatedBy;
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// The entity tag for the Private Endpoint.
+        /// </summary>
         public readonly string Etag;
+        /// <summary>
+        /// The object representing FQDN details formed using prefix and additionalPrefixes.
+        /// </summary>
         public readonly ImmutableDictionary<string, ImmutableDictionary<string, ImmutableDictionary<string, string>>> Fqdns;
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         public readonly string Namespace;
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+        /// </summary>
         public readonly string Prefix;
         public readonly string PrivateEndpointIp;
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The lifecycle state of the private endpoint resource.
+        /// </summary>
         public readonly string State;
         public readonly string SubnetId;
+        /// <summary>
+        /// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         public readonly string TimeModified;
 
         [OutputConstructor]

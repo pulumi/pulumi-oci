@@ -118,6 +118,7 @@ type IntegrationInstance struct {
 
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints IntegrationInstanceAlternateCustomEndpointArrayOutput `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           pulumi.StringPtrOutput                                `pulumi:"attachmentType"`
 	// A list of associated attachments to other services
 	Attachments IntegrationInstanceAttachmentArrayOutput `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
@@ -174,6 +175,8 @@ type IntegrationInstance struct {
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsOutput `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput `pulumi:"privateEndpointOutboundConnections"`
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId pulumi.StringOutput `pulumi:"processAutomationLogGroupId"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -250,6 +253,7 @@ func GetIntegrationInstance(ctx *pulumi.Context,
 type integrationInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []IntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           *string                                      `pulumi:"attachmentType"`
 	// A list of associated attachments to other services
 	Attachments []IntegrationInstanceAttachment `pulumi:"attachments"`
 	// (Updatable) Compartment Identifier.
@@ -306,6 +310,8 @@ type integrationInstanceState struct {
 	NetworkEndpointDetails *IntegrationInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []IntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId *string `pulumi:"processAutomationLogGroupId"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -331,6 +337,7 @@ type integrationInstanceState struct {
 type IntegrationInstanceState struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints IntegrationInstanceAlternateCustomEndpointArrayInput
+	AttachmentType           pulumi.StringPtrInput
 	// A list of associated attachments to other services
 	Attachments IntegrationInstanceAttachmentArrayInput
 	// (Updatable) Compartment Identifier.
@@ -387,6 +394,8 @@ type IntegrationInstanceState struct {
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsPtrInput
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections IntegrationInstancePrivateEndpointOutboundConnectionArrayInput
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId pulumi.StringPtrInput
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -416,6 +425,7 @@ func (IntegrationInstanceState) ElementType() reflect.Type {
 type integrationInstanceArgs struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []IntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           *string                                      `pulumi:"attachmentType"`
 	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -479,6 +489,7 @@ type integrationInstanceArgs struct {
 type IntegrationInstanceArgs struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints IntegrationInstanceAlternateCustomEndpointArrayInput
+	AttachmentType           pulumi.StringPtrInput
 	// (Updatable) Compartment Identifier.
 	CompartmentId pulumi.StringInput
 	// Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
@@ -632,6 +643,10 @@ func (o IntegrationInstanceOutput) AlternateCustomEndpoints() IntegrationInstanc
 	}).(IntegrationInstanceAlternateCustomEndpointArrayOutput)
 }
 
+func (o IntegrationInstanceOutput) AttachmentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.AttachmentType }).(pulumi.StringPtrOutput)
+}
+
 // A list of associated attachments to other services
 func (o IntegrationInstanceOutput) Attachments() IntegrationInstanceAttachmentArrayOutput {
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstanceAttachmentArrayOutput { return v.Attachments }).(IntegrationInstanceAttachmentArrayOutput)
@@ -779,6 +794,11 @@ func (o IntegrationInstanceOutput) PrivateEndpointOutboundConnections() Integrat
 	return o.ApplyT(func(v *IntegrationInstance) IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput {
 		return v.PrivateEndpointOutboundConnections
 	}).(IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+func (o IntegrationInstanceOutput) ProcessAutomationLogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.ProcessAutomationLogGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
         /// The type of resolver endpoint. VNIC is currently the only supported type.
         /// </summary>
         public readonly string EndpointType;
@@ -25,6 +29,14 @@ namespace Pulumi.Oci.Dns.Outputs
         /// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
         /// </summary>
         public readonly string ForwardingAddress;
+        /// <summary>
+        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> FreeformTags;
+        /// <summary>
+        /// The OCID of the resolver.
+        /// </summary>
+        public readonly string Id;
         /// <summary>
         /// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
         /// </summary>
@@ -41,6 +53,18 @@ namespace Pulumi.Oci.Dns.Outputs
         /// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        /// </summary>
+        public readonly string PeId;
+        /// <summary>
+        /// The OCID of the target resolver.
+        /// </summary>
+        public readonly string ResolverId;
+        /// <summary>
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
@@ -61,14 +85,24 @@ namespace Pulumi.Oci.Dns.Outputs
         /// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        /// </summary>
+        public readonly string VnicId;
 
         [OutputConstructor]
         private GetResolverEndpointResult(
             string compartmentId,
 
+            ImmutableDictionary<string, string> definedTags,
+
             string endpointType,
 
             string forwardingAddress,
+
+            ImmutableDictionary<string, string> freeformTags,
+
+            string id,
 
             bool isForwarding,
 
@@ -78,6 +112,12 @@ namespace Pulumi.Oci.Dns.Outputs
 
             string name,
 
+            string peId,
+
+            string resolverId,
+
+            ImmutableDictionary<string, string> securityAttributes,
+
             string self,
 
             string state,
@@ -86,20 +126,29 @@ namespace Pulumi.Oci.Dns.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string vnicId)
         {
             CompartmentId = compartmentId;
+            DefinedTags = definedTags;
             EndpointType = endpointType;
             ForwardingAddress = forwardingAddress;
+            FreeformTags = freeformTags;
+            Id = id;
             IsForwarding = isForwarding;
             IsListening = isListening;
             ListeningAddress = listeningAddress;
             Name = name;
+            PeId = peId;
+            ResolverId = resolverId;
+            SecurityAttributes = securityAttributes;
             Self = self;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            VnicId = vnicId;
         }
     }
 }

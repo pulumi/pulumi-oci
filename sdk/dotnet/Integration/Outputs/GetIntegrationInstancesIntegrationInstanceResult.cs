@@ -17,6 +17,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// A list of alternate custom endpoints used for the integration instance URL.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult> AlternateCustomEndpoints;
+        public readonly string AttachmentType;
         /// <summary>
         /// A list of associated attachments to other services
         /// </summary>
@@ -114,6 +115,10 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult> PrivateEndpointOutboundConnections;
         /// <summary>
+        /// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        /// </summary>
+        public readonly string ProcessAutomationLogGroupId;
+        /// <summary>
         /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
         /// "oracle-zpr.sensitivity.value" = "low"
         /// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -148,6 +153,8 @@ namespace Pulumi.Oci.Integration.Outputs
         [OutputConstructor]
         private GetIntegrationInstancesIntegrationInstanceResult(
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult> alternateCustomEndpoints,
+
+            string attachmentType,
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult> attachments,
 
@@ -209,6 +216,8 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult> privateEndpointOutboundConnections,
 
+            string processAutomationLogGroupId,
+
             ImmutableDictionary<string, string> securityAttributes,
 
             string shape,
@@ -224,6 +233,7 @@ namespace Pulumi.Oci.Integration.Outputs
             string timeUpdated)
         {
             AlternateCustomEndpoints = alternateCustomEndpoints;
+            AttachmentType = attachmentType;
             Attachments = attachments;
             CompartmentId = compartmentId;
             ConsumptionModel = consumptionModel;
@@ -254,6 +264,7 @@ namespace Pulumi.Oci.Integration.Outputs
             MessagePacks = messagePacks;
             NetworkEndpointDetails = networkEndpointDetails;
             PrivateEndpointOutboundConnections = privateEndpointOutboundConnections;
+            ProcessAutomationLogGroupId = processAutomationLogGroupId;
             SecurityAttributes = securityAttributes;
             Shape = shape;
             State = state;

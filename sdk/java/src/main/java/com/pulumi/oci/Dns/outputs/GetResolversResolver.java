@@ -42,6 +42,10 @@ public final class GetResolversResolver {
      * 
      */
     private String displayName;
+    /**
+     * @return Read-only array of endpoints for the resolver.
+     * 
+     */
     private List<GetResolversResolverEndpoint> endpoints;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -58,6 +62,10 @@ public final class GetResolversResolver {
      * 
      */
     private Boolean isProtected;
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     private String resolverId;
     private List<GetResolversResolverRule> rules;
     /**
@@ -125,6 +133,10 @@ public final class GetResolversResolver {
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return Read-only array of endpoints for the resolver.
+     * 
+     */
     public List<GetResolversResolverEndpoint> endpoints() {
         return this.endpoints;
     }
@@ -149,6 +161,10 @@ public final class GetResolversResolver {
     public Boolean isProtected() {
         return this.isProtected;
     }
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     public String resolverId() {
         return this.resolverId;
     }

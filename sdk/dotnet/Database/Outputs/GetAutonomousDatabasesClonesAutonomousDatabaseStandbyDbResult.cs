@@ -14,9 +14,13 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult
     {
         /// <summary>
-        /// The availability domain where the Autonomous AI Database Serverless instance is located.
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
         /// </summary>
         public readonly string AvailabilityDomain;
+        /// <summary>
+        /// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        /// </summary>
+        public readonly string ExternalLocationZone;
         /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         /// </summary>
@@ -54,6 +58,8 @@ namespace Pulumi.Oci.Database.Outputs
         private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult(
             string availabilityDomain,
 
+            string externalLocationZone,
+
             int lagTimeInSeconds,
 
             string lifecycleDetails,
@@ -71,6 +77,7 @@ namespace Pulumi.Oci.Database.Outputs
             string timeMaintenanceEnd)
         {
             AvailabilityDomain = availabilityDomain;
+            ExternalLocationZone = externalLocationZone;
             LagTimeInSeconds = lagTimeInSeconds;
             LifecycleDetails = lifecycleDetails;
             MaintenanceTargetComponent = maintenanceTargetComponent;

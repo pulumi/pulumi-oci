@@ -149,6 +149,8 @@ type AutonomousDatabase struct {
 	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayOutput `pulumi:"encryptionKeyHistoryEntries"`
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput `pulumi:"encryptionKeyLocationDetails"`
+	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+	ExternalLocationZone pulumi.StringOutput `pulumi:"externalLocationZone"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntOutput `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -592,6 +594,8 @@ type autonomousDatabaseState struct {
 	EncryptionKeyHistoryEntries []AutonomousDatabaseEncryptionKeyHistoryEntry `pulumi:"encryptionKeyHistoryEntries"`
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails []AutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
+	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+	ExternalLocationZone *string `pulumi:"externalLocationZone"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds *int `pulumi:"failedDataRecoveryInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -993,6 +997,8 @@ type AutonomousDatabaseState struct {
 	EncryptionKeyHistoryEntries AutonomousDatabaseEncryptionKeyHistoryEntryArrayInput
 	// Types of providers supported for managing database encryption keys
 	EncryptionKeyLocationDetails AutonomousDatabaseEncryptionKeyLocationDetailArrayInput
+	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+	ExternalLocationZone pulumi.StringPtrInput
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2164,6 +2170,11 @@ func (o AutonomousDatabaseOutput) EncryptionKeyLocationDetails() AutonomousDatab
 	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput {
 		return v.EncryptionKeyLocationDetails
 	}).(AutonomousDatabaseEncryptionKeyLocationDetailArrayOutput)
+}
+
+// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+func (o AutonomousDatabaseOutput) ExternalLocationZone() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.ExternalLocationZone }).(pulumi.StringOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.

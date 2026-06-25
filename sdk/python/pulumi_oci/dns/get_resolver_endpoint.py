@@ -26,16 +26,22 @@ class GetResolverEndpointResult:
     """
     A collection of values returned by getResolverEndpoint.
     """
-    def __init__(__self__, compartment_id=None, endpoint_type=None, forwarding_address=None, id=None, is_forwarding=None, is_listening=None, listening_address=None, name=None, nsg_ids=None, resolver_endpoint_name=None, resolver_id=None, scope=None, self=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, endpoint_type=None, forwarding_address=None, freeform_tags=None, id=None, is_forwarding=None, is_listening=None, listening_address=None, name=None, nsg_ids=None, pe_id=None, resolver_endpoint_name=None, resolver_id=None, scope=None, security_attributes=None, self=None, state=None, subnet_id=None, time_created=None, time_updated=None, vnic_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if endpoint_type and not isinstance(endpoint_type, str):
             raise TypeError("Expected argument 'endpoint_type' to be a str")
         pulumi.set(__self__, "endpoint_type", endpoint_type)
         if forwarding_address and not isinstance(forwarding_address, str):
             raise TypeError("Expected argument 'forwarding_address' to be a str")
         pulumi.set(__self__, "forwarding_address", forwarding_address)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -54,6 +60,9 @@ class GetResolverEndpointResult:
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if pe_id and not isinstance(pe_id, str):
+            raise TypeError("Expected argument 'pe_id' to be a str")
+        pulumi.set(__self__, "pe_id", pe_id)
         if resolver_endpoint_name and not isinstance(resolver_endpoint_name, str):
             raise TypeError("Expected argument 'resolver_endpoint_name' to be a str")
         pulumi.set(__self__, "resolver_endpoint_name", resolver_endpoint_name)
@@ -63,6 +72,9 @@ class GetResolverEndpointResult:
         if scope and not isinstance(scope, str):
             raise TypeError("Expected argument 'scope' to be a str")
         pulumi.set(__self__, "scope", scope)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if self and not isinstance(self, str):
             raise TypeError("Expected argument 'self' to be a str")
         pulumi.set(__self__, "self", self)
@@ -78,6 +90,9 @@ class GetResolverEndpointResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if vnic_id and not isinstance(vnic_id, str):
+            raise TypeError("Expected argument 'vnic_id' to be a str")
+        pulumi.set(__self__, "vnic_id", vnic_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -86,6 +101,14 @@ class GetResolverEndpointResult:
         The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
 
     @_builtins.property
     @pulumi.getter(name="endpointType")
@@ -104,8 +127,19 @@ class GetResolverEndpointResult:
         return pulumi.get(self, "forwarding_address")
 
     @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
+        """
+        The Terraform ID of the resolver endpoint.
+        """
         return pulumi.get(self, "id")
 
     @_builtins.property
@@ -149,6 +183,14 @@ class GetResolverEndpointResult:
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
+    @pulumi.getter(name="peId")
+    def pe_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "pe_id")
+
+    @_builtins.property
     @pulumi.getter(name="resolverEndpointName")
     def resolver_endpoint_name(self) -> _builtins.str:
         return pulumi.get(self, "resolver_endpoint_name")
@@ -156,12 +198,23 @@ class GetResolverEndpointResult:
     @_builtins.property
     @pulumi.getter(name="resolverId")
     def resolver_id(self) -> _builtins.str:
+        """
+        The OCID of the resolver.
+        """
         return pulumi.get(self, "resolver_id")
 
     @_builtins.property
     @pulumi.getter
     def scope(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -203,6 +256,14 @@ class GetResolverEndpointResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @_builtins.property
+    @pulumi.getter(name="vnicId")
+    def vnic_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        """
+        return pulumi.get(self, "vnic_id")
+
 
 class AwaitableGetResolverEndpointResult(GetResolverEndpointResult):
     # pylint: disable=using-constant-test
@@ -211,22 +272,27 @@ class AwaitableGetResolverEndpointResult(GetResolverEndpointResult):
             yield self
         return GetResolverEndpointResult(
             compartment_id=self.compartment_id,
+            defined_tags=self.defined_tags,
             endpoint_type=self.endpoint_type,
             forwarding_address=self.forwarding_address,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             is_forwarding=self.is_forwarding,
             is_listening=self.is_listening,
             listening_address=self.listening_address,
             name=self.name,
             nsg_ids=self.nsg_ids,
+            pe_id=self.pe_id,
             resolver_endpoint_name=self.resolver_endpoint_name,
             resolver_id=self.resolver_id,
             scope=self.scope,
+            security_attributes=self.security_attributes,
             self=self.self,
             state=self.state,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            vnic_id=self.vnic_id)
 
 
 def get_resolver_endpoint(resolver_endpoint_name: Optional[_builtins.str] = None,
@@ -266,22 +332,27 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[_builtins.str] = None
 
     return AwaitableGetResolverEndpointResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         endpoint_type=pulumi.get(__ret__, 'endpoint_type'),
         forwarding_address=pulumi.get(__ret__, 'forwarding_address'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_forwarding=pulumi.get(__ret__, 'is_forwarding'),
         is_listening=pulumi.get(__ret__, 'is_listening'),
         listening_address=pulumi.get(__ret__, 'listening_address'),
         name=pulumi.get(__ret__, 'name'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        pe_id=pulumi.get(__ret__, 'pe_id'),
         resolver_endpoint_name=pulumi.get(__ret__, 'resolver_endpoint_name'),
         resolver_id=pulumi.get(__ret__, 'resolver_id'),
         scope=pulumi.get(__ret__, 'scope'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         self=pulumi.get(__ret__, 'self'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        vnic_id=pulumi.get(__ret__, 'vnic_id'))
 def get_resolver_endpoint_output(resolver_endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
                                  resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
                                  scope: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -318,19 +389,24 @@ def get_resolver_endpoint_output(resolver_endpoint_name: pulumi.Input[Optional[_
     __ret__ = pulumi.runtime.invoke_output('oci:Dns/getResolverEndpoint:getResolverEndpoint', __args__, opts=opts, typ=GetResolverEndpointResult)
     return __ret__.apply(lambda __response__: GetResolverEndpointResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
         endpoint_type=pulumi.get(__response__, 'endpoint_type'),
         forwarding_address=pulumi.get(__response__, 'forwarding_address'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_forwarding=pulumi.get(__response__, 'is_forwarding'),
         is_listening=pulumi.get(__response__, 'is_listening'),
         listening_address=pulumi.get(__response__, 'listening_address'),
         name=pulumi.get(__response__, 'name'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        pe_id=pulumi.get(__response__, 'pe_id'),
         resolver_endpoint_name=pulumi.get(__response__, 'resolver_endpoint_name'),
         resolver_id=pulumi.get(__response__, 'resolver_id'),
         scope=pulumi.get(__response__, 'scope'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         self=pulumi.get(__response__, 'self'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        vnic_id=pulumi.get(__response__, 'vnic_id')))

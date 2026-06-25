@@ -32,6 +32,21 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
     }
 
     /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    @Import(name="externalLocationZone")
+    private @Nullable Output<String> externalLocationZone;
+
+    /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    public Optional<Output<String>> externalLocationZone() {
+        return Optional.ofNullable(this.externalLocationZone);
+    }
+
+    /**
      * The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -155,6 +170,7 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
 
     private AutonomousDatabaseLocalStandbyDbArgs(AutonomousDatabaseLocalStandbyDbArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.externalLocationZone = $.externalLocationZone;
         this.lagTimeInSeconds = $.lagTimeInSeconds;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceTargetComponent = $.maintenanceTargetComponent;
@@ -202,6 +218,27 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
          */
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
+        }
+
+        /**
+         * @param externalLocationZone The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocationZone(@Nullable Output<String> externalLocationZone) {
+            $.externalLocationZone = externalLocationZone;
+            return this;
+        }
+
+        /**
+         * @param externalLocationZone The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalLocationZone(String externalLocationZone) {
+            return externalLocationZone(Output.of(externalLocationZone));
         }
 
         /**

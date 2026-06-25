@@ -335,6 +335,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousDatabaseEncryptionKeyLocationDetail>> EncryptionKeyLocationDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        /// </summary>
+        [Output("externalLocationZone")]
+        public Output<string> ExternalLocationZone { get; private set; } = null!;
+
+        /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.
         /// </summary>
         [Output("failedDataRecoveryInSeconds")]
@@ -2209,6 +2215,12 @@ namespace Pulumi.Oci.Database
             get => _encryptionKeyLocationDetails ?? (_encryptionKeyLocationDetails = new InputList<Inputs.AutonomousDatabaseEncryptionKeyLocationDetailGetArgs>());
             set => _encryptionKeyLocationDetails = value;
         }
+
+        /// <summary>
+        /// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        /// </summary>
+        [Input("externalLocationZone")]
+        public Input<string>? ExternalLocationZone { get; set; }
 
         /// <summary>
         /// Indicates the number of seconds of data loss for a Data Guard failover.

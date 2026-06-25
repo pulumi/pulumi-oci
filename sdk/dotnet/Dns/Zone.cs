@@ -145,11 +145,14 @@ namespace Pulumi.Oci.Dns
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// The authoritative nameservers for the zone.
+        /// </summary>
         [Output("nameservers")]
         public Output<ImmutableArray<Outputs.ZoneNameserver>> Nameservers { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         /// </summary>
         [Output("resolutionMode")]
         public Output<string> ResolutionMode { get; private set; } = null!;
@@ -343,7 +346,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         /// </summary>
         [Input("resolutionMode")]
         public Input<string>? ResolutionMode { get; set; }
@@ -482,6 +485,10 @@ namespace Pulumi.Oci.Dns
 
         [Input("nameservers")]
         private InputList<Inputs.ZoneNameserverGetArgs>? _nameservers;
+
+        /// <summary>
+        /// The authoritative nameservers for the zone.
+        /// </summary>
         public InputList<Inputs.ZoneNameserverGetArgs> Nameservers
         {
             get => _nameservers ?? (_nameservers = new InputList<Inputs.ZoneNameserverGetArgs>());
@@ -489,7 +496,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         /// </summary>
         [Input("resolutionMode")]
         public Input<string>? ResolutionMode { get; set; }

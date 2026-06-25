@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResolversFilter {
+    /**
+     * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetResolversFilter() {}
+    /**
+     * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     * 
+     */
     public String name() {
         return this.name;
     }

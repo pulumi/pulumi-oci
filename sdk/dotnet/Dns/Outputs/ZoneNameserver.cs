@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Dns.Outputs
     [OutputType]
     public sealed class ZoneNameserver
     {
+        /// <summary>
+        /// The hostname of the nameserver.
+        /// </summary>
         public readonly string? Hostname;
 
         [OutputConstructor]

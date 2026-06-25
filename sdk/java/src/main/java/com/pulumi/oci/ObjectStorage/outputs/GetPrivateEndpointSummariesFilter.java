@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateEndpointSummariesFilter {
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetPrivateEndpointSummariesFilter() {}
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     public String name() {
         return this.name;
     }

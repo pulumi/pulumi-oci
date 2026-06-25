@@ -1638,6 +1638,9 @@ class GetIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
                  subnet_id: _builtins.str):
         """
         :param _builtins.bool is_all_outbound_traffic_private: Indicates if all traffic should go through configured outbound connection
+        :param Sequence[_builtins.str] nsg_ids: One or more Network security group Ids. This is an optional argument.
+        :param _builtins.str outbound_connection_type: The type of Outbound Connection.
+        :param _builtins.str subnet_id: Customer Private Network VCN Subnet OCID. This is a required argument.
         """
         pulumi.set(__self__, "is_all_outbound_traffic_private", is_all_outbound_traffic_private)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -1655,16 +1658,25 @@ class GetIntegrationInstancePrivateEndpointOutboundConnectionResult(dict):
     @_builtins.property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        One or more Network security group Ids. This is an optional argument.
+        """
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
     @pulumi.getter(name="outboundConnectionType")
     def outbound_connection_type(self) -> _builtins.str:
+        """
+        The type of Outbound Connection.
+        """
         return pulumi.get(self, "outbound_connection_type")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
+        """
+        Customer Private Network VCN Subnet OCID. This is a required argument.
+        """
         return pulumi.get(self, "subnet_id")
 
 
@@ -1699,6 +1711,7 @@ class GetIntegrationInstancesFilterResult(dict):
 class GetIntegrationInstancesIntegrationInstanceResult(dict):
     def __init__(__self__, *,
                  alternate_custom_endpoints: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAlternateCustomEndpointResult'],
+                 attachment_type: _builtins.str,
                  attachments: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceAttachmentResult'],
                  compartment_id: _builtins.str,
                  consumption_model: _builtins.str,
@@ -1729,6 +1742,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
                  message_packs: _builtins.int,
                  network_endpoint_details: Sequence['outputs.GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult'],
                  private_endpoint_outbound_connections: Sequence['outputs.GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionResult'],
+                 process_automation_log_group_id: _builtins.str,
                  security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
                  state: _builtins.str,
@@ -1760,6 +1774,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param _builtins.int message_packs: The number of configured message packs (if any)
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param _builtins.str process_automation_log_group_id: OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
         :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"
                "oracle-zpr.sensitivity.mode" = "enforce"
@@ -1772,6 +1787,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param _builtins.str time_updated: The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        pulumi.set(__self__, "attachment_type", attachment_type)
         pulumi.set(__self__, "attachments", attachments)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "consumption_model", consumption_model)
@@ -1802,6 +1818,7 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         pulumi.set(__self__, "message_packs", message_packs)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
+        pulumi.set(__self__, "process_automation_log_group_id", process_automation_log_group_id)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
@@ -1817,6 +1834,11 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         A list of alternate custom endpoints used for the integration instance URL.
         """
         return pulumi.get(self, "alternate_custom_endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentType")
+    def attachment_type(self) -> _builtins.str:
+        return pulumi.get(self, "attachment_type")
 
     @_builtins.property
     @pulumi.getter
@@ -2033,6 +2055,14 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         Base representation for Outbound Connection (Reverse Connection).
         """
         return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="processAutomationLogGroupId")
+    def process_automation_log_group_id(self) -> _builtins.str:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        """
+        return pulumi.get(self, "process_automation_log_group_id")
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")

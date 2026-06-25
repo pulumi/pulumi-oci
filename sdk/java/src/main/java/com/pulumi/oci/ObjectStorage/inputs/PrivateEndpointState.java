@@ -18,93 +18,197 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
 
     public static final PrivateEndpointState Empty = new PrivateEndpointState();
 
+    /**
+     * (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+     * 
+     */
     @Import(name="accessTargets")
     private @Nullable Output<List<PrivateEndpointAccessTargetArgs>> accessTargets;
 
+    /**
+     * @return (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+     * 
+     */
     public Optional<Output<List<PrivateEndpointAccessTargetArgs>>> accessTargets() {
         return Optional.ofNullable(this.accessTargets);
     }
 
+    /**
+     * A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+     * 
+     */
     @Import(name="additionalPrefixes")
     private @Nullable Output<List<String>> additionalPrefixes;
 
+    /**
+     * @return A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+     * 
+     */
     public Optional<Output<List<String>>> additionalPrefixes() {
         return Optional.ofNullable(this.additionalPrefixes);
     }
 
+    /**
+     * The ID of the compartment in which to create the private endpoint.
+     * 
+     */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
+    /**
+     * @return The ID of the compartment in which to create the private endpoint.
+     * 
+     */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     @Import(name="createdBy")
     private @Nullable Output<String> createdBy;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     public Optional<Output<String>> createdBy() {
         return Optional.ofNullable(this.createdBy);
     }
 
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
+    /**
+     * The entity tag for the Private Endpoint.
+     * 
+     */
     @Import(name="etag")
     private @Nullable Output<String> etag;
 
+    /**
+     * @return The entity tag for the Private Endpoint.
+     * 
+     */
     public Optional<Output<String>> etag() {
         return Optional.ofNullable(this.etag);
     }
 
+    /**
+     * The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     @Import(name="fqdns")
     private @Nullable Output<Map<String,Map<String,Map<String,String>>>> fqdns;
 
+    /**
+     * @return The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     public Optional<Output<Map<String,Map<String,Map<String,String>>>>> fqdns() {
         return Optional.ofNullable(this.fqdns);
     }
 
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+     * 
+     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
+    /**
+     * @return The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+     * 
+     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public Optional<Output<String>> namespace() {
         return Optional.ofNullable(this.namespace);
     }
 
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+     * 
+     */
     @Import(name="nsgIds")
     private @Nullable Output<List<String>> nsgIds;
 
+    /**
+     * @return A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+     * 
+     */
     public Optional<Output<List<String>>> nsgIds() {
         return Optional.ofNullable(this.nsgIds);
     }
 
+    /**
+     * The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+     * 
+     */
     @Import(name="prefix")
     private @Nullable Output<String> prefix;
 
+    /**
+     * @return The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+     * 
+     */
     public Optional<Output<String>> prefix() {
         return Optional.ofNullable(this.prefix);
     }
 
+    /**
+     * The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+     * 
+     */
     @Import(name="privateEndpointIp")
     private @Nullable Output<String> privateEndpointIp;
 
+    /**
+     * @return The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+     * 
+     */
     public Optional<Output<String>> privateEndpointIp() {
         return Optional.ofNullable(this.privateEndpointIp);
     }
@@ -116,30 +220,68 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.securityAttributes);
     }
 
+    /**
+     * The lifecycle state of the private endpoint resource.
+     * 
+     */
     @Import(name="state")
     private @Nullable Output<String> state;
 
+    /**
+     * @return The lifecycle state of the private endpoint resource.
+     * 
+     */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The ID of the subnet that the private endpoint VNIC will be created and reside in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
+    /**
+     * @return The ID of the subnet that the private endpoint VNIC will be created and reside in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
+    /**
+     * @return The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public Optional<Output<String>> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
 
+    /**
+     * The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     @Import(name="timeModified")
     private @Nullable Output<String> timeModified;
 
+    /**
+     * @return The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public Optional<Output<String>> timeModified() {
         return Optional.ofNullable(this.timeModified);
     }
@@ -185,131 +327,305 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
             $ = new PrivateEndpointState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessTargets (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessTargets(@Nullable Output<List<PrivateEndpointAccessTargetArgs>> accessTargets) {
             $.accessTargets = accessTargets;
             return this;
         }
 
+        /**
+         * @param accessTargets (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessTargets(List<PrivateEndpointAccessTargetArgs> accessTargets) {
             return accessTargets(Output.of(accessTargets));
         }
 
+        /**
+         * @param accessTargets (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessTargets(PrivateEndpointAccessTargetArgs... accessTargets) {
             return accessTargets(List.of(accessTargets));
         }
 
+        /**
+         * @param additionalPrefixes A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalPrefixes(@Nullable Output<List<String>> additionalPrefixes) {
             $.additionalPrefixes = additionalPrefixes;
             return this;
         }
 
+        /**
+         * @param additionalPrefixes A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalPrefixes(List<String> additionalPrefixes) {
             return additionalPrefixes(Output.of(additionalPrefixes));
         }
 
+        /**
+         * @param additionalPrefixes A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+         * 
+         * @return builder
+         * 
+         */
         public Builder additionalPrefixes(String... additionalPrefixes) {
             return additionalPrefixes(List.of(additionalPrefixes));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to create the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to create the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
 
+        /**
+         * @param createdBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createdBy(@Nullable Output<String> createdBy) {
             $.createdBy = createdBy;
             return this;
         }
 
+        /**
+         * @param createdBy The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder createdBy(String createdBy) {
             return createdBy(Output.of(createdBy));
         }
 
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
 
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
+        /**
+         * @param etag The entity tag for the Private Endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder etag(@Nullable Output<String> etag) {
             $.etag = etag;
             return this;
         }
 
+        /**
+         * @param etag The entity tag for the Private Endpoint.
+         * 
+         * @return builder
+         * 
+         */
         public Builder etag(String etag) {
             return etag(Output.of(etag));
         }
 
+        /**
+         * @param fqdns The object representing FQDN details formed using prefix and additionalPrefixes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fqdns(@Nullable Output<Map<String,Map<String,Map<String,String>>>> fqdns) {
             $.fqdns = fqdns;
             return this;
         }
 
+        /**
+         * @param fqdns The object representing FQDN details formed using prefix and additionalPrefixes.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fqdns(Map<String,Map<String,Map<String,String>>> fqdns) {
             return fqdns(Output.of(fqdns));
         }
 
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
 
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+         * 
+         * @return builder
+         * 
+         */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param name The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(@Nullable Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
         }
 
+        /**
+         * @param nsgIds A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
             $.nsgIds = nsgIds;
             return this;
         }
 
+        /**
+         * @param nsgIds A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(List<String> nsgIds) {
             return nsgIds(Output.of(nsgIds));
         }
 
+        /**
+         * @param nsgIds A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+         * 
+         * @return builder
+         * 
+         */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
         }
 
+        /**
+         * @param prefix The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefix(@Nullable Output<String> prefix) {
             $.prefix = prefix;
             return this;
         }
 
+        /**
+         * @param prefix The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefix(String prefix) {
             return prefix(Output.of(prefix));
         }
 
+        /**
+         * @param privateEndpointIp The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateEndpointIp(@Nullable Output<String> privateEndpointIp) {
             $.privateEndpointIp = privateEndpointIp;
             return this;
         }
 
+        /**
+         * @param privateEndpointIp The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateEndpointIp(String privateEndpointIp) {
             return privateEndpointIp(Output.of(privateEndpointIp));
         }
@@ -323,38 +639,92 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
             return securityAttributes(Output.of(securityAttributes));
         }
 
+        /**
+         * @param state The lifecycle state of the private endpoint resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
             return this;
         }
 
+        /**
+         * @param state The lifecycle state of the private endpoint resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder state(String state) {
             return state(Output.of(state));
         }
 
+        /**
+         * @param subnetId The ID of the subnet that the private endpoint VNIC will be created and reside in.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
         }
 
+        /**
+         * @param subnetId The ID of the subnet that the private endpoint VNIC will be created and reside in.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param timeCreated The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeCreated(@Nullable Output<String> timeCreated) {
             $.timeCreated = timeCreated;
             return this;
         }
 
+        /**
+         * @param timeCreated The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
         }
 
+        /**
+         * @param timeModified The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeModified(@Nullable Output<String> timeModified) {
             $.timeModified = timeModified;
             return this;
         }
 
+        /**
+         * @param timeModified The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeModified(String timeModified) {
             return timeModified(Output.of(timeModified));
         }

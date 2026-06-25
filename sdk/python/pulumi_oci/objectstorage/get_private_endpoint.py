@@ -99,11 +99,17 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The compartment ID in which the private endpoint resource exists in.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
@@ -114,11 +120,17 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter
     def etag(self) -> _builtins.str:
+        """
+        The entity tag for the Private Endpoint.
+        """
         return pulumi.get(self, "etag")
 
     @_builtins.property
     @pulumi.getter
     def fqdns(self) -> Mapping[str, Mapping[str, Mapping[str, _builtins.str]]]:
+        """
+        The object representing FQDN details formed using prefix and additionalPrefixes.
+        """
         return pulumi.get(self, "fqdns")
 
     @_builtins.property
@@ -134,11 +146,17 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace in which the private endpoint resides.
+        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
@@ -149,6 +167,9 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter
     def prefix(self) -> _builtins.str:
+        """
+        The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+        """
         return pulumi.get(self, "prefix")
 
     @_builtins.property
@@ -164,6 +185,9 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the private endpoint resource.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
@@ -174,11 +198,17 @@ class GetPrivateEndpointResult:
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> _builtins.str:
+        """
+        The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_modified")
 
 
@@ -213,7 +243,23 @@ def get_private_endpoint(name: Optional[_builtins.str] = None,
                          namespace: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointResult:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+
+    Gets the current representation of the given private endpoint in the given Object Storage namespace.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_pe = oci.objectstorage.get_private_endpoint(name=pe_name,
+        namespace=namespace)
+    ```
+
+
+    :param _builtins.str name: The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+    :param _builtins.str namespace: The Object Storage namespace used for the request.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -245,7 +291,23 @@ def get_private_endpoint_output(name: pulumi.Input[Optional[_builtins.str]] = No
                                 namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointResult]:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+
+    Gets the current representation of the given private endpoint in the given Object Storage namespace.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_pe = oci.objectstorage.get_private_endpoint(name=pe_name,
+        namespace=namespace)
+    ```
+
+
+    :param _builtins.str name: The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+    :param _builtins.str namespace: The Object Storage namespace used for the request.
     """
     __args__ = dict()
     __args__['name'] = name

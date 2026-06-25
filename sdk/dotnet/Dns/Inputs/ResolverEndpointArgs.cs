@@ -18,6 +18,20 @@ namespace Pulumi.Oci.Dns.Inputs
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Operations": {"CostCenter": "42"}}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The type of resolver endpoint. VNIC is currently the only supported type.
         /// </summary>
@@ -29,6 +43,26 @@ namespace Pulumi.Oci.Dns.Inputs
         /// </summary>
         [Input("forwardingAddress")]
         public Input<string>? ForwardingAddress { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// 
+        /// **Example:** `{"Department": "Finance"}`
+        /// </summary>
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
+
+        /// <summary>
+        /// The OCID of the resolver.
+        /// </summary>
+        [Input("id")]
+        public Input<string>? Id { get; set; }
 
         /// <summary>
         /// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -53,6 +87,30 @@ namespace Pulumi.Oci.Dns.Inputs
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+        /// </summary>
+        [Input("peId")]
+        public Input<string>? PeId { get; set; }
+
+        /// <summary>
+        /// The OCID of the target resolver.
+        /// </summary>
+        [Input("resolverId")]
+        public Input<string>? ResolverId { get; set; }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
 
         /// <summary>
         /// The canonical absolute URL of the resource.
@@ -83,6 +141,12 @@ namespace Pulumi.Oci.Dns.Inputs
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+        /// </summary>
+        [Input("vnicId")]
+        public Input<string>? VnicId { get; set; }
 
         public ResolverEndpointArgs()
         {

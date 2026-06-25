@@ -12,27 +12,98 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+// It enables private network access from a specified subnet to Object Storage without traversing the public internet.
+//
+// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage/private_endpoint
+//
+// Creates an Object Storage Private Endpoint in a specified subnet, with access scoping for namespace, compartment, and bucket.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/objectstorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := objectstorage.NewPrivateEndpoint(ctx, "pe", &objectstorage.PrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentOcid),
+//				Namespace:     pulumi.Any(namespaceName),
+//				Name:          pulumi.Any(peName),
+//				SubnetId:      pulumi.Any(testSubnet1.Id),
+//				Prefix:        pulumi.Any(dnsPrefix),
+//				AccessTargets: objectstorage.PrivateEndpointAccessTargetArray{
+//					&objectstorage.PrivateEndpointAccessTargetArgs{
+//						Namespace:     pulumi.String("*"),
+//						CompartmentId: pulumi.String("*"),
+//						Bucket:        pulumi.String("*"),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Private endpoints can be imported using the `namespaceName` and the `name` of the private endpoint.
+//
+// ```sh
+// $ pulumi import oci:ObjectStorage/privateEndpoint:PrivateEndpoint test_pe "n/{namespaceName}/pe/{peName}"
+// ```
 type PrivateEndpoint struct {
 	pulumi.CustomResourceState
 
-	AccessTargets      PrivateEndpointAccessTargetArrayOutput `pulumi:"accessTargets"`
-	AdditionalPrefixes pulumi.StringArrayOutput               `pulumi:"additionalPrefixes"`
-	CompartmentId      pulumi.StringOutput                    `pulumi:"compartmentId"`
-	CreatedBy          pulumi.StringOutput                    `pulumi:"createdBy"`
-	DefinedTags        pulumi.StringMapOutput                 `pulumi:"definedTags"`
-	Etag               pulumi.StringOutput                    `pulumi:"etag"`
-	Fqdns              pulumi.StringMapMapMapOutput           `pulumi:"fqdns"`
-	FreeformTags       pulumi.StringMapOutput                 `pulumi:"freeformTags"`
-	Name               pulumi.StringOutput                    `pulumi:"name"`
-	Namespace          pulumi.StringOutput                    `pulumi:"namespace"`
-	NsgIds             pulumi.StringArrayOutput               `pulumi:"nsgIds"`
-	Prefix             pulumi.StringOutput                    `pulumi:"prefix"`
-	PrivateEndpointIp  pulumi.StringOutput                    `pulumi:"privateEndpointIp"`
-	SecurityAttributes pulumi.StringMapOutput                 `pulumi:"securityAttributes"`
-	State              pulumi.StringOutput                    `pulumi:"state"`
-	SubnetId           pulumi.StringOutput                    `pulumi:"subnetId"`
-	TimeCreated        pulumi.StringOutput                    `pulumi:"timeCreated"`
-	TimeModified       pulumi.StringOutput                    `pulumi:"timeModified"`
+	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+	AccessTargets PrivateEndpointAccessTargetArrayOutput `pulumi:"accessTargets"`
+	// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+	AdditionalPrefixes pulumi.StringArrayOutput `pulumi:"additionalPrefixes"`
+	// The ID of the compartment in which to create the private endpoint.
+	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// The entity tag for the Private Endpoint.
+	Etag pulumi.StringOutput `pulumi:"etag"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns pulumi.StringMapMapMapOutput `pulumi:"fqdns"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+	Name pulumi.StringOutput `pulumi:"name"`
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringOutput `pulumi:"namespace"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+	Prefix pulumi.StringOutput `pulumi:"prefix"`
+	// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+	PrivateEndpointIp  pulumi.StringOutput    `pulumi:"privateEndpointIp"`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State pulumi.StringOutput `pulumi:"state"`
+	// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified pulumi.StringOutput `pulumi:"timeModified"`
 }
 
 // NewPrivateEndpoint registers a new resource with the given unique name, arguments, and options.
@@ -80,45 +151,85 @@ func GetPrivateEndpoint(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PrivateEndpoint resources.
 type privateEndpointState struct {
-	AccessTargets      []PrivateEndpointAccessTarget           `pulumi:"accessTargets"`
-	AdditionalPrefixes []string                                `pulumi:"additionalPrefixes"`
-	CompartmentId      *string                                 `pulumi:"compartmentId"`
-	CreatedBy          *string                                 `pulumi:"createdBy"`
-	DefinedTags        map[string]string                       `pulumi:"definedTags"`
-	Etag               *string                                 `pulumi:"etag"`
-	Fqdns              map[string]map[string]map[string]string `pulumi:"fqdns"`
-	FreeformTags       map[string]string                       `pulumi:"freeformTags"`
-	Name               *string                                 `pulumi:"name"`
-	Namespace          *string                                 `pulumi:"namespace"`
-	NsgIds             []string                                `pulumi:"nsgIds"`
-	Prefix             *string                                 `pulumi:"prefix"`
-	PrivateEndpointIp  *string                                 `pulumi:"privateEndpointIp"`
-	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
-	State              *string                                 `pulumi:"state"`
-	SubnetId           *string                                 `pulumi:"subnetId"`
-	TimeCreated        *string                                 `pulumi:"timeCreated"`
-	TimeModified       *string                                 `pulumi:"timeModified"`
+	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+	AccessTargets []PrivateEndpointAccessTarget `pulumi:"accessTargets"`
+	// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+	AdditionalPrefixes []string `pulumi:"additionalPrefixes"`
+	// The ID of the compartment in which to create the private endpoint.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy *string `pulumi:"createdBy"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The entity tag for the Private Endpoint.
+	Etag *string `pulumi:"etag"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns map[string]map[string]map[string]string `pulumi:"fqdns"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+	Name *string `pulumi:"name"`
+	// The Object Storage namespace used for the request.
+	Namespace *string `pulumi:"namespace"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+	NsgIds []string `pulumi:"nsgIds"`
+	// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+	Prefix *string `pulumi:"prefix"`
+	// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+	PrivateEndpointIp  *string           `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State *string `pulumi:"state"`
+	// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubnetId *string `pulumi:"subnetId"`
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified *string `pulumi:"timeModified"`
 }
 
 type PrivateEndpointState struct {
-	AccessTargets      PrivateEndpointAccessTargetArrayInput
+	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+	AccessTargets PrivateEndpointAccessTargetArrayInput
+	// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
 	AdditionalPrefixes pulumi.StringArrayInput
-	CompartmentId      pulumi.StringPtrInput
-	CreatedBy          pulumi.StringPtrInput
-	DefinedTags        pulumi.StringMapInput
-	Etag               pulumi.StringPtrInput
-	Fqdns              pulumi.StringMapMapMapInput
-	FreeformTags       pulumi.StringMapInput
-	Name               pulumi.StringPtrInput
-	Namespace          pulumi.StringPtrInput
-	NsgIds             pulumi.StringArrayInput
-	Prefix             pulumi.StringPtrInput
+	// The ID of the compartment in which to create the private endpoint.
+	CompartmentId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy pulumi.StringPtrInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput
+	// The entity tag for the Private Endpoint.
+	Etag pulumi.StringPtrInput
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns pulumi.StringMapMapMapInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput
+	// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+	Name pulumi.StringPtrInput
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringPtrInput
+	// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+	NsgIds pulumi.StringArrayInput
+	// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+	Prefix pulumi.StringPtrInput
+	// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
 	PrivateEndpointIp  pulumi.StringPtrInput
 	SecurityAttributes pulumi.StringMapInput
-	State              pulumi.StringPtrInput
-	SubnetId           pulumi.StringPtrInput
-	TimeCreated        pulumi.StringPtrInput
-	TimeModified       pulumi.StringPtrInput
+	// The lifecycle state of the private endpoint resource.
+	State pulumi.StringPtrInput
+	// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubnetId pulumi.StringPtrInput
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated pulumi.StringPtrInput
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified pulumi.StringPtrInput
 }
 
 func (PrivateEndpointState) ElementType() reflect.Type {
@@ -126,38 +237,70 @@ func (PrivateEndpointState) ElementType() reflect.Type {
 }
 
 type privateEndpointArgs struct {
-	AccessTargets      []PrivateEndpointAccessTarget           `pulumi:"accessTargets"`
-	AdditionalPrefixes []string                                `pulumi:"additionalPrefixes"`
-	CompartmentId      string                                  `pulumi:"compartmentId"`
-	DefinedTags        map[string]string                       `pulumi:"definedTags"`
-	Fqdns              map[string]map[string]map[string]string `pulumi:"fqdns"`
-	FreeformTags       map[string]string                       `pulumi:"freeformTags"`
-	Name               *string                                 `pulumi:"name"`
-	Namespace          string                                  `pulumi:"namespace"`
-	NsgIds             []string                                `pulumi:"nsgIds"`
-	Prefix             string                                  `pulumi:"prefix"`
-	PrivateEndpointIp  *string                                 `pulumi:"privateEndpointIp"`
-	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
-	State              *string                                 `pulumi:"state"`
-	SubnetId           string                                  `pulumi:"subnetId"`
+	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+	AccessTargets []PrivateEndpointAccessTarget `pulumi:"accessTargets"`
+	// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+	AdditionalPrefixes []string `pulumi:"additionalPrefixes"`
+	// The ID of the compartment in which to create the private endpoint.
+	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns map[string]map[string]map[string]string `pulumi:"fqdns"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+	Name *string `pulumi:"name"`
+	// The Object Storage namespace used for the request.
+	Namespace string `pulumi:"namespace"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+	NsgIds []string `pulumi:"nsgIds"`
+	// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+	Prefix string `pulumi:"prefix"`
+	// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+	PrivateEndpointIp  *string           `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State *string `pulumi:"state"`
+	// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // The set of arguments for constructing a PrivateEndpoint resource.
 type PrivateEndpointArgs struct {
-	AccessTargets      PrivateEndpointAccessTargetArrayInput
+	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+	AccessTargets PrivateEndpointAccessTargetArrayInput
+	// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
 	AdditionalPrefixes pulumi.StringArrayInput
-	CompartmentId      pulumi.StringInput
-	DefinedTags        pulumi.StringMapInput
-	Fqdns              pulumi.StringMapMapMapInput
-	FreeformTags       pulumi.StringMapInput
-	Name               pulumi.StringPtrInput
-	Namespace          pulumi.StringInput
-	NsgIds             pulumi.StringArrayInput
-	Prefix             pulumi.StringInput
+	// The ID of the compartment in which to create the private endpoint.
+	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns pulumi.StringMapMapMapInput
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput
+	// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+	Name pulumi.StringPtrInput
+	// The Object Storage namespace used for the request.
+	Namespace pulumi.StringInput
+	// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+	NsgIds pulumi.StringArrayInput
+	// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+	Prefix pulumi.StringInput
+	// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
 	PrivateEndpointIp  pulumi.StringPtrInput
 	SecurityAttributes pulumi.StringMapInput
-	State              pulumi.StringPtrInput
-	SubnetId           pulumi.StringInput
+	// The lifecycle state of the private endpoint resource.
+	State pulumi.StringPtrInput
+	// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubnetId pulumi.StringInput
 }
 
 func (PrivateEndpointArgs) ElementType() reflect.Type {
@@ -247,54 +390,67 @@ func (o PrivateEndpointOutput) ToPrivateEndpointOutputWithContext(ctx context.Co
 	return o
 }
 
+// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
 func (o PrivateEndpointOutput) AccessTargets() PrivateEndpointAccessTargetArrayOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) PrivateEndpointAccessTargetArrayOutput { return v.AccessTargets }).(PrivateEndpointAccessTargetArrayOutput)
 }
 
+// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
 func (o PrivateEndpointOutput) AdditionalPrefixes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringArrayOutput { return v.AdditionalPrefixes }).(pulumi.StringArrayOutput)
 }
 
+// The ID of the compartment in which to create the private endpoint.
 func (o PrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
 func (o PrivateEndpointOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o PrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// The entity tag for the Private Endpoint.
 func (o PrivateEndpointOutput) Etag() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Etag }).(pulumi.StringOutput)
 }
 
+// The object representing FQDN details formed using prefix and additionalPrefixes.
 func (o PrivateEndpointOutput) Fqdns() pulumi.StringMapMapMapOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapMapMapOutput { return v.Fqdns }).(pulumi.StringMapMapMapOutput)
 }
 
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o PrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
 func (o PrivateEndpointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace used for the request.
 func (o PrivateEndpointOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
 }
 
+// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
 func (o PrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
 func (o PrivateEndpointOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.Prefix }).(pulumi.StringOutput)
 }
 
+// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
 func (o PrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointIp }).(pulumi.StringOutput)
 }
@@ -303,18 +459,25 @@ func (o PrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
+// The lifecycle state of the private endpoint resource.
 func (o PrivateEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// The ID of the subnet that the private endpoint VNIC will be created and reside in.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o PrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o PrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o PrivateEndpointOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.TimeModified }).(pulumi.StringOutput)
 }

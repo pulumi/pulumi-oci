@@ -29,6 +29,11 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
      */
     private @Nullable String fallbackRedirectPath;
     /**
+     * @return (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    private @Nullable String loginPath;
+    /**
      * @return (Updatable) The path to be used as logout.
      * 
      */
@@ -103,6 +108,13 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
      */
     public Optional<String> fallbackRedirectPath() {
         return Optional.ofNullable(this.fallbackRedirectPath);
+    }
+    /**
+     * @return (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    public Optional<String> loginPath() {
+        return Optional.ofNullable(this.loginPath);
     }
     /**
      * @return (Updatable) The path to be used as logout.
@@ -200,6 +212,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
     public static final class Builder {
         private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails clientDetails;
         private @Nullable String fallbackRedirectPath;
+        private @Nullable String loginPath;
         private @Nullable String logoutPath;
         private @Nullable Integer maxExpiryDurationInHours;
         private @Nullable String responseCode;
@@ -217,6 +230,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
     	      Objects.requireNonNull(defaults);
     	      this.clientDetails = defaults.clientDetails;
     	      this.fallbackRedirectPath = defaults.fallbackRedirectPath;
+    	      this.loginPath = defaults.loginPath;
     	      this.logoutPath = defaults.logoutPath;
     	      this.maxExpiryDurationInHours = defaults.maxExpiryDurationInHours;
     	      this.responseCode = defaults.responseCode;
@@ -241,6 +255,12 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         public Builder fallbackRedirectPath(@Nullable String fallbackRedirectPath) {
 
             this.fallbackRedirectPath = fallbackRedirectPath;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loginPath(@Nullable String loginPath) {
+
+            this.loginPath = loginPath;
             return this;
         }
         @CustomType.Setter
@@ -324,6 +344,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy();
             _resultValue.clientDetails = clientDetails;
             _resultValue.fallbackRedirectPath = fallbackRedirectPath;
+            _resultValue.loginPath = loginPath;
             _resultValue.logoutPath = logoutPath;
             _resultValue.maxExpiryDurationInHours = maxExpiryDurationInHours;
             _resultValue.responseCode = responseCode;

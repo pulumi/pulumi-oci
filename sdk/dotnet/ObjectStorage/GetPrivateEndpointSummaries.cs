@@ -11,12 +11,111 @@ namespace Pulumi.Oci.ObjectStorage
 {
     public static class GetPrivateEndpointSummaries
     {
+        /// <summary>
+        /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+        /// and does not contain fields like the user-defined metadata.
+        /// 
+        /// ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+        /// `opc-next-page` value with the `Page` request parameter.
+        /// 
+        /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPes = Oci.ObjectStorage.GetPrivateEndpointSummaries.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetPrivateEndpointSummariesResult> InvokeAsync(GetPrivateEndpointSummariesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointSummariesResult>("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args ?? new GetPrivateEndpointSummariesArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+        /// and does not contain fields like the user-defined metadata.
+        /// 
+        /// ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+        /// `opc-next-page` value with the `Page` request parameter.
+        /// 
+        /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPes = Oci.ObjectStorage.GetPrivateEndpointSummaries.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetPrivateEndpointSummariesResult> Invoke(GetPrivateEndpointSummariesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointSummariesResult>("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args ?? new GetPrivateEndpointSummariesInvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+        /// and does not contain fields like the user-defined metadata.
+        /// 
+        /// ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+        /// `opc-next-page` value with the `Page` request parameter.
+        /// 
+        /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPes = Oci.ObjectStorage.GetPrivateEndpointSummaries.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetPrivateEndpointSummariesResult> Invoke(GetPrivateEndpointSummariesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointSummariesResult>("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", args ?? new GetPrivateEndpointSummariesInvokeArgs(), options.WithDefaults());
     }
@@ -24,6 +123,9 @@ namespace Pulumi.Oci.ObjectStorage
 
     public sealed class GetPrivateEndpointSummariesArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list private endpoints.
+        /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
@@ -35,6 +137,9 @@ namespace Pulumi.Oci.ObjectStorage
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
 
@@ -46,6 +151,9 @@ namespace Pulumi.Oci.ObjectStorage
 
     public sealed class GetPrivateEndpointSummariesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment in which to list private endpoints.
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
@@ -57,6 +165,9 @@ namespace Pulumi.Oci.ObjectStorage
             set => _filters = value;
         }
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
@@ -70,13 +181,22 @@ namespace Pulumi.Oci.ObjectStorage
     [OutputType]
     public sealed class GetPrivateEndpointSummariesResult
     {
+        /// <summary>
+        /// The compartment ID in which the private endpoint resource exists in.
+        /// </summary>
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetPrivateEndpointSummariesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The Object Storage namespace in which the private endpoint resides.
+        /// </summary>
         public readonly string Namespace;
+        /// <summary>
+        /// The list of private_endpoint_summaries.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetPrivateEndpointSummariesPrivateEndpointSummaryResult> PrivateEndpointSummaries;
 
         [OutputConstructor]

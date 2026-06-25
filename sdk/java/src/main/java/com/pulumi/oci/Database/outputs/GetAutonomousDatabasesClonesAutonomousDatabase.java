@@ -86,7 +86,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String autonomousMaintenanceScheduleType;
     /**
-     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     private String availabilityDomain;
@@ -402,7 +402,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String localDisasterRecoveryType;
     /**
-     * @return Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return Autonomous Data Guard standby database details.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs;
@@ -551,7 +551,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String sourceId;
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs;
@@ -794,7 +794,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.autonomousMaintenanceScheduleType;
     }
     /**
-     * @return The availability domain where the Autonomous AI Database Serverless instance is located.
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
      * 
      */
     public String availabilityDomain() {
@@ -1236,7 +1236,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.localDisasterRecoveryType;
     }
     /**
-     * @return Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return Autonomous Data Guard standby database details.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb> localStandbyDbs() {
@@ -1443,7 +1443,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.sourceId;
     }
     /**
-     * @return **Deprecated** Autonomous Data Guard standby database details.* `availabilityDomain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return **Deprecated** Autonomous Data Guard standby database details.
      * 
      */
     public List<GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb> standbyDbs() {

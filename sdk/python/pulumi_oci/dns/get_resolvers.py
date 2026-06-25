@@ -55,7 +55,7 @@ class GetResolversResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID of the owning compartment.
+        The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
         """
         return pulumi.get(self, "compartment_id")
 

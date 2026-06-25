@@ -191,22 +191,30 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * The authoritative nameservers for the zone.
+     * 
+     */
     @Import(name="nameservers")
     private @Nullable Output<List<ZoneNameserverArgs>> nameservers;
 
+    /**
+     * @return The authoritative nameservers for the zone.
+     * 
+     */
     public Optional<Output<List<ZoneNameserverArgs>>> nameservers() {
         return Optional.ofNullable(this.nameservers);
     }
 
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     @Import(name="resolutionMode")
     private @Nullable Output<String> resolutionMode;
 
     /**
-     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * @return (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      * 
      */
     public Optional<Output<String>> resolutionMode() {
@@ -652,21 +660,39 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
             return name(Output.of(name));
         }
 
+        /**
+         * @param nameservers The authoritative nameservers for the zone.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameservers(@Nullable Output<List<ZoneNameserverArgs>> nameservers) {
             $.nameservers = nameservers;
             return this;
         }
 
+        /**
+         * @param nameservers The authoritative nameservers for the zone.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameservers(List<ZoneNameserverArgs> nameservers) {
             return nameservers(Output.of(nameservers));
         }
 
+        /**
+         * @param nameservers The authoritative nameservers for the zone.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nameservers(ZoneNameserverArgs... nameservers) {
             return nameservers(List.of(nameservers));
         }
 
         /**
-         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
          * 
          * @return builder
          * 
@@ -677,7 +703,7 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+         * @param resolutionMode (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
          * 
          * @return builder
          * 

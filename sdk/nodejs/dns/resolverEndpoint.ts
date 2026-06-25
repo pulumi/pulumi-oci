@@ -25,10 +25,13 @@ import * as utilities from "../utilities";
  *     resolverId: testResolver.id,
  *     subnetId: testSubnet.id,
  *     scope: "PRIVATE",
+ *     definedTags: resolverEndpointDefinedTags,
  *     endpointType: resolverEndpointEndpointType,
  *     forwardingAddress: resolverEndpointForwardingAddress,
+ *     freeformTags: resolverEndpointFreeformTags,
  *     listeningAddress: resolverEndpointListeningAddress,
  *     nsgIds: resolverEndpointNsgIds,
+ *     securityAttributes: resolverEndpointSecurityAttributes,
  * });
  * ```
  *
@@ -73,13 +76,23 @@ export class ResolverEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
+     */
+    declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The type of resolver endpoint. VNIC is currently the only supported type.
      */
     declare public readonly endpointType: pulumi.Output<string>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
     declare public readonly forwardingAddress: pulumi.Output<string>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
@@ -101,6 +114,10 @@ export class ResolverEndpoint extends pulumi.CustomResource {
      */
     declare public readonly nsgIds: pulumi.Output<string[] | undefined>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     */
+    declare public /*out*/ readonly peId: pulumi.Output<string>;
+    /**
      * The OCID of the target resolver.
      */
     declare public readonly resolverId: pulumi.Output<string>;
@@ -108,6 +125,10 @@ export class ResolverEndpoint extends pulumi.CustomResource {
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
     declare public readonly scope: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -132,6 +153,10 @@ export class ResolverEndpoint extends pulumi.CustomResource {
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     */
+    declare public /*out*/ readonly vnicId: pulumi.Output<string>;
 
     /**
      * Create a ResolverEndpoint resource with the given unique name, arguments, and options.
@@ -147,20 +172,25 @@ export class ResolverEndpoint extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ResolverEndpointState | undefined;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["endpointType"] = state?.endpointType;
             resourceInputs["forwardingAddress"] = state?.forwardingAddress;
+            resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isForwarding"] = state?.isForwarding;
             resourceInputs["isListening"] = state?.isListening;
             resourceInputs["listeningAddress"] = state?.listeningAddress;
             resourceInputs["name"] = state?.name;
             resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["peId"] = state?.peId;
             resourceInputs["resolverId"] = state?.resolverId;
             resourceInputs["scope"] = state?.scope;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["self"] = state?.self;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vnicId"] = state?.vnicId;
         } else {
             const args = argsOrState as ResolverEndpointArgs | undefined;
             if (args?.isForwarding === undefined && !opts.urn) {
@@ -175,8 +205,10 @@ export class ResolverEndpoint extends pulumi.CustomResource {
             if (args?.subnetId === undefined && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["endpointType"] = args?.endpointType;
             resourceInputs["forwardingAddress"] = args?.forwardingAddress;
+            resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isForwarding"] = args?.isForwarding;
             resourceInputs["isListening"] = args?.isListening;
             resourceInputs["listeningAddress"] = args?.listeningAddress;
@@ -184,12 +216,15 @@ export class ResolverEndpoint extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["resolverId"] = args?.resolverId;
             resourceInputs["scope"] = args?.scope;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["peId"] = undefined /*out*/;
             resourceInputs["self"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
+            resourceInputs["vnicId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ResolverEndpoint.__pulumiType, name, resourceInputs, opts);
@@ -205,13 +240,23 @@ export interface ResolverEndpointState {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The type of resolver endpoint. VNIC is currently the only supported type.
      */
     endpointType?: pulumi.Input<string | undefined>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
     forwardingAddress?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
@@ -233,6 +278,10 @@ export interface ResolverEndpointState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     */
+    peId?: pulumi.Input<string | undefined>;
+    /**
      * The OCID of the target resolver.
      */
     resolverId?: pulumi.Input<string | undefined>;
@@ -240,6 +289,10 @@ export interface ResolverEndpointState {
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The canonical absolute URL of the resource.
      */
@@ -264,6 +317,10 @@ export interface ResolverEndpointState {
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
     timeUpdated?: pulumi.Input<string | undefined>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     */
+    vnicId?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -271,13 +328,23 @@ export interface ResolverEndpointState {
  */
 export interface ResolverEndpointArgs {
     /**
-     * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     * **Example:** `{"Operations": {"CostCenter": "42"}}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The type of resolver endpoint. VNIC is currently the only supported type.
      */
     endpointType?: pulumi.Input<string | undefined>;
     /**
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
     forwardingAddress?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      */
@@ -306,6 +373,10 @@ export interface ResolverEndpointArgs {
      * Value must be `PRIVATE` when creating private name resolver endpoints.
      */
     scope?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *

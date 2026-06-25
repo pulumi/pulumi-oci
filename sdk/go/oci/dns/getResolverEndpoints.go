@@ -78,8 +78,9 @@ type GetResolverEndpointsResult struct {
 	Name *string `pulumi:"name"`
 	// The list of resolver_endpoints.
 	ResolverEndpoints []GetResolverEndpointsResolverEndpoint `pulumi:"resolverEndpoints"`
-	ResolverId        string                                 `pulumi:"resolverId"`
-	Scope             string                                 `pulumi:"scope"`
+	// The OCID of the resolver.
+	ResolverId string `pulumi:"resolverId"`
+	Scope      string `pulumi:"scope"`
 	// The current state of the resource.
 	State *string `pulumi:"state"`
 }
@@ -144,6 +145,7 @@ func (o GetResolverEndpointsResultOutput) ResolverEndpoints() GetResolverEndpoin
 	return o.ApplyT(func(v GetResolverEndpointsResult) []GetResolverEndpointsResolverEndpoint { return v.ResolverEndpoints }).(GetResolverEndpointsResolverEndpointArrayOutput)
 }
 
+// The OCID of the resolver.
 func (o GetResolverEndpointsResultOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResult) string { return v.ResolverId }).(pulumi.StringOutput)
 }

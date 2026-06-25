@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
@@ -55,10 +56,13 @@ import javax.annotation.Nullable;
  *             .resolverId(testResolver.id())
  *             .subnetId(testSubnet.id())
  *             .scope("PRIVATE")
+ *             .definedTags(resolverEndpointDefinedTags)
  *             .endpointType(resolverEndpointEndpointType)
  *             .forwardingAddress(resolverEndpointForwardingAddress)
+ *             .freeformTags(resolverEndpointFreeformTags)
  *             .listeningAddress(resolverEndpointListeningAddress)
  *             .nsgIds(resolverEndpointNsgIds)
+ *             .securityAttributes(resolverEndpointSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -92,14 +96,32 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    public Output<Map<String,String>> definedTags() {
+        return this.definedTags;
+    }
+    /**
+     * The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
-     * @return (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
     public Output<String> endpointType() {
@@ -118,6 +140,20 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<String> forwardingAddress() {
         return this.forwardingAddress;
+    }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,String>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -190,6 +226,20 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.nsgIds);
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    @Export(name="peId", refs={String.class}, tree="[0]")
+    private Output<String> peId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Output<String> peId() {
+        return this.peId;
+    }
+    /**
      * The OCID of the target resolver.
      * 
      */
@@ -216,6 +266,20 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> scope() {
         return Codegen.optional(this.scope);
+    }
+    /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The canonical absolute URL of the resource.
@@ -292,6 +356,20 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    @Export(name="vnicId", refs={String.class}, tree="[0]")
+    private Output<String> vnicId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Output<String> vnicId() {
+        return this.vnicId;
     }
 
     /**

@@ -14,7 +14,13 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     public sealed class GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult
     {
         public readonly string Bucket;
+        /// <summary>
+        /// The ID of the compartment in which to list private endpoints.
+        /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         public readonly string Namespace;
 
         [OutputConstructor]

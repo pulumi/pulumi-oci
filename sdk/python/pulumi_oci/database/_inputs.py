@@ -7106,6 +7106,10 @@ class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
     """
     The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
     """
+    external_location_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+    """
     lag_time_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -7143,6 +7147,7 @@ class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
 class AutonomousDatabaseLocalStandbyDbArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_location_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  lag_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_target_component: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7153,6 +7158,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
                  time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_target_component: The component chosen for maintenance.
@@ -7164,6 +7170,8 @@ class AutonomousDatabaseLocalStandbyDbArgs:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if external_location_zone is not None:
+            pulumi.set(__self__, "external_location_zone", external_location_zone)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -7192,6 +7200,18 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @availability_domain.setter
     def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocationZone")
+    def external_location_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        """
+        return pulumi.get(self, "external_location_zone")
+
+    @external_location_zone.setter
+    def external_location_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "external_location_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="lagTimeInSeconds")
@@ -7888,6 +7908,10 @@ class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
     """
     The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
     """
+    external_location_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+    """
     lag_time_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -7925,6 +7949,7 @@ class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
 class AutonomousDatabaseStandbyDbArgs:
     def __init__(__self__, *,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 external_location_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  lag_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_target_component: pulumi.Input[Optional[_builtins.str]] = None,
@@ -7935,6 +7960,7 @@ class AutonomousDatabaseStandbyDbArgs:
                  time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] maintenance_target_component: The component chosen for maintenance.
@@ -7946,6 +7972,8 @@ class AutonomousDatabaseStandbyDbArgs:
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
+        if external_location_zone is not None:
+            pulumi.set(__self__, "external_location_zone", external_location_zone)
         if lag_time_in_seconds is not None:
             pulumi.set(__self__, "lag_time_in_seconds", lag_time_in_seconds)
         if lifecycle_details is not None:
@@ -7974,6 +8002,18 @@ class AutonomousDatabaseStandbyDbArgs:
     @availability_domain.setter
     def availability_domain(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocationZone")
+    def external_location_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        """
+        return pulumi.get(self, "external_location_zone")
+
+    @external_location_zone.setter
+    def external_location_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "external_location_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="lagTimeInSeconds")

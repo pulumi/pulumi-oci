@@ -764,6 +764,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.encryptionKeyLocationDetails;
     }
     /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    @Export(name="externalLocationZone", refs={String.class}, tree="[0]")
+    private Output<String> externalLocationZone;
+
+    /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    public Output<String> externalLocationZone() {
+        return this.externalLocationZone;
+    }
+    /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      * 
      */

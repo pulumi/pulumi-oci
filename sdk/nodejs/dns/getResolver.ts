@@ -92,6 +92,9 @@ export interface GetResolverResult {
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
     readonly isProtected: boolean;
+    /**
+     * The OCID of the resolver.
+     */
     readonly resolverId: string;
     /**
      * Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.

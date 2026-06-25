@@ -225,6 +225,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly encryptionKeys: outputs.Database.GetAutonomousDatabaseEncryptionKey[];
     /**
+     * The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     */
+    readonly externalLocationZone: string;
+    /**
      * Indicates the number of seconds of data loss for a Data Guard failover.
      */
     readonly failedDataRecoveryInSeconds: number;

@@ -134,9 +134,12 @@ export class Zone extends pulumi.CustomResource {
      * The name of the zone.
      */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * The authoritative nameservers for the zone.
+     */
     declare public /*out*/ readonly nameservers: pulumi.Output<outputs.Dns.ZoneNameserver[]>;
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      */
     declare public readonly resolutionMode: pulumi.Output<string>;
     /**
@@ -305,9 +308,12 @@ export interface ZoneState {
      * The name of the zone.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * The authoritative nameservers for the zone.
+     */
     nameservers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneNameserver>[] | undefined>;
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      */
     resolutionMode?: pulumi.Input<string | undefined>;
     /**
@@ -403,7 +409,7 @@ export interface ZoneArgs {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled.
+     * (Updatable) The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
      */
     resolutionMode?: pulumi.Input<string | undefined>;
     /**

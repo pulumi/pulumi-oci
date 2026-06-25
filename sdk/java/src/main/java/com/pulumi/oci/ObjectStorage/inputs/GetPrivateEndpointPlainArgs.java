@@ -13,16 +13,32 @@ public final class GetPrivateEndpointPlainArgs extends com.pulumi.resources.Invo
 
     public static final GetPrivateEndpointPlainArgs Empty = new GetPrivateEndpointPlainArgs();
 
+    /**
+     * The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+     * 
+     */
     public String name() {
         return this.name;
     }
 
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Import(name="namespace", required=true)
     private String namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
@@ -52,11 +68,23 @@ public final class GetPrivateEndpointPlainArgs extends com.pulumi.resources.Invo
             $ = new GetPrivateEndpointPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             $.namespace = namespace;
             return this;

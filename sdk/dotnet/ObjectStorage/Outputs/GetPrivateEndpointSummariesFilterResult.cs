@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
     [OutputType]
     public sealed class GetPrivateEndpointSummariesFilterResult
     {
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

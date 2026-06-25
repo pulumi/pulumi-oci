@@ -47,9 +47,12 @@ namespace Pulumi.Oci.Dns.Outputs
         /// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The authoritative nameservers for the zone.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneNameserverResult> Nameservers;
         /// <summary>
-        /// The resolution mode of a zone defines behavior related to how query responses can be handled.
+        /// The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
         /// </summary>
         public readonly string ResolutionMode;
         /// <summary>

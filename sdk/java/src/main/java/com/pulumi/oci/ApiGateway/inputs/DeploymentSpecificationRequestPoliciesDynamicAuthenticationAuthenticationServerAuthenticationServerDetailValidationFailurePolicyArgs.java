@@ -53,6 +53,21 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
+     * (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    @Import(name="loginPath")
+    private @Nullable Output<String> loginPath;
+
+    /**
+     * @return (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+     * 
+     */
+    public Optional<Output<String>> loginPath() {
+        return Optional.ofNullable(this.loginPath);
+    }
+
+    /**
      * (Updatable) The path to be used as logout.
      * 
      */
@@ -237,6 +252,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     private DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs(DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs $) {
         this.clientDetails = $.clientDetails;
         this.fallbackRedirectPath = $.fallbackRedirectPath;
+        this.loginPath = $.loginPath;
         this.logoutPath = $.logoutPath;
         this.maxExpiryDurationInHours = $.maxExpiryDurationInHours;
         this.responseCode = $.responseCode;
@@ -309,6 +325,27 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
          */
         public Builder fallbackRedirectPath(String fallbackRedirectPath) {
             return fallbackRedirectPath(Output.of(fallbackRedirectPath));
+        }
+
+        /**
+         * @param loginPath (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loginPath(@Nullable Output<String> loginPath) {
+            $.loginPath = loginPath;
+            return this;
+        }
+
+        /**
+         * @param loginPath (Updatable) The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loginPath(String loginPath) {
+            return loginPath(Output.of(loginPath));
         }
 
         /**

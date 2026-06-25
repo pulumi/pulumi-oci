@@ -47,6 +47,7 @@ export interface GetIntegrationInstanceResult {
      * A list of alternate custom endpoints used for the integration instance URL.
      */
     readonly alternateCustomEndpoints: outputs.Integration.GetIntegrationInstanceAlternateCustomEndpoint[];
+    readonly attachmentType: string;
     /**
      * A list of associated attachments to other services
      */
@@ -144,6 +145,10 @@ export interface GetIntegrationInstanceResult {
      * Base representation for Outbound Connection (Reverse Connection).
      */
     readonly privateEndpointOutboundConnections: outputs.Integration.GetIntegrationInstancePrivateEndpointOutboundConnection[];
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     */
+    readonly processAutomationLogGroupId: string;
     /**
      * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
      * "oracle-zpr.sensitivity.value" = "low"

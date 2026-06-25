@@ -17,9 +17,17 @@ public final class GetPrivateEndpointSummariesPlainArgs extends com.pulumi.resou
 
     public static final GetPrivateEndpointSummariesPlainArgs Empty = new GetPrivateEndpointSummariesPlainArgs();
 
+    /**
+     * The ID of the compartment in which to list private endpoints.
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
+    /**
+     * @return The ID of the compartment in which to list private endpoints.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -31,9 +39,17 @@ public final class GetPrivateEndpointSummariesPlainArgs extends com.pulumi.resou
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Import(name="namespace", required=true)
     private String namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
@@ -64,6 +80,12 @@ public final class GetPrivateEndpointSummariesPlainArgs extends com.pulumi.resou
             $ = new GetPrivateEndpointSummariesPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to list private endpoints.
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
@@ -78,6 +100,12 @@ public final class GetPrivateEndpointSummariesPlainArgs extends com.pulumi.resou
             return filters(List.of(filters));
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             $.namespace = namespace;
             return this;

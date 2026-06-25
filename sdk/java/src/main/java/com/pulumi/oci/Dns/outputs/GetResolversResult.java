@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetResolversResult {
     /**
-     * @return The OCID of the owning compartment.
+     * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
     private String compartmentId;
@@ -45,7 +45,7 @@ public final class GetResolversResult {
 
     private GetResolversResult() {}
     /**
-     * @return The OCID of the owning compartment.
+     * @return The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver&#39;s compartment is changed.
      * 
      */
     public String compartmentId() {

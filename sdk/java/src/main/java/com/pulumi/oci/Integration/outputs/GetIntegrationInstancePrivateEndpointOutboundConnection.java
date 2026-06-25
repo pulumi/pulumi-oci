@@ -17,8 +17,20 @@ public final class GetIntegrationInstancePrivateEndpointOutboundConnection {
      * 
      */
     private Boolean isAllOutboundTrafficPrivate;
+    /**
+     * @return One or more Network security group Ids. This is an optional argument.
+     * 
+     */
     private List<String> nsgIds;
+    /**
+     * @return The type of Outbound Connection.
+     * 
+     */
     private String outboundConnectionType;
+    /**
+     * @return Customer Private Network VCN Subnet OCID. This is a required argument.
+     * 
+     */
     private String subnetId;
 
     private GetIntegrationInstancePrivateEndpointOutboundConnection() {}
@@ -29,12 +41,24 @@ public final class GetIntegrationInstancePrivateEndpointOutboundConnection {
     public Boolean isAllOutboundTrafficPrivate() {
         return this.isAllOutboundTrafficPrivate;
     }
+    /**
+     * @return One or more Network security group Ids. This is an optional argument.
+     * 
+     */
     public List<String> nsgIds() {
         return this.nsgIds;
     }
+    /**
+     * @return The type of Outbound Connection.
+     * 
+     */
     public String outboundConnectionType() {
         return this.outboundConnectionType;
     }
+    /**
+     * @return Customer Private Network VCN Subnet OCID. This is a required argument.
+     * 
+     */
     public String subnetId() {
         return this.subnetId;
     }

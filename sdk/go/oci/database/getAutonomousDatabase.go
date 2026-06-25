@@ -153,6 +153,8 @@ type LookupAutonomousDatabaseResult struct {
 	EncryptionKeyLocationDetails []GetAutonomousDatabaseEncryptionKeyLocationDetail `pulumi:"encryptionKeyLocationDetails"`
 	// Details of the Autonomous AI Database encryption key.
 	EncryptionKeys []GetAutonomousDatabaseEncryptionKey `pulumi:"encryptionKeys"`
+	// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+	ExternalLocationZone string `pulumi:"externalLocationZone"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
 	FailedDataRecoveryInSeconds int `pulumi:"failedDataRecoveryInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -648,6 +650,11 @@ func (o LookupAutonomousDatabaseResultOutput) EncryptionKeyLocationDetails() Get
 // Details of the Autonomous AI Database encryption key.
 func (o LookupAutonomousDatabaseResultOutput) EncryptionKeys() GetAutonomousDatabaseEncryptionKeyArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []GetAutonomousDatabaseEncryptionKey { return v.EncryptionKeys }).(GetAutonomousDatabaseEncryptionKeyArrayOutput)
+}
+
+// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+func (o LookupAutonomousDatabaseResultOutput) ExternalLocationZone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.ExternalLocationZone }).(pulumi.StringOutput)
 }
 
 // Indicates the number of seconds of data loss for a Data Guard failover.

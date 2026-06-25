@@ -18,6 +18,11 @@ public final class AutonomousDatabaseLocalStandbyDb {
      */
     private @Nullable String availabilityDomain;
     /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    private @Nullable String externalLocationZone;
+    /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
      * 
      */
@@ -65,6 +70,13 @@ public final class AutonomousDatabaseLocalStandbyDb {
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
+    }
+    /**
+     * @return The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+     * 
+     */
+    public Optional<String> externalLocationZone() {
+        return Optional.ofNullable(this.externalLocationZone);
     }
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -133,6 +145,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String availabilityDomain;
+        private @Nullable String externalLocationZone;
         private @Nullable Integer lagTimeInSeconds;
         private @Nullable String lifecycleDetails;
         private @Nullable String maintenanceTargetComponent;
@@ -145,6 +158,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
         public Builder(AutonomousDatabaseLocalStandbyDb defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.externalLocationZone = defaults.externalLocationZone;
     	      this.lagTimeInSeconds = defaults.lagTimeInSeconds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceTargetComponent = defaults.maintenanceTargetComponent;
@@ -159,6 +173,12 @@ public final class AutonomousDatabaseLocalStandbyDb {
         public Builder availabilityDomain(@Nullable String availabilityDomain) {
 
             this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalLocationZone(@Nullable String externalLocationZone) {
+
+            this.externalLocationZone = externalLocationZone;
             return this;
         }
         @CustomType.Setter
@@ -212,6 +232,7 @@ public final class AutonomousDatabaseLocalStandbyDb {
         public AutonomousDatabaseLocalStandbyDb build() {
             final var _resultValue = new AutonomousDatabaseLocalStandbyDb();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.externalLocationZone = externalLocationZone;
             _resultValue.lagTimeInSeconds = lagTimeInSeconds;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.maintenanceTargetComponent = maintenanceTargetComponent;

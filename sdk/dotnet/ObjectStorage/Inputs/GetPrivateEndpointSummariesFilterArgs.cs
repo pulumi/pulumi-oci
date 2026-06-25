@@ -12,6 +12,9 @@ namespace Pulumi.Oci.ObjectStorage.Inputs
 
     public sealed class GetPrivateEndpointSummariesFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

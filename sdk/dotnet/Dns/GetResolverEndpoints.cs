@@ -209,6 +209,9 @@ namespace Pulumi.Oci.Dns
         /// The list of resolver_endpoints.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetResolverEndpointsResolverEndpointResult> ResolverEndpoints;
+        /// <summary>
+        /// The OCID of the resolver.
+        /// </summary>
         public readonly string ResolverId;
         public readonly string Scope;
         /// <summary>

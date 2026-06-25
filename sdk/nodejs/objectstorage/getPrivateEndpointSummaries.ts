@@ -6,6 +6,31 @@ import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
+/**
+ * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+ * and does not contain fields like the user-defined metadata.
+ *
+ * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+ * `opc-next-page` value with the `page` request parameter.
+ *
+ * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPes = oci.objectstorage.getPrivateEndpointSummaries({
+ *     compartmentId: compartmentId,
+ *     namespace: namespace,
+ * });
+ * ```
+ */
 export function getPrivateEndpointSummaries(args: GetPrivateEndpointSummariesArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointSummariesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", {
@@ -19,8 +44,14 @@ export function getPrivateEndpointSummaries(args: GetPrivateEndpointSummariesArg
  * A collection of arguments for invoking getPrivateEndpointSummaries.
  */
 export interface GetPrivateEndpointSummariesArgs {
+    /**
+     * The ID of the compartment in which to list private endpoints.
+     */
     compartmentId: string;
     filters?: inputs.ObjectStorage.GetPrivateEndpointSummariesFilter[];
+    /**
+     * The Object Storage namespace used for the request.
+     */
     namespace: string;
 }
 
@@ -28,15 +59,49 @@ export interface GetPrivateEndpointSummariesArgs {
  * A collection of values returned by getPrivateEndpointSummaries.
  */
 export interface GetPrivateEndpointSummariesResult {
+    /**
+     * The compartment ID in which the private endpoint resource exists in.
+     */
     readonly compartmentId: string;
     readonly filters?: outputs.ObjectStorage.GetPrivateEndpointSummariesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * The Object Storage namespace in which the private endpoint resides.
+     */
     readonly namespace: string;
+    /**
+     * The list of private_endpoint_summaries.
+     */
     readonly privateEndpointSummaries: outputs.ObjectStorage.GetPrivateEndpointSummariesPrivateEndpointSummary[];
 }
+/**
+ * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+ * and does not contain fields like the user-defined metadata.
+ *
+ * ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+ * `opc-next-page` value with the `page` request parameter.
+ *
+ * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPes = oci.objectstorage.getPrivateEndpointSummaries({
+ *     compartmentId: compartmentId,
+ *     namespace: namespace,
+ * });
+ * ```
+ */
 export function getPrivateEndpointSummariesOutput(args: GetPrivateEndpointSummariesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPrivateEndpointSummariesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:ObjectStorage/getPrivateEndpointSummaries:getPrivateEndpointSummaries", {
@@ -50,7 +115,13 @@ export function getPrivateEndpointSummariesOutput(args: GetPrivateEndpointSummar
  * A collection of arguments for invoking getPrivateEndpointSummaries.
  */
 export interface GetPrivateEndpointSummariesOutputArgs {
+    /**
+     * The ID of the compartment in which to list private endpoints.
+     */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ObjectStorage.GetPrivateEndpointSummariesFilterArgs>[] | undefined>;
+    /**
+     * The Object Storage namespace used for the request.
+     */
     namespace: pulumi.Input<string>;
 }

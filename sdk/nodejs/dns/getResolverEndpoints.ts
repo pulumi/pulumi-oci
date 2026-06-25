@@ -79,6 +79,9 @@ export interface GetResolverEndpointsResult {
      * The list of resolver_endpoints.
      */
     readonly resolverEndpoints: outputs.Dns.GetResolverEndpointsResolverEndpoint[];
+    /**
+     * The OCID of the resolver.
+     */
     readonly resolverId: string;
     readonly scope: string;
     /**

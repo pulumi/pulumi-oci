@@ -17,9 +17,17 @@ public final class GetPrivateEndpointSummariesFilter extends com.pulumi.resource
 
     public static final GetPrivateEndpointSummariesFilter Empty = new GetPrivateEndpointSummariesFilter();
 
+    /**
+     * The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetPrivateEndpointSummariesFilter extends com.pulumi.resource
             $ = new GetPrivateEndpointSummariesFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

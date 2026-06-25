@@ -1727,6 +1727,7 @@ class _AutonomousDatabaseState:
                  encryption_key: pulumi.Input[Optional['AutonomousDatabaseEncryptionKeyArgs']] = None,
                  encryption_key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]]] = None,
                  encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]] = None,
+                 external_location_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  failed_data_recovery_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  in_memory_area_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1918,6 +1919,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input['AutonomousDatabaseEncryptionKeyArgs'] encryption_key: (Updatable) Details of the Autonomous AI Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyHistoryEntryArgs']]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]] encryption_key_location_details: Types of providers supported for managing database encryption keys
+        :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
@@ -2174,6 +2176,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "encryption_key_history_entries", encryption_key_history_entries)
         if encryption_key_location_details is not None:
             pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
+        if external_location_zone is not None:
+            pulumi.set(__self__, "external_location_zone", external_location_zone)
         if failed_data_recovery_in_seconds is not None:
             pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         if freeform_tags is not None:
@@ -2995,6 +2999,18 @@ class _AutonomousDatabaseState:
     @encryption_key_location_details.setter
     def encryption_key_location_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousDatabaseEncryptionKeyLocationDetailArgs']]]]):
         pulumi.set(self, "encryption_key_location_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocationZone")
+    def external_location_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        """
+        return pulumi.get(self, "external_location_zone")
+
+    @external_location_zone.setter
+    def external_location_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "external_location_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="failedDataRecoveryInSeconds")
@@ -4954,6 +4970,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["disaster_recovery_region_type"] = None
             __props__.__dict__["encryption_key_history_entries"] = None
             __props__.__dict__["encryption_key_location_details"] = None
+            __props__.__dict__["external_location_zone"] = None
             __props__.__dict__["failed_data_recovery_in_seconds"] = None
             __props__.__dict__["in_memory_area_in_gbs"] = None
             __props__.__dict__["infrastructure_type"] = None
@@ -5066,6 +5083,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             encryption_key: pulumi.Input[Optional[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']]] = None,
             encryption_key_history_entries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]]] = None,
             encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]]] = None,
+            external_location_zone: pulumi.Input[Optional[_builtins.str]] = None,
             failed_data_recovery_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             in_memory_area_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
@@ -5261,6 +5279,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['AutonomousDatabaseEncryptionKeyArgs', 'AutonomousDatabaseEncryptionKeyArgsDict']] encryption_key: (Updatable) Details of the Autonomous AI Database encryption key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyHistoryEntryArgs', 'AutonomousDatabaseEncryptionKeyHistoryEntryArgsDict']]]] encryption_key_history_entries: Key History Entry.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousDatabaseEncryptionKeyLocationDetailArgs', 'AutonomousDatabaseEncryptionKeyLocationDetailArgsDict']]]] encryption_key_location_details: Types of providers supported for managing database encryption keys
+        :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous AI Database.
@@ -5474,6 +5493,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["encryption_key"] = encryption_key
         __props__.__dict__["encryption_key_history_entries"] = encryption_key_history_entries
         __props__.__dict__["encryption_key_location_details"] = encryption_key_location_details
+        __props__.__dict__["external_location_zone"] = external_location_zone
         __props__.__dict__["failed_data_recovery_in_seconds"] = failed_data_recovery_in_seconds
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["in_memory_area_in_gbs"] = in_memory_area_in_gbs
@@ -5990,6 +6010,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "encryption_key_location_details")
+
+    @_builtins.property
+    @pulumi.getter(name="externalLocationZone")
+    def external_location_zone(self) -> pulumi.Output[_builtins.str]:
+        """
+        The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        """
+        return pulumi.get(self, "external_location_zone")
 
     @_builtins.property
     @pulumi.getter(name="failedDataRecoveryInSeconds")

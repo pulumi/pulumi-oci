@@ -61,6 +61,10 @@ export interface GetResolverEndpointResult {
      */
     readonly compartmentId: string;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly definedTags: {[key: string]: string};
+    /**
      * The type of resolver endpoint. VNIC is currently the only supported type.
      */
     readonly endpointType: string;
@@ -68,6 +72,13 @@ export interface GetResolverEndpointResult {
      * An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
      */
     readonly forwardingAddress: string;
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly freeformTags: {[key: string]: string};
+    /**
+     * The Terraform ID of the resolver endpoint.
+     */
     readonly id: string;
     /**
      * A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -89,9 +100,20 @@ export interface GetResolverEndpointResult {
      * An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
      */
     readonly nsgIds: string[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     */
+    readonly peId: string;
     readonly resolverEndpointName: string;
+    /**
+     * The OCID of the resolver.
+     */
     readonly resolverId: string;
     readonly scope?: string;
+    /**
+     * [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+     */
+    readonly securityAttributes: {[key: string]: string};
     /**
      * The canonical absolute URL of the resource.
      */
@@ -112,6 +134,10 @@ export interface GetResolverEndpointResult {
      * The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
      */
     readonly timeUpdated: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     */
+    readonly vnicId: string;
 }
 /**
  * This data source provides details about a specific Resolver Endpoint resource in Oracle Cloud Infrastructure DNS service.

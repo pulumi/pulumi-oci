@@ -14,16 +14,32 @@ public final class GetPrivateEndpointArgs extends com.pulumi.resources.InvokeArg
 
     public static final GetPrivateEndpointArgs Empty = new GetPrivateEndpointArgs();
 
+    /**
+     * The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
 
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public Output<String> namespace() {
         return this.namespace;
     }
@@ -53,20 +69,44 @@ public final class GetPrivateEndpointArgs extends com.pulumi.resources.InvokeArg
             $ = new GetPrivateEndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(Output<String> namespace) {
             $.namespace = namespace;
             return this;
         }
 
+        /**
+         * @param namespace The Object Storage namespace used for the request.
+         * 
+         * @return builder
+         * 
+         */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
         }

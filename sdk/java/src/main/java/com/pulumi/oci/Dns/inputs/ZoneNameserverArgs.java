@@ -15,9 +15,17 @@ public final class ZoneNameserverArgs extends com.pulumi.resources.ResourceArgs 
 
     public static final ZoneNameserverArgs Empty = new ZoneNameserverArgs();
 
+    /**
+     * The hostname of the nameserver.
+     * 
+     */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
+    /**
+     * @return The hostname of the nameserver.
+     * 
+     */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
@@ -46,11 +54,23 @@ public final class ZoneNameserverArgs extends com.pulumi.resources.ResourceArgs 
             $ = new ZoneNameserverArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param hostname The hostname of the nameserver.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
             return this;
         }
 
+        /**
+         * @param hostname The hostname of the nameserver.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }

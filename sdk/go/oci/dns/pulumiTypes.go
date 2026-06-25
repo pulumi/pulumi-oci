@@ -1122,10 +1122,20 @@ func (o ResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) ResolverAttach
 type ResolverEndpointType struct {
 	// (Updatable) The OCID of the owning compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType *string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress *string `pulumi:"forwardingAddress"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the resolver.
+	Id *string `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding *bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -1134,6 +1144,12 @@ type ResolverEndpointType struct {
 	ListeningAddress *string `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name *string `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId *string `pulumi:"peId"`
+	// The OCID of the target resolver.
+	ResolverId *string `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self *string `pulumi:"self"`
 	// The current state of the resource.
@@ -1144,6 +1160,8 @@ type ResolverEndpointType struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId *string `pulumi:"vnicId"`
 }
 
 // ResolverEndpointTypeInput is an input type that accepts ResolverEndpointTypeArgs and ResolverEndpointTypeOutput values.
@@ -1160,10 +1178,20 @@ type ResolverEndpointTypeInput interface {
 type ResolverEndpointTypeArgs struct {
 	// (Updatable) The OCID of the owning compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Operations": {"CostCenter": "42"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType pulumi.StringPtrInput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress pulumi.StringPtrInput `pulumi:"forwardingAddress"`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	//
+	// **Example:** `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the resolver.
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding pulumi.BoolPtrInput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -1172,6 +1200,12 @@ type ResolverEndpointTypeArgs struct {
 	ListeningAddress pulumi.StringPtrInput `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId pulumi.StringPtrInput `pulumi:"peId"`
+	// The OCID of the target resolver.
+	ResolverId pulumi.StringPtrInput `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringPtrInput `pulumi:"self"`
 	// The current state of the resource.
@@ -1182,6 +1216,8 @@ type ResolverEndpointTypeArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId pulumi.StringPtrInput `pulumi:"vnicId"`
 }
 
 func (ResolverEndpointTypeArgs) ElementType() reflect.Type {
@@ -1240,6 +1276,13 @@ func (o ResolverEndpointTypeOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointType) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+//
+// **Example:** `{"Operations": {"CostCenter": "42"}}`
+func (o ResolverEndpointTypeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ResolverEndpointType) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // The type of resolver endpoint. VNIC is currently the only supported type.
 func (o ResolverEndpointTypeOutput) EndpointType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointType) *string { return v.EndpointType }).(pulumi.StringPtrOutput)
@@ -1248,6 +1291,18 @@ func (o ResolverEndpointTypeOutput) EndpointType() pulumi.StringPtrOutput {
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 func (o ResolverEndpointTypeOutput) ForwardingAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointType) *string { return v.ForwardingAddress }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+//
+// **Example:** `{"Department": "Finance"}`
+func (o ResolverEndpointTypeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ResolverEndpointType) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the resolver.
+func (o ResolverEndpointTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResolverEndpointType) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -1268,6 +1323,21 @@ func (o ResolverEndpointTypeOutput) ListeningAddress() pulumi.StringPtrOutput {
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 func (o ResolverEndpointTypeOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointType) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+func (o ResolverEndpointTypeOutput) PeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResolverEndpointType) *string { return v.PeId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the target resolver.
+func (o ResolverEndpointTypeOutput) ResolverId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResolverEndpointType) *string { return v.ResolverId }).(pulumi.StringPtrOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o ResolverEndpointTypeOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ResolverEndpointType) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The canonical absolute URL of the resource.
@@ -1293,6 +1363,11 @@ func (o ResolverEndpointTypeOutput) TimeCreated() pulumi.StringPtrOutput {
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 func (o ResolverEndpointTypeOutput) TimeUpdated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResolverEndpointType) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+func (o ResolverEndpointTypeOutput) VnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ResolverEndpointType) *string { return v.VnicId }).(pulumi.StringPtrOutput)
 }
 
 type ResolverEndpointTypeArrayOutput struct{ *pulumi.OutputState }
@@ -3092,6 +3167,7 @@ func (o ZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) ZoneExternalMast
 }
 
 type ZoneNameserver struct {
+	// The hostname of the nameserver.
 	Hostname *string `pulumi:"hostname"`
 }
 
@@ -3107,6 +3183,7 @@ type ZoneNameserverInput interface {
 }
 
 type ZoneNameserverArgs struct {
+	// The hostname of the nameserver.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 }
 
@@ -3161,6 +3238,7 @@ func (o ZoneNameserverOutput) ToZoneNameserverOutputWithContext(ctx context.Cont
 	return o
 }
 
+// The hostname of the nameserver.
 func (o ZoneNameserverOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneNameserver) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
@@ -3708,10 +3786,16 @@ func (o GetResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) GetResolver
 type GetResolverEndpointType struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress string `pulumi:"forwardingAddress"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the resolver.
+	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -3720,6 +3804,12 @@ type GetResolverEndpointType struct {
 	ListeningAddress string `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name string `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId string `pulumi:"peId"`
+	// The OCID of the target resolver.
+	ResolverId string `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The current state of the resource.
@@ -3730,6 +3820,8 @@ type GetResolverEndpointType struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId string `pulumi:"vnicId"`
 }
 
 // GetResolverEndpointTypeInput is an input type that accepts GetResolverEndpointTypeArgs and GetResolverEndpointTypeOutput values.
@@ -3746,10 +3838,16 @@ type GetResolverEndpointTypeInput interface {
 type GetResolverEndpointTypeArgs struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the resolver.
+	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding pulumi.BoolInput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -3758,6 +3856,12 @@ type GetResolverEndpointTypeArgs struct {
 	ListeningAddress pulumi.StringInput `pulumi:"listeningAddress"`
 	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name pulumi.StringInput `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId pulumi.StringInput `pulumi:"peId"`
+	// The OCID of the target resolver.
+	ResolverId pulumi.StringInput `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
 	// The current state of the resource.
@@ -3768,6 +3872,8 @@ type GetResolverEndpointTypeArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
 }
 
 func (GetResolverEndpointTypeArgs) ElementType() reflect.Type {
@@ -3826,6 +3932,11 @@ func (o GetResolverEndpointTypeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointType) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolverEndpointTypeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // The type of resolver endpoint. VNIC is currently the only supported type.
 func (o GetResolverEndpointTypeOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointType) string { return v.EndpointType }).(pulumi.StringOutput)
@@ -3834,6 +3945,16 @@ func (o GetResolverEndpointTypeOutput) EndpointType() pulumi.StringOutput {
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 func (o GetResolverEndpointTypeOutput) ForwardingAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointType) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolverEndpointTypeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of the resolver.
+func (o GetResolverEndpointTypeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -3854,6 +3975,21 @@ func (o GetResolverEndpointTypeOutput) ListeningAddress() pulumi.StringOutput {
 // The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 func (o GetResolverEndpointTypeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointType) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+func (o GetResolverEndpointTypeOutput) PeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) string { return v.PeId }).(pulumi.StringOutput)
+}
+
+// The OCID of the target resolver.
+func (o GetResolverEndpointTypeOutput) ResolverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) string { return v.ResolverId }).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetResolverEndpointTypeOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The canonical absolute URL of the resource.
@@ -3879,6 +4015,11 @@ func (o GetResolverEndpointTypeOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 func (o GetResolverEndpointTypeOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointType) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+func (o GetResolverEndpointTypeOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointType) string { return v.VnicId }).(pulumi.StringOutput)
 }
 
 type GetResolverEndpointTypeArrayOutput struct{ *pulumi.OutputState }
@@ -4013,10 +4154,16 @@ func (o GetResolverEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetResol
 type GetResolverEndpointsResolverEndpoint struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType string `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress string `pulumi:"forwardingAddress"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The Terraform ID of the resolver endpoint.
+	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding bool `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -4027,10 +4174,14 @@ type GetResolverEndpointsResolverEndpoint struct {
 	Name string `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
 	NsgIds []string `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId string `pulumi:"peId"`
 	// The OCID of the target resolver.
 	ResolverId string `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope *string `pulumi:"scope"`
+	Scope string `pulumi:"scope"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The state of a resource.
@@ -4041,6 +4192,8 @@ type GetResolverEndpointsResolverEndpoint struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId string `pulumi:"vnicId"`
 }
 
 // GetResolverEndpointsResolverEndpointInput is an input type that accepts GetResolverEndpointsResolverEndpointArgs and GetResolverEndpointsResolverEndpointOutput values.
@@ -4057,10 +4210,16 @@ type GetResolverEndpointsResolverEndpointInput interface {
 type GetResolverEndpointsResolverEndpointArgs struct {
 	// The OCID of the owning compartment. This will match the resolver that the resolver endpoint is under and will be updated if the resolver's compartment is changed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The type of resolver endpoint. VNIC is currently the only supported type.
 	EndpointType pulumi.StringInput `pulumi:"endpointType"`
 	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The Terraform ID of the resolver endpoint.
+	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 	IsForwarding pulumi.BoolInput `pulumi:"isForwarding"`
 	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
@@ -4071,10 +4230,14 @@ type GetResolverEndpointsResolverEndpointArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// An array of network security group OCIDs for the resolver endpoint. These must be part of the VCN that the resolver endpoint is a part of.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId pulumi.StringInput `pulumi:"peId"`
 	// The OCID of the target resolver.
 	ResolverId pulumi.StringInput `pulumi:"resolverId"`
 	// Value must be `PRIVATE` when listing private name resolver endpoints.
-	Scope pulumi.StringPtrInput `pulumi:"scope"`
+	Scope pulumi.StringInput `pulumi:"scope"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
 	// The state of a resource.
@@ -4085,6 +4248,8 @@ type GetResolverEndpointsResolverEndpointArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
 }
 
 func (GetResolverEndpointsResolverEndpointArgs) ElementType() reflect.Type {
@@ -4143,6 +4308,11 @@ func (o GetResolverEndpointsResolverEndpointOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolverEndpointsResolverEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // The type of resolver endpoint. VNIC is currently the only supported type.
 func (o GetResolverEndpointsResolverEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
@@ -4151,6 +4321,16 @@ func (o GetResolverEndpointsResolverEndpointOutput) EndpointType() pulumi.String
 // An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 func (o GetResolverEndpointsResolverEndpointOutput) ForwardingAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.ForwardingAddress }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolverEndpointsResolverEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The Terraform ID of the resolver endpoint.
+func (o GetResolverEndpointsResolverEndpointOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -4178,14 +4358,24 @@ func (o GetResolverEndpointsResolverEndpointOutput) NsgIds() pulumi.StringArrayO
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+func (o GetResolverEndpointsResolverEndpointOutput) PeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.PeId }).(pulumi.StringOutput)
+}
+
 // The OCID of the target resolver.
 func (o GetResolverEndpointsResolverEndpointOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.ResolverId }).(pulumi.StringOutput)
 }
 
 // Value must be `PRIVATE` when listing private name resolver endpoints.
-func (o GetResolverEndpointsResolverEndpointOutput) Scope() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) *string { return v.Scope }).(pulumi.StringPtrOutput)
+func (o GetResolverEndpointsResolverEndpointOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetResolverEndpointsResolverEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The canonical absolute URL of the resource.
@@ -4211,6 +4401,11 @@ func (o GetResolverEndpointsResolverEndpointOutput) TimeCreated() pulumi.StringO
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 func (o GetResolverEndpointsResolverEndpointOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+func (o GetResolverEndpointsResolverEndpointOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolverEndpointsResolverEndpoint) string { return v.VnicId }).(pulumi.StringOutput)
 }
 
 type GetResolverEndpointsResolverEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -4370,6 +4565,7 @@ func (o GetResolverRuleArrayOutput) Index(i pulumi.IntInput) GetResolverRuleOutp
 }
 
 type GetResolversFilter struct {
+	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -4387,6 +4583,7 @@ type GetResolversFilterInput interface {
 }
 
 type GetResolversFilterArgs struct {
+	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -4443,6 +4640,7 @@ func (o GetResolversFilterOutput) ToGetResolversFilterOutputWithContext(ctx cont
 	return o
 }
 
+// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 func (o GetResolversFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -4486,16 +4684,18 @@ type GetResolversResolver struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName string                         `pulumi:"displayName"`
-	Endpoints   []GetResolversResolverEndpoint `pulumi:"endpoints"`
+	DisplayName string `pulumi:"displayName"`
+	// Read-only array of endpoints for the resolver.
+	Endpoints []GetResolversResolverEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool                       `pulumi:"isProtected"`
-	ResolverId  string                     `pulumi:"resolverId"`
-	Rules       []GetResolversResolverRule `pulumi:"rules"`
+	IsProtected bool `pulumi:"isProtected"`
+	// The OCID of the resolver.
+	ResolverId string                     `pulumi:"resolverId"`
+	Rules      []GetResolversResolverRule `pulumi:"rules"`
 	// Value must be `PRIVATE` when listing private resolvers.
 	Scope string `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
@@ -4530,16 +4730,18 @@ type GetResolversResolverArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
-	DisplayName pulumi.StringInput                     `pulumi:"displayName"`
-	Endpoints   GetResolversResolverEndpointArrayInput `pulumi:"endpoints"`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Read-only array of endpoints for the resolver.
+	Endpoints GetResolversResolverEndpointArrayInput `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected pulumi.BoolInput                   `pulumi:"isProtected"`
-	ResolverId  pulumi.StringInput                 `pulumi:"resolverId"`
-	Rules       GetResolversResolverRuleArrayInput `pulumi:"rules"`
+	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
+	// The OCID of the resolver.
+	ResolverId pulumi.StringInput                 `pulumi:"resolverId"`
+	Rules      GetResolversResolverRuleArrayInput `pulumi:"rules"`
 	// Value must be `PRIVATE` when listing private resolvers.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The canonical absolute URL of the resource.
@@ -4632,6 +4834,7 @@ func (o GetResolversResolverOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolver) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Read-only array of endpoints for the resolver.
 func (o GetResolversResolverOutput) Endpoints() GetResolversResolverEndpointArrayOutput {
 	return o.ApplyT(func(v GetResolversResolver) []GetResolversResolverEndpoint { return v.Endpoints }).(GetResolversResolverEndpointArrayOutput)
 }
@@ -4651,6 +4854,7 @@ func (o GetResolversResolverOutput) IsProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetResolversResolver) bool { return v.IsProtected }).(pulumi.BoolOutput)
 }
 
+// The OCID of the resolver.
 func (o GetResolversResolverOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolver) string { return v.ResolverId }).(pulumi.StringOutput)
 }
@@ -4800,22 +5004,43 @@ func (o GetResolversResolverAttachedViewArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetResolversResolverEndpoint struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId     string `pulumi:"compartmentId"`
-	EndpointType      string `pulumi:"endpointType"`
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The type of resolver endpoint. VNIC is currently the only supported type.
+	EndpointType string `pulumi:"endpointType"`
+	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress string `pulumi:"forwardingAddress"`
-	IsForwarding      bool   `pulumi:"isForwarding"`
-	IsListening       bool   `pulumi:"isListening"`
-	ListeningAddress  string `pulumi:"listeningAddress"`
-	Name              string `pulumi:"name"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of a resource.
+	Id string `pulumi:"id"`
+	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+	IsForwarding bool `pulumi:"isForwarding"`
+	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
+	IsListening bool `pulumi:"isListening"`
+	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+	ListeningAddress string `pulumi:"listeningAddress"`
+	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+	Name string `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId string `pulumi:"peId"`
+	// The OCID of the resolver.
+	ResolverId string `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self string `pulumi:"self"`
 	// The state of a resource.
-	State    string `pulumi:"state"`
+	State string `pulumi:"state"`
+	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId string `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId string `pulumi:"vnicId"`
 }
 
 // GetResolversResolverEndpointInput is an input type that accepts GetResolversResolverEndpointArgs and GetResolversResolverEndpointOutput values.
@@ -4831,22 +5056,43 @@ type GetResolversResolverEndpointInput interface {
 
 type GetResolversResolverEndpointArgs struct {
 	// The OCID of the compartment the resource belongs to.
-	CompartmentId     pulumi.StringInput `pulumi:"compartmentId"`
-	EndpointType      pulumi.StringInput `pulumi:"endpointType"`
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The type of resolver endpoint. VNIC is currently the only supported type.
+	EndpointType pulumi.StringInput `pulumi:"endpointType"`
+	// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 	ForwardingAddress pulumi.StringInput `pulumi:"forwardingAddress"`
-	IsForwarding      pulumi.BoolInput   `pulumi:"isForwarding"`
-	IsListening       pulumi.BoolInput   `pulumi:"isListening"`
-	ListeningAddress  pulumi.StringInput `pulumi:"listeningAddress"`
-	Name              pulumi.StringInput `pulumi:"name"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of a resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
+	IsForwarding pulumi.BoolInput `pulumi:"isForwarding"`
+	// A Boolean flag indicating whether or not the resolver endpoint is for listening.
+	IsListening pulumi.BoolInput `pulumi:"isListening"`
+	// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
+	ListeningAddress pulumi.StringInput `pulumi:"listeningAddress"`
+	// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+	PeId pulumi.StringInput `pulumi:"peId"`
+	// The OCID of the resolver.
+	ResolverId pulumi.StringInput `pulumi:"resolverId"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// The canonical absolute URL of the resource.
 	Self pulumi.StringInput `pulumi:"self"`
 	// The state of a resource.
-	State    pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringInput `pulumi:"state"`
+	// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+	VnicId pulumi.StringInput `pulumi:"vnicId"`
 }
 
 func (GetResolversResolverEndpointArgs) ElementType() reflect.Type {
@@ -4905,28 +5151,64 @@ func (o GetResolversResolverEndpointOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolversResolverEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The type of resolver endpoint. VNIC is currently the only supported type.
 func (o GetResolversResolverEndpointOutput) EndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.EndpointType }).(pulumi.StringOutput)
 }
 
+// An IP address from which forwarded queries may be sent. For VNIC endpoints, this IP address must be part of the subnet and will be assigned by the system if unspecified when isForwarding is true.
 func (o GetResolversResolverEndpointOutput) ForwardingAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.ForwardingAddress }).(pulumi.StringOutput)
 }
 
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetResolversResolverEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The OCID of a resource.
+func (o GetResolversResolverEndpointOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
 func (o GetResolversResolverEndpointOutput) IsForwarding() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) bool { return v.IsForwarding }).(pulumi.BoolOutput)
 }
 
+// A Boolean flag indicating whether or not the resolver endpoint is for listening.
 func (o GetResolversResolverEndpointOutput) IsListening() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) bool { return v.IsListening }).(pulumi.BoolOutput)
 }
 
+// An IP address to listen to queries on. For VNIC endpoints this IP address must be part of the subnet and will be assigned by the system if unspecified when isListening is true.
 func (o GetResolversResolverEndpointOutput) ListeningAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.ListeningAddress }).(pulumi.StringOutput)
 }
 
+// The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
 func (o GetResolversResolverEndpointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+func (o GetResolversResolverEndpointOutput) PeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.PeId }).(pulumi.StringOutput)
+}
+
+// The OCID of the resolver.
+func (o GetResolversResolverEndpointOutput) ResolverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.ResolverId }).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetResolversResolverEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The canonical absolute URL of the resource.
@@ -4939,6 +5221,7 @@ func (o GetResolversResolverEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.State }).(pulumi.StringOutput)
 }
 
+// The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 func (o GetResolversResolverEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -4951,6 +5234,11 @@ func (o GetResolversResolverEndpointOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the resource was last updated in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
 func (o GetResolversResolverEndpointOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+func (o GetResolversResolverEndpointOutput) VnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResolversResolverEndpoint) string { return v.VnicId }).(pulumi.StringOutput)
 }
 
 type GetResolversResolverEndpointArrayOutput struct{ *pulumi.OutputState }
@@ -9267,9 +9555,10 @@ type GetZonesZone struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected bool `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name        string                   `pulumi:"name"`
+	Name string `pulumi:"name"`
+	// The authoritative nameservers for the zone.
 	Nameservers []GetZonesZoneNameserver `pulumi:"nameservers"`
-	// The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode string `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope string `pulumi:"scope"`
@@ -9319,9 +9608,10 @@ type GetZonesZoneArgs struct {
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolInput `pulumi:"isProtected"`
 	// A case-sensitive filter for zone names. Will match any zone with a name that equals the provided value.
-	Name        pulumi.StringInput               `pulumi:"name"`
+	Name pulumi.StringInput `pulumi:"name"`
+	// The authoritative nameservers for the zone.
 	Nameservers GetZonesZoneNameserverArrayInput `pulumi:"nameservers"`
-	// The resolution mode of a zone defines behavior related to how query responses can be handled.
+	// The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 	ResolutionMode pulumi.StringInput `pulumi:"resolutionMode"`
 	// Specifies to operate only on resources that have a matching DNS scope.
 	Scope pulumi.StringInput `pulumi:"scope"`
@@ -9441,11 +9731,12 @@ func (o GetZonesZoneOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The authoritative nameservers for the zone.
 func (o GetZonesZoneOutput) Nameservers() GetZonesZoneNameserverArrayOutput {
 	return o.ApplyT(func(v GetZonesZone) []GetZonesZoneNameserver { return v.Nameservers }).(GetZonesZoneNameserverArrayOutput)
 }
 
-// The resolution mode of a zone defines behavior related to how query responses can be handled.
+// The resolution mode of a zone defines behavior related to how query responses can be handled. See [Private DNS Zone Transparency](https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/privatedns.htm#use-cases__resolution) for more information.
 func (o GetZonesZoneOutput) ResolutionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZone) string { return v.ResolutionMode }).(pulumi.StringOutput)
 }
@@ -10370,6 +10661,7 @@ func (o GetZonesZoneExternalMasterArrayOutput) Index(i pulumi.IntInput) GetZones
 }
 
 type GetZonesZoneNameserver struct {
+	// The hostname of the nameserver.
 	Hostname string `pulumi:"hostname"`
 }
 
@@ -10385,6 +10677,7 @@ type GetZonesZoneNameserverInput interface {
 }
 
 type GetZonesZoneNameserverArgs struct {
+	// The hostname of the nameserver.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 }
 
@@ -10439,6 +10732,7 @@ func (o GetZonesZoneNameserverOutput) ToGetZonesZoneNameserverOutputWithContext(
 	return o
 }
 
+// The hostname of the nameserver.
 func (o GetZonesZoneNameserverOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetZonesZoneNameserver) string { return v.Hostname }).(pulumi.StringOutput)
 }

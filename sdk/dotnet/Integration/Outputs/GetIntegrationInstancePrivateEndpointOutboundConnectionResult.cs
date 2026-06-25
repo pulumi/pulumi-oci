@@ -17,8 +17,17 @@ namespace Pulumi.Oci.Integration.Outputs
         /// Indicates if all traffic should go through configured outbound connection
         /// </summary>
         public readonly bool IsAllOutboundTrafficPrivate;
+        /// <summary>
+        /// One or more Network security group Ids. This is an optional argument.
+        /// </summary>
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The type of Outbound Connection.
+        /// </summary>
         public readonly string OutboundConnectionType;
+        /// <summary>
+        /// Customer Private Network VCN Subnet OCID. This is a required argument.
+        /// </summary>
         public readonly string SubnetId;
 
         [OutputConstructor]

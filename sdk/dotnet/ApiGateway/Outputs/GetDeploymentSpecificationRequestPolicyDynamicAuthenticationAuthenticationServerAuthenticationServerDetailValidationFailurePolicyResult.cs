@@ -22,6 +22,10 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string FallbackRedirectPath;
         /// <summary>
+        /// The path (relative to the deployment) where the Identity Provider  will redirect the user after authentication. This path must match  a route in the specification that uses the OAUTH2_LOGIN_BACKEND.
+        /// </summary>
+        public readonly string LoginPath;
+        /// <summary>
         /// The path to be used as logout.
         /// </summary>
         public readonly string LogoutPath;
@@ -76,6 +80,8 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             string fallbackRedirectPath,
 
+            string loginPath,
+
             string logoutPath,
 
             int maxExpiryDurationInHours,
@@ -102,6 +108,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         {
             ClientDetails = clientDetails;
             FallbackRedirectPath = fallbackRedirectPath;
+            LoginPath = loginPath;
             LogoutPath = logoutPath;
             MaxExpiryDurationInHours = maxExpiryDurationInHours;
             ResponseCode = responseCode;

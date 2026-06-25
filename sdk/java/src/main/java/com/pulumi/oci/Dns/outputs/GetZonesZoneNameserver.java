@@ -10,9 +10,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetZonesZoneNameserver {
+    /**
+     * @return The hostname of the nameserver.
+     * 
+     */
     private String hostname;
 
     private GetZonesZoneNameserver() {}
+    /**
+     * @return The hostname of the nameserver.
+     * 
+     */
     public String hostname() {
         return this.hostname;
     }

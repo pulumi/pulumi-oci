@@ -148,6 +148,12 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     public Output<List<IntegrationInstanceAlternateCustomEndpoint>> alternateCustomEndpoints() {
         return this.alternateCustomEndpoints;
     }
+    @Export(name="attachmentType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> attachmentType;
+
+    public Output<Optional<String>> attachmentType() {
+        return Codegen.optional(this.attachmentType);
+    }
     /**
      * A list of associated attachments to other services
      * 
@@ -537,6 +543,20 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<IntegrationInstancePrivateEndpointOutboundConnection>> privateEndpointOutboundConnections() {
         return this.privateEndpointOutboundConnections;
+    }
+    /**
+     * OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    @Export(name="processAutomationLogGroupId", refs={String.class}, tree="[0]")
+    private Output<String> processAutomationLogGroupId;
+
+    /**
+     * @return OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+     * 
+     */
+    public Output<String> processAutomationLogGroupId() {
+        return this.processAutomationLogGroupId;
     }
     /**
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{

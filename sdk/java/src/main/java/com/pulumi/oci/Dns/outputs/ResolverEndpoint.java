@@ -6,6 +6,7 @@ package com.pulumi.oci.Dns.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -18,6 +19,13 @@ public final class ResolverEndpoint {
      */
     private @Nullable String compartmentId;
     /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    private @Nullable Map<String,String> definedTags;
+    /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
@@ -27,6 +35,18 @@ public final class ResolverEndpoint {
      * 
      */
     private @Nullable String forwardingAddress;
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    private @Nullable Map<String,String> freeformTags;
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
+    private @Nullable String id;
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
      * 
@@ -47,6 +67,21 @@ public final class ResolverEndpoint {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    private @Nullable String peId;
+    /**
+     * @return The OCID of the target resolver.
+     * 
+     */
+    private @Nullable String resolverId;
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    private @Nullable Map<String,String> securityAttributes;
     /**
      * @return The canonical absolute URL of the resource.
      * 
@@ -72,6 +107,11 @@ public final class ResolverEndpoint {
      * 
      */
     private @Nullable String timeUpdated;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    private @Nullable String vnicId;
 
     private ResolverEndpoint() {}
     /**
@@ -80,6 +120,15 @@ public final class ResolverEndpoint {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    public Map<String,String> definedTags() {
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The type of resolver endpoint. VNIC is currently the only supported type.
@@ -94,6 +143,22 @@ public final class ResolverEndpoint {
      */
     public Optional<String> forwardingAddress() {
         return Optional.ofNullable(this.forwardingAddress);
+    }
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
+    public Map<String,String> freeformTags() {
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
+    }
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A Boolean flag indicating whether or not the resolver endpoint is for forwarding.
@@ -122,6 +187,27 @@ public final class ResolverEndpoint {
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Optional<String> peId() {
+        return Optional.ofNullable(this.peId);
+    }
+    /**
+     * @return The OCID of the target resolver.
+     * 
+     */
+    public Optional<String> resolverId() {
+        return Optional.ofNullable(this.resolverId);
+    }
+    /**
+     * @return [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes == null ? Map.of() : this.securityAttributes;
     }
     /**
      * @return The canonical absolute URL of the resource.
@@ -158,6 +244,13 @@ public final class ResolverEndpoint {
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC resource that this resolver endpoint corresponds to.
+     * 
+     */
+    public Optional<String> vnicId() {
+        return Optional.ofNullable(this.vnicId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -169,38 +262,58 @@ public final class ResolverEndpoint {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String endpointType;
         private @Nullable String forwardingAddress;
+        private @Nullable Map<String,String> freeformTags;
+        private @Nullable String id;
         private @Nullable Boolean isForwarding;
         private @Nullable Boolean isListening;
         private @Nullable String listeningAddress;
         private @Nullable String name;
+        private @Nullable String peId;
+        private @Nullable String resolverId;
+        private @Nullable Map<String,String> securityAttributes;
         private @Nullable String self;
         private @Nullable String state;
         private @Nullable String subnetId;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
+        private @Nullable String vnicId;
         public Builder() {}
         public Builder(ResolverEndpoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.definedTags = defaults.definedTags;
     	      this.endpointType = defaults.endpointType;
     	      this.forwardingAddress = defaults.forwardingAddress;
+    	      this.freeformTags = defaults.freeformTags;
+    	      this.id = defaults.id;
     	      this.isForwarding = defaults.isForwarding;
     	      this.isListening = defaults.isListening;
     	      this.listeningAddress = defaults.listeningAddress;
     	      this.name = defaults.name;
+    	      this.peId = defaults.peId;
+    	      this.resolverId = defaults.resolverId;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.self = defaults.self;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.vnicId = defaults.vnicId;
         }
 
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
+
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
@@ -213,6 +326,18 @@ public final class ResolverEndpoint {
         public Builder forwardingAddress(@Nullable String forwardingAddress) {
 
             this.forwardingAddress = forwardingAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
+
+            this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder id(@Nullable String id) {
+
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -237,6 +362,24 @@ public final class ResolverEndpoint {
         public Builder name(@Nullable String name) {
 
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peId(@Nullable String peId) {
+
+            this.peId = peId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resolverId(@Nullable String resolverId) {
+
+            this.resolverId = resolverId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityAttributes(@Nullable Map<String,String> securityAttributes) {
+
+            this.securityAttributes = securityAttributes;
             return this;
         }
         @CustomType.Setter
@@ -269,20 +412,33 @@ public final class ResolverEndpoint {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder vnicId(@Nullable String vnicId) {
+
+            this.vnicId = vnicId;
+            return this;
+        }
         public ResolverEndpoint build() {
             final var _resultValue = new ResolverEndpoint();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
             _resultValue.endpointType = endpointType;
             _resultValue.forwardingAddress = forwardingAddress;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
             _resultValue.isForwarding = isForwarding;
             _resultValue.isListening = isListening;
             _resultValue.listeningAddress = listeningAddress;
             _resultValue.name = name;
+            _resultValue.peId = peId;
+            _resultValue.resolverId = resolverId;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.self = self;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vnicId = vnicId;
             return _resultValue;
         }
     }

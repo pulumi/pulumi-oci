@@ -9,60 +9,161 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Oci.ObjectStorage
 {
+    /// <summary>
+    /// This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+    /// It enables private network access from a specified subnet to Object Storage without traversing the public internet.
+    /// 
+    /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage/private_endpoint
+    /// 
+    /// Creates an Object Storage Private Endpoint in a specified subnet, with access scoping for namespace, compartment, and bucket.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var pe = new Oci.ObjectStorage.PrivateEndpoint("pe", new()
+    ///     {
+    ///         CompartmentId = compartmentOcid,
+    ///         Namespace = namespaceName,
+    ///         Name = peName,
+    ///         SubnetId = testSubnet1.Id,
+    ///         Prefix = dnsPrefix,
+    ///         AccessTargets = new[]
+    ///         {
+    ///             new Oci.ObjectStorage.Inputs.PrivateEndpointAccessTargetArgs
+    ///             {
+    ///                 Namespace = "*",
+    ///                 CompartmentId = "*",
+    ///                 Bucket = "*",
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Private endpoints can be imported using the `namespaceName` and the `Name` of the private endpoint.
+    /// 
+    /// ```sh
+    /// $ pulumi import oci:ObjectStorage/privateEndpoint:PrivateEndpoint test_pe "n/{namespaceName}/pe/{peName}"
+    /// ```
+    /// </summary>
     [OciResourceType("oci:ObjectStorage/privateEndpoint:PrivateEndpoint")]
     public partial class PrivateEndpoint : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, CompartmentId and bucket.
+        /// </summary>
         [Output("accessTargets")]
         public Output<ImmutableArray<Outputs.PrivateEndpointAccessTarget>> AccessTargets { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        /// </summary>
         [Output("additionalPrefixes")]
         public Output<ImmutableArray<string>> AdditionalPrefixes { get; private set; } = null!;
 
+        /// <summary>
+        /// The ID of the compartment in which to create the private endpoint.
+        /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        /// </summary>
         [Output("createdBy")]
         public Output<string> CreatedBy { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
+        /// <summary>
+        /// The entity tag for the Private Endpoint.
+        /// </summary>
         [Output("etag")]
         public Output<string> Etag { get; private set; } = null!;
 
+        /// <summary>
+        /// The object representing FQDN details formed using prefix and additionalPrefixes.
+        /// </summary>
         [Output("fqdns")]
         public Output<ImmutableDictionary<string, ImmutableDictionary<string, ImmutableDictionary<string, string>>>?> Fqdns { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        /// <summary>
+        /// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
+        /// <summary>
+        /// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
+        /// <summary>
+        /// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        /// </summary>
         [Output("prefix")]
         public Output<string> Prefix { get; private set; } = null!;
 
+        /// <summary>
+        /// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        /// </summary>
         [Output("privateEndpointIp")]
         public Output<string> PrivateEndpointIp { get; private set; } = null!;
 
         [Output("securityAttributes")]
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
+        /// <summary>
+        /// The lifecycle state of the private endpoint resource.
+        /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
+        /// <summary>
+        /// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
+        /// <summary>
+        /// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         [Output("timeModified")]
         public Output<string> TimeModified { get; private set; } = null!;
 
@@ -114,6 +215,10 @@ namespace Pulumi.Oci.ObjectStorage
     {
         [Input("accessTargets", required: true)]
         private InputList<Inputs.PrivateEndpointAccessTargetArgs>? _accessTargets;
+
+        /// <summary>
+        /// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, CompartmentId and bucket.
+        /// </summary>
         public InputList<Inputs.PrivateEndpointAccessTargetArgs> AccessTargets
         {
             get => _accessTargets ?? (_accessTargets = new InputList<Inputs.PrivateEndpointAccessTargetArgs>());
@@ -122,17 +227,28 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("additionalPrefixes")]
         private InputList<string>? _additionalPrefixes;
+
+        /// <summary>
+        /// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        /// </summary>
         public InputList<string> AdditionalPrefixes
         {
             get => _additionalPrefixes ?? (_additionalPrefixes = new InputList<string>());
             set => _additionalPrefixes = value;
         }
 
+        /// <summary>
+        /// The ID of the compartment in which to create the private endpoint.
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
         public InputMap<string> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<string>());
@@ -141,6 +257,10 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("fqdns")]
         private InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>>? _fqdns;
+
+        /// <summary>
+        /// The object representing FQDN details formed using prefix and additionalPrefixes.
+        /// </summary>
         public InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>> Fqdns
         {
             get => _fqdns ?? (_fqdns = new InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>>());
@@ -149,29 +269,49 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
 
+        /// <summary>
+        /// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        /// </summary>
         [Input("prefix", required: true)]
         public Input<string> Prefix { get; set; } = null!;
 
+        /// <summary>
+        /// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        /// </summary>
         [Input("privateEndpointIp")]
         public Input<string>? PrivateEndpointIp { get; set; }
 
@@ -183,9 +323,18 @@ namespace Pulumi.Oci.ObjectStorage
             set => _securityAttributes = value;
         }
 
+        /// <summary>
+        /// The lifecycle state of the private endpoint resource.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
@@ -199,6 +348,10 @@ namespace Pulumi.Oci.ObjectStorage
     {
         [Input("accessTargets")]
         private InputList<Inputs.PrivateEndpointAccessTargetGetArgs>? _accessTargets;
+
+        /// <summary>
+        /// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, CompartmentId and bucket.
+        /// </summary>
         public InputList<Inputs.PrivateEndpointAccessTargetGetArgs> AccessTargets
         {
             get => _accessTargets ?? (_accessTargets = new InputList<Inputs.PrivateEndpointAccessTargetGetArgs>());
@@ -207,31 +360,52 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("additionalPrefixes")]
         private InputList<string>? _additionalPrefixes;
+
+        /// <summary>
+        /// A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn's are added to the customer VCN's DNS record.
+        /// </summary>
         public InputList<string> AdditionalPrefixes
         {
             get => _additionalPrefixes ?? (_additionalPrefixes = new InputList<string>());
             set => _additionalPrefixes = value;
         }
 
+        /// <summary>
+        /// The ID of the compartment in which to create the private endpoint.
+        /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        /// </summary>
         public InputMap<string> DefinedTags
         {
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// The entity tag for the Private Endpoint.
+        /// </summary>
         [Input("etag")]
         public Input<string>? Etag { get; set; }
 
         [Input("fqdns")]
         private InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>>? _fqdns;
+
+        /// <summary>
+        /// The object representing FQDN details formed using prefix and additionalPrefixes.
+        /// </summary>
         public InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>> Fqdns
         {
             get => _fqdns ?? (_fqdns = new InputMap<ImmutableDictionary<string, ImmutableDictionary<string, string>>>());
@@ -240,29 +414,49 @@ namespace Pulumi.Oci.ObjectStorage
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// A list of the OCIDs of the network security groups (NSGs) to add the private endpoint's VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+        /// </summary>
         public InputList<string> NsgIds
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
 
+        /// <summary>
+        /// The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+        /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }
 
+        /// <summary>
+        /// The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+        /// </summary>
         [Input("privateEndpointIp")]
         public Input<string>? PrivateEndpointIp { get; set; }
 
@@ -274,15 +468,30 @@ namespace Pulumi.Oci.ObjectStorage
             set => _securityAttributes = value;
         }
 
+        /// <summary>
+        /// The lifecycle state of the private endpoint resource.
+        /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
+        /// <summary>
+        /// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
+        /// <summary>
+        /// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         [Input("timeModified")]
         public Input<string>? TimeModified { get; set; }
 

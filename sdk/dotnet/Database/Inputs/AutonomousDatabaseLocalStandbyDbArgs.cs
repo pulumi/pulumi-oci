@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
+        /// </summary>
+        [Input("externalLocationZone")]
+        public Input<string>? ExternalLocationZone { get; set; }
+
+        /// <summary>
         /// The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         /// </summary>
         [Input("lagTimeInSeconds")]

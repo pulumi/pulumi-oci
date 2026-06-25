@@ -17,9 +17,17 @@ public final class GetResolversFilter extends com.pulumi.resources.InvokeArgs {
 
     public static final GetResolversFilter Empty = new GetResolversFilter();
 
+    /**
+     * The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetResolversFilter extends com.pulumi.resources.InvokeArgs {
             $ = new GetResolversFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name The name of the resolver endpoint. Must be unique, case-insensitive, within the resolver.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

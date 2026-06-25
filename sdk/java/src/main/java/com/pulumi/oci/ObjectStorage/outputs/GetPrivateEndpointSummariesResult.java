@@ -14,6 +14,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPrivateEndpointSummariesResult {
+    /**
+     * @return The compartment ID in which the private endpoint resource exists in.
+     * 
+     */
     private String compartmentId;
     private @Nullable List<GetPrivateEndpointSummariesFilter> filters;
     /**
@@ -21,10 +25,22 @@ public final class GetPrivateEndpointSummariesResult {
      * 
      */
     private String id;
+    /**
+     * @return The Object Storage namespace in which the private endpoint resides.
+     * 
+     */
     private String namespace;
+    /**
+     * @return The list of private_endpoint_summaries.
+     * 
+     */
     private List<GetPrivateEndpointSummariesPrivateEndpointSummary> privateEndpointSummaries;
 
     private GetPrivateEndpointSummariesResult() {}
+    /**
+     * @return The compartment ID in which the private endpoint resource exists in.
+     * 
+     */
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -38,9 +54,17 @@ public final class GetPrivateEndpointSummariesResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return The Object Storage namespace in which the private endpoint resides.
+     * 
+     */
     public String namespace() {
         return this.namespace;
     }
+    /**
+     * @return The list of private_endpoint_summaries.
+     * 
+     */
     public List<GetPrivateEndpointSummariesPrivateEndpointSummary> privateEndpointSummaries() {
         return this.privateEndpointSummaries;
     }

@@ -17,83 +17,247 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
+/**
+ * This resource provides the Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+ * It enables private network access from a specified subnet to Object Storage without traversing the public internet.
+ * 
+ * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/object_storage/private_endpoint
+ * 
+ * Creates an Object Storage Private Endpoint in a specified subnet, with access scoping for namespace, compartment, and bucket.
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ObjectStorage.PrivateEndpoint;
+ * import com.pulumi.oci.ObjectStorage.PrivateEndpointArgs;
+ * import com.pulumi.oci.ObjectStorage.inputs.PrivateEndpointAccessTargetArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var pe = new PrivateEndpoint("pe", PrivateEndpointArgs.builder()
+ *             .compartmentId(compartmentOcid)
+ *             .namespace(namespaceName)
+ *             .name(peName)
+ *             .subnetId(testSubnet1.id())
+ *             .prefix(dnsPrefix)
+ *             .accessTargets(PrivateEndpointAccessTargetArgs.builder()
+ *                 .namespace("*")
+ *                 .compartmentId("*")
+ *                 .bucket("*")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Import
+ * 
+ * Private endpoints can be imported using the `namespaceName` and the `name` of the private endpoint.
+ * 
+ * ```sh
+ * $ pulumi import oci:ObjectStorage/privateEndpoint:PrivateEndpoint test_pe &#34;n/{namespaceName}/pe/{peName}&#34;
+ * ```
+ * 
+ */
 @ResourceType(type="oci:ObjectStorage/privateEndpoint:PrivateEndpoint")
 public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+     * 
+     */
     @Export(name="accessTargets", refs={List.class,PrivateEndpointAccessTarget.class}, tree="[0,1]")
     private Output<List<PrivateEndpointAccessTarget>> accessTargets;
 
+    /**
+     * @return (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
+     * 
+     */
     public Output<List<PrivateEndpointAccessTarget>> accessTargets() {
         return this.accessTargets;
     }
+    /**
+     * A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+     * 
+     */
     @Export(name="additionalPrefixes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> additionalPrefixes;
 
+    /**
+     * @return A list of additional prefixes that you can provide along with any other prefix. These resulting endpointFqdn&#39;s are added to the customer VCN&#39;s DNS record.
+     * 
+     */
     public Output<Optional<List<String>>> additionalPrefixes() {
         return Codegen.optional(this.additionalPrefixes);
     }
+    /**
+     * The ID of the compartment in which to create the private endpoint.
+     * 
+     */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
+    /**
+     * @return The ID of the compartment in which to create the private endpoint.
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     @Export(name="createdBy", refs={String.class}, tree="[0]")
     private Output<String> createdBy;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+     * 
+     */
     public Output<String> createdBy() {
         return this.createdBy;
     }
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * 
+     */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
+    /**
+     * The entity tag for the Private Endpoint.
+     * 
+     */
     @Export(name="etag", refs={String.class}, tree="[0]")
     private Output<String> etag;
 
+    /**
+     * @return The entity tag for the Private Endpoint.
+     * 
+     */
     public Output<String> etag() {
         return this.etag;
     }
+    /**
+     * The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     @Export(name="fqdns", refs={Map.class,String.class}, tree="[0,1,[0,1,[0,1,1]]]")
     private Output</* @Nullable */ Map<String,Map<String,Map<String,String>>>> fqdns;
 
+    /**
+     * @return The object representing FQDN details formed using prefix and additionalPrefixes.
+     * 
+     */
     public Output<Optional<Map<String,Map<String,Map<String,String>>>>> fqdns() {
         return Codegen.optional(this.fqdns);
     }
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    /**
+     * The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+     * 
+     */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
+    /**
+     * @return The name of the private endpoint. Valid characters are uppercase or lowercase letters, numbers, hyphens, and periods. Private Endpoint names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-pe1
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * The Object Storage namespace used for the request.
+     * 
+     */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
+    /**
+     * @return The Object Storage namespace used for the request.
+     * 
+     */
     public Output<String> namespace() {
         return this.namespace;
     }
+    /**
+     * A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+     * 
+     */
     @Export(name="nsgIds", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> nsgIds;
 
+    /**
+     * @return A list of the OCIDs of the network security groups (NSGs) to add the private endpoint&#39;s VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/networksecuritygroups.htm).
+     * 
+     */
     public Output<Optional<List<String>>> nsgIds() {
         return Codegen.optional(this.nsgIds);
     }
+    /**
+     * The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+     * 
+     */
     @Export(name="prefix", refs={String.class}, tree="[0]")
     private Output<String> prefix;
 
+    /**
+     * @return The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
+     * 
+     */
     public Output<String> prefix() {
         return this.prefix;
     }
+    /**
+     * The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+     * 
+     */
     @Export(name="privateEndpointIp", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointIp;
 
+    /**
+     * @return The private IP address that is to be assigned to this private endpoint. If it&#39;s not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
+     * 
+     */
     public Output<String> privateEndpointIp() {
         return this.privateEndpointIp;
     }
@@ -103,27 +267,65 @@ public class PrivateEndpoint extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> securityAttributes() {
         return this.securityAttributes;
     }
+    /**
+     * The lifecycle state of the private endpoint resource.
+     * 
+     */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
+    /**
+     * @return The lifecycle state of the private endpoint resource.
+     * 
+     */
     public Output<String> state() {
         return this.state;
     }
+    /**
+     * The ID of the subnet that the private endpoint VNIC will be created and reside in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
+    /**
+     * @return The ID of the subnet that the private endpoint VNIC will be created and reside in.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
+    /**
+     * @return The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     @Export(name="timeModified", refs={String.class}, tree="[0]")
     private Output<String> timeModified;
 
+    /**
+     * @return The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * 
+     */
     public Output<String> timeModified() {
         return this.timeModified;
     }

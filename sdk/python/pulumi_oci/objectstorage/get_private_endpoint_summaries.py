@@ -48,6 +48,9 @@ class GetPrivateEndpointSummariesResult:
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The compartment ID in which the private endpoint resource exists in.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
@@ -66,11 +69,17 @@ class GetPrivateEndpointSummariesResult:
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace in which the private endpoint resides.
+        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
     @pulumi.getter(name="privateEndpointSummaries")
     def private_endpoint_summaries(self) -> Sequence['outputs.GetPrivateEndpointSummariesPrivateEndpointSummaryResult']:
+        """
+        The list of private_endpoint_summaries.
+        """
         return pulumi.get(self, "private_endpoint_summaries")
 
 
@@ -92,7 +101,31 @@ def get_private_endpoint_summaries(compartment_id: Optional[_builtins.str] = Non
                                    namespace: Optional[_builtins.str] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPrivateEndpointSummariesResult:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+
+    Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+    and does not contain fields like the user-defined metadata.
+
+    ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+    `opc-next-page` value with the `page` request parameter.
+
+    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_pes = oci.objectstorage.get_private_endpoint_summaries(compartment_id=compartment_id,
+        namespace=namespace)
+    ```
+
+
+    :param _builtins.str compartment_id: The ID of the compartment in which to list private endpoints.
+    :param _builtins.str namespace: The Object Storage namespace used for the request.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -112,7 +145,31 @@ def get_private_endpoint_summaries_output(compartment_id: pulumi.Input[Optional[
                                           namespace: pulumi.Input[Optional[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPrivateEndpointSummariesResult]:
     """
-    Use this data source to access information about an existing resource.
+    This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Object Storage service.
+
+    Gets a list of all PrivateEndpointSummary items in a compartment. A PrivateEndpointSummary contains only summary fields for the private endpoint
+    and does not contain fields like the user-defined metadata.
+
+    ListPrivateEndpoints returns a PrivateEndpointSummary containing at most 1000 private endpoints. To paginate through more private endpoints, use the returned
+    `opc-next-page` value with the `page` request parameter.
+
+    To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+    talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+    [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_pes = oci.objectstorage.get_private_endpoint_summaries(compartment_id=compartment_id,
+        namespace=namespace)
+    ```
+
+
+    :param _builtins.str compartment_id: The ID of the compartment in which to list private endpoints.
+    :param _builtins.str namespace: The Object Storage namespace used for the request.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

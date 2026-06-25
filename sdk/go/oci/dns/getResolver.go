@@ -83,8 +83,9 @@ type LookupResolverResult struct {
 	// The OCID of the resolver.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
-	IsProtected bool   `pulumi:"isProtected"`
-	ResolverId  string `pulumi:"resolverId"`
+	IsProtected bool `pulumi:"isProtected"`
+	// The OCID of the resolver.
+	ResolverId string `pulumi:"resolverId"`
 	// Rules for the resolver. Rules are evaluated in order, and only the first matching rule will have its action applied.
 	Rules []GetResolverRule `pulumi:"rules"`
 	Scope *string           `pulumi:"scope"`
@@ -184,6 +185,7 @@ func (o LookupResolverResultOutput) IsProtected() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupResolverResult) bool { return v.IsProtected }).(pulumi.BoolOutput)
 }
 
+// The OCID of the resolver.
 func (o LookupResolverResultOutput) ResolverId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupResolverResult) string { return v.ResolverId }).(pulumi.StringOutput)
 }

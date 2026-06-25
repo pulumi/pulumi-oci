@@ -11,6 +11,36 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+//
+// Gets the current representation of the given private endpoint in the given Object Storage namespace.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/objectstorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := objectstorage.GetPrivateEndpoint(ctx, &objectstorage.GetPrivateEndpointArgs{
+//				Name:      peName,
+//				Namespace: namespace,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupPrivateEndpoint(ctx *pulumi.Context, args *LookupPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupPrivateEndpointResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupPrivateEndpointResult
@@ -23,31 +53,43 @@ func LookupPrivateEndpoint(ctx *pulumi.Context, args *LookupPrivateEndpointArgs,
 
 // A collection of arguments for invoking getPrivateEndpoint.
 type LookupPrivateEndpointArgs struct {
-	Name      string `pulumi:"name"`
+	// The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+	Name string `pulumi:"name"`
+	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 }
 
 // A collection of values returned by getPrivateEndpoint.
 type LookupPrivateEndpointResult struct {
-	AccessTargets      []GetPrivateEndpointAccessTarget        `pulumi:"accessTargets"`
-	AdditionalPrefixes []string                                `pulumi:"additionalPrefixes"`
-	CompartmentId      string                                  `pulumi:"compartmentId"`
-	CreatedBy          string                                  `pulumi:"createdBy"`
-	DefinedTags        map[string]string                       `pulumi:"definedTags"`
-	Etag               string                                  `pulumi:"etag"`
-	Fqdns              map[string]map[string]map[string]string `pulumi:"fqdns"`
-	FreeformTags       map[string]string                       `pulumi:"freeformTags"`
-	Id                 string                                  `pulumi:"id"`
-	Name               string                                  `pulumi:"name"`
-	Namespace          string                                  `pulumi:"namespace"`
-	NsgIds             []string                                `pulumi:"nsgIds"`
-	Prefix             string                                  `pulumi:"prefix"`
-	PrivateEndpointIp  string                                  `pulumi:"privateEndpointIp"`
-	SecurityAttributes map[string]string                       `pulumi:"securityAttributes"`
-	State              string                                  `pulumi:"state"`
-	SubnetId           string                                  `pulumi:"subnetId"`
-	TimeCreated        string                                  `pulumi:"timeCreated"`
-	TimeModified       string                                  `pulumi:"timeModified"`
+	AccessTargets      []GetPrivateEndpointAccessTarget `pulumi:"accessTargets"`
+	AdditionalPrefixes []string                         `pulumi:"additionalPrefixes"`
+	// The compartment ID in which the private endpoint resource exists in.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+	CreatedBy   string            `pulumi:"createdBy"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The entity tag for the Private Endpoint.
+	Etag string `pulumi:"etag"`
+	// The object representing FQDN details formed using prefix and additionalPrefixes.
+	Fqdns        map[string]map[string]map[string]string `pulumi:"fqdns"`
+	FreeformTags map[string]string                       `pulumi:"freeformTags"`
+	Id           string                                  `pulumi:"id"`
+	// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+	Name string `pulumi:"name"`
+	// The Object Storage namespace in which the private endpoint resides.
+	Namespace string   `pulumi:"namespace"`
+	NsgIds    []string `pulumi:"nsgIds"`
+	// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+	Prefix             string            `pulumi:"prefix"`
+	PrivateEndpointIp  string            `pulumi:"privateEndpointIp"`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The lifecycle state of the private endpoint resource.
+	State    string `pulumi:"state"`
+	SubnetId string `pulumi:"subnetId"`
+	// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+	TimeModified string `pulumi:"timeModified"`
 }
 
 func LookupPrivateEndpointOutput(ctx *pulumi.Context, args LookupPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupPrivateEndpointResultOutput {
@@ -61,7 +103,9 @@ func LookupPrivateEndpointOutput(ctx *pulumi.Context, args LookupPrivateEndpoint
 
 // A collection of arguments for invoking getPrivateEndpoint.
 type LookupPrivateEndpointOutputArgs struct {
-	Name      pulumi.StringInput `pulumi:"name"`
+	// The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+	Name pulumi.StringInput `pulumi:"name"`
+	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -92,10 +136,12 @@ func (o LookupPrivateEndpointResultOutput) AdditionalPrefixes() pulumi.StringArr
 	return o.ApplyT(func(v LookupPrivateEndpointResult) []string { return v.AdditionalPrefixes }).(pulumi.StringArrayOutput)
 }
 
+// The compartment ID in which the private endpoint resource exists in.
 func (o LookupPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
 func (o LookupPrivateEndpointResultOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.CreatedBy }).(pulumi.StringOutput)
 }
@@ -104,10 +150,12 @@ func (o LookupPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput 
 	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
+// The entity tag for the Private Endpoint.
 func (o LookupPrivateEndpointResultOutput) Etag() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Etag }).(pulumi.StringOutput)
 }
 
+// The object representing FQDN details formed using prefix and additionalPrefixes.
 func (o LookupPrivateEndpointResultOutput) Fqdns() pulumi.StringMapMapMapOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]map[string]map[string]string { return v.Fqdns }).(pulumi.StringMapMapMapOutput)
 }
@@ -120,10 +168,12 @@ func (o LookupPrivateEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
 func (o LookupPrivateEndpointResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// The Object Storage namespace in which the private endpoint resides.
 func (o LookupPrivateEndpointResultOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -132,6 +182,7 @@ func (o LookupPrivateEndpointResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
+// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
 func (o LookupPrivateEndpointResultOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.Prefix }).(pulumi.StringOutput)
 }
@@ -144,6 +195,7 @@ func (o LookupPrivateEndpointResultOutput) SecurityAttributes() pulumi.StringMap
 	return o.ApplyT(func(v LookupPrivateEndpointResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
+// The lifecycle state of the private endpoint resource.
 func (o LookupPrivateEndpointResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -152,10 +204,12 @@ func (o LookupPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o LookupPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
 func (o LookupPrivateEndpointResultOutput) TimeModified() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.TimeModified }).(pulumi.StringOutput)
 }

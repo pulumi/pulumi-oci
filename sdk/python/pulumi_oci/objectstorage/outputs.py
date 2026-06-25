@@ -421,6 +421,11 @@ class PrivateEndpointAccessTarget(dict):
                  bucket: _builtins.str,
                  compartment_id: _builtins.str,
                  namespace: _builtins.str):
+        """
+        :param _builtins.str bucket: (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        :param _builtins.str compartment_id: (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        :param _builtins.str namespace: (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "namespace", namespace)
@@ -428,16 +433,25 @@ class PrivateEndpointAccessTarget(dict):
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> _builtins.str:
+        """
+        (Updatable) Specifies what namespace/buckets within the allowed compartments the private endpoint can access. You can configure either a single bucket or all buckets within the allowed compartments.
+        """
         return pulumi.get(self, "bucket")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        (Updatable) Specifies what namespace/compartments the private endpoint can access. You can configure either a single compartment or all compartments.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        (Updatable) Specifies the target namespace that's to be allowed to egress from the private endpoint.
+        """
         return pulumi.get(self, "namespace")
 
 
@@ -1615,6 +1629,10 @@ class GetPrivateEndpointAccessTargetResult(dict):
                  bucket: _builtins.str,
                  compartment_id: _builtins.str,
                  namespace: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The compartment ID in which the private endpoint resource exists in.
+        :param _builtins.str namespace: The Object Storage namespace used for the request.
+        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "namespace", namespace)
@@ -1627,11 +1645,17 @@ class GetPrivateEndpointAccessTargetResult(dict):
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The compartment ID in which the private endpoint resource exists in.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
 
@@ -1641,6 +1665,9 @@ class GetPrivateEndpointSummariesFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -1649,6 +1676,9 @@ class GetPrivateEndpointSummariesFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -1684,6 +1714,18 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
                  subnet_id: _builtins.str,
                  time_created: _builtins.str,
                  time_modified: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list private endpoints.
+        :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        :param _builtins.str etag: The entity tag for the Private Endpoint.
+        :param Mapping[str, Mapping[str, Mapping[str, _builtins.str]]] fqdns: The object representing FQDN details formed using prefix and additionalPrefixes.
+        :param _builtins.str name: The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        :param _builtins.str namespace: The Object Storage namespace used for the request.
+        :param _builtins.str prefix: The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+        :param _builtins.str state: The lifecycle state of the private endpoint resource.
+        :param _builtins.str time_created: The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        :param _builtins.str time_modified: The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         pulumi.set(__self__, "access_targets", access_targets)
         pulumi.set(__self__, "additional_prefixes", additional_prefixes)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1717,11 +1759,17 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list private endpoints.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        """
         return pulumi.get(self, "created_by")
 
     @_builtins.property
@@ -1732,11 +1780,17 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter
     def etag(self) -> _builtins.str:
+        """
+        The entity tag for the Private Endpoint.
+        """
         return pulumi.get(self, "etag")
 
     @_builtins.property
     @pulumi.getter
     def fqdns(self) -> Mapping[str, Mapping[str, Mapping[str, _builtins.str]]]:
+        """
+        The object representing FQDN details formed using prefix and additionalPrefixes.
+        """
         return pulumi.get(self, "fqdns")
 
     @_builtins.property
@@ -1752,11 +1806,17 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
     @_builtins.property
@@ -1767,6 +1827,9 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter
     def prefix(self) -> _builtins.str:
+        """
+        The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+        """
         return pulumi.get(self, "prefix")
 
     @_builtins.property
@@ -1782,6 +1845,9 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
+        """
+        The lifecycle state of the private endpoint resource.
+        """
         return pulumi.get(self, "state")
 
     @_builtins.property
@@ -1792,11 +1858,17 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryResult(dict):
     @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
+        """
+        The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_created")
 
     @_builtins.property
     @pulumi.getter(name="timeModified")
     def time_modified(self) -> _builtins.str:
+        """
+        The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        """
         return pulumi.get(self, "time_modified")
 
 
@@ -1806,6 +1878,10 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult(dict):
                  bucket: _builtins.str,
                  compartment_id: _builtins.str,
                  namespace: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list private endpoints.
+        :param _builtins.str namespace: The Object Storage namespace used for the request.
+        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "namespace", namespace)
@@ -1818,11 +1894,17 @@ class GetPrivateEndpointSummariesPrivateEndpointSummaryAccessTargetResult(dict):
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list private endpoints.
+        """
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace used for the request.
+        """
         return pulumi.get(self, "namespace")
 
 

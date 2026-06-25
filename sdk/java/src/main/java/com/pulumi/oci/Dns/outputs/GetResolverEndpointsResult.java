@@ -31,6 +31,10 @@ public final class GetResolverEndpointsResult {
      * 
      */
     private List<GetResolverEndpointsResolverEndpoint> resolverEndpoints;
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     private String resolverId;
     private String scope;
     /**
@@ -64,6 +68,10 @@ public final class GetResolverEndpointsResult {
     public List<GetResolverEndpointsResolverEndpoint> resolverEndpoints() {
         return this.resolverEndpoints;
     }
+    /**
+     * @return The OCID of the resolver.
+     * 
+     */
     public String resolverId() {
         return this.resolverId;
     }

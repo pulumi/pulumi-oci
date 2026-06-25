@@ -27,6 +27,7 @@ class IntegrationInstanceArgs:
                  is_byol: pulumi.Input[_builtins.bool],
                  message_packs: pulumi.Input[_builtins.int],
                  alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
                  convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  custom_endpoint: pulumi.Input[Optional['IntegrationInstanceCustomEndpointArgs']] = None,
@@ -92,6 +93,8 @@ class IntegrationInstanceArgs:
         pulumi.set(__self__, "message_packs", message_packs)
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachment_type is not None:
+            pulumi.set(__self__, "attachment_type", attachment_type)
         if consumption_model is not None:
             pulumi.set(__self__, "consumption_model", consumption_model)
         if convert_instance_trigger is not None:
@@ -206,6 +209,15 @@ class IntegrationInstanceArgs:
     @alternate_custom_endpoints.setter
     def alternate_custom_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]]):
         pulumi.set(self, "alternate_custom_endpoints", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentType")
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "attachment_type")
+
+    @attachment_type.setter
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter(name="consumptionModel")
@@ -468,6 +480,7 @@ class IntegrationInstanceArgs:
 class _IntegrationInstanceState:
     def __init__(__self__, *,
                  alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  attachments: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceAttachmentArgs']]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -497,6 +510,7 @@ class _IntegrationInstanceState:
                  message_packs: pulumi.Input[Optional[_builtins.int]] = None,
                  network_endpoint_details: pulumi.Input[Optional['IntegrationInstanceNetworkEndpointDetailsArgs']] = None,
                  private_endpoint_outbound_connections: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] = None,
+                 process_automation_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -535,6 +549,7 @@ class _IntegrationInstanceState:
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[_builtins.str] process_automation_log_group_id: OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"
                "oracle-zpr.sensitivity.mode" = "enforce"
@@ -552,6 +567,8 @@ class _IntegrationInstanceState:
         """
         if alternate_custom_endpoints is not None:
             pulumi.set(__self__, "alternate_custom_endpoints", alternate_custom_endpoints)
+        if attachment_type is not None:
+            pulumi.set(__self__, "attachment_type", attachment_type)
         if attachments is not None:
             pulumi.set(__self__, "attachments", attachments)
         if compartment_id is not None:
@@ -610,6 +627,8 @@ class _IntegrationInstanceState:
             pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
         if private_endpoint_outbound_connections is not None:
             pulumi.set(__self__, "private_endpoint_outbound_connections", private_endpoint_outbound_connections)
+        if process_automation_log_group_id is not None:
+            pulumi.set(__self__, "process_automation_log_group_id", process_automation_log_group_id)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
         if shape is not None:
@@ -636,6 +655,15 @@ class _IntegrationInstanceState:
     @alternate_custom_endpoints.setter
     def alternate_custom_endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['IntegrationInstanceAlternateCustomEndpointArgs']]]]):
         pulumi.set(self, "alternate_custom_endpoints", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentType")
+    def attachment_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "attachment_type")
+
+    @attachment_type.setter
+    def attachment_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "attachment_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -980,6 +1008,18 @@ class _IntegrationInstanceState:
         pulumi.set(self, "private_endpoint_outbound_connections", value)
 
     @_builtins.property
+    @pulumi.getter(name="processAutomationLogGroupId")
+    def process_automation_log_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        """
+        return pulumi.get(self, "process_automation_log_group_id")
+
+    @process_automation_log_group_id.setter
+    def process_automation_log_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "process_automation_log_group_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="securityAttributes")
     def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -1078,6 +1118,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
                  convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1323,6 +1364,7 @@ class IntegrationInstance(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+                 attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
                  convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1359,6 +1401,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__ = IntegrationInstanceArgs.__new__(IntegrationInstanceArgs)
 
             __props__.__dict__["alternate_custom_endpoints"] = alternate_custom_endpoints
+            __props__.__dict__["attachment_type"] = attachment_type
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -1402,6 +1445,7 @@ class IntegrationInstance(pulumi.CustomResource):
             __props__.__dict__["instance_url"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["private_endpoint_outbound_connections"] = None
+            __props__.__dict__["process_automation_log_group_id"] = None
             __props__.__dict__["state_message"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -1418,6 +1462,7 @@ class IntegrationInstance(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict']]]]] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
             attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1447,6 +1492,7 @@ class IntegrationInstance(pulumi.CustomResource):
             message_packs: pulumi.Input[Optional[_builtins.int]] = None,
             network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']]] = None,
             private_endpoint_outbound_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]]] = None,
+            process_automation_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1489,6 +1535,7 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
+        :param pulumi.Input[_builtins.str] process_automation_log_group_id: OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
                "oracle-zpr.sensitivity.value" = "low"
                "oracle-zpr.sensitivity.mode" = "enforce"
@@ -1509,6 +1556,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__ = _IntegrationInstanceState.__new__(_IntegrationInstanceState)
 
         __props__.__dict__["alternate_custom_endpoints"] = alternate_custom_endpoints
+        __props__.__dict__["attachment_type"] = attachment_type
         __props__.__dict__["attachments"] = attachments
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["consumption_model"] = consumption_model
@@ -1538,6 +1586,7 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["message_packs"] = message_packs
         __props__.__dict__["network_endpoint_details"] = network_endpoint_details
         __props__.__dict__["private_endpoint_outbound_connections"] = private_endpoint_outbound_connections
+        __props__.__dict__["process_automation_log_group_id"] = process_automation_log_group_id
         __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
@@ -1554,6 +1603,11 @@ class IntegrationInstance(pulumi.CustomResource):
         (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
         """
         return pulumi.get(self, "alternate_custom_endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="attachmentType")
+    def attachment_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        return pulumi.get(self, "attachment_type")
 
     @_builtins.property
     @pulumi.getter
@@ -1780,6 +1834,14 @@ class IntegrationInstance(pulumi.CustomResource):
         Base representation for Outbound Connection (Reverse Connection).
         """
         return pulumi.get(self, "private_endpoint_outbound_connections")
+
+    @_builtins.property
+    @pulumi.getter(name="processAutomationLogGroupId")
+    def process_automation_log_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+        """
+        return pulumi.get(self, "process_automation_log_group_id")
 
     @_builtins.property
     @pulumi.getter(name="securityAttributes")

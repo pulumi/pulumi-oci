@@ -11,12 +11,87 @@ namespace Pulumi.Oci.ObjectStorage
 {
     public static class GetPrivateEndpoint
     {
+        /// <summary>
+        /// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the current representation of the given private endpoint in the given Object Storage namespace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPe = Oci.ObjectStorage.GetPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         Name = peName,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Task<GetPrivateEndpointResult> InvokeAsync(GetPrivateEndpointArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointResult>("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the current representation of the given private endpoint in the given Object Storage namespace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPe = Oci.ObjectStorage.GetPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         Name = peName,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetPrivateEndpointResult> Invoke(GetPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
 
+        /// <summary>
+        /// This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Object Storage service.
+        /// 
+        /// Gets the current representation of the given private endpoint in the given Object Storage namespace.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPe = Oci.ObjectStorage.GetPrivateEndpoint.Invoke(new()
+        ///     {
+        ///         Name = peName,
+        ///         Namespace = @namespace,
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
         public static Output<GetPrivateEndpointResult> Invoke(GetPrivateEndpointInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointResult>("oci:ObjectStorage/getPrivateEndpoint:getPrivateEndpoint", args ?? new GetPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
@@ -24,9 +99,15 @@ namespace Pulumi.Oci.ObjectStorage
 
     public sealed class GetPrivateEndpointArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+        /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
 
@@ -38,9 +119,15 @@ namespace Pulumi.Oci.ObjectStorage
 
     public sealed class GetPrivateEndpointInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: `my-pe1`
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        /// <summary>
+        /// The Object Storage namespace used for the request.
+        /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
@@ -56,22 +143,52 @@ namespace Pulumi.Oci.ObjectStorage
     {
         public readonly ImmutableArray<Outputs.GetPrivateEndpointAccessTargetResult> AccessTargets;
         public readonly ImmutableArray<string> AdditionalPrefixes;
+        /// <summary>
+        /// The compartment ID in which the private endpoint resource exists in.
+        /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the private endpoint.
+        /// </summary>
         public readonly string CreatedBy;
         public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
+        /// The entity tag for the Private Endpoint.
+        /// </summary>
         public readonly string Etag;
+        /// <summary>
+        /// The object representing FQDN details formed using prefix and additionalPrefixes.
+        /// </summary>
         public readonly ImmutableDictionary<string, ImmutableDictionary<string, ImmutableDictionary<string, string>>> Fqdns;
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
+        /// <summary>
+        /// The name of the private endpoint. Avoid entering confidential information. Example: my-pe1
+        /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The Object Storage namespace in which the private endpoint resides.
+        /// </summary>
         public readonly string Namespace;
         public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
+        /// The DNS prefix value chosen which is the first part of the URL used to access Object Storage.
+        /// </summary>
         public readonly string Prefix;
         public readonly string PrivateEndpointIp;
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
+        /// The lifecycle state of the private endpoint resource.
+        /// </summary>
         public readonly string State;
         public readonly string SubnetId;
+        /// <summary>
+        /// The date and time the private endpoint was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the private endpoint was updated, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+        /// </summary>
         public readonly string TimeModified;
 
         [OutputConstructor]

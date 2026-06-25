@@ -60,6 +60,7 @@ type LookupIntegrationInstanceArgs struct {
 type LookupIntegrationInstanceResult struct {
 	// A list of alternate custom endpoints used for the integration instance URL.
 	AlternateCustomEndpoints []GetIntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`
+	AttachmentType           string                                          `pulumi:"attachmentType"`
 	// A list of associated attachments to other services
 	Attachments []GetIntegrationInstanceAttachment `pulumi:"attachments"`
 	// Compartment Identifier.
@@ -113,6 +114,8 @@ type LookupIntegrationInstanceResult struct {
 	NetworkEndpointDetails []GetIntegrationInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
+	// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+	ProcessAutomationLogGroupId string `pulumi:"processAutomationLogGroupId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{
 	// "oracle-zpr.sensitivity.value" = "low"
 	// "oracle-zpr.sensitivity.mode" = "enforce"
@@ -172,6 +175,10 @@ func (o LookupIntegrationInstanceResultOutput) AlternateCustomEndpoints() GetInt
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstanceAlternateCustomEndpoint {
 		return v.AlternateCustomEndpoints
 	}).(GetIntegrationInstanceAlternateCustomEndpointArrayOutput)
+}
+
+func (o LookupIntegrationInstanceResultOutput) AttachmentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.AttachmentType }).(pulumi.StringOutput)
 }
 
 // A list of associated attachments to other services
@@ -326,6 +333,11 @@ func (o LookupIntegrationInstanceResultOutput) PrivateEndpointOutboundConnection
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) []GetIntegrationInstancePrivateEndpointOutboundConnection {
 		return v.PrivateEndpointOutboundConnections
 	}).(GetIntegrationInstancePrivateEndpointOutboundConnectionArrayOutput)
+}
+
+// OCID of LogAnalytics LogGroup, enabled for given Process Automation attached to integration instance.
+func (o LookupIntegrationInstanceResultOutput) ProcessAutomationLogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.ProcessAutomationLogGroupId }).(pulumi.StringOutput)
 }
 
 // Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{

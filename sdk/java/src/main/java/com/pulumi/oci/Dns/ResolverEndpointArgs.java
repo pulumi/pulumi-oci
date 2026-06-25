@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -19,14 +20,33 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     public static final ResolverEndpointArgs Empty = new ResolverEndpointArgs();
 
     /**
-     * (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,String>> definedTags;
+
+    /**
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
+     * The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+     * @return The type of resolver endpoint. VNIC is currently the only supported type.
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -46,6 +66,21 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> forwardingAddress() {
         return Optional.ofNullable(this.forwardingAddress);
+    }
+
+    /**
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -154,6 +189,21 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    @Import(name="securityAttributes")
+    private @Nullable Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> securityAttributes() {
+        return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      * 
      * ** IMPORTANT **
@@ -177,8 +227,10 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
     private ResolverEndpointArgs() {}
 
     private ResolverEndpointArgs(ResolverEndpointArgs $) {
+        this.definedTags = $.definedTags;
         this.endpointType = $.endpointType;
         this.forwardingAddress = $.forwardingAddress;
+        this.freeformTags = $.freeformTags;
         this.isForwarding = $.isForwarding;
         this.isListening = $.isListening;
         this.listeningAddress = $.listeningAddress;
@@ -186,6 +238,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         this.nsgIds = $.nsgIds;
         this.resolverId = $.resolverId;
         this.scope = $.scope;
+        this.securityAttributes = $.securityAttributes;
         this.subnetId = $.subnetId;
     }
 
@@ -208,7 +261,32 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * **Example:** `{&#34;Operations&#34;: {&#34;CostCenter&#34;: &#34;42&#34;}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,String> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param endpointType The type of resolver endpoint. VNIC is currently the only supported type.
          * 
          * @return builder
          * 
@@ -219,7 +297,7 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param endpointType (Updatable) The type of resolver endpoint. VNIC is currently the only supported type.
+         * @param endpointType The type of resolver endpoint. VNIC is currently the only supported type.
          * 
          * @return builder
          * 
@@ -247,6 +325,27 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder forwardingAddress(String forwardingAddress) {
             return forwardingAddress(Output.of(forwardingAddress));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**
@@ -404,6 +503,27 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder scope(String scope) {
             return scope(Output.of(scope));
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(@Nullable Output<Map<String,String>> securityAttributes) {
+            $.securityAttributes = securityAttributes;
+            return this;
+        }
+
+        /**
+         * @param securityAttributes (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{&#34;Oracle-DataSecurity-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;:&#34;42&#34;,&#34;mode&#34;:&#34;audit&#34;}}}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            return securityAttributes(Output.of(securityAttributes));
         }
 
         /**

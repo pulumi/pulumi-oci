@@ -698,6 +698,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
                  etag: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_bucket_key_enabled: _builtins.bool,
                  is_read_only: _builtins.bool,
                  kms_key_id: _builtins.str,
                  metadata: Mapping[str, _builtins.str],
@@ -721,6 +722,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str etag: The entity tag (ETag) for the bucket.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.bool is_bucket_key_enabled: Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
         :param _builtins.bool is_read_only: Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         :param _builtins.str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param Mapping[str, _builtins.str] metadata: Arbitrary string keys and values for user-defined metadata.
@@ -745,6 +747,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
         pulumi.set(__self__, "etag", etag)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_bucket_key_enabled", is_bucket_key_enabled)
         pulumi.set(__self__, "is_read_only", is_read_only)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "metadata", metadata)
@@ -847,6 +850,14 @@ class GetBucketSummariesBucketSummaryResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isBucketKeyEnabled")
+    def is_bucket_key_enabled(self) -> _builtins.bool:
+        """
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        """
+        return pulumi.get(self, "is_bucket_key_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")

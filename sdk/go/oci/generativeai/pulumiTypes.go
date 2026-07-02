@@ -9197,6 +9197,1545 @@ func (o ModelModelMetricArrayOutput) Index(i pulumi.IntInput) ModelModelMetricOu
 	}).(ModelModelMetricOutput)
 }
 
+type ProjectConversationConfig struct {
+	// (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours *int `pulumi:"conversationsRetentionInHours"`
+	// (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours *int `pulumi:"responsesRetentionInHours"`
+}
+
+// ProjectConversationConfigInput is an input type that accepts ProjectConversationConfigArgs and ProjectConversationConfigOutput values.
+// You can construct a concrete instance of `ProjectConversationConfigInput` via:
+//
+//	ProjectConversationConfigArgs{...}
+type ProjectConversationConfigInput interface {
+	pulumi.Input
+
+	ToProjectConversationConfigOutput() ProjectConversationConfigOutput
+	ToProjectConversationConfigOutputWithContext(context.Context) ProjectConversationConfigOutput
+}
+
+type ProjectConversationConfigArgs struct {
+	// (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours pulumi.IntPtrInput `pulumi:"conversationsRetentionInHours"`
+	// (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours pulumi.IntPtrInput `pulumi:"responsesRetentionInHours"`
+}
+
+func (ProjectConversationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectConversationConfig)(nil)).Elem()
+}
+
+func (i ProjectConversationConfigArgs) ToProjectConversationConfigOutput() ProjectConversationConfigOutput {
+	return i.ToProjectConversationConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectConversationConfigArgs) ToProjectConversationConfigOutputWithContext(ctx context.Context) ProjectConversationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectConversationConfigOutput)
+}
+
+func (i ProjectConversationConfigArgs) ToProjectConversationConfigPtrOutput() ProjectConversationConfigPtrOutput {
+	return i.ToProjectConversationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectConversationConfigArgs) ToProjectConversationConfigPtrOutputWithContext(ctx context.Context) ProjectConversationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectConversationConfigOutput).ToProjectConversationConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectConversationConfigPtrInput is an input type that accepts ProjectConversationConfigArgs, ProjectConversationConfigPtr and ProjectConversationConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectConversationConfigPtrInput` via:
+//
+//	        ProjectConversationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectConversationConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectConversationConfigPtrOutput() ProjectConversationConfigPtrOutput
+	ToProjectConversationConfigPtrOutputWithContext(context.Context) ProjectConversationConfigPtrOutput
+}
+
+type projectConversationConfigPtrType ProjectConversationConfigArgs
+
+func ProjectConversationConfigPtr(v *ProjectConversationConfigArgs) ProjectConversationConfigPtrInput {
+	return (*projectConversationConfigPtrType)(v)
+}
+
+func (*projectConversationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectConversationConfig)(nil)).Elem()
+}
+
+func (i *projectConversationConfigPtrType) ToProjectConversationConfigPtrOutput() ProjectConversationConfigPtrOutput {
+	return i.ToProjectConversationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectConversationConfigPtrType) ToProjectConversationConfigPtrOutputWithContext(ctx context.Context) ProjectConversationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectConversationConfigPtrOutput)
+}
+
+type ProjectConversationConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectConversationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectConversationConfig)(nil)).Elem()
+}
+
+func (o ProjectConversationConfigOutput) ToProjectConversationConfigOutput() ProjectConversationConfigOutput {
+	return o
+}
+
+func (o ProjectConversationConfigOutput) ToProjectConversationConfigOutputWithContext(ctx context.Context) ProjectConversationConfigOutput {
+	return o
+}
+
+func (o ProjectConversationConfigOutput) ToProjectConversationConfigPtrOutput() ProjectConversationConfigPtrOutput {
+	return o.ToProjectConversationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectConversationConfigOutput) ToProjectConversationConfigPtrOutputWithContext(ctx context.Context) ProjectConversationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectConversationConfig) *ProjectConversationConfig {
+		return &v
+	}).(ProjectConversationConfigPtrOutput)
+}
+
+// (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+func (o ProjectConversationConfigOutput) ConversationsRetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProjectConversationConfig) *int { return v.ConversationsRetentionInHours }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+func (o ProjectConversationConfigOutput) ResponsesRetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ProjectConversationConfig) *int { return v.ResponsesRetentionInHours }).(pulumi.IntPtrOutput)
+}
+
+type ProjectConversationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectConversationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectConversationConfig)(nil)).Elem()
+}
+
+func (o ProjectConversationConfigPtrOutput) ToProjectConversationConfigPtrOutput() ProjectConversationConfigPtrOutput {
+	return o
+}
+
+func (o ProjectConversationConfigPtrOutput) ToProjectConversationConfigPtrOutputWithContext(ctx context.Context) ProjectConversationConfigPtrOutput {
+	return o
+}
+
+func (o ProjectConversationConfigPtrOutput) Elem() ProjectConversationConfigOutput {
+	return o.ApplyT(func(v *ProjectConversationConfig) ProjectConversationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectConversationConfig
+		return ret
+	}).(ProjectConversationConfigOutput)
+}
+
+// (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+func (o ProjectConversationConfigPtrOutput) ConversationsRetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProjectConversationConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ConversationsRetentionInHours
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+func (o ProjectConversationConfigPtrOutput) ResponsesRetentionInHours() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ProjectConversationConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ResponsesRetentionInHours
+	}).(pulumi.IntPtrOutput)
+}
+
+type ProjectLongTermMemoryConfig struct {
+	// (Updatable) Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategy *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy `pulumi:"standardLongTermMemoryStrategy"`
+}
+
+// ProjectLongTermMemoryConfigInput is an input type that accepts ProjectLongTermMemoryConfigArgs and ProjectLongTermMemoryConfigOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigInput` via:
+//
+//	ProjectLongTermMemoryConfigArgs{...}
+type ProjectLongTermMemoryConfigInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigOutput() ProjectLongTermMemoryConfigOutput
+	ToProjectLongTermMemoryConfigOutputWithContext(context.Context) ProjectLongTermMemoryConfigOutput
+}
+
+type ProjectLongTermMemoryConfigArgs struct {
+	// (Updatable) Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategy ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput `pulumi:"standardLongTermMemoryStrategy"`
+}
+
+func (ProjectLongTermMemoryConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigArgs) ToProjectLongTermMemoryConfigOutput() ProjectLongTermMemoryConfigOutput {
+	return i.ToProjectLongTermMemoryConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigArgs) ToProjectLongTermMemoryConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigOutput)
+}
+
+func (i ProjectLongTermMemoryConfigArgs) ToProjectLongTermMemoryConfigPtrOutput() ProjectLongTermMemoryConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigArgs) ToProjectLongTermMemoryConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigOutput).ToProjectLongTermMemoryConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigPtrInput is an input type that accepts ProjectLongTermMemoryConfigArgs, ProjectLongTermMemoryConfigPtr and ProjectLongTermMemoryConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigPtrOutput() ProjectLongTermMemoryConfigPtrOutput
+	ToProjectLongTermMemoryConfigPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigPtrOutput
+}
+
+type projectLongTermMemoryConfigPtrType ProjectLongTermMemoryConfigArgs
+
+func ProjectLongTermMemoryConfigPtr(v *ProjectLongTermMemoryConfigArgs) ProjectLongTermMemoryConfigPtrInput {
+	return (*projectLongTermMemoryConfigPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigPtrType) ToProjectLongTermMemoryConfigPtrOutput() ProjectLongTermMemoryConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigPtrType) ToProjectLongTermMemoryConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigOutput) ToProjectLongTermMemoryConfigOutput() ProjectLongTermMemoryConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigOutput) ToProjectLongTermMemoryConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigOutput) ToProjectLongTermMemoryConfigPtrOutput() ProjectLongTermMemoryConfigPtrOutput {
+	return o.ToProjectLongTermMemoryConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigOutput) ToProjectLongTermMemoryConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfig) *ProjectLongTermMemoryConfig {
+		return &v
+	}).(ProjectLongTermMemoryConfigPtrOutput)
+}
+
+// (Updatable) Standard strategy settings for long-term memory.
+func (o ProjectLongTermMemoryConfigOutput) StandardLongTermMemoryStrategy() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return v.StandardLongTermMemoryStrategy
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigPtrOutput) ToProjectLongTermMemoryConfigPtrOutput() ProjectLongTermMemoryConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigPtrOutput) ToProjectLongTermMemoryConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigPtrOutput) Elem() ProjectLongTermMemoryConfigOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfig) ProjectLongTermMemoryConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfig
+		return ret
+	}).(ProjectLongTermMemoryConfigOutput)
+}
+
+// (Updatable) Standard strategy settings for long-term memory.
+func (o ProjectLongTermMemoryConfigPtrOutput) StandardLongTermMemoryStrategy() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		if v == nil {
+			return nil
+		}
+		return v.StandardLongTermMemoryStrategy
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy struct {
+	// (Updatable) Configuration for generating embeddings from extracted information.
+	EmbeddingConfig *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig `pulumi:"embeddingConfig"`
+	// (Updatable) Configuration for information extraction from conversation content.
+	ExtractionConfig *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig `pulumi:"extractionConfig"`
+	// (Updatable) Indicates whether long-term memory is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput` via:
+//
+//	ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...}
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs struct {
+	// (Updatable) Configuration for generating embeddings from extracted information.
+	EmbeddingConfig ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput `pulumi:"embeddingConfig"`
+	// (Updatable) Configuration for information extraction from conversation content.
+	ExtractionConfig ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput `pulumi:"extractionConfig"`
+	// (Updatable) Indicates whether long-term memory is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput).ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs, ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtr and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput
+}
+
+type projectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrType ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs
+
+func ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtr(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput {
+	return (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return &v
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput)
+}
+
+// (Updatable) Configuration for generating embeddings from extracted information.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) EmbeddingConfig() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return v.EmbeddingConfig
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput)
+}
+
+// (Updatable) Configuration for information extraction from conversation content.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ExtractionConfig() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return v.ExtractionConfig
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput)
+}
+
+// (Updatable) Indicates whether long-term memory is enabled.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) Elem() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy
+		return ret
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+// (Updatable) Configuration for generating embeddings from extracted information.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) EmbeddingConfig() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		if v == nil {
+			return nil
+		}
+		return v.EmbeddingConfig
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput)
+}
+
+// (Updatable) Configuration for information extraction from conversation content.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) ExtractionConfig() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ExtractionConfig
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput)
+}
+
+// (Updatable) Indicates whether long-term memory is enabled.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection `pulumi:"llmSelection"`
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput` via:
+//
+//	ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...}
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput `pulumi:"llmSelection"`
+}
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput).ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs, ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtr and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput
+}
+
+type projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrType ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs
+
+func ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtr(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput {
+	return (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return &v
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) LlmSelection() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return v.LlmSelection
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput) Elem() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig
+		return ret
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput) LlmSelection() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelection
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput` via:
+//
+//	ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...}
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput).ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs, ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtr and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput
+}
+
+type projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrType ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs
+
+func ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtr(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrInput {
+	return (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return o.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return &v
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) Elem() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection
+		return ret
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) LlmSelectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection `pulumi:"llmSelection"`
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput` via:
+//
+//	ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...}
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput `pulumi:"llmSelection"`
+}
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput).ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs, ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtr and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput
+}
+
+type projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrType ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs
+
+func ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtr(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput {
+	return (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return &v
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) LlmSelection() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return v.LlmSelection
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput) Elem() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig
+		return ret
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput) LlmSelection() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelection
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput` via:
+//
+//	ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...}
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput).ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(ctx)
+}
+
+// ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrInput is an input type that accepts ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs, ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtr and ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput values.
+// You can construct a concrete instance of `ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrInput` via:
+//
+//	        ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrInput interface {
+	pulumi.Input
+
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput
+	ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput
+}
+
+type projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrType ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs
+
+func ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtr(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrInput {
+	return (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrType)(v)
+}
+
+func (*projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return i.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i *projectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrType) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return o.ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return &v
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) ToProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) Elem() ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection
+		return ret
+	}).(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) LlmSelectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfig struct {
+	// (Updatable) Configuration for condensing conversation content.
+	CondenserConfig *ProjectShortTermMemoryOptimizationConfigCondenserConfig `pulumi:"condenserConfig"`
+	// (Updatable) Indicates whether short-term memory optimization is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// ProjectShortTermMemoryOptimizationConfigInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigArgs and ProjectShortTermMemoryOptimizationConfigOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigInput` via:
+//
+//	ProjectShortTermMemoryOptimizationConfigArgs{...}
+type ProjectShortTermMemoryOptimizationConfigInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigOutput() ProjectShortTermMemoryOptimizationConfigOutput
+	ToProjectShortTermMemoryOptimizationConfigOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigOutput
+}
+
+type ProjectShortTermMemoryOptimizationConfigArgs struct {
+	// (Updatable) Configuration for condensing conversation content.
+	CondenserConfig ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput `pulumi:"condenserConfig"`
+	// (Updatable) Indicates whether short-term memory optimization is enabled.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (ProjectShortTermMemoryOptimizationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigArgs) ToProjectShortTermMemoryOptimizationConfigOutput() ProjectShortTermMemoryOptimizationConfigOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigArgs) ToProjectShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigOutput)
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigArgs) ToProjectShortTermMemoryOptimizationConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigArgs) ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigOutput).ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectShortTermMemoryOptimizationConfigPtrInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigArgs, ProjectShortTermMemoryOptimizationConfigPtr and ProjectShortTermMemoryOptimizationConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigPtrInput` via:
+//
+//	        ProjectShortTermMemoryOptimizationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectShortTermMemoryOptimizationConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigPtrOutput
+	ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigPtrOutput
+}
+
+type projectShortTermMemoryOptimizationConfigPtrType ProjectShortTermMemoryOptimizationConfigArgs
+
+func ProjectShortTermMemoryOptimizationConfigPtr(v *ProjectShortTermMemoryOptimizationConfigArgs) ProjectShortTermMemoryOptimizationConfigPtrInput {
+	return (*projectShortTermMemoryOptimizationConfigPtrType)(v)
+}
+
+func (*projectShortTermMemoryOptimizationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i *projectShortTermMemoryOptimizationConfigPtrType) ToProjectShortTermMemoryOptimizationConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectShortTermMemoryOptimizationConfigPtrType) ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigOutput) ToProjectShortTermMemoryOptimizationConfigOutput() ProjectShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigOutput) ToProjectShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigOutput) ToProjectShortTermMemoryOptimizationConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return o.ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigOutput) ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectShortTermMemoryOptimizationConfig) *ProjectShortTermMemoryOptimizationConfig {
+		return &v
+	}).(ProjectShortTermMemoryOptimizationConfigPtrOutput)
+}
+
+// (Updatable) Configuration for condensing conversation content.
+func (o ProjectShortTermMemoryOptimizationConfigOutput) CondenserConfig() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o.ApplyT(func(v ProjectShortTermMemoryOptimizationConfig) *ProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		return v.CondenserConfig
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput)
+}
+
+// (Updatable) Indicates whether short-term memory optimization is enabled.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ProjectShortTermMemoryOptimizationConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v ProjectShortTermMemoryOptimizationConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigPtrOutput) ToProjectShortTermMemoryOptimizationConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigPtrOutput) ToProjectShortTermMemoryOptimizationConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigPtrOutput) Elem() ProjectShortTermMemoryOptimizationConfigOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfig) ProjectShortTermMemoryOptimizationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectShortTermMemoryOptimizationConfig
+		return ret
+	}).(ProjectShortTermMemoryOptimizationConfigOutput)
+}
+
+// (Updatable) Configuration for condensing conversation content.
+func (o ProjectShortTermMemoryOptimizationConfigPtrOutput) CondenserConfig() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfig) *ProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		if v == nil {
+			return nil
+		}
+		return v.CondenserConfig
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput)
+}
+
+// (Updatable) Indicates whether short-term memory optimization is enabled.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ProjectShortTermMemoryOptimizationConfigPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfig struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection `pulumi:"llmSelection"`
+}
+
+// ProjectShortTermMemoryOptimizationConfigCondenserConfigInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs and ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigCondenserConfigInput` via:
+//
+//	ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{...}
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs struct {
+	// (Updatable) LLM selection configuration.
+	LlmSelection ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput `pulumi:"llmSelection"`
+}
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput).ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(ctx)
+}
+
+// ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs, ProjectShortTermMemoryOptimizationConfigCondenserConfigPtr and ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput` via:
+//
+//	        ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput
+}
+
+type projectShortTermMemoryOptimizationConfigCondenserConfigPtrType ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs
+
+func ProjectShortTermMemoryOptimizationConfigCondenserConfigPtr(v *ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput {
+	return (*projectShortTermMemoryOptimizationConfigCondenserConfigPtrType)(v)
+}
+
+func (*projectShortTermMemoryOptimizationConfigCondenserConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i *projectShortTermMemoryOptimizationConfigCondenserConfigPtrType) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *projectShortTermMemoryOptimizationConfigCondenserConfigPtrType) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o.ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectShortTermMemoryOptimizationConfigCondenserConfig) *ProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		return &v
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) LlmSelection() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o.ApplyT(func(v ProjectShortTermMemoryOptimizationConfigCondenserConfig) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return v.LlmSelection
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput) Elem() ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfigCondenserConfig) ProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectShortTermMemoryOptimizationConfigCondenserConfig
+		return ret
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+// (Updatable) LLM selection configuration.
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput) LlmSelection() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfigCondenserConfig) *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelection
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs and ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput` via:
+//
+//	ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...}
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs struct {
+	// (Updatable) The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// (Updatable) The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput).ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(ctx)
+}
+
+// ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput is an input type that accepts ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs, ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtr and ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput values.
+// You can construct a concrete instance of `ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput` via:
+//
+//	        ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput interface {
+	pulumi.Input
+
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput
+	ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput
+}
+
+type projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrType ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs
+
+func ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtr(v *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput {
+	return (*projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrType)(v)
+}
+
+func (*projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i *projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrType) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return i.ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (i *projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrType) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return o.ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(context.Background())
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return &v
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+type ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput struct{ *pulumi.OutputState }
+
+func (ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) ToProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutputWithContext(ctx context.Context) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput {
+	return o
+}
+
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) Elem() ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		if v != nil {
+			return *v
+		}
+		var ret ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection
+		return ret
+	}).(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+// (Updatable) The type of LLM selection.
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) LlmSelectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LlmSelectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The id of the GenAI model
+func (o ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelId
+	}).(pulumi.StringPtrOutput)
+}
+
 type SemanticStoreDataSource struct {
 	// Specifies the type of underlying connection.
 	ConnectionType string `pulumi:"connectionType"`
@@ -27555,6 +29094,2554 @@ func (o GetModelsModelCollectionItemModelMetricArrayOutput) Index(i pulumi.IntIn
 	}).(GetModelsModelCollectionItemModelMetricOutput)
 }
 
+type GetProjectConversationConfig struct {
+	// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours int `pulumi:"conversationsRetentionInHours"`
+	// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours int `pulumi:"responsesRetentionInHours"`
+}
+
+// GetProjectConversationConfigInput is an input type that accepts GetProjectConversationConfigArgs and GetProjectConversationConfigOutput values.
+// You can construct a concrete instance of `GetProjectConversationConfigInput` via:
+//
+//	GetProjectConversationConfigArgs{...}
+type GetProjectConversationConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectConversationConfigOutput() GetProjectConversationConfigOutput
+	ToGetProjectConversationConfigOutputWithContext(context.Context) GetProjectConversationConfigOutput
+}
+
+type GetProjectConversationConfigArgs struct {
+	// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours pulumi.IntInput `pulumi:"conversationsRetentionInHours"`
+	// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours pulumi.IntInput `pulumi:"responsesRetentionInHours"`
+}
+
+func (GetProjectConversationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectConversationConfig)(nil)).Elem()
+}
+
+func (i GetProjectConversationConfigArgs) ToGetProjectConversationConfigOutput() GetProjectConversationConfigOutput {
+	return i.ToGetProjectConversationConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectConversationConfigArgs) ToGetProjectConversationConfigOutputWithContext(ctx context.Context) GetProjectConversationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConversationConfigOutput)
+}
+
+// GetProjectConversationConfigArrayInput is an input type that accepts GetProjectConversationConfigArray and GetProjectConversationConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectConversationConfigArrayInput` via:
+//
+//	GetProjectConversationConfigArray{ GetProjectConversationConfigArgs{...} }
+type GetProjectConversationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectConversationConfigArrayOutput() GetProjectConversationConfigArrayOutput
+	ToGetProjectConversationConfigArrayOutputWithContext(context.Context) GetProjectConversationConfigArrayOutput
+}
+
+type GetProjectConversationConfigArray []GetProjectConversationConfigInput
+
+func (GetProjectConversationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectConversationConfig)(nil)).Elem()
+}
+
+func (i GetProjectConversationConfigArray) ToGetProjectConversationConfigArrayOutput() GetProjectConversationConfigArrayOutput {
+	return i.ToGetProjectConversationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectConversationConfigArray) ToGetProjectConversationConfigArrayOutputWithContext(ctx context.Context) GetProjectConversationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectConversationConfigArrayOutput)
+}
+
+type GetProjectConversationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectConversationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectConversationConfig)(nil)).Elem()
+}
+
+func (o GetProjectConversationConfigOutput) ToGetProjectConversationConfigOutput() GetProjectConversationConfigOutput {
+	return o
+}
+
+func (o GetProjectConversationConfigOutput) ToGetProjectConversationConfigOutputWithContext(ctx context.Context) GetProjectConversationConfigOutput {
+	return o
+}
+
+// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+func (o GetProjectConversationConfigOutput) ConversationsRetentionInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetProjectConversationConfig) int { return v.ConversationsRetentionInHours }).(pulumi.IntOutput)
+}
+
+// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+func (o GetProjectConversationConfigOutput) ResponsesRetentionInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetProjectConversationConfig) int { return v.ResponsesRetentionInHours }).(pulumi.IntOutput)
+}
+
+type GetProjectConversationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectConversationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectConversationConfig)(nil)).Elem()
+}
+
+func (o GetProjectConversationConfigArrayOutput) ToGetProjectConversationConfigArrayOutput() GetProjectConversationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectConversationConfigArrayOutput) ToGetProjectConversationConfigArrayOutputWithContext(ctx context.Context) GetProjectConversationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectConversationConfigArrayOutput) Index(i pulumi.IntInput) GetProjectConversationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectConversationConfig {
+		return vs[0].([]GetProjectConversationConfig)[vs[1].(int)]
+	}).(GetProjectConversationConfigOutput)
+}
+
+type GetProjectLongTermMemoryConfig struct {
+	// Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategies []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy `pulumi:"standardLongTermMemoryStrategies"`
+}
+
+// GetProjectLongTermMemoryConfigInput is an input type that accepts GetProjectLongTermMemoryConfigArgs and GetProjectLongTermMemoryConfigOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigInput` via:
+//
+//	GetProjectLongTermMemoryConfigArgs{...}
+type GetProjectLongTermMemoryConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigOutput() GetProjectLongTermMemoryConfigOutput
+	ToGetProjectLongTermMemoryConfigOutputWithContext(context.Context) GetProjectLongTermMemoryConfigOutput
+}
+
+type GetProjectLongTermMemoryConfigArgs struct {
+	// Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategies GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput `pulumi:"standardLongTermMemoryStrategies"`
+}
+
+func (GetProjectLongTermMemoryConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigArgs) ToGetProjectLongTermMemoryConfigOutput() GetProjectLongTermMemoryConfigOutput {
+	return i.ToGetProjectLongTermMemoryConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigArgs) ToGetProjectLongTermMemoryConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigOutput)
+}
+
+// GetProjectLongTermMemoryConfigArrayInput is an input type that accepts GetProjectLongTermMemoryConfigArray and GetProjectLongTermMemoryConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigArray{ GetProjectLongTermMemoryConfigArgs{...} }
+type GetProjectLongTermMemoryConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigArrayOutput() GetProjectLongTermMemoryConfigArrayOutput
+	ToGetProjectLongTermMemoryConfigArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigArray []GetProjectLongTermMemoryConfigInput
+
+func (GetProjectLongTermMemoryConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigArray) ToGetProjectLongTermMemoryConfigArrayOutput() GetProjectLongTermMemoryConfigArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigArray) ToGetProjectLongTermMemoryConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigOutput) ToGetProjectLongTermMemoryConfigOutput() GetProjectLongTermMemoryConfigOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigOutput) ToGetProjectLongTermMemoryConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigOutput {
+	return o
+}
+
+// Standard strategy settings for long-term memory.
+func (o GetProjectLongTermMemoryConfigOutput) StandardLongTermMemoryStrategies() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfig) []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return v.StandardLongTermMemoryStrategies
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigArrayOutput) ToGetProjectLongTermMemoryConfigArrayOutput() GetProjectLongTermMemoryConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigArrayOutput) ToGetProjectLongTermMemoryConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfig {
+		return vs[0].([]GetProjectLongTermMemoryConfig)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy struct {
+	// Configuration for generating embeddings from extracted information.
+	EmbeddingConfigs []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig `pulumi:"embeddingConfigs"`
+	// Configuration for information extraction from conversation content.
+	ExtractionConfigs []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig `pulumi:"extractionConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...}
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs struct {
+	// Configuration for generating embeddings from extracted information.
+	EmbeddingConfigs GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput `pulumi:"embeddingConfigs"`
+	// Configuration for information extraction from conversation content.
+	ExtractionConfigs GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput `pulumi:"extractionConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray{ GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...} }
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+// Configuration for generating embeddings from extracted information.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) EmbeddingConfigs() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return v.EmbeddingConfigs
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput)
+}
+
+// Configuration for information extraction from conversation content.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ExtractionConfigs() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return v.ExtractionConfigs
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput)
+}
+
+// Indicates whether short-term memory optimization is enabled.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return vs[0].([]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategy)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...}
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray{ GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...} }
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) LlmSelections() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return vs[0].([]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...}
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray{ GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...} }
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return vs[0].([]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...}
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray{ GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...} }
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) LlmSelections() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return vs[0].([]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...}
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+// GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput is an input type that accepts GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray and GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray{ GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...} }
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput
+	ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray []GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ToGetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return vs[0].([]GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfig struct {
+	// Configuration for condensing conversation content.
+	CondenserConfigs []GetProjectShortTermMemoryOptimizationConfigCondenserConfig `pulumi:"condenserConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetProjectShortTermMemoryOptimizationConfigInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigArgs and GetProjectShortTermMemoryOptimizationConfigOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigArgs{...}
+type GetProjectShortTermMemoryOptimizationConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigOutput() GetProjectShortTermMemoryOptimizationConfigOutput
+	ToGetProjectShortTermMemoryOptimizationConfigOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigArgs struct {
+	// Configuration for condensing conversation content.
+	CondenserConfigs GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayInput `pulumi:"condenserConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetProjectShortTermMemoryOptimizationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigArgs) ToGetProjectShortTermMemoryOptimizationConfigOutput() GetProjectShortTermMemoryOptimizationConfigOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigArgs) ToGetProjectShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigOutput)
+}
+
+// GetProjectShortTermMemoryOptimizationConfigArrayInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigArray and GetProjectShortTermMemoryOptimizationConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigArrayInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigArray{ GetProjectShortTermMemoryOptimizationConfigArgs{...} }
+type GetProjectShortTermMemoryOptimizationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigArrayOutput
+	ToGetProjectShortTermMemoryOptimizationConfigArrayOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigArrayOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigArray []GetProjectShortTermMemoryOptimizationConfigInput
+
+func (GetProjectShortTermMemoryOptimizationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigArray) ToGetProjectShortTermMemoryOptimizationConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigArrayOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigArray) ToGetProjectShortTermMemoryOptimizationConfigArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigArrayOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigOutput) ToGetProjectShortTermMemoryOptimizationConfigOutput() GetProjectShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigOutput) ToGetProjectShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+// Configuration for condensing conversation content.
+func (o GetProjectShortTermMemoryOptimizationConfigOutput) CondenserConfigs() GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectShortTermMemoryOptimizationConfig) []GetProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		return v.CondenserConfigs
+	}).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput)
+}
+
+// Indicates whether short-term memory optimization is enabled.
+func (o GetProjectShortTermMemoryOptimizationConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProjectShortTermMemoryOptimizationConfig) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigArrayOutput) Index(i pulumi.IntInput) GetProjectShortTermMemoryOptimizationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectShortTermMemoryOptimizationConfig {
+		return vs[0].([]GetProjectShortTermMemoryOptimizationConfig)[vs[1].(int)]
+	}).(GetProjectShortTermMemoryOptimizationConfigOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectShortTermMemoryOptimizationConfigCondenserConfigInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs and GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigCondenserConfigInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{...}
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+// GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray and GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray{ GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{...} }
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray []GetProjectShortTermMemoryOptimizationConfigCondenserConfigInput
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput) LlmSelections() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectShortTermMemoryOptimizationConfigCondenserConfig) []GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) Index(i pulumi.IntInput) GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectShortTermMemoryOptimizationConfigCondenserConfig {
+		return vs[0].([]GetProjectShortTermMemoryOptimizationConfigCondenserConfig)[vs[1].(int)]
+	}).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs and GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...}
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+// GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput is an input type that accepts GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray and GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray{ GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...} }
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput
+	ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray []GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ToGetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return vs[0].([]GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+type GetProjectsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetProjectsFilterInput is an input type that accepts GetProjectsFilterArgs and GetProjectsFilterOutput values.
+// You can construct a concrete instance of `GetProjectsFilterInput` via:
+//
+//	GetProjectsFilterArgs{...}
+type GetProjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetProjectsFilterOutput() GetProjectsFilterOutput
+	ToGetProjectsFilterOutputWithContext(context.Context) GetProjectsFilterOutput
+}
+
+type GetProjectsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetProjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsFilter)(nil)).Elem()
+}
+
+func (i GetProjectsFilterArgs) ToGetProjectsFilterOutput() GetProjectsFilterOutput {
+	return i.ToGetProjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetProjectsFilterArgs) ToGetProjectsFilterOutputWithContext(ctx context.Context) GetProjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterOutput)
+}
+
+// GetProjectsFilterArrayInput is an input type that accepts GetProjectsFilterArray and GetProjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetProjectsFilterArrayInput` via:
+//
+//	GetProjectsFilterArray{ GetProjectsFilterArgs{...} }
+type GetProjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsFilterArrayOutput() GetProjectsFilterArrayOutput
+	ToGetProjectsFilterArrayOutputWithContext(context.Context) GetProjectsFilterArrayOutput
+}
+
+type GetProjectsFilterArray []GetProjectsFilterInput
+
+func (GetProjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsFilter)(nil)).Elem()
+}
+
+func (i GetProjectsFilterArray) ToGetProjectsFilterArrayOutput() GetProjectsFilterArrayOutput {
+	return i.ToGetProjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsFilterArray) ToGetProjectsFilterArrayOutputWithContext(ctx context.Context) GetProjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsFilterArrayOutput)
+}
+
+type GetProjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsFilter)(nil)).Elem()
+}
+
+func (o GetProjectsFilterOutput) ToGetProjectsFilterOutput() GetProjectsFilterOutput {
+	return o
+}
+
+func (o GetProjectsFilterOutput) ToGetProjectsFilterOutputWithContext(ctx context.Context) GetProjectsFilterOutput {
+	return o
+}
+
+func (o GetProjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetProjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetProjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetProjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetProjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsFilter)(nil)).Elem()
+}
+
+func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutput() GetProjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetProjectsFilterArrayOutput) ToGetProjectsFilterArrayOutputWithContext(ctx context.Context) GetProjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetProjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsFilter {
+		return vs[0].([]GetProjectsFilter)[vs[1].(int)]
+	}).(GetProjectsFilterOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollection struct {
+	Items []GetProjectsGenerativeAiProjectCollectionItem `pulumi:"items"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionArgs and GetProjectsGenerativeAiProjectCollectionOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionArgs{...}
+type GetProjectsGenerativeAiProjectCollectionInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionOutput() GetProjectsGenerativeAiProjectCollectionOutput
+	ToGetProjectsGenerativeAiProjectCollectionOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionArgs struct {
+	Items GetProjectsGenerativeAiProjectCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionArgs) ToGetProjectsGenerativeAiProjectCollectionOutput() GetProjectsGenerativeAiProjectCollectionOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionArgs) ToGetProjectsGenerativeAiProjectCollectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionArray and GetProjectsGenerativeAiProjectCollectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionArray{ GetProjectsGenerativeAiProjectCollectionArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionArrayOutput() GetProjectsGenerativeAiProjectCollectionArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionArray []GetProjectsGenerativeAiProjectCollectionInput
+
+func (GetProjectsGenerativeAiProjectCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionArray) ToGetProjectsGenerativeAiProjectCollectionArrayOutput() GetProjectsGenerativeAiProjectCollectionArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionArray) ToGetProjectsGenerativeAiProjectCollectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionOutput) ToGetProjectsGenerativeAiProjectCollectionOutput() GetProjectsGenerativeAiProjectCollectionOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionOutput) ToGetProjectsGenerativeAiProjectCollectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionOutput) Items() GetProjectsGenerativeAiProjectCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollection) []GetProjectsGenerativeAiProjectCollectionItem {
+		return v.Items
+	}).(GetProjectsGenerativeAiProjectCollectionItemArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionArrayOutput() GetProjectsGenerativeAiProjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollection {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollection)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Holds configuration related to conversation retention
+	ConversationConfigs []GetProjectsGenerativeAiProjectCollectionItemConversationConfig `pulumi:"conversationConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the GenerativeAiProject.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the generativeAiProject.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Configuration settings for long-term memory behavior.
+	LongTermMemoryConfigs []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig `pulumi:"longTermMemoryConfigs"`
+	// Configuration settings for short-term memory optimization.
+	ShortTermMemoryOptimizationConfigs []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig `pulumi:"shortTermMemoryOptimizationConfigs"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the generativeAiProject was created in the format of an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the generativeAiProject was updated in the format of an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemArgs and GetProjectsGenerativeAiProjectCollectionItemOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemOutput() GetProjectsGenerativeAiProjectCollectionItemOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Holds configuration related to conversation retention
+	ConversationConfigs GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayInput `pulumi:"conversationConfigs"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the GenerativeAiProject.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the generativeAiProject.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Configuration settings for long-term memory behavior.
+	LongTermMemoryConfigs GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayInput `pulumi:"longTermMemoryConfigs"`
+	// Configuration settings for short-term memory optimization.
+	ShortTermMemoryOptimizationConfigs GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayInput `pulumi:"shortTermMemoryOptimizationConfigs"`
+	// A filter to return only resources whose lifecycle state matches the given value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the generativeAiProject was created in the format of an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the generativeAiProject was updated in the format of an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemArgs) ToGetProjectsGenerativeAiProjectCollectionItemOutput() GetProjectsGenerativeAiProjectCollectionItemOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemArgs) ToGetProjectsGenerativeAiProjectCollectionItemOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemArray and GetProjectsGenerativeAiProjectCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemArray{ GetProjectsGenerativeAiProjectCollectionItemArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemArrayOutput() GetProjectsGenerativeAiProjectCollectionItemArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemArray []GetProjectsGenerativeAiProjectCollectionItemInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItem)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemArray) ToGetProjectsGenerativeAiProjectCollectionItemArrayOutput() GetProjectsGenerativeAiProjectCollectionItemArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemArray) ToGetProjectsGenerativeAiProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) ToGetProjectsGenerativeAiProjectCollectionItemOutput() GetProjectsGenerativeAiProjectCollectionItemOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) ToGetProjectsGenerativeAiProjectCollectionItemOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Holds configuration related to conversation retention
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) ConversationConfigs() GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) []GetProjectsGenerativeAiProjectCollectionItemConversationConfig {
+		return v.ConversationConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the GenerativeAiProject.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the generativeAiProject.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail that can provide actionable information.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Configuration settings for long-term memory behavior.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) LongTermMemoryConfigs() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig {
+		return v.LongTermMemoryConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput)
+}
+
+// Configuration settings for short-term memory optimization.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) ShortTermMemoryOptimizationConfigs() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig {
+		return v.ShortTermMemoryOptimizationConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput)
+}
+
+// A filter to return only resources whose lifecycle state matches the given value.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the generativeAiProject was created in the format of an RFC3339 datetime string.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the generativeAiProject was updated in the format of an RFC3339 datetime string.
+func (o GetProjectsGenerativeAiProjectCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItem)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemArrayOutput() GetProjectsGenerativeAiProjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItem {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItem)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfig struct {
+	// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours int `pulumi:"conversationsRetentionInHours"`
+	// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours int `pulumi:"responsesRetentionInHours"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemConversationConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs and GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemConversationConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs struct {
+	// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+	ConversationsRetentionInHours pulumi.IntInput `pulumi:"conversationsRetentionInHours"`
+	// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+	ResponsesRetentionInHours pulumi.IntInput `pulumi:"responsesRetentionInHours"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemConversationConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray and GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray{ GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray []GetProjectsGenerativeAiProjectCollectionItemConversationConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemConversationConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemConversationConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput {
+	return o
+}
+
+// Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput) ConversationsRetentionInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemConversationConfig) int {
+		return v.ConversationsRetentionInHours
+	}).(pulumi.IntOutput)
+}
+
+// Retention period (in hours) for responses. The TTL starts from the time the response was created.
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput) ResponsesRetentionInHours() pulumi.IntOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemConversationConfig) int {
+		return v.ResponsesRetentionInHours
+	}).(pulumi.IntOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemConversationConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemConversationConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemConversationConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig struct {
+	// Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategies []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy `pulumi:"standardLongTermMemoryStrategies"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs struct {
+	// Standard strategy settings for long-term memory.
+	StandardLongTermMemoryStrategies GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput `pulumi:"standardLongTermMemoryStrategies"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput {
+	return o
+}
+
+// Standard strategy settings for long-term memory.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput) StandardLongTermMemoryStrategies() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return v.StandardLongTermMemoryStrategies
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy struct {
+	// Configuration for generating embeddings from extracted information.
+	EmbeddingConfigs []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig `pulumi:"embeddingConfigs"`
+	// Configuration for information extraction from conversation content.
+	ExtractionConfigs []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig `pulumi:"extractionConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs struct {
+	// Configuration for generating embeddings from extracted information.
+	EmbeddingConfigs GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput `pulumi:"embeddingConfigs"`
+	// Configuration for information extraction from conversation content.
+	ExtractionConfigs GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput `pulumi:"extractionConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return o
+}
+
+// Configuration for generating embeddings from extracted information.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) EmbeddingConfigs() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return v.EmbeddingConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput)
+}
+
+// Configuration for information extraction from conversation content.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) ExtractionConfigs() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return v.ExtractionConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput)
+}
+
+// Indicates whether short-term memory optimization is enabled.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategy)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput) LlmSelections() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput) LlmSelections() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig) []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray and GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray{ GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray []GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig struct {
+	// Configuration for condensing conversation content.
+	CondenserConfigs []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig `pulumi:"condenserConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled bool `pulumi:"isEnabled"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs struct {
+	// Configuration for condensing conversation content.
+	CondenserConfigs GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput `pulumi:"condenserConfigs"`
+	// Indicates whether short-term memory optimization is enabled.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray{ GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput {
+	return o
+}
+
+// Configuration for condensing conversation content.
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput) CondenserConfigs() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig) []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig {
+		return v.CondenserConfigs
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput)
+}
+
+// Indicates whether short-term memory optimization is enabled.
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig) bool {
+		return v.IsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig struct {
+	// LLM selection configuration.
+	LlmSelections []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection `pulumi:"llmSelections"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs struct {
+	// LLM selection configuration.
+	LlmSelections GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput `pulumi:"llmSelections"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray{ GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return o
+}
+
+// LLM selection configuration.
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput) LlmSelections() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig) []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return v.LlmSelections
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfig)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection struct {
+	// The type of LLM selection.
+	LlmSelectionType string `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId string `pulumi:"modelId"`
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...}
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs struct {
+	// The type of LLM selection.
+	LlmSelectionType pulumi.StringInput `pulumi:"llmSelectionType"`
+	// The id of the GenAI model
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+}
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
+// GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput is an input type that accepts GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray and GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput values.
+// You can construct a concrete instance of `GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput` via:
+//
+//	GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray{ GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{...} }
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput
+	ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray []GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return i.ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return o
+}
+
+// The type of LLM selection.
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) LlmSelectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string {
+		return v.LlmSelectionType
+	}).(pulumi.StringOutput)
+}
+
+// The id of the GenAI model
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection) string {
+		return v.ModelId
+	}).(pulumi.StringOutput)
+}
+
+type GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)(nil)).Elem()
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput() GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) ToGetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutputWithContext(ctx context.Context) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput {
+	return o
+}
+
+func (o GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput) Index(i pulumi.IntInput) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection {
+		return vs[0].([]GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelection)[vs[1].(int)]
+	}).(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput)
+}
+
 type GetSemanticStoreDataSource struct {
 	// Specifies the type of underlying connection.
 	ConnectionType string `pulumi:"connectionType"`
@@ -28926,6 +33013,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelFineTuneDetailsTrainingDatasetPtrInput)(nil)).Elem(), ModelFineTuneDetailsTrainingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricInput)(nil)).Elem(), ModelModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricArrayInput)(nil)).Elem(), ModelModelMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectConversationConfigInput)(nil)).Elem(), ProjectConversationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectConversationConfigPtrInput)(nil)).Elem(), ProjectConversationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigInput)(nil)).Elem(), ProjectLongTermMemoryConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrInput)(nil)).Elem(), ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigPtrInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrInput)(nil)).Elem(), ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourceInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreDataSourcePtrInput)(nil)).Elem(), SemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SemanticStoreRefreshScheduleInput)(nil)).Elem(), SemanticStoreRefreshScheduleArgs{})
@@ -29214,6 +33321,52 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayInput)(nil)).Elem(), GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConversationConfigInput)(nil)).Elem(), GetProjectConversationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectConversationConfigArrayInput)(nil)).Elem(), GetProjectConversationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigInput)(nil)).Elem(), GetProjectLongTermMemoryConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigArrayInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigCondenserConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigCondenserConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterInput)(nil)).Elem(), GetProjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemConversationConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemConversationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemConversationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayInput)(nil)).Elem(), GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceInput)(nil)).Elem(), GetSemanticStoreDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreDataSourceArrayInput)(nil)).Elem(), GetSemanticStoreDataSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSemanticStoreRefreshScheduleInput)(nil)).Elem(), GetSemanticStoreRefreshScheduleArgs{})
@@ -29340,6 +33493,26 @@ func init() {
 	pulumi.RegisterOutputType(ModelFineTuneDetailsTrainingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricOutput{})
 	pulumi.RegisterOutputType(ModelModelMetricArrayOutput{})
+	pulumi.RegisterOutputType(ProjectConversationConfigOutput{})
+	pulumi.RegisterOutputType(ProjectConversationConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionPtrOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigPtrOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionPtrOutput{})
 	pulumi.RegisterOutputType(SemanticStoreDataSourceOutput{})
 	pulumi.RegisterOutputType(SemanticStoreDataSourcePtrOutput{})
 	pulumi.RegisterOutputType(SemanticStoreRefreshScheduleOutput{})
@@ -29628,6 +33801,52 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemFineTuneDetailTrainingDatasetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelMetricOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectConversationConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectConversationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigCondenserConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigCondenserConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemConversationConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemConversationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionOutput{})
+	pulumi.RegisterOutputType(GetProjectsGenerativeAiProjectCollectionItemShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArrayOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreDataSourceOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreDataSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetSemanticStoreRefreshScheduleOutput{})

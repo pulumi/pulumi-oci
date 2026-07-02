@@ -32,6 +32,21 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    @Import(name="dbSystemId")
+    private @Nullable Output<String> dbSystemId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    public Optional<Output<String>> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
+    }
+
+    /**
      * Deprecated. Don&#39;t use.
      * 
      */
@@ -76,13 +91,34 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.sourceType);
     }
 
+    /**
+     * The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+     * 
+     */
+    @Import(name="timeToRestore")
+    private @Nullable Output<String> timeToRestore;
+
+    /**
+     * @return The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+     * 
+     */
+    public Optional<Output<String>> timeToRestore() {
+        return Optional.ofNullable(this.timeToRestore);
+    }
+
     private DbSystemSourceArgs() {}
 
     private DbSystemSourceArgs(DbSystemSourceArgs $) {
         this.backupId = $.backupId;
+        this.dbSystemId = $.dbSystemId;
         this.isHavingRestoreConfigOverrides = $.isHavingRestoreConfigOverrides;
         this.primaryDbSystemId = $.primaryDbSystemId;
         this.sourceType = $.sourceType;
+        this.timeToRestore = $.timeToRestore;
     }
 
     public static Builder builder() {
@@ -122,6 +158,27 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder backupId(String backupId) {
             return backupId(Output.of(backupId));
+        }
+
+        /**
+         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemId(@Nullable Output<String> dbSystemId) {
+            $.dbSystemId = dbSystemId;
+            return this;
+        }
+
+        /**
+         * @param dbSystemId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            return dbSystemId(Output.of(dbSystemId));
         }
 
         /**
@@ -185,6 +242,31 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
+        }
+
+        /**
+         * @param timeToRestore The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * 
+         * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeToRestore(@Nullable Output<String> timeToRestore) {
+            $.timeToRestore = timeToRestore;
+            return this;
+        }
+
+        /**
+         * @param timeToRestore The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * 
+         * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeToRestore(String timeToRestore) {
+            return timeToRestore(Output.of(timeToRestore));
         }
 
         public DbSystemSourceArgs build() {

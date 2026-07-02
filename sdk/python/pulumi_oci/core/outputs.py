@@ -7847,6 +7847,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs(dict):
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         """
         pulumi.set(__self__, "type", type)
         if license_type is not None:
@@ -7867,6 +7868,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs(dict):
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -10274,6 +10276,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs(di
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         """
         pulumi.set(__self__, "type", type)
         if license_type is not None:
@@ -10294,6 +10297,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs(di
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -12480,6 +12484,7 @@ class InstanceLicensingConfigs(dict):
         :param _builtins.str license_type: (Updatable) License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str os_version: The Operating System version of the license config.
         """
         pulumi.set(__self__, "type", type)
@@ -12503,6 +12508,7 @@ class InstanceLicensingConfigs(dict):
         (Updatable) License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -32502,6 +32508,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult(di
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "license_type", license_type)
@@ -32514,6 +32521,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult(di
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -34183,6 +34191,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigRes
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "license_type", license_type)
@@ -34195,6 +34204,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigRes
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -36517,6 +36527,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLi
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "license_type", license_type)
@@ -36529,6 +36540,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLi
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -38198,6 +38210,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
         """
         pulumi.set(__self__, "license_type", license_type)
@@ -38210,6 +38223,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -39821,6 +39835,7 @@ class GetInstanceLicensingConfigResult(dict):
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str os_version: The Operating System version of the license config.
         :param _builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
@@ -39835,6 +39850,7 @@ class GetInstanceLicensingConfigResult(dict):
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -43150,6 +43166,7 @@ class GetInstancesInstanceLicensingConfigResult(dict):
         :param _builtins.str license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param _builtins.str os_version: The Operating System version of the license config.
         :param _builtins.str type: (Required) The type of action to run when the instance is interrupted for eviction.
         """
@@ -43164,6 +43181,7 @@ class GetInstancesInstanceLicensingConfigResult(dict):
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 

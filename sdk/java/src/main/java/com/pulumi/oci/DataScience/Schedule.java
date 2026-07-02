@@ -151,6 +151,7 @@ import javax.annotation.Nullable;
  *                 .cronExpression(scheduleTriggerCronExpression)
  *                 .frequency(scheduleTriggerFrequency)
  *                 .interval(scheduleTriggerInterval)
+ *                 .initialJitterInMinutes(30)
  *                 .isRandomStartTime(scheduleTriggerIsRandomStartTime)
  *                 .recurrence(scheduleTriggerRecurrence)
  *                 .timeEnd(scheduleTriggerTimeEnd)

@@ -27,7 +27,7 @@ class GetVirtualNodePoolResult:
     """
     A collection of values returned by getVirtualNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, initial_virtual_node_labels=None, kubernetes_version=None, lifecycle_details=None, nsg_ids=None, placement_configurations=None, pod_configurations=None, size=None, state=None, system_tags=None, taints=None, time_created=None, time_updated=None, virtual_node_pool_id=None, virtual_node_tags=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, initial_virtual_node_labels=None, kubernetes_version=None, lifecycle_details=None, nsg_ids=None, placement_configurations=None, pod_configurations=None, size=None, state=None, system_tags=None, taints=None, time_created=None, time_updated=None, virtual_node_pool_cycling_details=None, virtual_node_pool_id=None, virtual_node_tags=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -82,6 +82,9 @@ class GetVirtualNodePoolResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if virtual_node_pool_cycling_details and not isinstance(virtual_node_pool_cycling_details, list):
+            raise TypeError("Expected argument 'virtual_node_pool_cycling_details' to be a list")
+        pulumi.set(__self__, "virtual_node_pool_cycling_details", virtual_node_pool_cycling_details)
         if virtual_node_pool_id and not isinstance(virtual_node_pool_id, str):
             raise TypeError("Expected argument 'virtual_node_pool_id' to be a str")
         pulumi.set(__self__, "virtual_node_pool_id", virtual_node_pool_id)
@@ -234,6 +237,14 @@ class GetVirtualNodePoolResult:
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
+    @pulumi.getter(name="virtualNodePoolCyclingDetails")
+    def virtual_node_pool_cycling_details(self) -> Sequence['outputs.GetVirtualNodePoolVirtualNodePoolCyclingDetailResult']:
+        """
+        Virtual Node Pool Cycling Details
+        """
+        return pulumi.get(self, "virtual_node_pool_cycling_details")
+
+    @_builtins.property
     @pulumi.getter(name="virtualNodePoolId")
     def virtual_node_pool_id(self) -> _builtins.str:
         return pulumi.get(self, "virtual_node_pool_id")
@@ -271,6 +282,7 @@ class AwaitableGetVirtualNodePoolResult(GetVirtualNodePoolResult):
             taints=self.taints,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            virtual_node_pool_cycling_details=self.virtual_node_pool_cycling_details,
             virtual_node_pool_id=self.virtual_node_pool_id,
             virtual_node_tags=self.virtual_node_tags)
 
@@ -318,6 +330,7 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[_builtins.str] = None,
         taints=pulumi.get(__ret__, 'taints'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        virtual_node_pool_cycling_details=pulumi.get(__ret__, 'virtual_node_pool_cycling_details'),
         virtual_node_pool_id=pulumi.get(__ret__, 'virtual_node_pool_id'),
         virtual_node_tags=pulumi.get(__ret__, 'virtual_node_tags'))
 def get_virtual_node_pool_output(virtual_node_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -362,5 +375,6 @@ def get_virtual_node_pool_output(virtual_node_pool_id: pulumi.Input[Optional[_bu
         taints=pulumi.get(__response__, 'taints'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        virtual_node_pool_cycling_details=pulumi.get(__response__, 'virtual_node_pool_cycling_details'),
         virtual_node_pool_id=pulumi.get(__response__, 'virtual_node_pool_id'),
         virtual_node_tags=pulumi.get(__response__, 'virtual_node_tags')))

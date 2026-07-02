@@ -62,6 +62,7 @@ import javax.annotation.Nullable;
  *             .bucketScope(bucketBucketScope)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isBucketKeyEnabled(bucketIsBucketKeyEnabled)
  *             .kmsKeyId(testKey.id())
  *             .metadata(bucketMetadata)
  *             .objectEventsEnabled(bucketObjectEventsEnabled)
@@ -246,6 +247,20 @@ public class Bucket extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    @Export(name="isBucketKeyEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isBucketKeyEnabled;
+
+    /**
+     * @return (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    public Output<Boolean> isBucketKeyEnabled() {
+        return this.isBucketKeyEnabled;
     }
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.

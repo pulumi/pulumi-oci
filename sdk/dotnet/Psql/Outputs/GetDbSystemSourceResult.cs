@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string BackupId;
         /// <summary>
+        /// A unique identifier for the database system.
+        /// </summary>
+        public readonly string DbSystemId;
+        /// <summary>
         /// Deprecated. Don't use.
         /// </summary>
         public readonly bool IsHavingRestoreConfigOverrides;
@@ -29,21 +33,31 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The source descriminator.
         /// </summary>
         public readonly string SourceType;
+        /// <summary>
+        /// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+        /// </summary>
+        public readonly string TimeToRestore;
 
         [OutputConstructor]
         private GetDbSystemSourceResult(
             string backupId,
 
+            string dbSystemId,
+
             bool isHavingRestoreConfigOverrides,
 
             string primaryDbSystemId,
 
-            string sourceType)
+            string sourceType,
+
+            string timeToRestore)
         {
             BackupId = backupId;
+            DbSystemId = dbSystemId;
             IsHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
             PrimaryDbSystemId = primaryDbSystemId;
             SourceType = sourceType;
+            TimeToRestore = timeToRestore;
         }
     }
 }

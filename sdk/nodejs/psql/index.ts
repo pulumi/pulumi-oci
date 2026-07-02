@@ -50,6 +50,11 @@ export const getDbSystemConnectionDetail: typeof import("./getDbSystemConnection
 export const getDbSystemConnectionDetailOutput: typeof import("./getDbSystemConnectionDetail").getDbSystemConnectionDetailOutput = null as any;
 utilities.lazyLoad(exports, ["getDbSystemConnectionDetail","getDbSystemConnectionDetailOutput"], () => require("./getDbSystemConnectionDetail"));
 
+export { GetDbSystemPitrDetailArgs, GetDbSystemPitrDetailResult, GetDbSystemPitrDetailOutputArgs } from "./getDbSystemPitrDetail";
+export const getDbSystemPitrDetail: typeof import("./getDbSystemPitrDetail").getDbSystemPitrDetail = null as any;
+export const getDbSystemPitrDetailOutput: typeof import("./getDbSystemPitrDetail").getDbSystemPitrDetailOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemPitrDetail","getDbSystemPitrDetailOutput"], () => require("./getDbSystemPitrDetail"));
+
 export { GetDbSystemPrimaryDbInstanceArgs, GetDbSystemPrimaryDbInstanceResult, GetDbSystemPrimaryDbInstanceOutputArgs } from "./getDbSystemPrimaryDbInstance";
 export const getDbSystemPrimaryDbInstance: typeof import("./getDbSystemPrimaryDbInstance").getDbSystemPrimaryDbInstance = null as any;
 export const getDbSystemPrimaryDbInstanceOutput: typeof import("./getDbSystemPrimaryDbInstance").getDbSystemPrimaryDbInstanceOutput = null as any;

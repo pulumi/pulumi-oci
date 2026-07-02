@@ -32,6 +32,7 @@ class VirtualNodePoolArgs:
                  initial_virtual_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualNodePoolInitialVirtualNodeLabelArgs']]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  taints: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]]] = None,
+                 virtual_node_pool_cycling_details: pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']] = None,
                  virtual_node_tags: pulumi.Input[Optional['VirtualNodePoolVirtualNodeTagsArgs']] = None):
         """
         The set of arguments for constructing a VirtualNodePool resource.
@@ -47,6 +48,7 @@ class VirtualNodePoolArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolInitialVirtualNodeLabelArgs']]] initial_virtual_node_labels: (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) List of network security group id's applied to the Virtual Node VNIC.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        :param pulumi.Input['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs'] virtual_node_pool_cycling_details: (Updatable) Virtual Node Pool Cycling Details
         :param pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs'] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -65,6 +67,8 @@ class VirtualNodePoolArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if taints is not None:
             pulumi.set(__self__, "taints", taints)
+        if virtual_node_pool_cycling_details is not None:
+            pulumi.set(__self__, "virtual_node_pool_cycling_details", virtual_node_pool_cycling_details)
         if virtual_node_tags is not None:
             pulumi.set(__self__, "virtual_node_tags", virtual_node_tags)
 
@@ -201,6 +205,18 @@ class VirtualNodePoolArgs:
         pulumi.set(self, "taints", value)
 
     @_builtins.property
+    @pulumi.getter(name="virtualNodePoolCyclingDetails")
+    def virtual_node_pool_cycling_details(self) -> pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']]:
+        """
+        (Updatable) Virtual Node Pool Cycling Details
+        """
+        return pulumi.get(self, "virtual_node_pool_cycling_details")
+
+    @virtual_node_pool_cycling_details.setter
+    def virtual_node_pool_cycling_details(self, value: pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']]):
+        pulumi.set(self, "virtual_node_pool_cycling_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="virtualNodeTags")
     def virtual_node_tags(self) -> pulumi.Input[Optional['VirtualNodePoolVirtualNodeTagsArgs']]:
         """
@@ -233,6 +249,7 @@ class _VirtualNodePoolState:
                  taints: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 virtual_node_pool_cycling_details: pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']] = None,
                  virtual_node_tags: pulumi.Input[Optional['VirtualNodePoolVirtualNodeTagsArgs']] = None):
         """
         Input properties used for looking up and filtering VirtualNodePool resources.
@@ -254,6 +271,7 @@ class _VirtualNodePoolState:
         :param pulumi.Input[Sequence[pulumi.Input['VirtualNodePoolTaintArgs']]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
         :param pulumi.Input[_builtins.str] time_created: The time the virtual node pool was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the virtual node pool was updated.
+        :param pulumi.Input['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs'] virtual_node_pool_cycling_details: (Updatable) Virtual Node Pool Cycling Details
         :param pulumi.Input['VirtualNodePoolVirtualNodeTagsArgs'] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         if cluster_id is not None:
@@ -290,6 +308,8 @@ class _VirtualNodePoolState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if virtual_node_pool_cycling_details is not None:
+            pulumi.set(__self__, "virtual_node_pool_cycling_details", virtual_node_pool_cycling_details)
         if virtual_node_tags is not None:
             pulumi.set(__self__, "virtual_node_tags", virtual_node_tags)
 
@@ -498,6 +518,18 @@ class _VirtualNodePoolState:
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
+    @pulumi.getter(name="virtualNodePoolCyclingDetails")
+    def virtual_node_pool_cycling_details(self) -> pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']]:
+        """
+        (Updatable) Virtual Node Pool Cycling Details
+        """
+        return pulumi.get(self, "virtual_node_pool_cycling_details")
+
+    @virtual_node_pool_cycling_details.setter
+    def virtual_node_pool_cycling_details(self, value: pulumi.Input[Optional['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs']]):
+        pulumi.set(self, "virtual_node_pool_cycling_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="virtualNodeTags")
     def virtual_node_tags(self) -> pulumi.Input[Optional['VirtualNodePoolVirtualNodeTagsArgs']]:
         """
@@ -527,6 +559,7 @@ class VirtualNodePool(pulumi.CustomResource):
                  pod_configuration: pulumi.Input[Optional[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']]] = None,
                  size: pulumi.Input[Optional[_builtins.int]] = None,
                  taints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
+                 virtual_node_pool_cycling_details: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict']]] = None,
                  virtual_node_tags: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None,
                  __props__=None):
         """
@@ -574,6 +607,11 @@ class VirtualNodePool(pulumi.CustomResource):
                 "key": virtual_node_pool_taints_key,
                 "value": virtual_node_pool_taints_value,
             }],
+            virtual_node_pool_cycling_details={
+                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled == "true",
+                "maximum_surge": virtual_node_pool_virtual_node_pool_cycling_details_maximum_surge,
+                "maximum_unavailable": virtual_node_pool_virtual_node_pool_cycling_details_maximum_unavailable,
+            },
             virtual_node_tags={
                 "defined_tags": {
                     "Operations.CostCenter": "42",
@@ -606,6 +644,7 @@ class VirtualNodePool(pulumi.CustomResource):
         :param pulumi.Input[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']] pod_configuration: (Updatable) The pod configuration for pods run on virtual nodes of this virtual node pool.
         :param pulumi.Input[_builtins.int] size: (Updatable) The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
+        :param pulumi.Input[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict']] virtual_node_pool_cycling_details: (Updatable) Virtual Node Pool Cycling Details
         :param pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         ...
@@ -659,6 +698,11 @@ class VirtualNodePool(pulumi.CustomResource):
                 "key": virtual_node_pool_taints_key,
                 "value": virtual_node_pool_taints_value,
             }],
+            virtual_node_pool_cycling_details={
+                "is_virtual_node_cycling_enabled": virtual_node_pool_virtual_node_pool_cycling_details_is_virtual_node_cycling_enabled == "true",
+                "maximum_surge": virtual_node_pool_virtual_node_pool_cycling_details_maximum_surge,
+                "maximum_unavailable": virtual_node_pool_virtual_node_pool_cycling_details_maximum_unavailable,
+            },
             virtual_node_tags={
                 "defined_tags": {
                     "Operations.CostCenter": "42",
@@ -704,6 +748,7 @@ class VirtualNodePool(pulumi.CustomResource):
                  pod_configuration: pulumi.Input[Optional[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict']]] = None,
                  size: pulumi.Input[Optional[_builtins.int]] = None,
                  taints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
+                 virtual_node_pool_cycling_details: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict']]] = None,
                  virtual_node_tags: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -737,6 +782,7 @@ class VirtualNodePool(pulumi.CustomResource):
                 raise TypeError("Missing required property 'size'")
             __props__.__dict__["size"] = size
             __props__.__dict__["taints"] = taints
+            __props__.__dict__["virtual_node_pool_cycling_details"] = virtual_node_pool_cycling_details
             __props__.__dict__["virtual_node_tags"] = virtual_node_tags
             __props__.__dict__["kubernetes_version"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -771,6 +817,7 @@ class VirtualNodePool(pulumi.CustomResource):
             taints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_node_pool_cycling_details: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict']]] = None,
             virtual_node_tags: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']]] = None) -> 'VirtualNodePool':
         """
         Get an existing VirtualNodePool resource's state with the given name, id, and optional extra
@@ -796,6 +843,7 @@ class VirtualNodePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict']]]] taints: (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
         :param pulumi.Input[_builtins.str] time_created: The time the virtual node pool was created.
         :param pulumi.Input[_builtins.str] time_updated: The time the virtual node pool was updated.
+        :param pulumi.Input[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict']] virtual_node_pool_cycling_details: (Updatable) Virtual Node Pool Cycling Details
         :param pulumi.Input[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict']] virtual_node_tags: (Updatable) The tags associated to the virtual nodes in this virtual node pool.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -819,6 +867,7 @@ class VirtualNodePool(pulumi.CustomResource):
         __props__.__dict__["taints"] = taints
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["virtual_node_pool_cycling_details"] = virtual_node_pool_cycling_details
         __props__.__dict__["virtual_node_tags"] = virtual_node_tags
         return VirtualNodePool(resource_name, opts=opts, __props__=__props__)
 
@@ -957,6 +1006,14 @@ class VirtualNodePool(pulumi.CustomResource):
         The time the virtual node pool was updated.
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="virtualNodePoolCyclingDetails")
+    def virtual_node_pool_cycling_details(self) -> pulumi.Output['outputs.VirtualNodePoolVirtualNodePoolCyclingDetails']:
+        """
+        (Updatable) Virtual Node Pool Cycling Details
+        """
+        return pulumi.get(self, "virtual_node_pool_cycling_details")
 
     @_builtins.property
     @pulumi.getter(name="virtualNodeTags")

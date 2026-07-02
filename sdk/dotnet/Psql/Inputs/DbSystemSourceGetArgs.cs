@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? BackupId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+        /// </summary>
+        [Input("dbSystemId")]
+        public Input<string>? DbSystemId { get; set; }
+
+        /// <summary>
         /// Deprecated. Don't use.
         /// </summary>
         [Input("isHavingRestoreConfigOverrides")]
@@ -35,6 +41,14 @@ namespace Pulumi.Oci.Psql.Inputs
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
+
+        /// <summary>
+        /// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+        /// 
+        /// Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+        /// </summary>
+        [Input("timeToRestore")]
+        public Input<string>? TimeToRestore { get; set; }
 
         public DbSystemSourceGetArgs()
         {

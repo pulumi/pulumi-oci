@@ -195,6 +195,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// The time the virtual node pool was updated.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Virtual Node Pool Cycling Details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVirtualNodePoolVirtualNodePoolCyclingDetailResult> VirtualNodePoolCyclingDetails;
         public readonly string VirtualNodePoolId;
         /// <summary>
         /// The tags associated to the virtual nodes in this virtual node pool.
@@ -239,6 +243,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string timeUpdated,
 
+            ImmutableArray<Outputs.GetVirtualNodePoolVirtualNodePoolCyclingDetailResult> virtualNodePoolCyclingDetails,
+
             string virtualNodePoolId,
 
             ImmutableArray<Outputs.GetVirtualNodePoolVirtualNodeTagResult> virtualNodeTags)
@@ -261,6 +267,7 @@ namespace Pulumi.Oci.ContainerEngine
             Taints = taints;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            VirtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
             VirtualNodePoolId = virtualNodePoolId;
             VirtualNodeTags = virtualNodeTags;
         }

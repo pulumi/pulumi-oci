@@ -25,6 +25,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? Frequency { get; set; }
 
         /// <summary>
+        /// (Updatable) Maximum number of minutes after `TimeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `IsRandomStartTime` is true. If omitted and `IsRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+        /// </summary>
+        [Input("initialJitterInMinutes")]
+        public Input<int>? InitialJitterInMinutes { get; set; }
+
+        /// <summary>
         /// (Updatable) The interval of frequency.
         /// </summary>
         [Input("interval")]

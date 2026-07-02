@@ -18,6 +18,11 @@ public final class DbSystemSource {
      */
     private @Nullable String backupId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    private @Nullable String dbSystemId;
+    /**
      * @return Deprecated. Don&#39;t use.
      * 
      */
@@ -32,6 +37,13 @@ public final class DbSystemSource {
      * 
      */
     private @Nullable String sourceType;
+    /**
+     * @return The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+     * 
+     */
+    private @Nullable String timeToRestore;
 
     private DbSystemSource() {}
     /**
@@ -40,6 +52,13 @@ public final class DbSystemSource {
      */
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    public Optional<String> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
     }
     /**
      * @return Deprecated. Don&#39;t use.
@@ -62,6 +81,15 @@ public final class DbSystemSource {
     public Optional<String> sourceType() {
         return Optional.ofNullable(this.sourceType);
     }
+    /**
+     * @return The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     * Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+     * 
+     */
+    public Optional<String> timeToRestore() {
+        return Optional.ofNullable(this.timeToRestore);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -73,22 +101,32 @@ public final class DbSystemSource {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String backupId;
+        private @Nullable String dbSystemId;
         private @Nullable Boolean isHavingRestoreConfigOverrides;
         private @Nullable String primaryDbSystemId;
         private @Nullable String sourceType;
+        private @Nullable String timeToRestore;
         public Builder() {}
         public Builder(DbSystemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
+    	      this.dbSystemId = defaults.dbSystemId;
     	      this.isHavingRestoreConfigOverrides = defaults.isHavingRestoreConfigOverrides;
     	      this.primaryDbSystemId = defaults.primaryDbSystemId;
     	      this.sourceType = defaults.sourceType;
+    	      this.timeToRestore = defaults.timeToRestore;
         }
 
         @CustomType.Setter
         public Builder backupId(@Nullable String backupId) {
 
             this.backupId = backupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbSystemId(@Nullable String dbSystemId) {
+
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
@@ -109,12 +147,20 @@ public final class DbSystemSource {
             this.sourceType = sourceType;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeToRestore(@Nullable String timeToRestore) {
+
+            this.timeToRestore = timeToRestore;
+            return this;
+        }
         public DbSystemSource build() {
             final var _resultValue = new DbSystemSource();
             _resultValue.backupId = backupId;
+            _resultValue.dbSystemId = dbSystemId;
             _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
             _resultValue.primaryDbSystemId = primaryDbSystemId;
             _resultValue.sourceType = sourceType;
+            _resultValue.timeToRestore = timeToRestore;
             return _resultValue;
         }
     }

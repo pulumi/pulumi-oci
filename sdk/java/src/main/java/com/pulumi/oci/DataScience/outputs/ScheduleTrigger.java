@@ -25,6 +25,11 @@ public final class ScheduleTrigger {
      */
     private @Nullable String frequency;
     /**
+     * @return (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+     * 
+     */
+    private @Nullable Integer initialJitterInMinutes;
+    /**
      * @return (Updatable) The interval of frequency.
      * 
      */
@@ -72,6 +77,13 @@ public final class ScheduleTrigger {
      */
     public Optional<String> frequency() {
         return Optional.ofNullable(this.frequency);
+    }
+    /**
+     * @return (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+     * 
+     */
+    public Optional<Integer> initialJitterInMinutes() {
+        return Optional.ofNullable(this.initialJitterInMinutes);
     }
     /**
      * @return (Updatable) The interval of frequency.
@@ -130,6 +142,7 @@ public final class ScheduleTrigger {
     public static final class Builder {
         private @Nullable String cronExpression;
         private @Nullable String frequency;
+        private @Nullable Integer initialJitterInMinutes;
         private @Nullable Integer interval;
         private @Nullable Boolean isRandomStartTime;
         private @Nullable String recurrence;
@@ -141,6 +154,7 @@ public final class ScheduleTrigger {
     	      Objects.requireNonNull(defaults);
     	      this.cronExpression = defaults.cronExpression;
     	      this.frequency = defaults.frequency;
+    	      this.initialJitterInMinutes = defaults.initialJitterInMinutes;
     	      this.interval = defaults.interval;
     	      this.isRandomStartTime = defaults.isRandomStartTime;
     	      this.recurrence = defaults.recurrence;
@@ -159,6 +173,12 @@ public final class ScheduleTrigger {
         public Builder frequency(@Nullable String frequency) {
 
             this.frequency = frequency;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialJitterInMinutes(@Nullable Integer initialJitterInMinutes) {
+
+            this.initialJitterInMinutes = initialJitterInMinutes;
             return this;
         }
         @CustomType.Setter
@@ -203,6 +223,7 @@ public final class ScheduleTrigger {
             final var _resultValue = new ScheduleTrigger();
             _resultValue.cronExpression = cronExpression;
             _resultValue.frequency = frequency;
+            _resultValue.initialJitterInMinutes = initialJitterInMinutes;
             _resultValue.interval = interval;
             _resultValue.isRandomStartTime = isRandomStartTime;
             _resultValue.recurrence = recurrence;

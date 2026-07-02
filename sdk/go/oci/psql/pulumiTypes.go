@@ -1958,6 +1958,8 @@ type DbSystemManagementPolicy struct {
 	//
 	// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	MaintenanceWindowStart *string `pulumi:"maintenanceWindowStart"`
+	// (Updatable) Point-in-time recovery policy.
+	PitrPolicy *DbSystemManagementPolicyPitrPolicy `pulumi:"pitrPolicy"`
 }
 
 // DbSystemManagementPolicyInput is an input type that accepts DbSystemManagementPolicyArgs and DbSystemManagementPolicyOutput values.
@@ -1978,6 +1980,8 @@ type DbSystemManagementPolicyArgs struct {
 	//
 	// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 	MaintenanceWindowStart pulumi.StringPtrInput `pulumi:"maintenanceWindowStart"`
+	// (Updatable) Point-in-time recovery policy.
+	PitrPolicy DbSystemManagementPolicyPitrPolicyPtrInput `pulumi:"pitrPolicy"`
 }
 
 func (DbSystemManagementPolicyArgs) ElementType() reflect.Type {
@@ -2069,6 +2073,11 @@ func (o DbSystemManagementPolicyOutput) MaintenanceWindowStart() pulumi.StringPt
 	return o.ApplyT(func(v DbSystemManagementPolicy) *string { return v.MaintenanceWindowStart }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Point-in-time recovery policy.
+func (o DbSystemManagementPolicyOutput) PitrPolicy() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicy) *DbSystemManagementPolicyPitrPolicy { return v.PitrPolicy }).(DbSystemManagementPolicyPitrPolicyPtrOutput)
+}
+
 type DbSystemManagementPolicyPtrOutput struct{ *pulumi.OutputState }
 
 func (DbSystemManagementPolicyPtrOutput) ElementType() reflect.Type {
@@ -2113,6 +2122,16 @@ func (o DbSystemManagementPolicyPtrOutput) MaintenanceWindowStart() pulumi.Strin
 		}
 		return v.MaintenanceWindowStart
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Point-in-time recovery policy.
+func (o DbSystemManagementPolicyPtrOutput) PitrPolicy() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicy) *DbSystemManagementPolicyPitrPolicy {
+		if v == nil {
+			return nil
+		}
+		return v.PitrPolicy
+	}).(DbSystemManagementPolicyPitrPolicyPtrOutput)
 }
 
 type DbSystemManagementPolicyBackupPolicy struct {
@@ -2521,6 +2540,162 @@ func (o DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput) RetentionPeriod
 			return nil
 		}
 		return v.RetentionPeriod
+	}).(pulumi.IntPtrOutput)
+}
+
+type DbSystemManagementPolicyPitrPolicy struct {
+	// (Updatable) The kind of recovery policy.
+	Kind *string `pulumi:"kind"`
+	// (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays *int `pulumi:"restoreDays"`
+}
+
+// DbSystemManagementPolicyPitrPolicyInput is an input type that accepts DbSystemManagementPolicyPitrPolicyArgs and DbSystemManagementPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `DbSystemManagementPolicyPitrPolicyInput` via:
+//
+//	DbSystemManagementPolicyPitrPolicyArgs{...}
+type DbSystemManagementPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToDbSystemManagementPolicyPitrPolicyOutput() DbSystemManagementPolicyPitrPolicyOutput
+	ToDbSystemManagementPolicyPitrPolicyOutputWithContext(context.Context) DbSystemManagementPolicyPitrPolicyOutput
+}
+
+type DbSystemManagementPolicyPitrPolicyArgs struct {
+	// (Updatable) The kind of recovery policy.
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
+	// (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays pulumi.IntPtrInput `pulumi:"restoreDays"`
+}
+
+func (DbSystemManagementPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i DbSystemManagementPolicyPitrPolicyArgs) ToDbSystemManagementPolicyPitrPolicyOutput() DbSystemManagementPolicyPitrPolicyOutput {
+	return i.ToDbSystemManagementPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i DbSystemManagementPolicyPitrPolicyArgs) ToDbSystemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyPitrPolicyOutput)
+}
+
+func (i DbSystemManagementPolicyPitrPolicyArgs) ToDbSystemManagementPolicyPitrPolicyPtrOutput() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return i.ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i DbSystemManagementPolicyPitrPolicyArgs) ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyPitrPolicyOutput).ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(ctx)
+}
+
+// DbSystemManagementPolicyPitrPolicyPtrInput is an input type that accepts DbSystemManagementPolicyPitrPolicyArgs, DbSystemManagementPolicyPitrPolicyPtr and DbSystemManagementPolicyPitrPolicyPtrOutput values.
+// You can construct a concrete instance of `DbSystemManagementPolicyPitrPolicyPtrInput` via:
+//
+//	        DbSystemManagementPolicyPitrPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DbSystemManagementPolicyPitrPolicyPtrInput interface {
+	pulumi.Input
+
+	ToDbSystemManagementPolicyPitrPolicyPtrOutput() DbSystemManagementPolicyPitrPolicyPtrOutput
+	ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(context.Context) DbSystemManagementPolicyPitrPolicyPtrOutput
+}
+
+type dbSystemManagementPolicyPitrPolicyPtrType DbSystemManagementPolicyPitrPolicyArgs
+
+func DbSystemManagementPolicyPitrPolicyPtr(v *DbSystemManagementPolicyPitrPolicyArgs) DbSystemManagementPolicyPitrPolicyPtrInput {
+	return (*dbSystemManagementPolicyPitrPolicyPtrType)(v)
+}
+
+func (*dbSystemManagementPolicyPitrPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i *dbSystemManagementPolicyPitrPolicyPtrType) ToDbSystemManagementPolicyPitrPolicyPtrOutput() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return i.ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *dbSystemManagementPolicyPitrPolicyPtrType) ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbSystemManagementPolicyPitrPolicyPtrOutput)
+}
+
+type DbSystemManagementPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (DbSystemManagementPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o DbSystemManagementPolicyPitrPolicyOutput) ToDbSystemManagementPolicyPitrPolicyOutput() DbSystemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyPitrPolicyOutput) ToDbSystemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyPitrPolicyOutput) ToDbSystemManagementPolicyPitrPolicyPtrOutput() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o.ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o DbSystemManagementPolicyPitrPolicyOutput) ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DbSystemManagementPolicyPitrPolicy) *DbSystemManagementPolicyPitrPolicy {
+		return &v
+	}).(DbSystemManagementPolicyPitrPolicyPtrOutput)
+}
+
+// (Updatable) The kind of recovery policy.
+func (o DbSystemManagementPolicyPitrPolicyOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyPitrPolicy) *string { return v.Kind }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+func (o DbSystemManagementPolicyPitrPolicyOutput) RestoreDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DbSystemManagementPolicyPitrPolicy) *int { return v.RestoreDays }).(pulumi.IntPtrOutput)
+}
+
+type DbSystemManagementPolicyPitrPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (DbSystemManagementPolicyPitrPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o DbSystemManagementPolicyPitrPolicyPtrOutput) ToDbSystemManagementPolicyPitrPolicyPtrOutput() DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyPitrPolicyPtrOutput) ToDbSystemManagementPolicyPitrPolicyPtrOutputWithContext(ctx context.Context) DbSystemManagementPolicyPitrPolicyPtrOutput {
+	return o
+}
+
+func (o DbSystemManagementPolicyPitrPolicyPtrOutput) Elem() DbSystemManagementPolicyPitrPolicyOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyPitrPolicy) DbSystemManagementPolicyPitrPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret DbSystemManagementPolicyPitrPolicy
+		return ret
+	}).(DbSystemManagementPolicyPitrPolicyOutput)
+}
+
+// (Updatable) The kind of recovery policy.
+func (o DbSystemManagementPolicyPitrPolicyPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyPitrPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+func (o DbSystemManagementPolicyPitrPolicyPtrOutput) RestoreDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DbSystemManagementPolicyPitrPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RestoreDays
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -3274,12 +3449,18 @@ func (o DbSystemReplicationConfigPtrOutput) RpoInSeconds() pulumi.StringPtrOutpu
 type DbSystemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId *string `pulumi:"backupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+	DbSystemId *string `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides *bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId *string `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType *string `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	//
+	// Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+	TimeToRestore *string `pulumi:"timeToRestore"`
 }
 
 // DbSystemSourceInput is an input type that accepts DbSystemSourceArgs and DbSystemSourceOutput values.
@@ -3296,12 +3477,18 @@ type DbSystemSourceInput interface {
 type DbSystemSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolPtrInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId pulumi.StringPtrInput `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	//
+	// Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+	TimeToRestore pulumi.StringPtrInput `pulumi:"timeToRestore"`
 }
 
 func (DbSystemSourceArgs) ElementType() reflect.Type {
@@ -3386,6 +3573,11 @@ func (o DbSystemSourceOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemSource) *string { return v.BackupId }).(pulumi.StringPtrOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+func (o DbSystemSourceOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemSource) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
+}
+
 // Deprecated. Don't use.
 func (o DbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DbSystemSource) *bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolPtrOutput)
@@ -3399,6 +3591,13 @@ func (o DbSystemSourceOutput) PrimaryDbSystemId() pulumi.StringPtrOutput {
 // The source descriminator.
 func (o DbSystemSourceOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
+}
+
+// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+//
+// Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+func (o DbSystemSourceOutput) TimeToRestore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbSystemSource) *string { return v.TimeToRestore }).(pulumi.StringPtrOutput)
 }
 
 type DbSystemSourcePtrOutput struct{ *pulumi.OutputState }
@@ -3435,6 +3634,16 @@ func (o DbSystemSourcePtrOutput) BackupId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+func (o DbSystemSourcePtrOutput) DbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DbSystemId
+	}).(pulumi.StringPtrOutput)
+}
+
 // Deprecated. Don't use.
 func (o DbSystemSourcePtrOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DbSystemSource) *bool {
@@ -3462,6 +3671,18 @@ func (o DbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 			return nil
 		}
 		return v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+//
+// Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+func (o DbSystemSourcePtrOutput) TimeToRestore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeToRestore
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -7537,6 +7758,8 @@ type GetDbSystemManagementPolicy struct {
 	BackupPolicies []GetDbSystemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart string `pulumi:"maintenanceWindowStart"`
+	// Point-in-time recovery policy.
+	PitrPolicies []GetDbSystemManagementPolicyPitrPolicy `pulumi:"pitrPolicies"`
 }
 
 // GetDbSystemManagementPolicyInput is an input type that accepts GetDbSystemManagementPolicyArgs and GetDbSystemManagementPolicyOutput values.
@@ -7555,6 +7778,8 @@ type GetDbSystemManagementPolicyArgs struct {
 	BackupPolicies GetDbSystemManagementPolicyBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart pulumi.StringInput `pulumi:"maintenanceWindowStart"`
+	// Point-in-time recovery policy.
+	PitrPolicies GetDbSystemManagementPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 }
 
 func (GetDbSystemManagementPolicyArgs) ElementType() reflect.Type {
@@ -7616,6 +7841,11 @@ func (o GetDbSystemManagementPolicyOutput) BackupPolicies() GetDbSystemManagemen
 // The start of the maintenance window.
 func (o GetDbSystemManagementPolicyOutput) MaintenanceWindowStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemManagementPolicy) string { return v.MaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+// Point-in-time recovery policy.
+func (o GetDbSystemManagementPolicyOutput) PitrPolicies() GetDbSystemManagementPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicy) []GetDbSystemManagementPolicyPitrPolicy { return v.PitrPolicies }).(GetDbSystemManagementPolicyPitrPolicyArrayOutput)
 }
 
 type GetDbSystemManagementPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -7895,6 +8125,112 @@ func (o GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemManagementPolicyBackupPolicyCopyPolicy {
 		return vs[0].([]GetDbSystemManagementPolicyBackupPolicyCopyPolicy)[vs[1].(int)]
 	}).(GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+type GetDbSystemManagementPolicyPitrPolicy struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+	// The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays int `pulumi:"restoreDays"`
+}
+
+// GetDbSystemManagementPolicyPitrPolicyInput is an input type that accepts GetDbSystemManagementPolicyPitrPolicyArgs and GetDbSystemManagementPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetDbSystemManagementPolicyPitrPolicyInput` via:
+//
+//	GetDbSystemManagementPolicyPitrPolicyArgs{...}
+type GetDbSystemManagementPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetDbSystemManagementPolicyPitrPolicyOutput() GetDbSystemManagementPolicyPitrPolicyOutput
+	ToGetDbSystemManagementPolicyPitrPolicyOutputWithContext(context.Context) GetDbSystemManagementPolicyPitrPolicyOutput
+}
+
+type GetDbSystemManagementPolicyPitrPolicyArgs struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays pulumi.IntInput `pulumi:"restoreDays"`
+}
+
+func (GetDbSystemManagementPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemManagementPolicyPitrPolicyArgs) ToGetDbSystemManagementPolicyPitrPolicyOutput() GetDbSystemManagementPolicyPitrPolicyOutput {
+	return i.ToGetDbSystemManagementPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemManagementPolicyPitrPolicyArgs) ToGetDbSystemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemManagementPolicyPitrPolicyOutput)
+}
+
+// GetDbSystemManagementPolicyPitrPolicyArrayInput is an input type that accepts GetDbSystemManagementPolicyPitrPolicyArray and GetDbSystemManagementPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemManagementPolicyPitrPolicyArrayInput` via:
+//
+//	GetDbSystemManagementPolicyPitrPolicyArray{ GetDbSystemManagementPolicyPitrPolicyArgs{...} }
+type GetDbSystemManagementPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemManagementPolicyPitrPolicyArrayOutput() GetDbSystemManagementPolicyPitrPolicyArrayOutput
+	ToGetDbSystemManagementPolicyPitrPolicyArrayOutputWithContext(context.Context) GetDbSystemManagementPolicyPitrPolicyArrayOutput
+}
+
+type GetDbSystemManagementPolicyPitrPolicyArray []GetDbSystemManagementPolicyPitrPolicyInput
+
+func (GetDbSystemManagementPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemManagementPolicyPitrPolicyArray) ToGetDbSystemManagementPolicyPitrPolicyArrayOutput() GetDbSystemManagementPolicyPitrPolicyArrayOutput {
+	return i.ToGetDbSystemManagementPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemManagementPolicyPitrPolicyArray) ToGetDbSystemManagementPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemManagementPolicyPitrPolicyArrayOutput)
+}
+
+type GetDbSystemManagementPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemManagementPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemManagementPolicyPitrPolicyOutput) ToGetDbSystemManagementPolicyPitrPolicyOutput() GetDbSystemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyPitrPolicyOutput) ToGetDbSystemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemManagementPolicyPitrPolicyOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyPitrPolicy) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The number of days the database system retains backups required for point-in-time recovery.
+func (o GetDbSystemManagementPolicyPitrPolicyOutput) RestoreDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemManagementPolicyPitrPolicy) int { return v.RestoreDays }).(pulumi.IntOutput)
+}
+
+type GetDbSystemManagementPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemManagementPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemManagementPolicyPitrPolicyArrayOutput) ToGetDbSystemManagementPolicyPitrPolicyArrayOutput() GetDbSystemManagementPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyPitrPolicyArrayOutput) ToGetDbSystemManagementPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemManagementPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemManagementPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSystemManagementPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemManagementPolicyPitrPolicy {
+		return vs[0].([]GetDbSystemManagementPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetDbSystemManagementPolicyPitrPolicyOutput)
 }
 
 type GetDbSystemNetworkDetail struct {
@@ -8359,6 +8695,112 @@ func (o GetDbSystemPatchOperationArrayOutput) Index(i pulumi.IntInput) GetDbSyst
 	}).(GetDbSystemPatchOperationOutput)
 }
 
+type GetDbSystemPitrDetailRecoveryTimeWindow struct {
+	// Latest timestamp in the PITR window to which the database can be restored. Timestamps later than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+	TimeRecoveryWindowEnd string `pulumi:"timeRecoveryWindowEnd"`
+	// Earliest timestamp in the PITR window to which the database can be restored. Timestamps earlier than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+	TimeRecoveryWindowStart string `pulumi:"timeRecoveryWindowStart"`
+}
+
+// GetDbSystemPitrDetailRecoveryTimeWindowInput is an input type that accepts GetDbSystemPitrDetailRecoveryTimeWindowArgs and GetDbSystemPitrDetailRecoveryTimeWindowOutput values.
+// You can construct a concrete instance of `GetDbSystemPitrDetailRecoveryTimeWindowInput` via:
+//
+//	GetDbSystemPitrDetailRecoveryTimeWindowArgs{...}
+type GetDbSystemPitrDetailRecoveryTimeWindowInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPitrDetailRecoveryTimeWindowOutput() GetDbSystemPitrDetailRecoveryTimeWindowOutput
+	ToGetDbSystemPitrDetailRecoveryTimeWindowOutputWithContext(context.Context) GetDbSystemPitrDetailRecoveryTimeWindowOutput
+}
+
+type GetDbSystemPitrDetailRecoveryTimeWindowArgs struct {
+	// Latest timestamp in the PITR window to which the database can be restored. Timestamps later than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+	TimeRecoveryWindowEnd pulumi.StringInput `pulumi:"timeRecoveryWindowEnd"`
+	// Earliest timestamp in the PITR window to which the database can be restored. Timestamps earlier than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+	TimeRecoveryWindowStart pulumi.StringInput `pulumi:"timeRecoveryWindowStart"`
+}
+
+func (GetDbSystemPitrDetailRecoveryTimeWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPitrDetailRecoveryTimeWindow)(nil)).Elem()
+}
+
+func (i GetDbSystemPitrDetailRecoveryTimeWindowArgs) ToGetDbSystemPitrDetailRecoveryTimeWindowOutput() GetDbSystemPitrDetailRecoveryTimeWindowOutput {
+	return i.ToGetDbSystemPitrDetailRecoveryTimeWindowOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPitrDetailRecoveryTimeWindowArgs) ToGetDbSystemPitrDetailRecoveryTimeWindowOutputWithContext(ctx context.Context) GetDbSystemPitrDetailRecoveryTimeWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPitrDetailRecoveryTimeWindowOutput)
+}
+
+// GetDbSystemPitrDetailRecoveryTimeWindowArrayInput is an input type that accepts GetDbSystemPitrDetailRecoveryTimeWindowArray and GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemPitrDetailRecoveryTimeWindowArrayInput` via:
+//
+//	GetDbSystemPitrDetailRecoveryTimeWindowArray{ GetDbSystemPitrDetailRecoveryTimeWindowArgs{...} }
+type GetDbSystemPitrDetailRecoveryTimeWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutput() GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput
+	ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutputWithContext(context.Context) GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput
+}
+
+type GetDbSystemPitrDetailRecoveryTimeWindowArray []GetDbSystemPitrDetailRecoveryTimeWindowInput
+
+func (GetDbSystemPitrDetailRecoveryTimeWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPitrDetailRecoveryTimeWindow)(nil)).Elem()
+}
+
+func (i GetDbSystemPitrDetailRecoveryTimeWindowArray) ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutput() GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput {
+	return i.ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemPitrDetailRecoveryTimeWindowArray) ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutputWithContext(ctx context.Context) GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput)
+}
+
+type GetDbSystemPitrDetailRecoveryTimeWindowOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPitrDetailRecoveryTimeWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemPitrDetailRecoveryTimeWindow)(nil)).Elem()
+}
+
+func (o GetDbSystemPitrDetailRecoveryTimeWindowOutput) ToGetDbSystemPitrDetailRecoveryTimeWindowOutput() GetDbSystemPitrDetailRecoveryTimeWindowOutput {
+	return o
+}
+
+func (o GetDbSystemPitrDetailRecoveryTimeWindowOutput) ToGetDbSystemPitrDetailRecoveryTimeWindowOutputWithContext(ctx context.Context) GetDbSystemPitrDetailRecoveryTimeWindowOutput {
+	return o
+}
+
+// Latest timestamp in the PITR window to which the database can be restored. Timestamps later than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+func (o GetDbSystemPitrDetailRecoveryTimeWindowOutput) TimeRecoveryWindowEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPitrDetailRecoveryTimeWindow) string { return v.TimeRecoveryWindowEnd }).(pulumi.StringOutput)
+}
+
+// Earliest timestamp in the PITR window to which the database can be restored. Timestamps earlier than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+func (o GetDbSystemPitrDetailRecoveryTimeWindowOutput) TimeRecoveryWindowStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemPitrDetailRecoveryTimeWindow) string { return v.TimeRecoveryWindowStart }).(pulumi.StringOutput)
+}
+
+type GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemPitrDetailRecoveryTimeWindow)(nil)).Elem()
+}
+
+func (o GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput) ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutput() GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput) ToGetDbSystemPitrDetailRecoveryTimeWindowArrayOutputWithContext(ctx context.Context) GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput {
+	return o
+}
+
+func (o GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput) Index(i pulumi.IntInput) GetDbSystemPitrDetailRecoveryTimeWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemPitrDetailRecoveryTimeWindow {
+		return vs[0].([]GetDbSystemPitrDetailRecoveryTimeWindow)[vs[1].(int)]
+	}).(GetDbSystemPitrDetailRecoveryTimeWindowOutput)
+}
+
 type GetDbSystemReplicasDbSystemReplicaCollection struct {
 	// List of replica database systems.
 	Items []GetDbSystemReplicasDbSystemReplicaCollectionItem `pulumi:"items"`
@@ -8779,12 +9221,16 @@ func (o GetDbSystemReplicationConfigArrayOutput) Index(i pulumi.IntInput) GetDbS
 type GetDbSystemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
+	// A unique identifier for the database system.
+	DbSystemId string `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId string `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	TimeToRestore string `pulumi:"timeToRestore"`
 }
 
 // GetDbSystemSourceInput is an input type that accepts GetDbSystemSourceArgs and GetDbSystemSourceOutput values.
@@ -8801,12 +9247,16 @@ type GetDbSystemSourceInput interface {
 type GetDbSystemSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// A unique identifier for the database system.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId pulumi.StringInput `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	TimeToRestore pulumi.StringInput `pulumi:"timeToRestore"`
 }
 
 func (GetDbSystemSourceArgs) ElementType() reflect.Type {
@@ -8865,6 +9315,11 @@ func (o GetDbSystemSourceOutput) BackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
+// A unique identifier for the database system.
+func (o GetDbSystemSourceOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
 // Deprecated. Don't use.
 func (o GetDbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
@@ -8878,6 +9333,11 @@ func (o GetDbSystemSourceOutput) PrimaryDbSystemId() pulumi.StringOutput {
 // The source descriminator.
 func (o GetDbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+func (o GetDbSystemSourceOutput) TimeToRestore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemSource) string { return v.TimeToRestore }).(pulumi.StringOutput)
 }
 
 type GetDbSystemSourceArrayOutput struct{ *pulumi.OutputState }
@@ -10361,6 +10821,8 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicy struct {
 	BackupPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart string `pulumi:"maintenanceWindowStart"`
+	// Point-in-time recovery policy.
+	PitrPolicies []GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy `pulumi:"pitrPolicies"`
 }
 
 // GetDbSystemsDbSystemCollectionItemManagementPolicyInput is an input type that accepts GetDbSystemsDbSystemCollectionItemManagementPolicyArgs and GetDbSystemsDbSystemCollectionItemManagementPolicyOutput values.
@@ -10379,6 +10841,8 @@ type GetDbSystemsDbSystemCollectionItemManagementPolicyArgs struct {
 	BackupPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayInput `pulumi:"backupPolicies"`
 	// The start of the maintenance window.
 	MaintenanceWindowStart pulumi.StringInput `pulumi:"maintenanceWindowStart"`
+	// Point-in-time recovery policy.
+	PitrPolicies GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
 }
 
 func (GetDbSystemsDbSystemCollectionItemManagementPolicyArgs) ElementType() reflect.Type {
@@ -10442,6 +10906,13 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyOutput) BackupPolicies
 // The start of the maintenance window.
 func (o GetDbSystemsDbSystemCollectionItemManagementPolicyOutput) MaintenanceWindowStart() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicy) string { return v.MaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+// Point-in-time recovery policy.
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyOutput) PitrPolicies() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicy) []GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy {
+		return v.PitrPolicies
+	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemManagementPolicyArrayOutput struct{ *pulumi.OutputState }
@@ -10729,6 +11200,112 @@ func (o GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy {
 		return vs[0].([]GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicy)[vs[1].(int)]
 	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind string `pulumi:"kind"`
+	// The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays int `pulumi:"restoreDays"`
+}
+
+// GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyInput is an input type that accepts GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs and GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs{...}
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs struct {
+	// Specifies the management of Insight for the dbSystem.
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// The number of days the database system retains backups required for point-in-time recovery.
+	RestoreDays pulumi.IntInput `pulumi:"restoreDays"`
+}
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput)
+}
+
+// GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayInput is an input type that accepts GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray and GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput values.
+// You can construct a concrete instance of `GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayInput` via:
+//
+//	GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray{ GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs{...} }
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput
+	ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutputWithContext(context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray []GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyInput
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput {
+	return i.ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput {
+	return o
+}
+
+// Specifies the management of Insight for the dbSystem.
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// The number of days the database system retains backups required for point-in-time recovery.
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput) RestoreDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy) int { return v.RestoreDays }).(pulumi.IntOutput)
+}
+
+type GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy)(nil)).Elem()
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput() GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput) ToGetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput {
+	return o
+}
+
+func (o GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy {
+		return vs[0].([]GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy)[vs[1].(int)]
+	}).(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemNetworkDetail struct {
@@ -11306,12 +11883,16 @@ func (o GetDbSystemsDbSystemCollectionItemReplicationConfigArrayOutput) Index(i 
 type GetDbSystemsDbSystemCollectionItemSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId string `pulumi:"backupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+	DbSystemId string `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides bool `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId string `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType string `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	TimeToRestore string `pulumi:"timeToRestore"`
 }
 
 // GetDbSystemsDbSystemCollectionItemSourceInput is an input type that accepts GetDbSystemsDbSystemCollectionItemSourceArgs and GetDbSystemsDbSystemCollectionItemSourceOutput values.
@@ -11328,12 +11909,16 @@ type GetDbSystemsDbSystemCollectionItemSourceInput interface {
 type GetDbSystemsDbSystemCollectionItemSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
 	BackupId pulumi.StringInput `pulumi:"backupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolInput `pulumi:"isHavingRestoreConfigOverrides"`
 	// The [OCID] of the primary database system.
 	PrimaryDbSystemId pulumi.StringInput `pulumi:"primaryDbSystemId"`
 	// The source descriminator.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+	TimeToRestore pulumi.StringInput `pulumi:"timeToRestore"`
 }
 
 func (GetDbSystemsDbSystemCollectionItemSourceArgs) ElementType() reflect.Type {
@@ -11392,6 +11977,11 @@ func (o GetDbSystemsDbSystemCollectionItemSourceOutput) BackupId() pulumi.String
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.BackupId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+func (o GetDbSystemsDbSystemCollectionItemSourceOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
 // Deprecated. Don't use.
 func (o GetDbSystemsDbSystemCollectionItemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolOutput)
@@ -11405,6 +11995,11 @@ func (o GetDbSystemsDbSystemCollectionItemSourceOutput) PrimaryDbSystemId() pulu
 // The source descriminator.
 func (o GetDbSystemsDbSystemCollectionItemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+func (o GetDbSystemsDbSystemCollectionItemSourceOutput) TimeToRestore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemSource) string { return v.TimeToRestore }).(pulumi.StringOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemSourceArrayOutput struct{ *pulumi.OutputState }
@@ -14656,6 +15251,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyBackupPolicyCopyPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyPitrPolicyInput)(nil)).Elem(), DbSystemManagementPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemManagementPolicyPitrPolicyPtrInput)(nil)).Elem(), DbSystemManagementPolicyPitrPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemNetworkDetailsPtrInput)(nil)).Elem(), DbSystemNetworkDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbSystemOdspInsightDetailsInput)(nil)).Elem(), DbSystemOdspInsightDetailsArgs{})
@@ -14738,6 +15335,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyCopyPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyBackupPolicyCopyPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyPitrPolicyInput)(nil)).Elem(), GetDbSystemManagementPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemManagementPolicyPitrPolicyArrayInput)(nil)).Elem(), GetDbSystemManagementPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailInput)(nil)).Elem(), GetDbSystemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemNetworkDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailInput)(nil)).Elem(), GetDbSystemOdspInsightDetailArgs{})
@@ -14746,6 +15345,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemOdspInsightDetailOdspInsightListArrayInput)(nil)).Elem(), GetDbSystemOdspInsightDetailOdspInsightListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationInput)(nil)).Elem(), GetDbSystemPatchOperationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPatchOperationArrayInput)(nil)).Elem(), GetDbSystemPatchOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPitrDetailRecoveryTimeWindowInput)(nil)).Elem(), GetDbSystemPitrDetailRecoveryTimeWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemPitrDetailRecoveryTimeWindowArrayInput)(nil)).Elem(), GetDbSystemPitrDetailRecoveryTimeWindowArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionArrayInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemReplicasDbSystemReplicaCollectionItemInput)(nil)).Elem(), GetDbSystemReplicasDbSystemReplicaCollectionItemArgs{})
@@ -14782,6 +15383,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemNetworkDetailArrayInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemNetworkDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbSystemsDbSystemCollectionItemOdspInsightDetailInput)(nil)).Elem(), GetDbSystemsDbSystemCollectionItemOdspInsightDetailArgs{})
@@ -14880,6 +15483,8 @@ func init() {
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyCopyPolicyOutput{})
 	pulumi.RegisterOutputType(DbSystemManagementPolicyBackupPolicyCopyPolicyPtrOutput{})
+	pulumi.RegisterOutputType(DbSystemManagementPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(DbSystemManagementPolicyPitrPolicyPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsOutput{})
 	pulumi.RegisterOutputType(DbSystemNetworkDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DbSystemOdspInsightDetailsOutput{})
@@ -14962,6 +15567,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyCopyPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemManagementPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetDbSystemManagementPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemNetworkDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailOutput{})
@@ -14970,6 +15577,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemOdspInsightDetailOdspInsightListArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchOperationOutput{})
 	pulumi.RegisterOutputType(GetDbSystemPatchOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPitrDetailRecoveryTimeWindowOutput{})
+	pulumi.RegisterOutputType(GetDbSystemPitrDetailRecoveryTimeWindowArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionOutput{})
 	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemReplicasDbSystemReplicaCollectionItemOutput{})
@@ -15006,6 +15615,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyOutput{})
+	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbSystemsDbSystemCollectionItemOdspInsightDetailOutput{})

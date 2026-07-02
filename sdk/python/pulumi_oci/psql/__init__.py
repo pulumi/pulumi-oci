@@ -15,6 +15,7 @@ from .get_configuration import *
 from .get_configurations import *
 from .get_db_system import *
 from .get_db_system_connection_detail import *
+from .get_db_system_pitr_detail import *
 from .get_db_system_primary_db_instance import *
 from .get_db_system_replicas import *
 from .get_db_systems import *

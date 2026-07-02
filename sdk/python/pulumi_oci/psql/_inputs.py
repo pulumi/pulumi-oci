@@ -49,6 +49,8 @@ __all__ = [
     'DbSystemManagementPolicyBackupPolicyArgsDict',
     'DbSystemManagementPolicyBackupPolicyCopyPolicyArgs',
     'DbSystemManagementPolicyBackupPolicyCopyPolicyArgsDict',
+    'DbSystemManagementPolicyPitrPolicyArgs',
+    'DbSystemManagementPolicyPitrPolicyArgsDict',
     'DbSystemNetworkDetailsArgs',
     'DbSystemNetworkDetailsArgsDict',
     'DbSystemOdspInsightDetailsArgs',
@@ -1159,22 +1161,30 @@ class DbSystemManagementPolicyArgsDict(TypedDict):
 
     This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
     """
+    pitr_policy: NotRequired[pulumi.Input[Optional['DbSystemManagementPolicyPitrPolicyArgsDict']]]
+    """
+    (Updatable) Point-in-time recovery policy.
+    """
 
 @pulumi.input_type
 class DbSystemManagementPolicyArgs:
     def __init__(__self__, *,
                  backup_policy: pulumi.Input[Optional['DbSystemManagementPolicyBackupPolicyArgs']] = None,
-                 maintenance_window_start: pulumi.Input[Optional[_builtins.str]] = None):
+                 maintenance_window_start: pulumi.Input[Optional[_builtins.str]] = None,
+                 pitr_policy: pulumi.Input[Optional['DbSystemManagementPolicyPitrPolicyArgs']] = None):
         """
         :param pulumi.Input['DbSystemManagementPolicyBackupPolicyArgs'] backup_policy: (Updatable) PostgreSQL database system backup policy.
         :param pulumi.Input[_builtins.str] maintenance_window_start: (Updatable) The start of the maintenance window in UTC.
                
                This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+        :param pulumi.Input['DbSystemManagementPolicyPitrPolicyArgs'] pitr_policy: (Updatable) Point-in-time recovery policy.
         """
         if backup_policy is not None:
             pulumi.set(__self__, "backup_policy", backup_policy)
         if maintenance_window_start is not None:
             pulumi.set(__self__, "maintenance_window_start", maintenance_window_start)
+        if pitr_policy is not None:
+            pulumi.set(__self__, "pitr_policy", pitr_policy)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicy")
@@ -1201,6 +1211,18 @@ class DbSystemManagementPolicyArgs:
     @maintenance_window_start.setter
     def maintenance_window_start(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "maintenance_window_start", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pitrPolicy")
+    def pitr_policy(self) -> pulumi.Input[Optional['DbSystemManagementPolicyPitrPolicyArgs']]:
+        """
+        (Updatable) Point-in-time recovery policy.
+        """
+        return pulumi.get(self, "pitr_policy")
+
+    @pitr_policy.setter
+    def pitr_policy(self, value: pulumi.Input[Optional['DbSystemManagementPolicyPitrPolicyArgs']]):
+        pulumi.set(self, "pitr_policy", value)
 
 
 class DbSystemManagementPolicyBackupPolicyArgsDict(TypedDict):
@@ -1397,6 +1419,55 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicyArgs:
     @retention_period.setter
     def retention_period(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "retention_period", value)
+
+
+class DbSystemManagementPolicyPitrPolicyArgsDict(TypedDict):
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The kind of recovery policy.
+    """
+    restore_days: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+    """
+
+@pulumi.input_type
+class DbSystemManagementPolicyPitrPolicyArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_days: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: (Updatable) The kind of recovery policy.
+        :param pulumi.Input[_builtins.int] restore_days: (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+        """
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if restore_days is not None:
+            pulumi.set(__self__, "restore_days", restore_days)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The kind of recovery policy.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter(name="restoreDays")
+    def restore_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+        """
+        return pulumi.get(self, "restore_days")
+
+    @restore_days.setter
+    def restore_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "restore_days", value)
 
 
 class DbSystemNetworkDetailsArgsDict(TypedDict):
@@ -1744,6 +1815,10 @@ class DbSystemSourceArgsDict(TypedDict):
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
     """
+    db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+    """
     is_having_restore_config_overrides: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Deprecated. Don't use.
@@ -1756,28 +1831,44 @@ class DbSystemSourceArgsDict(TypedDict):
     """
     The source descriminator.
     """
+    time_to_restore: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+
+    Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+    """
 
 @pulumi.input_type
 class DbSystemSourceArgs:
     def __init__(__self__, *,
                  backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_having_restore_config_overrides: pulumi.Input[Optional[_builtins.bool]] = None,
                  primary_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 source_type: pulumi.Input[Optional[_builtins.str]] = None):
+                 source_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_to_restore: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
         :param pulumi.Input[_builtins.bool] is_having_restore_config_overrides: Deprecated. Don't use.
         :param pulumi.Input[_builtins.str] primary_db_system_id: The [OCID] of the primary database system.
         :param pulumi.Input[_builtins.str] source_type: The source descriminator.
+        :param pulumi.Input[_builtins.str] time_to_restore: The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+               
+               Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
         """
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if is_having_restore_config_overrides is not None:
             pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
         if primary_db_system_id is not None:
             pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         if source_type is not None:
             pulumi.set(__self__, "source_type", source_type)
+        if time_to_restore is not None:
+            pulumi.set(__self__, "time_to_restore", time_to_restore)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -1790,6 +1881,18 @@ class DbSystemSourceArgs:
     @backup_id.setter
     def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @db_system_id.setter
+    def db_system_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "db_system_id", value)
 
     @_builtins.property
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
@@ -1826,6 +1929,20 @@ class DbSystemSourceArgs:
     @source_type.setter
     def source_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeToRestore")
+    def time_to_restore(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+
+        Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+        """
+        return pulumi.get(self, "time_to_restore")
+
+    @time_to_restore.setter
+    def time_to_restore(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_to_restore", value)
 
 
 class DbSystemStorageDetailsArgsDict(TypedDict):

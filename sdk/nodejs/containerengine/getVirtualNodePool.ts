@@ -115,6 +115,10 @@ export interface GetVirtualNodePoolResult {
      * The time the virtual node pool was updated.
      */
     readonly timeUpdated: string;
+    /**
+     * Virtual Node Pool Cycling Details
+     */
+    readonly virtualNodePoolCyclingDetails: outputs.ContainerEngine.GetVirtualNodePoolVirtualNodePoolCyclingDetail[];
     readonly virtualNodePoolId: string;
     /**
      * The tags associated to the virtual nodes in this virtual node pool.

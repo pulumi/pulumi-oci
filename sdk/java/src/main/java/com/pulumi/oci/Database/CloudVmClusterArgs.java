@@ -430,6 +430,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The number of nodes in the cloud VM cluster.
+     * 
+     */
+    @Import(name="nodeCount")
+    private @Nullable Output<Integer> nodeCount;
+
+    /**
+     * @return The number of nodes in the cloud VM cluster.
+     * 
+     */
+    public Optional<Output<Integer>> nodeCount() {
+        return Optional.ofNullable(this.nodeCount);
+    }
+
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
      * 
@@ -720,6 +735,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.isSparseDiskgroupEnabled = $.isSparseDiskgroupEnabled;
         this.licenseModel = $.licenseModel;
         this.memorySizeInGbs = $.memorySizeInGbs;
+        this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.privateZoneId = $.privateZoneId;
@@ -1336,6 +1352,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             return memorySizeInGbs(Output.of(memorySizeInGbs));
+        }
+
+        /**
+         * @param nodeCount The number of nodes in the cloud VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeCount(@Nullable Output<Integer> nodeCount) {
+            $.nodeCount = nodeCount;
+            return this;
+        }
+
+        /**
+         * @param nodeCount The number of nodes in the cloud VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeCount(Integer nodeCount) {
+            return nodeCount(Output.of(nodeCount));
         }
 
         /**

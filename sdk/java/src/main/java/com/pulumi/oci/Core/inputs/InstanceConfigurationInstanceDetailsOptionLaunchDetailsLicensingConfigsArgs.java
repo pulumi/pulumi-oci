@@ -20,6 +20,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicens
      * License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     @Import(name="licenseType")
@@ -29,6 +30,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicens
      * @return License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     public Optional<Output<String>> licenseType() {
@@ -79,6 +81,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicens
          * @param licenseType License Type for the OS license.
          * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
          * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         * * `PARTNER_PROVIDED` - Partner provided license.
          * 
          * @return builder
          * 
@@ -92,6 +95,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicens
          * @param licenseType License Type for the OS license.
          * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
          * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         * * `PARTNER_PROVIDED` - Partner provided license.
          * 
          * @return builder
          * 

@@ -146,6 +146,7 @@ namespace Pulumi.Oci.DataScience
     ///             CronExpression = scheduleTriggerCronExpression,
     ///             Frequency = scheduleTriggerFrequency,
     ///             Interval = scheduleTriggerInterval,
+    ///             InitialJitterInMinutes = 30,
     ///             IsRandomStartTime = scheduleTriggerIsRandomStartTime,
     ///             Recurrence = scheduleTriggerRecurrence,
     ///             TimeEnd = scheduleTriggerTimeEnd,

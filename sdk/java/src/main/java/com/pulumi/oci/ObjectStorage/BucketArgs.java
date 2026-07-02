@@ -111,6 +111,21 @@ public final class BucketArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    @Import(name="isBucketKeyEnabled")
+    private @Nullable Output<Boolean> isBucketKeyEnabled;
+
+    /**
+     * @return (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    public Optional<Output<Boolean>> isBucketKeyEnabled() {
+        return Optional.ofNullable(this.isBucketKeyEnabled);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      * 
      */
@@ -245,6 +260,7 @@ public final class BucketArgs extends com.pulumi.resources.ResourceArgs {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.freeformTags = $.freeformTags;
+        this.isBucketKeyEnabled = $.isBucketKeyEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.metadata = $.metadata;
         this.name = $.name;
@@ -397,6 +413,27 @@ public final class BucketArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isBucketKeyEnabled (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBucketKeyEnabled(@Nullable Output<Boolean> isBucketKeyEnabled) {
+            $.isBucketKeyEnabled = isBucketKeyEnabled;
+            return this;
+        }
+
+        /**
+         * @param isBucketKeyEnabled (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBucketKeyEnabled(Boolean isBucketKeyEnabled) {
+            return isBucketKeyEnabled(Output.of(isBucketKeyEnabled));
         }
 
         /**

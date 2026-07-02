@@ -4807,14 +4807,6 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "GenerativeAi/generativeAiPrivateEndpoint",
-  "fqn": "pulumi_oci.generativeai",
-  "classes": {
-   "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint": "GenerativeAiPrivateEndpoint"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "GenerativeAi/importedModel",
   "fqn": "pulumi_oci.generativeai",
   "classes": {
@@ -4827,6 +4819,14 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/model:Model": "Model"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/project",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/project:Project": "Project"
   }
  },
  {

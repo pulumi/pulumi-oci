@@ -47,6 +47,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				IsBucketKeyEnabled:  pulumi.Any(bucketIsBucketKeyEnabled),
 //				KmsKeyId:            pulumi.Any(testKey.Id),
 //				Metadata:            pulumi.Any(bucketMetadata),
 //				ObjectEventsEnabled: pulumi.Any(bucketObjectEventsEnabled),
@@ -104,6 +105,8 @@ type Bucket struct {
 	Etag pulumi.StringOutput `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled pulumi.BoolOutput `pulumi:"isBucketKeyEnabled"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly pulumi.BoolOutput `pulumi:"isReadOnly"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
@@ -191,6 +194,8 @@ type bucketState struct {
 	Etag *string `pulumi:"etag"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled *bool `pulumi:"isBucketKeyEnabled"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly *bool `pulumi:"isReadOnly"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
@@ -243,6 +248,8 @@ type BucketState struct {
 	Etag pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled pulumi.BoolPtrInput
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly pulumi.BoolPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
@@ -289,6 +296,8 @@ type bucketArgs struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled *bool `pulumi:"isBucketKeyEnabled"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -324,6 +333,8 @@ type BucketArgs struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled pulumi.BoolPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	KmsKeyId pulumi.StringPtrInput
 	// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -485,6 +496,11 @@ func (o BucketOutput) Etag() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o BucketOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Bucket) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+func (o BucketOutput) IsBucketKeyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Bucket) pulumi.BoolOutput { return v.IsBucketKeyEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.

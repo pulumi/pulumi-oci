@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The start of the maintenance window.
         /// </summary>
         public readonly string MaintenanceWindowStart;
+        /// <summary>
+        /// Point-in-time recovery policy.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult> PitrPolicies;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemCollectionItemManagementPolicyResult(
             ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult> backupPolicies,
 
-            string maintenanceWindowStart)
+            string maintenanceWindowStart,
+
+            ImmutableArray<Outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult> pitrPolicies)
         {
             BackupPolicies = backupPolicies;
             MaintenanceWindowStart = maintenanceWindowStart;
+            PitrPolicies = pitrPolicies;
         }
     }
 }

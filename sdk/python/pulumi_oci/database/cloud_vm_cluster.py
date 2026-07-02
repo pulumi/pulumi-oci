@@ -48,6 +48,7 @@ class CloudVmClusterArgs:
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -111,6 +112,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
@@ -177,6 +179,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "license_model", license_model)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if node_count is not None:
+            pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
@@ -547,6 +551,18 @@ class CloudVmClusterArgs:
     @memory_size_in_gbs.setter
     def memory_size_in_gbs(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "memory_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of nodes in the cloud VM cluster.
+        """
+        return pulumi.get(self, "node_count")
+
+    @node_count.setter
+    def node_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "node_count", value)
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")
@@ -1842,6 +1858,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1991,6 +2008,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_sparse_diskgroup_enabled: (Updatable) If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[_builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
@@ -2146,6 +2164,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+                 node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2211,6 +2230,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
+            __props__.__dict__["node_count"] = node_count
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["ocpu_count"] = ocpu_count
             __props__.__dict__["private_zone_id"] = private_zone_id
@@ -2240,7 +2260,6 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["listener_port"] = None
             __props__.__dict__["multi_cloud_identity_connector_configs"] = None
-            __props__.__dict__["node_count"] = None
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
             __props__.__dict__["scan_ip_ids"] = None

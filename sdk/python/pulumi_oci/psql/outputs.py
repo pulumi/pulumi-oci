@@ -33,6 +33,7 @@ __all__ = [
     'DbSystemManagementPolicy',
     'DbSystemManagementPolicyBackupPolicy',
     'DbSystemManagementPolicyBackupPolicyCopyPolicy',
+    'DbSystemManagementPolicyPitrPolicy',
     'DbSystemNetworkDetails',
     'DbSystemOdspInsightDetails',
     'DbSystemOdspInsightDetailsOdspInsightList',
@@ -74,10 +75,12 @@ __all__ = [
     'GetDbSystemManagementPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyResult',
     'GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult',
+    'GetDbSystemManagementPolicyPitrPolicyResult',
     'GetDbSystemNetworkDetailResult',
     'GetDbSystemOdspInsightDetailResult',
     'GetDbSystemOdspInsightDetailOdspInsightListResult',
     'GetDbSystemPatchOperationResult',
+    'GetDbSystemPitrDetailRecoveryTimeWindowResult',
     'GetDbSystemReplicasDbSystemReplicaCollectionResult',
     'GetDbSystemReplicasDbSystemReplicaCollectionItemResult',
     'GetDbSystemReplicasFilterResult',
@@ -96,6 +99,7 @@ __all__ = [
     'GetDbSystemsDbSystemCollectionItemManagementPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult',
     'GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyResult',
+    'GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult',
     'GetDbSystemsDbSystemCollectionItemNetworkDetailResult',
     'GetDbSystemsDbSystemCollectionItemOdspInsightDetailResult',
     'GetDbSystemsDbSystemCollectionItemOdspInsightDetailOdspInsightListResult',
@@ -1048,6 +1052,8 @@ class DbSystemManagementPolicy(dict):
             suggest = "backup_policy"
         elif key == "maintenanceWindowStart":
             suggest = "maintenance_window_start"
+        elif key == "pitrPolicy":
+            suggest = "pitr_policy"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemManagementPolicy. Access the value via the '{suggest}' property getter instead.")
@@ -1062,17 +1068,21 @@ class DbSystemManagementPolicy(dict):
 
     def __init__(__self__, *,
                  backup_policy: Optional['outputs.DbSystemManagementPolicyBackupPolicy'] = None,
-                 maintenance_window_start: Optional[_builtins.str] = None):
+                 maintenance_window_start: Optional[_builtins.str] = None,
+                 pitr_policy: Optional['outputs.DbSystemManagementPolicyPitrPolicy'] = None):
         """
         :param 'DbSystemManagementPolicyBackupPolicyArgs' backup_policy: (Updatable) PostgreSQL database system backup policy.
         :param _builtins.str maintenance_window_start: (Updatable) The start of the maintenance window in UTC.
                
                This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+        :param 'DbSystemManagementPolicyPitrPolicyArgs' pitr_policy: (Updatable) Point-in-time recovery policy.
         """
         if backup_policy is not None:
             pulumi.set(__self__, "backup_policy", backup_policy)
         if maintenance_window_start is not None:
             pulumi.set(__self__, "maintenance_window_start", maintenance_window_start)
+        if pitr_policy is not None:
+            pulumi.set(__self__, "pitr_policy", pitr_policy)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicy")
@@ -1091,6 +1101,14 @@ class DbSystemManagementPolicy(dict):
         This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         """
         return pulumi.get(self, "maintenance_window_start")
+
+    @_builtins.property
+    @pulumi.getter(name="pitrPolicy")
+    def pitr_policy(self) -> Optional['outputs.DbSystemManagementPolicyPitrPolicy']:
+        """
+        (Updatable) Point-in-time recovery policy.
+        """
+        return pulumi.get(self, "pitr_policy")
 
 
 @pulumi.output_type
@@ -1255,6 +1273,54 @@ class DbSystemManagementPolicyBackupPolicyCopyPolicy(dict):
         (Updatable) Retention period in days of the backup copy.
         """
         return pulumi.get(self, "retention_period")
+
+
+@pulumi.output_type
+class DbSystemManagementPolicyPitrPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "restoreDays":
+            suggest = "restore_days"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbSystemManagementPolicyPitrPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbSystemManagementPolicyPitrPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbSystemManagementPolicyPitrPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 kind: Optional[_builtins.str] = None,
+                 restore_days: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str kind: (Updatable) The kind of recovery policy.
+        :param _builtins.int restore_days: (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+        """
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if restore_days is not None:
+            pulumi.set(__self__, "restore_days", restore_days)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The kind of recovery policy.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="restoreDays")
+    def restore_days(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The number of days the database system retains backups required for point-in-time recovery.
+        """
+        return pulumi.get(self, "restore_days")
 
 
 @pulumi.output_type
@@ -1572,12 +1638,16 @@ class DbSystemSource(dict):
         suggest = None
         if key == "backupId":
             suggest = "backup_id"
+        elif key == "dbSystemId":
+            suggest = "db_system_id"
         elif key == "isHavingRestoreConfigOverrides":
             suggest = "is_having_restore_config_overrides"
         elif key == "primaryDbSystemId":
             suggest = "primary_db_system_id"
         elif key == "sourceType":
             suggest = "source_type"
+        elif key == "timeToRestore":
+            suggest = "time_to_restore"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in DbSystemSource. Access the value via the '{suggest}' property getter instead.")
@@ -1592,23 +1662,33 @@ class DbSystemSource(dict):
 
     def __init__(__self__, *,
                  backup_id: Optional[_builtins.str] = None,
+                 db_system_id: Optional[_builtins.str] = None,
                  is_having_restore_config_overrides: Optional[_builtins.bool] = None,
                  primary_db_system_id: Optional[_builtins.str] = None,
-                 source_type: Optional[_builtins.str] = None):
+                 source_type: Optional[_builtins.str] = None,
+                 time_to_restore: Optional[_builtins.str] = None):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
         :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
         :param _builtins.str source_type: The source descriminator.
+        :param _builtins.str time_to_restore: The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+               
+               Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
         """
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
+        if db_system_id is not None:
+            pulumi.set(__self__, "db_system_id", db_system_id)
         if is_having_restore_config_overrides is not None:
             pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
         if primary_db_system_id is not None:
             pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         if source_type is not None:
             pulumi.set(__self__, "source_type", source_type)
+        if time_to_restore is not None:
+            pulumi.set(__self__, "time_to_restore", time_to_restore)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -1617,6 +1697,14 @@ class DbSystemSource(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+        """
+        return pulumi.get(self, "db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
@@ -1641,6 +1729,16 @@ class DbSystemSource(dict):
         The source descriminator.
         """
         return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="timeToRestore")
+    def time_to_restore(self) -> Optional[_builtins.str]:
+        """
+        The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+
+        Point-in-time recovery can only performed in granularity of seconds. Example: `2016-08-25T21:10:29Z`
+        """
+        return pulumi.get(self, "time_to_restore")
 
 
 @pulumi.output_type
@@ -3278,13 +3376,16 @@ class GetDbSystemKerberosAuthDetailCredentialResult(dict):
 class GetDbSystemManagementPolicyResult(dict):
     def __init__(__self__, *,
                  backup_policies: Sequence['outputs.GetDbSystemManagementPolicyBackupPolicyResult'],
-                 maintenance_window_start: _builtins.str):
+                 maintenance_window_start: _builtins.str,
+                 pitr_policies: Sequence['outputs.GetDbSystemManagementPolicyPitrPolicyResult']):
         """
         :param Sequence['GetDbSystemManagementPolicyBackupPolicyArgs'] backup_policies: PostgreSQL database system backup policy.
         :param _builtins.str maintenance_window_start: The start of the maintenance window.
+        :param Sequence['GetDbSystemManagementPolicyPitrPolicyArgs'] pitr_policies: Point-in-time recovery policy.
         """
         pulumi.set(__self__, "backup_policies", backup_policies)
         pulumi.set(__self__, "maintenance_window_start", maintenance_window_start)
+        pulumi.set(__self__, "pitr_policies", pitr_policies)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicies")
@@ -3301,6 +3402,14 @@ class GetDbSystemManagementPolicyResult(dict):
         The start of the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_start")
+
+    @_builtins.property
+    @pulumi.getter(name="pitrPolicies")
+    def pitr_policies(self) -> Sequence['outputs.GetDbSystemManagementPolicyPitrPolicyResult']:
+        """
+        Point-in-time recovery policy.
+        """
+        return pulumi.get(self, "pitr_policies")
 
 
 @pulumi.output_type
@@ -3414,6 +3523,35 @@ class GetDbSystemManagementPolicyBackupPolicyCopyPolicyResult(dict):
         Retention period in days of the backup copy.
         """
         return pulumi.get(self, "retention_period")
+
+
+@pulumi.output_type
+class GetDbSystemManagementPolicyPitrPolicyResult(dict):
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 restore_days: _builtins.int):
+        """
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        :param _builtins.int restore_days: The number of days the database system retains backups required for point-in-time recovery.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "restore_days", restore_days)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="restoreDays")
+    def restore_days(self) -> _builtins.int:
+        """
+        The number of days the database system retains backups required for point-in-time recovery.
+        """
+        return pulumi.get(self, "restore_days")
 
 
 @pulumi.output_type
@@ -3573,6 +3711,35 @@ class GetDbSystemPatchOperationResult(dict):
 
 
 @pulumi.output_type
+class GetDbSystemPitrDetailRecoveryTimeWindowResult(dict):
+    def __init__(__self__, *,
+                 time_recovery_window_end: _builtins.str,
+                 time_recovery_window_start: _builtins.str):
+        """
+        :param _builtins.str time_recovery_window_end: Latest timestamp in the PITR window to which the database can be restored. Timestamps later than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+        :param _builtins.str time_recovery_window_start: Earliest timestamp in the PITR window to which the database can be restored. Timestamps earlier than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+        """
+        pulumi.set(__self__, "time_recovery_window_end", time_recovery_window_end)
+        pulumi.set(__self__, "time_recovery_window_start", time_recovery_window_start)
+
+    @_builtins.property
+    @pulumi.getter(name="timeRecoveryWindowEnd")
+    def time_recovery_window_end(self) -> _builtins.str:
+        """
+        Latest timestamp in the PITR window to which the database can be restored. Timestamps later than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+        """
+        return pulumi.get(self, "time_recovery_window_end")
+
+    @_builtins.property
+    @pulumi.getter(name="timeRecoveryWindowStart")
+    def time_recovery_window_start(self) -> _builtins.str:
+        """
+        Earliest timestamp in the PITR window to which the database can be restored. Timestamps earlier than this are not recoverable. The value must be an [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp.  Example: `2016-08-25T21:10:29Z`
+        """
+        return pulumi.get(self, "time_recovery_window_start")
+
+
+@pulumi.output_type
 class GetDbSystemReplicasDbSystemReplicaCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDbSystemReplicasDbSystemReplicaCollectionItemResult']):
@@ -3679,19 +3846,25 @@ class GetDbSystemReplicationConfigResult(dict):
 class GetDbSystemSourceResult(dict):
     def __init__(__self__, *,
                  backup_id: _builtins.str,
+                 db_system_id: _builtins.str,
                  is_having_restore_config_overrides: _builtins.bool,
                  primary_db_system_id: _builtins.str,
-                 source_type: _builtins.str):
+                 source_type: _builtins.str,
+                 time_to_restore: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param _builtins.str db_system_id: A unique identifier for the database system.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
         :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
         :param _builtins.str source_type: The source descriminator.
+        :param _builtins.str time_to_restore: The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
         """
         pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
         pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "time_to_restore", time_to_restore)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -3700,6 +3873,14 @@ class GetDbSystemSourceResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> _builtins.str:
+        """
+        A unique identifier for the database system.
+        """
+        return pulumi.get(self, "db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
@@ -3724,6 +3905,14 @@ class GetDbSystemSourceResult(dict):
         The source descriminator.
         """
         return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="timeToRestore")
+    def time_to_restore(self) -> _builtins.str:
+        """
+        The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+        """
+        return pulumi.get(self, "time_to_restore")
 
 
 @pulumi.output_type
@@ -4450,13 +4639,16 @@ class GetDbSystemsDbSystemCollectionItemKerberosAuthDetailCredentialResult(dict)
 class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
     def __init__(__self__, *,
                  backup_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyResult'],
-                 maintenance_window_start: _builtins.str):
+                 maintenance_window_start: _builtins.str,
+                 pitr_policies: Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult']):
         """
         :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyArgs'] backup_policies: PostgreSQL database system backup policy.
         :param _builtins.str maintenance_window_start: The start of the maintenance window.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyArgs'] pitr_policies: Point-in-time recovery policy.
         """
         pulumi.set(__self__, "backup_policies", backup_policies)
         pulumi.set(__self__, "maintenance_window_start", maintenance_window_start)
+        pulumi.set(__self__, "pitr_policies", pitr_policies)
 
     @_builtins.property
     @pulumi.getter(name="backupPolicies")
@@ -4473,6 +4665,14 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyResult(dict):
         The start of the maintenance window.
         """
         return pulumi.get(self, "maintenance_window_start")
+
+    @_builtins.property
+    @pulumi.getter(name="pitrPolicies")
+    def pitr_policies(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult']:
+        """
+        Point-in-time recovery policy.
+        """
+        return pulumi.get(self, "pitr_policies")
 
 
 @pulumi.output_type
@@ -4586,6 +4786,35 @@ class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicyCopyPolicyRe
         Retention period in days of the backup copy.
         """
         return pulumi.get(self, "retention_period")
+
+
+@pulumi.output_type
+class GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicyResult(dict):
+    def __init__(__self__, *,
+                 kind: _builtins.str,
+                 restore_days: _builtins.int):
+        """
+        :param _builtins.str kind: Specifies the management of Insight for the dbSystem.
+        :param _builtins.int restore_days: The number of days the database system retains backups required for point-in-time recovery.
+        """
+        pulumi.set(__self__, "kind", kind)
+        pulumi.set(__self__, "restore_days", restore_days)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> _builtins.str:
+        """
+        Specifies the management of Insight for the dbSystem.
+        """
+        return pulumi.get(self, "kind")
+
+    @_builtins.property
+    @pulumi.getter(name="restoreDays")
+    def restore_days(self) -> _builtins.int:
+        """
+        The number of days the database system retains backups required for point-in-time recovery.
+        """
+        return pulumi.get(self, "restore_days")
 
 
 @pulumi.output_type
@@ -4777,19 +5006,25 @@ class GetDbSystemsDbSystemCollectionItemReplicationConfigResult(dict):
 class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
     def __init__(__self__, *,
                  backup_id: _builtins.str,
+                 db_system_id: _builtins.str,
                  is_having_restore_config_overrides: _builtins.bool,
                  primary_db_system_id: _builtins.str,
-                 source_type: _builtins.str):
+                 source_type: _builtins.str,
+                 time_to_restore: _builtins.str):
         """
         :param _builtins.str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
+        :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
         :param _builtins.bool is_having_restore_config_overrides: Deprecated. Don't use.
         :param _builtins.str primary_db_system_id: The [OCID] of the primary database system.
         :param _builtins.str source_type: The source descriminator.
+        :param _builtins.str time_to_restore: The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
         """
         pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "is_having_restore_config_overrides", is_having_restore_config_overrides)
         pulumi.set(__self__, "primary_db_system_id", primary_db_system_id)
         pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "time_to_restore", time_to_restore)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -4798,6 +5033,14 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         """
         return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+        """
+        return pulumi.get(self, "db_system_id")
 
     @_builtins.property
     @pulumi.getter(name="isHavingRestoreConfigOverrides")
@@ -4822,6 +5065,14 @@ class GetDbSystemsDbSystemCollectionItemSourceResult(dict):
         The source descriminator.
         """
         return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="timeToRestore")
+    def time_to_restore(self) -> _builtins.str:
+        """
+        The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+        """
+        return pulumi.get(self, "time_to_restore")
 
 
 @pulumi.output_type

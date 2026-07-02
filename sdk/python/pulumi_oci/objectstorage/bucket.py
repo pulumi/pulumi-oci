@@ -28,6 +28,7 @@ class BucketArgs:
                  bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -45,6 +46,7 @@ class BucketArgs:
         :param pulumi.Input[_builtins.str] bucket_scope: (Updatable) Scope in which the bucket is unique. Default value is NAMESPACE. Bucket scope as NAMESPACE means that the bucket is unique only in the owning namespace/tenancy. Other  tenancies can have a bucket with same name in their namespace. Bucket scope as REGION means that the bucket is regionally unique. No other tenancy can have a bucket with same name and scope REGION.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_bucket_key_enabled: (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         :param pulumi.Input[_builtins.str] name: The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
@@ -69,6 +71,8 @@ class BucketArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_bucket_key_enabled is not None:
+            pulumi.set(__self__, "is_bucket_key_enabled", is_bucket_key_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if metadata is not None:
@@ -167,6 +171,18 @@ class BucketArgs:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isBucketKeyEnabled")
+    def is_bucket_key_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        """
+        return pulumi.get(self, "is_bucket_key_enabled")
+
+    @is_bucket_key_enabled.setter
+    def is_bucket_key_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_bucket_key_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="kmsKeyId")
@@ -271,6 +287,7 @@ class _BucketState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  etag: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -297,6 +314,7 @@ class _BucketState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] etag: The entity tag (ETag) for the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_bucket_key_enabled: (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
         :param pulumi.Input[_builtins.bool] is_read_only: Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -336,6 +354,8 @@ class _BucketState:
             pulumi.set(__self__, "etag", etag)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_bucket_key_enabled is not None:
+            pulumi.set(__self__, "is_bucket_key_enabled", is_bucket_key_enabled)
         if is_read_only is not None:
             pulumi.set(__self__, "is_read_only", is_read_only)
         if kms_key_id is not None:
@@ -492,6 +512,18 @@ class _BucketState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isBucketKeyEnabled")
+    def is_bucket_key_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        """
+        return pulumi.get(self, "is_bucket_key_enabled")
+
+    @is_bucket_key_enabled.setter
+    def is_bucket_key_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_bucket_key_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")
@@ -654,6 +686,7 @@ class Bucket(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -691,6 +724,7 @@ class Bucket(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_bucket_key_enabled=bucket_is_bucket_key_enabled == "true",
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
             object_events_enabled=bucket_object_events_enabled == "true",
@@ -723,6 +757,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment in which to create the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_bucket_key_enabled: (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         :param pulumi.Input[_builtins.str] name: The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
@@ -770,6 +805,7 @@ class Bucket(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_bucket_key_enabled=bucket_is_bucket_key_enabled == "true",
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
             object_events_enabled=bucket_object_events_enabled == "true",
@@ -815,6 +851,7 @@ class Bucket(pulumi.CustomResource):
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -840,6 +877,7 @@ class Bucket(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_bucket_key_enabled"] = is_bucket_key_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
@@ -880,6 +918,7 @@ class Bucket(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             etag: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -910,6 +949,7 @@ class Bucket(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] etag: The entity tag (ETag) for the bucket.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_bucket_key_enabled: (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
         :param pulumi.Input[_builtins.bool] is_read_only: Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
@@ -942,6 +982,7 @@ class Bucket(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["etag"] = etag
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_bucket_key_enabled"] = is_bucket_key_enabled
         __props__.__dict__["is_read_only"] = is_read_only
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["metadata"] = metadata
@@ -1043,6 +1084,14 @@ class Bucket(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="isBucketKeyEnabled")
+    def is_bucket_key_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        """
+        return pulumi.get(self, "is_bucket_key_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isReadOnly")

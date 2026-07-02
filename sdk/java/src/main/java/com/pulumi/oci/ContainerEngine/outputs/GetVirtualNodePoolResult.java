@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolInitialVirtualNo
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolPlacementConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolPodConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolTaint;
+import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolVirtualNodePoolCyclingDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolVirtualNodeTag;
 import java.lang.Integer;
 import java.lang.String;
@@ -108,6 +109,11 @@ public final class GetVirtualNodePoolResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Virtual Node Pool Cycling Details
+     * 
+     */
+    private List<GetVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails;
     private String virtualNodePoolId;
     /**
      * @return The tags associated to the virtual nodes in this virtual node pool.
@@ -242,6 +248,13 @@ public final class GetVirtualNodePoolResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Virtual Node Pool Cycling Details
+     * 
+     */
+    public List<GetVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails() {
+        return this.virtualNodePoolCyclingDetails;
+    }
     public String virtualNodePoolId() {
         return this.virtualNodePoolId;
     }
@@ -280,6 +293,7 @@ public final class GetVirtualNodePoolResult {
         private List<GetVirtualNodePoolTaint> taints;
         private String timeCreated;
         private String timeUpdated;
+        private List<GetVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails;
         private String virtualNodePoolId;
         private List<GetVirtualNodePoolVirtualNodeTag> virtualNodeTags;
         public Builder() {}
@@ -303,6 +317,7 @@ public final class GetVirtualNodePoolResult {
     	      this.taints = defaults.taints;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.virtualNodePoolCyclingDetails = defaults.virtualNodePoolCyclingDetails;
     	      this.virtualNodePoolId = defaults.virtualNodePoolId;
     	      this.virtualNodeTags = defaults.virtualNodeTags;
         }
@@ -467,6 +482,17 @@ public final class GetVirtualNodePoolResult {
             return this;
         }
         @CustomType.Setter
+        public Builder virtualNodePoolCyclingDetails(List<GetVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails) {
+            if (virtualNodePoolCyclingDetails == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolResult", "virtualNodePoolCyclingDetails");
+            }
+            this.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
+            return this;
+        }
+        public Builder virtualNodePoolCyclingDetails(GetVirtualNodePoolVirtualNodePoolCyclingDetail... virtualNodePoolCyclingDetails) {
+            return virtualNodePoolCyclingDetails(List.of(virtualNodePoolCyclingDetails));
+        }
+        @CustomType.Setter
         public Builder virtualNodePoolId(String virtualNodePoolId) {
             if (virtualNodePoolId == null) {
               throw new MissingRequiredPropertyException("GetVirtualNodePoolResult", "virtualNodePoolId");
@@ -505,6 +531,7 @@ public final class GetVirtualNodePoolResult {
             _resultValue.taints = taints;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
             _resultValue.virtualNodePoolId = virtualNodePoolId;
             _resultValue.virtualNodeTags = virtualNodeTags;
             return _resultValue;

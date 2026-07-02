@@ -179,6 +179,9 @@ class GetDbSystemResult:
     @_builtins.property
     @pulumi.getter(name="dbSystemId")
     def db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+        """
         return pulumi.get(self, "db_system_id")
 
     @_builtins.property

@@ -95,6 +95,10 @@ export interface GetBucketResult {
     readonly freeformTags: {[key: string]: string};
     readonly id: string;
     /**
+     * Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     */
+    readonly isBucketKeyEnabled: boolean;
+    /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
     readonly isReadOnly: boolean;

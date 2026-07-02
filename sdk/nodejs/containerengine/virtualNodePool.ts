@@ -51,6 +51,11 @@ import * as utilities from "../utilities";
  *         key: virtualNodePoolTaintsKey,
  *         value: virtualNodePoolTaintsValue,
  *     }],
+ *     virtualNodePoolCyclingDetails: {
+ *         isVirtualNodeCyclingEnabled: virtualNodePoolVirtualNodePoolCyclingDetailsIsVirtualNodeCyclingEnabled === "true",
+ *         maximumSurge: virtualNodePoolVirtualNodePoolCyclingDetailsMaximumSurge,
+ *         maximumUnavailable: virtualNodePoolVirtualNodePoolCyclingDetailsMaximumUnavailable,
+ *     },
  *     virtualNodeTags: {
  *         definedTags: {
  *             "Operations.CostCenter": "42",
@@ -167,6 +172,10 @@ export class VirtualNodePool extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
+     * (Updatable) Virtual Node Pool Cycling Details
+     */
+    declare public readonly virtualNodePoolCyclingDetails: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolVirtualNodePoolCyclingDetails>;
+    /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */
     declare public readonly virtualNodeTags: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolVirtualNodeTags>;
@@ -201,6 +210,7 @@ export class VirtualNodePool extends pulumi.CustomResource {
             resourceInputs["taints"] = state?.taints;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["virtualNodePoolCyclingDetails"] = state?.virtualNodePoolCyclingDetails;
             resourceInputs["virtualNodeTags"] = state?.virtualNodeTags;
         } else {
             const args = argsOrState as VirtualNodePoolArgs | undefined;
@@ -233,6 +243,7 @@ export class VirtualNodePool extends pulumi.CustomResource {
             resourceInputs["podConfiguration"] = args?.podConfiguration;
             resourceInputs["size"] = args?.size;
             resourceInputs["taints"] = args?.taints;
+            resourceInputs["virtualNodePoolCyclingDetails"] = args?.virtualNodePoolCyclingDetails;
             resourceInputs["virtualNodeTags"] = args?.virtualNodeTags;
             resourceInputs["kubernetesVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -319,6 +330,10 @@ export interface VirtualNodePoolState {
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) Virtual Node Pool Cycling Details
+     */
+    virtualNodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodePoolCyclingDetails | undefined>;
+    /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */
     virtualNodeTags?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodeTags | undefined>;
@@ -372,6 +387,10 @@ export interface VirtualNodePoolArgs {
      * (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      */
     taints?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.VirtualNodePoolTaint>[] | undefined>;
+    /**
+     * (Updatable) Virtual Node Pool Cycling Details
+     */
+    virtualNodePoolCyclingDetails?: pulumi.Input<inputs.ContainerEngine.VirtualNodePoolVirtualNodePoolCyclingDetails | undefined>;
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */

@@ -84,6 +84,8 @@ type LookupBucketResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	Id           string            `pulumi:"id"`
+	// Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+	IsBucketKeyEnabled bool `pulumi:"isBucketKeyEnabled"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly bool `pulumi:"isReadOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
@@ -203,6 +205,11 @@ func (o LookupBucketResultOutput) FreeformTags() pulumi.StringMapOutput {
 
 func (o LookupBucketResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBucketResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+func (o LookupBucketResultOutput) IsBucketKeyEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBucketResult) bool { return v.IsBucketKeyEnabled }).(pulumi.BoolOutput)
 }
 
 // Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.

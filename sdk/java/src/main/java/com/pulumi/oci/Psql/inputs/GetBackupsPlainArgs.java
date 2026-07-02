@@ -32,6 +32,21 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter to return only backups whose backupSourceType matches the given backupSourceType
+     * 
+     */
+    @Import(name="backupSourceType")
+    private @Nullable String backupSourceType;
+
+    /**
+     * @return A filter to return only backups whose backupSourceType matches the given backupSourceType
+     * 
+     */
+    public Optional<String> backupSourceType() {
+        return Optional.ofNullable(this.backupSourceType);
+    }
+
+    /**
      * The ID of the compartment in which to list resources.
      * 
      */
@@ -132,6 +147,7 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     private GetBackupsPlainArgs(GetBackupsPlainArgs $) {
         this.backupId = $.backupId;
+        this.backupSourceType = $.backupSourceType;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -167,6 +183,17 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder backupId(@Nullable String backupId) {
             $.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * @param backupSourceType A filter to return only backups whose backupSourceType matches the given backupSourceType
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupSourceType(@Nullable String backupSourceType) {
+            $.backupSourceType = backupSourceType;
             return this;
         }
 

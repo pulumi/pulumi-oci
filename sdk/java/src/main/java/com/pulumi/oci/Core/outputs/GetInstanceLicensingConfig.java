@@ -14,6 +14,7 @@ public final class GetInstanceLicensingConfig {
      * @return License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     private String licenseType;
@@ -33,6 +34,7 @@ public final class GetInstanceLicensingConfig {
      * @return License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     public String licenseType() {

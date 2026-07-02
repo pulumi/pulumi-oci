@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolInitialVirtualNodeLa
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolPlacementConfigurationArgs;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolPodConfigurationArgs;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolTaintArgs;
+import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolVirtualNodePoolCyclingDetailsArgs;
 import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolVirtualNodeTagsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -279,6 +280,21 @@ public final class VirtualNodePoolState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) Virtual Node Pool Cycling Details
+     * 
+     */
+    @Import(name="virtualNodePoolCyclingDetails")
+    private @Nullable Output<VirtualNodePoolVirtualNodePoolCyclingDetailsArgs> virtualNodePoolCyclingDetails;
+
+    /**
+     * @return (Updatable) Virtual Node Pool Cycling Details
+     * 
+     */
+    public Optional<Output<VirtualNodePoolVirtualNodePoolCyclingDetailsArgs>> virtualNodePoolCyclingDetails() {
+        return Optional.ofNullable(this.virtualNodePoolCyclingDetails);
+    }
+
+    /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      * 
      */
@@ -313,6 +329,7 @@ public final class VirtualNodePoolState extends com.pulumi.resources.ResourceArg
         this.taints = $.taints;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.virtualNodePoolCyclingDetails = $.virtualNodePoolCyclingDetails;
         this.virtualNodeTags = $.virtualNodeTags;
     }
 
@@ -729,6 +746,27 @@ public final class VirtualNodePoolState extends com.pulumi.resources.ResourceArg
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param virtualNodePoolCyclingDetails (Updatable) Virtual Node Pool Cycling Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualNodePoolCyclingDetails(@Nullable Output<VirtualNodePoolVirtualNodePoolCyclingDetailsArgs> virtualNodePoolCyclingDetails) {
+            $.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
+            return this;
+        }
+
+        /**
+         * @param virtualNodePoolCyclingDetails (Updatable) Virtual Node Pool Cycling Details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder virtualNodePoolCyclingDetails(VirtualNodePoolVirtualNodePoolCyclingDetailsArgs virtualNodePoolCyclingDetails) {
+            return virtualNodePoolCyclingDetails(Output.of(virtualNodePoolCyclingDetails));
         }
 
         /**

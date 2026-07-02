@@ -44,6 +44,7 @@ namespace Pulumi.Oci.ObjectStorage
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsBucketKeyEnabled = bucketIsBucketKeyEnabled,
     ///         KmsKeyId = testKey.Id,
     ///         Metadata = bucketMetadata,
     ///         ObjectEventsEnabled = bucketObjectEventsEnabled,
@@ -143,6 +144,12 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        /// </summary>
+        [Output("isBucketKeyEnabled")]
+        public Output<bool> IsBucketKeyEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `False`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
@@ -315,6 +322,12 @@ namespace Pulumi.Oci.ObjectStorage
         }
 
         /// <summary>
+        /// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        /// </summary>
+        [Input("isBucketKeyEnabled")]
+        public Input<bool>? IsBucketKeyEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         /// </summary>
         [Input("kmsKeyId")]
@@ -463,6 +476,12 @@ namespace Pulumi.Oci.ObjectStorage
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        /// </summary>
+        [Input("isBucketKeyEnabled")]
+        public Input<bool>? IsBucketKeyEnabled { get; set; }
 
         /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `False`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.

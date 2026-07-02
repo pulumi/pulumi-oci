@@ -25,6 +25,7 @@ public final class GetBackupsResult {
      * 
      */
     private @Nullable String backupId;
+    private @Nullable String backupSourceType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * 
@@ -63,6 +64,9 @@ public final class GetBackupsResult {
      */
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
+    }
+    public Optional<String> backupSourceType() {
+        return Optional.ofNullable(this.backupSourceType);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
@@ -113,6 +117,7 @@ public final class GetBackupsResult {
     public static final class Builder {
         private List<GetBackupsBackupCollection> backupCollections;
         private @Nullable String backupId;
+        private @Nullable String backupSourceType;
         private @Nullable String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetBackupsFilter> filters;
@@ -125,6 +130,7 @@ public final class GetBackupsResult {
     	      Objects.requireNonNull(defaults);
     	      this.backupCollections = defaults.backupCollections;
     	      this.backupId = defaults.backupId;
+    	      this.backupSourceType = defaults.backupSourceType;
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -149,6 +155,12 @@ public final class GetBackupsResult {
         public Builder backupId(@Nullable String backupId) {
 
             this.backupId = backupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupSourceType(@Nullable String backupSourceType) {
+
+            this.backupSourceType = backupSourceType;
             return this;
         }
         @CustomType.Setter
@@ -200,6 +212,7 @@ public final class GetBackupsResult {
             final var _resultValue = new GetBackupsResult();
             _resultValue.backupCollections = backupCollections;
             _resultValue.backupId = backupId;
+            _resultValue.backupSourceType = backupSourceType;
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;

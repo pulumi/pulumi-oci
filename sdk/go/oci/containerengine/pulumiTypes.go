@@ -7949,7 +7949,7 @@ type VirtualNodePoolPodConfiguration struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) Shape of the pods.
 	Shape string `pulumi:"shape"`
-	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	// (Updatable) The private regional subnet where pods' VNIC will be placed.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -7969,7 +7969,7 @@ type VirtualNodePoolPodConfigurationArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// (Updatable) Shape of the pods.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// (Updatable) The regional subnet where pods' VNIC will be placed.
+	// (Updatable) The private regional subnet where pods' VNIC will be placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -8060,7 +8060,7 @@ func (o VirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v VirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// (Updatable) The regional subnet where pods' VNIC will be placed.
+// (Updatable) The private regional subnet where pods' VNIC will be placed.
 func (o VirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v VirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -8109,7 +8109,7 @@ func (o VirtualNodePoolPodConfigurationPtrOutput) Shape() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The regional subnet where pods' VNIC will be placed.
+// (Updatable) The private regional subnet where pods' VNIC will be placed.
 func (o VirtualNodePoolPodConfigurationPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VirtualNodePoolPodConfiguration) *string {
 		if v == nil {
@@ -8232,6 +8232,181 @@ func (o VirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) VirtualNodePoo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualNodePoolTaint {
 		return vs[0].([]VirtualNodePoolTaint)[vs[1].(int)]
 	}).(VirtualNodePoolTaintOutput)
+}
+
+type VirtualNodePoolVirtualNodePoolCyclingDetails struct {
+	// (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled *bool `pulumi:"isVirtualNodeCyclingEnabled"`
+	// (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge *string `pulumi:"maximumSurge"`
+	// (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable *string `pulumi:"maximumUnavailable"`
+}
+
+// VirtualNodePoolVirtualNodePoolCyclingDetailsInput is an input type that accepts VirtualNodePoolVirtualNodePoolCyclingDetailsArgs and VirtualNodePoolVirtualNodePoolCyclingDetailsOutput values.
+// You can construct a concrete instance of `VirtualNodePoolVirtualNodePoolCyclingDetailsInput` via:
+//
+//	VirtualNodePoolVirtualNodePoolCyclingDetailsArgs{...}
+type VirtualNodePoolVirtualNodePoolCyclingDetailsInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsOutput
+	ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutputWithContext(context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsOutput
+}
+
+type VirtualNodePoolVirtualNodePoolCyclingDetailsArgs struct {
+	// (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled pulumi.BoolPtrInput `pulumi:"isVirtualNodeCyclingEnabled"`
+	// (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringPtrInput `pulumi:"maximumSurge"`
+	// (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringPtrInput `pulumi:"maximumUnavailable"`
+}
+
+func (VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolVirtualNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (i VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return i.ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodePoolCyclingDetailsOutput)
+}
+
+func (i VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return i.ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodePoolCyclingDetailsOutput).ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(ctx)
+}
+
+// VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput is an input type that accepts VirtualNodePoolVirtualNodePoolCyclingDetailsArgs, VirtualNodePoolVirtualNodePoolCyclingDetailsPtr and VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput values.
+// You can construct a concrete instance of `VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput` via:
+//
+//	        VirtualNodePoolVirtualNodePoolCyclingDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput interface {
+	pulumi.Input
+
+	ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput
+	ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput
+}
+
+type virtualNodePoolVirtualNodePoolCyclingDetailsPtrType VirtualNodePoolVirtualNodePoolCyclingDetailsArgs
+
+func VirtualNodePoolVirtualNodePoolCyclingDetailsPtr(v *VirtualNodePoolVirtualNodePoolCyclingDetailsArgs) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput {
+	return (*virtualNodePoolVirtualNodePoolCyclingDetailsPtrType)(v)
+}
+
+func (*virtualNodePoolVirtualNodePoolCyclingDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolVirtualNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (i *virtualNodePoolVirtualNodePoolCyclingDetailsPtrType) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return i.ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *virtualNodePoolVirtualNodePoolCyclingDetailsPtrType) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput)
+}
+
+type VirtualNodePoolVirtualNodePoolCyclingDetailsOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VirtualNodePoolVirtualNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return o.ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualNodePoolVirtualNodePoolCyclingDetails) *VirtualNodePoolVirtualNodePoolCyclingDetails {
+		return &v
+	}).(VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput)
+}
+
+// (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) IsVirtualNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodePoolCyclingDetails) *bool { return v.IsVirtualNodeCyclingEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodePoolCyclingDetails) *string { return v.MaximumSurge }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodePoolCyclingDetails) *string { return v.MaximumUnavailable }).(pulumi.StringPtrOutput)
+}
+
+type VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VirtualNodePoolVirtualNodePoolCyclingDetails)(nil)).Elem()
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput() VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) ToVirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutputWithContext(ctx context.Context) VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput {
+	return o
+}
+
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) Elem() VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodePoolCyclingDetails) VirtualNodePoolVirtualNodePoolCyclingDetails {
+		if v != nil {
+			return *v
+		}
+		var ret VirtualNodePoolVirtualNodePoolCyclingDetails
+		return ret
+	}).(VirtualNodePoolVirtualNodePoolCyclingDetailsOutput)
+}
+
+// (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) IsVirtualNodeCyclingEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodePoolCyclingDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsVirtualNodeCyclingEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) MaximumSurge() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodePoolCyclingDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumSurge
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput) MaximumUnavailable() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodePoolCyclingDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MaximumUnavailable
+	}).(pulumi.StringPtrOutput)
 }
 
 type VirtualNodePoolVirtualNodeTags struct {
@@ -19864,7 +20039,7 @@ type GetVirtualNodePoolPlacementConfiguration struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains []string `pulumi:"faultDomains"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -19884,7 +20059,7 @@ type GetVirtualNodePoolPlacementConfigurationArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -19949,7 +20124,7 @@ func (o GetVirtualNodePoolPlacementConfigurationOutput) FaultDomains() pulumi.St
 	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
-// The regional subnet where pods' VNIC will be placed.
+// The private regional subnet where pods' VNIC will be placed.
 func (o GetVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -19979,7 +20154,7 @@ type GetVirtualNodePoolPodConfiguration struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Shape of the pods.
 	Shape string `pulumi:"shape"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -19999,7 +20174,7 @@ type GetVirtualNodePoolPodConfigurationArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Shape of the pods.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -20064,7 +20239,7 @@ func (o GetVirtualNodePoolPodConfigurationOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The regional subnet where pods' VNIC will be placed.
+// The private regional subnet where pods' VNIC will be placed.
 func (o GetVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -20202,6 +20377,121 @@ func (o GetVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualN
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolTaint {
 		return vs[0].([]GetVirtualNodePoolTaint)[vs[1].(int)]
 	}).(GetVirtualNodePoolTaintOutput)
+}
+
+type GetVirtualNodePoolVirtualNodePoolCyclingDetail struct {
+	// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled bool `pulumi:"isVirtualNodeCyclingEnabled"`
+	// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge string `pulumi:"maximumSurge"`
+	// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+}
+
+// GetVirtualNodePoolVirtualNodePoolCyclingDetailInput is an input type that accepts GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs and GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolVirtualNodePoolCyclingDetailInput` via:
+//
+//	GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs{...}
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput
+	ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput
+}
+
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs struct {
+	// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled pulumi.BoolInput `pulumi:"isVirtualNodeCyclingEnabled"`
+	// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+}
+
+func (GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return i.ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput)
+}
+
+// GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput is an input type that accepts GetVirtualNodePoolVirtualNodePoolCyclingDetailArray and GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput` via:
+//
+//	GetVirtualNodePoolVirtualNodePoolCyclingDetailArray{ GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs{...} }
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput
+	ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput
+}
+
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailArray []GetVirtualNodePoolVirtualNodePoolCyclingDetailInput
+
+func (GetVirtualNodePoolVirtualNodePoolCyclingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolVirtualNodePoolCyclingDetailArray) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return i.ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolVirtualNodePoolCyclingDetailArray) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput)
+}
+
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return o
+}
+
+// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) IsVirtualNodeCyclingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodePoolCyclingDetail) bool { return v.IsVirtualNodeCyclingEnabled }).(pulumi.BoolOutput)
+}
+
+// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+}
+
+// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodePoolCyclingDetail) string { return v.MaximumUnavailable }).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ToGetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolVirtualNodePoolCyclingDetail {
+		return vs[0].([]GetVirtualNodePoolVirtualNodePoolCyclingDetail)[vs[1].(int)]
+	}).(GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput)
 }
 
 type GetVirtualNodePoolVirtualNodeTag struct {
@@ -20455,8 +20745,10 @@ type GetVirtualNodePoolsVirtualNodePool struct {
 	// The time the virtual node pool was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       string `pulumi:"timeUpdated"`
-	VirtualNodePoolId string `pulumi:"virtualNodePoolId"`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails []GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail `pulumi:"virtualNodePoolCyclingDetails"`
+	VirtualNodePoolId             string                                                           `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags []GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag `pulumi:"virtualNodeTags"`
 }
@@ -20508,8 +20800,10 @@ type GetVirtualNodePoolsVirtualNodePoolArgs struct {
 	// The time the virtual node pool was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       pulumi.StringInput `pulumi:"timeUpdated"`
-	VirtualNodePoolId pulumi.StringInput `pulumi:"virtualNodePoolId"`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput `pulumi:"virtualNodePoolCyclingDetails"`
+	VirtualNodePoolId             pulumi.StringInput                                                       `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput `pulumi:"virtualNodeTags"`
 }
@@ -20661,6 +20955,13 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) TimeUpdated() pulumi.StringOut
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
+// Virtual Node Pool Cycling Details
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodePoolCyclingDetails() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) []GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail {
+		return v.VirtualNodePoolCyclingDetails
+	}).(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput)
+}
+
 func (o GetVirtualNodePoolsVirtualNodePoolOutput) VirtualNodePoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) string { return v.VirtualNodePoolId }).(pulumi.StringOutput)
 }
@@ -20803,7 +21104,7 @@ type GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains []string `pulumi:"faultDomains"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -20823,7 +21124,7 @@ type GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The fault domain of this virtual node.
 	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -20888,7 +21189,7 @@ func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) FaultDom
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
-// The regional subnet where pods' VNIC will be placed.
+// The private regional subnet where pods' VNIC will be placed.
 func (o GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -20918,7 +21219,7 @@ type GetVirtualNodePoolsVirtualNodePoolPodConfiguration struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// Shape of the pods.
 	Shape string `pulumi:"shape"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -20938,7 +21239,7 @@ type GetVirtualNodePoolsVirtualNodePoolPodConfigurationArgs struct {
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Shape of the pods.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The regional subnet where pods' VNIC will be placed.
+	// The private regional subnet where pods' VNIC will be placed.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
@@ -21003,7 +21304,7 @@ func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) Shape() pulumi
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The regional subnet where pods' VNIC will be placed.
+// The private regional subnet where pods' VNIC will be placed.
 func (o GetVirtualNodePoolsVirtualNodePoolPodConfigurationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolPodConfiguration) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -21141,6 +21442,125 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolTaint {
 		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolTaint)[vs[1].(int)]
 	}).(GetVirtualNodePoolsVirtualNodePoolTaintOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail struct {
+	// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled bool `pulumi:"isVirtualNodeCyclingEnabled"`
+	// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge string `pulumi:"maximumSurge"`
+	// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable string `pulumi:"maximumUnavailable"`
+}
+
+// GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs and GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs{...}
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs struct {
+	// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+	IsVirtualNodeCyclingEnabled pulumi.BoolInput `pulumi:"isVirtualNodeCyclingEnabled"`
+	// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumSurge pulumi.StringInput `pulumi:"maximumSurge"`
+	// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+	MaximumUnavailable pulumi.StringInput `pulumi:"maximumUnavailable"`
+}
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput)
+}
+
+// GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray and GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput values.
+// You can construct a concrete instance of `GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput` via:
+//
+//	GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray{ GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs{...} }
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput
+	ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray []GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailInput
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return i.ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return o
+}
+
+// If virtual nodes in the virtual nodepool will be cycled to have new changes.
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) IsVirtualNodeCyclingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail) bool {
+		return v.IsVirtualNodeCyclingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) MaximumSurge() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail) string { return v.MaximumSurge }).(pulumi.StringOutput)
+}
+
+// Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput) MaximumUnavailable() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail) string {
+		return v.MaximumUnavailable
+	}).(pulumi.StringOutput)
+}
+
+type GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail)(nil)).Elem()
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput() GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) ToGetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutputWithContext(ctx context.Context) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o
+}
+
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput) Index(i pulumi.IntInput) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail {
+		return vs[0].([]GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail)[vs[1].(int)]
+	}).(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag struct {
@@ -22174,6 +22594,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolPodConfigurationPtrInput)(nil)).Elem(), VirtualNodePoolPodConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolTaintInput)(nil)).Elem(), VirtualNodePoolTaintArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolTaintArrayInput)(nil)).Elem(), VirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodePoolCyclingDetailsInput)(nil)).Elem(), VirtualNodePoolVirtualNodePoolCyclingDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput)(nil)).Elem(), VirtualNodePoolVirtualNodePoolCyclingDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodeTagsInput)(nil)).Elem(), VirtualNodePoolVirtualNodeTagsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualNodePoolVirtualNodeTagsPtrInput)(nil)).Elem(), VirtualNodePoolVirtualNodeTagsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonAddonErrorInput)(nil)).Elem(), GetAddonAddonErrorArgs{})
@@ -22360,6 +22782,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolPodConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolPodConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolTaintInput)(nil)).Elem(), GetVirtualNodePoolTaintArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolTaintArrayInput)(nil)).Elem(), GetVirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodePoolCyclingDetailInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodePoolCyclingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodePoolCyclingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTagInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolVirtualNodeTagArrayInput)(nil)).Elem(), GetVirtualNodePoolVirtualNodeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsFilterInput)(nil)).Elem(), GetVirtualNodePoolsFilterArgs{})
@@ -22374,6 +22798,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolPodConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaintInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolTaintArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolTaintArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolTaintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayInput)(nil)).Elem(), GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkRequestErrorsFilterInput)(nil)).Elem(), GetWorkRequestErrorsFilterArgs{})
@@ -22491,6 +22917,8 @@ func init() {
 	pulumi.RegisterOutputType(VirtualNodePoolPodConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolTaintOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodePoolCyclingDetailsOutput{})
+	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodePoolCyclingDetailsPtrOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodeTagsOutput{})
 	pulumi.RegisterOutputType(VirtualNodePoolVirtualNodeTagsPtrOutput{})
 	pulumi.RegisterOutputType(GetAddonAddonErrorOutput{})
@@ -22677,6 +23105,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVirtualNodePoolPodConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolTaintOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodePoolCyclingDetailOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodeTagOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolVirtualNodeTagArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolsFilterOutput{})
@@ -22691,6 +23121,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolPodConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolTaintOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailOutput{})
+	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput{})
 	pulumi.RegisterOutputType(GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkRequestErrorsFilterOutput{})

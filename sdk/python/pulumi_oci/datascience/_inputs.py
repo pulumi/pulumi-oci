@@ -16746,6 +16746,10 @@ class ScheduleTriggerArgsDict(TypedDict):
     """
     (Updatable) The type of frequency
     """
+    initial_jitter_in_minutes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Maximum number of minutes after `time_start` that the scheduler may use to randomly select the first execution time. This value is considered only when `is_random_start_time` is true. If omitted and `is_random_start_time` is true, the service defaults the jitter window to half of the configured interval duration.
+    """
     interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     (Updatable) The interval of frequency.
@@ -16773,6 +16777,7 @@ class ScheduleTriggerArgs:
                  trigger_type: pulumi.Input[_builtins.str],
                  cron_expression: pulumi.Input[Optional[_builtins.str]] = None,
                  frequency: pulumi.Input[Optional[_builtins.str]] = None,
+                 initial_jitter_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
                  interval: pulumi.Input[Optional[_builtins.int]] = None,
                  is_random_start_time: pulumi.Input[Optional[_builtins.bool]] = None,
                  recurrence: pulumi.Input[Optional[_builtins.str]] = None,
@@ -16786,6 +16791,7 @@ class ScheduleTriggerArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] cron_expression: (Updatable) Schedule cron expression
         :param pulumi.Input[_builtins.str] frequency: (Updatable) The type of frequency
+        :param pulumi.Input[_builtins.int] initial_jitter_in_minutes: (Updatable) Maximum number of minutes after `time_start` that the scheduler may use to randomly select the first execution time. This value is considered only when `is_random_start_time` is true. If omitted and `is_random_start_time` is true, the service defaults the jitter window to half of the configured interval duration.
         :param pulumi.Input[_builtins.int] interval: (Updatable) The interval of frequency.
         :param pulumi.Input[_builtins.bool] is_random_start_time: (Updatable) when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
         :param pulumi.Input[_builtins.str] recurrence: (Updatable) This recurrence field conforms to RFC-5545 formatting
@@ -16797,6 +16803,8 @@ class ScheduleTriggerArgs:
             pulumi.set(__self__, "cron_expression", cron_expression)
         if frequency is not None:
             pulumi.set(__self__, "frequency", frequency)
+        if initial_jitter_in_minutes is not None:
+            pulumi.set(__self__, "initial_jitter_in_minutes", initial_jitter_in_minutes)
         if interval is not None:
             pulumi.set(__self__, "interval", interval)
         if is_random_start_time is not None:
@@ -16847,6 +16855,18 @@ class ScheduleTriggerArgs:
     @frequency.setter
     def frequency(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "frequency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="initialJitterInMinutes")
+    def initial_jitter_in_minutes(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Maximum number of minutes after `time_start` that the scheduler may use to randomly select the first execution time. This value is considered only when `is_random_start_time` is true. If omitted and `is_random_start_time` is true, the service defaults the jitter window to half of the configured interval duration.
+        """
+        return pulumi.get(self, "initial_jitter_in_minutes")
+
+    @initial_jitter_in_minutes.setter
+    def initial_jitter_in_minutes(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "initial_jitter_in_minutes", value)
 
     @_builtins.property
     @pulumi.getter

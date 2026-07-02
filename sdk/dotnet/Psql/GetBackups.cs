@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Psql
         ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
         ///     {
         ///         BackupId = testBackup.Id,
+        ///         BackupSourceType = backupBackupSourceType,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = backupDisplayName,
         ///         Id = backupId,
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Psql
         ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
         ///     {
         ///         BackupId = testBackup.Id,
+        ///         BackupSourceType = backupBackupSourceType,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = backupDisplayName,
         ///         Id = backupId,
@@ -96,6 +98,7 @@ namespace Pulumi.Oci.Psql
         ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
         ///     {
         ///         BackupId = testBackup.Id,
+        ///         BackupSourceType = backupBackupSourceType,
         ///         CompartmentId = compartmentId,
         ///         DisplayName = backupDisplayName,
         ///         Id = backupId,
@@ -119,6 +122,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("backupId")]
         public string? BackupId { get; set; }
+
+        /// <summary>
+        /// A filter to return only backups whose backupSourceType matches the given backupSourceType
+        /// </summary>
+        [Input("backupSourceType")]
+        public string? BackupSourceType { get; set; }
 
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -177,6 +186,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
+
+        /// <summary>
+        /// A filter to return only backups whose backupSourceType matches the given backupSourceType
+        /// </summary>
+        [Input("backupSourceType")]
+        public Input<string>? BackupSourceType { get; set; }
 
         /// <summary>
         /// The ID of the compartment in which to list resources.
@@ -240,6 +255,7 @@ namespace Pulumi.Oci.Psql
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
         /// </summary>
         public readonly string? BackupId;
+        public readonly string? BackupSourceType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
         /// </summary>
@@ -266,6 +282,8 @@ namespace Pulumi.Oci.Psql
 
             string? backupId,
 
+            string? backupSourceType,
+
             string? compartmentId,
 
             string? displayName,
@@ -282,6 +300,7 @@ namespace Pulumi.Oci.Psql
         {
             BackupCollections = backupCollections;
             BackupId = backupId;
+            BackupSourceType = backupSourceType;
             CompartmentId = compartmentId;
             DisplayName = displayName;
             Filters = filters;

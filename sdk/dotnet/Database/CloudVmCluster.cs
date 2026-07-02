@@ -761,6 +761,12 @@ namespace Pulumi.Oci.Database
         [Input("memorySizeInGbs")]
         public Input<int>? MemorySizeInGbs { get; set; }
 
+        /// <summary>
+        /// The number of nodes in the cloud VM cluster.
+        /// </summary>
+        [Input("nodeCount")]
+        public Input<int>? NodeCount { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 

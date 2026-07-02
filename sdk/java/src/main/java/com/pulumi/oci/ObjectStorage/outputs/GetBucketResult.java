@@ -71,6 +71,11 @@ public final class GetBucketResult {
     private Map<String,String> freeformTags;
     private String id;
     /**
+     * @return Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    private Boolean isBucketKeyEnabled;
+    /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
@@ -213,6 +218,13 @@ public final class GetBucketResult {
         return this.id;
     }
     /**
+     * @return Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     * 
+     */
+    public Boolean isBucketKeyEnabled() {
+        return this.isBucketKeyEnabled;
+    }
+    /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
      * 
      */
@@ -318,6 +330,7 @@ public final class GetBucketResult {
         private String etag;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isBucketKeyEnabled;
         private Boolean isReadOnly;
         private String kmsKeyId;
         private Map<String,String> metadata;
@@ -345,6 +358,7 @@ public final class GetBucketResult {
     	      this.etag = defaults.etag;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isBucketKeyEnabled = defaults.isBucketKeyEnabled;
     	      this.isReadOnly = defaults.isReadOnly;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.metadata = defaults.metadata;
@@ -453,6 +467,14 @@ public final class GetBucketResult {
               throw new MissingRequiredPropertyException("GetBucketResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isBucketKeyEnabled(Boolean isBucketKeyEnabled) {
+            if (isBucketKeyEnabled == null) {
+              throw new MissingRequiredPropertyException("GetBucketResult", "isBucketKeyEnabled");
+            }
+            this.isBucketKeyEnabled = isBucketKeyEnabled;
             return this;
         }
         @CustomType.Setter
@@ -568,6 +590,7 @@ public final class GetBucketResult {
             _resultValue.etag = etag;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isBucketKeyEnabled = isBucketKeyEnabled;
             _resultValue.isReadOnly = isReadOnly;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.metadata = metadata;

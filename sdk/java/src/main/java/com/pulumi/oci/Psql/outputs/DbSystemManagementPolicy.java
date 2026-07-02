@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Psql.outputs.DbSystemManagementPolicyBackupPolicy;
+import com.pulumi.oci.Psql.outputs.DbSystemManagementPolicyPitrPolicy;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -24,6 +25,11 @@ public final class DbSystemManagementPolicy {
      * 
      */
     private @Nullable String maintenanceWindowStart;
+    /**
+     * @return (Updatable) Point-in-time recovery policy.
+     * 
+     */
+    private @Nullable DbSystemManagementPolicyPitrPolicy pitrPolicy;
 
     private DbSystemManagementPolicy() {}
     /**
@@ -42,6 +48,13 @@ public final class DbSystemManagementPolicy {
     public Optional<String> maintenanceWindowStart() {
         return Optional.ofNullable(this.maintenanceWindowStart);
     }
+    /**
+     * @return (Updatable) Point-in-time recovery policy.
+     * 
+     */
+    public Optional<DbSystemManagementPolicyPitrPolicy> pitrPolicy() {
+        return Optional.ofNullable(this.pitrPolicy);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -54,11 +67,13 @@ public final class DbSystemManagementPolicy {
     public static final class Builder {
         private @Nullable DbSystemManagementPolicyBackupPolicy backupPolicy;
         private @Nullable String maintenanceWindowStart;
+        private @Nullable DbSystemManagementPolicyPitrPolicy pitrPolicy;
         public Builder() {}
         public Builder(DbSystemManagementPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupPolicy = defaults.backupPolicy;
     	      this.maintenanceWindowStart = defaults.maintenanceWindowStart;
+    	      this.pitrPolicy = defaults.pitrPolicy;
         }
 
         @CustomType.Setter
@@ -73,10 +88,17 @@ public final class DbSystemManagementPolicy {
             this.maintenanceWindowStart = maintenanceWindowStart;
             return this;
         }
+        @CustomType.Setter
+        public Builder pitrPolicy(@Nullable DbSystemManagementPolicyPitrPolicy pitrPolicy) {
+
+            this.pitrPolicy = pitrPolicy;
+            return this;
+        }
         public DbSystemManagementPolicy build() {
             final var _resultValue = new DbSystemManagementPolicy();
             _resultValue.backupPolicy = backupPolicy;
             _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            _resultValue.pitrPolicy = pitrPolicy;
             return _resultValue;
         }
     }

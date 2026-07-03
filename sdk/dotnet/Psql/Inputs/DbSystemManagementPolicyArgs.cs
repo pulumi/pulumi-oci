@@ -26,6 +26,12 @@ namespace Pulumi.Oci.Psql.Inputs
         [Input("maintenanceWindowStart")]
         public Input<string>? MaintenanceWindowStart { get; set; }
 
+        /// <summary>
+        /// (Updatable) Point-in-time recovery policy.
+        /// </summary>
+        [Input("pitrPolicy")]
+        public Input<Inputs.DbSystemManagementPolicyPitrPolicyArgs>? PitrPolicy { get; set; }
+
         public DbSystemManagementPolicyArgs()
         {
         }

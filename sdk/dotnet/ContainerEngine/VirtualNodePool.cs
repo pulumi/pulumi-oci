@@ -74,6 +74,12 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 Value = virtualNodePoolTaintsValue,
     ///             },
     ///         },
+    ///         VirtualNodePoolCyclingDetails = new Oci.ContainerEngine.Inputs.VirtualNodePoolVirtualNodePoolCyclingDetailsArgs
+    ///         {
+    ///             IsVirtualNodeCyclingEnabled = virtualNodePoolVirtualNodePoolCyclingDetailsIsVirtualNodeCyclingEnabled,
+    ///             MaximumSurge = virtualNodePoolVirtualNodePoolCyclingDetailsMaximumSurge,
+    ///             MaximumUnavailable = virtualNodePoolVirtualNodePoolCyclingDetailsMaximumUnavailable,
+    ///         },
     ///         VirtualNodeTags = new Oci.ContainerEngine.Inputs.VirtualNodePoolVirtualNodeTagsArgs
     ///         {
     ///             DefinedTags = 
@@ -202,6 +208,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Virtual Node Pool Cycling Details
+        /// </summary>
+        [Output("virtualNodePoolCyclingDetails")]
+        public Output<Outputs.VirtualNodePoolVirtualNodePoolCyclingDetails> VirtualNodePoolCyclingDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
@@ -356,6 +368,12 @@ namespace Pulumi.Oci.ContainerEngine
             get => _taints ?? (_taints = new InputList<Inputs.VirtualNodePoolTaintArgs>());
             set => _taints = value;
         }
+
+        /// <summary>
+        /// (Updatable) Virtual Node Pool Cycling Details
+        /// </summary>
+        [Input("virtualNodePoolCyclingDetails")]
+        public Input<Inputs.VirtualNodePoolVirtualNodePoolCyclingDetailsArgs>? VirtualNodePoolCyclingDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
@@ -514,6 +532,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) Virtual Node Pool Cycling Details
+        /// </summary>
+        [Input("virtualNodePoolCyclingDetails")]
+        public Input<Inputs.VirtualNodePoolVirtualNodePoolCyclingDetailsGetArgs>? VirtualNodePoolCyclingDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The tags associated to the virtual nodes in this virtual node pool.

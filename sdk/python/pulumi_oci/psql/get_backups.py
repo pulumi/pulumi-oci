@@ -28,13 +28,16 @@ class GetBackupsResult:
     """
     A collection of values returned by getBackups.
     """
-    def __init__(__self__, backup_collections=None, backup_id=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, time_ended=None, time_started=None):
+    def __init__(__self__, backup_collections=None, backup_id=None, backup_source_type=None, compartment_id=None, display_name=None, filters=None, id=None, state=None, time_ended=None, time_started=None):
         if backup_collections and not isinstance(backup_collections, list):
             raise TypeError("Expected argument 'backup_collections' to be a list")
         pulumi.set(__self__, "backup_collections", backup_collections)
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
+        if backup_source_type and not isinstance(backup_source_type, str):
+            raise TypeError("Expected argument 'backup_source_type' to be a str")
+        pulumi.set(__self__, "backup_source_type", backup_source_type)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -72,6 +75,11 @@ class GetBackupsResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
         """
         return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupSourceType")
+    def backup_source_type(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "backup_source_type")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -129,6 +137,7 @@ class AwaitableGetBackupsResult(GetBackupsResult):
         return GetBackupsResult(
             backup_collections=self.backup_collections,
             backup_id=self.backup_id,
+            backup_source_type=self.backup_source_type,
             compartment_id=self.compartment_id,
             display_name=self.display_name,
             filters=self.filters,
@@ -139,6 +148,7 @@ class AwaitableGetBackupsResult(GetBackupsResult):
 
 
 def get_backups(backup_id: Optional[_builtins.str] = None,
+                backup_source_type: Optional[_builtins.str] = None,
                 compartment_id: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
                 filters: Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]] = None,
@@ -159,6 +169,7 @@ def get_backups(backup_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_backups = oci.psql.get_backups(backup_id=test_backup["id"],
+        backup_source_type=backup_backup_source_type,
         compartment_id=compartment_id,
         display_name=backup_display_name,
         id=backup_id,
@@ -169,6 +180,7 @@ def get_backups(backup_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str backup_id: A unique identifier for the backup.
+    :param _builtins.str backup_source_type: A filter to return only backups whose backupSourceType matches the given backupSourceType
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str id: A unique identifier for the database system.
@@ -178,6 +190,7 @@ def get_backups(backup_id: Optional[_builtins.str] = None,
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
+    __args__['backupSourceType'] = backup_source_type
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -191,6 +204,7 @@ def get_backups(backup_id: Optional[_builtins.str] = None,
     return AwaitableGetBackupsResult(
         backup_collections=pulumi.get(__ret__, 'backup_collections'),
         backup_id=pulumi.get(__ret__, 'backup_id'),
+        backup_source_type=pulumi.get(__ret__, 'backup_source_type'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -199,6 +213,7 @@ def get_backups(backup_id: Optional[_builtins.str] = None,
         time_ended=pulumi.get(__ret__, 'time_ended'),
         time_started=pulumi.get(__ret__, 'time_started'))
 def get_backups_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                       backup_source_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                        filters: pulumi.Input[Optional[Optional[Sequence[Union['GetBackupsFilterArgs', 'GetBackupsFilterArgsDict']]]]] = None,
@@ -219,6 +234,7 @@ def get_backups_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]
     import pulumi_oci as oci
 
     test_backups = oci.psql.get_backups(backup_id=test_backup["id"],
+        backup_source_type=backup_backup_source_type,
         compartment_id=compartment_id,
         display_name=backup_display_name,
         id=backup_id,
@@ -229,6 +245,7 @@ def get_backups_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]
 
 
     :param _builtins.str backup_id: A unique identifier for the backup.
+    :param _builtins.str backup_source_type: A filter to return only backups whose backupSourceType matches the given backupSourceType
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param _builtins.str id: A unique identifier for the database system.
@@ -238,6 +255,7 @@ def get_backups_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]
     """
     __args__ = dict()
     __args__['backupId'] = backup_id
+    __args__['backupSourceType'] = backup_source_type
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -250,6 +268,7 @@ def get_backups_output(backup_id: pulumi.Input[Optional[Optional[_builtins.str]]
     return __ret__.apply(lambda __response__: GetBackupsResult(
         backup_collections=pulumi.get(__response__, 'backup_collections'),
         backup_id=pulumi.get(__response__, 'backup_id'),
+        backup_source_type=pulumi.get(__response__, 'backup_source_type'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),

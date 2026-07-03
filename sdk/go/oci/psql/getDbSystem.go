@@ -71,7 +71,8 @@ type LookupDbSystemResult struct {
 	ConfigId string `pulumi:"configId"`
 	// List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
 	Credentials []GetDbSystemCredential `pulumi:"credentials"`
-	DbSystemId  string                  `pulumi:"dbSystemId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+	DbSystemId string `pulumi:"dbSystemId"`
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -191,6 +192,7 @@ func (o LookupDbSystemResultOutput) Credentials() GetDbSystemCredentialArrayOutp
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemCredential { return v.Credentials }).(GetDbSystemCredentialArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
 func (o LookupDbSystemResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }

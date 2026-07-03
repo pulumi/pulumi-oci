@@ -20,6 +20,7 @@ public final class InstanceLicensingConfigsArgs extends com.pulumi.resources.Res
      * (Updatable) License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     @Import(name="licenseType")
@@ -29,6 +30,7 @@ public final class InstanceLicensingConfigsArgs extends com.pulumi.resources.Res
      * @return (Updatable) License Type for the OS license.
      * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
      * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+     * * `PARTNER_PROVIDED` - Partner provided license.
      * 
      */
     public Optional<Output<String>> licenseType() {
@@ -95,6 +97,7 @@ public final class InstanceLicensingConfigsArgs extends com.pulumi.resources.Res
          * @param licenseType (Updatable) License Type for the OS license.
          * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
          * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         * * `PARTNER_PROVIDED` - Partner provided license.
          * 
          * @return builder
          * 
@@ -108,6 +111,7 @@ public final class InstanceLicensingConfigsArgs extends com.pulumi.resources.Res
          * @param licenseType (Updatable) License Type for the OS license.
          * * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
          * * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+         * * `PARTNER_PROVIDED` - Partner provided license.
          * 
          * @return builder
          * 

@@ -30,13 +30,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := psql.GetBackups(ctx, &psql.GetBackupsArgs{
-//				BackupId:      pulumi.StringRef(testBackup.Id),
-//				CompartmentId: pulumi.StringRef(compartmentId),
-//				DisplayName:   pulumi.StringRef(backupDisplayName),
-//				Id:            pulumi.StringRef(backupId),
-//				State:         pulumi.StringRef(backupState),
-//				TimeEnded:     pulumi.StringRef(backupTimeEnded),
-//				TimeStarted:   pulumi.StringRef(backupTimeStarted),
+//				BackupId:         pulumi.StringRef(testBackup.Id),
+//				BackupSourceType: pulumi.StringRef(backupBackupSourceType),
+//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				DisplayName:      pulumi.StringRef(backupDisplayName),
+//				Id:               pulumi.StringRef(backupId),
+//				State:            pulumi.StringRef(backupState),
+//				TimeEnded:        pulumi.StringRef(backupTimeEnded),
+//				TimeStarted:      pulumi.StringRef(backupTimeStarted),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +61,8 @@ func GetBackups(ctx *pulumi.Context, args *GetBackupsArgs, opts ...pulumi.Invoke
 type GetBackupsArgs struct {
 	// A unique identifier for the backup.
 	BackupId *string `pulumi:"backupId"`
+	// A filter to return only backups whose backupSourceType matches the given backupSourceType
+	BackupSourceType *string `pulumi:"backupSourceType"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
@@ -80,7 +83,8 @@ type GetBackupsResult struct {
 	// The list of backup_collection.
 	BackupCollections []GetBackupsBackupCollection `pulumi:"backupCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
-	BackupId *string `pulumi:"backupId"`
+	BackupId         *string `pulumi:"backupId"`
+	BackupSourceType *string `pulumi:"backupSourceType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly display name for the backup. Avoid entering confidential information.
@@ -107,6 +111,8 @@ func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pu
 type GetBackupsOutputArgs struct {
 	// A unique identifier for the backup.
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
+	// A filter to return only backups whose backupSourceType matches the given backupSourceType
+	BackupSourceType pulumi.StringPtrInput `pulumi:"backupSourceType"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
@@ -149,6 +155,10 @@ func (o GetBackupsResultOutput) BackupCollections() GetBackupsBackupCollectionAr
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
 func (o GetBackupsResultOutput) BackupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetBackupsResult) *string { return v.BackupId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetBackupsResultOutput) BackupSourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.BackupSourceType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.

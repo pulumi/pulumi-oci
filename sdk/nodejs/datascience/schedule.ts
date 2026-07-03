@@ -113,6 +113,7 @@ import * as utilities from "../utilities";
  *         cronExpression: scheduleTriggerCronExpression,
  *         frequency: scheduleTriggerFrequency,
  *         interval: Number(scheduleTriggerInterval),
+ *         initialJitterInMinutes: 30,
  *         isRandomStartTime: scheduleTriggerIsRandomStartTime === "true",
  *         recurrence: scheduleTriggerRecurrence,
  *         timeEnd: scheduleTriggerTimeEnd,

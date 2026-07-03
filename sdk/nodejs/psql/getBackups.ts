@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testBackups = oci.psql.getBackups({
  *     backupId: testBackup.id,
+ *     backupSourceType: backupBackupSourceType,
  *     compartmentId: compartmentId,
  *     displayName: backupDisplayName,
  *     id: backupId,
@@ -33,6 +34,7 @@ export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getBackups:getBackups", {
         "backupId": args.backupId,
+        "backupSourceType": args.backupSourceType,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -51,6 +53,10 @@ export interface GetBackupsArgs {
      * A unique identifier for the backup.
      */
     backupId?: string;
+    /**
+     * A filter to return only backups whose backupSourceType matches the given backupSourceType
+     */
+    backupSourceType?: string;
     /**
      * The ID of the compartment in which to list resources.
      */
@@ -90,6 +96,7 @@ export interface GetBackupsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup in the source region
      */
     readonly backupId?: string;
+    readonly backupSourceType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      */
@@ -123,6 +130,7 @@ export interface GetBackupsResult {
  *
  * const testBackups = oci.psql.getBackups({
  *     backupId: testBackup.id,
+ *     backupSourceType: backupBackupSourceType,
  *     compartmentId: compartmentId,
  *     displayName: backupDisplayName,
  *     id: backupId,
@@ -137,6 +145,7 @@ export function getBackupsOutput(args?: GetBackupsOutputArgs, opts?: pulumi.Invo
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getBackups:getBackups", {
         "backupId": args.backupId,
+        "backupSourceType": args.backupSourceType,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -155,6 +164,10 @@ export interface GetBackupsOutputArgs {
      * A unique identifier for the backup.
      */
     backupId?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only backups whose backupSourceType matches the given backupSourceType
+     */
+    backupSourceType?: pulumi.Input<string | undefined>;
     /**
      * The ID of the compartment in which to list resources.
      */

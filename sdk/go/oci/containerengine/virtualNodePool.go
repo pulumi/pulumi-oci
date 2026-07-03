@@ -70,6 +70,11 @@ import (
 //						Value:  pulumi.Any(virtualNodePoolTaintsValue),
 //					},
 //				},
+//				VirtualNodePoolCyclingDetails: &containerengine.VirtualNodePoolVirtualNodePoolCyclingDetailsArgs{
+//					IsVirtualNodeCyclingEnabled: pulumi.Any(virtualNodePoolVirtualNodePoolCyclingDetailsIsVirtualNodeCyclingEnabled),
+//					MaximumSurge:                pulumi.Any(virtualNodePoolVirtualNodePoolCyclingDetailsMaximumSurge),
+//					MaximumUnavailable:          pulumi.Any(virtualNodePoolVirtualNodePoolCyclingDetailsMaximumUnavailable),
+//				},
 //				VirtualNodeTags: &containerengine.VirtualNodePoolVirtualNodeTagsArgs{
 //					DefinedTags: pulumi.StringMap{
 //						"Operations.CostCenter": pulumi.String("42"),
@@ -132,6 +137,8 @@ type VirtualNodePool struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// (Updatable) Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails VirtualNodePoolVirtualNodePoolCyclingDetailsOutput `pulumi:"virtualNodePoolCyclingDetails"`
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags VirtualNodePoolVirtualNodeTagsOutput `pulumi:"virtualNodeTags"`
 }
@@ -218,6 +225,8 @@ type virtualNodePoolState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// (Updatable) Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails *VirtualNodePoolVirtualNodePoolCyclingDetails `pulumi:"virtualNodePoolCyclingDetails"`
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags *VirtualNodePoolVirtualNodeTags `pulumi:"virtualNodeTags"`
 }
@@ -257,6 +266,8 @@ type VirtualNodePoolState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the virtual node pool was updated.
 	TimeUpdated pulumi.StringPtrInput
+	// (Updatable) Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags VirtualNodePoolVirtualNodeTagsPtrInput
 }
@@ -288,6 +299,8 @@ type virtualNodePoolArgs struct {
 	Size int `pulumi:"size"`
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []VirtualNodePoolTaint `pulumi:"taints"`
+	// (Updatable) Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails *VirtualNodePoolVirtualNodePoolCyclingDetails `pulumi:"virtualNodePoolCyclingDetails"`
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags *VirtualNodePoolVirtualNodeTags `pulumi:"virtualNodeTags"`
 }
@@ -316,6 +329,8 @@ type VirtualNodePoolArgs struct {
 	Size pulumi.IntInput
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints VirtualNodePoolTaintArrayInput
+	// (Updatable) Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails VirtualNodePoolVirtualNodePoolCyclingDetailsPtrInput
 	// (Updatable) The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags VirtualNodePoolVirtualNodeTagsPtrInput
 }
@@ -494,6 +509,13 @@ func (o VirtualNodePoolOutput) TimeCreated() pulumi.StringOutput {
 // The time the virtual node pool was updated.
 func (o VirtualNodePoolOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// (Updatable) Virtual Node Pool Cycling Details
+func (o VirtualNodePoolOutput) VirtualNodePoolCyclingDetails() VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+	return o.ApplyT(func(v *VirtualNodePool) VirtualNodePoolVirtualNodePoolCyclingDetailsOutput {
+		return v.VirtualNodePoolCyclingDetails
+	}).(VirtualNodePoolVirtualNodePoolCyclingDetailsOutput)
 }
 
 // (Updatable) The tags associated to the virtual nodes in this virtual node pool.

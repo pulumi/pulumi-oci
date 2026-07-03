@@ -67,6 +67,7 @@ __all__ = [
     'VirtualNodePoolPlacementConfiguration',
     'VirtualNodePoolPodConfiguration',
     'VirtualNodePoolTaint',
+    'VirtualNodePoolVirtualNodePoolCyclingDetails',
     'VirtualNodePoolVirtualNodeTags',
     'GetAddonAddonErrorResult',
     'GetAddonConfigurationResult',
@@ -160,6 +161,7 @@ __all__ = [
     'GetVirtualNodePoolPlacementConfigurationResult',
     'GetVirtualNodePoolPodConfigurationResult',
     'GetVirtualNodePoolTaintResult',
+    'GetVirtualNodePoolVirtualNodePoolCyclingDetailResult',
     'GetVirtualNodePoolVirtualNodeTagResult',
     'GetVirtualNodePoolsFilterResult',
     'GetVirtualNodePoolsVirtualNodePoolResult',
@@ -167,6 +169,7 @@ __all__ = [
     'GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult',
     'GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult',
     'GetVirtualNodePoolsVirtualNodePoolTaintResult',
+    'GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailResult',
     'GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult',
     'GetWorkRequestErrorsFilterResult',
     'GetWorkRequestErrorsWorkRequestErrorResult',
@@ -4211,7 +4214,7 @@ class VirtualNodePoolPodConfiguration(dict):
                  nsg_ids: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str shape: (Updatable) Shape of the pods.
-        :param _builtins.str subnet_id: (Updatable) The regional subnet where pods' VNIC will be placed.
+        :param _builtins.str subnet_id: (Updatable) The private regional subnet where pods' VNIC will be placed.
         :param Sequence[_builtins.str] nsg_ids: (Updatable) List of network security group IDs applied to the Pod VNIC.
         """
         pulumi.set(__self__, "shape", shape)
@@ -4231,7 +4234,7 @@ class VirtualNodePoolPodConfiguration(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        (Updatable) The regional subnet where pods' VNIC will be placed.
+        (Updatable) The private regional subnet where pods' VNIC will be placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4285,6 +4288,70 @@ class VirtualNodePoolTaint(dict):
         (Updatable) The value of the pair.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class VirtualNodePoolVirtualNodePoolCyclingDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isVirtualNodeCyclingEnabled":
+            suggest = "is_virtual_node_cycling_enabled"
+        elif key == "maximumSurge":
+            suggest = "maximum_surge"
+        elif key == "maximumUnavailable":
+            suggest = "maximum_unavailable"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualNodePoolVirtualNodePoolCyclingDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualNodePoolVirtualNodePoolCyclingDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualNodePoolVirtualNodePoolCyclingDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_virtual_node_cycling_enabled: Optional[_builtins.bool] = None,
+                 maximum_surge: Optional[_builtins.str] = None,
+                 maximum_unavailable: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_virtual_node_cycling_enabled: (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        :param _builtins.str maximum_surge: (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        :param _builtins.str maximum_unavailable: (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        if is_virtual_node_cycling_enabled is not None:
+            pulumi.set(__self__, "is_virtual_node_cycling_enabled", is_virtual_node_cycling_enabled)
+        if maximum_surge is not None:
+            pulumi.set(__self__, "maximum_surge", maximum_surge)
+        if maximum_unavailable is not None:
+            pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @_builtins.property
+    @pulumi.getter(name="isVirtualNodeCyclingEnabled")
+    def is_virtual_node_cycling_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_virtual_node_cycling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
 
 
 @pulumi.output_type
@@ -9273,7 +9340,7 @@ class GetVirtualNodePoolPlacementConfigurationResult(dict):
         """
         :param _builtins.str availability_domain: The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
         :param Sequence[_builtins.str] fault_domains: The fault domain of this virtual node.
-        :param _builtins.str subnet_id: The regional subnet where pods' VNIC will be placed.
+        :param _builtins.str subnet_id: The private regional subnet where pods' VNIC will be placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "fault_domains", fault_domains)
@@ -9299,7 +9366,7 @@ class GetVirtualNodePoolPlacementConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The regional subnet where pods' VNIC will be placed.
+        The private regional subnet where pods' VNIC will be placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -9313,7 +9380,7 @@ class GetVirtualNodePoolPodConfigurationResult(dict):
         """
         :param Sequence[_builtins.str] nsg_ids: List of network security group IDs applied to the Pod VNIC.
         :param _builtins.str shape: Shape of the pods.
-        :param _builtins.str subnet_id: The regional subnet where pods' VNIC will be placed.
+        :param _builtins.str subnet_id: The private regional subnet where pods' VNIC will be placed.
         """
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "shape", shape)
@@ -9339,7 +9406,7 @@ class GetVirtualNodePoolPodConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The regional subnet where pods' VNIC will be placed.
+        The private regional subnet where pods' VNIC will be placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -9382,6 +9449,46 @@ class GetVirtualNodePoolTaintResult(dict):
         The value of the pair.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolVirtualNodePoolCyclingDetailResult(dict):
+    def __init__(__self__, *,
+                 is_virtual_node_cycling_enabled: _builtins.bool,
+                 maximum_surge: _builtins.str,
+                 maximum_unavailable: _builtins.str):
+        """
+        :param _builtins.bool is_virtual_node_cycling_enabled: If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        :param _builtins.str maximum_surge: Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        :param _builtins.str maximum_unavailable: Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        pulumi.set(__self__, "is_virtual_node_cycling_enabled", is_virtual_node_cycling_enabled)
+        pulumi.set(__self__, "maximum_surge", maximum_surge)
+        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @_builtins.property
+    @pulumi.getter(name="isVirtualNodeCyclingEnabled")
+    def is_virtual_node_cycling_enabled(self) -> _builtins.bool:
+        """
+        If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_virtual_node_cycling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> _builtins.str:
+        """
+        Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> _builtins.str:
+        """
+        Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
 
 
 @pulumi.output_type
@@ -9467,6 +9574,7 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
                  taints: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolTaintResult'],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
+                 virtual_node_pool_cycling_details: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailResult'],
                  virtual_node_pool_id: _builtins.str,
                  virtual_node_tags: Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagResult']):
         """
@@ -9488,6 +9596,7 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
         :param Sequence['GetVirtualNodePoolsVirtualNodePoolTaintArgs'] taints: A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
         :param _builtins.str time_created: The time the virtual node pool was created.
         :param _builtins.str time_updated: The time the virtual node pool was updated.
+        :param Sequence['GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailArgs'] virtual_node_pool_cycling_details: Virtual Node Pool Cycling Details
         :param Sequence['GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs'] virtual_node_tags: The tags associated to the virtual nodes in this virtual node pool.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -9508,6 +9617,7 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
         pulumi.set(__self__, "taints", taints)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "virtual_node_pool_cycling_details", virtual_node_pool_cycling_details)
         pulumi.set(__self__, "virtual_node_pool_id", virtual_node_pool_id)
         pulumi.set(__self__, "virtual_node_tags", virtual_node_tags)
 
@@ -9656,6 +9766,14 @@ class GetVirtualNodePoolsVirtualNodePoolResult(dict):
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
+    @pulumi.getter(name="virtualNodePoolCyclingDetails")
+    def virtual_node_pool_cycling_details(self) -> Sequence['outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailResult']:
+        """
+        Virtual Node Pool Cycling Details
+        """
+        return pulumi.get(self, "virtual_node_pool_cycling_details")
+
+    @_builtins.property
     @pulumi.getter(name="virtualNodePoolId")
     def virtual_node_pool_id(self) -> _builtins.str:
         return pulumi.get(self, "virtual_node_pool_id")
@@ -9707,7 +9825,7 @@ class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
         """
         :param _builtins.str availability_domain: The availability domain in which to place virtual nodes. Example: `Uocm:PHX-AD-1`
         :param Sequence[_builtins.str] fault_domains: The fault domain of this virtual node.
-        :param _builtins.str subnet_id: The regional subnet where pods' VNIC will be placed.
+        :param _builtins.str subnet_id: The private regional subnet where pods' VNIC will be placed.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "fault_domains", fault_domains)
@@ -9733,7 +9851,7 @@ class GetVirtualNodePoolsVirtualNodePoolPlacementConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The regional subnet where pods' VNIC will be placed.
+        The private regional subnet where pods' VNIC will be placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -9747,7 +9865,7 @@ class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
         """
         :param Sequence[_builtins.str] nsg_ids: List of network security group IDs applied to the Pod VNIC.
         :param _builtins.str shape: Shape of the pods.
-        :param _builtins.str subnet_id: The regional subnet where pods' VNIC will be placed.
+        :param _builtins.str subnet_id: The private regional subnet where pods' VNIC will be placed.
         """
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "shape", shape)
@@ -9773,7 +9891,7 @@ class GetVirtualNodePoolsVirtualNodePoolPodConfigurationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        The regional subnet where pods' VNIC will be placed.
+        The private regional subnet where pods' VNIC will be placed.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -9816,6 +9934,46 @@ class GetVirtualNodePoolsVirtualNodePoolTaintResult(dict):
         The value of the pair.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetailResult(dict):
+    def __init__(__self__, *,
+                 is_virtual_node_cycling_enabled: _builtins.bool,
+                 maximum_surge: _builtins.str,
+                 maximum_unavailable: _builtins.str):
+        """
+        :param _builtins.bool is_virtual_node_cycling_enabled: If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        :param _builtins.str maximum_surge: Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        :param _builtins.str maximum_unavailable: Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        pulumi.set(__self__, "is_virtual_node_cycling_enabled", is_virtual_node_cycling_enabled)
+        pulumi.set(__self__, "maximum_surge", maximum_surge)
+        pulumi.set(__self__, "maximum_unavailable", maximum_unavailable)
+
+    @_builtins.property
+    @pulumi.getter(name="isVirtualNodeCyclingEnabled")
+    def is_virtual_node_cycling_enabled(self) -> _builtins.bool:
+        """
+        If virtual nodes in the virtual nodepool will be cycled to have new changes.
+        """
+        return pulumi.get(self, "is_virtual_node_cycling_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumSurge")
+    def maximum_surge(self) -> _builtins.str:
+        """
+        Maximum additional new virtual nodes that would be temporarily created and added to virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 1, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_surge")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumUnavailable")
+    def maximum_unavailable(self) -> _builtins.str:
+        """
+        Maximum active virtual nodes that would be terminated from virtual nodepool during the cycling virtual nodepool process. OKE supports both integer and percentage input. Defaults to 0, Ranges from 0 to Virtual Nodepool size or 0% to 100%
+        """
+        return pulumi.get(self, "maximum_unavailable")
 
 
 @pulumi.output_type

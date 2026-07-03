@@ -39,12 +39,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DedicatedAiCluster{}
 	case "oci:GenerativeAi/endpoint:Endpoint":
 		r = &Endpoint{}
-	case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
-		r = &GenerativeAiPrivateEndpoint{}
 	case "oci:GenerativeAi/importedModel:ImportedModel":
 		r = &ImportedModel{}
 	case "oci:GenerativeAi/model:Model":
 		r = &Model{}
+	case "oci:GenerativeAi/project:Project":
+		r = &Project{}
 	case "oci:GenerativeAi/semanticStore:SemanticStore":
 		r = &SemanticStore{}
 	default:
@@ -107,17 +107,17 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
-		"GenerativeAi/generativeAiPrivateEndpoint",
-		&module{version},
-	)
-	pulumi.RegisterResourceModule(
-		"oci",
 		"GenerativeAi/importedModel",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/model",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/project",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string Frequency;
         /// <summary>
+        /// Maximum number of minutes after `TimeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `IsRandomStartTime` is true.
+        /// </summary>
+        public readonly int InitialJitterInMinutes;
+        /// <summary>
         /// The interval of frequency.
         /// </summary>
         public readonly int Interval;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string frequency,
 
+            int initialJitterInMinutes,
+
             int interval,
 
             bool isRandomStartTime,
@@ -66,6 +72,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         {
             CronExpression = cronExpression;
             Frequency = frequency;
+            InitialJitterInMinutes = initialJitterInMinutes;
             Interval = interval;
             IsRandomStartTime = isRandomStartTime;
             Recurrence = recurrence;

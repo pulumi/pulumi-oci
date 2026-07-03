@@ -19,6 +19,8 @@ import com.pulumi.oci.Psql.inputs.GetConfigurationsPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemConnectionDetailPlainArgs;
+import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPlainArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstanceArgs;
 import com.pulumi.oci.Psql.inputs.GetDbSystemPrimaryDbInstancePlainArgs;
@@ -39,6 +41,7 @@ import com.pulumi.oci.Psql.outputs.GetBackupsResult;
 import com.pulumi.oci.Psql.outputs.GetConfigurationResult;
 import com.pulumi.oci.Psql.outputs.GetConfigurationsResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemConnectionDetailResult;
+import com.pulumi.oci.Psql.outputs.GetDbSystemPitrDetailResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemPrimaryDbInstanceResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemReplicasResult;
 import com.pulumi.oci.Psql.outputs.GetDbSystemResult;
@@ -292,6 +295,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -340,6 +344,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -388,6 +393,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -436,6 +442,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -484,6 +491,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -532,6 +540,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -580,6 +589,7 @@ public final class PsqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
      *             .backupId(testBackup.id())
+     *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
      *             .id(backupId)
@@ -1581,6 +1591,216 @@ public final class PsqlFunctions {
      */
     public static CompletableFuture<GetDbSystemConnectionDetailResult> getDbSystemConnectionDetailPlain(GetDbSystemConnectionDetailPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", TypeShape.of(GetDbSystemConnectionDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Pitr Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system PITR details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemPitrDetailResult> getDbSystemPitrDetail(GetDbSystemPitrDetailArgs args) {
+        return getDbSystemPitrDetail(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db System Pitr Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system PITR details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemPitrDetailResult> getDbSystemPitrDetailPlain(GetDbSystemPitrDetailPlainArgs args) {
+        return getDbSystemPitrDetailPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db System Pitr Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system PITR details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemPitrDetailResult> getDbSystemPitrDetail(GetDbSystemPitrDetailArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemPitrDetail:getDbSystemPitrDetail", TypeShape.of(GetDbSystemPitrDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Pitr Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system PITR details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbSystemPitrDetailResult> getDbSystemPitrDetail(GetDbSystemPitrDetailArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Psql/getDbSystemPitrDetail:getDbSystemPitrDetail", TypeShape.of(GetDbSystemPitrDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db System Pitr Detail resource in Oracle Cloud Infrastructure Psql service.
+     * 
+     * Gets the database system PITR details.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Psql.PsqlFunctions;
+     * import com.pulumi.oci.Psql.inputs.GetDbSystemPitrDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
+     *             .dbSystemId(testDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbSystemPitrDetailResult> getDbSystemPitrDetailPlain(GetDbSystemPitrDetailPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Psql/getDbSystemPitrDetail:getDbSystemPitrDetail", TypeShape.of(GetDbSystemPitrDetailResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Db System Primary Db Instance resource in Oracle Cloud Infrastructure Psql service.

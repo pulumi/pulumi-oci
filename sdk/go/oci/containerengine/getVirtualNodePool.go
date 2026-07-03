@@ -93,8 +93,10 @@ type LookupVirtualNodePoolResult struct {
 	// The time the virtual node pool was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the virtual node pool was updated.
-	TimeUpdated       string `pulumi:"timeUpdated"`
-	VirtualNodePoolId string `pulumi:"virtualNodePoolId"`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Virtual Node Pool Cycling Details
+	VirtualNodePoolCyclingDetails []GetVirtualNodePoolVirtualNodePoolCyclingDetail `pulumi:"virtualNodePoolCyclingDetails"`
+	VirtualNodePoolId             string                                           `pulumi:"virtualNodePoolId"`
 	// The tags associated to the virtual nodes in this virtual node pool.
 	VirtualNodeTags []GetVirtualNodePoolVirtualNodeTag `pulumi:"virtualNodeTags"`
 }
@@ -225,6 +227,13 @@ func (o LookupVirtualNodePoolResultOutput) TimeCreated() pulumi.StringOutput {
 // The time the virtual node pool was updated.
 func (o LookupVirtualNodePoolResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualNodePoolResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Virtual Node Pool Cycling Details
+func (o LookupVirtualNodePoolResultOutput) VirtualNodePoolCyclingDetails() GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) []GetVirtualNodePoolVirtualNodePoolCyclingDetail {
+		return v.VirtualNodePoolCyclingDetails
+	}).(GetVirtualNodePoolVirtualNodePoolCyclingDetailArrayOutput)
 }
 
 func (o LookupVirtualNodePoolResultOutput) VirtualNodePoolId() pulumi.StringOutput {

@@ -49,6 +49,21 @@ public final class ScheduleTriggerArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+     * 
+     */
+    @Import(name="initialJitterInMinutes")
+    private @Nullable Output<Integer> initialJitterInMinutes;
+
+    /**
+     * @return (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+     * 
+     */
+    public Optional<Output<Integer>> initialJitterInMinutes() {
+        return Optional.ofNullable(this.initialJitterInMinutes);
+    }
+
+    /**
      * (Updatable) The interval of frequency.
      * 
      */
@@ -149,6 +164,7 @@ public final class ScheduleTriggerArgs extends com.pulumi.resources.ResourceArgs
     private ScheduleTriggerArgs(ScheduleTriggerArgs $) {
         this.cronExpression = $.cronExpression;
         this.frequency = $.frequency;
+        this.initialJitterInMinutes = $.initialJitterInMinutes;
         this.interval = $.interval;
         this.isRandomStartTime = $.isRandomStartTime;
         this.recurrence = $.recurrence;
@@ -215,6 +231,27 @@ public final class ScheduleTriggerArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder frequency(String frequency) {
             return frequency(Output.of(frequency));
+        }
+
+        /**
+         * @param initialJitterInMinutes (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialJitterInMinutes(@Nullable Output<Integer> initialJitterInMinutes) {
+            $.initialJitterInMinutes = initialJitterInMinutes;
+            return this;
+        }
+
+        /**
+         * @param initialJitterInMinutes (Updatable) Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true. If omitted and `isRandomStartTime` is true, the service defaults the jitter window to half of the configured interval duration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialJitterInMinutes(Integer initialJitterInMinutes) {
+            return initialJitterInMinutes(Output.of(initialJitterInMinutes));
         }
 
         /**

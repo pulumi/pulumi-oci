@@ -2894,6 +2894,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLic
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType string `pulumi:"licenseType"`
 	// The type of action to run when the instance is interrupted for eviction.
 	Type string `pulumi:"type"`
@@ -2914,6 +2915,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLic
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 	// The type of action to run when the instance is interrupted for eviction.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -2973,6 +2975,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail
 // License Type for the OS license.
 // * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 // * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+// * `PARTNER_PROVIDED` - Partner provided license.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig) string {
 		return v.LicenseType
@@ -6467,6 +6470,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType string `pulumi:"licenseType"`
 	// The type of action to run when the instance is interrupted for eviction.
 	Type string `pulumi:"type"`
@@ -6487,6 +6491,7 @@ type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDet
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 	// The type of action to run when the instance is interrupted for eviction.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -6546,6 +6551,7 @@ func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunch
 // License Type for the OS license.
 // * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 // * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+// * `PARTNER_PROVIDED` - Partner provided license.
 func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig) string {
 		return v.LicenseType
@@ -9967,6 +9973,7 @@ type GetInstanceLicensingConfig struct {
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType string `pulumi:"licenseType"`
 	// The Operating System version of the license config.
 	OsVersion string `pulumi:"osVersion"`
@@ -9989,6 +9996,7 @@ type GetInstanceLicensingConfigArgs struct {
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 	// The Operating System version of the license config.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
@@ -10050,6 +10058,7 @@ func (o GetInstanceLicensingConfigOutput) ToGetInstanceLicensingConfigOutputWith
 // License Type for the OS license.
 // * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 // * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+// * `PARTNER_PROVIDED` - Partner provided license.
 func (o GetInstanceLicensingConfigOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceLicensingConfig) string { return v.LicenseType }).(pulumi.StringOutput)
 }
@@ -16890,6 +16899,7 @@ type GetInstancesInstanceLicensingConfig struct {
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType string `pulumi:"licenseType"`
 	// The Operating System version of the license config.
 	OsVersion string `pulumi:"osVersion"`
@@ -16912,6 +16922,7 @@ type GetInstancesInstanceLicensingConfigArgs struct {
 	// License Type for the OS license.
 	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	// * `PARTNER_PROVIDED` - Partner provided license.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 	// The Operating System version of the license config.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
@@ -16973,6 +16984,7 @@ func (o GetInstancesInstanceLicensingConfigOutput) ToGetInstancesInstanceLicensi
 // License Type for the OS license.
 // * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
 // * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+// * `PARTNER_PROVIDED` - Partner provided license.
 func (o GetInstancesInstanceLicensingConfigOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLicensingConfig) string { return v.LicenseType }).(pulumi.StringOutput)
 }

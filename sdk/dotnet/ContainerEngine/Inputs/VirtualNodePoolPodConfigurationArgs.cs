@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The regional subnet where pods' VNIC will be placed.
+        /// (Updatable) The private regional subnet where pods' VNIC will be placed.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;

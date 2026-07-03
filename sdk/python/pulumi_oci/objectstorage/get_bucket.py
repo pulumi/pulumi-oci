@@ -27,7 +27,7 @@ class GetBucketResult:
     """
     A collection of values returned by getBucket.
     """
-    def __init__(__self__, access_type=None, approximate_count=None, approximate_size=None, auto_tiering=None, bucket_id=None, bucket_scope=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, freeform_tags=None, id=None, is_read_only=None, kms_key_id=None, metadata=None, name=None, namespace=None, object_events_enabled=None, object_lifecycle_policy_etag=None, replication_enabled=None, retention_rules=None, storage_tier=None, time_created=None, versioning=None):
+    def __init__(__self__, access_type=None, approximate_count=None, approximate_size=None, auto_tiering=None, bucket_id=None, bucket_scope=None, compartment_id=None, created_by=None, defined_tags=None, etag=None, freeform_tags=None, id=None, is_bucket_key_enabled=None, is_read_only=None, kms_key_id=None, metadata=None, name=None, namespace=None, object_events_enabled=None, object_lifecycle_policy_etag=None, replication_enabled=None, retention_rules=None, storage_tier=None, time_created=None, versioning=None):
         if access_type and not isinstance(access_type, str):
             raise TypeError("Expected argument 'access_type' to be a str")
         pulumi.set(__self__, "access_type", access_type)
@@ -64,6 +64,9 @@ class GetBucketResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_bucket_key_enabled and not isinstance(is_bucket_key_enabled, bool):
+            raise TypeError("Expected argument 'is_bucket_key_enabled' to be a bool")
+        pulumi.set(__self__, "is_bucket_key_enabled", is_bucket_key_enabled)
         if is_read_only and not isinstance(is_read_only, bool):
             raise TypeError("Expected argument 'is_read_only' to be a bool")
         pulumi.set(__self__, "is_read_only", is_read_only)
@@ -195,6 +198,14 @@ class GetBucketResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isBucketKeyEnabled")
+    def is_bucket_key_enabled(self) -> _builtins.bool:
+        """
+        Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        """
+        return pulumi.get(self, "is_bucket_key_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isReadOnly")
     def is_read_only(self) -> _builtins.bool:
         """
@@ -309,6 +320,7 @@ class AwaitableGetBucketResult(GetBucketResult):
             etag=self.etag,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_bucket_key_enabled=self.is_bucket_key_enabled,
             is_read_only=self.is_read_only,
             kms_key_id=self.kms_key_id,
             metadata=self.metadata,
@@ -364,6 +376,7 @@ def get_bucket(name: Optional[_builtins.str] = None,
         etag=pulumi.get(__ret__, 'etag'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_bucket_key_enabled=pulumi.get(__ret__, 'is_bucket_key_enabled'),
         is_read_only=pulumi.get(__ret__, 'is_read_only'),
         kms_key_id=pulumi.get(__ret__, 'kms_key_id'),
         metadata=pulumi.get(__ret__, 'metadata'),
@@ -416,6 +429,7 @@ def get_bucket_output(name: pulumi.Input[Optional[_builtins.str]] = None,
         etag=pulumi.get(__response__, 'etag'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_bucket_key_enabled=pulumi.get(__response__, 'is_bucket_key_enabled'),
         is_read_only=pulumi.get(__response__, 'is_read_only'),
         kms_key_id=pulumi.get(__response__, 'kms_key_id'),
         metadata=pulumi.get(__response__, 'metadata'),

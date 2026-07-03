@@ -48,6 +48,10 @@ public final class GetDbSystemResult {
      * 
      */
     private List<GetDbSystemCredential> credentials;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
     private String dbSystemId;
     /**
      * @return The major and minor versions of the database system software.
@@ -213,6 +217,10 @@ public final class GetDbSystemResult {
     public List<GetDbSystemCredential> credentials() {
         return this.credentials;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
     public String dbSystemId() {
         return this.dbSystemId;
     }

@@ -119,6 +119,26 @@ __all__ = [
     'ModelFineTuneDetailsTrainingDatasetArgsDict',
     'ModelModelMetricArgs',
     'ModelModelMetricArgsDict',
+    'ProjectConversationConfigArgs',
+    'ProjectConversationConfigArgsDict',
+    'ProjectLongTermMemoryConfigArgs',
+    'ProjectLongTermMemoryConfigArgsDict',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgsDict',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgsDict',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgsDict',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgsDict',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs',
+    'ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgsDict',
+    'ProjectShortTermMemoryOptimizationConfigArgs',
+    'ProjectShortTermMemoryOptimizationConfigArgsDict',
+    'ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs',
+    'ProjectShortTermMemoryOptimizationConfigCondenserConfigArgsDict',
+    'ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs',
+    'ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgsDict',
     'SemanticStoreDataSourceArgs',
     'SemanticStoreDataSourceArgsDict',
     'SemanticStoreRefreshScheduleArgs',
@@ -151,6 +171,8 @@ __all__ = [
     'GetImportedModelsFilterArgsDict',
     'GetModelsFilterArgs',
     'GetModelsFilterArgsDict',
+    'GetProjectsFilterArgs',
+    'GetProjectsFilterArgsDict',
     'GetSemanticStoresFilterArgs',
     'GetSemanticStoresFilterArgsDict',
 ]
@@ -4298,6 +4320,437 @@ class ModelModelMetricArgs:
         pulumi.set(self, "model_metrics_type", value)
 
 
+class ProjectConversationConfigArgsDict(TypedDict):
+    conversations_retention_in_hours: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+    """
+    responses_retention_in_hours: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+    """
+
+@pulumi.input_type
+class ProjectConversationConfigArgs:
+    def __init__(__self__, *,
+                 conversations_retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+                 responses_retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] conversations_retention_in_hours: (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+        :param pulumi.Input[_builtins.int] responses_retention_in_hours: (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+        """
+        if conversations_retention_in_hours is not None:
+            pulumi.set(__self__, "conversations_retention_in_hours", conversations_retention_in_hours)
+        if responses_retention_in_hours is not None:
+            pulumi.set(__self__, "responses_retention_in_hours", responses_retention_in_hours)
+
+    @_builtins.property
+    @pulumi.getter(name="conversationsRetentionInHours")
+    def conversations_retention_in_hours(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Retention period (in hours) for conversations. The TTL starts from the time the conversation was last updated.
+        """
+        return pulumi.get(self, "conversations_retention_in_hours")
+
+    @conversations_retention_in_hours.setter
+    def conversations_retention_in_hours(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "conversations_retention_in_hours", value)
+
+    @_builtins.property
+    @pulumi.getter(name="responsesRetentionInHours")
+    def responses_retention_in_hours(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Retention period (in hours) for responses. The TTL starts from the time the response was created.
+        """
+        return pulumi.get(self, "responses_retention_in_hours")
+
+    @responses_retention_in_hours.setter
+    def responses_retention_in_hours(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "responses_retention_in_hours", value)
+
+
+class ProjectLongTermMemoryConfigArgsDict(TypedDict):
+    standard_long_term_memory_strategy: NotRequired[pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgsDict']]]
+    """
+    (Updatable) Standard strategy settings for long-term memory.
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigArgs:
+    def __init__(__self__, *,
+                 standard_long_term_memory_strategy: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs']] = None):
+        """
+        :param pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs'] standard_long_term_memory_strategy: (Updatable) Standard strategy settings for long-term memory.
+        """
+        if standard_long_term_memory_strategy is not None:
+            pulumi.set(__self__, "standard_long_term_memory_strategy", standard_long_term_memory_strategy)
+
+    @_builtins.property
+    @pulumi.getter(name="standardLongTermMemoryStrategy")
+    def standard_long_term_memory_strategy(self) -> pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs']]:
+        """
+        (Updatable) Standard strategy settings for long-term memory.
+        """
+        return pulumi.get(self, "standard_long_term_memory_strategy")
+
+    @standard_long_term_memory_strategy.setter
+    def standard_long_term_memory_strategy(self, value: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs']]):
+        pulumi.set(self, "standard_long_term_memory_strategy", value)
+
+
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether long-term memory is enabled.
+    """
+    embedding_config: NotRequired[pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgsDict']]]
+    """
+    (Updatable) Configuration for generating embeddings from extracted information.
+    """
+    extraction_config: NotRequired[pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgsDict']]]
+    """
+    (Updatable) Configuration for information extraction from conversation content.
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[_builtins.bool],
+                 embedding_config: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs']] = None,
+                 extraction_config: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates whether long-term memory is enabled.
+        :param pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs'] embedding_config: (Updatable) Configuration for generating embeddings from extracted information.
+        :param pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs'] extraction_config: (Updatable) Configuration for information extraction from conversation content.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if embedding_config is not None:
+            pulumi.set(__self__, "embedding_config", embedding_config)
+        if extraction_config is not None:
+            pulumi.set(__self__, "extraction_config", extraction_config)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Indicates whether long-term memory is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="embeddingConfig")
+    def embedding_config(self) -> pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs']]:
+        """
+        (Updatable) Configuration for generating embeddings from extracted information.
+        """
+        return pulumi.get(self, "embedding_config")
+
+    @embedding_config.setter
+    def embedding_config(self, value: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs']]):
+        pulumi.set(self, "embedding_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extractionConfig")
+    def extraction_config(self) -> pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs']]:
+        """
+        (Updatable) Configuration for information extraction from conversation content.
+        """
+        return pulumi.get(self, "extraction_config")
+
+    @extraction_config.setter
+    def extraction_config(self, value: pulumi.Input[Optional['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs']]):
+        pulumi.set(self, "extraction_config", value)
+
+
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgsDict(TypedDict):
+    llm_selection: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgsDict']
+    """
+    (Updatable) LLM selection configuration.
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigArgs:
+    def __init__(__self__, *,
+                 llm_selection: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs']):
+        """
+        :param pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs'] llm_selection: (Updatable) LLM selection configuration.
+        """
+        pulumi.set(__self__, "llm_selection", llm_selection)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelection")
+    def llm_selection(self) -> pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs']:
+        """
+        (Updatable) LLM selection configuration.
+        """
+        return pulumi.get(self, "llm_selection")
+
+    @llm_selection.setter
+    def llm_selection(self, value: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs']):
+        pulumi.set(self, "llm_selection", value)
+
+
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgsDict(TypedDict):
+    llm_selection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of LLM selection.
+    """
+    model_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The id of the GenAI model
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionArgs:
+    def __init__(__self__, *,
+                 llm_selection_type: pulumi.Input[_builtins.str],
+                 model_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) The type of LLM selection.
+        :param pulumi.Input[_builtins.str] model_id: (Updatable) The id of the GenAI model
+        """
+        pulumi.set(__self__, "llm_selection_type", llm_selection_type)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelectionType")
+    def llm_selection_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of LLM selection.
+        """
+        return pulumi.get(self, "llm_selection_type")
+
+    @llm_selection_type.setter
+    def llm_selection_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "llm_selection_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The id of the GenAI model
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "model_id", value)
+
+
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgsDict(TypedDict):
+    llm_selection: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgsDict']
+    """
+    (Updatable) LLM selection configuration.
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigArgs:
+    def __init__(__self__, *,
+                 llm_selection: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs']):
+        """
+        :param pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs'] llm_selection: (Updatable) LLM selection configuration.
+        """
+        pulumi.set(__self__, "llm_selection", llm_selection)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelection")
+    def llm_selection(self) -> pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs']:
+        """
+        (Updatable) LLM selection configuration.
+        """
+        return pulumi.get(self, "llm_selection")
+
+    @llm_selection.setter
+    def llm_selection(self, value: pulumi.Input['ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs']):
+        pulumi.set(self, "llm_selection", value)
+
+
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgsDict(TypedDict):
+    llm_selection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of LLM selection.
+    """
+    model_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The id of the GenAI model
+    """
+
+@pulumi.input_type
+class ProjectLongTermMemoryConfigStandardLongTermMemoryStrategyExtractionConfigLlmSelectionArgs:
+    def __init__(__self__, *,
+                 llm_selection_type: pulumi.Input[_builtins.str],
+                 model_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) The type of LLM selection.
+        :param pulumi.Input[_builtins.str] model_id: (Updatable) The id of the GenAI model
+        """
+        pulumi.set(__self__, "llm_selection_type", llm_selection_type)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelectionType")
+    def llm_selection_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of LLM selection.
+        """
+        return pulumi.get(self, "llm_selection_type")
+
+    @llm_selection_type.setter
+    def llm_selection_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "llm_selection_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The id of the GenAI model
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "model_id", value)
+
+
+class ProjectShortTermMemoryOptimizationConfigArgsDict(TypedDict):
+    is_enabled: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) Indicates whether short-term memory optimization is enabled.
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    condenser_config: NotRequired[pulumi.Input[Optional['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgsDict']]]
+    """
+    (Updatable) Configuration for condensing conversation content.
+    """
+
+@pulumi.input_type
+class ProjectShortTermMemoryOptimizationConfigArgs:
+    def __init__(__self__, *,
+                 is_enabled: pulumi.Input[_builtins.bool],
+                 condenser_config: pulumi.Input[Optional['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates whether short-term memory optimization is enabled.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs'] condenser_config: (Updatable) Configuration for condensing conversation content.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if condenser_config is not None:
+            pulumi.set(__self__, "condenser_config", condenser_config)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) Indicates whether short-term memory optimization is enabled.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="condenserConfig")
+    def condenser_config(self) -> pulumi.Input[Optional['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs']]:
+        """
+        (Updatable) Configuration for condensing conversation content.
+        """
+        return pulumi.get(self, "condenser_config")
+
+    @condenser_config.setter
+    def condenser_config(self, value: pulumi.Input[Optional['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs']]):
+        pulumi.set(self, "condenser_config", value)
+
+
+class ProjectShortTermMemoryOptimizationConfigCondenserConfigArgsDict(TypedDict):
+    llm_selection: pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgsDict']
+    """
+    (Updatable) LLM selection configuration.
+    """
+
+@pulumi.input_type
+class ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs:
+    def __init__(__self__, *,
+                 llm_selection: pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs']):
+        """
+        :param pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs'] llm_selection: (Updatable) LLM selection configuration.
+        """
+        pulumi.set(__self__, "llm_selection", llm_selection)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelection")
+    def llm_selection(self) -> pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs']:
+        """
+        (Updatable) LLM selection configuration.
+        """
+        return pulumi.get(self, "llm_selection")
+
+    @llm_selection.setter
+    def llm_selection(self, value: pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs']):
+        pulumi.set(self, "llm_selection", value)
+
+
+class ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgsDict(TypedDict):
+    llm_selection_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type of LLM selection.
+    """
+    model_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The id of the GenAI model
+    """
+
+@pulumi.input_type
+class ProjectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionArgs:
+    def __init__(__self__, *,
+                 llm_selection_type: pulumi.Input[_builtins.str],
+                 model_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] llm_selection_type: (Updatable) The type of LLM selection.
+        :param pulumi.Input[_builtins.str] model_id: (Updatable) The id of the GenAI model
+        """
+        pulumi.set(__self__, "llm_selection_type", llm_selection_type)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="llmSelectionType")
+    def llm_selection_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of LLM selection.
+        """
+        return pulumi.get(self, "llm_selection_type")
+
+    @llm_selection_type.setter
+    def llm_selection_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "llm_selection_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The id of the GenAI model
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "model_id", value)
+
+
 class SemanticStoreDataSourceArgsDict(TypedDict):
     connection_type: pulumi.Input[_builtins.str]
     """
@@ -5008,6 +5461,50 @@ class GetModelsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetModelsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetProjectsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetProjectsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

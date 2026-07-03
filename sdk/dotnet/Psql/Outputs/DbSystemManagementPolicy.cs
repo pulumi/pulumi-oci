@@ -23,15 +23,22 @@ namespace Pulumi.Oci.Psql.Outputs
         /// This string is of the format: "{day-of-week} {time-of-day}". "{day-of-week}" is a case-insensitive string like "mon", "tue", &amp;c. "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         /// </summary>
         public readonly string? MaintenanceWindowStart;
+        /// <summary>
+        /// (Updatable) Point-in-time recovery policy.
+        /// </summary>
+        public readonly Outputs.DbSystemManagementPolicyPitrPolicy? PitrPolicy;
 
         [OutputConstructor]
         private DbSystemManagementPolicy(
             Outputs.DbSystemManagementPolicyBackupPolicy? backupPolicy,
 
-            string? maintenanceWindowStart)
+            string? maintenanceWindowStart,
+
+            Outputs.DbSystemManagementPolicyPitrPolicy? pitrPolicy)
         {
             BackupPolicy = backupPolicy;
             MaintenanceWindowStart = maintenanceWindowStart;
+            PitrPolicy = pitrPolicy;
         }
     }
 }

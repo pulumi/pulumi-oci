@@ -187,6 +187,10 @@ namespace Pulumi.Oci.ObjectStorage
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         /// <summary>
+        /// Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+        /// </summary>
+        public readonly bool IsBucketKeyEnabled;
+        /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `False`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         /// </summary>
         public readonly bool IsReadOnly;
@@ -261,6 +265,8 @@ namespace Pulumi.Oci.ObjectStorage
 
             string id,
 
+            bool isBucketKeyEnabled,
+
             bool isReadOnly,
 
             string kmsKeyId,
@@ -297,6 +303,7 @@ namespace Pulumi.Oci.ObjectStorage
             Etag = etag;
             FreeformTags = freeformTags;
             Id = id;
+            IsBucketKeyEnabled = isBucketKeyEnabled;
             IsReadOnly = isReadOnly;
             KmsKeyId = kmsKeyId;
             Metadata = metadata;

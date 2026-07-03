@@ -23,6 +23,11 @@ public final class GetScheduleTrigger {
      */
     private String frequency;
     /**
+     * @return Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+     * 
+     */
+    private Integer initialJitterInMinutes;
+    /**
      * @return The interval of frequency.
      * 
      */
@@ -67,6 +72,13 @@ public final class GetScheduleTrigger {
      */
     public String frequency() {
         return this.frequency;
+    }
+    /**
+     * @return Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+     * 
+     */
+    public Integer initialJitterInMinutes() {
+        return this.initialJitterInMinutes;
     }
     /**
      * @return The interval of frequency.
@@ -122,6 +134,7 @@ public final class GetScheduleTrigger {
     public static final class Builder {
         private String cronExpression;
         private String frequency;
+        private Integer initialJitterInMinutes;
         private Integer interval;
         private Boolean isRandomStartTime;
         private String recurrence;
@@ -133,6 +146,7 @@ public final class GetScheduleTrigger {
     	      Objects.requireNonNull(defaults);
     	      this.cronExpression = defaults.cronExpression;
     	      this.frequency = defaults.frequency;
+    	      this.initialJitterInMinutes = defaults.initialJitterInMinutes;
     	      this.interval = defaults.interval;
     	      this.isRandomStartTime = defaults.isRandomStartTime;
     	      this.recurrence = defaults.recurrence;
@@ -155,6 +169,14 @@ public final class GetScheduleTrigger {
               throw new MissingRequiredPropertyException("GetScheduleTrigger", "frequency");
             }
             this.frequency = frequency;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialJitterInMinutes(Integer initialJitterInMinutes) {
+            if (initialJitterInMinutes == null) {
+              throw new MissingRequiredPropertyException("GetScheduleTrigger", "initialJitterInMinutes");
+            }
+            this.initialJitterInMinutes = initialJitterInMinutes;
             return this;
         }
         @CustomType.Setter
@@ -209,6 +231,7 @@ public final class GetScheduleTrigger {
             final var _resultValue = new GetScheduleTrigger();
             _resultValue.cronExpression = cronExpression;
             _resultValue.frequency = frequency;
+            _resultValue.initialJitterInMinutes = initialJitterInMinutes;
             _resultValue.interval = interval;
             _resultValue.isRandomStartTime = isRandomStartTime;
             _resultValue.recurrence = recurrence;

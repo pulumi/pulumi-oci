@@ -271,7 +271,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
     /**
      * The number of nodes in the cloud VM cluster.
      */
-    declare public /*out*/ readonly nodeCount: pulumi.Output<number>;
+    declare public readonly nodeCount: pulumi.Output<number>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
@@ -529,6 +529,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["isSparseDiskgroupEnabled"] = args?.isSparseDiskgroupEnabled;
             resourceInputs["licenseModel"] = args?.licenseModel;
             resourceInputs["memorySizeInGbs"] = args?.memorySizeInGbs;
+            resourceInputs["nodeCount"] = args?.nodeCount;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["ocpuCount"] = args?.ocpuCount;
             resourceInputs["privateZoneId"] = args?.privateZoneId;
@@ -554,7 +555,6 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listenerPort"] = undefined /*out*/;
             resourceInputs["multiCloudIdentityConnectorConfigs"] = undefined /*out*/;
-            resourceInputs["nodeCount"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
             resourceInputs["scanIpIds"] = undefined /*out*/;
@@ -977,6 +977,10 @@ export interface CloudVmClusterArgs {
      * (Updatable) The memory to be allocated in GBs.
      */
     memorySizeInGbs?: pulumi.Input<number | undefined>;
+    /**
+     * The number of nodes in the cloud VM cluster.
+     */
+    nodeCount?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.

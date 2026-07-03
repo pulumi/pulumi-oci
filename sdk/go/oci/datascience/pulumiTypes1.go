@@ -10682,6 +10682,8 @@ type GetScheduleTrigger struct {
 	CronExpression string `pulumi:"cronExpression"`
 	// The type of frequency
 	Frequency string `pulumi:"frequency"`
+	// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+	InitialJitterInMinutes int `pulumi:"initialJitterInMinutes"`
 	// The interval of frequency.
 	Interval int `pulumi:"interval"`
 	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
@@ -10712,6 +10714,8 @@ type GetScheduleTriggerArgs struct {
 	CronExpression pulumi.StringInput `pulumi:"cronExpression"`
 	// The type of frequency
 	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+	InitialJitterInMinutes pulumi.IntInput `pulumi:"initialJitterInMinutes"`
 	// The interval of frequency.
 	Interval pulumi.IntInput `pulumi:"interval"`
 	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
@@ -10785,6 +10789,11 @@ func (o GetScheduleTriggerOutput) CronExpression() pulumi.StringOutput {
 // The type of frequency
 func (o GetScheduleTriggerOutput) Frequency() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleTrigger) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+func (o GetScheduleTriggerOutput) InitialJitterInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduleTrigger) int { return v.InitialJitterInMinutes }).(pulumi.IntOutput)
 }
 
 // The interval of frequency.
@@ -13228,6 +13237,8 @@ type GetSchedulesScheduleTrigger struct {
 	CronExpression string `pulumi:"cronExpression"`
 	// The type of frequency
 	Frequency string `pulumi:"frequency"`
+	// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+	InitialJitterInMinutes int `pulumi:"initialJitterInMinutes"`
 	// The interval of frequency.
 	Interval int `pulumi:"interval"`
 	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
@@ -13258,6 +13269,8 @@ type GetSchedulesScheduleTriggerArgs struct {
 	CronExpression pulumi.StringInput `pulumi:"cronExpression"`
 	// The type of frequency
 	Frequency pulumi.StringInput `pulumi:"frequency"`
+	// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+	InitialJitterInMinutes pulumi.IntInput `pulumi:"initialJitterInMinutes"`
 	// The interval of frequency.
 	Interval pulumi.IntInput `pulumi:"interval"`
 	// when true and timeStart is null, system generate a random start time between now and now + interval;  isRandomStartTime can be true if timeStart is null.
@@ -13331,6 +13344,11 @@ func (o GetSchedulesScheduleTriggerOutput) CronExpression() pulumi.StringOutput 
 // The type of frequency
 func (o GetSchedulesScheduleTriggerOutput) Frequency() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleTrigger) string { return v.Frequency }).(pulumi.StringOutput)
+}
+
+// Maximum number of minutes after `timeStart` that the scheduler may use to randomly select the first execution time. This value is considered only when `isRandomStartTime` is true.
+func (o GetSchedulesScheduleTriggerOutput) InitialJitterInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleTrigger) int { return v.InitialJitterInMinutes }).(pulumi.IntOutput)
 }
 
 // The interval of frequency.

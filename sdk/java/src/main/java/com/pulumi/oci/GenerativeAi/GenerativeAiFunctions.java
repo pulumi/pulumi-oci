@@ -58,6 +58,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetModelsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetProjectPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetProjectsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoreArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStorePlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetSemanticStoresArgs;
@@ -87,6 +91,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetProjectResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetProjectsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoreResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetSemanticStoresResult;
 import com.pulumi.oci.Utilities;
@@ -6221,6 +6227,441 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a generativeAiProject.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args) {
+        return getProject(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a generativeAiProject.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
+        return getProjectPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a generativeAiProject.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a generativeAiProject.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a generativeAiProject.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProject = GenerativeAiFunctions.getProject(GetProjectArgs.builder()
+     *             .projectId(testProjectOciGenerativeAiProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the generativeAiProjects of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = GenerativeAiFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
+        return getProjects(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the generativeAiProjects of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = GenerativeAiFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
+        return getProjectsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the generativeAiProjects of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = GenerativeAiFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the generativeAiProjects of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = GenerativeAiFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Projects in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the generativeAiProjects of a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetProjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testProjects = GenerativeAiFunctions.getProjects(GetProjectsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Semantic Store resource in Oracle Cloud Infrastructure Generative AI service.

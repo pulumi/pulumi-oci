@@ -50,11 +50,6 @@ export type Endpoint = import("./endpoint").Endpoint;
 export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
 utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
 
-export { GenerativeAiPrivateEndpointArgs, GenerativeAiPrivateEndpointState } from "./generativeAiPrivateEndpoint";
-export type GenerativeAiPrivateEndpoint = import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint;
-export const GenerativeAiPrivateEndpoint: typeof import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint = null as any;
-utilities.lazyLoad(exports, ["GenerativeAiPrivateEndpoint"], () => require("./generativeAiPrivateEndpoint"));
-
 export { GetAgentAgentArgs, GetAgentAgentResult, GetAgentAgentOutputArgs } from "./getAgentAgent";
 export const getAgentAgent: typeof import("./getAgentAgent").getAgentAgent = null as any;
 export const getAgentAgentOutput: typeof import("./getAgentAgent").getAgentAgentOutput = null as any;
@@ -180,6 +175,16 @@ export const getModels: typeof import("./getModels").getModels = null as any;
 export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;
 utilities.lazyLoad(exports, ["getModels","getModelsOutput"], () => require("./getModels"));
 
+export { GetProjectArgs, GetProjectResult, GetProjectOutputArgs } from "./getProject";
+export const getProject: typeof import("./getProject").getProject = null as any;
+export const getProjectOutput: typeof import("./getProject").getProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getProject","getProjectOutput"], () => require("./getProject"));
+
+export { GetProjectsArgs, GetProjectsResult, GetProjectsOutputArgs } from "./getProjects";
+export const getProjects: typeof import("./getProjects").getProjects = null as any;
+export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
+
 export { GetSemanticStoreArgs, GetSemanticStoreResult, GetSemanticStoreOutputArgs } from "./getSemanticStore";
 export const getSemanticStore: typeof import("./getSemanticStore").getSemanticStore = null as any;
 export const getSemanticStoreOutput: typeof import("./getSemanticStore").getSemanticStoreOutput = null as any;
@@ -199,6 +204,11 @@ export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
 export const Model: typeof import("./model").Model = null as any;
 utilities.lazyLoad(exports, ["Model"], () => require("./model"));
+
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
 export { SemanticStoreArgs, SemanticStoreState } from "./semanticStore";
 export type SemanticStore = import("./semanticStore").SemanticStore;
@@ -228,12 +238,12 @@ const _module = {
                 return new DedicatedAiCluster(name, <any>undefined, { urn })
             case "oci:GenerativeAi/endpoint:Endpoint":
                 return new Endpoint(name, <any>undefined, { urn })
-            case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
-                return new GenerativeAiPrivateEndpoint(name, <any>undefined, { urn })
             case "oci:GenerativeAi/importedModel:ImportedModel":
                 return new ImportedModel(name, <any>undefined, { urn })
             case "oci:GenerativeAi/model:Model":
                 return new Model(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/project:Project":
+                return new Project(name, <any>undefined, { urn })
             case "oci:GenerativeAi/semanticStore:SemanticStore":
                 return new SemanticStore(name, <any>undefined, { urn })
             default:
@@ -250,7 +260,7 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentProvisionedCapac
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
-pulumi.runtime.registerResourceModule("oci", "GenerativeAi/generativeAiPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/importedModel", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/project", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/semanticStore", _module)

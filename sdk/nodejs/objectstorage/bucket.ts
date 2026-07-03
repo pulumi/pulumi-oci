@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isBucketKeyEnabled: bucketIsBucketKeyEnabled === "true",
  *     kmsKeyId: testKey.id,
  *     metadata: bucketMetadata,
  *     objectEventsEnabled: bucketObjectEventsEnabled === "true",
@@ -131,6 +132,10 @@ export class Bucket extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     */
+    declare public readonly isBucketKeyEnabled: pulumi.Output<boolean>;
+    /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
     declare public /*out*/ readonly isReadOnly: pulumi.Output<boolean>;
@@ -207,6 +212,7 @@ export class Bucket extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["etag"] = state?.etag;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isBucketKeyEnabled"] = state?.isBucketKeyEnabled;
             resourceInputs["isReadOnly"] = state?.isReadOnly;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
             resourceInputs["metadata"] = state?.metadata;
@@ -233,6 +239,7 @@ export class Bucket extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isBucketKeyEnabled"] = args?.isBucketKeyEnabled;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
             resourceInputs["metadata"] = args?.metadata;
             resourceInputs["name"] = args?.name;
@@ -304,6 +311,10 @@ export interface BucketState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     */
+    isBucketKeyEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
      */
@@ -386,6 +397,10 @@ export interface BucketArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Specifies whether Object Storage should use intermediate cached Bucket Encryption Keys with server-side encryption using KMS (SSE-KMS) for new objects in the bucket. This reduces calls to Oracle Cloud Infrastructure Vault Key Management Service (KMS). Existing objects are not affected.
+     */
+    isBucketKeyEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */

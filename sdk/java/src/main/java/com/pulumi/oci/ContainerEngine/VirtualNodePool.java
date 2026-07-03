@@ -13,6 +13,7 @@ import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolInitialVirtualNodeL
 import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolPlacementConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolPodConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolTaint;
+import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolVirtualNodePoolCyclingDetails;
 import com.pulumi.oci.ContainerEngine.outputs.VirtualNodePoolVirtualNodeTags;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolInitialVirtualNodeLabelArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolPodConfigurationArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolTaintArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolVirtualNodePoolCyclingDetailsArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.VirtualNodePoolVirtualNodeTagsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
@@ -84,6 +86,11 @@ import javax.annotation.Nullable;
  *                 .effect(virtualNodePoolTaintsEffect)
  *                 .key(virtualNodePoolTaintsKey)
  *                 .value(virtualNodePoolTaintsValue)
+ *                 .build())
+ *             .virtualNodePoolCyclingDetails(VirtualNodePoolVirtualNodePoolCyclingDetailsArgs.builder()
+ *                 .isVirtualNodeCyclingEnabled(virtualNodePoolVirtualNodePoolCyclingDetailsIsVirtualNodeCyclingEnabled)
+ *                 .maximumSurge(virtualNodePoolVirtualNodePoolCyclingDetailsMaximumSurge)
+ *                 .maximumUnavailable(virtualNodePoolVirtualNodePoolCyclingDetailsMaximumUnavailable)
  *                 .build())
  *             .virtualNodeTags(VirtualNodePoolVirtualNodeTagsArgs.builder()
  *                 .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -344,6 +351,20 @@ public class VirtualNodePool extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) Virtual Node Pool Cycling Details
+     * 
+     */
+    @Export(name="virtualNodePoolCyclingDetails", refs={VirtualNodePoolVirtualNodePoolCyclingDetails.class}, tree="[0]")
+    private Output<VirtualNodePoolVirtualNodePoolCyclingDetails> virtualNodePoolCyclingDetails;
+
+    /**
+     * @return (Updatable) Virtual Node Pool Cycling Details
+     * 
+     */
+    public Output<VirtualNodePoolVirtualNodePoolCyclingDetails> virtualNodePoolCyclingDetails() {
+        return this.virtualNodePoolCyclingDetails;
     }
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.

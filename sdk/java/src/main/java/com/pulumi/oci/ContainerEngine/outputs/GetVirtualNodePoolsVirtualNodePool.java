@@ -9,6 +9,7 @@ import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePool
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolPlacementConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolPodConfiguration;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolTaint;
+import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag;
 import java.lang.Integer;
 import java.lang.String;
@@ -108,6 +109,11 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Virtual Node Pool Cycling Details
+     * 
+     */
+    private List<GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails;
     private String virtualNodePoolId;
     /**
      * @return The tags associated to the virtual nodes in this virtual node pool.
@@ -242,6 +248,13 @@ public final class GetVirtualNodePoolsVirtualNodePool {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Virtual Node Pool Cycling Details
+     * 
+     */
+    public List<GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails() {
+        return this.virtualNodePoolCyclingDetails;
+    }
     public String virtualNodePoolId() {
         return this.virtualNodePoolId;
     }
@@ -280,6 +293,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         private List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
         private String timeCreated;
         private String timeUpdated;
+        private List<GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails;
         private String virtualNodePoolId;
         private List<GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag> virtualNodeTags;
         public Builder() {}
@@ -303,6 +317,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
     	      this.taints = defaults.taints;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.virtualNodePoolCyclingDetails = defaults.virtualNodePoolCyclingDetails;
     	      this.virtualNodePoolId = defaults.virtualNodePoolId;
     	      this.virtualNodeTags = defaults.virtualNodeTags;
         }
@@ -467,6 +482,17 @@ public final class GetVirtualNodePoolsVirtualNodePool {
             return this;
         }
         @CustomType.Setter
+        public Builder virtualNodePoolCyclingDetails(List<GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail> virtualNodePoolCyclingDetails) {
+            if (virtualNodePoolCyclingDetails == null) {
+              throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "virtualNodePoolCyclingDetails");
+            }
+            this.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
+            return this;
+        }
+        public Builder virtualNodePoolCyclingDetails(GetVirtualNodePoolsVirtualNodePoolVirtualNodePoolCyclingDetail... virtualNodePoolCyclingDetails) {
+            return virtualNodePoolCyclingDetails(List.of(virtualNodePoolCyclingDetails));
+        }
+        @CustomType.Setter
         public Builder virtualNodePoolId(String virtualNodePoolId) {
             if (virtualNodePoolId == null) {
               throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "virtualNodePoolId");
@@ -505,6 +531,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
             _resultValue.taints = taints;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.virtualNodePoolCyclingDetails = virtualNodePoolCyclingDetails;
             _resultValue.virtualNodePoolId = virtualNodePoolId;
             _resultValue.virtualNodeTags = virtualNodeTags;
             return _resultValue;

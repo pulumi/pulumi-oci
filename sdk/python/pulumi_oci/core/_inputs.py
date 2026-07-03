@@ -9189,6 +9189,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict(
     License Type for the OS license.
     * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
     * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+    * `PARTNER_PROVIDED` - Partner provided license.
     """
 
 @pulumi.input_type
@@ -9201,6 +9202,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
         :param pulumi.Input[_builtins.str] license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         """
         pulumi.set(__self__, "type", type)
         if license_type is not None:
@@ -9225,6 +9227,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -12220,6 +12223,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArg
     License Type for the OS license.
     * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
     * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+    * `PARTNER_PROVIDED` - Partner provided license.
     """
 
 @pulumi.input_type
@@ -12232,6 +12236,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArg
         :param pulumi.Input[_builtins.str] license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         """
         pulumi.set(__self__, "type", type)
         if license_type is not None:
@@ -12256,6 +12261,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArg
         License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 
@@ -14976,6 +14982,7 @@ class InstanceLicensingConfigsArgsDict(TypedDict):
     (Updatable) License Type for the OS license.
     * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
     * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+    * `PARTNER_PROVIDED` - Partner provided license.
     """
     os_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -14993,6 +15000,7 @@ class InstanceLicensingConfigsArgs:
         :param pulumi.Input[_builtins.str] license_type: (Updatable) License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+               * `PARTNER_PROVIDED` - Partner provided license.
         :param pulumi.Input[_builtins.str] os_version: The Operating System version of the license config.
         """
         pulumi.set(__self__, "type", type)
@@ -15020,6 +15028,7 @@ class InstanceLicensingConfigsArgs:
         (Updatable) License Type for the OS license.
         * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+        * `PARTNER_PROVIDED` - Partner provided license.
         """
         return pulumi.get(self, "license_type")
 

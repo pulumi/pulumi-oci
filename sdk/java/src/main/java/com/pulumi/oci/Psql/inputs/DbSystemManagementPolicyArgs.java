@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyBackupPolicyArgs;
+import com.pulumi.oci.Psql.inputs.DbSystemManagementPolicyPitrPolicyArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -50,11 +51,27 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.maintenanceWindowStart);
     }
 
+    /**
+     * (Updatable) Point-in-time recovery policy.
+     * 
+     */
+    @Import(name="pitrPolicy")
+    private @Nullable Output<DbSystemManagementPolicyPitrPolicyArgs> pitrPolicy;
+
+    /**
+     * @return (Updatable) Point-in-time recovery policy.
+     * 
+     */
+    public Optional<Output<DbSystemManagementPolicyPitrPolicyArgs>> pitrPolicy() {
+        return Optional.ofNullable(this.pitrPolicy);
+    }
+
     private DbSystemManagementPolicyArgs() {}
 
     private DbSystemManagementPolicyArgs(DbSystemManagementPolicyArgs $) {
         this.backupPolicy = $.backupPolicy;
         this.maintenanceWindowStart = $.maintenanceWindowStart;
+        this.pitrPolicy = $.pitrPolicy;
     }
 
     public static Builder builder() {
@@ -119,6 +136,27 @@ public final class DbSystemManagementPolicyArgs extends com.pulumi.resources.Res
          */
         public Builder maintenanceWindowStart(String maintenanceWindowStart) {
             return maintenanceWindowStart(Output.of(maintenanceWindowStart));
+        }
+
+        /**
+         * @param pitrPolicy (Updatable) Point-in-time recovery policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicy(@Nullable Output<DbSystemManagementPolicyPitrPolicyArgs> pitrPolicy) {
+            $.pitrPolicy = pitrPolicy;
+            return this;
+        }
+
+        /**
+         * @param pitrPolicy (Updatable) Point-in-time recovery policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pitrPolicy(DbSystemManagementPolicyPitrPolicyArgs pitrPolicy) {
+            return pitrPolicy(Output.of(pitrPolicy));
         }
 
         public DbSystemManagementPolicyArgs build() {

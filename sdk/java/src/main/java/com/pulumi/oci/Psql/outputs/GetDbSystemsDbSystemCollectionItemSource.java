@@ -17,6 +17,11 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
      */
     private String backupId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    private String dbSystemId;
+    /**
      * @return Deprecated. Don&#39;t use.
      * 
      */
@@ -31,6 +36,11 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
      * 
      */
     private String sourceType;
+    /**
+     * @return The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     */
+    private String timeToRestore;
 
     private GetDbSystemsDbSystemCollectionItemSource() {}
     /**
@@ -39,6 +49,13 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
      */
     public String backupId() {
         return this.backupId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database system which will be used to perform point-in-time recovery.
+     * 
+     */
+    public String dbSystemId() {
+        return this.dbSystemId;
     }
     /**
      * @return Deprecated. Don&#39;t use.
@@ -61,6 +78,13 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
     public String sourceType() {
         return this.sourceType;
     }
+    /**
+     * @return The target point-in-time of the source database system that will be restored, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * 
+     */
+    public String timeToRestore() {
+        return this.timeToRestore;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -72,16 +96,20 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
     @CustomType.Builder
     public static final class Builder {
         private String backupId;
+        private String dbSystemId;
         private Boolean isHavingRestoreConfigOverrides;
         private String primaryDbSystemId;
         private String sourceType;
+        private String timeToRestore;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemCollectionItemSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
+    	      this.dbSystemId = defaults.dbSystemId;
     	      this.isHavingRestoreConfigOverrides = defaults.isHavingRestoreConfigOverrides;
     	      this.primaryDbSystemId = defaults.primaryDbSystemId;
     	      this.sourceType = defaults.sourceType;
+    	      this.timeToRestore = defaults.timeToRestore;
         }
 
         @CustomType.Setter
@@ -90,6 +118,14 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemSource", "backupId");
             }
             this.backupId = backupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbSystemId(String dbSystemId) {
+            if (dbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemSource", "dbSystemId");
+            }
+            this.dbSystemId = dbSystemId;
             return this;
         }
         @CustomType.Setter
@@ -116,12 +152,22 @@ public final class GetDbSystemsDbSystemCollectionItemSource {
             this.sourceType = sourceType;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeToRestore(String timeToRestore) {
+            if (timeToRestore == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemSource", "timeToRestore");
+            }
+            this.timeToRestore = timeToRestore;
+            return this;
+        }
         public GetDbSystemsDbSystemCollectionItemSource build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItemSource();
             _resultValue.backupId = backupId;
+            _resultValue.dbSystemId = dbSystemId;
             _resultValue.isHavingRestoreConfigOverrides = isHavingRestoreConfigOverrides;
             _resultValue.primaryDbSystemId = primaryDbSystemId;
             _resultValue.sourceType = sourceType;
+            _resultValue.timeToRestore = timeToRestore;
             return _resultValue;
         }
     }

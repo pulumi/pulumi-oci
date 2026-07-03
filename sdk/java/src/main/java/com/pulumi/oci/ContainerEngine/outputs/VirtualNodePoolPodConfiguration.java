@@ -23,7 +23,7 @@ public final class VirtualNodePoolPodConfiguration {
      */
     private String shape;
     /**
-     * @return (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * @return (Updatable) The private regional subnet where pods&#39; VNIC will be placed.
      * 
      */
     private String subnetId;
@@ -44,7 +44,7 @@ public final class VirtualNodePoolPodConfiguration {
         return this.shape;
     }
     /**
-     * @return (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * @return (Updatable) The private regional subnet where pods&#39; VNIC will be placed.
      * 
      */
     public String subnetId() {

@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemManagementPolicyBackupPolicy;
+import com.pulumi.oci.Psql.outputs.GetDbSystemManagementPolicyPitrPolicy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetDbSystemManagementPolicy {
      * 
      */
     private String maintenanceWindowStart;
+    /**
+     * @return Point-in-time recovery policy.
+     * 
+     */
+    private List<GetDbSystemManagementPolicyPitrPolicy> pitrPolicies;
 
     private GetDbSystemManagementPolicy() {}
     /**
@@ -38,6 +44,13 @@ public final class GetDbSystemManagementPolicy {
     public String maintenanceWindowStart() {
         return this.maintenanceWindowStart;
     }
+    /**
+     * @return Point-in-time recovery policy.
+     * 
+     */
+    public List<GetDbSystemManagementPolicyPitrPolicy> pitrPolicies() {
+        return this.pitrPolicies;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -50,11 +63,13 @@ public final class GetDbSystemManagementPolicy {
     public static final class Builder {
         private List<GetDbSystemManagementPolicyBackupPolicy> backupPolicies;
         private String maintenanceWindowStart;
+        private List<GetDbSystemManagementPolicyPitrPolicy> pitrPolicies;
         public Builder() {}
         public Builder(GetDbSystemManagementPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupPolicies = defaults.backupPolicies;
     	      this.maintenanceWindowStart = defaults.maintenanceWindowStart;
+    	      this.pitrPolicies = defaults.pitrPolicies;
         }
 
         @CustomType.Setter
@@ -76,10 +91,22 @@ public final class GetDbSystemManagementPolicy {
             this.maintenanceWindowStart = maintenanceWindowStart;
             return this;
         }
+        @CustomType.Setter
+        public Builder pitrPolicies(List<GetDbSystemManagementPolicyPitrPolicy> pitrPolicies) {
+            if (pitrPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemManagementPolicy", "pitrPolicies");
+            }
+            this.pitrPolicies = pitrPolicies;
+            return this;
+        }
+        public Builder pitrPolicies(GetDbSystemManagementPolicyPitrPolicy... pitrPolicies) {
+            return pitrPolicies(List.of(pitrPolicies));
+        }
         public GetDbSystemManagementPolicy build() {
             final var _resultValue = new GetDbSystemManagementPolicy();
             _resultValue.backupPolicies = backupPolicies;
             _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            _resultValue.pitrPolicies = pitrPolicies;
             return _resultValue;
         }
     }

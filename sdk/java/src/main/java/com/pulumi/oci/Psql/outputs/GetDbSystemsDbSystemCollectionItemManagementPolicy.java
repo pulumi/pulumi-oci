@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy;
+import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -22,6 +23,11 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
      * 
      */
     private String maintenanceWindowStart;
+    /**
+     * @return Point-in-time recovery policy.
+     * 
+     */
+    private List<GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy> pitrPolicies;
 
     private GetDbSystemsDbSystemCollectionItemManagementPolicy() {}
     /**
@@ -38,6 +44,13 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
     public String maintenanceWindowStart() {
         return this.maintenanceWindowStart;
     }
+    /**
+     * @return Point-in-time recovery policy.
+     * 
+     */
+    public List<GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy> pitrPolicies() {
+        return this.pitrPolicies;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -50,11 +63,13 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
     public static final class Builder {
         private List<GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy> backupPolicies;
         private String maintenanceWindowStart;
+        private List<GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy> pitrPolicies;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemCollectionItemManagementPolicy defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupPolicies = defaults.backupPolicies;
     	      this.maintenanceWindowStart = defaults.maintenanceWindowStart;
+    	      this.pitrPolicies = defaults.pitrPolicies;
         }
 
         @CustomType.Setter
@@ -76,10 +91,22 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
             this.maintenanceWindowStart = maintenanceWindowStart;
             return this;
         }
+        @CustomType.Setter
+        public Builder pitrPolicies(List<GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy> pitrPolicies) {
+            if (pitrPolicies == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItemManagementPolicy", "pitrPolicies");
+            }
+            this.pitrPolicies = pitrPolicies;
+            return this;
+        }
+        public Builder pitrPolicies(GetDbSystemsDbSystemCollectionItemManagementPolicyPitrPolicy... pitrPolicies) {
+            return pitrPolicies(List.of(pitrPolicies));
+        }
         public GetDbSystemsDbSystemCollectionItemManagementPolicy build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItemManagementPolicy();
             _resultValue.backupPolicies = backupPolicies;
             _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            _resultValue.pitrPolicies = pitrPolicies;
             return _resultValue;
         }
     }

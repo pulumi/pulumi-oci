@@ -26,6 +26,8 @@ import (
 //
 // import (
 //
+//	"encoding/json"
+//
 //	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/events"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
@@ -33,13 +35,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := events.NewRule(ctx, "test_rule", &events.RuleArgs{
+//			tmpJSON0, err := json.Marshal(map[string]interface{}{})
+//			if err != nil {
+//				return err
+//			}
+//			json0 := string(tmpJSON0)
+//			_, err = events.NewRule(ctx, "test_rule", &events.RuleArgs{
 //				Actions: &events.RuleActionsArgs{
 //					Actions: events.RuleActionsActionArray{
 //						&events.RuleActionsActionArgs{
-//							ActionType:  pulumi.Any(ruleActionsActionsActionType),
-//							IsEnabled:   pulumi.Any(ruleActionsActionsIsEnabled),
-//							Description: pulumi.Any(ruleActionsActionsDescription),
+//							ActionType:  pulumi.Any(ruleActionsActionActionType),
+//							IsEnabled:   pulumi.Any(ruleActionsActionIsEnabled),
+//							Description: pulumi.Any(ruleActionsActionDescription),
 //							FunctionId:  pulumi.Any(testFunction.Id),
 //							StreamId:    pulumi.Any(testStream.Id),
 //							TopicId:     pulumi.Any(testTopic.Id),
@@ -47,9 +54,15 @@ import (
 //					},
 //				},
 //				CompartmentId: pulumi.Any(compartmentId),
-//				Condition:     pulumi.Any(ruleCondition),
-//				DisplayName:   pulumi.Any(ruleDisplayName),
-//				IsEnabled:     pulumi.Any(ruleIsEnabled),
+//				ConditionDetails: &events.RuleConditionDetailsArgs{
+//					EventTypes: pulumi.StringArray{
+//						pulumi.String("com.oraclecloud.objectstorage.createbucket"),
+//						pulumi.String("com.oraclecloud.objectstorage.deletebucket"),
+//					},
+//					Data: pulumi.String(json0),
+//				},
+//				DisplayName: pulumi.Any(ruleDisplayName),
+//				IsEnabled:   pulumi.Any(ruleIsEnabled),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -81,7 +94,7 @@ type Rule struct {
 	Actions RuleActionsOutput `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+	// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	//
 	// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -93,8 +106,10 @@ type Rule struct {
 	//
 	// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 	//
-	// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+	// Example:
 	Condition pulumi.StringOutput `pulumi:"condition"`
+	// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+	ConditionDetails RuleConditionDetailsPtrOutput `pulumi:"conditionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -129,9 +144,6 @@ func NewRule(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
-	if args.Condition == nil {
-		return nil, errors.New("invalid value for required argument 'Condition'")
-	}
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
@@ -165,7 +177,7 @@ type ruleState struct {
 	Actions *RuleActions `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+	// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	//
 	// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -177,8 +189,10 @@ type ruleState struct {
 	//
 	// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 	//
-	// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+	// Example:
 	Condition *string `pulumi:"condition"`
+	// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+	ConditionDetails *RuleConditionDetails `pulumi:"conditionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -205,7 +219,7 @@ type RuleState struct {
 	Actions RuleActionsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+	// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	//
 	// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -217,8 +231,10 @@ type RuleState struct {
 	//
 	// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 	//
-	// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+	// Example:
 	Condition pulumi.StringPtrInput
+	// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+	ConditionDetails RuleConditionDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -249,7 +265,7 @@ type ruleArgs struct {
 	Actions RuleActions `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+	// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	//
 	// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -261,8 +277,10 @@ type ruleArgs struct {
 	//
 	// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 	//
-	// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
-	Condition string `pulumi:"condition"`
+	// Example:
+	Condition *string `pulumi:"condition"`
+	// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+	ConditionDetails *RuleConditionDetails `pulumi:"conditionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -284,7 +302,7 @@ type RuleArgs struct {
 	Actions RuleActionsInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringInput
-	// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+	// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	//
 	// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -296,8 +314,10 @@ type RuleArgs struct {
 	//
 	// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 	//
-	// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
-	Condition pulumi.StringInput
+	// Example:
+	Condition pulumi.StringPtrInput
+	// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+	ConditionDetails RuleConditionDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -410,7 +430,7 @@ func (o RuleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
 // * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 //
 // For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -422,9 +442,14 @@ func (o RuleOutput) CompartmentId() pulumi.StringOutput {
 //
 // For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 //
-// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+// Example:
 func (o RuleOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Condition }).(pulumi.StringOutput)
+}
+
+// (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+func (o RuleOutput) ConditionDetails() RuleConditionDetailsPtrOutput {
+	return o.ApplyT(func(v *Rule) RuleConditionDetailsPtrOutput { return v.ConditionDetails }).(RuleConditionDetailsPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

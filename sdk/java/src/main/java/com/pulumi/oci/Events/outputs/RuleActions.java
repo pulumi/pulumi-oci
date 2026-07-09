@@ -4,10 +4,10 @@
 package com.pulumi.oci.Events.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.outputs.RuleActionsAction;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class RuleActions {
@@ -15,15 +15,35 @@ public final class RuleActions {
      * @return (Updatable) A list of one or more ActionDetails objects.
      * 
      */
-    private List<RuleActionsAction> actions;
+    private @Nullable List<RuleActionsAction> action;
+    /**
+     * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
+     * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
+     */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    private @Nullable List<RuleActionsAction> actions;
 
     private RuleActions() {}
     /**
      * @return (Updatable) A list of one or more ActionDetails objects.
      * 
      */
+    public List<RuleActionsAction> action() {
+        return this.action == null ? List.of() : this.action;
+    }
+    /**
+     * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
+     * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
+     */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
     public List<RuleActionsAction> actions() {
-        return this.actions;
+        return this.actions == null ? List.of() : this.actions;
     }
 
     public static Builder builder() {
@@ -35,18 +55,27 @@ public final class RuleActions {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<RuleActionsAction> actions;
+        private @Nullable List<RuleActionsAction> action;
+        private @Nullable List<RuleActionsAction> actions;
         public Builder() {}
         public Builder(RuleActions defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.actions = defaults.actions;
         }
 
         @CustomType.Setter
-        public Builder actions(List<RuleActionsAction> actions) {
-            if (actions == null) {
-              throw new MissingRequiredPropertyException("RuleActions", "actions");
-            }
+        public Builder action(@Nullable List<RuleActionsAction> action) {
+
+            this.action = action;
+            return this;
+        }
+        public Builder action(RuleActionsAction... action) {
+            return action(List.of(action));
+        }
+        @CustomType.Setter
+        public Builder actions(@Nullable List<RuleActionsAction> actions) {
+
             this.actions = actions;
             return this;
         }
@@ -55,6 +84,7 @@ public final class RuleActions {
         }
         public RuleActions build() {
             final var _resultValue = new RuleActions();
+            _resultValue.action = action;
             _resultValue.actions = actions;
             return _resultValue;
         }

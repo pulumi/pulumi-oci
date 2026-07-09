@@ -16,11 +16,19 @@ namespace Pulumi.Oci.Events.Outputs
         /// <summary>
         /// (Updatable) A list of one or more ActionDetails objects.
         /// </summary>
+        public readonly ImmutableArray<Outputs.RuleActionsAction> Action;
+        /// <summary>
+        /// (Updatable) Deprecated. Use `Action` instead. This nested block is retained for backward compatibility.
+        /// </summary>
         public readonly ImmutableArray<Outputs.RuleActionsAction> Actions;
 
         [OutputConstructor]
-        private RuleActions(ImmutableArray<Outputs.RuleActionsAction> actions)
+        private RuleActions(
+            ImmutableArray<Outputs.RuleActionsAction> action,
+
+            ImmutableArray<Outputs.RuleActionsAction> actions)
         {
+            Action = action;
             Actions = actions;
         }
     }

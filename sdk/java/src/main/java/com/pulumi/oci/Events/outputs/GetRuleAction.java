@@ -11,17 +11,29 @@ import java.util.Objects;
 
 @CustomType
 public final class GetRuleAction {
+    private List<GetRuleActionAction> action;
     /**
      * @return A list of one or more Action objects.
      * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
      */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
     private List<GetRuleActionAction> actions;
 
     private GetRuleAction() {}
+    public List<GetRuleActionAction> action() {
+        return this.action;
+    }
     /**
      * @return A list of one or more Action objects.
      * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
      */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
     public List<GetRuleActionAction> actions() {
         return this.actions;
     }
@@ -35,13 +47,26 @@ public final class GetRuleAction {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetRuleActionAction> action;
         private List<GetRuleActionAction> actions;
         public Builder() {}
         public Builder(GetRuleAction defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
     	      this.actions = defaults.actions;
         }
 
+        @CustomType.Setter
+        public Builder action(List<GetRuleActionAction> action) {
+            if (action == null) {
+              throw new MissingRequiredPropertyException("GetRuleAction", "action");
+            }
+            this.action = action;
+            return this;
+        }
+        public Builder action(GetRuleActionAction... action) {
+            return action(List.of(action));
+        }
         @CustomType.Setter
         public Builder actions(List<GetRuleActionAction> actions) {
             if (actions == null) {
@@ -55,6 +80,7 @@ public final class GetRuleAction {
         }
         public GetRuleAction build() {
             final var _resultValue = new GetRuleAction();
+            _resultValue.action = action;
             _resultValue.actions = actions;
             return _resultValue;
         }

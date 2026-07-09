@@ -26,7 +26,7 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
      */
     declare public readonly auth: pulumi.Output<string | undefined>;
     /**
@@ -65,9 +65,49 @@ export class Provider extends pulumi.ProviderResource {
     declare public readonly tenancyOcid: pulumi.Output<string | undefined>;
     declare public readonly testTimeMaintenanceRebootDue: pulumi.Output<string | undefined>;
     /**
+     * (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+     */
+    declare public readonly tokenExchangeAuth: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+     */
+    declare public readonly tokenExchangeClientId: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+     */
+    declare public readonly tokenExchangeClientSecret: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    declare public readonly tokenExchangeDomainUrl: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+     */
+    declare public readonly tokenExchangePublicKey: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    declare public readonly tokenExchangeRequestedTokenType: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    declare public readonly tokenExchangeResourceType: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+     */
+    declare public readonly tokenExchangeRpstExp: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    declare public readonly tokenExchangeSubjectTokenType: pulumi.Output<string | undefined>;
+    /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     declare public readonly userOcid: pulumi.Output<string | undefined>;
+    /**
+     * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    declare public readonly workloadIdentityTokenPath: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -95,10 +135,20 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["retryDurationSeconds"] = pulumi.output(args?.retryDurationSeconds).apply(JSON.stringify);
             resourceInputs["tenancyOcid"] = args?.tenancyOcid;
             resourceInputs["testTimeMaintenanceRebootDue"] = args?.testTimeMaintenanceRebootDue;
+            resourceInputs["tokenExchangeAuth"] = args?.tokenExchangeAuth;
+            resourceInputs["tokenExchangeClientId"] = args?.tokenExchangeClientId;
+            resourceInputs["tokenExchangeClientSecret"] = args?.tokenExchangeClientSecret ? pulumi.secret(args.tokenExchangeClientSecret) : undefined;
+            resourceInputs["tokenExchangeDomainUrl"] = args?.tokenExchangeDomainUrl;
+            resourceInputs["tokenExchangePublicKey"] = args?.tokenExchangePublicKey;
+            resourceInputs["tokenExchangeRequestedTokenType"] = args?.tokenExchangeRequestedTokenType;
+            resourceInputs["tokenExchangeResourceType"] = args?.tokenExchangeResourceType;
+            resourceInputs["tokenExchangeRpstExp"] = args?.tokenExchangeRpstExp;
+            resourceInputs["tokenExchangeSubjectTokenType"] = args?.tokenExchangeSubjectTokenType;
             resourceInputs["userOcid"] = args?.userOcid;
+            resourceInputs["workloadIdentityTokenPath"] = args?.workloadIdentityTokenPath;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["privateKey", "privateKeyPassword"] };
+        const secretOpts = { additionalSecretOutputs: ["privateKey", "privateKeyPassword", "tokenExchangeClientSecret"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
@@ -118,7 +168,7 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+     * (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
      */
     auth?: pulumi.Input<string | undefined>;
     /**
@@ -179,9 +229,49 @@ export interface ProviderArgs {
     tenancyOcid?: pulumi.Input<string | undefined>;
     testTimeMaintenanceRebootDue?: pulumi.Input<string | undefined>;
     /**
+     * (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+     */
+    tokenExchangeAuth?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+     */
+    tokenExchangeClientId?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+     */
+    tokenExchangeClientSecret?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    tokenExchangeDomainUrl?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+     */
+    tokenExchangePublicKey?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    tokenExchangeRequestedTokenType?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    tokenExchangeResourceType?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+     */
+    tokenExchangeRpstExp?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    tokenExchangeSubjectTokenType?: pulumi.Input<string | undefined>;
+    /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
      */
     userOcid?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+     */
+    workloadIdentityTokenPath?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {

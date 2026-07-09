@@ -18,7 +18,7 @@ import (
 type Provider struct {
 	pulumi.ProviderResourceState
 
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrOutput `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrOutput `pulumi:"configFileProfile"`
@@ -39,8 +39,28 @@ type Provider struct {
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  pulumi.StringPtrOutput `pulumi:"tenancyOcid"`
 	TestTimeMaintenanceRebootDue pulumi.StringPtrOutput `pulumi:"testTimeMaintenanceRebootDue"`
+	// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+	TokenExchangeAuth pulumi.StringPtrOutput `pulumi:"tokenExchangeAuth"`
+	// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientId pulumi.StringPtrOutput `pulumi:"tokenExchangeClientId"`
+	// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientSecret pulumi.StringPtrOutput `pulumi:"tokenExchangeClientSecret"`
+	// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeDomainUrl pulumi.StringPtrOutput `pulumi:"tokenExchangeDomainUrl"`
+	// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangePublicKey pulumi.StringPtrOutput `pulumi:"tokenExchangePublicKey"`
+	// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeRequestedTokenType pulumi.StringPtrOutput `pulumi:"tokenExchangeRequestedTokenType"`
+	// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeResourceType pulumi.StringPtrOutput `pulumi:"tokenExchangeResourceType"`
+	// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangeRpstExp pulumi.StringPtrOutput `pulumi:"tokenExchangeRpstExp"`
+	// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeSubjectTokenType pulumi.StringPtrOutput `pulumi:"tokenExchangeSubjectTokenType"`
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrOutput `pulumi:"userOcid"`
+	// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	WorkloadIdentityTokenPath pulumi.StringPtrOutput `pulumi:"workloadIdentityTokenPath"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
@@ -56,9 +76,13 @@ func NewProvider(ctx *pulumi.Context,
 	if args.PrivateKeyPassword != nil {
 		args.PrivateKeyPassword = pulumi.ToSecret(args.PrivateKeyPassword).(pulumi.StringPtrInput)
 	}
+	if args.TokenExchangeClientSecret != nil {
+		args.TokenExchangeClientSecret = pulumi.ToSecret(args.TokenExchangeClientSecret).(pulumi.StringPtrInput)
+	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"privateKey",
 		"privateKeyPassword",
+		"tokenExchangeClientSecret",
 	})
 	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
@@ -71,7 +95,7 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
 	Auth *string `pulumi:"auth"`
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile *string `pulumi:"configFileProfile"`
@@ -104,13 +128,33 @@ type providerArgs struct {
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  *string `pulumi:"tenancyOcid"`
 	TestTimeMaintenanceRebootDue *string `pulumi:"testTimeMaintenanceRebootDue"`
+	// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+	TokenExchangeAuth *string `pulumi:"tokenExchangeAuth"`
+	// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientId *string `pulumi:"tokenExchangeClientId"`
+	// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientSecret *string `pulumi:"tokenExchangeClientSecret"`
+	// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeDomainUrl *string `pulumi:"tokenExchangeDomainUrl"`
+	// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangePublicKey *string `pulumi:"tokenExchangePublicKey"`
+	// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeRequestedTokenType *string `pulumi:"tokenExchangeRequestedTokenType"`
+	// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeResourceType *string `pulumi:"tokenExchangeResourceType"`
+	// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangeRpstExp *string `pulumi:"tokenExchangeRpstExp"`
+	// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeSubjectTokenType *string `pulumi:"tokenExchangeSubjectTokenType"`
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid *string `pulumi:"userOcid"`
+	// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	WorkloadIdentityTokenPath *string `pulumi:"workloadIdentityTokenPath"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
-	// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+	// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
 	Auth pulumi.StringPtrInput
 	// (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
 	ConfigFileProfile pulumi.StringPtrInput
@@ -143,8 +187,28 @@ type ProviderArgs struct {
 	// (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	TenancyOcid                  pulumi.StringPtrInput
 	TestTimeMaintenanceRebootDue pulumi.StringPtrInput
+	// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+	TokenExchangeAuth pulumi.StringPtrInput
+	// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientId pulumi.StringPtrInput
+	// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+	TokenExchangeClientSecret pulumi.StringPtrInput
+	// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeDomainUrl pulumi.StringPtrInput
+	// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangePublicKey pulumi.StringPtrInput
+	// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeRequestedTokenType pulumi.StringPtrInput
+	// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeResourceType pulumi.StringPtrInput
+	// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+	TokenExchangeRpstExp pulumi.StringPtrInput
+	// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	TokenExchangeSubjectTokenType pulumi.StringPtrInput
 	// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 	UserOcid pulumi.StringPtrInput
+	// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+	WorkloadIdentityTokenPath pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -207,7 +271,7 @@ func (o ProviderOutput) ToProviderOutputWithContext(ctx context.Context) Provide
 	return o
 }
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
 func (o ProviderOutput) Auth() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Auth }).(pulumi.StringPtrOutput)
 }
@@ -258,9 +322,59 @@ func (o ProviderOutput) TestTimeMaintenanceRebootDue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TestTimeMaintenanceRebootDue }).(pulumi.StringPtrOutput)
 }
 
+// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+func (o ProviderOutput) TokenExchangeAuth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeAuth }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+func (o ProviderOutput) TokenExchangeClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeClientId }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+func (o ProviderOutput) TokenExchangeClientSecret() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeClientSecret }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func (o ProviderOutput) TokenExchangeDomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeDomainUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+func (o ProviderOutput) TokenExchangePublicKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangePublicKey }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func (o ProviderOutput) TokenExchangeRequestedTokenType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeRequestedTokenType }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func (o ProviderOutput) TokenExchangeResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeResourceType }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+func (o ProviderOutput) TokenExchangeRpstExp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeRpstExp }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func (o ProviderOutput) TokenExchangeSubjectTokenType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TokenExchangeSubjectTokenType }).(pulumi.StringPtrOutput)
+}
+
 // (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func (o ProviderOutput) UserOcid() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.UserOcid }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func (o ProviderOutput) WorkloadIdentityTokenPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.WorkloadIdentityTokenPath }).(pulumi.StringPtrOutput)
 }
 
 func init() {

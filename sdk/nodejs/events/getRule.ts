@@ -56,6 +56,7 @@ export interface GetRuleResult {
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
      */
     readonly condition: string;
+    readonly conditionDetails: outputs.Events.GetRuleConditionDetail[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */

@@ -10,10 +10,12 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Events.RuleArgs;
 import com.pulumi.oci.Events.inputs.RuleState;
 import com.pulumi.oci.Events.outputs.RuleActions;
+import com.pulumi.oci.Events.outputs.RuleConditionDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -37,6 +39,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Events.RuleArgs;
  * import com.pulumi.oci.Events.inputs.RuleActionsArgs;
  * import com.pulumi.oci.Events.inputs.RuleActionsActionArgs;
+ * import com.pulumi.oci.Events.inputs.RuleConditionDetailsArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -53,16 +57,24 @@ import javax.annotation.Nullable;
  *         var testRule = new Rule("testRule", RuleArgs.builder()
  *             .actions(RuleActionsArgs.builder()
  *                 .actions(RuleActionsActionArgs.builder()
- *                     .actionType(ruleActionsActionsActionType)
- *                     .isEnabled(ruleActionsActionsIsEnabled)
- *                     .description(ruleActionsActionsDescription)
+ *                     .actionType(ruleActionsActionActionType)
+ *                     .isEnabled(ruleActionsActionIsEnabled)
+ *                     .description(ruleActionsActionDescription)
  *                     .functionId(testFunction.id())
  *                     .streamId(testStream.id())
  *                     .topicId(testTopic.id())
  *                     .build())
  *                 .build())
  *             .compartmentId(compartmentId)
- *             .condition(ruleCondition)
+ *             .conditionDetails(RuleConditionDetailsArgs.builder()
+ *                 .eventTypes(                
+ *                     "com.oraclecloud.objectstorage.createbucket",
+ *                     "com.oraclecloud.objectstorage.deletebucket")
+ *                 .data(serializeJson(
+ *                     jsonObject(
+ * 
+ *                     )))
+ *                 .build())
  *             .displayName(ruleDisplayName)
  *             .isEnabled(ruleIsEnabled)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -115,7 +127,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+     * (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
      * 
      * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -127,14 +139,14 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * 
      * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * 
-     * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+     * Example:
      * 
      */
     @Export(name="condition", refs={String.class}, tree="[0]")
     private Output<String> condition;
 
     /**
-     * @return (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+     * @return (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
      * 
      * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -146,11 +158,25 @@ public class Rule extends com.pulumi.resources.CustomResource {
      * 
      * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * 
-     * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+     * Example:
      * 
      */
     public Output<String> condition() {
         return this.condition;
+    }
+    /**
+     * (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+     * 
+     */
+    @Export(name="conditionDetails", refs={RuleConditionDetails.class}, tree="[0]")
+    private Output</* @Nullable */ RuleConditionDetails> conditionDetails;
+
+    /**
+     * @return (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+     * 
+     */
+    public Output<Optional<RuleConditionDetails>> conditionDetails() {
+        return Codegen.optional(this.conditionDetails);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`

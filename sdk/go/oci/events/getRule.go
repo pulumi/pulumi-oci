@@ -64,7 +64,8 @@ type LookupRuleResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-	Condition string `pulumi:"condition"`
+	Condition        string                   `pulumi:"condition"`
+	ConditionDetails []GetRuleConditionDetail `pulumi:"conditionDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -134,6 +135,10 @@ func (o LookupRuleResultOutput) CompartmentId() pulumi.StringOutput {
 // * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 func (o LookupRuleResultOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Condition }).(pulumi.StringOutput)
+}
+
+func (o LookupRuleResultOutput) ConditionDetails() GetRuleConditionDetailArrayOutput {
+	return o.ApplyT(func(v LookupRuleResult) []GetRuleConditionDetail { return v.ConditionDetails }).(GetRuleConditionDetailArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

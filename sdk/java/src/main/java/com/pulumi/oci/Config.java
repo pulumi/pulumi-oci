@@ -15,7 +15,7 @@ public final class Config {
 
     private static final com.pulumi.Config config = com.pulumi.Config.of("oci");
 /**
- * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+ * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
  * 
  */
     public Optional<String> auth() {
@@ -120,10 +120,80 @@ public final class Config {
         return Codegen.stringProp("testTimeMaintenanceRebootDue").config(config).get();
     }
 /**
+ * (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+ * 
+ */
+    public Optional<String> tokenExchangeAuth() {
+        return Codegen.stringProp("tokenExchangeAuth").config(config).get();
+    }
+/**
+ * (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeClientId() {
+        return Codegen.stringProp("tokenExchangeClientId").config(config).get();
+    }
+/**
+ * (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeClientSecret() {
+        return Codegen.stringProp("tokenExchangeClientSecret").config(config).get();
+    }
+/**
+ * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeDomainUrl() {
+        return Codegen.stringProp("tokenExchangeDomainUrl").config(config).get();
+    }
+/**
+ * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+ * 
+ */
+    public Optional<String> tokenExchangePublicKey() {
+        return Codegen.stringProp("tokenExchangePublicKey").config(config).get();
+    }
+/**
+ * (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeRequestedTokenType() {
+        return Codegen.stringProp("tokenExchangeRequestedTokenType").config(config).get();
+    }
+/**
+ * (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeResourceType() {
+        return Codegen.stringProp("tokenExchangeResourceType").config(config).get();
+    }
+/**
+ * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+ * 
+ */
+    public Optional<String> tokenExchangeRpstExp() {
+        return Codegen.stringProp("tokenExchangeRpstExp").config(config).get();
+    }
+/**
+ * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> tokenExchangeSubjectTokenType() {
+        return Codegen.stringProp("tokenExchangeSubjectTokenType").config(config).get();
+    }
+/**
  * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> userOcid() {
         return Codegen.stringProp("userOcid").config(config).get();
+    }
+/**
+ * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+ * 
+ */
+    public Optional<String> workloadIdentityTokenPath() {
+        return Codegen.stringProp("workloadIdentityTokenPath").config(config).get();
     }
 }

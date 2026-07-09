@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.inputs.RuleActionsArgs;
+import com.pulumi.oci.Events.inputs.RuleConditionDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -50,7 +51,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+     * (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
      * 
      * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -62,14 +63,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * 
-     * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+     * Example:
      * 
      */
-    @Import(name="condition", required=true)
-    private Output<String> condition;
+    @Import(name="condition")
+    private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+     * @return (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
      * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
      * 
      * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -81,11 +82,26 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
      * 
-     * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+     * Example:
      * 
      */
-    public Output<String> condition() {
-        return this.condition;
+    public Optional<Output<String>> condition() {
+        return Optional.ofNullable(this.condition);
+    }
+
+    /**
+     * (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+     * 
+     */
+    @Import(name="conditionDetails")
+    private @Nullable Output<RuleConditionDetailsArgs> conditionDetails;
+
+    /**
+     * @return (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+     * 
+     */
+    public Optional<Output<RuleConditionDetailsArgs>> conditionDetails() {
+        return Optional.ofNullable(this.conditionDetails);
     }
 
     /**
@@ -175,6 +191,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         this.actions = $.actions;
         this.compartmentId = $.compartmentId;
         this.condition = $.condition;
+        this.conditionDetails = $.conditionDetails;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -243,7 +260,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param condition (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+         * @param condition (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
          * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
          * 
          * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -255,18 +272,18 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
          * 
-         * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+         * Example:
          * 
          * @return builder
          * 
          */
-        public Builder condition(Output<String> condition) {
+        public Builder condition(@Nullable Output<String> condition) {
             $.condition = condition;
             return this;
         }
 
         /**
-         * @param condition (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+         * @param condition (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `conditionDetails`. This argument is retained for backward compatibility. For new configurations, `conditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
          * * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
          * 
          * For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -278,13 +295,34 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
          * 
-         * Example: `\&#34;eventType\&#34;: \&#34;com.oraclecloud.databaseservice.autonomous.database.backup.end\&#34;`
+         * Example:
          * 
          * @return builder
          * 
          */
         public Builder condition(String condition) {
             return condition(Output.of(condition));
+        }
+
+        /**
+         * @param conditionDetails (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder conditionDetails(@Nullable Output<RuleConditionDetailsArgs> conditionDetails) {
+            $.conditionDetails = conditionDetails;
+            return this;
+        }
+
+        /**
+         * @param conditionDetails (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `conditionDetails`. This is the recommended form for new configurations.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder conditionDetails(RuleConditionDetailsArgs conditionDetails) {
+            return conditionDetails(Output.of(conditionDetails));
         }
 
         /**
@@ -404,9 +442,6 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("RuleArgs", "compartmentId");
-            }
-            if ($.condition == null) {
-                throw new MissingRequiredPropertyException("RuleArgs", "condition");
             }
             if ($.displayName == null) {
                 throw new MissingRequiredPropertyException("RuleArgs", "displayName");

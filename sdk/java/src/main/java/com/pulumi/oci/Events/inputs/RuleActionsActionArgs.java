@@ -18,7 +18,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     public static final RuleActionsActionArgs Empty = new RuleActionsActionArgs();
 
     /**
-     * (Updatable) The action to perform if the condition in the rule matches an event.
+     * The action to perform if the condition in the rule matches an event.
      * * **ONS:** Send to an Oracle Notification Service topic.
      * * **OSS:** Send to a stream from Oracle Streaming Service.
      * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -28,7 +28,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     private Output<String> actionType;
 
     /**
-     * @return (Updatable) The action to perform if the condition in the rule matches an event.
+     * @return The action to perform if the condition in the rule matches an event.
      * * **ONS:** Send to an Oracle Notification Service topic.
      * * **OSS:** Send to a stream from Oracle Streaming Service.
      * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -39,14 +39,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -54,14 +54,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -84,14 +84,20 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Whether or not this action is currently enabled.  Example: `true`
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
+     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -129,14 +135,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
      * 
      */
     @Import(name="streamId")
     private @Nullable Output<String> streamId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
      * 
      */
     public Optional<Output<String>> streamId() {
@@ -144,14 +150,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
      * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
      * 
      */
     public Optional<Output<String>> topicId() {
@@ -191,7 +197,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param actionType (Updatable) The action to perform if the condition in the rule matches an event.
+         * @param actionType The action to perform if the condition in the rule matches an event.
          * * **ONS:** Send to an Oracle Notification Service topic.
          * * **OSS:** Send to a stream from Oracle Streaming Service.
          * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -205,7 +211,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param actionType (Updatable) The action to perform if the condition in the rule matches an event.
+         * @param actionType The action to perform if the condition in the rule matches an event.
          * * **ONS:** Send to an Oracle Notification Service topic.
          * * **OSS:** Send to a stream from Oracle Streaming Service.
          * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -218,7 +224,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         * @param description (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -229,7 +235,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         * @param description (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -239,7 +245,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+         * @param functionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
          * 
          * @return builder
          * 
@@ -250,7 +256,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+         * @param functionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
          * 
          * @return builder
          * 
@@ -281,7 +287,10 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isEnabled (Updatable) Whether or not this action is currently enabled.  Example: `true`
+         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -292,7 +301,10 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isEnabled (Updatable) Whether or not this action is currently enabled.  Example: `true`
+         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -344,7 +356,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param streamId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+         * @param streamId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
          * 
          * @return builder
          * 
@@ -355,7 +367,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param streamId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+         * @param streamId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
          * 
          * @return builder
          * 
@@ -365,7 +377,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param topicId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+         * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
          * 
          * @return builder
          * 
@@ -376,7 +388,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param topicId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+         * @param topicId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
          * 
          * @return builder
          * 

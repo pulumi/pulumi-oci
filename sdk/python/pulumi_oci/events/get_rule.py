@@ -27,7 +27,7 @@ class GetRuleResult:
     """
     A collection of values returned by getRule.
     """
-    def __init__(__self__, actions=None, compartment_id=None, condition=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_message=None, rule_id=None, state=None, time_created=None):
+    def __init__(__self__, actions=None, compartment_id=None, condition=None, condition_details=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_message=None, rule_id=None, state=None, time_created=None):
         if actions and not isinstance(actions, list):
             raise TypeError("Expected argument 'actions' to be a list")
         pulumi.set(__self__, "actions", actions)
@@ -37,6 +37,9 @@ class GetRuleResult:
         if condition and not isinstance(condition, str):
             raise TypeError("Expected argument 'condition' to be a str")
         pulumi.set(__self__, "condition", condition)
+        if condition_details and not isinstance(condition_details, list):
+            raise TypeError("Expected argument 'condition_details' to be a list")
+        pulumi.set(__self__, "condition_details", condition_details)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -92,6 +95,11 @@ class GetRuleResult:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
         """
         return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter(name="conditionDetails")
+    def condition_details(self) -> Sequence['outputs.GetRuleConditionDetailResult']:
+        return pulumi.get(self, "condition_details")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -180,6 +188,7 @@ class AwaitableGetRuleResult(GetRuleResult):
             actions=self.actions,
             compartment_id=self.compartment_id,
             condition=self.condition,
+            condition_details=self.condition_details,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -220,6 +229,7 @@ def get_rule(rule_id: Optional[_builtins.str] = None,
         actions=pulumi.get(__ret__, 'actions'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         condition=pulumi.get(__ret__, 'condition'),
+        condition_details=pulumi.get(__ret__, 'condition_details'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -257,6 +267,7 @@ def get_rule_output(rule_id: pulumi.Input[Optional[_builtins.str]] = None,
         actions=pulumi.get(__response__, 'actions'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         condition=pulumi.get(__response__, 'condition'),
+        condition_details=pulumi.get(__response__, 'condition_details'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),

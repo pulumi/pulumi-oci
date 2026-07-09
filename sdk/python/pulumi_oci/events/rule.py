@@ -23,9 +23,10 @@ class RuleArgs:
     def __init__(__self__, *,
                  actions: pulumi.Input['RuleActionsArgs'],
                  compartment_id: pulumi.Input[_builtins.str],
-                 condition: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
                  is_enabled: pulumi.Input[_builtins.bool],
+                 condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_details: pulumi.Input[Optional['RuleConditionDetailsArgs']] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
@@ -34,7 +35,13 @@ class RuleArgs:
 
         :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] condition: (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
                
                For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -46,22 +53,20 @@ class RuleArgs:
                
                For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
                
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Example:
+        :param pulumi.Input['RuleConditionDetailsArgs'] condition_details: (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "actions", actions)
         pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "condition", condition)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "is_enabled", is_enabled)
+        if condition is not None:
+            pulumi.set(__self__, "condition", condition)
+        if condition_details is not None:
+            pulumi.set(__self__, "condition_details", condition_details)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -94,30 +99,6 @@ class RuleArgs:
         pulumi.set(self, "compartment_id", value)
 
     @_builtins.property
-    @pulumi.getter
-    def condition(self) -> pulumi.Input[_builtins.str]:
-        """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
-        * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
-
-        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
-        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
-
-        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
-        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
-        * Wildcard matching is supported with the asterisk (*) character.
-
-        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
-
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
-        """
-        return pulumi.get(self, "condition")
-
-    @condition.setter
-    def condition(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "condition", value)
-
-    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
@@ -144,6 +125,42 @@ class RuleArgs:
     @is_enabled.setter
     def is_enabled(self, value: pulumi.Input[_builtins.bool]):
         pulumi.set(self, "is_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
+        * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
+
+        For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
+        * For a condition with fields to match an event, the event must contain all the field names  listed in the condition. Field names must appear in the condition with the same nesting  structure used in the event.
+
+        For a list of reference events, see  [Services that Produce Events](https://docs.cloud.oracle.com/iaas/Content/Events/Reference/eventsproducers.htm).
+        * Rules apply to events in the compartment in which you create them and any child compartments.  This means that a condition specified by a rule only matches events emitted from resources in  the compartment or any of its child compartments.
+        * Wildcard matching is supported with the asterisk (*) character.
+
+        For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
+
+        Example:
+        """
+        return pulumi.get(self, "condition")
+
+    @condition.setter
+    def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "condition", value)
+
+    @_builtins.property
+    @pulumi.getter(name="conditionDetails")
+    def condition_details(self) -> pulumi.Input[Optional['RuleConditionDetailsArgs']]:
+        """
+        (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
+        """
+        return pulumi.get(self, "condition_details")
+
+    @condition_details.setter
+    def condition_details(self, value: pulumi.Input[Optional['RuleConditionDetailsArgs']]):
+        pulumi.set(self, "condition_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -188,6 +205,7 @@ class _RuleState:
                  actions: pulumi.Input[Optional['RuleActionsArgs']] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_details: pulumi.Input[Optional['RuleConditionDetailsArgs']] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -201,7 +219,7 @@ class _RuleState:
 
         :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        :param pulumi.Input[_builtins.str] condition: (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
                
                For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -213,7 +231,8 @@ class _RuleState:
                
                For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
                
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
+               Example:
+        :param pulumi.Input['RuleConditionDetailsArgs'] condition_details: (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -233,6 +252,8 @@ class _RuleState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if condition is not None:
             pulumi.set(__self__, "condition", condition)
+        if condition_details is not None:
+            pulumi.set(__self__, "condition_details", condition_details)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -278,7 +299,7 @@ class _RuleState:
     @pulumi.getter
     def condition(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 
         For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -290,13 +311,25 @@ class _RuleState:
 
         For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
+        Example:
         """
         return pulumi.get(self, "condition")
 
     @condition.setter
     def condition(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "condition", value)
+
+    @_builtins.property
+    @pulumi.getter(name="conditionDetails")
+    def condition_details(self) -> pulumi.Input[Optional['RuleConditionDetailsArgs']]:
+        """
+        (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
+        """
+        return pulumi.get(self, "condition_details")
+
+    @condition_details.setter
+    def condition_details(self, value: pulumi.Input[Optional['RuleConditionDetailsArgs']]):
+        pulumi.set(self, "condition_details", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -408,6 +441,7 @@ class Rule(pulumi.CustomResource):
                  actions: pulumi.Input[Optional[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_details: pulumi.Input[Optional[Union['RuleConditionDetailsArgs', 'RuleConditionDetailsArgsDict']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -426,21 +460,28 @@ class Rule(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import json
         import pulumi_oci as oci
 
         test_rule = oci.events.Rule("test_rule",
             actions={
                 "actions": [{
-                    "action_type": rule_actions_actions_action_type,
-                    "is_enabled": rule_actions_actions_is_enabled == "true",
-                    "description": rule_actions_actions_description,
+                    "action_type": rule_actions_action_action_type,
+                    "is_enabled": rule_actions_action_is_enabled == "true",
+                    "description": rule_actions_action_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
                     "topic_id": test_topic["id"],
                 }],
             },
             compartment_id=compartment_id,
-            condition=rule_condition,
+            condition_details={
+                "event_types": [
+                    "com.oraclecloud.objectstorage.createbucket",
+                    "com.oraclecloud.objectstorage.deletebucket",
+                ],
+                "data": json.dumps({}),
+            },
             display_name=rule_display_name,
             is_enabled=rule_is_enabled == "true",
             defined_tags={
@@ -465,7 +506,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        :param pulumi.Input[_builtins.str] condition: (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
                
                For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -477,7 +518,8 @@ class Rule(pulumi.CustomResource):
                
                For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
                
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
+               Example:
+        :param pulumi.Input[Union['RuleConditionDetailsArgs', 'RuleConditionDetailsArgsDict']] condition_details: (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -506,21 +548,28 @@ class Rule(pulumi.CustomResource):
 
         ```python
         import pulumi
+        import json
         import pulumi_oci as oci
 
         test_rule = oci.events.Rule("test_rule",
             actions={
                 "actions": [{
-                    "action_type": rule_actions_actions_action_type,
-                    "is_enabled": rule_actions_actions_is_enabled == "true",
-                    "description": rule_actions_actions_description,
+                    "action_type": rule_actions_action_action_type,
+                    "is_enabled": rule_actions_action_is_enabled == "true",
+                    "description": rule_actions_action_description,
                     "function_id": test_function["id"],
                     "stream_id": test_stream["id"],
                     "topic_id": test_topic["id"],
                 }],
             },
             compartment_id=compartment_id,
-            condition=rule_condition,
+            condition_details={
+                "event_types": [
+                    "com.oraclecloud.objectstorage.createbucket",
+                    "com.oraclecloud.objectstorage.deletebucket",
+                ],
+                "data": json.dumps({}),
+            },
             display_name=rule_display_name,
             is_enabled=rule_is_enabled == "true",
             defined_tags={
@@ -559,6 +608,7 @@ class Rule(pulumi.CustomResource):
                  actions: pulumi.Input[Optional[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  condition: pulumi.Input[Optional[_builtins.str]] = None,
+                 condition_details: pulumi.Input[Optional[Union['RuleConditionDetailsArgs', 'RuleConditionDetailsArgsDict']]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -579,9 +629,8 @@ class Rule(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
-            if condition is None and not opts.urn:
-                raise TypeError("Missing required property 'condition'")
             __props__.__dict__["condition"] = condition
+            __props__.__dict__["condition_details"] = condition_details
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             if display_name is None and not opts.urn:
@@ -607,6 +656,7 @@ class Rule(pulumi.CustomResource):
             actions: pulumi.Input[Optional[Union['RuleActionsArgs', 'RuleActionsArgsDict']]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             condition: pulumi.Input[Optional[_builtins.str]] = None,
+            condition_details: pulumi.Input[Optional[Union['RuleConditionDetailsArgs', 'RuleConditionDetailsArgsDict']]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -624,7 +674,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['RuleActionsArgs', 'RuleActionsArgsDict']] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
-        :param pulumi.Input[_builtins.str] condition: (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        :param pulumi.Input[_builtins.str] condition: (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
                * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
                
                For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -636,7 +686,8 @@ class Rule(pulumi.CustomResource):
                
                For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
                
-               Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
+               Example:
+        :param pulumi.Input[Union['RuleConditionDetailsArgs', 'RuleConditionDetailsArgsDict']] condition_details: (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -657,6 +708,7 @@ class Rule(pulumi.CustomResource):
         __props__.__dict__["actions"] = actions
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["condition"] = condition
+        __props__.__dict__["condition_details"] = condition_details
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -687,7 +739,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter
     def condition(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `condition` or `condition_details`. This argument is retained for backward compatibility. For new configurations, `condition_details` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
         * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 
         For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -699,9 +751,17 @@ class Rule(pulumi.CustomResource):
 
         For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
 
-        Example: `\\"eventType\\": \\"com.oraclecloud.databaseservice.autonomous.database.backup.end\\"`
+        Example:
         """
         return pulumi.get(self, "condition")
+
+    @_builtins.property
+    @pulumi.getter(name="conditionDetails")
+    def condition_details(self) -> pulumi.Output[Optional['outputs.RuleConditionDetails']]:
+        """
+        (Updatable) A structured helper for building the rule condition JSON. Use either `condition` or `condition_details`. This is the recommended form for new configurations.
+        """
+        return pulumi.get(self, "condition_details")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

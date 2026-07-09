@@ -34,7 +34,7 @@ namespace Pulumi.Oci
 
         private static readonly __Value<string?> _auth = new __Value<string?>(() => __config.Get("auth"));
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         /// </summary>
         public static string? Auth
         {
@@ -183,6 +183,96 @@ namespace Pulumi.Oci
             set => _testTimeMaintenanceRebootDue.Set(value);
         }
 
+        private static readonly __Value<string?> _tokenExchangeAuth = new __Value<string?>(() => __config.Get("tokenExchangeAuth"));
+        /// <summary>
+        /// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        /// </summary>
+        public static string? TokenExchangeAuth
+        {
+            get => _tokenExchangeAuth.Get();
+            set => _tokenExchangeAuth.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeClientId = new __Value<string?>(() => __config.Get("tokenExchangeClientId"));
+        /// <summary>
+        /// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeClientId
+        {
+            get => _tokenExchangeClientId.Get();
+            set => _tokenExchangeClientId.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeClientSecret = new __Value<string?>(() => __config.Get("tokenExchangeClientSecret"));
+        /// <summary>
+        /// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeClientSecret
+        {
+            get => _tokenExchangeClientSecret.Get();
+            set => _tokenExchangeClientSecret.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeDomainUrl = new __Value<string?>(() => __config.Get("tokenExchangeDomainUrl"));
+        /// <summary>
+        /// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeDomainUrl
+        {
+            get => _tokenExchangeDomainUrl.Get();
+            set => _tokenExchangeDomainUrl.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangePublicKey = new __Value<string?>(() => __config.Get("tokenExchangePublicKey"));
+        /// <summary>
+        /// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        public static string? TokenExchangePublicKey
+        {
+            get => _tokenExchangePublicKey.Get();
+            set => _tokenExchangePublicKey.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeRequestedTokenType = new __Value<string?>(() => __config.Get("tokenExchangeRequestedTokenType"));
+        /// <summary>
+        /// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeRequestedTokenType
+        {
+            get => _tokenExchangeRequestedTokenType.Get();
+            set => _tokenExchangeRequestedTokenType.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeResourceType = new __Value<string?>(() => __config.Get("tokenExchangeResourceType"));
+        /// <summary>
+        /// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeResourceType
+        {
+            get => _tokenExchangeResourceType.Get();
+            set => _tokenExchangeResourceType.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeRpstExp = new __Value<string?>(() => __config.Get("tokenExchangeRpstExp"));
+        /// <summary>
+        /// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        public static string? TokenExchangeRpstExp
+        {
+            get => _tokenExchangeRpstExp.Get();
+            set => _tokenExchangeRpstExp.Set(value);
+        }
+
+        private static readonly __Value<string?> _tokenExchangeSubjectTokenType = new __Value<string?>(() => __config.Get("tokenExchangeSubjectTokenType"));
+        /// <summary>
+        /// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        public static string? TokenExchangeSubjectTokenType
+        {
+            get => _tokenExchangeSubjectTokenType.Get();
+            set => _tokenExchangeSubjectTokenType.Set(value);
+        }
+
         private static readonly __Value<string?> _userOcid = new __Value<string?>(() => __config.Get("userOcid"));
         /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
@@ -191,6 +281,16 @@ namespace Pulumi.Oci
         {
             get => _userOcid.Get();
             set => _userOcid.Set(value);
+        }
+
+        private static readonly __Value<string?> _workloadIdentityTokenPath = new __Value<string?>(() => __config.Get("workloadIdentityTokenPath"));
+        /// <summary>
+        /// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        public static string? WorkloadIdentityTokenPath
+        {
+            get => _workloadIdentityTokenPath.Get();
+            set => _workloadIdentityTokenPath.Set(value);
         }
 
     }

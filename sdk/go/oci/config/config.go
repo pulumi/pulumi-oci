@@ -11,7 +11,7 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
-// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
 func GetAuth(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:auth")
 }
@@ -88,7 +88,57 @@ func GetTestTimeMaintenanceRebootDue(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:testTimeMaintenanceRebootDue")
 }
 
+// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+func GetTokenExchangeAuth(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeAuth")
+}
+
+// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+func GetTokenExchangeClientId(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeClientId")
+}
+
+// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+func GetTokenExchangeClientSecret(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeClientSecret")
+}
+
+// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func GetTokenExchangeDomainUrl(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeDomainUrl")
+}
+
+// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+func GetTokenExchangePublicKey(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangePublicKey")
+}
+
+// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func GetTokenExchangeRequestedTokenType(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeRequestedTokenType")
+}
+
+// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func GetTokenExchangeResourceType(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeResourceType")
+}
+
+// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+func GetTokenExchangeRpstExp(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeRpstExp")
+}
+
+// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func GetTokenExchangeSubjectTokenType(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:tokenExchangeSubjectTokenType")
+}
+
 // (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
 func GetUserOcid(ctx *pulumi.Context) string {
 	return config.Get(ctx, "oci:userOcid")
+}
+
+// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+func GetWorkloadIdentityTokenPath(ctx *pulumi.Context) string {
+	return config.Get(ctx, "oci:workloadIdentityTokenPath")
 }

@@ -13,14 +13,19 @@ namespace Pulumi.Oci.Events.Outputs
     [OutputType]
     public sealed class GetRuleActionResult
     {
+        public readonly ImmutableArray<Outputs.GetRuleActionActionResult> Action;
         /// <summary>
         /// A list of one or more Action objects.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleActionActionResult> Actions;
 
         [OutputConstructor]
-        private GetRuleActionResult(ImmutableArray<Outputs.GetRuleActionActionResult> actions)
+        private GetRuleActionResult(
+            ImmutableArray<Outputs.GetRuleActionActionResult> action,
+
+            ImmutableArray<Outputs.GetRuleActionActionResult> actions)
         {
+            Action = action;
             Actions = actions;
         }
     }

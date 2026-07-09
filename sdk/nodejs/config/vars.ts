@@ -8,7 +8,7 @@ declare var exports: any;
 const __config = new pulumi.Config("oci");
 
 /**
- * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+ * (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
  */
 export declare const auth: string | undefined;
 Object.defineProperty(exports, "auth", {
@@ -174,12 +174,122 @@ Object.defineProperty(exports, "testTimeMaintenanceRebootDue", {
 });
 
 /**
+ * (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+ */
+export declare const tokenExchangeAuth: string | undefined;
+Object.defineProperty(exports, "tokenExchangeAuth", {
+    get() {
+        return __config.get("tokenExchangeAuth");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+ */
+export declare const tokenExchangeClientId: string | undefined;
+Object.defineProperty(exports, "tokenExchangeClientId", {
+    get() {
+        return __config.get("tokenExchangeClientId");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and tokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+ */
+export declare const tokenExchangeClientSecret: string | undefined;
+Object.defineProperty(exports, "tokenExchangeClientSecret", {
+    get() {
+        return __config.get("tokenExchangeClientSecret");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+ */
+export declare const tokenExchangeDomainUrl: string | undefined;
+Object.defineProperty(exports, "tokenExchangeDomainUrl", {
+    get() {
+        return __config.get("tokenExchangeDomainUrl");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+ */
+export declare const tokenExchangePublicKey: string | undefined;
+Object.defineProperty(exports, "tokenExchangePublicKey", {
+    get() {
+        return __config.get("tokenExchangePublicKey");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+ */
+export declare const tokenExchangeRequestedTokenType: string | undefined;
+Object.defineProperty(exports, "tokenExchangeRequestedTokenType", {
+    get() {
+        return __config.get("tokenExchangeRequestedTokenType");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+ */
+export declare const tokenExchangeResourceType: string | undefined;
+Object.defineProperty(exports, "tokenExchangeResourceType", {
+    get() {
+        return __config.get("tokenExchangeResourceType");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+ */
+export declare const tokenExchangeRpstExp: string | undefined;
+Object.defineProperty(exports, "tokenExchangeRpstExp", {
+    get() {
+        return __config.get("tokenExchangeRpstExp");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+ */
+export declare const tokenExchangeSubjectTokenType: string | undefined;
+Object.defineProperty(exports, "tokenExchangeSubjectTokenType", {
+    get() {
+        return __config.get("tokenExchangeSubjectTokenType");
+    },
+    enumerable: true,
+});
+
+/**
  * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
  */
 export declare const userOcid: string | undefined;
 Object.defineProperty(exports, "userOcid", {
     get() {
         return __config.get("userOcid");
+    },
+    enumerable: true,
+});
+
+/**
+ * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+ */
+export declare const workloadIdentityTokenPath: string | undefined;
+Object.defineProperty(exports, "workloadIdentityTokenPath", {
+    get() {
+        return __config.get("workloadIdentityTokenPath");
     },
     enumerable: true,
 });

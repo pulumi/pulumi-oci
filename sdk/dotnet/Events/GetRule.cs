@@ -136,6 +136,7 @@ namespace Pulumi.Oci.Events
         /// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
         /// </summary>
         public readonly string Condition;
+        public readonly ImmutableArray<Outputs.GetRuleConditionDetailResult> ConditionDetails;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -182,6 +183,8 @@ namespace Pulumi.Oci.Events
 
             string condition,
 
+            ImmutableArray<Outputs.GetRuleConditionDetailResult> conditionDetails,
+
             ImmutableDictionary<string, string> definedTags,
 
             string description,
@@ -205,6 +208,7 @@ namespace Pulumi.Oci.Events
             Actions = actions;
             CompartmentId = compartmentId;
             Condition = condition;
+            ConditionDetails = conditionDetails;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

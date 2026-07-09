@@ -34,11 +34,21 @@ class ProviderArgs:
                  retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
-                 user_ocid: pulumi.Input[Optional[_builtins.str]] = None):
+                 token_exchange_auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_requested_token_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_rpst_exp: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_subject_token_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_identity_token_path: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
 
-        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
@@ -56,7 +66,17 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
                The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_auth: (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        :param pulumi.Input[_builtins.str] token_exchange_client_id: (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_client_secret: (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_domain_url: (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_public_key: (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        :param pulumi.Input[_builtins.str] token_exchange_requested_token_type: (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_resource_type: (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_rpst_exp: (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        :param pulumi.Input[_builtins.str] token_exchange_subject_token_type: (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
         :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] workload_identity_token_path: (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
         """
         if auth is not None:
             pulumi.set(__self__, "auth", auth)
@@ -88,14 +108,34 @@ class ProviderArgs:
             pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
         if test_time_maintenance_reboot_due is not None:
             pulumi.set(__self__, "test_time_maintenance_reboot_due", test_time_maintenance_reboot_due)
+        if token_exchange_auth is not None:
+            pulumi.set(__self__, "token_exchange_auth", token_exchange_auth)
+        if token_exchange_client_id is not None:
+            pulumi.set(__self__, "token_exchange_client_id", token_exchange_client_id)
+        if token_exchange_client_secret is not None:
+            pulumi.set(__self__, "token_exchange_client_secret", token_exchange_client_secret)
+        if token_exchange_domain_url is not None:
+            pulumi.set(__self__, "token_exchange_domain_url", token_exchange_domain_url)
+        if token_exchange_public_key is not None:
+            pulumi.set(__self__, "token_exchange_public_key", token_exchange_public_key)
+        if token_exchange_requested_token_type is not None:
+            pulumi.set(__self__, "token_exchange_requested_token_type", token_exchange_requested_token_type)
+        if token_exchange_resource_type is not None:
+            pulumi.set(__self__, "token_exchange_resource_type", token_exchange_resource_type)
+        if token_exchange_rpst_exp is not None:
+            pulumi.set(__self__, "token_exchange_rpst_exp", token_exchange_rpst_exp)
+        if token_exchange_subject_token_type is not None:
+            pulumi.set(__self__, "token_exchange_subject_token_type", token_exchange_subject_token_type)
         if user_ocid is not None:
             pulumi.set(__self__, "user_ocid", user_ocid)
+        if workload_identity_token_path is not None:
+            pulumi.set(__self__, "workload_identity_token_path", workload_identity_token_path)
 
     @_builtins.property
     @pulumi.getter
     def auth(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
@@ -273,6 +313,114 @@ class ProviderArgs:
         pulumi.set(self, "test_time_maintenance_reboot_due", value)
 
     @_builtins.property
+    @pulumi.getter(name="tokenExchangeAuth")
+    def token_exchange_auth(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        """
+        return pulumi.get(self, "token_exchange_auth")
+
+    @token_exchange_auth.setter
+    def token_exchange_auth(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_auth", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeClientId")
+    def token_exchange_client_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_client_id")
+
+    @token_exchange_client_id.setter
+    def token_exchange_client_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_client_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeClientSecret")
+    def token_exchange_client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_client_secret")
+
+    @token_exchange_client_secret.setter
+    def token_exchange_client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_client_secret", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeDomainUrl")
+    def token_exchange_domain_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_domain_url")
+
+    @token_exchange_domain_url.setter
+    def token_exchange_domain_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_domain_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangePublicKey")
+    def token_exchange_public_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return pulumi.get(self, "token_exchange_public_key")
+
+    @token_exchange_public_key.setter
+    def token_exchange_public_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_public_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeRequestedTokenType")
+    def token_exchange_requested_token_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_requested_token_type")
+
+    @token_exchange_requested_token_type.setter
+    def token_exchange_requested_token_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_requested_token_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeResourceType")
+    def token_exchange_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_resource_type")
+
+    @token_exchange_resource_type.setter
+    def token_exchange_resource_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeRpstExp")
+    def token_exchange_rpst_exp(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return pulumi.get(self, "token_exchange_rpst_exp")
+
+    @token_exchange_rpst_exp.setter
+    def token_exchange_rpst_exp(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_rpst_exp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeSubjectTokenType")
+    def token_exchange_subject_token_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_subject_token_type")
+
+    @token_exchange_subject_token_type.setter
+    def token_exchange_subject_token_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token_exchange_subject_token_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="userOcid")
     def user_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -283,6 +431,18 @@ class ProviderArgs:
     @user_ocid.setter
     def user_ocid(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "user_ocid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workloadIdentityTokenPath")
+    def workload_identity_token_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "workload_identity_token_path")
+
+    @workload_identity_token_path.setter
+    def workload_identity_token_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "workload_identity_token_path", value)
 
 
 @pulumi.type_token("pulumi:providers:oci")
@@ -306,7 +466,17 @@ class Provider(pulumi.ProviderResource):
                  retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_requested_token_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_rpst_exp: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_subject_token_type: pulumi.Input[Optional[_builtins.str]] = None,
                  user_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_identity_token_path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         The provider type for the oci package. By default, resources use package-wide configuration
@@ -317,7 +487,7 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        :param pulumi.Input[_builtins.str] auth: (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         :param pulumi.Input[_builtins.str] config_file_profile: (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
         :param pulumi.Input[_builtins.bool] disable_auto_retries: (Optional) Disable automatic retries for retriable errors.
                Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
@@ -335,7 +505,17 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.int] retry_duration_seconds: (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
                The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
         :param pulumi.Input[_builtins.str] tenancy_ocid: (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_auth: (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        :param pulumi.Input[_builtins.str] token_exchange_client_id: (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_client_secret: (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_domain_url: (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_public_key: (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        :param pulumi.Input[_builtins.str] token_exchange_requested_token_type: (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_resource_type: (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        :param pulumi.Input[_builtins.str] token_exchange_rpst_exp: (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        :param pulumi.Input[_builtins.str] token_exchange_subject_token_type: (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
         :param pulumi.Input[_builtins.str] user_ocid: (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
+        :param pulumi.Input[_builtins.str] workload_identity_token_path: (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
         """
         ...
     @overload
@@ -380,7 +560,17 @@ class Provider(pulumi.ProviderResource):
                  retry_duration_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
                  test_time_maintenance_reboot_due: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_auth: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_requested_token_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_rpst_exp: pulumi.Input[Optional[_builtins.str]] = None,
+                 token_exchange_subject_token_type: pulumi.Input[Optional[_builtins.str]] = None,
                  user_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+                 workload_identity_token_path: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -405,8 +595,18 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["retry_duration_seconds"] = pulumi.Output.from_input(retry_duration_seconds).apply(pulumi.runtime.to_json) if retry_duration_seconds is not None else None
             __props__.__dict__["tenancy_ocid"] = tenancy_ocid
             __props__.__dict__["test_time_maintenance_reboot_due"] = test_time_maintenance_reboot_due
+            __props__.__dict__["token_exchange_auth"] = token_exchange_auth
+            __props__.__dict__["token_exchange_client_id"] = token_exchange_client_id
+            __props__.__dict__["token_exchange_client_secret"] = None if token_exchange_client_secret is None else pulumi.Output.secret(token_exchange_client_secret)
+            __props__.__dict__["token_exchange_domain_url"] = token_exchange_domain_url
+            __props__.__dict__["token_exchange_public_key"] = token_exchange_public_key
+            __props__.__dict__["token_exchange_requested_token_type"] = token_exchange_requested_token_type
+            __props__.__dict__["token_exchange_resource_type"] = token_exchange_resource_type
+            __props__.__dict__["token_exchange_rpst_exp"] = token_exchange_rpst_exp
+            __props__.__dict__["token_exchange_subject_token_type"] = token_exchange_subject_token_type
             __props__.__dict__["user_ocid"] = user_ocid
-        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey", "privateKeyPassword"])
+            __props__.__dict__["workload_identity_token_path"] = workload_identity_token_path
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey", "privateKeyPassword", "tokenExchangeClientSecret"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'oci',
@@ -418,7 +618,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter
     def auth(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         """
         return pulumi.get(self, "auth")
 
@@ -494,12 +694,92 @@ class Provider(pulumi.ProviderResource):
         return pulumi.get(self, "test_time_maintenance_reboot_due")
 
     @_builtins.property
+    @pulumi.getter(name="tokenExchangeAuth")
+    def token_exchange_auth(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        """
+        return pulumi.get(self, "token_exchange_auth")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeClientId")
+    def token_exchange_client_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeClientSecret")
+    def token_exchange_client_secret(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_client_secret")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeDomainUrl")
+    def token_exchange_domain_url(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_domain_url")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangePublicKey")
+    def token_exchange_public_key(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return pulumi.get(self, "token_exchange_public_key")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeRequestedTokenType")
+    def token_exchange_requested_token_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_requested_token_type")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeResourceType")
+    def token_exchange_resource_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeRpstExp")
+    def token_exchange_rpst_exp(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return pulumi.get(self, "token_exchange_rpst_exp")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenExchangeSubjectTokenType")
+    def token_exchange_subject_token_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "token_exchange_subject_token_type")
+
+    @_builtins.property
     @pulumi.getter(name="userOcid")
     def user_ocid(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return pulumi.get(self, "user_ocid")
+
+    @_builtins.property
+    @pulumi.getter(name="workloadIdentityTokenPath")
+    def workload_identity_token_path(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return pulumi.get(self, "workload_identity_token_path")
 
     @pulumi.output_type
     class TerraformConfigResult:

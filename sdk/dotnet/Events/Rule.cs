@@ -22,6 +22,7 @@ namespace Pulumi.Oci.Events
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
+    /// using System.Text.Json;
     /// using Pulumi;
     /// using Oci = Pulumi.Oci;
     /// 
@@ -35,9 +36,9 @@ namespace Pulumi.Oci.Events
     ///             {
     ///                 new Oci.Events.Inputs.RuleActionsActionArgs
     ///                 {
-    ///                     ActionType = ruleActionsActionsActionType,
-    ///                     IsEnabled = ruleActionsActionsIsEnabled,
-    ///                     Description = ruleActionsActionsDescription,
+    ///                     ActionType = ruleActionsActionActionType,
+    ///                     IsEnabled = ruleActionsActionIsEnabled,
+    ///                     Description = ruleActionsActionDescription,
     ///                     FunctionId = testFunction.Id,
     ///                     StreamId = testStream.Id,
     ///                     TopicId = testTopic.Id,
@@ -45,7 +46,17 @@ namespace Pulumi.Oci.Events
     ///             },
     ///         },
     ///         CompartmentId = compartmentId,
-    ///         Condition = ruleCondition,
+    ///         ConditionDetails = new Oci.Events.Inputs.RuleConditionDetailsArgs
+    ///         {
+    ///             EventTypes = new[]
+    ///             {
+    ///                 "com.oraclecloud.objectstorage.createbucket",
+    ///                 "com.oraclecloud.objectstorage.deletebucket",
+    ///             },
+    ///             Data = JsonSerializer.Serialize(new Dictionary&lt;string, object?&gt;
+    ///             {
+    ///             }),
+    ///         },
     ///         DisplayName = ruleDisplayName,
     ///         IsEnabled = ruleIsEnabled,
     ///         DefinedTags = 
@@ -86,7 +97,7 @@ namespace Pulumi.Oci.Events
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        /// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `Condition` or `ConditionDetails`. This argument is retained for backward compatibility. For new configurations, `ConditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
         /// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
         /// 
         /// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -98,10 +109,16 @@ namespace Pulumi.Oci.Events
         /// 
         /// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
         /// 
-        /// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+        /// Example:
         /// </summary>
         [Output("condition")]
         public Output<string> Condition { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A structured helper for building the rule condition JSON. Use either `Condition` or `ConditionDetails`. This is the recommended form for new configurations.
+        /// </summary>
+        [Output("conditionDetails")]
+        public Output<Outputs.RuleConditionDetails?> ConditionDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -214,7 +231,7 @@ namespace Pulumi.Oci.Events
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        /// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `Condition` or `ConditionDetails`. This argument is retained for backward compatibility. For new configurations, `ConditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
         /// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
         /// 
         /// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -226,10 +243,16 @@ namespace Pulumi.Oci.Events
         /// 
         /// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
         /// 
-        /// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+        /// Example:
         /// </summary>
-        [Input("condition", required: true)]
-        public Input<string> Condition { get; set; } = null!;
+        [Input("condition")]
+        public Input<string>? Condition { get; set; }
+
+        /// <summary>
+        /// (Updatable) A structured helper for building the rule condition JSON. Use either `Condition` or `ConditionDetails`. This is the recommended form for new configurations.
+        /// </summary>
+        [Input("conditionDetails")]
+        public Input<Inputs.RuleConditionDetailsArgs>? ConditionDetails { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -298,7 +321,7 @@ namespace Pulumi.Oci.Events
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) A filter that specifies the event that will trigger actions associated with this rule. A few  important things to remember about filters:
+        /// (Updatable) A JSON string filter that specifies the event that will trigger actions associated with this rule. Use either `Condition` or `ConditionDetails`. This argument is retained for backward compatibility. For new configurations, `ConditionDetails` is recommended because it avoids manually escaping JSON and is easier to maintain when matching multiple event types. A few  important things to remember about filters:
         /// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
         /// 
         /// For more examples, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm).
@@ -310,10 +333,16 @@ namespace Pulumi.Oci.Events
         /// 
         /// For examples of wildcard matching, see  [Matching Events with Filters](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/filterevents.htm)
         /// 
-        /// Example: `\"eventType\": \"com.oraclecloud.databaseservice.autonomous.database.backup.end\"`
+        /// Example:
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
+
+        /// <summary>
+        /// (Updatable) A structured helper for building the rule condition JSON. Use either `Condition` or `ConditionDetails`. This is the recommended form for new configurations.
+        /// </summary>
+        [Input("conditionDetails")]
+        public Input<Inputs.RuleConditionDetailsGetArgs>? ConditionDetails { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;

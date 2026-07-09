@@ -19,7 +19,7 @@ namespace Pulumi.Oci
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         /// </summary>
         [Output("auth")]
         public Output<string?> Auth { get; private set; } = null!;
@@ -78,10 +78,70 @@ namespace Pulumi.Oci
         public Output<string?> TestTimeMaintenanceRebootDue { get; private set; } = null!;
 
         /// <summary>
+        /// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        /// </summary>
+        [Output("tokenExchangeAuth")]
+        public Output<string?> TokenExchangeAuth { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeClientId")]
+        public Output<string?> TokenExchangeClientId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeClientSecret")]
+        public Output<string?> TokenExchangeClientSecret { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeDomainUrl")]
+        public Output<string?> TokenExchangeDomainUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        [Output("tokenExchangePublicKey")]
+        public Output<string?> TokenExchangePublicKey { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeRequestedTokenType")]
+        public Output<string?> TokenExchangeRequestedTokenType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeResourceType")]
+        public Output<string?> TokenExchangeResourceType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        [Output("tokenExchangeRpstExp")]
+        public Output<string?> TokenExchangeRpstExp { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Output("tokenExchangeSubjectTokenType")]
+        public Output<string?> TokenExchangeSubjectTokenType { get; private set; } = null!;
+
+        /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Output("userOcid")]
         public Output<string?> UserOcid { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Output("workloadIdentityTokenPath")]
+        public Output<string?> WorkloadIdentityTokenPath { get; private set; } = null!;
 
 
         /// <summary>
@@ -105,6 +165,7 @@ namespace Pulumi.Oci
                 {
                     "privateKey",
                     "privateKeyPassword",
+                    "tokenExchangeClientSecret",
                 },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
@@ -123,7 +184,7 @@ namespace Pulumi.Oci
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        /// (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         /// </summary>
         [Input("auth")]
         public Input<string>? Auth { get; set; }
@@ -240,10 +301,80 @@ namespace Pulumi.Oci
         public Input<string>? TestTimeMaintenanceRebootDue { get; set; }
 
         /// <summary>
+        /// (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        /// </summary>
+        [Input("tokenExchangeAuth")]
+        public Input<string>? TokenExchangeAuth { get; set; }
+
+        /// <summary>
+        /// (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        [Input("tokenExchangeClientId")]
+        public Input<string>? TokenExchangeClientId { get; set; }
+
+        [Input("tokenExchangeClientSecret")]
+        private Input<string>? _tokenExchangeClientSecret;
+
+        /// <summary>
+        /// (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and TokenExchangeAuth is 'OAuthClientCredentials', ignored otherwise.
+        /// </summary>
+        public Input<string>? TokenExchangeClientSecret
+        {
+            get => _tokenExchangeClientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tokenExchangeClientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Input("tokenExchangeDomainUrl")]
+        public Input<string>? TokenExchangeDomainUrl { get; set; }
+
+        /// <summary>
+        /// (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        [Input("tokenExchangePublicKey")]
+        public Input<string>? TokenExchangePublicKey { get; set; }
+
+        /// <summary>
+        /// (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Input("tokenExchangeRequestedTokenType")]
+        public Input<string>? TokenExchangeRequestedTokenType { get; set; }
+
+        /// <summary>
+        /// (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Input("tokenExchangeResourceType")]
+        public Input<string>? TokenExchangeResourceType { get; set; }
+
+        /// <summary>
+        /// (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        /// </summary>
+        [Input("tokenExchangeRpstExp")]
+        public Input<string>? TokenExchangeRpstExp { get; set; }
+
+        /// <summary>
+        /// (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Input("tokenExchangeSubjectTokenType")]
+        public Input<string>? TokenExchangeSubjectTokenType { get; set; }
+
+        /// <summary>
         /// (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         [Input("userOcid")]
         public Input<string>? UserOcid { get; set; }
+
+        /// <summary>
+        /// (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        /// </summary>
+        [Input("workloadIdentityTokenPath")]
+        public Input<string>? WorkloadIdentityTokenPath { get; set; }
 
         public ProviderArgs()
         {

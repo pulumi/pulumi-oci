@@ -12,12 +12,25 @@ namespace Pulumi.Oci.Events.Inputs
 
     public sealed class RuleActionsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("actions", required: true)]
-        private InputList<Inputs.RuleActionsActionArgs>? _actions;
+        [Input("action")]
+        private InputList<Inputs.RuleActionsActionArgs>? _action;
 
         /// <summary>
         /// (Updatable) A list of one or more ActionDetails objects.
         /// </summary>
+        public InputList<Inputs.RuleActionsActionArgs> Action
+        {
+            get => _action ?? (_action = new InputList<Inputs.RuleActionsActionArgs>());
+            set => _action = value;
+        }
+
+        [Input("actions")]
+        private InputList<Inputs.RuleActionsActionArgs>? _actions;
+
+        /// <summary>
+        /// (Updatable) Deprecated. Use `Action` instead. This nested block is retained for backward compatibility.
+        /// </summary>
+        [Obsolete(@"Use action instead. This field is retained for backward compatibility.")]
         public InputList<Inputs.RuleActionsActionArgs> Actions
         {
             get => _actions ?? (_actions = new InputList<Inputs.RuleActionsActionArgs>());

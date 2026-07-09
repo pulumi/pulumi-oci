@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Events.Inputs
     public sealed class RuleActionsActionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The action to perform if the condition in the rule matches an event.
+        /// The action to perform if the condition in the rule matches an event.
         /// * **ONS:** Send to an Oracle Notification Service topic.
         /// * **OSS:** Send to a stream from Oracle Streaming Service.
         /// * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -22,13 +22,13 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string> ActionType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        /// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
         /// </summary>
         [Input("functionId")]
         public Input<string>? FunctionId { get; set; }
@@ -40,7 +40,11 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether or not this action is currently enabled.  Example: `True`
+        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True` 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
@@ -58,13 +62,13 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         /// </summary>
         [Input("streamId")]
         public Input<string>? StreamId { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         /// </summary>
         [Input("topicId")]
         public Input<string>? TopicId { get; set; }

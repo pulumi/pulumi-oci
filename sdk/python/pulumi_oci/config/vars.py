@@ -23,7 +23,7 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def auth(self) -> Optional[str]:
         """
-        (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
+        (Optional) The type of auth to use. Options are 'ApiKey', 'InstancePrincipal', 'InstancePrincipalWithCerts', 'SecurityToken', 'ResourcePrincipal', 'OKEWorkloadIdentity', 'WorkloadIdentityFederation'. By default, 'ApiKey' will be used.
         """
         return __config__.get('auth')
 
@@ -127,9 +127,79 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('testTimeMaintenanceRebootDue')
 
     @_builtins.property
+    def token_exchange_auth(self) -> Optional[str]:
+        """
+        (Optional) Authentication method for the token-exchange client. Valid values are 'OAuthClientCredentials' and 'InstancePrincipal'. Used only if auth is set to 'WorkloadIdentityFederation'. Defaults to 'OAuthClientCredentials'.
+        """
+        return __config__.get('tokenExchangeAuth')
+
+    @_builtins.property
+    def token_exchange_client_id(self) -> Optional[str]:
+        """
+        (Optional) Token-exchange client ID. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeClientId')
+
+    @_builtins.property
+    def token_exchange_client_secret(self) -> Optional[str]:
+        """
+        (Optional) Token-exchange client secret. Required when auth is set to 'WorkloadIdentityFederation' and token_exchange_auth is 'OAuthClientCredentials', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeClientSecret')
+
+    @_builtins.property
+    def token_exchange_domain_url(self) -> Optional[str]:
+        """
+        (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeDomainUrl')
+
+    @_builtins.property
+    def token_exchange_public_key(self) -> Optional[str]:
+        """
+        (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return __config__.get('tokenExchangePublicKey')
+
+    @_builtins.property
+    def token_exchange_requested_token_type(self) -> Optional[str]:
+        """
+        (Optional) Requested token type for token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeRequestedTokenType')
+
+    @_builtins.property
+    def token_exchange_resource_type(self) -> Optional[str]:
+        """
+        (Optional) Resource type used during token exchange. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeResourceType')
+
+    @_builtins.property
+    def token_exchange_rpst_exp(self) -> Optional[str]:
+        """
+        (Optional) Requested RPST expiration for token exchange. Used only if auth is set to 'WorkloadIdentityFederation'.
+        """
+        return __config__.get('tokenExchangeRpstExp')
+
+    @_builtins.property
+    def token_exchange_subject_token_type(self) -> Optional[str]:
+        """
+        (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return __config__.get('tokenExchangeSubjectTokenType')
+
+    @_builtins.property
     def user_ocid(self) -> Optional[str]:
         """
         (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
         """
         return __config__.get('userOcid')
+
+    @_builtins.property
+    def workload_identity_token_path(self) -> Optional[str]:
+        """
+        (Optional) Path to the projected Kubernetes service account token. Required if auth is set to 'WorkloadIdentityFederation', ignored otherwise.
+        """
+        return __config__.get('workloadIdentityTokenPath')
 

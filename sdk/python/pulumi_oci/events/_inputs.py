@@ -19,57 +19,88 @@ __all__ = [
     'RuleActionsArgsDict',
     'RuleActionsActionArgs',
     'RuleActionsActionArgsDict',
+    'RuleConditionDetailsArgs',
+    'RuleConditionDetailsArgsDict',
     'GetRulesFilterArgs',
     'GetRulesFilterArgsDict',
 ]
 
 class RuleActionsArgsDict(TypedDict):
-    actions: pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgsDict']]]
+    action: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgsDict']]]]]
     """
     (Updatable) A list of one or more ActionDetails objects.
+    """
+    actions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgsDict']]]]]
+    """
+    (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
     """
 
 @pulumi.input_type
 class RuleActionsArgs:
     def __init__(__self__, *,
-                 actions: pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]]):
+                 action: pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]] = None,
+                 actions: pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]] actions: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]] action: (Updatable) A list of one or more ActionDetails objects.
+        :param pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]] actions: (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
         """
-        pulumi.set(__self__, "actions", actions)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if actions is not None:
+            warnings.warn("""Use action instead. This field is retained for backward compatibility.""", DeprecationWarning)
+            pulumi.log.warn("""actions is deprecated: Use action instead. This field is retained for backward compatibility.""")
+        if actions is not None:
+            pulumi.set(__self__, "actions", actions)
 
     @_builtins.property
     @pulumi.getter
-    def actions(self) -> pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]]:
+    def action(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]]:
         """
         (Updatable) A list of one or more ActionDetails objects.
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter
+    @_utilities.deprecated("""Use action instead. This field is retained for backward compatibility.""")
+    def actions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]]:
+        """
+        (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
         """
         return pulumi.get(self, "actions")
 
     @actions.setter
-    def actions(self, value: pulumi.Input[Sequence[pulumi.Input['RuleActionsActionArgs']]]):
+    def actions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleActionsActionArgs']]]]):
         pulumi.set(self, "actions", value)
 
 
 class RuleActionsActionArgsDict(TypedDict):
     action_type: pulumi.Input[_builtins.str]
     """
-    (Updatable) The action to perform if the condition in the rule matches an event.
+    The action to perform if the condition in the rule matches an event.
     * **ONS:** Send to an Oracle Notification Service topic.
     * **OSS:** Send to a stream from Oracle Streaming Service.
     * **FAAS:** Send to an Oracle Functions Service endpoint.
     """
     is_enabled: pulumi.Input[_builtins.bool]
     """
-    (Updatable) Whether or not this action is currently enabled.  Example: `true`
+    (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+    (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
     """
     function_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
     """
     id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -85,11 +116,11 @@ class RuleActionsActionArgsDict(TypedDict):
     """
     stream_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
     """
     topic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
     """
 
 @pulumi.input_type
@@ -105,18 +136,22 @@ class RuleActionsActionArgs:
                  stream_id: pulumi.Input[Optional[_builtins.str]] = None,
                  topic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] action_type: (Updatable) The action to perform if the condition in the rule matches an event.
+        :param pulumi.Input[_builtins.str] action_type: The action to perform if the condition in the rule matches an event.
                * **ONS:** Send to an Oracle Notification Service topic.
                * **OSS:** Send to a stream from Oracle Streaming Service.
                * **FAAS:** Send to an Oracle Functions Service endpoint.
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this action is currently enabled.  Example: `true`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param pulumi.Input[_builtins.str] lifecycle_message: A message generated by the Events service about the current state of this rule.
         :param pulumi.Input[_builtins.str] state: The current state of the rule.
-        :param pulumi.Input[_builtins.str] stream_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
-        :param pulumi.Input[_builtins.str] topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+        :param pulumi.Input[_builtins.str] stream_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+        :param pulumi.Input[_builtins.str] topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
         pulumi.set(__self__, "action_type", action_type)
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -139,7 +174,7 @@ class RuleActionsActionArgs:
     @pulumi.getter(name="actionType")
     def action_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The action to perform if the condition in the rule matches an event.
+        The action to perform if the condition in the rule matches an event.
         * **ONS:** Send to an Oracle Notification Service topic.
         * **OSS:** Send to a stream from Oracle Streaming Service.
         * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -154,7 +189,11 @@ class RuleActionsActionArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        (Updatable) Whether or not this action is currently enabled.  Example: `true`
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "is_enabled")
 
@@ -166,7 +205,7 @@ class RuleActionsActionArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -178,7 +217,7 @@ class RuleActionsActionArgs:
     @pulumi.getter(name="functionId")
     def function_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
         """
         return pulumi.get(self, "function_id")
 
@@ -226,7 +265,7 @@ class RuleActionsActionArgs:
     @pulumi.getter(name="streamId")
     def stream_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
         """
         return pulumi.get(self, "stream_id")
 
@@ -238,13 +277,74 @@ class RuleActionsActionArgs:
     @pulumi.getter(name="topicId")
     def topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
         """
         return pulumi.get(self, "topic_id")
 
     @topic_id.setter
     def topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topic_id", value)
+
+
+class RuleConditionDetailsArgsDict(TypedDict):
+    data: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) A JSON string containing additional event data filters.
+
+    The following `condition_details` example is equivalent to the `condition` JSON string example above.
+
+    Example:
+    """
+    event_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) A list of event types to match.
+    """
+
+@pulumi.input_type
+class RuleConditionDetailsArgs:
+    def __init__(__self__, *,
+                 data: pulumi.Input[Optional[_builtins.str]] = None,
+                 event_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] data: (Updatable) A JSON string containing additional event data filters.
+               
+               The following `condition_details` example is equivalent to the `condition` JSON string example above.
+               
+               Example:
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] event_types: (Updatable) A list of event types to match.
+        """
+        if data is not None:
+            pulumi.set(__self__, "data", data)
+        if event_types is not None:
+            pulumi.set(__self__, "event_types", event_types)
+
+    @_builtins.property
+    @pulumi.getter
+    def data(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) A JSON string containing additional event data filters.
+
+        The following `condition_details` example is equivalent to the `condition` JSON string example above.
+
+        Example:
+        """
+        return pulumi.get(self, "data")
+
+    @data.setter
+    def data(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="eventTypes")
+    def event_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of event types to match.
+        """
+        return pulumi.get(self, "event_types")
+
+    @event_types.setter
+    def event_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "event_types", value)
 
 
 class GetRulesFilterArgsDict(TypedDict):

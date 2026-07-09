@@ -5,10 +5,11 @@ package com.pulumi.oci.Events.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.inputs.RuleActionsActionArgs;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
@@ -19,20 +20,44 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) A list of one or more ActionDetails objects.
      * 
      */
-    @Import(name="actions", required=true)
-    private Output<List<RuleActionsActionArgs>> actions;
+    @Import(name="action")
+    private @Nullable Output<List<RuleActionsActionArgs>> action;
 
     /**
      * @return (Updatable) A list of one or more ActionDetails objects.
      * 
      */
-    public Output<List<RuleActionsActionArgs>> actions() {
-        return this.actions;
+    public Optional<Output<List<RuleActionsActionArgs>>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
+    /**
+     * (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
+     * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
+     */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Import(name="actions")
+    private @Nullable Output<List<RuleActionsActionArgs>> actions;
+
+    /**
+     * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
+     * 
+     * @deprecated
+     * Use action instead. This field is retained for backward compatibility.
+     * 
+     */
+    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    public Optional<Output<List<RuleActionsActionArgs>>> actions() {
+        return Optional.ofNullable(this.actions);
     }
 
     private RuleActionsArgs() {}
 
     private RuleActionsArgs(RuleActionsArgs $) {
+        this.action = $.action;
         this.actions = $.actions;
     }
 
@@ -55,40 +80,80 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actions (Updatable) A list of one or more ActionDetails objects.
+         * @param action (Updatable) A list of one or more ActionDetails objects.
          * 
          * @return builder
          * 
          */
-        public Builder actions(Output<List<RuleActionsActionArgs>> actions) {
+        public Builder action(@Nullable Output<List<RuleActionsActionArgs>> action) {
+            $.action = action;
+            return this;
+        }
+
+        /**
+         * @param action (Updatable) A list of one or more ActionDetails objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(List<RuleActionsActionArgs> action) {
+            return action(Output.of(action));
+        }
+
+        /**
+         * @param action (Updatable) A list of one or more ActionDetails objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(RuleActionsActionArgs... action) {
+            return action(List.of(action));
+        }
+
+        /**
+         * @param actions (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * Use action instead. This field is retained for backward compatibility.
+         * 
+         */
+        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+        public Builder actions(@Nullable Output<List<RuleActionsActionArgs>> actions) {
             $.actions = actions;
             return this;
         }
 
         /**
-         * @param actions (Updatable) A list of one or more ActionDetails objects.
+         * @param actions (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use action instead. This field is retained for backward compatibility.
+         * 
          */
+        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
         public Builder actions(List<RuleActionsActionArgs> actions) {
             return actions(Output.of(actions));
         }
 
         /**
-         * @param actions (Updatable) A list of one or more ActionDetails objects.
+         * @param actions (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use action instead. This field is retained for backward compatibility.
+         * 
          */
+        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
         public Builder actions(RuleActionsActionArgs... actions) {
             return actions(List.of(actions));
         }
 
         public RuleActionsArgs build() {
-            if ($.actions == null) {
-                throw new MissingRequiredPropertyException("RuleActionsArgs", "actions");
-            }
             return $;
         }
     }

@@ -19,14 +19,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Import(name="auth")
     private @Nullable Output<String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Optional<Output<String>> auth() {
@@ -244,6 +244,141 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+     * 
+     */
+    @Import(name="tokenExchangeAuth")
+    private @Nullable Output<String> tokenExchangeAuth;
+
+    /**
+     * @return (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeAuth() {
+        return Optional.ofNullable(this.tokenExchangeAuth);
+    }
+
+    /**
+     * (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeClientId")
+    private @Nullable Output<String> tokenExchangeClientId;
+
+    /**
+     * @return (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeClientId() {
+        return Optional.ofNullable(this.tokenExchangeClientId);
+    }
+
+    /**
+     * (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeClientSecret")
+    private @Nullable Output<String> tokenExchangeClientSecret;
+
+    /**
+     * @return (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeClientSecret() {
+        return Optional.ofNullable(this.tokenExchangeClientSecret);
+    }
+
+    /**
+     * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeDomainUrl")
+    private @Nullable Output<String> tokenExchangeDomainUrl;
+
+    /**
+     * @return (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeDomainUrl() {
+        return Optional.ofNullable(this.tokenExchangeDomainUrl);
+    }
+
+    /**
+     * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    @Import(name="tokenExchangePublicKey")
+    private @Nullable Output<String> tokenExchangePublicKey;
+
+    /**
+     * @return (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangePublicKey() {
+        return Optional.ofNullable(this.tokenExchangePublicKey);
+    }
+
+    /**
+     * (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeRequestedTokenType")
+    private @Nullable Output<String> tokenExchangeRequestedTokenType;
+
+    /**
+     * @return (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeRequestedTokenType() {
+        return Optional.ofNullable(this.tokenExchangeRequestedTokenType);
+    }
+
+    /**
+     * (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeResourceType")
+    private @Nullable Output<String> tokenExchangeResourceType;
+
+    /**
+     * @return (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeResourceType() {
+        return Optional.ofNullable(this.tokenExchangeResourceType);
+    }
+
+    /**
+     * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    @Import(name="tokenExchangeRpstExp")
+    private @Nullable Output<String> tokenExchangeRpstExp;
+
+    /**
+     * @return (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeRpstExp() {
+        return Optional.ofNullable(this.tokenExchangeRpstExp);
+    }
+
+    /**
+     * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="tokenExchangeSubjectTokenType")
+    private @Nullable Output<String> tokenExchangeSubjectTokenType;
+
+    /**
+     * @return (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> tokenExchangeSubjectTokenType() {
+        return Optional.ofNullable(this.tokenExchangeSubjectTokenType);
+    }
+
+    /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
@@ -256,6 +391,21 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> userOcid() {
         return Optional.ofNullable(this.userOcid);
+    }
+
+    /**
+     * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Import(name="workloadIdentityTokenPath")
+    private @Nullable Output<String> workloadIdentityTokenPath;
+
+    /**
+     * @return (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Optional<Output<String>> workloadIdentityTokenPath() {
+        return Optional.ofNullable(this.workloadIdentityTokenPath);
     }
 
     private ProviderArgs() {}
@@ -276,7 +426,17 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.retryDurationSeconds = $.retryDurationSeconds;
         this.tenancyOcid = $.tenancyOcid;
         this.testTimeMaintenanceRebootDue = $.testTimeMaintenanceRebootDue;
+        this.tokenExchangeAuth = $.tokenExchangeAuth;
+        this.tokenExchangeClientId = $.tokenExchangeClientId;
+        this.tokenExchangeClientSecret = $.tokenExchangeClientSecret;
+        this.tokenExchangeDomainUrl = $.tokenExchangeDomainUrl;
+        this.tokenExchangePublicKey = $.tokenExchangePublicKey;
+        this.tokenExchangeRequestedTokenType = $.tokenExchangeRequestedTokenType;
+        this.tokenExchangeResourceType = $.tokenExchangeResourceType;
+        this.tokenExchangeRpstExp = $.tokenExchangeRpstExp;
+        this.tokenExchangeSubjectTokenType = $.tokenExchangeSubjectTokenType;
         this.userOcid = $.userOcid;
+        this.workloadIdentityTokenPath = $.workloadIdentityTokenPath;
     }
 
     public static Builder builder() {
@@ -298,7 +458,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 
@@ -309,7 +469,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+         * @param auth (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
          * 
          * @return builder
          * 
@@ -619,6 +779,195 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param tokenExchangeAuth (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeAuth(@Nullable Output<String> tokenExchangeAuth) {
+            $.tokenExchangeAuth = tokenExchangeAuth;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeAuth (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeAuth(String tokenExchangeAuth) {
+            return tokenExchangeAuth(Output.of(tokenExchangeAuth));
+        }
+
+        /**
+         * @param tokenExchangeClientId (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeClientId(@Nullable Output<String> tokenExchangeClientId) {
+            $.tokenExchangeClientId = tokenExchangeClientId;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeClientId (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeClientId(String tokenExchangeClientId) {
+            return tokenExchangeClientId(Output.of(tokenExchangeClientId));
+        }
+
+        /**
+         * @param tokenExchangeClientSecret (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeClientSecret(@Nullable Output<String> tokenExchangeClientSecret) {
+            $.tokenExchangeClientSecret = tokenExchangeClientSecret;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeClientSecret (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeClientSecret(String tokenExchangeClientSecret) {
+            return tokenExchangeClientSecret(Output.of(tokenExchangeClientSecret));
+        }
+
+        /**
+         * @param tokenExchangeDomainUrl (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeDomainUrl(@Nullable Output<String> tokenExchangeDomainUrl) {
+            $.tokenExchangeDomainUrl = tokenExchangeDomainUrl;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeDomainUrl (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeDomainUrl(String tokenExchangeDomainUrl) {
+            return tokenExchangeDomainUrl(Output.of(tokenExchangeDomainUrl));
+        }
+
+        /**
+         * @param tokenExchangePublicKey (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangePublicKey(@Nullable Output<String> tokenExchangePublicKey) {
+            $.tokenExchangePublicKey = tokenExchangePublicKey;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangePublicKey (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangePublicKey(String tokenExchangePublicKey) {
+            return tokenExchangePublicKey(Output.of(tokenExchangePublicKey));
+        }
+
+        /**
+         * @param tokenExchangeRequestedTokenType (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeRequestedTokenType(@Nullable Output<String> tokenExchangeRequestedTokenType) {
+            $.tokenExchangeRequestedTokenType = tokenExchangeRequestedTokenType;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeRequestedTokenType (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeRequestedTokenType(String tokenExchangeRequestedTokenType) {
+            return tokenExchangeRequestedTokenType(Output.of(tokenExchangeRequestedTokenType));
+        }
+
+        /**
+         * @param tokenExchangeResourceType (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeResourceType(@Nullable Output<String> tokenExchangeResourceType) {
+            $.tokenExchangeResourceType = tokenExchangeResourceType;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeResourceType (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeResourceType(String tokenExchangeResourceType) {
+            return tokenExchangeResourceType(Output.of(tokenExchangeResourceType));
+        }
+
+        /**
+         * @param tokenExchangeRpstExp (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeRpstExp(@Nullable Output<String> tokenExchangeRpstExp) {
+            $.tokenExchangeRpstExp = tokenExchangeRpstExp;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeRpstExp (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeRpstExp(String tokenExchangeRpstExp) {
+            return tokenExchangeRpstExp(Output.of(tokenExchangeRpstExp));
+        }
+
+        /**
+         * @param tokenExchangeSubjectTokenType (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeSubjectTokenType(@Nullable Output<String> tokenExchangeSubjectTokenType) {
+            $.tokenExchangeSubjectTokenType = tokenExchangeSubjectTokenType;
+            return this;
+        }
+
+        /**
+         * @param tokenExchangeSubjectTokenType (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tokenExchangeSubjectTokenType(String tokenExchangeSubjectTokenType) {
+            return tokenExchangeSubjectTokenType(Output.of(tokenExchangeSubjectTokenType));
+        }
+
+        /**
          * @param userOcid (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
          * 
          * @return builder
@@ -637,6 +986,27 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder userOcid(String userOcid) {
             return userOcid(Output.of(userOcid));
+        }
+
+        /**
+         * @param workloadIdentityTokenPath (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workloadIdentityTokenPath(@Nullable Output<String> workloadIdentityTokenPath) {
+            $.workloadIdentityTokenPath = workloadIdentityTokenPath;
+            return this;
+        }
+
+        /**
+         * @param workloadIdentityTokenPath (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workloadIdentityTokenPath(String workloadIdentityTokenPath) {
+            return workloadIdentityTokenPath(Output.of(workloadIdentityTokenPath));
         }
 
         public ProviderArgs build() {

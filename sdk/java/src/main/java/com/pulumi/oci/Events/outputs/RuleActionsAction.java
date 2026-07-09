@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class RuleActionsAction {
     /**
-     * @return (Updatable) The action to perform if the condition in the rule matches an event.
+     * @return The action to perform if the condition in the rule matches an event.
      * * **ONS:** Send to an Oracle Notification Service topic.
      * * **OSS:** Send to a stream from Oracle Streaming Service.
      * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -22,12 +22,12 @@ public final class RuleActionsAction {
      */
     private String actionType;
     /**
-     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
      * 
      */
     private @Nullable String functionId;
@@ -37,7 +37,10 @@ public final class RuleActionsAction {
      */
     private @Nullable String id;
     /**
-     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
+     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private Boolean isEnabled;
@@ -52,19 +55,19 @@ public final class RuleActionsAction {
      */
     private @Nullable String state;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
      * 
      */
     private @Nullable String streamId;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
      * 
      */
     private @Nullable String topicId;
 
     private RuleActionsAction() {}
     /**
-     * @return (Updatable) The action to perform if the condition in the rule matches an event.
+     * @return The action to perform if the condition in the rule matches an event.
      * * **ONS:** Send to an Oracle Notification Service topic.
      * * **OSS:** Send to a stream from Oracle Streaming Service.
      * * **FAAS:** Send to an Oracle Functions Service endpoint.
@@ -74,14 +77,14 @@ public final class RuleActionsAction {
         return this.actionType;
     }
     /**
-     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Function hosted by Oracle Functions Service.
      * 
      */
     public Optional<String> functionId() {
@@ -95,7 +98,10 @@ public final class RuleActionsAction {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
+     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Boolean isEnabled() {
@@ -116,14 +122,14 @@ public final class RuleActionsAction {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream to which messages are delivered.
      * 
      */
     public Optional<String> streamId() {
         return Optional.ofNullable(this.streamId);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the topic to which messages are delivered.
      * 
      */
     public Optional<String> topicId() {

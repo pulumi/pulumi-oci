@@ -6,6 +6,7 @@ package com.pulumi.oci.Events.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Events.outputs.GetRulesRuleAction;
+import com.pulumi.oci.Events.outputs.GetRulesRuleConditionDetail;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -30,6 +31,7 @@ public final class GetRulesRule {
      * 
      */
     private String condition;
+    private List<GetRulesRuleConditionDetail> conditionDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -98,6 +100,9 @@ public final class GetRulesRule {
      */
     public String condition() {
         return this.condition;
+    }
+    public List<GetRulesRuleConditionDetail> conditionDetails() {
+        return this.conditionDetails;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -175,6 +180,7 @@ public final class GetRulesRule {
         private List<GetRulesRuleAction> actions;
         private String compartmentId;
         private String condition;
+        private List<GetRulesRuleConditionDetail> conditionDetails;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -190,6 +196,7 @@ public final class GetRulesRule {
     	      this.actions = defaults.actions;
     	      this.compartmentId = defaults.compartmentId;
     	      this.condition = defaults.condition;
+    	      this.conditionDetails = defaults.conditionDetails;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -227,6 +234,17 @@ public final class GetRulesRule {
             }
             this.condition = condition;
             return this;
+        }
+        @CustomType.Setter
+        public Builder conditionDetails(List<GetRulesRuleConditionDetail> conditionDetails) {
+            if (conditionDetails == null) {
+              throw new MissingRequiredPropertyException("GetRulesRule", "conditionDetails");
+            }
+            this.conditionDetails = conditionDetails;
+            return this;
+        }
+        public Builder conditionDetails(GetRulesRuleConditionDetail... conditionDetails) {
+            return conditionDetails(List.of(conditionDetails));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -305,6 +323,7 @@ public final class GetRulesRule {
             _resultValue.actions = actions;
             _resultValue.compartmentId = compartmentId;
             _resultValue.condition = condition;
+            _resultValue.conditionDetails = conditionDetails;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

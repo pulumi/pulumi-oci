@@ -24,14 +24,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:oci")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     @Export(name="auth", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> auth;
 
     /**
-     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;SecurityToken&#39;, &#39;InstancePrincipal&#39;, &#39;ResourcePrincipal&#39; and &#39;OKEWorkloadIdentity&#39;. By default, &#39;ApiKey&#39; will be used.
+     * @return (Optional) The type of auth to use. Options are &#39;ApiKey&#39;, &#39;InstancePrincipal&#39;, &#39;InstancePrincipalWithCerts&#39;, &#39;SecurityToken&#39;, &#39;ResourcePrincipal&#39;, &#39;OKEWorkloadIdentity&#39;, &#39;WorkloadIdentityFederation&#39;. By default, &#39;ApiKey&#39; will be used.
      * 
      */
     public Output<Optional<String>> auth() {
@@ -160,6 +160,132 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.testTimeMaintenanceRebootDue);
     }
     /**
+     * (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+     * 
+     */
+    @Export(name="tokenExchangeAuth", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeAuth;
+
+    /**
+     * @return (Optional) Authentication method for the token-exchange client. Valid values are &#39;OAuthClientCredentials&#39; and &#39;InstancePrincipal&#39;. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;. Defaults to &#39;OAuthClientCredentials&#39;.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeAuth() {
+        return Codegen.optional(this.tokenExchangeAuth);
+    }
+    /**
+     * (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeClientId", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeClientId;
+
+    /**
+     * @return (Optional) Token-exchange client ID. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeClientId() {
+        return Codegen.optional(this.tokenExchangeClientId);
+    }
+    /**
+     * (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeClientSecret", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeClientSecret;
+
+    /**
+     * @return (Optional) Token-exchange client secret. Required when auth is set to &#39;WorkloadIdentityFederation&#39; and tokenExchangeAuth is &#39;OAuthClientCredentials&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeClientSecret() {
+        return Codegen.optional(this.tokenExchangeClientSecret);
+    }
+    /**
+     * (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeDomainUrl", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeDomainUrl;
+
+    /**
+     * @return (Optional) OCI IAM identity domain URL for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeDomainUrl() {
+        return Codegen.optional(this.tokenExchangeDomainUrl);
+    }
+    /**
+     * (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    @Export(name="tokenExchangePublicKey", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangePublicKey;
+
+    /**
+     * @return (Optional) Public key used by the token-exchange flow, where applicable. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangePublicKey() {
+        return Codegen.optional(this.tokenExchangePublicKey);
+    }
+    /**
+     * (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeRequestedTokenType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeRequestedTokenType;
+
+    /**
+     * @return (Optional) Requested token type for token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeRequestedTokenType() {
+        return Codegen.optional(this.tokenExchangeRequestedTokenType);
+    }
+    /**
+     * (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeResourceType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeResourceType;
+
+    /**
+     * @return (Optional) Resource type used during token exchange. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeResourceType() {
+        return Codegen.optional(this.tokenExchangeResourceType);
+    }
+    /**
+     * (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    @Export(name="tokenExchangeRpstExp", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeRpstExp;
+
+    /**
+     * @return (Optional) Requested RPST expiration for token exchange. Used only if auth is set to &#39;WorkloadIdentityFederation&#39;.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeRpstExp() {
+        return Codegen.optional(this.tokenExchangeRpstExp);
+    }
+    /**
+     * (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="tokenExchangeSubjectTokenType", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> tokenExchangeSubjectTokenType;
+
+    /**
+     * @return (Optional) Subject token type for the Kubernetes service account JWT. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> tokenExchangeSubjectTokenType() {
+        return Codegen.optional(this.tokenExchangeSubjectTokenType);
+    }
+    /**
      * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
@@ -172,6 +298,20 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      */
     public Output<Optional<String>> userOcid() {
         return Codegen.optional(this.userOcid);
+    }
+    /**
+     * (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    @Export(name="workloadIdentityTokenPath", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> workloadIdentityTokenPath;
+
+    /**
+     * @return (Optional) Path to the projected Kubernetes service account token. Required if auth is set to &#39;WorkloadIdentityFederation&#39;, ignored otherwise.
+     * 
+     */
+    public Output<Optional<String>> workloadIdentityTokenPath() {
+        return Codegen.optional(this.workloadIdentityTokenPath);
     }
 
     /**
@@ -211,7 +351,8 @@ public class Provider extends com.pulumi.resources.ProviderResource {
             .version(Utilities.getVersion())
             .additionalSecretOutputs(List.of(
                 "privateKey",
-                "privateKeyPassword"
+                "privateKeyPassword",
+                "tokenExchangeClientSecret"
             ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);

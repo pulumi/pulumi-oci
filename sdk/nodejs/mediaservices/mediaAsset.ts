@@ -142,7 +142,6 @@ export class MediaAsset extends pulumi.CustomResource {
     /**
      * (Updatable) The type of the media asset.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -319,7 +318,6 @@ export interface MediaAssetState {
     /**
      * (Updatable) The type of the media asset.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -405,7 +403,6 @@ export interface MediaAssetArgs {
     sourceMediaWorkflowVersion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the media asset.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

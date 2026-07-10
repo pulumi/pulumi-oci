@@ -33,7 +33,6 @@ class CatalogArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of a service catalog.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -100,7 +99,6 @@ class CatalogArgs:
         """
         (Updatable) The status of a service catalog.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -132,7 +130,6 @@ class _CatalogState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the service catalog.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of a service catalog.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -224,7 +221,6 @@ class _CatalogState:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The status of a service catalog.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +322,6 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the service catalog.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of a service catalog.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -447,7 +442,6 @@ class Catalog(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the service catalog.
         :param pulumi.Input[_builtins.str] status: (Updatable) The status of a service catalog.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -514,7 +508,6 @@ class Catalog(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The status of a service catalog.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

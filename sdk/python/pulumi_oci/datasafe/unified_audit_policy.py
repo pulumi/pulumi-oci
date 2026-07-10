@@ -39,7 +39,6 @@ class UnifiedAuditPolicyArgs:
         :param pulumi.Input[_builtins.str] status: (Updatable) Indicates whether the unified audit policy has been enabled or disabled.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the associated unified audit policy definition.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -114,7 +113,6 @@ class UnifiedAuditPolicyArgs:
     def unified_audit_policy_definition_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the associated unified audit policy definition.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +210,6 @@ class _UnifiedAuditPolicyState:
         :param pulumi.Input[_builtins.str] time_created: The time the the unified audit policy was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the unified audit policy was updated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the associated unified audit policy definition.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -436,7 +433,6 @@ class _UnifiedAuditPolicyState:
         """
         The OCID of the associated unified audit policy definition.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -520,7 +516,6 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the unified audit policy.
         :param pulumi.Input[_builtins.str] status: (Updatable) Indicates whether the unified audit policy has been enabled or disabled.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the associated unified audit policy definition.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -686,7 +681,6 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the unified audit policy was updated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the associated unified audit policy definition.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -837,7 +831,6 @@ class UnifiedAuditPolicy(pulumi.CustomResource):
     def unified_audit_policy_definition_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the associated unified audit policy definition.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -75,7 +75,6 @@ export class SubscriptionMapping extends pulumi.CustomResource {
     /**
      * OCID of Subscription.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -153,7 +152,6 @@ export interface SubscriptionMappingState {
     /**
      * OCID of Subscription.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -182,7 +180,6 @@ export interface SubscriptionMappingArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * OCID of Subscription.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -29,8 +29,7 @@ class JobAdvisorReportCheckArgs:
 
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
-        :param pulumi.Input[_builtins.str] job_id: The OCID of the job 
-               
+        :param pulumi.Input[_builtins.str] job_id: The OCID of the job
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -67,8 +66,7 @@ class JobAdvisorReportCheckArgs:
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the job 
-
+        The OCID of the job
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -94,8 +92,7 @@ class _JobAdvisorReportCheckState:
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
         :param pulumi.Input[Sequence[pulumi.Input['JobAdvisorReportCheckItemArgs']]] items: Array of advisor check items.
-        :param pulumi.Input[_builtins.str] job_id: The OCID of the job 
-               
+        :param pulumi.Input[_builtins.str] job_id: The OCID of the job
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,8 +149,7 @@ class _JobAdvisorReportCheckState:
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the job 
-
+        The OCID of the job
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,8 +216,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
-        :param pulumi.Input[_builtins.str] job_id: The OCID of the job 
-               
+        :param pulumi.Input[_builtins.str] job_id: The OCID of the job
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -324,8 +319,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] advisor_report_check_id: The ID of the advisor check
         :param pulumi.Input[_builtins.bool] is_reviewed: (Updatable) User flag for advisor report check.
         :param pulumi.Input[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict']]]] items: Array of advisor check items.
-        :param pulumi.Input[_builtins.str] job_id: The OCID of the job 
-               
+        :param pulumi.Input[_builtins.str] job_id: The OCID of the job
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -370,8 +364,7 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the job 
-
+        The OCID of the job
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

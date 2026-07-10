@@ -39,7 +39,6 @@ class BdsInstanceNodeBackupConfigurationArgs:
         :param pulumi.Input[_builtins.int] number_of_backups_to_retain: (Updatable) Number of backup copies to retain.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -133,7 +132,6 @@ class BdsInstanceNodeBackupConfigurationArgs:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -170,7 +168,6 @@ class _BdsInstanceNodeBackupConfigurationState:
         :param pulumi.Input[_builtins.str] time_created: The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,7 +307,6 @@ class _BdsInstanceNodeBackupConfigurationState:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -381,7 +377,6 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] number_of_backups_to_retain: (Updatable) Number of backup copies to retain.
         :param pulumi.Input[_builtins.str] schedule: (Updatable) Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -514,7 +509,6 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] timezone: (Updatable) The time zone of the execution schedule, in IANA time zone database name format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -611,7 +605,6 @@ class BdsInstanceNodeBackupConfiguration(pulumi.CustomResource):
     def timezone(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The time zone of the execution schedule, in IANA time zone database name format
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

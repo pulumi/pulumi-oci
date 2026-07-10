@@ -47,8 +47,7 @@ class ScheduleArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceArgs']]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -202,8 +201,7 @@ class ScheduleArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,8 +273,7 @@ class _ScheduleState:
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceArgs']]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -463,8 +460,7 @@ class _ScheduleState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -609,8 +605,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -751,8 +746,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict']]]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -881,8 +875,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

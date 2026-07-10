@@ -35,7 +35,6 @@ class AuditArchiveRetrievalArgs:
         :param pulumi.Input[_builtins.str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target associated with the archive retrieval.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -97,7 +96,6 @@ class AuditArchiveRetrievalArgs:
     def target_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the target associated with the archive retrieval.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -192,7 +190,6 @@ class _AuditArchiveRetrievalState:
         :param pulumi.Input[_builtins.str] state: The current state of the archive retrieval.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target associated with the archive retrieval.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,7 +380,6 @@ class _AuditArchiveRetrievalState:
         """
         The OCID of the target associated with the archive retrieval.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -495,7 +491,6 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] start_date: Start month of the archive retrieval, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target associated with the archive retrieval.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -649,7 +644,6 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target associated with the archive retrieval.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_completed: The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
@@ -779,7 +773,6 @@ class AuditArchiveRetrieval(pulumi.CustomResource):
     def target_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the target associated with the archive retrieval.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -141,7 +141,6 @@ export class ImportedModel extends pulumi.CustomResource {
     /**
      * (Updatable) The version of the imported model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -267,7 +266,6 @@ export interface ImportedModelState {
     /**
      * (Updatable) The version of the imported model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -312,7 +310,6 @@ export interface ImportedModelArgs {
     vendor?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The version of the imported model.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

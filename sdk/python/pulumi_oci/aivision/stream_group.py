@@ -39,7 +39,6 @@ class StreamGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input['StreamGroupStreamOverlapArgs']]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -135,7 +134,6 @@ class StreamGroupArgs:
         """
         (Updatable) List of streamSource OCIDs associated with the stream group
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -171,7 +169,6 @@ class _StreamGroupState:
         :param pulumi.Input[_builtins.str] state: The current state of the streamGroup.
         :param pulumi.Input[Sequence[pulumi.Input['StreamGroupStreamOverlapArgs']]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,7 +289,6 @@ class _StreamGroupState:
         """
         (Updatable) List of streamSource OCIDs associated with the stream group
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -397,7 +393,6 @@ class StreamGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Stream
         :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -524,7 +519,6 @@ class StreamGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['StreamGroupStreamOverlapArgs', 'StreamGroupStreamOverlapArgsDict']]]] stream_overlaps: (Updatable) List of streamSource OCIDs where the streamSource overlaps in field of view.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] stream_source_ids: (Updatable) List of streamSource OCIDs associated with the stream group
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -609,7 +603,6 @@ class StreamGroup(pulumi.CustomResource):
     def stream_source_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) List of streamSource OCIDs associated with the stream group
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

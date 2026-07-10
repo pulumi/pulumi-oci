@@ -141,7 +141,6 @@ class FusionEnvironmentAdminUserItemArgsDict(TypedDict):
     """
     The username for the administrator.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -158,7 +157,6 @@ class FusionEnvironmentAdminUserItemArgs:
         :param pulumi.Input[_builtins.str] first_name: The administrator's first name.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +211,6 @@ class FusionEnvironmentAdminUserItemArgs:
     def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The username for the administrator.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -704,8 +701,7 @@ class FusionEnvironmentRuleArgsDict(TypedDict):
     """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-
+    (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -720,8 +716,7 @@ class FusionEnvironmentRuleArgs:
         """
         :param pulumi.Input[_builtins.str] action: (Updatable) Rule type
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleConditionArgs']]] conditions: (Updatable)
-        :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-               
+        :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -759,8 +754,7 @@ class FusionEnvironmentRuleArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-
+        (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -426,7 +426,6 @@ export class DistributedDatabaseDistributedDatabase extends pulumi.CustomResourc
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -797,7 +796,6 @@ export interface DistributedDatabaseDistributedDatabaseState {
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -963,7 +961,6 @@ export interface DistributedDatabaseDistributedDatabaseArgs {
     validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

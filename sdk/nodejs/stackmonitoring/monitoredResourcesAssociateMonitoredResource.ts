@@ -94,8 +94,7 @@ export class MonitoredResourcesAssociateMonitoredResource extends pulumi.CustomR
      */
     declare public /*out*/ readonly sourceResourceDetails: pulumi.Output<outputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail[]>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-     *
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,8 +192,7 @@ export interface MonitoredResourcesAssociateMonitoredResourceState {
      */
     sourceResourceDetails?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>[] | undefined>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-     *
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,8 +225,7 @@ export interface MonitoredResourcesAssociateMonitoredResourceArgs {
      */
     destinationResourceId: pulumi.Input<string>;
     /**
-     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-     *
+     * Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

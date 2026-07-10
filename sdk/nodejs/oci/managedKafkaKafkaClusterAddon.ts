@@ -91,7 +91,6 @@ export class ManagedKafkaKafkaClusterAddon extends pulumi.CustomResource {
     /**
      * (Updatable) A list of CIDR's for ingress/egress traffic.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -193,7 +192,6 @@ export interface ManagedKafkaKafkaClusterAddonState {
     /**
      * (Updatable) A list of CIDR's for ingress/egress traffic.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -238,7 +236,6 @@ export interface ManagedKafkaKafkaClusterAddonArgs {
     name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) A list of CIDR's for ingress/egress traffic.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -1156,7 +1156,6 @@ class MigrationPlanTargetEnvironment(dict):
         :param _builtins.str vcn: (Updatable) OCID of the VM configuration VCN.
         :param _builtins.str vnic_profile_asset_id: (Updatable) Inventory asset Id of the vnic profile
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1277,7 +1276,6 @@ class MigrationPlanTargetEnvironment(dict):
     def vnic_profile_asset_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) Inventory asset Id of the vnic profile
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4860,8 +4858,7 @@ class TargetAssetUserSpecSourceDetails(dict):
                  image_id: Optional[_builtins.str] = None,
                  kms_key_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-               
+        :param _builtins.str source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4889,8 +4886,7 @@ class TargetAssetUserSpecSourceDetails(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> _builtins.str:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

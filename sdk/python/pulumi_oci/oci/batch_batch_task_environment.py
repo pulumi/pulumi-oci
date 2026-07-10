@@ -45,7 +45,6 @@ class BatchBatchTaskEnvironmentArgs:
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchTaskEnvironmentVolumeArgs']]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -170,7 +169,6 @@ class BatchBatchTaskEnvironmentArgs:
         """
         Container's working directory.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -215,7 +213,6 @@ class _BatchBatchTaskEnvironmentState:
         :param pulumi.Input[_builtins.str] time_updated: The date and time the batch task environment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchTaskEnvironmentVolumeArgs']]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -399,7 +396,6 @@ class _BatchBatchTaskEnvironmentState:
         """
         Container's working directory.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -488,7 +484,6 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
                See also [docs](https://docs.oracle.com/en-us/iaas/api/#/en/container-instances/20210415/datatypes/LinuxSecurityContext).
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -644,7 +639,6 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict']]]] volumes: List of volumes attached to the image. The use cases of the volumes are but not limited to: read the input of the task and write the output.
         :param pulumi.Input[_builtins.str] working_directory: Container's working directory.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -770,7 +764,6 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
     def working_directory(self) -> pulumi.Output[_builtins.str]:
         """
         Container's working directory.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

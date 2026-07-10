@@ -53,7 +53,6 @@ class WorkspaceApplicationTaskScheduleArgs:
         :param pulumi.Input[_builtins.str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] auth_mode: (Updatable) The authorization mode for the task.
@@ -155,7 +154,6 @@ class WorkspaceApplicationTaskScheduleArgs:
     def workspace_id(self) -> pulumi.Input[_builtins.str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -491,7 +489,6 @@ class _WorkspaceApplicationTaskScheduleState:
         :param pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefArgs'] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[_builtins.str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -894,7 +891,6 @@ class _WorkspaceApplicationTaskScheduleState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1078,7 +1074,6 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict']] schedule_ref: (Updatable) The schedule object
         :param pulumi.Input[_builtins.str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1363,7 +1358,6 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] start_time_millis: (Updatable) The start time in milliseconds.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1628,7 +1622,6 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[_builtins.str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -120,8 +120,7 @@ export class ComputeGpuMemoryCluster extends pulumi.CustomResource {
      */
     declare public readonly privateIpIds: pulumi.Output<string[]>;
     /**
-     * (Updatable) The desired number of instances for the GPU Memory Cluster. 
-     *
+     * (Updatable) The desired number of instances for the GPU Memory Cluster.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,8 +245,7 @@ export interface ComputeGpuMemoryClusterState {
      */
     privateIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) The desired number of instances for the GPU Memory Cluster. 
-     *
+     * (Updatable) The desired number of instances for the GPU Memory Cluster.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -312,8 +310,7 @@ export interface ComputeGpuMemoryClusterArgs {
      */
     privateIpIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) The desired number of instances for the GPU Memory Cluster. 
-     *
+     * (Updatable) The desired number of instances for the GPU Memory Cluster.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

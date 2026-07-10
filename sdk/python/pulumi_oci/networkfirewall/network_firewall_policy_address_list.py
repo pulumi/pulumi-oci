@@ -31,7 +31,6 @@ class NetworkFirewallPolicyAddressListArgs:
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the address list. This field can be used to add additional info.
@@ -74,7 +73,6 @@ class NetworkFirewallPolicyAddressListArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Type of address List. The accepted values are - * FQDN * IP
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -130,7 +128,6 @@ class _NetworkFirewallPolicyAddressListState:
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this Address List belongs to.
         :param pulumi.Input[_builtins.int] total_addresses: Count of total addresses in the AddressList
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +225,6 @@ class _NetworkFirewallPolicyAddressListState:
         """
         Type of address List. The accepted values are - * FQDN * IP
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -289,7 +285,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Unique name to identify the group of addresses to be used in the policy rules.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -405,7 +400,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] total_addresses: Count of total addresses in the AddressList
         :param pulumi.Input[_builtins.str] type: Type of address List. The accepted values are - * FQDN * IP
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -475,7 +469,6 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of address List. The accepted values are - * FQDN * IP
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

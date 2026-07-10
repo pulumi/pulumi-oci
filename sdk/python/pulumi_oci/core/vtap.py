@@ -59,8 +59,7 @@ class VtapArgs:
         :param pulumi.Input[_builtins.str] target_ip: (Updatable) The IP address of the destination resource where mirrored packets are sent.
         :param pulumi.Input[_builtins.str] target_type: (Updatable) The target type for the VTAP.
         :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
-        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-               
+        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -308,8 +307,7 @@ class VtapArgs:
     @pulumi.getter(name="vxlanNetworkIdentifier")
     def vxlan_network_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-
+        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -370,8 +368,7 @@ class _VtapState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
-        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-               
+        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -665,8 +662,7 @@ class _VtapState:
     @pulumi.getter(name="vxlanNetworkIdentifier")
     def vxlan_network_identifier(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-
+        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -780,8 +776,7 @@ class Vtap(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] target_type: (Updatable) The target type for the VTAP.
         :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
-        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-               
+        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -979,8 +974,7 @@ class Vtap(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the VTAP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2020-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) Used to control the priority of traffic. It is an optional field. If it not passed, the value is DEFAULT
         :param pulumi.Input[_builtins.str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN containing the `Vtap` resource.
-        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-               
+        :param pulumi.Input[_builtins.str] vxlan_network_identifier: (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1178,8 +1172,7 @@ class Vtap(pulumi.CustomResource):
     @pulumi.getter(name="vxlanNetworkIdentifier")
     def vxlan_network_identifier(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN. 
-
+        (Updatable) The virtual extensible LAN (VXLAN) network identifier (or VXLAN segment ID) that uniquely identifies the VXLAN.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

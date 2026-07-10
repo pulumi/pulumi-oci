@@ -29,7 +29,6 @@ class UtilsAnalyzeApplicationsConfigurationArgs:
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -69,7 +68,6 @@ class UtilsAnalyzeApplicationsConfigurationArgs:
         """
         (Updatable) The Object Storage namespace used for analyzing applications.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -92,7 +90,6 @@ class _UtilsAnalyzeApplicationsConfigurationState:
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +130,6 @@ class _UtilsAnalyzeApplicationsConfigurationState:
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Object Storage namespace used for analyzing applications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -186,7 +182,6 @@ class UtilsAnalyzeApplicationsConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] bucket: (Updatable) The name of the bucket used for analyzing applications.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -279,7 +274,6 @@ class UtilsAnalyzeApplicationsConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The Object Storage namespace used for analyzing applications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -313,7 +307,6 @@ class UtilsAnalyzeApplicationsConfiguration(pulumi.CustomResource):
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The Object Storage namespace used for analyzing applications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

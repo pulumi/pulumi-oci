@@ -37,7 +37,6 @@ class AutonomousDatabaseSaasAdminUserArgs:
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -133,7 +132,6 @@ class AutonomousDatabaseSaasAdminUserArgs:
         """
         The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -164,7 +162,6 @@ class _AutonomousDatabaseSaasAdminUserState:
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +259,6 @@ class _AutonomousDatabaseSaasAdminUserState:
         """
         The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -319,7 +315,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,7 +422,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -497,7 +491,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def time_saas_admin_user_enabled(self) -> pulumi.Output[_builtins.str]:
         """
         The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

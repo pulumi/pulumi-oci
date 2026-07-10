@@ -46,7 +46,6 @@ class BdsInstanceIdentityConfigurationArgs:
         :param pulumi.Input[_builtins.str] refresh_confidential_application_trigger: (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         :param pulumi.Input[_builtins.str] refresh_upst_token_exchange_keytab_trigger: (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs'] upst_configuration_details: (Updatable) Details for activating/updating UPST config on the cluster
@@ -183,7 +182,6 @@ class BdsInstanceIdentityConfigurationArgs:
         """
         (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -239,7 +237,6 @@ class _BdsInstanceIdentityConfigurationState:
         :param pulumi.Input[_builtins.str] identity_domain_id: Identity domain OCID to use for identity config, required for creating identity configuration
         :param pulumi.Input[_builtins.str] refresh_confidential_application_trigger: (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         :param pulumi.Input[_builtins.str] refresh_upst_token_exchange_keytab_trigger: (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -408,7 +405,6 @@ class _BdsInstanceIdentityConfigurationState:
         """
         (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -548,7 +544,6 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] identity_domain_id: Identity domain OCID to use for identity config, required for creating identity configuration
         :param pulumi.Input[_builtins.str] refresh_confidential_application_trigger: (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         :param pulumi.Input[_builtins.str] refresh_upst_token_exchange_keytab_trigger: (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -707,7 +702,6 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] refresh_confidential_application_trigger: (Updatable) An optional property when set to "true" triggers Refresh Confidential Application.
         :param pulumi.Input[_builtins.str] refresh_upst_token_exchange_keytab_trigger: (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the UPST config
@@ -823,7 +817,6 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
     def refresh_upst_token_exchange_keytab_trigger(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

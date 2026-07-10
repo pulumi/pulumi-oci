@@ -35,7 +35,6 @@ class IotDigitalTwinAdapterArgs:
 
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -70,7 +69,6 @@ class IotDigitalTwinAdapterArgs:
     def iot_domain_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,7 +205,6 @@ class _IotDigitalTwinAdapterState:
         :param pulumi.Input[Sequence[pulumi.Input['IotDigitalTwinAdapterInboundRouteArgs']]] inbound_routes: (Updatable) list of inbound routes
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the digital twin adapter.
@@ -343,7 +340,6 @@ class _IotDigitalTwinAdapterState:
     def iot_domain_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -488,7 +484,6 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         :param pulumi.Input[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict']] inbound_envelope: (Updatable) Payload containing device-specific metadata and optional value mappings used to interpret or transform that metadata. This structure includes the device endpoint, the actual payload, and an optional envelope mapping that applies [JQ](https://stedolan.github.io/jq/) expressions to extract or reshape the data as needed.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]] inbound_routes: (Updatable) list of inbound routes
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -645,7 +640,6 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict']]]] inbound_routes: (Updatable) list of inbound routes
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the digital twin adapter.
@@ -741,7 +735,6 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
     def iot_domain_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

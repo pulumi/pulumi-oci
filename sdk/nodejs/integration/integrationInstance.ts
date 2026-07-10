@@ -247,7 +247,6 @@ export class IntegrationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -522,7 +521,6 @@ export interface IntegrationInstanceState {
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -652,7 +650,6 @@ export interface IntegrationInstanceArgs {
     shape?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -49,7 +49,6 @@ class OccMetricAlarmArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subscribers: (Updatable) List of topic OCIDs for notifications.
         :param pulumi.Input[_builtins.str] threshold_type: (Updatable) Units in which threshold is being stored.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -210,7 +209,6 @@ class OccMetricAlarmArgs:
         """
         (Updatable) Units in which threshold is being stored.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -255,7 +253,6 @@ class _OccMetricAlarmState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] threshold: (Updatable) Threshold at which alarm must be triggered.
         :param pulumi.Input[_builtins.str] threshold_type: (Updatable) Units in which threshold is being stored.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -443,7 +440,6 @@ class _OccMetricAlarmState:
         """
         (Updatable) Units in which threshold is being stored.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -563,7 +559,6 @@ class OccMetricAlarm(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subscribers: (Updatable) List of topic OCIDs for notifications.
         :param pulumi.Input[_builtins.int] threshold: (Updatable) Threshold at which alarm must be triggered.
         :param pulumi.Input[_builtins.str] threshold_type: (Updatable) Units in which threshold is being stored.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -735,7 +730,6 @@ class OccMetricAlarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] threshold: (Updatable) Threshold at which alarm must be triggered.
         :param pulumi.Input[_builtins.str] threshold_type: (Updatable) Units in which threshold is being stored.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: Creation timestamp (RFC 3339).
@@ -863,7 +857,6 @@ class OccMetricAlarm(pulumi.CustomResource):
     def threshold_type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Units in which threshold is being stored.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

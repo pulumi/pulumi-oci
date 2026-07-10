@@ -96,8 +96,7 @@ export class SensitiveTypesExport extends pulumi.CustomResource {
      */
     declare public readonly isIncludeAllSensitiveTypes: pulumi.Output<boolean>;
     /**
-     * The OCIDs of the sensitive types used to create sensitive types export. 
-     *
+     * The OCIDs of the sensitive types used to create sensitive types export.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,8 +194,7 @@ export interface SensitiveTypesExportState {
      */
     isIncludeAllSensitiveTypes?: pulumi.Input<boolean | undefined>;
     /**
-     * The OCIDs of the sensitive types used to create sensitive types export. 
-     *
+     * The OCIDs of the sensitive types used to create sensitive types export.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,8 +247,7 @@ export interface SensitiveTypesExportArgs {
      */
     isIncludeAllSensitiveTypes?: pulumi.Input<boolean | undefined>;
     /**
-     * The OCIDs of the sensitive types used to create sensitive types export. 
-     *
+     * The OCIDs of the sensitive types used to create sensitive types export.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -289,7 +289,6 @@ class QueryQueryDefinitionArgsDict(TypedDict):
     """
     (Updatable) The saved query version.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -306,7 +305,6 @@ class QueryQueryDefinitionArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The query display name. Avoid entering confidential information.
         :param pulumi.Input['QueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated Cost Analysis report.
         :param pulumi.Input[_builtins.float] version: (Updatable) The saved query version.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -357,7 +355,6 @@ class QueryQueryDefinitionArgs:
     def version(self) -> pulumi.Input[_builtins.float]:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1783,7 +1780,6 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgsDict(TypedDict):
     """
     (Updatable) The saved query version.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1800,7 +1796,6 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The query display name. Avoid entering confidential information.
         :param pulumi.Input['UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs'] report_query: (Updatable) The request of the generated carbon emissions usage report.
         :param pulumi.Input[_builtins.int] version: (Updatable) The saved query version.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1851,7 +1846,6 @@ class UsageCarbonEmissionsQueryQueryDefinitionArgs:
     def version(self) -> pulumi.Input[_builtins.int]:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2479,7 +2473,6 @@ class UsageItemArgsDict(TypedDict):
     """
     The usage start time.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2559,7 +2552,6 @@ class UsageItemArgs:
         :param pulumi.Input[_builtins.str] tenant_name: The tenancy name.
         :param pulumi.Input[_builtins.str] time_usage_ended: The usage end time.
         :param pulumi.Input[_builtins.str] time_usage_started: The usage start time.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2959,7 +2951,6 @@ class UsageItemArgs:
     def time_usage_started(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The usage start time.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

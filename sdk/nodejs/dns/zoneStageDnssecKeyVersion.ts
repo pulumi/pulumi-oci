@@ -72,7 +72,6 @@ export class ZoneStageDnssecKeyVersion extends pulumi.CustomResource {
     /**
      * The OCID of the target zone.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -126,7 +125,6 @@ export interface ZoneStageDnssecKeyVersionState {
     /**
      * The OCID of the target zone.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -147,7 +145,6 @@ export interface ZoneStageDnssecKeyVersionArgs {
     scope?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

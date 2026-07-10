@@ -112,7 +112,6 @@ export class OccCustomerGroup extends pulumi.CustomResource {
     /**
      * (Updatable) To determine whether the customer group is enabled/disabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -220,7 +219,6 @@ export interface OccCustomerGroupState {
     /**
      * (Updatable) To determine whether the customer group is enabled/disabled.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -273,7 +271,6 @@ export interface OccCustomerGroupArgs {
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) To determine whether the customer group is enabled/disabled.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

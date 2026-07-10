@@ -98,7 +98,6 @@ export class CloudDbSystemConnector extends pulumi.CustomResource {
     /**
      * The user-friendly name for the cloud connector. The name does not have to be unique.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -230,7 +229,6 @@ export interface CloudDbSystemConnectorState {
     /**
      * The user-friendly name for the cloud connector. The name does not have to be unique.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -291,7 +289,6 @@ export interface CloudDbSystemConnectorArgs {
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The user-friendly name for the cloud connector. The name does not have to be unique.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

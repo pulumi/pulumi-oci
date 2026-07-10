@@ -46,7 +46,6 @@ class RedisClusterArgs:
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] backup_id: The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
@@ -149,7 +148,6 @@ class RedisClusterArgs:
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +324,6 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -671,7 +668,6 @@ class _RedisClusterState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -810,7 +806,6 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1020,7 +1015,6 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1250,7 +1244,6 @@ class RedisCluster(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -55,7 +55,6 @@ class ProfileArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
         :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system for the instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -261,7 +260,6 @@ class ProfileArgs:
         """
         The vendor of the operating system for the instance.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -328,7 +326,6 @@ class _ProfileState:
         :param pulumi.Input[_builtins.str] time_created: The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_modified: The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system for the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -678,7 +675,6 @@ class _ProfileState:
         """
         The vendor of the operating system for the instance.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -773,7 +769,6 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] registration_type: The type of instance to register.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that the registration profile will use.
         :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system for the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -966,7 +961,6 @@ class Profile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_modified: The time the registration profile was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system for the instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1199,7 +1193,6 @@ class Profile(pulumi.CustomResource):
     def vendor_name(self) -> pulumi.Output[_builtins.str]:
         """
         The vendor of the operating system for the instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

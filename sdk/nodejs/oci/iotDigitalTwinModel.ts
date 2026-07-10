@@ -91,7 +91,6 @@ export class IotDigitalTwinModel extends pulumi.CustomResource {
     /**
      * The specification of the digital twin model (DTDL).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -193,7 +192,6 @@ export interface IotDigitalTwinModelState {
     /**
      * The specification of the digital twin model (DTDL).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -246,7 +244,6 @@ export interface IotDigitalTwinModelArgs {
     iotDomainId: pulumi.Input<string>;
     /**
      * The specification of the digital twin model (DTDL).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

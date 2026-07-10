@@ -113,7 +113,7 @@ class AppFirewallPolicyAction(dict):
                  headers: Optional[Sequence['outputs.AppFirewallPolicyActionHeader']] = None):
         """
         :param _builtins.str name: (Updatable) Action name. Can be used to reference the action.
-        :param _builtins.str type: (Updatable) 
+        :param _builtins.str type: (Updatable)
                * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
                * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
                * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -168,7 +168,7 @@ class AppFirewallPolicyAction(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        (Updatable) 
+        (Updatable)
         * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
         * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
         * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
@@ -1651,7 +1651,6 @@ class NetworkAddressListVcnAddress(dict):
         :param _builtins.str addresses: (Updatable) A private IP address or CIDR IP address range.
         :param _builtins.str vcn_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1673,7 +1672,6 @@ class NetworkAddressListVcnAddress(dict):
     def vcn_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -39,7 +39,6 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
         :param pulumi.Input[_builtins.str] response_duration: Specified duration by which to receive the response by.
         :param pulumi.Input[_builtins.str] response_endpoint: Device endpoint from which response is expected to come.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -147,7 +146,6 @@ class IotDigitalTwinInstanceInvokeRawCommandArgs:
         """
         Device endpoint from which response is expected to come.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -180,7 +178,6 @@ class _IotDigitalTwinInstanceInvokeRawCommandState:
         :param pulumi.Input[_builtins.str] request_endpoint: Device endpoint where request should be forwarded to.
         :param pulumi.Input[_builtins.str] response_duration: Specified duration by which to receive the response by.
         :param pulumi.Input[_builtins.str] response_endpoint: Device endpoint from which response is expected to come.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,7 +289,6 @@ class _IotDigitalTwinInstanceInvokeRawCommandState:
         """
         Device endpoint from which response is expected to come.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -358,7 +354,6 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] request_endpoint: Device endpoint where request should be forwarded to.
         :param pulumi.Input[_builtins.str] response_duration: Specified duration by which to receive the response by.
         :param pulumi.Input[_builtins.str] response_endpoint: Device endpoint from which response is expected to come.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -479,7 +474,6 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] response_duration: Specified duration by which to receive the response by.
         :param pulumi.Input[_builtins.str] response_endpoint: Device endpoint from which response is expected to come.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -558,7 +552,6 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
     def response_endpoint(self) -> pulumi.Output[_builtins.str]:
         """
         Device endpoint from which response is expected to come.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -135,7 +135,6 @@ export class FileStorageObjectStorageLink extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -303,7 +302,6 @@ export interface FileStorageObjectStorageLinkState {
     /**
      * (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -376,7 +374,6 @@ export interface FileStorageObjectStorageLinkArgs {
     stopExportToObjectTrigger?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

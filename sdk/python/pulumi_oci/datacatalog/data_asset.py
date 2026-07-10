@@ -31,7 +31,6 @@ class DataAssetArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) Detailed description of the data asset.
@@ -74,7 +73,6 @@ class DataAssetArgs:
     def type_key(self) -> pulumi.Input[_builtins.str]:
         """
         The key of the data asset type. This can be obtained via the '/types' endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -144,7 +142,6 @@ class _DataAssetState:
         :param pulumi.Input[_builtins.str] time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,7 +329,6 @@ class _DataAssetState:
         """
         The key of the data asset type. This can be obtained via the '/types' endpoint.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -417,7 +413,6 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the data asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. To determine the set of optional and required properties for a data asset type, a query can be done on '/types?type=dataAsset' that returns a collection of all data asset types. The appropriate data asset type, which includes definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -555,7 +550,6 @@ class DataAsset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] type_key: The key of the data asset type. This can be obtained via the '/types' endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] updated_by_id: OCID of the user who last modified the data asset.
@@ -683,7 +677,6 @@ class DataAsset(pulumi.CustomResource):
     def type_key(self) -> pulumi.Output[_builtins.str]:
         """
         The key of the data asset type. This can be obtained via the '/types' endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

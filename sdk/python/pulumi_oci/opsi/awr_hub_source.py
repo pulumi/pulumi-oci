@@ -34,7 +34,6 @@ class AwrHubSourceArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] type: (Updatable) source type of the database
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] associated_opsi_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
@@ -86,7 +85,6 @@ class AwrHubSourceArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) source type of the database
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,7 +206,6 @@ class _AwrHubSourceState:
         :param pulumi.Input[_builtins.str] time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: (Updatable) source type of the database
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -516,7 +513,6 @@ class _AwrHubSourceState:
         """
         (Updatable) source type of the database
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -590,7 +586,6 @@ class AwrHubSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: The name of the Awr Hub source database.
         :param pulumi.Input[_builtins.str] type: (Updatable) source type of the database
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -760,7 +755,6 @@ class AwrHubSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: (Updatable) source type of the database
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -966,7 +960,6 @@ class AwrHubSource(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) source type of the database
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

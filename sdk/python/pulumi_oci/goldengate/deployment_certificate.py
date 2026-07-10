@@ -28,8 +28,7 @@ class DeploymentCertificateArgs:
 
         :param pulumi.Input[_builtins.str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] deployment_id: A unique Deployment identifier.
-        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-               
+        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -69,8 +68,7 @@ class DeploymentCertificateArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[_builtins.str]:
         """
-        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-
+        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -128,8 +126,7 @@ class _DeploymentCertificateState:
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
         :param pulumi.Input[_builtins.bool] is_self_signed: Indicates if the certificate is self signed.
         :param pulumi.Input[_builtins.str] issuer: The Certificate issuer.
-        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-               
+        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -278,8 +275,7 @@ class _DeploymentCertificateState:
     @pulumi.getter
     def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-
+        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -493,8 +489,7 @@ class DeploymentCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[_builtins.str] deployment_id: A unique Deployment identifier.
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
-        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-               
+        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -635,8 +630,7 @@ class DeploymentCertificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
         :param pulumi.Input[_builtins.bool] is_self_signed: Indicates if the certificate is self signed.
         :param pulumi.Input[_builtins.str] issuer: The Certificate issuer.
-        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-               
+        :param pulumi.Input[_builtins.str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -741,8 +735,7 @@ class DeploymentCertificate(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[_builtins.str]:
         """
-        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
-
+        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

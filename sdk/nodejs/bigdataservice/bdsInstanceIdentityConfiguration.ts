@@ -116,7 +116,6 @@ export class BdsInstanceIdentityConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -259,7 +258,6 @@ export interface BdsInstanceIdentityConfigurationState {
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -328,7 +326,6 @@ export interface BdsInstanceIdentityConfigurationArgs {
     refreshConfidentialApplicationTrigger?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when set to "true"  triggers Refresh Upst Token Exchange Keytab.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

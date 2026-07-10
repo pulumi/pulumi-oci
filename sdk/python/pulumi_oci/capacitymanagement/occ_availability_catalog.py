@@ -39,7 +39,6 @@ class OccAvailabilityCatalogArgs:
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -114,7 +113,6 @@ class OccAvailabilityCatalogArgs:
     def occ_customer_group_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the customer group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,7 +206,6 @@ class _OccAvailabilityCatalogState:
         :param pulumi.Input['OccAvailabilityCatalogMetadataDetailsArgs'] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -388,7 +385,6 @@ class _OccAvailabilityCatalogState:
         """
         The OCID of the customer group.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -515,7 +511,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         :param pulumi.Input[Union['OccAvailabilityCatalogMetadataDetailsArgs', 'OccAvailabilityCatalogMetadataDetailsArgsDict']] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -672,7 +667,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource.
@@ -795,7 +789,6 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
     def occ_customer_group_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the customer group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

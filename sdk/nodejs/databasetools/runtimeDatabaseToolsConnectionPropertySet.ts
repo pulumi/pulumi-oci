@@ -140,7 +140,6 @@ export class RuntimeDatabaseToolsConnectionPropertySet extends pulumi.CustomReso
     /**
      * The name of the property set
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -287,7 +286,6 @@ export interface RuntimeDatabaseToolsConnectionPropertySetState {
     /**
      * The name of the property set
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -360,7 +358,6 @@ export interface RuntimeDatabaseToolsConnectionPropertySetArgs {
     printServerType?: pulumi.Input<string | undefined>;
     /**
      * The name of the property set
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

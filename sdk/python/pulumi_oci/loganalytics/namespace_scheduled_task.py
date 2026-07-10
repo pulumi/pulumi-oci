@@ -42,7 +42,6 @@ class NamespaceScheduledTaskArgs:
         :param pulumi.Input['NamespaceScheduledTaskSchedulesArgs'] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
         :param pulumi.Input[_builtins.str] task_type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -133,7 +132,6 @@ class NamespaceScheduledTaskArgs:
     def task_type(self) -> pulumi.Input[_builtins.str]:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,7 +241,6 @@ class _NamespaceScheduledTaskState:
         :param pulumi.Input[_builtins.str] state: The current state of the scheduled task.
         :param pulumi.Input[_builtins.str] task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         :param pulumi.Input[_builtins.str] task_type: Task type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -459,7 +456,6 @@ class _NamespaceScheduledTaskState:
         """
         Task type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -643,7 +639,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
         :param pulumi.Input[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict']] schedules: (Updatable) Schedules, typically a single schedule. Note there may only be a single schedule for SAVED_SEARCH and PURGE scheduled tasks.
         :param pulumi.Input[_builtins.str] task_type: Task type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -875,7 +870,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] task_status: Status of the scheduled task. - PURGE_RESOURCE_NOT_FOUND - LIMIT_EXCEEDED
         :param pulumi.Input[_builtins.str] task_type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time the scheduled task was created, in the format defined by RFC3339.
@@ -1020,7 +1014,6 @@ class NamespaceScheduledTask(pulumi.CustomResource):
     def task_type(self) -> pulumi.Output[_builtins.str]:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

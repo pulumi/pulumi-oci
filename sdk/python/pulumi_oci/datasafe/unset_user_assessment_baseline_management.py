@@ -26,7 +26,6 @@ class UnsetUserAssessmentBaselineManagementArgs:
 
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
@@ -39,7 +38,6 @@ class UnsetUserAssessmentBaselineManagementArgs:
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73,7 +71,6 @@ class _UnsetUserAssessmentBaselineManagementState:
 
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
@@ -88,7 +85,6 @@ class _UnsetUserAssessmentBaselineManagementState:
     def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +145,6 @@ class UnsetUserAssessmentBaselineManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,7 +234,6 @@ class UnsetUserAssessmentBaselineManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID where the assessment resides.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] user_assessment_id: The OCID of the user assessment.
@@ -257,7 +251,6 @@ class UnsetUserAssessmentBaselineManagement(pulumi.CustomResource):
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
         The compartment OCID where the assessment resides.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -77,7 +77,6 @@ export class AlertPolicyRule extends pulumi.CustomResource {
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -155,7 +154,6 @@ export interface AlertPolicyRuleState {
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -192,7 +190,6 @@ export interface AlertPolicyRuleArgs {
     displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

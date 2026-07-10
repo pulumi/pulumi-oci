@@ -44,7 +44,6 @@ class SnapshotArgs:
                
                Example: `Sunday`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -155,7 +154,6 @@ class SnapshotArgs:
 
         Example: `Sunday`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -204,7 +202,6 @@ class _SnapshotState:
                Avoid entering confidential information.
                
                Example: `Sunday`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,7 +380,6 @@ class _SnapshotState:
 
         Example: `Sunday`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -557,7 +553,6 @@ class Snapshot(pulumi.CustomResource):
                
                Example: `Sunday`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -716,7 +711,6 @@ class Snapshot(pulumi.CustomResource):
                
                Example: `Sunday`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -840,7 +834,6 @@ class Snapshot(pulumi.CustomResource):
         Avoid entering confidential information.
 
         Example: `Sunday`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

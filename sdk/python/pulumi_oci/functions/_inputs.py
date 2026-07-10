@@ -173,8 +173,7 @@ class ApplicationTraceConfigArgsDict(TypedDict):
     """
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    (Updatable) Define if tracing is enabled for the resource. 
-
+    (Updatable) Define if tracing is enabled for the resource.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,8 +186,7 @@ class ApplicationTraceConfigArgs:
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,8 +212,7 @@ class ApplicationTraceConfigArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -541,8 +538,7 @@ class FunctionSuccessDestinationArgs:
 class FunctionTraceConfigArgsDict(TypedDict):
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    (Updatable) Define if tracing is enabled for the resource. 
-
+    (Updatable) Define if tracing is enabled for the resource.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -553,8 +549,7 @@ class FunctionTraceConfigArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -566,8 +561,7 @@ class FunctionTraceConfigArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

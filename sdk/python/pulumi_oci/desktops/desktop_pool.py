@@ -69,7 +69,6 @@ class DesktopPoolArgs:
         :param pulumi.Input[_builtins.int] storage_size_in_gbs: The size in GBs of the storage for the desktop pool.
         :param pulumi.Input[_builtins.bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] boot_volume_size_in_gbs: (Updatable) The size in GBs of the boot volume for the desktop pool.
@@ -313,7 +312,6 @@ class DesktopPoolArgs:
         """
         (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -509,7 +507,6 @@ class _DesktopPoolState:
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[_builtins.bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
@@ -633,7 +630,6 @@ class _DesktopPoolState:
     def are_volumes_preserved(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1038,7 +1034,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[_builtins.bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
@@ -1256,7 +1251,6 @@ class DesktopPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] are_privileged_users: Indicates whether desktop pool users have administrative privileges on their desktop.
         :param pulumi.Input[_builtins.bool] are_volumes_preserved: (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain of the desktop pool.
@@ -1346,7 +1340,6 @@ class DesktopPool(pulumi.CustomResource):
     def are_volumes_preserved(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

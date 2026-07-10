@@ -43,7 +43,6 @@ class CompliancePolicyRuleArgs:
         :param pulumi.Input[_builtins.str] grace_period: (Updatable) Grace period in days,weeks,months or years the exemption is applicable for the rule. This enables a grace period when Fleet Application Management doesn't report the product as noncompliant when patch is not applied.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -163,7 +162,6 @@ class CompliancePolicyRuleArgs:
         """
         (Updatable) Severity to which this CompliancePolicyRule applies.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -206,7 +204,6 @@ class _CompliancePolicyRuleState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] patch_type_ids: (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
         :param pulumi.Input['CompliancePolicyRuleProductVersionArgs'] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -372,7 +369,6 @@ class _CompliancePolicyRuleState:
         """
         (Updatable) Severity to which this CompliancePolicyRule applies.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -505,7 +501,6 @@ class CompliancePolicyRule(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] patch_type_ids: (Updatable) PlatformConfiguration OCID for the patch type to which this CompliancePolicyRule applies.
         :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -665,7 +660,6 @@ class CompliancePolicyRule(pulumi.CustomResource):
         :param pulumi.Input[Union['CompliancePolicyRuleProductVersionArgs', 'CompliancePolicyRuleProductVersionArgsDict']] product_version: (Updatable) A specific product version or a specific version and succeeding. Example: 12.1 or 12.1 and above for Oracle WebLogic Application server. The policy applies to the next version only, and not to other versions such as, 12.1.x.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] severities: (Updatable) Severity to which this CompliancePolicyRule applies.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the CompliancePolicyRule.
@@ -779,7 +773,6 @@ class CompliancePolicyRule(pulumi.CustomResource):
     def severities(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) Severity to which this CompliancePolicyRule applies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -34,8 +34,7 @@ class AppCatalogSubscriptionArgs:
         :param pulumi.Input[_builtins.str] listing_resource_version: Listing resource version.
         :param pulumi.Input[_builtins.str] oracle_terms_of_use_link: Oracle TOU link
         :param pulumi.Input[_builtins.str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
+        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,8 +113,7 @@ class AppCatalogSubscriptionArgs:
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Input[_builtins.str]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,8 +166,7 @@ class _AppCatalogSubscriptionState:
         :param pulumi.Input[_builtins.str] signature: A generated signature for this listing resource version retrieved the agreements API.
         :param pulumi.Input[_builtins.str] summary: The short summary to the listing.
         :param pulumi.Input[_builtins.str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
+        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -335,8 +332,7 @@ class _AppCatalogSubscriptionState:
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -403,8 +399,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] listing_resource_version: Listing resource version.
         :param pulumi.Input[_builtins.str] oracle_terms_of_use_link: Oracle TOU link
         :param pulumi.Input[_builtins.str] signature: A generated signature for this listing resource version retrieved the agreements API.
-        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
+        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -543,8 +538,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] signature: A generated signature for this listing resource version retrieved the agreements API.
         :param pulumi.Input[_builtins.str] summary: The short summary to the listing.
         :param pulumi.Input[_builtins.str] time_created: Date and time at which the subscription was created, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-               
+        :param pulumi.Input[_builtins.str] time_retrieved: Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -659,8 +653,7 @@ class AppCatalogSubscription(pulumi.CustomResource):
     @pulumi.getter(name="timeRetrieved")
     def time_retrieved(self) -> pulumi.Output[_builtins.str]:
         """
-        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z` 
-
+        Date and time the agreements were retrieved, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

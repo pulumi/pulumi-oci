@@ -27,7 +27,6 @@ class EnrollmentStatusArgs:
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[_builtins.str] status: (Updatable) The Cloud Advisor enrollment status.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class EnrollmentStatusArgs:
     def status(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The Cloud Advisor enrollment status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -80,7 +78,6 @@ class _EnrollmentStatusState:
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[_builtins.str] state: The enrollment status' current state.
         :param pulumi.Input[_builtins.str] status: (Updatable) The Cloud Advisor enrollment status.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -144,7 +141,6 @@ class _EnrollmentStatusState:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Cloud Advisor enrollment status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -222,7 +218,6 @@ class EnrollmentStatus(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] enrollment_status_id: The unique OCID associated with the enrollment status.
         :param pulumi.Input[_builtins.str] status: (Updatable) The Cloud Advisor enrollment status.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +311,6 @@ class EnrollmentStatus(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The enrollment status' current state.
         :param pulumi.Input[_builtins.str] status: (Updatable) The Cloud Advisor enrollment status.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] status_reason: The reason for the enrollment status of the tenancy.
@@ -365,7 +359,6 @@ class EnrollmentStatus(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The Cloud Advisor enrollment status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

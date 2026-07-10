@@ -319,7 +319,6 @@ export class DomainsMySmtpCredential extends pulumi.CustomResource {
      * * required: true
      * * returned: default
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -637,7 +636,6 @@ export interface DomainsMySmtpCredentialState {
      * * mutability: readOnly
      * * required: true
      * * returned: default
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

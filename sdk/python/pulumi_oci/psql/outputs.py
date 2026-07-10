@@ -702,7 +702,6 @@ class DbSystemInstance(dict):
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param _builtins.str state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -770,7 +769,6 @@ class DbSystemInstance(dict):
     def state(self) -> Optional[_builtins.str]:
         """
         (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

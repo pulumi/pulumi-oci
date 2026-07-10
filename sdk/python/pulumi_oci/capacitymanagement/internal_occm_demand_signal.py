@@ -24,8 +24,7 @@ class InternalOccmDemandSignalArgs:
         """
         The set of arguments for constructing a InternalOccmDemandSignal resource.
 
-        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal. 
-               
+        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -41,8 +40,7 @@ class InternalOccmDemandSignalArgs:
     @pulumi.getter(name="occmDemandSignalId")
     def occm_demand_signal_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the demand signal. 
-
+        The OCID of the demand signal.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,8 +93,7 @@ class _InternalOccmDemandSignalState:
                
                IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group in which the demand signal is created.
-        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal. 
-               
+        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,8 +217,7 @@ class _InternalOccmDemandSignalState:
     @pulumi.getter(name="occmDemandSignalId")
     def occm_demand_signal_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the demand signal. 
-
+        The OCID of the demand signal.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -323,8 +319,7 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: (Updatable) The subset of demand signal states available for operators for updating the demand signal.
                
                IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
-        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal. 
-               
+        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -441,8 +436,7 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
                
                IN_PROGRESS > Transitions the demand signal to IN_PROGRESS state. REJECTED > Transitions the demand signal to REJECTED state. COMPLETED > This will transition the demand signal to COMPLETED state.
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group in which the demand signal is created.
-        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal. 
-               
+        :param pulumi.Input[_builtins.str] occm_demand_signal_id: The OCID of the demand signal.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -531,8 +525,7 @@ class InternalOccmDemandSignal(pulumi.CustomResource):
     @pulumi.getter(name="occmDemandSignalId")
     def occm_demand_signal_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the demand signal. 
-
+        The OCID of the demand signal.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

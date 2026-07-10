@@ -27,8 +27,7 @@ class LogAnalyticsEntityAssociationsAddArgs:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -65,8 +64,7 @@ class LogAnalyticsEntityAssociationsAddArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. 
-
+        The Log Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,8 +87,7 @@ class _LogAnalyticsEntityAssociationsAddState:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -130,8 +127,7 @@ class _LogAnalyticsEntityAssociationsAddState:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Log Analytics namespace used for the request. 
-
+        The Log Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -186,8 +182,7 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,8 +280,7 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] association_entities: Destination entities OCIDs with which associations are to be added.
         :param pulumi.Input[_builtins.str] log_analytics_entity_id: The Log analytics entity OCID.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -320,8 +314,7 @@ class LogAnalyticsEntityAssociationsAdd(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. 
-
+        The Log Analytics namespace used for the request.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

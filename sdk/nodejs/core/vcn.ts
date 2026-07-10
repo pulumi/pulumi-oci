@@ -135,7 +135,7 @@ export class Vcn extends pulumi.CustomResource {
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
-     * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     declare public readonly cidrBlocks: pulumi.Output<string[]>;
     /**
@@ -303,7 +303,7 @@ export interface VcnState {
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
-     * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -404,7 +404,7 @@ export interface VcnArgs {
      * * The CIDR blocks must be valid.
      * * They must not overlap with each other or with the on-premises network CIDR block.
      * * The number of CIDR blocks must not exceed the limit of CIDR blocks allowed per VCN. It is an error to set both cidrBlock and cidr_blocks. Note: cidrBlocks update must be restricted to one operation at a time (either add/remove or modify one single cidr_block) or the operation will be declined. new cidrBlock to be added must be placed at the end of the list. Once you migrate to using `cidrBlocks` from `cidrBlock`, you will not be able to switch back.
-     * **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
+     *   **Important:** Do *not* specify a value for `cidrBlock`. Use this parameter instead.
      */
     cidrBlocks?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**

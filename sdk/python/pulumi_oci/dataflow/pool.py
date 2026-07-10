@@ -41,8 +41,7 @@ class PoolArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
         :param pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,8 +162,7 @@ class PoolArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
+        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -209,8 +207,7 @@ class _PoolState:
         :param pulumi.Input[_builtins.str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input['PoolPoolMetricArgs']]] pool_metrics: A collection of metrics related to a particular pool.
         :param pulumi.Input[Sequence[pulumi.Input['PoolScheduleArgs']]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -396,8 +393,7 @@ class _PoolState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
+        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -509,8 +505,7 @@ class Pool(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] idle_timeout_in_minutes: (Updatable) Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -669,8 +664,7 @@ class Pool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner_user_name: The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PoolPoolMetricArgs', 'PoolPoolMetricArgsDict']]]] pool_metrics: A collection of metrics related to a particular pool.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PoolScheduleArgs', 'PoolScheduleArgsDict']]]] schedules: (Updatable) A list of schedules for pool to auto start and stop.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -798,8 +792,7 @@ class Pool(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`. 
-
+        (Updatable) The target state for the Pool. Could be set to `ACTIVE` or `DELETED`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

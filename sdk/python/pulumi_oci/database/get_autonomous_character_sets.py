@@ -123,8 +123,7 @@ def get_autonomous_character_sets(character_set_type: Optional[_builtins.str] = 
 
     :param _builtins.str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
     :param _builtins.bool is_dedicated: Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
-    :param _builtins.bool is_shared: Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-           
+    :param _builtins.bool is_shared: Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
            
            :
     """
@@ -167,8 +166,7 @@ def get_autonomous_character_sets_output(character_set_type: pulumi.Input[Option
 
     :param _builtins.str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
     :param _builtins.bool is_dedicated: Specifies if the request is for an Autonomous AI Database Dedicated instance. The default request is for an Autonomous AI Database Dedicated instance.
-    :param _builtins.bool is_shared: Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-           
+    :param _builtins.bool is_shared: Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
            
            :
     """

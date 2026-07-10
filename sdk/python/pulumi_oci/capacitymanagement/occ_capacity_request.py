@@ -55,7 +55,6 @@ class OccCapacityRequestArgs:
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +256,6 @@ class OccCapacityRequestArgs:
         """
         Type of Capacity Request(New or Transfer)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -310,7 +308,6 @@ class _OccCapacityRequestState:
         :param pulumi.Input[_builtins.str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -546,7 +543,6 @@ class _OccCapacityRequestState:
         """
         Type of Capacity Request(New or Transfer)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -714,7 +710,6 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] region: The name of the region for which the capacity request is made.
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -922,7 +917,6 @@ class OccCapacityRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] request_state: (Updatable) The subset of request states available for creating the capacity request.
         :param pulumi.Input[_builtins.str] request_type: Type of Capacity Request(New or Transfer)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource.
@@ -1081,7 +1075,6 @@ class OccCapacityRequest(pulumi.CustomResource):
     def request_type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of Capacity Request(New or Transfer)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

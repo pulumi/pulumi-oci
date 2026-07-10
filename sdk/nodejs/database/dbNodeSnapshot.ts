@@ -98,7 +98,6 @@ export class DbNodeSnapshot extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mountDbnodeId` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -218,7 +217,6 @@ export interface DbNodeSnapshotState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mountDbnodeId` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -263,7 +261,6 @@ export interface DbNodeSnapshotArgs {
     dbnodeSnapshotId: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mountDbnodeId` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

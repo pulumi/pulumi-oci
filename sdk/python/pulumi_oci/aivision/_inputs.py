@@ -841,7 +841,6 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgsDict(TypedDic
     (Updatable) Type of access Allowed values are:
     * PRIVATE
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -855,7 +854,6 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs:
         :param pulumi.Input[_builtins.str] private_endpoint_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
         :param pulumi.Input[_builtins.str] stream_access_type: (Updatable) Type of access Allowed values are:
                * PRIVATE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -881,7 +879,6 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs:
         """
         (Updatable) Type of access Allowed values are:
         * PRIVATE
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

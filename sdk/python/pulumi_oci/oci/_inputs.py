@@ -739,8 +739,7 @@ class BatchBatchContextFleetArgsDict(TypedDict):
     """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+    (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -761,8 +760,7 @@ class BatchBatchContextFleetArgs:
         :param pulumi.Input['BatchBatchContextFleetShapeArgs'] shape: Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         :param pulumi.Input[_builtins.str] type: Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
         :param pulumi.Input[_builtins.str] details: A message that describes the current state of the service managed fleet configuration in more detail.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -840,8 +838,7 @@ class BatchBatchContextFleetArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1720,7 +1717,6 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict(TypedDic
     """
     (Updatable) Type of service.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1745,7 +1741,6 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs:
         :param pulumi.Input[_builtins.str] role_arn: (Updatable) Amazon resource name AWSof the IAM role.
         :param pulumi.Input[_builtins.str] service_private_endpoint: (Updatable) Private endpoint of the AWS service.
         :param pulumi.Input[_builtins.str] service_type: (Updatable) Type of service.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1789,7 +1784,6 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs:
     def service_type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Type of service.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12301,7 +12295,6 @@ class ManagedKafkaKafkaClusterConfigLatestConfigArgsDict(TypedDict):
     """
     (Updatable) Version of the cluster configuration
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -12318,7 +12311,6 @@ class ManagedKafkaKafkaClusterConfigLatestConfigArgs:
         :param pulumi.Input[_builtins.str] config_id: (Updatable) ID cluster configuration
         :param pulumi.Input[_builtins.str] time_created: (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.int] version_number: (Updatable) Version of the cluster configuration
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12372,7 +12364,6 @@ class ManagedKafkaKafkaClusterConfigLatestConfigArgs:
     def version_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Version of the cluster configuration
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12530,7 +12521,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -12553,7 +12543,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
         :param pulumi.Input['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNetworkDetailsArgs'] network_details: Details required when provisioning OAC on a private network.  Example: `{"subnetId":"ocid...", ...}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12651,7 +12640,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsAr
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -12671,7 +12659,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -12684,7 +12671,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -12711,7 +12697,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

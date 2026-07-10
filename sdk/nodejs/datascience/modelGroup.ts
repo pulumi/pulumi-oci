@@ -203,7 +203,6 @@ export class ModelGroup extends pulumi.CustomResource {
     /**
      * (Updatable) An additional description of the lifecycle state of the model group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -368,7 +367,6 @@ export interface ModelGroupState {
     /**
      * (Updatable) An additional description of the lifecycle state of the model group.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -425,7 +423,6 @@ export interface ModelGroupArgs {
     projectId: pulumi.Input<string>;
     /**
      * (Updatable) An additional description of the lifecycle state of the model group.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

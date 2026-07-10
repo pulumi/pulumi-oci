@@ -26,8 +26,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
         The set of arguments for constructing a LogAnalyticsUnprocessedDataBucketManagement resource.
 
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -54,8 +53,7 @@ class LogAnalyticsUnprocessedDataBucketManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -92,8 +90,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
 
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -139,8 +136,7 @@ class _LogAnalyticsUnprocessedDataBucketManagementState:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,8 +212,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -314,8 +309,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bucket: Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
         :param pulumi.Input[_builtins.bool] is_enabled: Flag that specifies if this configuration is enabled or not.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -353,8 +347,7 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

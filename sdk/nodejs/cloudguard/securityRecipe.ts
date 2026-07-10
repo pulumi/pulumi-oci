@@ -104,7 +104,6 @@ export class SecurityRecipe extends pulumi.CustomResource {
     /**
      * (Updatable) The list of security policy IDs to include in the recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -213,7 +212,6 @@ export interface SecurityRecipeState {
     /**
      * (Updatable) The list of security policy IDs to include in the recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -262,7 +260,6 @@ export interface SecurityRecipeArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The list of security policy IDs to include in the recipe
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

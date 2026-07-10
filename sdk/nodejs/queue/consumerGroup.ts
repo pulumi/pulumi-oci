@@ -97,7 +97,6 @@ export class ConsumerGroup extends pulumi.CustomResource {
     /**
      * The OCID of the associated queue.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -205,7 +204,6 @@ export interface ConsumerGroupState {
     /**
      * The OCID of the associated queue.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -258,7 +256,6 @@ export interface ConsumerGroupArgs {
     isEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * The OCID of the associated queue.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

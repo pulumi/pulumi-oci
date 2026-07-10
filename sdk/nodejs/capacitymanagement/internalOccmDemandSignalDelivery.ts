@@ -110,8 +110,7 @@ export class InternalOccmDemandSignalDelivery extends pulumi.CustomResource {
      */
     declare public readonly notes: pulumi.Output<string>;
     /**
-     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-     *
+     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -233,8 +232,7 @@ export interface InternalOccmDemandSignalDeliveryState {
      */
     notes?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-     *
+     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,8 +293,7 @@ export interface InternalOccmDemandSignalDeliveryArgs {
      */
     notes?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-     *
+     * The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

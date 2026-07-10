@@ -35,7 +35,6 @@ class MaintenanceRunArgs:
         :param pulumi.Input[_builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The date and time that update should be scheduled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
@@ -86,7 +85,6 @@ class MaintenanceRunArgs:
     def time_scheduled(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The date and time that update should be scheduled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,7 +223,6 @@ class _MaintenanceRunState:
         :param pulumi.Input[_builtins.str] target_storage_server_version: The target Cell version that is to be patched to.
         :param pulumi.Input[_builtins.str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The date and time that update should be scheduled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -698,7 +695,6 @@ class _MaintenanceRunState:
         """
         (Updatable) The date and time that update should be scheduled.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -806,7 +802,6 @@ class MaintenanceRun(pulumi.CustomResource):
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param pulumi.Input[_builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The date and time that update should be scheduled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1014,7 +1009,6 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] target_storage_server_version: The target Cell version that is to be patched to.
         :param pulumi.Input[_builtins.str] time_ended: The date and time the maintenance run was completed.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The date and time that update should be scheduled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1327,7 +1321,6 @@ class MaintenanceRun(pulumi.CustomResource):
     def time_scheduled(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The date and time that update should be scheduled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

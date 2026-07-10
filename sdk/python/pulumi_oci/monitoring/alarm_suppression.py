@@ -37,8 +37,7 @@ class AlarmSuppressionInitArgs:
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,8 +113,7 @@ class AlarmSuppressionInitArgs:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[_builtins.str]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -247,8 +245,7 @@ class _AlarmSuppressionState:
         :param pulumi.Input[Sequence[pulumi.Input['AlarmSuppressionSuppressionConditionArgs']]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[_builtins.str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -439,8 +436,7 @@ class _AlarmSuppressionState:
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -559,8 +555,7 @@ class AlarmSuppression(pulumi.CustomResource):
                Defaut: `DIMENSION`
         :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -737,8 +732,7 @@ class AlarmSuppression(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmSuppressionSuppressionConditionArgs', 'AlarmSuppressionSuppressionConditionArgsDict']]]] suppression_conditions: Array of all preconditions for alarm suppression. Example: `[{ conditionType: "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]`
         :param pulumi.Input[_builtins.str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[_builtins.str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param pulumi.Input[_builtins.str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -872,8 +866,7 @@ class AlarmSuppression(pulumi.CustomResource):
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> pulumi.Output[_builtins.str]:
         """
-        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

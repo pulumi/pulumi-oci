@@ -115,7 +115,6 @@ export class AgentDataSource extends pulumi.CustomResource {
     /**
      * (Updatable) Key-value pairs to allow additional configurations.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -232,7 +231,6 @@ export interface AgentDataSourceState {
     /**
      * (Updatable) Key-value pairs to allow additional configurations.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -289,7 +287,6 @@ export interface AgentDataSourceArgs {
     knowledgeBaseId: pulumi.Input<string>;
     /**
      * (Updatable) Key-value pairs to allow additional configurations.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

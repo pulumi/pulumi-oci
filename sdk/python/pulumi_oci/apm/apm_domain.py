@@ -37,7 +37,6 @@ class ApmDomainArgs:
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -132,7 +131,6 @@ class ApmDomainArgs:
         """
         (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -168,7 +166,6 @@ class _ApmDomainState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -289,7 +286,6 @@ class _ApmDomainState:
         """
         (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -396,7 +392,6 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -527,7 +522,6 @@ class ApmDomain(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_free_tier: Indicates whether this is an "Always Free" resource. The default value is false.
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the APM domain.
@@ -612,7 +606,6 @@ class ApmDomain(pulumi.CustomResource):
     def log_group_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

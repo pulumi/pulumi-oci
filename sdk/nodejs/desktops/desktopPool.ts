@@ -61,7 +61,6 @@ export class DesktopPool extends pulumi.CustomResource {
     /**
      * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -322,7 +321,6 @@ export interface DesktopPoolState {
     /**
      * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -451,7 +449,6 @@ export interface DesktopPoolArgs {
     arePrivilegedUsers: pulumi.Input<boolean>;
     /**
      * (Updatable) Indicates whether the volumes are preserved when a desktop pool is deleted. Default value is false.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

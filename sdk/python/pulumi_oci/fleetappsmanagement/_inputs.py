@@ -1362,7 +1362,6 @@ class FleetCredentialUserArgsDict(TypedDict):
     """
     (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1385,7 +1384,6 @@ class FleetCredentialUserArgs:
         :param pulumi.Input[_builtins.str] secret_version: (Updatable) The secret version.
         :param pulumi.Input[_builtins.str] value: (Updatable) The value corresponding to the credential.
         :param pulumi.Input[_builtins.str] vault_id: (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1481,7 +1479,6 @@ class FleetCredentialUserArgs:
     def vault_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2007,7 +2004,6 @@ class FleetResourceArgsDict(TypedDict):
     """
     Tenancy Identifier[OCID].
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2027,7 +2023,6 @@ class FleetResourceArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier[OCID].
         :param pulumi.Input[_builtins.str] resource_id: OCID of the resource.
         :param pulumi.Input[_builtins.str] tenancy_id: Tenancy Identifier[OCID].
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2068,7 +2063,6 @@ class FleetResourceArgs:
     def tenancy_id(self) -> pulumi.Input[_builtins.str]:
         """
         Tenancy Identifier[OCID].
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3532,7 +3526,7 @@ class ProvisionDeployedResourceArgsDict(TypedDict):
     """
     resource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+    The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
     """
 
 @pulumi.input_type
@@ -3548,7 +3542,7 @@ class ProvisionDeployedResourceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgs']]] resource_instance_lists: Collection of InstanceSummary
         :param pulumi.Input[_builtins.str] resource_name: The name of the resource
         :param pulumi.Input[_builtins.str] resource_provider: The name of the Provider
-        :param pulumi.Input[_builtins.str] resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        :param pulumi.Input[_builtins.str] resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
@@ -3613,7 +3607,7 @@ class ProvisionDeployedResourceArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         return pulumi.get(self, "resource_type")
 
@@ -6451,7 +6445,7 @@ class RunbookVersionGroupArgsDict(TypedDict):
     (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
     inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
     Executes tasks across resources in a rolling order.
-    >>>>>>> theirs
+    > > > > > > > theirs
     """
     properties: NotRequired[pulumi.Input[Optional['RunbookVersionGroupPropertiesArgsDict']]]
     """
@@ -6469,7 +6463,7 @@ class RunbookVersionGroupArgs:
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
                inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
                Executes tasks across resources in a rolling order.
-               >>>>>>> theirs
+               > > > > > > > theirs
         :param pulumi.Input['RunbookVersionGroupPropertiesArgs'] properties: (Updatable) The properties of the component.
         """
         pulumi.set(__self__, "name", name)
@@ -6496,7 +6490,7 @@ class RunbookVersionGroupArgs:
         (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
         inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
         Executes tasks across resources in a rolling order.
-        >>>>>>> theirs
+        > > > > > > > theirs
         """
         return pulumi.get(self, "type")
 
@@ -9065,7 +9059,6 @@ class SchedulerDefinitionScheduleArgsDict(TypedDict):
     """
     (Updatable) Schedule Type
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -9093,7 +9086,6 @@ class SchedulerDefinitionScheduleArgs:
         """
         :param pulumi.Input[_builtins.str] execution_startdate: (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: (Updatable) Schedule Type
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -9127,7 +9119,6 @@ class SchedulerDefinitionScheduleArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Schedule Type
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

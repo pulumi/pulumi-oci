@@ -41,7 +41,6 @@ class DistributedDatabaseDistributedDatabasePrivateEndpointArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.int] reinstate_proxy_instance_trigger: (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -149,7 +148,6 @@ class DistributedDatabaseDistributedDatabasePrivateEndpointArgs:
         """
         (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -196,7 +194,6 @@ class _DistributedDatabaseDistributedDatabasePrivateEndpointState:
         :param pulumi.Input[_builtins.str] private_ip: IP address of the Private Endpoint.
         :param pulumi.Input[_builtins.str] proxy_compute_instance_id: The identifier of the proxy compute instance.
         :param pulumi.Input[_builtins.int] reinstate_proxy_instance_trigger: (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -382,7 +379,6 @@ class _DistributedDatabaseDistributedDatabasePrivateEndpointState:
         """
         (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -526,7 +522,6 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.int] reinstate_proxy_instance_trigger: (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -679,7 +674,6 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
         :param pulumi.Input[_builtins.str] proxy_compute_instance_id: The identifier of the proxy compute instance.
         :param pulumi.Input[_builtins.int] reinstate_proxy_instance_trigger: (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: Lifecycle states for private endpoint.
@@ -806,7 +800,6 @@ class DistributedDatabaseDistributedDatabasePrivateEndpoint(pulumi.CustomResourc
     def reinstate_proxy_instance_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

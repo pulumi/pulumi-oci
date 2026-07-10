@@ -27,7 +27,6 @@ class ExternalContainerDatabasesStackMonitoringArgs:
 
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -42,7 +41,6 @@ class ExternalContainerDatabasesStackMonitoringArgs:
     def enable_stack_monitoring(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,7 +87,6 @@ class _ExternalContainerDatabasesStackMonitoringState:
 
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -107,7 +104,6 @@ class _ExternalContainerDatabasesStackMonitoringState:
     def enable_stack_monitoring(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +177,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +272,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_stack_monitoring: (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -297,7 +291,6 @@ class ExternalContainerDatabasesStackMonitoring(pulumi.CustomResource):
     def enable_stack_monitoring(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) Enabling Stack Monitoring on External Container Databases . Requires boolean value "true" or "false".
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

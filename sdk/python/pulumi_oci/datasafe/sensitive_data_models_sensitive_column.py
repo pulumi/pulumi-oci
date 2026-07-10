@@ -49,8 +49,7 @@ class SensitiveDataModelsSensitiveColumnArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] parent_column_keys: (Updatable) Unique keys identifying the columns that are parents of the sensitive column. At present, it accepts only one parent column key. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the parent column must be added to the sensitive data model before its key can be specified here. If this attribute is provided, the appDefinedChildColumnKeys or dbDefinedChildColumnKeys attribute of the parent column is automatically updated to reflect the relationship.
         :param pulumi.Input[_builtins.str] relation_type: (Updatable) The type of referential relationship the sensitive column has with its parent. NONE indicates that the sensitive column does not have a parent. DB_DEFINED indicates that the relationship is defined in the database dictionary. APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
-        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-               
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,8 +225,7 @@ class SensitiveDataModelsSensitiveColumnArgs:
     @pulumi.getter
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-
+        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -290,8 +288,7 @@ class _SensitiveDataModelsSensitiveColumnState:
         :param pulumi.Input[_builtins.str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
         :param pulumi.Input[_builtins.str] source: The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         :param pulumi.Input[_builtins.str] state: The current state of the sensitive column.
-        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-               
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -603,8 +600,7 @@ class _SensitiveDataModelsSensitiveColumnState:
     @pulumi.getter
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-
+        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -713,8 +709,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] schema_name: The database schema that contains the sensitive column.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
         :param pulumi.Input[_builtins.str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
-        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-               
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -895,8 +890,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] sensitive_type_id: (Updatable) The OCID of the sensitive type to be associated with the sensitive column.
         :param pulumi.Input[_builtins.str] source: The source of the sensitive column. DISCOVERY indicates that the column was added to the sensitive data model using a data discovery job. MANUAL indicates that the column was added manually.
         :param pulumi.Input[_builtins.str] state: The current state of the sensitive column.
-        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-               
+        :param pulumi.Input[_builtins.str] status: (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1105,8 +1099,7 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive. 
-
+        (Updatable) The status of the sensitive column. VALID means the column is considered sensitive. INVALID means the column is not considered sensitive. Tracking invalid columns in a sensitive data model helps ensure that an incremental data discovery job does not identify these columns as sensitive.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

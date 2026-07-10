@@ -27,7 +27,6 @@ class GenerateOnPremConnectorConfigurationArgs:
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class GenerateOnPremConnectorConfigurationArgs:
         """
         The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _GenerateOnPremConnectorConfigurationState:
 
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _GenerateOnPremConnectorConfigurationState:
     def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -150,7 +146,6 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -242,7 +237,6 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] on_prem_connector_id: The OCID of the on-premises connector.
         :param pulumi.Input[_builtins.str] password: The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -267,7 +261,6 @@ class GenerateOnPremConnectorConfiguration(pulumi.CustomResource):
     def password(self) -> pulumi.Output[_builtins.str]:
         """
         The password to encrypt the keys inside the wallet included as part of the configuration. The password must be between 12 and 30 characters long and must contain atleast 1 uppercase, 1 lowercase, 1 numeric, and 1 special character.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -34,7 +34,6 @@ class PeerArgs:
         :param pulumi.Input['PeerOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] role: Peer role
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] alias: peer alias
@@ -88,7 +87,6 @@ class PeerArgs:
         """
         Peer role
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -132,7 +130,6 @@ class _PeerState:
         :param pulumi.Input['PeerOcpuAllocationParamArgs'] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] peer_key: peer identifier
         :param pulumi.Input[_builtins.str] role: Peer role
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -233,7 +230,6 @@ class _PeerState:
         """
         Peer role
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -308,7 +304,6 @@ class Peer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] blockchain_platform_id: Unique service identifier.
         :param pulumi.Input[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict']] ocpu_allocation_param: (Updatable) OCPU allocation parameter
         :param pulumi.Input[_builtins.str] role: Peer role
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -430,7 +425,6 @@ class Peer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] peer_key: peer identifier
         :param pulumi.Input[_builtins.str] role: Peer role
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the peer.
@@ -502,7 +496,6 @@ class Peer(pulumi.CustomResource):
     def role(self) -> pulumi.Output[_builtins.str]:
         """
         Peer role
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

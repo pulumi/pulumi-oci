@@ -27,7 +27,6 @@ class UtilsSubscriptionAcknowledgmentConfigurationArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class UtilsSubscriptionAcknowledgmentConfigurationArgs:
         """
         (Updatable) Flag to determine whether the subscription was acknowledged or not.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -76,7 +74,6 @@ class _UtilsSubscriptionAcknowledgmentConfigurationState:
         :param pulumi.Input[_builtins.str] acknowledged_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal that ackwnoledged the subscription.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -120,7 +117,6 @@ class _UtilsSubscriptionAcknowledgmentConfigurationState:
     def is_acknowledged(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Flag to determine whether the subscription was acknowledged or not.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,7 +178,6 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +272,6 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param pulumi.Input[_builtins.bool] is_acknowledged: (Updatable) Flag to determine whether the subscription was acknowledged or not.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_acknowledged: The date and time the subscription was acknowledged (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -313,7 +307,6 @@ class UtilsSubscriptionAcknowledgmentConfiguration(pulumi.CustomResource):
     def is_acknowledged(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) Flag to determine whether the subscription was acknowledged or not.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

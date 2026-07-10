@@ -1066,7 +1066,7 @@ class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRule
         """
         :param _builtins.int instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param _builtins.int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -1101,7 +1101,7 @@ class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRule
     @pulumi.getter
     def query(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 
@@ -1154,7 +1154,7 @@ class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRule
         """
         :param _builtins.int instance_count_adjustment: (Updatable) The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param _builtins.int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -1189,7 +1189,7 @@ class ComputeTargetComputeConfigurationDetailsScalingPolicyAutoScalingPolicyRule
     @pulumi.getter
     def query(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 
@@ -5085,7 +5085,6 @@ class MlApplicationImplementationApplicationComponent(dict):
         :param _builtins.str model_id: OCID of Data Science Model
         :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str pipeline_id: OCID of Data Science Pipeline
@@ -5156,7 +5155,6 @@ class MlApplicationImplementationApplicationComponent(dict):
     def name(self) -> Optional[_builtins.str]:
         """
         ML Application Implementation name which is unique for given ML Application.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5611,7 +5609,6 @@ class MlApplicationImplementationMlApplicationPackageArgumentArgument(dict):
         :param _builtins.bool is_mandatory: argument is mandatory or not
         :param _builtins.str name: ML Application Implementation name which is unique for given ML Application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str type: type of the argument
@@ -5649,7 +5646,6 @@ class MlApplicationImplementationMlApplicationPackageArgumentArgument(dict):
     def name(self) -> Optional[_builtins.str]:
         """
         ML Application Implementation name which is unique for given ML Application.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8239,11 +8235,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
                
-               -----
+               ***
         :param _builtins.str scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param _builtins.int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -8284,11 +8280,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
 
-        -----
+        ***
         """
         return pulumi.get(self, "query")
 
@@ -8347,11 +8343,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
                
-               -----
+               ***
         :param _builtins.str scaling_configuration_type: (Updatable) The type of scaling configuration.
         :param _builtins.int threshold: (Updatable) A metric value at which the scaling operation will be triggered.
         """
@@ -8392,11 +8388,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() > 75
 
-        -----
+        ***
         """
         return pulumi.get(self, "query")
 
@@ -12943,7 +12939,6 @@ class PipelineStorageMountConfigurationDetailsList(dict):
         :param _builtins.str destination_directory_name: (Updatable) The local directory name to be mounted
         :param _builtins.str storage_type: (Updatable) The type of storage.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str bucket: (Updatable) The object storage bucket
@@ -12981,7 +12976,6 @@ class PipelineStorageMountConfigurationDetailsList(dict):
     def storage_type(self) -> _builtins.str:
         """
         (Updatable) The type of storage.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -14287,7 +14281,6 @@ class ScheduleTrigger(dict):
         """
         :param _builtins.str trigger_type: (Updatable) The schedule trigger type
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str cron_expression: (Updatable) Schedule cron expression
@@ -14322,7 +14315,6 @@ class ScheduleTrigger(dict):
     def trigger_type(self) -> _builtins.str:
         """
         (Updatable) The schedule trigger type
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -14689,7 +14681,7 @@ class GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRu
         """
         :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: The type of scaling configuration.
         :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
         """
@@ -14719,7 +14711,7 @@ class GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRu
     @pulumi.getter
     def query(self) -> _builtins.str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 
@@ -14751,7 +14743,7 @@ class GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRu
         """
         :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: The type of scaling configuration.
         :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
         """
@@ -14781,7 +14773,7 @@ class GetComputeTargetComputeConfigurationDetailScalingPolicyAutoScalingPolicyRu
     @pulumi.getter
     def query(self) -> _builtins.str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 
@@ -15360,7 +15352,7 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoS
         """
         :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: The type of scaling configuration.
         :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
         """
@@ -15390,7 +15382,7 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoS
     @pulumi.getter
     def query(self) -> _builtins.str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 
@@ -15422,7 +15414,7 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoS
         """
         :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
         :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK." The duration is specified as a string in ISO 8601 format (PT10M for ten minutes or PT1H for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
-        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         :param _builtins.str scaling_configuration_type: The type of scaling configuration.
         :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
         """
@@ -15452,7 +15444,7 @@ class GetComputeTargetsComputeTargetComputeConfigurationDetailScalingPolicyAutoS
     @pulumi.getter
     def query(self) -> _builtins.str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ``` CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75 ```
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: 1m-60m (also 1h). You can optionally specify dimensions and grouping functions. Supported grouping functions: grouping(), groupBy(). Example of threshold alarm: ```CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() < 25 CPUUtilization[1m]{resourceId = "Compute_Target_OCID"}.grouping().mean() > 75```
         """
         return pulumi.get(self, "query")
 

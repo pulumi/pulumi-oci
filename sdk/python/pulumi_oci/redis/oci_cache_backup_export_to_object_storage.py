@@ -31,7 +31,6 @@ class OciCacheBackupExportToObjectStorageArgs:
         :param pulumi.Input[_builtins.str] oci_cache_backup_id: Unique Oracle Cloud Infrastructure Cache Backup identifier.
         :param pulumi.Input[_builtins.str] prefix: Optional prefix under which the service will place the exported object(s).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -83,7 +82,6 @@ class OciCacheBackupExportToObjectStorageArgs:
         """
         Optional prefix under which the service will place the exported object(s).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -108,7 +106,6 @@ class _OciCacheBackupExportToObjectStorageState:
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace name.
         :param pulumi.Input[_builtins.str] oci_cache_backup_id: Unique Oracle Cloud Infrastructure Cache Backup identifier.
         :param pulumi.Input[_builtins.str] prefix: Optional prefix under which the service will place the exported object(s).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +161,6 @@ class _OciCacheBackupExportToObjectStorageState:
         """
         Optional prefix under which the service will place the exported object(s).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -218,7 +214,6 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace name.
         :param pulumi.Input[_builtins.str] oci_cache_backup_id: Unique Oracle Cloud Infrastructure Cache Backup identifier.
         :param pulumi.Input[_builtins.str] prefix: Optional prefix under which the service will place the exported object(s).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,7 +314,6 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oci_cache_backup_id: Unique Oracle Cloud Infrastructure Cache Backup identifier.
         :param pulumi.Input[_builtins.str] prefix: Optional prefix under which the service will place the exported object(s).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -362,7 +356,6 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
     def prefix(self) -> pulumi.Output[_builtins.str]:
         """
         Optional prefix under which the service will place the exported object(s).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

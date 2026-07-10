@@ -43,7 +43,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs:
         :param pulumi.Input[_builtins.str] pool_route_value: (Updatable) The pool route value provided in requests to target this pool.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config pool sub resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) Advanced pool properties.
@@ -136,7 +135,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config pool sub resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,7 +308,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState:
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config pool sub resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -562,7 +559,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState:
         """
         (Updatable) The type of the Database Tools database API gateway config pool sub resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -653,7 +649,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pool_route_value: (Updatable) The pool route value provided in requests to target this pool.
         :param pulumi.Input[_builtins.str] rest_enabled_sql_status: (Updatable) Specifies whether the REST-Enabled SQL service is active.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config pool sub resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -826,7 +821,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config pool sub resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -995,7 +989,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config pool sub resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

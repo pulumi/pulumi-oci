@@ -75,7 +75,6 @@ export class CalculateAuditVolumeCollected extends pulumi.CustomResource {
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -135,7 +134,6 @@ export interface CalculateAuditVolumeCollectedState {
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -156,7 +154,6 @@ export interface CalculateAuditVolumeCollectedArgs {
     timeFromMonth: pulumi.Input<string>;
     /**
      * The date from which the audit volume collected by data safe has to be calculated, in the format defined by RFC3339. If not specified, this will default to the current date.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

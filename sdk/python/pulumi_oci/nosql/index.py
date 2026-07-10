@@ -32,7 +32,6 @@ class IndexArgs:
         :param pulumi.Input[Sequence[pulumi.Input['IndexKeyArgs']]] keys: A set of keys for a secondary index.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -65,7 +64,6 @@ class IndexArgs:
     def table_name_or_id(self) -> pulumi.Input[_builtins.str]:
         """
         A table name within the compartment, or a table OCID.
-
 
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -137,7 +135,6 @@ class _IndexState:
         :param pulumi.Input[_builtins.str] table_id: the OCID of the table to which this index belongs.
         :param pulumi.Input[_builtins.str] table_name: The name of the table to which this index belongs.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -263,7 +260,6 @@ class _IndexState:
         """
         A table name within the compartment, or a table OCID.
 
-
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
@@ -328,7 +324,6 @@ class Index(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict']]]] keys: A set of keys for a secondary index.
         :param pulumi.Input[_builtins.str] name: Index name.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -452,7 +447,6 @@ class Index(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] table_name: The name of the table to which this index belongs.
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
@@ -540,7 +534,6 @@ class Index(pulumi.CustomResource):
     def table_name_or_id(self) -> pulumi.Output[_builtins.str]:
         """
         A table name within the compartment, or a table OCID.
-
 
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.

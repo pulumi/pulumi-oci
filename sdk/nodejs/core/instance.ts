@@ -292,7 +292,6 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) The platform configuration requested for the instance.
      *
-     *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -697,7 +696,6 @@ export interface InstanceState {
     /**
      * (Updatable) The platform configuration requested for the instance.
      *
-     *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *
      * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -962,7 +960,6 @@ export interface InstanceArgs {
     placementConstraintDetails?: pulumi.Input<inputs.Core.InstancePlacementConstraintDetails | undefined>;
     /**
      * (Updatable) The platform configuration requested for the instance.
-     *
      *
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
      *

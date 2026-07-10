@@ -32,7 +32,6 @@ class ApplicationVipArgs:
         :param pulumi.Input[_builtins.str] hostname_label: The hostname of the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
@@ -78,7 +77,6 @@ class ApplicationVipArgs:
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -155,7 +153,6 @@ class _ApplicationVipState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -312,7 +309,6 @@ class _ApplicationVipState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -388,7 +384,6 @@ class ApplicationVip(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ip_address: The application virtual IP (VIP) IPv4 address.
         :param pulumi.Input[_builtins.str] ipv6address: The application virtual IP (VIP) IPv6 address.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -520,7 +515,6 @@ class ApplicationVip(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the application virtual IP (VIP) address.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_assigned: The date and time when the create operation for the application virtual IP (VIP) address completed.
@@ -628,7 +622,6 @@ class ApplicationVip(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

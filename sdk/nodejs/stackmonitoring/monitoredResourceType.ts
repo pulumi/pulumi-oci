@@ -138,8 +138,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
      */
     declare public readonly resourceCategory: pulumi.Output<string>;
     /**
-     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-     *
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,8 +284,7 @@ export interface MonitoredResourceTypeState {
      */
     resourceCategory?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-     *
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,8 +353,7 @@ export interface MonitoredResourceTypeArgs {
      */
     resourceCategory?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc. 
-     *
+     * (Updatable) Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -47,7 +47,6 @@ class MonitoringTemplateArgs:
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -196,7 +195,6 @@ class MonitoringTemplateArgs:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -243,7 +241,6 @@ class _MonitoringTemplateState:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoringTemplateMemberArgs']]] members: (Updatable) List of members of this monitoring template
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -420,7 +417,6 @@ class _MonitoringTemplateState:
     def repeat_notification_duration(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -605,7 +601,6 @@ class MonitoringTemplate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -770,7 +765,6 @@ class MonitoringTemplate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] message_format: (Updatable) The format to use for alarm notifications.
         :param pulumi.Input[_builtins.str] repeat_notification_duration: (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the monitoring template.
@@ -892,7 +886,6 @@ class MonitoringTemplate(pulumi.CustomResource):
     def repeat_notification_duration(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

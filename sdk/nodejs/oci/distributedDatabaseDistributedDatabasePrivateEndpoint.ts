@@ -118,7 +118,6 @@ export class DistributedDatabaseDistributedDatabasePrivateEndpoint extends pulum
     /**
      * (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -265,7 +264,6 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointState {
     /**
      * (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -326,7 +324,6 @@ export interface DistributedDatabaseDistributedDatabasePrivateEndpointArgs {
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Reinstate Proxy Instance. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

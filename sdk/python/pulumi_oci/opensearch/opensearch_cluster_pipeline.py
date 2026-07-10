@@ -59,7 +59,6 @@ class OpensearchClusterPipelineArgs:
         :param pulumi.Input[_builtins.str] vcn_compartment_id: (Updatable) The OCID for the compartment where the pipeline's VCN is located.
         :param pulumi.Input[_builtins.str] vcn_id: (Updatable) The OCID of the pipeline's VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -289,7 +288,6 @@ class OpensearchClusterPipelineArgs:
         """
         (Updatable) The OCID of the pipeline's VCN.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -354,7 +352,6 @@ class _OpensearchClusterPipelineState:
         :param pulumi.Input[_builtins.str] time_updated: The amount of time in milliseconds since the pipeline was updated.
         :param pulumi.Input[_builtins.str] vcn_compartment_id: (Updatable) The OCID for the compartment where the pipeline's VCN is located.
         :param pulumi.Input[_builtins.str] vcn_id: (Updatable) The OCID of the pipeline's VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -690,7 +687,6 @@ class _OpensearchClusterPipelineState:
         """
         (Updatable) The OCID of the pipeline's VCN.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -794,7 +790,6 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: (Updatable) The OCID of the pipeline's subnet.
         :param pulumi.Input[_builtins.str] vcn_compartment_id: (Updatable) The OCID for the compartment where the pipeline's VCN is located.
         :param pulumi.Input[_builtins.str] vcn_id: (Updatable) The OCID of the pipeline's VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -999,7 +994,6 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The amount of time in milliseconds since the pipeline was updated.
         :param pulumi.Input[_builtins.str] vcn_compartment_id: (Updatable) The OCID for the compartment where the pipeline's VCN is located.
         :param pulumi.Input[_builtins.str] vcn_id: (Updatable) The OCID of the pipeline's VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1223,7 +1217,6 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The OCID of the pipeline's VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

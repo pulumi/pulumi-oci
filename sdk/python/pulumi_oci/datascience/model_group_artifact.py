@@ -30,7 +30,6 @@ class ModelGroupArtifactArgs:
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
         :param pulumi.Input[_builtins.str] model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] content_disposition: This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
@@ -71,7 +70,6 @@ class ModelGroupArtifactArgs:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -108,7 +106,6 @@ class _ModelGroupArtifactState:
         :param pulumi.Input[_builtins.str] content_length: The content length of the body.
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
         :param pulumi.Input[_builtins.str] model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,7 +160,6 @@ class _ModelGroupArtifactState:
     def model_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -222,7 +218,6 @@ class ModelGroupArtifact(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] content_length: The content length of the body.
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
         :param pulumi.Input[_builtins.str] model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -327,7 +322,6 @@ class ModelGroupArtifact(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] model_group_artifact: The model group artifact to upload.
         :param pulumi.Input[_builtins.str] model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -370,7 +364,6 @@ class ModelGroupArtifact(pulumi.CustomResource):
     def model_group_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

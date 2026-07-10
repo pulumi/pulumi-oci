@@ -27,7 +27,6 @@ class RedisClusterDetachOciCacheUserArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class RedisClusterDetachOciCacheUserArgs:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _RedisClusterDetachOciCacheUserState:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _RedisClusterDetachOciCacheUserState:
     def redis_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +145,6 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +233,6 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] oci_cache_users: List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -263,7 +257,6 @@ class RedisClusterDetachOciCacheUser(pulumi.CustomResource):
     def redis_cluster_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

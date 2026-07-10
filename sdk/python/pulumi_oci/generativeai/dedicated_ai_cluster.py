@@ -106,7 +106,6 @@ class DedicatedAiClusterArgs:
                * H100_X1, H100_X2, H100_X4, H100_X8
                * H200_X1, H200_X2, H200_X4, H200_X8
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -237,7 +236,6 @@ class DedicatedAiClusterArgs:
         * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
         * H100_X1, H100_X2, H100_X4, H100_X8
         * H200_X1, H200_X2, H200_X4, H200_X8
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -400,7 +398,6 @@ class _DedicatedAiClusterState:
                * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
                * H100_X1, H100_X2, H100_X4, H100_X8
                * H200_X1, H200_X2, H200_X4, H200_X8
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -665,7 +662,6 @@ class _DedicatedAiClusterState:
         * H100_X1, H100_X2, H100_X4, H100_X8
         * H200_X1, H200_X2, H200_X4, H200_X8
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -808,7 +804,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
                * H100_X1, H100_X2, H100_X4, H100_X8
                * H200_X1, H200_X2, H200_X4, H200_X8
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1026,7 +1021,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
                * H100_X1, H100_X2, H100_X4, H100_X8
                * H200_X1, H200_X2, H200_X4, H200_X8
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1228,7 +1222,6 @@ class DedicatedAiCluster(pulumi.CustomResource):
         * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
         * H100_X1, H100_X2, H100_X4, H100_X8
         * H200_X1, H200_X2, H200_X4, H200_X8
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -42,7 +42,6 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -133,7 +132,6 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
     def resources(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         (Updatable) contains Resource details
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -241,7 +239,6 @@ class _ApiaccesscontrolPrivilegedApiControlState:
         :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs']]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,7 +424,6 @@ class _ApiaccesscontrolPrivilegedApiControlState:
         """
         (Updatable) contains Resource details
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -586,7 +582,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -755,7 +750,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the PrivilegedApiControl.
@@ -882,7 +876,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
     def resources(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) contains Resource details
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

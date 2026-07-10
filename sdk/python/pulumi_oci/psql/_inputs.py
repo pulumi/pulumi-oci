@@ -719,7 +719,6 @@ class DbSystemInstanceArgsDict(TypedDict):
     """
     (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -750,7 +749,6 @@ class DbSystemInstanceArgs:
         :param pulumi.Input[_builtins.str] id: A unique identifier for the database instance node. Immutable on creation.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -839,7 +837,6 @@ class DbSystemInstanceArgs:
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

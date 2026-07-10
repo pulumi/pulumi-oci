@@ -1262,7 +1262,6 @@ class AgentKnowledgeBaseIndexConfig(dict):
         :param 'AgentKnowledgeBaseIndexConfigSecretDetailArgs' secret_detail: (Updatable) The details of configured security configuration on OpenSearch.
         :param _builtins.bool should_enable_hybrid_search: (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1333,7 +1332,6 @@ class AgentKnowledgeBaseIndexConfig(dict):
     def should_enable_hybrid_search(self) -> Optional[_builtins.bool]:
         """
         (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1735,7 +1733,6 @@ class AgentToolToolConfig(dict):
                * `RAG_TOOL_CONFIG`: The config for rag Tool.
                * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str agent_endpoint_id: (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
@@ -1806,7 +1803,6 @@ class AgentToolToolConfig(dict):
         * `SQL_TOOL_CONFIG`: The config for sql Tool.
         * `RAG_TOOL_CONFIG`: The config for rag Tool.
         * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3440,7 +3436,7 @@ class ModelFineTuneDetails(dict):
                  training_config: Optional['outputs.ModelFineTuneDetailsTrainingConfig'] = None):
         """
         :param _builtins.str dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
-        :param 'ModelFineTuneDetailsTrainingDatasetArgs' training_dataset: The dataset used to fine-tune the model. 
+        :param 'ModelFineTuneDetailsTrainingDatasetArgs' training_dataset: The dataset used to fine-tune the model.
                
                Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         :param 'ModelFineTuneDetailsTrainingConfigArgs' training_config: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
@@ -3462,7 +3458,7 @@ class ModelFineTuneDetails(dict):
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> 'outputs.ModelFineTuneDetailsTrainingDataset':
         """
-        The dataset used to fine-tune the model. 
+        The dataset used to fine-tune the model.
 
         Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         """
@@ -3533,7 +3529,7 @@ class ModelFineTuneDetailsTrainingConfig(dict):
         :param _builtins.int early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
         :param _builtins.float early_stopping_threshold: How much the loss must improve to prevent early stopping.
         :param _builtins.float learning_rate: The initial learning rate to be used during training
-        :param _builtins.int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics. 
+        :param _builtins.int log_model_metrics_interval_in_steps: Determines how frequently to log model metrics.
                
                Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         :param _builtins.int lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
@@ -3601,7 +3597,7 @@ class ModelFineTuneDetailsTrainingConfig(dict):
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
     def log_model_metrics_interval_in_steps(self) -> Optional[_builtins.int]:
         """
-        Determines how frequently to log model metrics. 
+        Determines how frequently to log model metrics.
 
         Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         """
@@ -4130,7 +4126,6 @@ class ProjectShortTermMemoryOptimizationConfig(dict):
         """
         :param _builtins.bool is_enabled: (Updatable) Indicates whether short-term memory optimization is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param 'ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs' condenser_config: (Updatable) Configuration for condensing conversation content.
@@ -4144,7 +4139,6 @@ class ProjectShortTermMemoryOptimizationConfig(dict):
     def is_enabled(self) -> _builtins.bool:
         """
         (Updatable) Indicates whether short-term memory optimization is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4385,8 +4379,7 @@ class SemanticStoreSchemasSchema(dict):
     def __init__(__self__, *,
                  name: _builtins.str):
         """
-        :param _builtins.str name: (Updatable) 
-               
+        :param _builtins.str name: (Updatable)
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4397,8 +4390,7 @@ class SemanticStoreSchemasSchema(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        (Updatable) 
-
+        (Updatable)
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

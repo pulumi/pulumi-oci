@@ -126,7 +126,6 @@ class AssessmentAssessorActionItemArgsDict(TypedDict):
     """
     The property value.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -139,7 +138,6 @@ class AssessmentAssessorActionItemArgs:
         """
         :param pulumi.Input[_builtins.str] name: The property name.
         :param pulumi.Input[_builtins.str] value: The property value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +162,6 @@ class AssessmentAssessorActionItemArgs:
     def value(self) -> pulumi.Input[_builtins.str]:
         """
         The property value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -441,7 +438,6 @@ class AssessmentTargetDatabaseConnectionArgsDict(TypedDict):
     """
     (Updatable) The technology type.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -460,7 +456,6 @@ class AssessmentTargetDatabaseConnectionArgs:
         :param pulumi.Input[_builtins.str] id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[_builtins.str] technology_sub_type: (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
         :param pulumi.Input[_builtins.str] technology_type: (Updatable) The technology type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -529,7 +524,6 @@ class AssessmentTargetDatabaseConnectionArgs:
     def technology_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The technology type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -45,7 +45,6 @@ class DatabaseToolsMcpServerArgs:
         :param pulumi.Input['DatabaseToolsMcpServerStorageArgs'] storage: (Updatable) The storage option used when running a tool asynchronously.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] access_token_expiry_in_seconds: (Updatable) Access token expiry in seconds
@@ -145,7 +144,6 @@ class DatabaseToolsMcpServerArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The Database Tools MCP server type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -305,7 +303,6 @@ class _DatabaseToolsMcpServerState:
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -627,7 +624,6 @@ class _DatabaseToolsMcpServerState:
         """
         (Updatable) The Database Tools MCP server type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -733,7 +729,6 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] runtime_identity: Specifies the identity used by the Database Tools MCP server to issue requests to other Oracle Cloud Infrastructure services (e.g., Secrets in Vault).
         :param pulumi.Input[Union['DatabaseToolsMcpServerStorageArgs', 'DatabaseToolsMcpServerStorageArgsDict']] storage: (Updatable) The storage option used when running a tool asynchronously.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -938,7 +933,6 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools MCP server was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools MCP server was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1153,7 +1147,6 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The Database Tools MCP server type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

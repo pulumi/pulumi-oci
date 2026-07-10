@@ -565,7 +565,6 @@ class DatabaseToolsConnectionUserPasswordArgsDict(TypedDict):
     """
     (Updatable) The value type of the user password.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -578,7 +577,6 @@ class DatabaseToolsConnectionUserPasswordArgs:
         """
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param pulumi.Input[_builtins.str] value_type: (Updatable) The value type of the user password.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -603,7 +601,6 @@ class DatabaseToolsConnectionUserPasswordArgs:
     def value_type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The value type of the user password.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -896,7 +893,6 @@ class DatabaseToolsMcpServerEndpointArgsDict(TypedDict):
     """
     (Updatable) The Database Tools MCP server type.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -909,7 +905,6 @@ class DatabaseToolsMcpServerEndpointArgs:
         """
         :param pulumi.Input[_builtins.str] endpoint: The URI endpoint of the MCP server
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools MCP server type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -936,7 +931,6 @@ class DatabaseToolsMcpServerEndpointArgs:
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The Database Tools MCP server type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1839,7 +1833,6 @@ class DatabaseToolsSqlReportVariableArgsDict(TypedDict):
     """
     (Updatable) The type of the variable
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1854,7 +1847,6 @@ class DatabaseToolsSqlReportVariableArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the variable
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the variable
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the variable
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1892,7 +1884,6 @@ class DatabaseToolsSqlReportVariableArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The type of the variable
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

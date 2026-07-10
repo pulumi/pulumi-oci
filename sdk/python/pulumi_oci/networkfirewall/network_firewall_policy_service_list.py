@@ -27,8 +27,7 @@ class NetworkFirewallPolicyServiceListArgs:
         The set of arguments for constructing a NetworkFirewallPolicyServiceList resource.
 
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,8 +57,7 @@ class NetworkFirewallPolicyServiceListArgs:
     @pulumi.getter
     def services(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
-        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-
+        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,8 +109,7 @@ class _NetworkFirewallPolicyServiceListState:
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this serviceList belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,8 +180,7 @@ class _NetworkFirewallPolicyServiceListState:
     @pulumi.getter
     def services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-
+        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -254,8 +250,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the service list. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -361,8 +356,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of the service Group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this serviceList belongs to.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -416,8 +410,7 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
     @pulumi.getter
     def services(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-
+        (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

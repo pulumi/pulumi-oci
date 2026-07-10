@@ -67,7 +67,6 @@ export class MarketplaceExternalAttestedMetadata extends pulumi.CustomResource {
     /**
      * unique id that identifies the associated instance
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -121,7 +120,6 @@ export interface MarketplaceExternalAttestedMetadataState {
     /**
      * unique id that identifies the associated instance
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -142,7 +140,6 @@ export interface MarketplaceExternalAttestedMetadataArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * unique id that identifies the associated instance
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

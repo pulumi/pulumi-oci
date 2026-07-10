@@ -32,7 +32,6 @@ class BdsInstancePatchActionArgs:
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[_builtins.str] version: The version of the patch to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['BdsInstancePatchActionPatchingConfigArgs'] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
@@ -73,7 +72,6 @@ class BdsInstancePatchActionArgs:
         """
         The version of the patch to be installed.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -110,7 +108,6 @@ class _BdsInstancePatchActionState:
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input['BdsInstancePatchActionPatchingConfigArgs'] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[_builtins.str] version: The version of the patch to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +162,6 @@ class _BdsInstancePatchActionState:
     def version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the patch to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +224,6 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
         :param pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[_builtins.str] version: The version of the patch to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -339,7 +334,6 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         :param pulumi.Input[Union['BdsInstancePatchActionPatchingConfigArgs', 'BdsInstancePatchActionPatchingConfigArgsDict']] patching_config: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
         :param pulumi.Input[_builtins.str] version: The version of the patch to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -382,7 +376,6 @@ class BdsInstancePatchAction(pulumi.CustomResource):
     def version(self) -> pulumi.Output[_builtins.str]:
         """
         The version of the patch to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

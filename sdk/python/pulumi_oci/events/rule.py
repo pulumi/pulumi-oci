@@ -36,8 +36,7 @@ class RuleArgs:
         :param pulumi.Input['RuleActionsArgs'] actions: (Updatable) A list of ActionDetails objects to create for a rule.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,8 +113,7 @@ class RuleArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,8 +235,7 @@ class _RuleState:
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,8 +380,7 @@ class _RuleState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -524,8 +520,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -692,8 +687,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -799,8 +793,7 @@ class Rule(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

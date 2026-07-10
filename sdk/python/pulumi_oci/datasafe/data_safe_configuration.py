@@ -28,7 +28,6 @@ class DataSafeConfigurationArgs:
 
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
@@ -42,7 +41,6 @@ class DataSafeConfigurationArgs:
     def is_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) Indicates if Data Safe is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -87,7 +85,6 @@ class _DataSafeConfigurationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DataSafeConfigurationGlobalSettingArgs']]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,7 +177,6 @@ class _DataSafeConfigurationState:
         """
         (Updatable) Indicates if Data Safe is enabled.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -264,7 +260,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) A filter to return only resources that match the specified compartment OCID.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -369,7 +364,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DataSafeConfigurationGlobalSettingArgs', 'DataSafeConfigurationGlobalSettingArgsDict']]]] global_settings: Details of the tenancy level global settings in Data Safe.
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if Data Safe is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of Data Safe.
@@ -436,7 +430,6 @@ class DataSafeConfiguration(pulumi.CustomResource):
     def is_enabled(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) Indicates if Data Safe is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

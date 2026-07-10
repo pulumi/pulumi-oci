@@ -90,7 +90,6 @@ export class NetworkFirewallPolicyAddressList extends pulumi.CustomResource {
     /**
      * Type of address List. The accepted values are - * FQDN * IP
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -171,7 +170,6 @@ export interface NetworkFirewallPolicyAddressListState {
     /**
      * Type of address List. The accepted values are - * FQDN * IP
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -200,7 +198,6 @@ export interface NetworkFirewallPolicyAddressListArgs {
     networkFirewallPolicyId: pulumi.Input<string>;
     /**
      * Type of address List. The accepted values are - * FQDN * IP
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

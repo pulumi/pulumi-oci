@@ -137,7 +137,6 @@ export class DbmulticloudOracleDbGcpKeyRing extends pulumi.CustomResource {
     /**
      * Oracle DB GCP Key Ring resource Type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -275,7 +274,6 @@ export interface DbmulticloudOracleDbGcpKeyRingState {
     /**
      * Oracle DB GCP Key Ring resource Type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -325,7 +323,6 @@ export interface DbmulticloudOracleDbGcpKeyRingArgs {
     targetRegion?: pulumi.Input<string | undefined>;
     /**
      * Oracle DB GCP Key Ring resource Type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

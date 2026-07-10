@@ -2533,7 +2533,6 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param _builtins.bool reserve_data: (Updatable) If true, keep the original key-value pair in the parsed result.
         :param _builtins.bool reserve_time: (Updatable) If true, keep the original event time in the parsed result.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2763,7 +2762,6 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     def reserve_time(self) -> Optional[_builtins.bool]:
         """
         (Updatable) If true, keep the original event time in the parsed result.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

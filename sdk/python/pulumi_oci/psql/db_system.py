@@ -76,7 +76,6 @@ class DbSystemArgs:
         :param pulumi.Input['DbSystemSourceArgs'] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
@@ -410,7 +409,6 @@ class DbSystemArgs:
         """
         (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -499,7 +497,6 @@ class _DbSystemState:
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input['DbSystemSourceArgs'] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -883,7 +880,6 @@ class _DbSystemState:
         """
         (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1042,7 +1038,6 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1242,7 +1237,6 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1498,7 +1492,6 @@ class DbSystem(pulumi.CustomResource):
     def state(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

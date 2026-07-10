@@ -896,7 +896,6 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
         :param _builtins.str region: Data source replication region
         :param _builtins.str status: (Updatable) Enablement status of data source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -919,7 +918,6 @@ class CloudGuardDataSourceRegionStatusDetail(dict):
         """
         (Updatable) Enablement status of data source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -934,7 +932,6 @@ class DataMaskRuleTargetSelected(dict):
         """
         :param _builtins.str kind: (Updatable) Kind of target selection to be used
         :param Sequence[_builtins.str] values: (Updatable) Types of targets
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -956,7 +953,6 @@ class DataMaskRuleTargetSelected(dict):
     def values(self) -> Optional[Sequence[_builtins.str]]:
         """
         (Updatable) Types of targets
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6055,7 +6051,6 @@ class TargetTargetResponderRecipeResponderRule(dict):
         :param 'TargetTargetResponderRecipeResponderRuleDetailsArgs' details: (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
         :param _builtins.str responder_rule_id: (Updatable) Unique identifier for target detector recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str compartment_id: Compartment OCID where the resource is created
@@ -6109,7 +6104,6 @@ class TargetTargetResponderRecipeResponderRule(dict):
     def responder_rule_id(self) -> _builtins.str:
         """
         (Updatable) Unique identifier for target detector recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

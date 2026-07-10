@@ -31,8 +31,7 @@ class OdaPrivateEndpointScanProxyArgs:
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -82,8 +81,7 @@ class OdaPrivateEndpointScanProxyArgs:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,8 +108,7 @@ class _OdaPrivateEndpointScanProxyState:
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input['OdaPrivateEndpointScanProxyScanListenerInfoArgs']]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,8 +168,7 @@ class _OdaPrivateEndpointScanProxyState:
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,8 +257,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,8 +373,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] protocol: The protocol used for communication between client, scanProxy and RAC's scan listeners
         :param pulumi.Input[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict']]]] scan_listener_infos: The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
-        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-               
+        :param pulumi.Input[_builtins.str] scan_listener_type: Type indicating whether Scan listener is specified by its FQDN or list of IPs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -426,8 +420,7 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
     @pulumi.getter(name="scanListenerType")
     def scan_listener_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Type indicating whether Scan listener is specified by its FQDN or list of IPs 
-
+        Type indicating whether Scan listener is specified by its FQDN or list of IPs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

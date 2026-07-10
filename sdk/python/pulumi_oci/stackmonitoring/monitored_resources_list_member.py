@@ -29,7 +29,6 @@ class MonitoredResourcesListMemberArgs:
 
         :param pulumi.Input[_builtins.str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -46,7 +45,6 @@ class MonitoredResourcesListMemberArgs:
     def monitored_resource_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -96,7 +94,6 @@ class _MonitoredResourcesListMemberState:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesListMemberItemArgs']]] items: List of member resources.
         :param pulumi.Input[_builtins.int] limit_level: The field which determines the depth of hierarchy while searching for members.
         :param pulumi.Input[_builtins.str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -152,7 +149,6 @@ class _MonitoredResourcesListMemberState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -207,7 +203,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] limit_level: The field which determines the depth of hierarchy while searching for members.
         :param pulumi.Input[_builtins.str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -306,7 +301,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] limit_level: The field which determines the depth of hierarchy while searching for members.
         :param pulumi.Input[_builtins.str] monitored_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -349,7 +343,6 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
     def monitored_resource_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

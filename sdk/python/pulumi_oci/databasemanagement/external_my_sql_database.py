@@ -27,7 +27,6 @@ class ExternalMySqlDatabaseArgs:
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class ExternalMySqlDatabaseArgs:
         """
         (Updatable) Name of the External MySQL Database.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -74,7 +72,6 @@ class _ExternalMySqlDatabaseState:
 
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,7 +101,6 @@ class _ExternalMySqlDatabaseState:
     def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Name of the External MySQL Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -170,7 +166,6 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -266,7 +261,6 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: OCID of compartment for the External MySQL Database.
         :param pulumi.Input[_builtins.str] db_name: (Updatable) Name of the External MySQL Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_database_id: OCID of External MySQL Database.
@@ -293,7 +287,6 @@ class ExternalMySqlDatabase(pulumi.CustomResource):
     def db_name(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Name of the External MySQL Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

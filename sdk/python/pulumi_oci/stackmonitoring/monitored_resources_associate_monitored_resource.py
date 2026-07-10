@@ -31,8 +31,7 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
         :param pulumi.Input[_builtins.str] association_type: Association type to be created between source and destination resources.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-               
+        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -82,8 +81,7 @@ class MonitoredResourcesAssociateMonitoredResourceArgs:
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> pulumi.Input[_builtins.str]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -119,8 +117,7 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs']]] destination_resource_details: Association Resource Details.
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs']]] source_resource_details: Association Resource Details.
-        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-               
+        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,8 +222,7 @@ class _MonitoredResourcesAssociateMonitoredResourceState:
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,8 +306,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] association_type: Association type to be created between source and destination resources.
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-               
+        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -434,8 +429,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict']]]] destination_resource_details: Association Resource Details.
         :param pulumi.Input[_builtins.str] destination_resource_id: Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict']]]] source_resource_details: Association Resource Details.
-        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-               
+        :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -512,8 +506,7 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
     @pulumi.getter(name="sourceResourceId")
     def source_resource_id(self) -> pulumi.Output[_builtins.str]:
         """
-        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-
+        Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

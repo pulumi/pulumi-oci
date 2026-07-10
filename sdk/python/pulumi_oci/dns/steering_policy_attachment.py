@@ -30,7 +30,6 @@ class SteeringPolicyAttachmentArgs:
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -70,7 +69,6 @@ class SteeringPolicyAttachmentArgs:
     def zone_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the attached zone. Must be a public zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +116,6 @@ class _SteeringPolicyAttachmentState:
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,7 +241,6 @@ class _SteeringPolicyAttachmentState:
         """
         The OCID of the attached zone. Must be a public zone.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -309,7 +305,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] domain_name: The attached domain within the attached zone. `domain_name` is case insensitive.
         :param pulumi.Input[_builtins.str] steering_policy_id: The OCID of the attached steering policy.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -436,7 +431,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created, expressed in RFC 3339 timestamp format.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the attached zone. Must be a public zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -524,7 +518,6 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
     def zone_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the attached zone. Must be a public zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

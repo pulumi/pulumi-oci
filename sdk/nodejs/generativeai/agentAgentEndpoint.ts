@@ -189,7 +189,6 @@ export class AgentAgentEndpoint extends pulumi.CustomResource {
     /**
      * (Updatable) Whether to show traces in the chat result.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -357,7 +356,6 @@ export interface AgentAgentEndpointState {
     /**
      * (Updatable) Whether to show traces in the chat result.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -450,7 +448,6 @@ export interface AgentAgentEndpointArgs {
     shouldEnableSession?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) Whether to show traces in the chat result.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

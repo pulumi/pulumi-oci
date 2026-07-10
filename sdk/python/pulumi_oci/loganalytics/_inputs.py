@@ -196,8 +196,7 @@ class LogAnalyticsEntityMetadataItemArgs:
 class LogAnalyticsEntityTypePropertyArgsDict(TypedDict):
     name: pulumi.Input[_builtins.str]
     """
-    Log analytics entity type property name. 
-
+    Log analytics entity type property name.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,8 +212,7 @@ class LogAnalyticsEntityTypePropertyArgs:
                  name: pulumi.Input[_builtins.str],
                  description: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] name: Log analytics entity type property name. 
-               
+        :param pulumi.Input[_builtins.str] name: Log analytics entity type property name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +226,7 @@ class LogAnalyticsEntityTypePropertyArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[_builtins.str]:
         """
-        Log analytics entity type property name. 
-
+        Log analytics entity type property name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

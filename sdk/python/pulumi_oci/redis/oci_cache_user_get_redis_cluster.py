@@ -29,7 +29,6 @@ class OciCacheUserGetRedisClusterArgs:
 
         :param pulumi.Input[_builtins.str] oci_cache_user_id: A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to list resources.
@@ -46,7 +45,6 @@ class OciCacheUserGetRedisClusterArgs:
     def oci_cache_user_id(self) -> pulumi.Input[_builtins.str]:
         """
         A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,7 +93,6 @@ class _OciCacheUserGetRedisClusterState:
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] display_name: A filter to return only resources that match the entire display name given.
         :param pulumi.Input[_builtins.str] oci_cache_user_id: A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,7 +145,6 @@ class _OciCacheUserGetRedisClusterState:
         """
         A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -199,7 +195,6 @@ class OciCacheUserGetRedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to list resources.
         :param pulumi.Input[_builtins.str] display_name: A filter to return only resources that match the entire display name given.
         :param pulumi.Input[_builtins.str] oci_cache_user_id: A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +288,6 @@ class OciCacheUserGetRedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: A filter to return only resources that match the entire display name given.
         :param pulumi.Input[_builtins.str] oci_cache_user_id: A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -333,7 +327,6 @@ class OciCacheUserGetRedisCluster(pulumi.CustomResource):
     def oci_cache_user_id(self) -> pulumi.Output[_builtins.str]:
         """
         A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

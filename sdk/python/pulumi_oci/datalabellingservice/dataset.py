@@ -49,7 +49,6 @@ class DatasetArgs:
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -211,7 +210,6 @@ class DatasetArgs:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -259,7 +257,6 @@ class _DatasetState:
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input['DatasetLabelSetArgs'] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -456,7 +453,6 @@ class _DatasetState:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -628,7 +624,6 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -820,7 +815,6 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
         :param pulumi.Input[_builtins.str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in FAILED or NEEDS_ATTENTION state.
@@ -954,7 +948,6 @@ class Dataset(pulumi.CustomResource):
     def labeling_instructions(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The labeling instructions for human labelers in rich text format
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

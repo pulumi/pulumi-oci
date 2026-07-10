@@ -179,7 +179,7 @@ export class Alarm extends pulumi.CustomResource {
      */
     declare public readonly notificationVersion: pulumi.Output<string>;
     /**
-     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     * (Updatable) A set of overrides that control evaluations of the alarm.
      *
      * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
      */
@@ -201,15 +201,15 @@ export class Alarm extends pulumi.CustomResource {
      *
      * Example of threshold alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
      *
-     * -----
+     * ***
      *
      * Example of absence alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
      *
@@ -436,7 +436,7 @@ export interface AlarmState {
      */
     notificationVersion?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     * (Updatable) A set of overrides that control evaluations of the alarm.
      *
      * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
      */
@@ -458,15 +458,15 @@ export interface AlarmState {
      *
      * Example of threshold alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
      *
-     * -----
+     * ***
      *
      * Example of absence alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
      *
@@ -593,7 +593,7 @@ export interface AlarmArgs {
      */
     notificationVersion?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) A set of overrides that control evaluations of the alarm. 
+     * (Updatable) A set of overrides that control evaluations of the alarm.
      *
      * Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
      */
@@ -615,15 +615,15 @@ export interface AlarmArgs {
      *
      * Example of threshold alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
      *
-     * -----
+     * ***
      *
      * Example of absence alarm:
      *
-     * -----
+     * ***
      *
      * CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
      *

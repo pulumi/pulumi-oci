@@ -41,7 +41,6 @@ class AgentDataSourceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -149,7 +148,6 @@ class AgentDataSourceArgs:
         """
         (Updatable) Key-value pairs to allow additional configurations.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -188,7 +186,6 @@ class _AgentDataSourceState:
         :param pulumi.Input[_builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +323,6 @@ class _AgentDataSourceState:
         """
         (Updatable) Key-value pairs to allow additional configurations.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -456,7 +452,6 @@ class AgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -604,7 +599,6 @@ class AgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the data source.
@@ -700,7 +694,6 @@ class AgentDataSource(pulumi.CustomResource):
     def metadata(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         (Updatable) Key-value pairs to allow additional configurations.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

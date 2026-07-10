@@ -63,7 +63,6 @@ export class AutonomousDatabaseRegionalWalletManagement extends pulumi.CustomRes
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -117,7 +116,6 @@ export interface AutonomousDatabaseRegionalWalletManagementState {
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -142,7 +140,6 @@ export interface AutonomousDatabaseRegionalWalletManagementArgs {
     gracePeriod?: pulumi.Input<number | undefined>;
     /**
      * (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

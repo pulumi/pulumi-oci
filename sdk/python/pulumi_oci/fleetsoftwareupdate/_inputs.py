@@ -1453,8 +1453,7 @@ class FsuCycleUpgradeDetailsArgsDict(TypedDict):
     """
     max_drain_timeout_in_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    (Updatable) Service drain timeout specified in seconds. 
-
+    (Updatable) Service drain timeout specified in seconds.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1475,8 +1474,7 @@ class FsuCycleUpgradeDetailsArgs:
         :param pulumi.Input[_builtins.bool] is_ignore_prerequisites: (Updatable) Ignore the Cluster Verification Utility (CVU) prerequisite checks.
         :param pulumi.Input[_builtins.bool] is_recompile_invalid_objects: (Updatable) Enables or disables the recompilation of invalid objects.
         :param pulumi.Input[_builtins.bool] is_time_zone_upgrade: (Updatable) Enables or disables time zone upgrade.
-        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds. 
-               
+        :param pulumi.Input[_builtins.int] max_drain_timeout_in_seconds: (Updatable) Service drain timeout specified in seconds.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1557,8 +1555,7 @@ class FsuCycleUpgradeDetailsArgs:
     @pulumi.getter(name="maxDrainTimeoutInSeconds")
     def max_drain_timeout_in_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) Service drain timeout specified in seconds. 
-
+        (Updatable) Service drain timeout specified in seconds.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

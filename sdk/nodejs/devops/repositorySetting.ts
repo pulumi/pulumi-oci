@@ -93,7 +93,6 @@ export class RepositorySetting extends pulumi.CustomResource {
     /**
      * Unique repository identifier.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -150,7 +149,6 @@ export interface RepositorySettingState {
     /**
      * Unique repository identifier.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -175,7 +173,6 @@ export interface RepositorySettingArgs {
     mergeSettings?: pulumi.Input<inputs.DevOps.RepositorySettingMergeSettings | undefined>;
     /**
      * Unique repository identifier.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

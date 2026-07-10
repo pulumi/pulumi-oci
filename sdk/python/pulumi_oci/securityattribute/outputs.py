@@ -49,8 +49,7 @@ class SecurityAttributeValidator(dict):
                  values: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str validator_type: (Updatable) Specifies the type of validation: a static value (no validation) or a list.
-        :param Sequence[_builtins.str] values: (Updatable) The list of allowed values for a security attribute value. 
-               
+        :param Sequence[_builtins.str] values: (Updatable) The list of allowed values for a security attribute value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -71,8 +70,7 @@ class SecurityAttributeValidator(dict):
     @pulumi.getter
     def values(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable) The list of allowed values for a security attribute value. 
-
+        (Updatable) The list of allowed values for a security attribute value.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

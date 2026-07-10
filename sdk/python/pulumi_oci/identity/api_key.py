@@ -27,7 +27,6 @@ class ApiKeyArgs:
         :param pulumi.Input[_builtins.str] key_value: The public key.  Must be an RSA key in PEM format.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class ApiKeyArgs:
     def user_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -81,7 +79,6 @@ class _ApiKeyState:
         :param pulumi.Input[_builtins.str] state: The API key's current state.
         :param pulumi.Input[_builtins.str] time_created: Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +162,6 @@ class _ApiKeyState:
         """
         The OCID of the user.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -228,7 +224,6 @@ class ApiKey(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] key_value: The public key.  Must be an RSA key in PEM format.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -344,7 +339,6 @@ class ApiKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Date and time the `ApiKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -405,7 +399,6 @@ class ApiKey(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

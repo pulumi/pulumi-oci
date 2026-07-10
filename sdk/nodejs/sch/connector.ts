@@ -184,7 +184,6 @@ export class Connector extends pulumi.CustomResource {
     /**
      * (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -310,7 +309,6 @@ export interface ConnectorState {
     /**
      * (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -367,7 +365,6 @@ export interface ConnectorArgs {
     source: pulumi.Input<inputs.Sch.ConnectorSource>;
     /**
      * (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

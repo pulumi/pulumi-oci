@@ -29,7 +29,6 @@ class DbNodeSnapshotArgs:
         :param pulumi.Input[_builtins.str] dbnode_snapshot_id: The Exadata Database Node Snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] mount_dbnode_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -53,7 +52,6 @@ class DbNodeSnapshotArgs:
     def mount_dbnode_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -92,7 +90,6 @@ class _DbNodeSnapshotState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
         :param pulumi.Input[_builtins.str] mount_dbnode_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,7 +207,6 @@ class _DbNodeSnapshotState:
     def mount_dbnode_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -356,7 +352,6 @@ class DbNodeSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dbnode_snapshot_id: The Exadata Database Node Snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] mount_dbnode_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -485,7 +480,6 @@ class DbNodeSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the Exadata Database Node Snapshot.
         :param pulumi.Input[_builtins.str] mount_dbnode_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict']]]] mount_points: Details of the mount points
@@ -569,7 +563,6 @@ class DbNodeSnapshot(pulumi.CustomResource):
     def mount_dbnode_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Node to which the snapshot will be mounted. Set `mount_dbnode_id` to `"null"` (string, not `null`) to unmount the Db Node Snapshot.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

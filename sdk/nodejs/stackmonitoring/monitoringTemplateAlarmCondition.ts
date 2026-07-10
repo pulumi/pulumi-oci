@@ -115,7 +115,6 @@ export class MonitoringTemplateAlarmCondition extends pulumi.CustomResource {
     /**
      * (Updatable) The resource group OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -247,7 +246,6 @@ export interface MonitoringTemplateAlarmConditionState {
     /**
      * (Updatable) The resource group OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -312,7 +310,6 @@ export interface MonitoringTemplateAlarmConditionArgs {
     namespace: pulumi.Input<string>;
     /**
      * (Updatable) The resource group OCID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

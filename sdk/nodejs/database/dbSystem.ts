@@ -260,7 +260,6 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -734,7 +733,6 @@ export interface DbSystemState {
     /**
      * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -1002,7 +1000,6 @@ export interface DbSystemArgs {
     osPatchDbNodeId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Os Patch. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -140,7 +140,6 @@ export class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal extends pulumi.C
     /**
      * (Updatable) The type of the Database Tools database API gateway config global settings resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -269,7 +268,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState {
     /**
      * (Updatable) The type of the Database Tools database API gateway config global settings resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -322,7 +320,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs {
     poolRoutingHeader?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the Database Tools database API gateway config global settings resource.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

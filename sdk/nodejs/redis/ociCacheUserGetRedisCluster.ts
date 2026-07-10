@@ -71,7 +71,6 @@ export class OciCacheUserGetRedisCluster extends pulumi.CustomResource {
     /**
      * A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -125,7 +124,6 @@ export interface OciCacheUserGetRedisClusterState {
     /**
      * A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -146,7 +144,6 @@ export interface OciCacheUserGetRedisClusterArgs {
     displayName?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources, that match with the given Oracle Cloud Infrastructure cache user ID (OCID).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

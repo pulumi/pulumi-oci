@@ -124,7 +124,6 @@ export class CompliancePolicyRule extends pulumi.CustomResource {
     /**
      * (Updatable) Severity to which this CompliancePolicyRule applies.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -259,7 +258,6 @@ export interface CompliancePolicyRuleState {
     /**
      * (Updatable) Severity to which this CompliancePolicyRule applies.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -320,7 +318,6 @@ export interface CompliancePolicyRuleArgs {
     productVersion: pulumi.Input<inputs.FleetAppsManagement.CompliancePolicyRuleProductVersion>;
     /**
      * (Updatable) Severity to which this CompliancePolicyRule applies.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -237,8 +237,7 @@ class ObjectLifecyclePolicyRuleArgsDict(TypedDict):
     """
     time_unit: pulumi.Input[_builtins.str]
     """
-    (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-
+    (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,8 +266,7 @@ class ObjectLifecyclePolicyRuleArgs:
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) A Boolean that determines whether this rule is currently enabled.
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the lifecycle rule to be applied.
         :param pulumi.Input[_builtins.str] time_amount: (Updatable) Specifies the age of objects to apply the rule to. The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified time.
-        :param pulumi.Input[_builtins.str] time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-               
+        :param pulumi.Input[_builtins.str] time_unit: (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -337,8 +335,7 @@ class ObjectLifecyclePolicyRuleArgs:
     @pulumi.getter(name="timeUnit")
     def time_unit(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC. 
-
+        (Updatable) The unit that should be used to interpret timeAmount.  Days are defined as starting and ending at midnight UTC. Years are defined as 365.2425 days long and likewise round up to the next midnight UTC.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -572,7 +569,6 @@ class StorageObjectSourceUriDetailsArgsDict(TypedDict):
     """
     The version id of the object to be restored.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -597,7 +593,6 @@ class StorageObjectSourceUriDetailsArgs:
         :param pulumi.Input[_builtins.str] destination_object_if_none_match_etag: The entity tag to not match the target object.
         :param pulumi.Input[_builtins.str] source_object_if_match_etag: The entity tag to match the source object.
         :param pulumi.Input[_builtins.str] source_version_id: The version id of the object to be restored.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -704,7 +699,6 @@ class StorageObjectSourceUriDetailsArgs:
     def source_version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version id of the object to be restored.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

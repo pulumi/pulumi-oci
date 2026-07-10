@@ -601,7 +601,6 @@ class _DomainsSmtpCredentialState:
                * required: true
                * returned: default
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1106,7 +1105,6 @@ class _DomainsSmtpCredentialState:
         * mutability: readOnly
         * required: true
         * returned: default
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1629,7 +1627,6 @@ class DomainsSmtpCredential(pulumi.CustomResource):
                * required: true
                * returned: default
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2023,7 +2020,6 @@ class DomainsSmtpCredential(pulumi.CustomResource):
         * mutability: readOnly
         * required: true
         * returned: default
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -88,7 +88,6 @@ export class AuditProfileManagement extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -265,7 +264,6 @@ export interface AuditProfileManagementState {
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -358,7 +356,6 @@ export interface AuditProfileManagementState {
 export interface AuditProfileManagementArgs {
     /**
      * (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

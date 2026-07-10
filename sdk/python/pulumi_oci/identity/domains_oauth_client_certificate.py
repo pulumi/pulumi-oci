@@ -71,7 +71,6 @@ class DomainsOauthClientCertificateArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -240,7 +239,6 @@ class DomainsOauthClientCertificateArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -694,7 +692,6 @@ class _DomainsOauthClientCertificateState:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1271,7 +1268,6 @@ class _DomainsOauthClientCertificateState:
         * type: string
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1442,7 +1438,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1841,7 +1836,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2296,7 +2290,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

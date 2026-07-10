@@ -2338,7 +2338,6 @@ class ScriptParameter(dict):
         :param _builtins.bool is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
         :param _builtins.str param_value: (Updatable) Value of the parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence['ScriptParameterScriptParameterArgs'] script_parameters: Details of the script parameters, paramName must be from the script content and these details can be used to overwrite the default parameter present in the script content.
@@ -2382,7 +2381,6 @@ class ScriptParameter(dict):
     def param_value(self) -> Optional[_builtins.str]:
         """
         (Updatable) Value of the parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

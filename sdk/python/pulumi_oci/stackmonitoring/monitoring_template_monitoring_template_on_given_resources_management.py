@@ -26,7 +26,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs:
 
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
@@ -39,7 +38,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs:
     def enable_monitoring_template_on_given_resources(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73,7 +71,6 @@ class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
 
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
@@ -88,7 +85,6 @@ class _MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState:
     def enable_monitoring_template_on_given_resources(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,7 +139,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,7 +222,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_monitoring_template_on_given_resources: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
@@ -245,7 +239,6 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
     def enable_monitoring_template_on_given_resources(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

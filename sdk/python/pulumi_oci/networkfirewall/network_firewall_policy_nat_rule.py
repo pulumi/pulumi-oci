@@ -38,7 +38,6 @@ class NetworkFirewallPolicyNatRuleArgs:
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of a NAT rule. This field can be used to add additional info.
@@ -99,7 +98,6 @@ class NetworkFirewallPolicyNatRuleArgs:
         """
         (Updatable) NAT type:
         * NATV4 - NATV4 type NAT.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,7 +171,6 @@ class _NetworkFirewallPolicyNatRuleState:
         :param pulumi.Input[_builtins.str] priority_order: The priority order in which this rule should be evaluated
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -301,7 +298,6 @@ class _NetworkFirewallPolicyNatRuleState:
         (Updatable) NAT type:
         * NATV4 - NATV4 type NAT.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -377,7 +373,6 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.Input[Union['NetworkFirewallPolicyNatRulePositionArgs', 'NetworkFirewallPolicyNatRulePositionArgsDict']] position: (Updatable) An object which defines the position of the rule.
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -514,7 +509,6 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] type: (Updatable) NAT type:
                * NATV4 - NATV4 type NAT.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -604,7 +598,6 @@ class NetworkFirewallPolicyNatRule(pulumi.CustomResource):
         """
         (Updatable) NAT type:
         * NATV4 - NATV4 type NAT.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

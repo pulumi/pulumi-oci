@@ -39,8 +39,7 @@ class StreamJobArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream job display name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,8 +145,7 @@ class StreamJobArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,8 +183,7 @@ class _StreamJobState:
         :param pulumi.Input[Sequence[pulumi.Input['StreamJobFeatureArgs']]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details about current state of streamJob
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -311,8 +308,7 @@ class _StreamJobState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -458,8 +454,7 @@ class StreamJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Stream job display name.
         :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -614,8 +609,7 @@ class StreamJob(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['StreamJobFeatureArgs', 'StreamJobFeatureArgsDict']]]] features: (Updatable) a list of stream analysis features.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional details about current state of streamJob
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -704,8 +698,7 @@ class StreamJob(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Stream Job. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

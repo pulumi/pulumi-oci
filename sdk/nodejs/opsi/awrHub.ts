@@ -104,7 +104,6 @@ export class AwrHub extends pulumi.CustomResource {
     /**
      * OPSI Warehouse OCID
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -221,7 +220,6 @@ export interface AwrHubState {
     /**
      * OPSI Warehouse OCID
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -270,7 +268,6 @@ export interface AwrHubArgs {
     objectStorageBucketName?: pulumi.Input<string | undefined>;
     /**
      * OPSI Warehouse OCID
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

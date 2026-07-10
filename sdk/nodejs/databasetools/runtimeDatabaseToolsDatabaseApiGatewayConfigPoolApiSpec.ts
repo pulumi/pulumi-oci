@@ -94,7 +94,6 @@ export class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec extends pul
     /**
      * (Updatable) The type of the Database Tools database API gateway config API spec sub resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -187,7 +186,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecState {
     /**
      * (Updatable) The type of the Database Tools database API gateway config API spec sub resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -216,7 +214,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs {
     poolKey: pulumi.Input<string>;
     /**
      * (Updatable) The type of the Database Tools database API gateway config API spec sub resource.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

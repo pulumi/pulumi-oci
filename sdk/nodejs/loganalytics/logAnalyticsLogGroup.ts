@@ -89,8 +89,7 @@ export class LogAnalyticsLogGroup extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -176,8 +175,7 @@ export interface LogAnalyticsLogGroupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -218,8 +216,7 @@ export interface LogAnalyticsLogGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

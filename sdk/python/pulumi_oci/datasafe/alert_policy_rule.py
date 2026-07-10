@@ -29,7 +29,6 @@ class AlertPolicyRuleArgs:
         :param pulumi.Input[_builtins.str] alert_policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the alert policy rule.
@@ -59,7 +58,6 @@ class AlertPolicyRuleArgs:
     def expression(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,7 +110,6 @@ class _AlertPolicyRuleState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the alert policy rule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[_builtins.str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -176,7 +173,6 @@ class _AlertPolicyRuleState:
     def expression(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,7 +267,6 @@ class AlertPolicyRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the alert policy rule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[_builtins.str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,7 +375,6 @@ class AlertPolicyRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the alert policy rule.
         :param pulumi.Input[_builtins.str] expression: (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] key: The unique key of the alert policy rule.
@@ -429,7 +423,6 @@ class AlertPolicyRule(pulumi.CustomResource):
     def expression(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The conditional expression of the alert policy rule which evaluates to boolean value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

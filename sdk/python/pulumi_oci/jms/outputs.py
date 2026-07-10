@@ -982,7 +982,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis(dict):
         """
         :param _builtins.bool is_enabled: (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -994,7 +993,6 @@ class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis(dict):
     def is_enabled(self) -> Optional[_builtins.bool]:
         """
         (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1222,7 +1220,6 @@ class FleetOperationLog(dict):
         :param _builtins.str log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
         :param _builtins.str log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1242,7 +1239,6 @@ class FleetOperationLog(dict):
     def log_id(self) -> _builtins.str:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1601,7 +1597,6 @@ class TaskScheduleTaskDetails(dict):
         """
         :param _builtins.str task_type: (Updatable) Type of task.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param 'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs' add_installation_site_task_request: (Updatable) The list of Java installation sites to add.
@@ -1639,7 +1634,6 @@ class TaskScheduleTaskDetails(dict):
     def task_type(self) -> _builtins.str:
         """
         (Updatable) Type of task.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

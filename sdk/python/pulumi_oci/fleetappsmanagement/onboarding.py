@@ -37,7 +37,7 @@ class OnboardingArgs:
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-               >>>>>>> theirs
+               > > > > > > > theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -109,7 +109,7 @@ class OnboardingArgs:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        >>>>>>> theirs
+        > > > > > > > theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -151,7 +151,7 @@ class _OnboardingState:
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-               >>>>>>> theirs
+               > > > > > > > theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -271,7 +271,7 @@ class _OnboardingState:
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        >>>>>>> theirs
+        > > > > > > > theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -398,7 +398,7 @@ class Onboarding(pulumi.CustomResource):
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-               >>>>>>> theirs
+               > > > > > > > theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -513,7 +513,7 @@ class Onboarding(pulumi.CustomResource):
                Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
         :param pulumi.Input[_builtins.bool] is_fams_tag_enabled: A value determining if the Fleet Application Management tagging is enabled or not.
                Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-               >>>>>>> theirs
+               > > > > > > > theirs
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -601,7 +601,7 @@ class Onboarding(pulumi.CustomResource):
         """
         A value determining if the Fleet Application Management tagging is enabled or not.
         Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        >>>>>>> theirs
+        > > > > > > > theirs
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the

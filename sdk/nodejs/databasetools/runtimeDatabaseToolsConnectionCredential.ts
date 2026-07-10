@@ -100,7 +100,6 @@ export class RuntimeDatabaseToolsConnectionCredential extends pulumi.CustomResou
     /**
      * (Updatable) The username for the new credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -207,7 +206,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialState {
     /**
      * (Updatable) The username for the new credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -240,7 +238,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialArgs {
     type: pulumi.Input<string>;
     /**
      * (Updatable) The username for the new credential.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

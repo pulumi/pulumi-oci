@@ -33,7 +33,6 @@ class ResourceActionArgs:
                
                For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +72,6 @@ class ResourceActionArgs:
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
         For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -128,7 +126,6 @@ class _ResourceActionState:
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
                
                For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -371,7 +368,6 @@ class _ResourceActionState:
 
         For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -433,7 +429,6 @@ class ResourceAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
                
                For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -569,7 +564,6 @@ class ResourceAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_status_end: (Updatable) The date and time the current status will change. The format is defined by RFC3339.
                
                For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -734,7 +728,6 @@ class ResourceAction(pulumi.CustomResource):
         (Updatable) The date and time the current status will change. The format is defined by RFC3339.
 
         For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

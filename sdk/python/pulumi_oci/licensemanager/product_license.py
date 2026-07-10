@@ -39,8 +39,7 @@ class ProductLicenseArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['ProductLicenseImageArgs']]] images: (Updatable) The image details associated with the product license.
-        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,8 +145,7 @@ class ProductLicenseArgs:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
+        The product license vendor name, for example: Microsoft, RHEL, and so on.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,8 +202,7 @@ class _ProductLicenseState:
         :param pulumi.Input[_builtins.int] total_active_license_unit_count: The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
         :param pulumi.Input[_builtins.int] total_license_record_count: The number of license records associated with the product license.
         :param pulumi.Input[_builtins.float] total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
-        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -483,8 +480,7 @@ class _ProductLicenseState:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
+        The product license vendor name, for example: Microsoft, RHEL, and so on.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -561,8 +557,7 @@ class ProductLicense(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProductLicenseImageArgs', 'ProductLicenseImageArgsDict']]]] images: (Updatable) The image details associated with the product license.
         :param pulumi.Input[_builtins.bool] is_vendor_oracle: Specifies if the product license vendor is Oracle or a third party.
         :param pulumi.Input[_builtins.str] license_unit: The product license unit.
-        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -730,8 +725,7 @@ class ProductLicense(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] total_active_license_unit_count: The total number of licenses available for the product license, calculated by adding up all the license counts for active license records associated with the product license.
         :param pulumi.Input[_builtins.int] total_license_record_count: The number of license records associated with the product license.
         :param pulumi.Input[_builtins.float] total_license_units_consumed: The number of license units consumed. Updated after each allocation run.
-        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The product license vendor name, for example: Microsoft, RHEL, and so on.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -918,8 +912,7 @@ class ProductLicense(pulumi.CustomResource):
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Output[_builtins.str]:
         """
-        The product license vendor name, for example: Microsoft, RHEL, and so on. 
-
+        The product license vendor name, for example: Microsoft, RHEL, and so on.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

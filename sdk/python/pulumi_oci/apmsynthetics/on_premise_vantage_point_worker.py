@@ -47,7 +47,6 @@ class OnPremiseVantagePointWorkerArgs:
         :param pulumi.Input[_builtins.str] status: (Updatable) Enables or disables the On-premise VP worker.
         :param pulumi.Input[_builtins.str] worker_type: Type of the On-premise VP worker.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -196,7 +195,6 @@ class OnPremiseVantagePointWorkerArgs:
         """
         Type of the On-premise VP worker.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +255,6 @@ class _OnPremiseVantagePointWorkerState:
         :param pulumi.Input[_builtins.str] version: Image version of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerVersionDetailArgs']]] version_details: Image version details of the On-premise VP worker.
         :param pulumi.Input[_builtins.str] worker_type: Type of the On-premise VP worker.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -565,7 +562,6 @@ class _OnPremiseVantagePointWorkerState:
         """
         Type of the On-premise VP worker.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -648,7 +644,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] status: (Updatable) Enables or disables the On-premise VP worker.
         :param pulumi.Input[_builtins.str] version: Image version of the On-premise VP worker.
         :param pulumi.Input[_builtins.str] worker_type: Type of the On-premise VP worker.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -826,7 +821,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] version: Image version of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict']]]] version_details: Image version details of the On-premise VP worker.
         :param pulumi.Input[_builtins.str] worker_type: Type of the On-premise VP worker.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1032,7 +1026,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
     def worker_type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of the On-premise VP worker.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

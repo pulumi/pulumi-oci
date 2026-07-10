@@ -107,7 +107,6 @@ export class SecurityZone extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -226,7 +225,6 @@ export interface SecurityZoneState {
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -281,7 +279,6 @@ export interface SecurityZoneArgs {
     isInheritanceAfterDeleteEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

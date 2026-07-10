@@ -134,8 +134,7 @@ export class ClusterPlacementGroup extends pulumi.CustomResource {
      */
     declare public readonly placementInstruction: pulumi.Output<outputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction>;
     /**
-     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -266,8 +265,7 @@ export interface ClusterPlacementGroupState {
      */
     placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction | undefined>;
     /**
-     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,8 +330,7 @@ export interface ClusterPlacementGroupArgs {
      */
     placementInstruction?: pulumi.Input<inputs.ClusterPlacementGroups.ClusterPlacementGroupPlacementInstruction | undefined>;
     /**
-     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

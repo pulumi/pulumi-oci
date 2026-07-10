@@ -99,7 +99,6 @@ export class DetectorRecipe extends pulumi.CustomResource {
     /**
      * The ID of the source detector recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -237,7 +236,6 @@ export interface DetectorRecipeState {
     /**
      * The ID of the source detector recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -304,7 +302,6 @@ export interface DetectorRecipeArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The ID of the source detector recipe
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

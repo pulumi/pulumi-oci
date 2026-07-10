@@ -59,8 +59,7 @@ export class Configuration extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-     *
+     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -107,8 +106,7 @@ export interface ConfigurationState {
      */
     compartmentId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-     *
+     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +123,7 @@ export interface ConfigurationArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90` 
-     *
+     * (Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

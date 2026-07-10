@@ -315,8 +315,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     declare public /*out*/ readonly serviceLevelAgreementType: pulumi.Output<string>;
     /**
-     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
-     *
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -744,8 +743,7 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      */
     serviceLevelAgreementType?: pulumi.Input<string | undefined>;
     /**
-     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
-     *
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -830,8 +828,7 @@ export interface AutonomousContainerDatabaseAddStandbyArgs {
      */
     protectionMode?: pulumi.Input<string | undefined>;
     /**
-     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database. 
-     *
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

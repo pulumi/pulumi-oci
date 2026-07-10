@@ -175,8 +175,7 @@ export class Zone extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly zoneTransferServers: pulumi.Output<outputs.Dns.ZoneZoneTransferServer[]>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -349,8 +348,7 @@ export interface ZoneState {
      */
     zoneTransferServers?: pulumi.Input<pulumi.Input<inputs.Dns.ZoneZoneTransferServer>[] | undefined>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -421,8 +419,7 @@ export interface ZoneArgs {
      */
     viewId?: pulumi.Input<string | undefined>;
     /**
-     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-     *
+     * The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

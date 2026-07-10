@@ -91,8 +91,7 @@ export class GeneratedKey extends pulumi.CustomResource {
      */
     declare public readonly keyShape: pulumi.Output<outputs.Kms.GeneratedKeyKeyShape>;
     /**
-     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-     *
+     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,8 +186,7 @@ export interface GeneratedKeyState {
      */
     keyShape?: pulumi.Input<inputs.Kms.GeneratedKeyKeyShape | undefined>;
     /**
-     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-     *
+     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -229,8 +227,7 @@ export interface GeneratedKeyArgs {
      */
     keyShape: pulumi.Input<inputs.Kms.GeneratedKeyKeyShape>;
     /**
-     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
-     *
+     * Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

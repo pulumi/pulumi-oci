@@ -40,7 +40,6 @@ class JavaDownloadsJavaDownloadTokenArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] license_types: (Updatable) The license type(s) associated with the JavaDownloadToken.
         :param pulumi.Input[_builtins.str] time_expires: (Updatable) Expiry time of the token.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -125,7 +124,6 @@ class JavaDownloadsJavaDownloadTokenArgs:
     def time_expires(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Expiry time of the token.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +210,6 @@ class _JavaDownloadsJavaDownloadTokenState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] time_expires: (Updatable) Expiry time of the token.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -431,7 +428,6 @@ class _JavaDownloadsJavaDownloadTokenState:
         """
         (Updatable) Expiry time of the token.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -541,7 +537,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] java_version: The Java version associated with the token.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] license_types: (Updatable) The license type(s) associated with the JavaDownloadToken.
         :param pulumi.Input[_builtins.str] time_expires: (Updatable) Expiry time of the token.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -702,7 +697,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] time_expires: (Updatable) Expiry time of the token.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_last_used: The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
@@ -850,7 +844,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
     def time_expires(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Expiry time of the token.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

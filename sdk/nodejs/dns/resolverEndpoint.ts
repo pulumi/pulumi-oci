@@ -140,7 +140,6 @@ export class ResolverEndpoint extends pulumi.CustomResource {
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -304,7 +303,6 @@ export interface ResolverEndpointState {
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -379,7 +377,6 @@ export interface ResolverEndpointArgs {
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -137,7 +137,6 @@ export class OccMetricAlarm extends pulumi.CustomResource {
     /**
      * (Updatable) Units in which threshold is being stored.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -275,7 +274,6 @@ export interface OccMetricAlarmState {
     /**
      * (Updatable) Units in which threshold is being stored.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -340,7 +338,6 @@ export interface OccMetricAlarmArgs {
     threshold: pulumi.Input<number>;
     /**
      * (Updatable) Units in which threshold is being stored.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

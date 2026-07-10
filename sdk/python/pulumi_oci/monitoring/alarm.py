@@ -63,15 +63,15 @@ class AlarmArgs:
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
                
                Example of absence alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
@@ -92,7 +92,7 @@ class AlarmArgs:
         :param pulumi.Input[_builtins.bool] metric_compartment_id_in_subtree: (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -241,15 +241,15 @@ class AlarmArgs:
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
+        ***
 
         Example of absence alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
 
@@ -402,7 +402,7 @@ class AlarmArgs:
     @pulumi.getter
     def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
         """
-        (Updatable) A set of overrides that control evaluations of the alarm. 
+        (Updatable) A set of overrides that control evaluations of the alarm.
 
         Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         """
@@ -554,7 +554,7 @@ class _AlarmState:
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+        :param pulumi.Input[Sequence[pulumi.Input['AlarmOverrideArgs']]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -570,15 +570,15 @@ class _AlarmState:
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
                
                Example of absence alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
@@ -859,7 +859,7 @@ class _AlarmState:
     @pulumi.getter
     def overrides(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['AlarmOverrideArgs']]]]:
         """
-        (Updatable) A set of overrides that control evaluations of the alarm. 
+        (Updatable) A set of overrides that control evaluations of the alarm.
 
         Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         """
@@ -897,15 +897,15 @@ class _AlarmState:
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
+        ***
 
         Example of absence alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
 
@@ -1162,7 +1162,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -1178,15 +1178,15 @@ class Alarm(pulumi.CustomResource):
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
                
                Example of absence alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
@@ -1444,7 +1444,7 @@ class Alarm(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
         :param pulumi.Input[_builtins.str] notification_title: (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         :param pulumi.Input[_builtins.str] notification_version: (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm. 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict']]]] overrides: (Updatable) A set of overrides that control evaluations of the alarm.
                
                Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         :param pulumi.Input[_builtins.str] pending_duration: (Updatable) The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
@@ -1460,15 +1460,15 @@ class Alarm(pulumi.CustomResource):
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
                
                Example of absence alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
@@ -1662,7 +1662,7 @@ class Alarm(pulumi.CustomResource):
     @pulumi.getter
     def overrides(self) -> pulumi.Output[Sequence['outputs.AlarmOverride']]:
         """
-        (Updatable) A set of overrides that control evaluations of the alarm. 
+        (Updatable) A set of overrides that control evaluations of the alarm.
 
         Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         """
@@ -1692,15 +1692,15 @@ class Alarm(pulumi.CustomResource):
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
+        ***
 
         Example of absence alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
 

@@ -49,8 +49,7 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
         :param pulumi.Input[_builtins.str] severity: Priority assigned to the access request by the operator
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sub_resource_name_lists: The subresource names requested for approval.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ticket_numbers: A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
-        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-               
+        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,8 +226,7 @@ class ApiaccesscontrolPrivilegedApiRequestArgs:
     @pulumi.getter(name="timeRequestedForFutureAccess")
     def time_requested_for_future_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-
+        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -304,8 +302,7 @@ class _ApiaccesscontrolPrivilegedApiRequestState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ticket_numbers: A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
         :param pulumi.Input[_builtins.str] time_created: Time when the privilegedApi request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-               
+        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -712,8 +709,7 @@ class _ApiaccesscontrolPrivilegedApiRequestState:
     @pulumi.getter(name="timeRequestedForFutureAccess")
     def time_requested_for_future_access(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-
+        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -817,8 +813,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] severity: Priority assigned to the access request by the operator
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sub_resource_name_lists: The subresource names requested for approval.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ticket_numbers: A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
-        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-               
+        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1023,8 +1018,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ticket_numbers: A list of ticket numbers related to this Privileged Api Access Request, e.g. Service Request (SR) number and JIRA ticket number.
         :param pulumi.Input[_builtins.str] time_created: Time when the privilegedApi request was created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-               
+        :param pulumi.Input[_builtins.str] time_requested_for_future_access: Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1294,8 +1288,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
     @pulumi.getter(name="timeRequestedForFutureAccess")
     def time_requested_for_future_access(self) -> pulumi.Output[_builtins.str]:
         """
-        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-
+        Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

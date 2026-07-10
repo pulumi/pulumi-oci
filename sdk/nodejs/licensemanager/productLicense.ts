@@ -152,8 +152,7 @@ export class ProductLicense extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly totalLicenseUnitsConsumed: pulumi.Output<number>;
     /**
-     * The product license vendor name, for example: Microsoft, RHEL, and so on. 
-     *
+     * The product license vendor name, for example: Microsoft, RHEL, and so on.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -314,8 +313,7 @@ export interface ProductLicenseState {
      */
     totalLicenseUnitsConsumed?: pulumi.Input<number | undefined>;
     /**
-     * The product license vendor name, for example: Microsoft, RHEL, and so on. 
-     *
+     * The product license vendor name, for example: Microsoft, RHEL, and so on.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -356,8 +354,7 @@ export interface ProductLicenseArgs {
      */
     licenseUnit: pulumi.Input<string>;
     /**
-     * The product license vendor name, for example: Microsoft, RHEL, and so on. 
-     *
+     * The product license vendor name, for example: Microsoft, RHEL, and so on.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

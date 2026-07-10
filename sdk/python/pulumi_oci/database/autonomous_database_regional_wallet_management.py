@@ -27,7 +27,6 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
         :param pulumi.Input[_builtins.int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[_builtins.bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -54,7 +53,6 @@ class AutonomousDatabaseRegionalWalletManagementArgs:
         """
         (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -77,7 +75,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
 
         :param pulumi.Input[_builtins.int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[_builtins.bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,7 +107,6 @@ class _AutonomousDatabaseRegionalWalletManagementState:
     def should_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +179,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[_builtins.bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,7 +267,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[_builtins.bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Autonomous AI Database wallet.
@@ -301,7 +295,6 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
     def should_rotate(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

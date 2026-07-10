@@ -93,7 +93,7 @@ export class Rrset extends pulumi.CustomResource {
      */
     declare public readonly domain: pulumi.Output<string>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     declare public readonly items: pulumi.Output<outputs.Dns.RrsetItem[]>;
@@ -113,7 +113,6 @@ export class Rrset extends pulumi.CustomResource {
     declare public readonly viewId: pulumi.Output<string | undefined>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +180,7 @@ export interface RrsetState {
      */
     domain?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
@@ -201,7 +200,6 @@ export interface RrsetState {
     viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,7 +224,7 @@ export interface RrsetArgs {
      */
     domain: pulumi.Input<string>;
     /**
-     * (Updatable) 
+     * (Updatable)
      * **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
      */
     items?: pulumi.Input<pulumi.Input<inputs.Dns.RrsetItem>[] | undefined>;
@@ -246,7 +244,6 @@ export interface RrsetArgs {
     viewId?: pulumi.Input<string | undefined>;
     /**
      * The name or OCID of the target zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

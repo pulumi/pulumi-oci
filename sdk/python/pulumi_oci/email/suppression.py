@@ -27,7 +27,6 @@ class SuppressionArgs:
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[_builtins.str] email_address: The recipient email address of the suppression.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class SuppressionArgs:
     def email_address(self) -> pulumi.Input[_builtins.str]:
         """
         The recipient email address of the suppression.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -79,7 +77,6 @@ class _SuppressionState:
 
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[_builtins.str] email_address: The recipient email address of the suppression.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -124,7 +121,6 @@ class _SuppressionState:
     def email_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The recipient email address of the suppression.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,7 +249,6 @@ class Suppression(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[_builtins.str] email_address: The recipient email address of the suppression.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -360,7 +355,6 @@ class Suppression(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
         :param pulumi.Input[_builtins.str] email_address: The recipient email address of the suppression.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] error_detail: The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
@@ -397,7 +391,6 @@ class Suppression(pulumi.CustomResource):
     def email_address(self) -> pulumi.Output[_builtins.str]:
         """
         The recipient email address of the suppression.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

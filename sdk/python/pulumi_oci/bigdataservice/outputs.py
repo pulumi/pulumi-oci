@@ -1668,7 +1668,6 @@ class BdsCapacityReportShapeAvailabilityShapeConfig(dict):
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
         :param _builtins.int ocpus: The total number of OCPUs available to the node.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1700,7 +1699,6 @@ class BdsCapacityReportShapeAvailabilityShapeConfig(dict):
     def ocpus(self) -> Optional[_builtins.int]:
         """
         The total number of OCPUs available to the node.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3565,7 +3563,6 @@ class BdsInstanceNodeBackupLevelTypeDetails(dict):
         :param _builtins.str node_host_name: (Updatable) Host name of the node to create backup.
         :param _builtins.str node_type: (Updatable) Type of the node or nodes of the node backup which are going to be created.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3596,7 +3593,6 @@ class BdsInstanceNodeBackupLevelTypeDetails(dict):
     def node_type(self) -> Optional[_builtins.str]:
         """
         (Updatable) Type of the node or nodes of the node backup which are going to be created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

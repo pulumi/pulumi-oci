@@ -1808,7 +1808,6 @@ class BdsCapacityReportShapeAvailabilityShapeConfigArgsDict(TypedDict):
     """
     The total number of OCPUs available to the node.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1823,7 +1822,6 @@ class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
         :param pulumi.Input[_builtins.int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. This parameter is used only for dense shapes.
         :param pulumi.Input[_builtins.int] ocpus: The total number of OCPUs available to the node.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1864,7 +1862,6 @@ class BdsCapacityReportShapeAvailabilityShapeConfigArgs:
     def ocpus(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         The total number of OCPUs available to the node.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4113,7 +4110,6 @@ class BdsInstanceNodeBackupLevelTypeDetailsArgsDict(TypedDict):
     """
     (Updatable) Type of the node or nodes of the node backup which are going to be created.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4128,7 +4124,6 @@ class BdsInstanceNodeBackupLevelTypeDetailsArgs:
         :param pulumi.Input[_builtins.str] level_type: Type of level used to trigger the creation of a new node backup.
         :param pulumi.Input[_builtins.str] node_host_name: (Updatable) Host name of the node to create backup.
         :param pulumi.Input[_builtins.str] node_type: (Updatable) Type of the node or nodes of the node backup which are going to be created.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4168,7 +4163,6 @@ class BdsInstanceNodeBackupLevelTypeDetailsArgs:
     def node_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Type of the node or nodes of the node backup which are going to be created.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

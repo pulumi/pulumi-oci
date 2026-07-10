@@ -448,7 +448,6 @@ export class DomainsAppRole extends pulumi.CustomResource {
      * * type: string
      * * uniqueness: server
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -915,7 +914,6 @@ export interface DomainsAppRoleState {
      * * returned: always
      * * type: string
      * * uniqueness: server
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

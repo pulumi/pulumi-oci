@@ -820,8 +820,7 @@ class MaintenanceWindowScheduleArgsDict(TypedDict):
     """
     time_maintenance_window_start: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-
+    (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -840,8 +839,7 @@ class MaintenanceWindowScheduleArgs:
         :param pulumi.Input[_builtins.str] maintenance_window_duration: (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
         :param pulumi.Input[_builtins.str] maintenance_window_recurrences: (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
         :param pulumi.Input[_builtins.str] time_maintenance_window_end: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.str] time_maintenance_window_start: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-               
+        :param pulumi.Input[_builtins.str] time_maintenance_window_start: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -908,8 +906,7 @@ class MaintenanceWindowScheduleArgs:
     @pulumi.getter(name="timeMaintenanceWindowStart")
     def time_maintenance_window_start(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-
+        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2572,7 +2569,6 @@ class MonitoredResourceTaskTaskDetailsArgsDict(TypedDict):
     """
     Task type.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2683,7 +2679,6 @@ class MonitoredResourceTaskTaskDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2755,7 +2750,6 @@ class MonitoredResourceTaskTaskDetailsArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5167,8 +5161,7 @@ class MonitoredResourcesSearchItemArgsDict(TypedDict):
     """
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    A filter to return resources that match resource type. 
-
+    A filter to return resources that match resource type.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5213,8 +5206,7 @@ class MonitoredResourcesSearchItemArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5464,8 +5456,7 @@ class MonitoredResourcesSearchItemArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5765,7 +5756,6 @@ class ProcessSetSpecificationItemArgsDict(TypedDict):
     """
     (Updatable) String literal used for exact matching on process user.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -5782,7 +5772,6 @@ class ProcessSetSpecificationItemArgs:
         :param pulumi.Input[_builtins.str] process_command: (Updatable) String literal used for exact matching on process name.
         :param pulumi.Input[_builtins.str] process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
         :param pulumi.Input[_builtins.str] process_user: (Updatable) String literal used for exact matching on process user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5837,7 +5826,6 @@ class ProcessSetSpecificationItemArgs:
     def process_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) String literal used for exact matching on process user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

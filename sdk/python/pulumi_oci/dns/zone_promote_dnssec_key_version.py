@@ -28,7 +28,6 @@ class ZonePromoteDnssecKeyVersionArgs:
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
@@ -55,7 +54,6 @@ class ZonePromoteDnssecKeyVersionArgs:
     def zone_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -91,7 +89,6 @@ class _ZonePromoteDnssecKeyVersionState:
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,7 +129,6 @@ class _ZonePromoteDnssecKeyVersionState:
     def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,7 +189,6 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dnssec_key_version_uuid: The UUID of the `DnssecKeyVersion` that is being promoted.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -296,7 +291,6 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] zone_id: The OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -330,7 +324,6 @@ class ZonePromoteDnssecKeyVersion(pulumi.CustomResource):
     def zone_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

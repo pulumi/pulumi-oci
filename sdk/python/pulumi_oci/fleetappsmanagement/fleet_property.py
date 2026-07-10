@@ -31,7 +31,6 @@ class FleetPropertyInitArgs:
         :param pulumi.Input[_builtins.str] property_id: OCID referring to global level metadata property.
         :param pulumi.Input[_builtins.str] value: (Updatable) Value of the Property.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -82,7 +81,6 @@ class FleetPropertyInitArgs:
         """
         (Updatable) Value of the Property.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -122,7 +120,6 @@ class _FleetPropertyState:
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] value: (Updatable) Value of the Property.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -279,7 +276,6 @@ class _FleetPropertyState:
         """
         (Updatable) Value of the Property.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -344,7 +340,6 @@ class FleetProperty(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fleet_id: Unique Fleet identifier.
         :param pulumi.Input[_builtins.str] property_id: OCID referring to global level metadata property.
         :param pulumi.Input[_builtins.str] value: (Updatable) Value of the Property.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -469,7 +464,6 @@ class FleetProperty(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] value: (Updatable) Value of the Property.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] value_type: Format of the value.
@@ -577,7 +571,6 @@ class FleetProperty(pulumi.CustomResource):
     def value(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Value of the Property.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

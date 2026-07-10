@@ -41,8 +41,7 @@ class ManagedInstanceGroupArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] os_family: The operating system type of the managed instances that will be attached to this group.
-        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,8 +128,7 @@ class ManagedInstanceGroupArgs:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[_builtins.str]:
         """
-        The vendor of the operating system that will be used by the managed instances in the group. 
-
+        The vendor of the operating system that will be used by the managed instances in the group.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,8 +283,7 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -578,8 +575,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The vendor of the operating system that will be used by the managed instances in the group. 
-
+        The vendor of the operating system that will be used by the managed instances in the group.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -670,8 +666,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         :param pulumi.Input[_builtins.str] os_family: The operating system type of the managed instances that will be attached to this group.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
-        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -853,8 +848,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
-        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
-               
+        :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1050,8 +1044,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="vendorName")
     def vendor_name(self) -> pulumi.Output[_builtins.str]:
         """
-        The vendor of the operating system that will be used by the managed instances in the group. 
-
+        The vendor of the operating system that will be used by the managed instances in the group.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

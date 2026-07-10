@@ -39,7 +39,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs:
         :param pulumi.Input[_builtins.str] global_key: The key of the global config.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config global settings resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] advanced_properties: (Updatable) Advanced global properties.
@@ -100,7 +99,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config global settings resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,7 +242,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState:
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config global settings resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -454,7 +451,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState:
         """
         (Updatable) The type of the Database Tools database API gateway config global settings resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -543,7 +539,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pool_route: (Updatable) How the target pool route value is determined for a HTTP request.
         :param pulumi.Input[_builtins.str] pool_routing_header: (Updatable) The request header name providing the pool route value.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config global settings resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -705,7 +700,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config global settings resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -847,7 +841,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config global settings resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

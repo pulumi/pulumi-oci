@@ -38,7 +38,6 @@ class DatabaseToolsIdentityArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools identity type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -110,7 +109,6 @@ class DatabaseToolsIdentityArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The Database Tools identity type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,7 +188,6 @@ class _DatabaseToolsIdentityState:
         :param pulumi.Input[_builtins.str] time_created: The time the Database Tools identity was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools identity type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -372,7 +369,6 @@ class _DatabaseToolsIdentityState:
         """
         (Updatable) The Database Tools identity type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -448,7 +444,6 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsIdentityLockArgs', 'DatabaseToolsIdentityLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools identity type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -598,7 +593,6 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the Database Tools identity was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The Database Tools identity type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -722,7 +716,6 @@ class DatabaseToolsIdentity(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The Database Tools identity type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -27,8 +27,7 @@ class RunStatementArgs:
         The set of arguments for constructing a RunStatement resource.
 
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run 
-               
+        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -52,8 +51,7 @@ class RunStatementArgs:
     @pulumi.getter(name="runId")
     def run_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The unique ID for the run 
-
+        The unique ID for the run
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -81,8 +79,7 @@ class _RunStatementState:
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
         :param pulumi.Input[Sequence[pulumi.Input['RunStatementOutputArgs']]] outputs: The execution output of a statement.
         :param pulumi.Input[_builtins.float] progress: The execution progress.
-        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run 
-               
+        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,8 +142,7 @@ class _RunStatementState:
     @pulumi.getter(name="runId")
     def run_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The unique ID for the run 
-
+        The unique ID for the run
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -234,8 +230,7 @@ class RunStatement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
-        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run 
-               
+        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,8 +333,7 @@ class RunStatement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] code: The statement code to execute. Example: `println(sc.version)`
         :param pulumi.Input[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict']]]] outputs: The execution output of a statement.
         :param pulumi.Input[_builtins.float] progress: The execution progress.
-        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run 
-               
+        :param pulumi.Input[_builtins.str] run_id: The unique ID for the run
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -388,8 +382,7 @@ class RunStatement(pulumi.CustomResource):
     @pulumi.getter(name="runId")
     def run_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The unique ID for the run 
-
+        The unique ID for the run
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

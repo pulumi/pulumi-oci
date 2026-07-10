@@ -97,7 +97,6 @@ export class InstanceConsoleConnection extends pulumi.CustomResource {
     /**
      * The SSH public key used to authenticate the console connection.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -193,7 +192,6 @@ export interface InstanceConsoleConnectionState {
     /**
      * The SSH public key used to authenticate the console connection.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -230,7 +228,6 @@ export interface InstanceConsoleConnectionArgs {
     instanceId: pulumi.Input<string>;
     /**
      * The SSH public key used to authenticate the console connection.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

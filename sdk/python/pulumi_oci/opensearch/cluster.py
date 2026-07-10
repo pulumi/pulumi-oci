@@ -141,7 +141,6 @@ class ClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -933,7 +932,6 @@ class ClusterArgs:
         """
         An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1090,7 +1088,6 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] time_updated: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[_builtins.int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[_builtins.int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2062,7 +2059,6 @@ class _ClusterState:
         """
         An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2246,7 +2242,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the cluster's subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2635,7 +2630,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[_builtins.int] total_storage_gb: The size in GB of the cluster's total storage.
         :param pulumi.Input[_builtins.int] upgrade_major_version_trigger: An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3268,7 +3262,6 @@ class Cluster(pulumi.CustomResource):
     def upgrade_major_version_trigger(self) -> pulumi.Output[_builtins.int]:
         """
         An optional property to upgrade the major version of the cluster. This workflow upgrades the cluster without creating a clone. If you want to create a clone and upgrade the clone for testing please use SDK or CLI.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

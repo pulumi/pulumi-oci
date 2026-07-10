@@ -123,7 +123,6 @@ export class DatabaseToolsDatabaseApiGatewayConfig extends pulumi.CustomResource
     /**
      * (Updatable) The Database Tools DP API gateway config type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -237,7 +236,6 @@ export interface DatabaseToolsDatabaseApiGatewayConfigState {
     /**
      * (Updatable) The Database Tools DP API gateway config type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -274,7 +272,6 @@ export interface DatabaseToolsDatabaseApiGatewayConfigArgs {
     metadataSource: pulumi.Input<string>;
     /**
      * (Updatable) The Database Tools DP API gateway config type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

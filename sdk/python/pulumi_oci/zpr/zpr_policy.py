@@ -32,7 +32,6 @@ class ZprPolicyArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the ZprPolicy during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -78,7 +77,6 @@ class ZprPolicyArgs:
     def statements(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -151,7 +149,6 @@ class _ZprPolicyState:
         :param pulumi.Input[_builtins.str] name: The name you assign to the ZprPolicy during creation. The name must be unique across all ZPL policies in the tenancy.
         :param pulumi.Input[_builtins.str] state: The current state of the ZprPolicy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,7 +269,6 @@ class _ZprPolicyState:
         """
         (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -376,7 +372,6 @@ class ZprPolicy(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The name you assign to the ZprPolicy during creation. The name must be unique across all ZPL policies in the tenancy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -507,7 +502,6 @@ class ZprPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the ZprPolicy.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] statements: (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -592,7 +586,6 @@ class ZprPolicy(pulumi.CustomResource):
     def statements(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) An array of ZprPolicy statements(up to 25 statements per ZprPolicy) written in the Zero Trust Packet Routing Policy Language.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

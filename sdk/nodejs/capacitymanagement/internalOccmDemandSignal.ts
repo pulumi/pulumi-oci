@@ -91,8 +91,7 @@ export class InternalOccmDemandSignal extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly occCustomerGroupId: pulumi.Output<string>;
     /**
-     * The OCID of the demand signal. 
-     *
+     * The OCID of the demand signal.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -198,8 +197,7 @@ export interface InternalOccmDemandSignalState {
      */
     occCustomerGroupId?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of the demand signal. 
-     *
+     * The OCID of the demand signal.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -234,8 +232,7 @@ export interface InternalOccmDemandSignalArgs {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of the demand signal. 
-     *
+     * The OCID of the demand signal.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

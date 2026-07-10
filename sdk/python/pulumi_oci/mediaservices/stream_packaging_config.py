@@ -38,7 +38,6 @@ class StreamPackagingConfigArgs:
         :param pulumi.Input[_builtins.int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[_builtins.str] stream_packaging_format: The output format for the package.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -102,7 +101,6 @@ class StreamPackagingConfigArgs:
     def stream_packaging_format(self) -> pulumi.Input[_builtins.str]:
         """
         The output format for the package.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,7 +199,6 @@ class _StreamPackagingConfigState:
         :param pulumi.Input[_builtins.int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[_builtins.str] state: The current state of the Packaging Configuration.
         :param pulumi.Input[_builtins.str] stream_packaging_format: The output format for the package.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -361,7 +358,6 @@ class _StreamPackagingConfigState:
         """
         The output format for the package.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -481,7 +477,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.int] segment_time_in_seconds: The duration in seconds for each fragment.
         :param pulumi.Input[_builtins.str] stream_packaging_format: The output format for the package.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -636,7 +631,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the Packaging Configuration.
         :param pulumi.Input[_builtins.str] stream_packaging_format: The output format for the package.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -745,7 +739,6 @@ class StreamPackagingConfig(pulumi.CustomResource):
     def stream_packaging_format(self) -> pulumi.Output[_builtins.str]:
         """
         The output format for the package.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -37,7 +37,6 @@ class MlApplicationInstanceArgs:
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
         :param pulumi.Input[_builtins.str] ml_application_implementation_id: (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['MlApplicationInstanceAuthConfigurationArgs'] auth_configuration: AuthN/Z configuration for online prediction
@@ -92,7 +91,6 @@ class MlApplicationInstanceArgs:
     def ml_application_implementation_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,7 +209,6 @@ class _MlApplicationInstanceState:
         :param pulumi.Input[_builtins.str] lifecycle_substate: The current substate of the MlApplicationInstance. The substate has MlApplicationInstance specific values in comparison with lifecycleState which has standard values common for all Oracle Cloud Infrastructure resources. The NEEDS_ATTENTION and FAILED substates are deprecated in favor of (NON_)?RECOVERABLE_(PROVIDER|SERVICE)_ISSUE and will be removed in next release.
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
         :param pulumi.Input[_builtins.str] ml_application_implementation_id: (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,7 +383,6 @@ class _MlApplicationInstanceState:
         """
         (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -553,7 +549,6 @@ class MlApplicationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
         :param pulumi.Input[_builtins.str] ml_application_implementation_id: (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -711,7 +706,6 @@ class MlApplicationInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of ML Application. This resource is an instance of ML Application referenced by this OCID.
         :param pulumi.Input[_builtins.str] ml_application_implementation_id: (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] ml_application_implementation_name: The name of Ml Application Implementation (based on mlApplicationImplementationId)
@@ -831,7 +825,6 @@ class MlApplicationInstance(pulumi.CustomResource):
     def ml_application_implementation_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

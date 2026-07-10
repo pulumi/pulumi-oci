@@ -138,7 +138,6 @@ export class AutoScalingConfiguration extends pulumi.CustomResource {
     /**
      * (Updatable) The secretId for the clusterAdminPassword.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -255,7 +254,6 @@ export interface AutoScalingConfigurationState {
     /**
      * (Updatable) The secretId for the clusterAdminPassword.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -318,7 +316,6 @@ export interface AutoScalingConfigurationArgs {
     policyDetails?: pulumi.Input<inputs.BigDataService.AutoScalingConfigurationPolicyDetails | undefined>;
     /**
      * (Updatable) The secretId for the clusterAdminPassword.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

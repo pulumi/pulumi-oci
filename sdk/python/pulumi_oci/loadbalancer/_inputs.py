@@ -836,7 +836,7 @@ class BackendSetSslConfigurationArgsDict(TypedDict):
     """
     verify_peer_certificate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -895,7 +895,7 @@ class BackendSetSslConfigurationArgs:
                **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] trusted_certificate_authority_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         :param pulumi.Input[_builtins.int] verify_depth: (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        :param pulumi.Input[_builtins.bool] verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        :param pulumi.Input[_builtins.bool] verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1039,7 +1039,7 @@ class BackendSetSslConfigurationArgs:
     @pulumi.getter(name="verifyPeerCertificate")
     def verify_peer_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1200,8 +1200,7 @@ class ListenerSslConfigurationArgsDict(TypedDict):
     """
     verify_peer_certificate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-
+    (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1262,8 +1261,7 @@ class ListenerSslConfigurationArgs:
                **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] trusted_certificate_authority_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         :param pulumi.Input[_builtins.int] verify_depth: (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        :param pulumi.Input[_builtins.bool] verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-               
+        :param pulumi.Input[_builtins.bool] verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1421,8 +1419,7 @@ class ListenerSslConfigurationArgs:
     @pulumi.getter(name="verifyPeerCertificate")
     def verify_peer_certificate(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-
+        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1595,8 +1592,7 @@ class LoadBalancerRoutingPolicyRuleArgsDict(TypedDict):
     """
     name: pulumi.Input[_builtins.str]
     """
-    (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
+    (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1611,8 +1607,7 @@ class LoadBalancerRoutingPolicyRuleArgs:
         """
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerRoutingPolicyRuleActionArgs']]] actions: (Updatable) A list of actions to be applied when conditions of the routing rule are met.
         :param pulumi.Input[_builtins.str] condition: (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-        :param pulumi.Input[_builtins.str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
+        :param pulumi.Input[_builtins.str] name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1649,8 +1644,7 @@ class LoadBalancerRoutingPolicyRuleArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1860,7 +1854,6 @@ class PathRouteSetPathRoutePathMatchTypeArgsDict(TypedDict):
 
     For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1878,7 +1871,6 @@ class PathRouteSetPathRoutePathMatchTypeArgs:
                
                For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1895,7 +1887,6 @@ class PathRouteSetPathRoutePathMatchTypeArgs:
         *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
 
         For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

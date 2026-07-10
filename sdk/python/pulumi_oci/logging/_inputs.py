@@ -3141,7 +3141,6 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     """
     (Updatable) If true, keep the original event time in the parsed result.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3196,7 +3195,6 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param pulumi.Input[_builtins.bool] replace_invalid_sequence: (Updatable) If true, the invalid string is replaced with safe characters and is re-parsed.
         :param pulumi.Input[_builtins.bool] reserve_data: (Updatable) If true, keep the original key-value pair in the parsed result.
         :param pulumi.Input[_builtins.bool] reserve_time: (Updatable) If true, keep the original event time in the parsed result.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3515,7 +3513,6 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     def reserve_time(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) If true, keep the original event time in the parsed result.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

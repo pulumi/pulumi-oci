@@ -2090,8 +2090,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgsDict(TypedD
     """
     min: pulumi.Input[_builtins.int]
     """
-    (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
+    (Updatable) The minimum port number, which must not be greater than the maximum port number.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2104,8 +2103,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
                  min: pulumi.Input[_builtins.int]):
         """
         :param pulumi.Input[_builtins.int] max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param pulumi.Input[_builtins.int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
+        :param pulumi.Input[_builtins.int] min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2129,8 +2127,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs:
     @pulumi.getter
     def min(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3160,7 +3157,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgsDict(TypedDict)
     """
     The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3187,7 +3183,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
         """
         :param pulumi.Input[_builtins.str] subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -3207,7 +3202,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs:
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3418,8 +3412,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgsDict(TypedDic
     """
     ocpus: NotRequired[pulumi.Input[Optional[_builtins.float]]]
     """
-    The total number of OCPUs available to the instance. 
-
+    The total number of OCPUs available to the instance.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3441,8 +3434,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
                * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param pulumi.Input[_builtins.float] memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param pulumi.Input[_builtins.int] nvmes: The number of NVMe drives to be used for storage.
-        :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance. 
-               
+        :param pulumi.Input[_builtins.float] ocpus: The total number of OCPUs available to the instance.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3501,8 +3493,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs:
     @pulumi.getter
     def ocpus(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
-        The total number of OCPUs available to the instance. 
-
+        The total number of OCPUs available to the instance.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3930,8 +3921,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict(TypedDict):
     """
     fabric_recycle_level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The recycle level of GPU memory fabric. 
-
+    (Updatable) The recycle level of GPU memory fabric.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3944,8 +3934,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferencesArgs:
                  fabric_recycle_level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] customer_desired_firmware_bundle_id: (Updatable) The desired firmware bundle id on the GPU memory fabric.
-        :param pulumi.Input[_builtins.str] fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric. 
-               
+        :param pulumi.Input[_builtins.str] fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3971,8 +3960,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferencesArgs:
     @pulumi.getter(name="fabricRecycleLevel")
     def fabric_recycle_level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The recycle level of GPU memory fabric. 
-
+        (Updatable) The recycle level of GPU memory fabric.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4283,7 +4271,6 @@ class CrossConnectGroupMacsecPropertiesArgsDict(TypedDict):
     """
     (Updatable) Indicates whether or not MACsec is enabled.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4310,7 +4297,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
         """
         :param pulumi.Input[_builtins.str] state: (Updatable) Indicates whether or not MACsec is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
@@ -4330,7 +4316,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     def state(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4824,8 +4809,7 @@ class DedicatedVmHostCapacityBinArgs:
 class DedicatedVmHostPlacementConstraintDetailsArgsDict(TypedDict):
     type: pulumi.Input[_builtins.str]
     """
-    The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-
+    The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4841,8 +4825,7 @@ class DedicatedVmHostPlacementConstraintDetailsArgs:
                  type: pulumi.Input[_builtins.str],
                  compute_bare_metal_host_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-               
+        :param pulumi.Input[_builtins.str] type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4856,8 +4839,7 @@ class DedicatedVmHostPlacementConstraintDetailsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5636,7 +5618,7 @@ class DhcpOptionsOptionArgsDict(TypedDict):
     """
     server_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) 
+    (Updatable)
     * **VcnLocal:** Reserved for future use.
     * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
     * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -5657,7 +5639,7 @@ class DhcpOptionsOptionArgs:
                If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
                
                If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
-        :param pulumi.Input[_builtins.str] server_type: (Updatable) 
+        :param pulumi.Input[_builtins.str] server_type: (Updatable)
                * **VcnLocal:** Reserved for future use.
                * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
                * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -5714,7 +5696,7 @@ class DhcpOptionsOptionArgs:
     @pulumi.getter(name="serverType")
     def server_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) 
+        (Updatable)
         * **VcnLocal:** Reserved for future use.
         * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -15685,7 +15667,6 @@ class InstancePoolLoadBalancerArgsDict(TypedDict):
     """
     (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -15708,7 +15689,6 @@ class InstancePoolLoadBalancerArgs:
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param pulumi.Input[_builtins.str] instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -15801,7 +15781,6 @@ class InstancePoolLoadBalancerArgs:
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -19262,7 +19241,7 @@ class VcnByoipv6cidrDetailArgsDict(TypedDict):
     """
     ipv6cidr_block: pulumi.Input[_builtins.str]
     """
-    An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+    An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
 
     When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
     """
@@ -19274,7 +19253,7 @@ class VcnByoipv6cidrDetailArgs:
                  ipv6cidr_block: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param pulumi.Input[_builtins.str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+        :param pulumi.Input[_builtins.str] ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
                
                When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
@@ -19297,7 +19276,7 @@ class VcnByoipv6cidrDetailArgs:
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> pulumi.Input[_builtins.str]:
         """
-        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
 
         When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
@@ -20339,7 +20318,6 @@ class VolumeBackupPolicyScheduleArgsDict(TypedDict):
     - `UTC`
     - `REGIONAL_DATA_CENTER_TIME`
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -20385,7 +20363,6 @@ class VolumeBackupPolicyScheduleArgs:
                enum:
                - `UTC`
                - `REGIONAL_DATA_CENTER_TIME`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20539,7 +20516,6 @@ class VolumeBackupPolicyScheduleArgs:
         - `UTC`
         - `REGIONAL_DATA_CENTER_TIME`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -20559,7 +20535,6 @@ class VolumeBackupSourceDetailsArgsDict(TypedDict):
     """
     The OCID of the source volume backup.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -20577,7 +20552,6 @@ class VolumeBackupSourceDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] region: The region of the volume backup source.
         :param pulumi.Input[_builtins.str] volume_backup_id: The OCID of the source volume backup.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20605,7 +20579,6 @@ class VolumeBackupSourceDetailsArgs:
     def volume_backup_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the source volume backup.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20746,8 +20719,6 @@ class VolumeGroupBackupSourceDetailsArgsDict(TypedDict):
     """
     The OCID of the source volume group backup.
 
-
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -20765,8 +20736,6 @@ class VolumeGroupBackupSourceDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] region: The region of the volume backup source.
         :param pulumi.Input[_builtins.str] volume_group_backup_id: The OCID of the source volume group backup.
-               
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20794,8 +20763,6 @@ class VolumeGroupBackupSourceDetailsArgs:
     def volume_group_backup_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the source volume group backup.
-
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

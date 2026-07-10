@@ -124,7 +124,6 @@ export class BdsInstanceBdsCertificateConfiguration extends pulumi.CustomResourc
     /**
      * Any change to this value triggers the set default certificate configuration action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -267,7 +266,6 @@ export interface BdsInstanceBdsCertificateConfigurationState {
     /**
      * Any change to this value triggers the set default certificate configuration action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -340,7 +338,6 @@ export interface BdsInstanceBdsCertificateConfigurationArgs {
     secretId?: pulumi.Input<string | undefined>;
     /**
      * Any change to this value triggers the set default certificate configuration action.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

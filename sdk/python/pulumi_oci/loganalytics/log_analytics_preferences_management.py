@@ -26,8 +26,7 @@ class LogAnalyticsPreferencesManagementArgs:
         """
         The set of arguments for constructing a LogAnalyticsPreferencesManagement resource.
 
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -41,8 +40,7 @@ class LogAnalyticsPreferencesManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -75,8 +73,7 @@ class _LogAnalyticsPreferencesManagementState:
         Input properties used for looking up and filtering LogAnalyticsPreferencesManagement resources.
 
         :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsPreferencesManagementItemArgs']]] items: An array of tenant preference details.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -102,8 +99,7 @@ class _LogAnalyticsPreferencesManagementState:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -154,8 +150,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]] items: An array of tenant preference details.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,8 +238,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['LogAnalyticsPreferencesManagementItemArgs', 'LogAnalyticsPreferencesManagementItemArgsDict']]]] items: An array of tenant preference details.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,8 +263,7 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

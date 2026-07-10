@@ -39,7 +39,6 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
         :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -146,7 +145,6 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
         """
         (Updatable) Private endpoint IP.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -187,7 +185,6 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -339,7 +336,6 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
         """
         (Updatable) Private endpoint IP.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -461,7 +457,6 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -606,7 +601,6 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Container resource.
@@ -711,7 +705,6 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     def private_endpoint_ip_address(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Private endpoint IP.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

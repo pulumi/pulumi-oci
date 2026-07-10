@@ -132,7 +132,6 @@ export class SensitiveType extends pulumi.CustomResource {
     /**
      * (Updatable) The short name of the sensitive type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -282,7 +281,6 @@ export interface SensitiveTypeState {
     /**
      * (Updatable) The short name of the sensitive type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -363,7 +361,6 @@ export interface SensitiveTypeArgs {
     searchType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The short name of the sensitive type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

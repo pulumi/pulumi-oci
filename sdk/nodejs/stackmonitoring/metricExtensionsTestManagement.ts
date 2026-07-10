@@ -63,7 +63,6 @@ export class MetricExtensionsTestManagement extends pulumi.CustomResource {
     /**
      * List of Resource IDs [OCID]. Currently, supports only one resource id per request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -135,7 +134,6 @@ export interface MetricExtensionsTestManagementState {
     /**
      * List of Resource IDs [OCID]. Currently, supports only one resource id per request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -168,7 +166,6 @@ export interface MetricExtensionsTestManagementArgs {
     metricExtensionId: pulumi.Input<string>;
     /**
      * List of Resource IDs [OCID]. Currently, supports only one resource id per request.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

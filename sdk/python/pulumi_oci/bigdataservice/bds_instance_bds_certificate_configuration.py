@@ -45,7 +45,6 @@ class BdsInstanceBdsCertificateConfigurationArgs:
         :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret containing the cluster admin password used for issue, renew, or set default actions. Use this or `cluster_admin_password`.
         :param pulumi.Input[_builtins.str] set_default_trigger: Any change to this value triggers the set default certificate configuration action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -195,7 +194,6 @@ class BdsInstanceBdsCertificateConfigurationArgs:
         """
         Any change to this value triggers the set default certificate configuration action.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -241,7 +239,6 @@ class _BdsInstanceBdsCertificateConfigurationState:
         :param pulumi.Input[_builtins.str] renew_certificate_trigger: Any change to this value triggers certificate renewal for this configuration.
         :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret containing the cluster admin password used for issue, renew, or set default actions. Use this or `cluster_admin_password`.
         :param pulumi.Input[_builtins.str] set_default_trigger: Any change to this value triggers the set default certificate configuration action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -424,7 +421,6 @@ class _BdsInstanceBdsCertificateConfigurationState:
         """
         Any change to this value triggers the set default certificate configuration action.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -571,7 +567,6 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] renew_certificate_trigger: Any change to this value triggers certificate renewal for this configuration.
         :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret containing the cluster admin password used for issue, renew, or set default actions. Use this or `cluster_admin_password`.
         :param pulumi.Input[_builtins.str] set_default_trigger: Any change to this value triggers the set default certificate configuration action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -734,7 +729,6 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] secret_id: The OCID of the secret containing the cluster admin password used for issue, renew, or set default actions. Use this or `cluster_admin_password`.
         :param pulumi.Input[_builtins.str] set_default_trigger: Any change to this value triggers the set default certificate configuration action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The lifecycle status of the BDS certificate configuration.
@@ -859,7 +853,6 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
     def set_default_trigger(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         Any change to this value triggers the set default certificate configuration action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

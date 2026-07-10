@@ -828,7 +828,6 @@ class BuildPipelineStageWaitCriteria(dict):
         :param _builtins.str wait_duration: (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
         :param _builtins.str wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -848,7 +847,6 @@ class BuildPipelineStageWaitCriteria(dict):
     def wait_type(self) -> _builtins.str:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3815,7 +3813,6 @@ class DeployStageWaitCriteria(dict):
         :param _builtins.str wait_duration: (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         :param _builtins.str wait_type: (Updatable) Wait criteria type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3835,7 +3832,6 @@ class DeployStageWaitCriteria(dict):
     def wait_type(self) -> _builtins.str:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4445,7 +4441,6 @@ class ProjectNotificationConfig(dict):
         """
         :param _builtins.str topic_id: (Updatable) The topic ID for notifications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4456,7 +4451,6 @@ class ProjectNotificationConfig(dict):
     def topic_id(self) -> _builtins.str:
         """
         (Updatable) The topic ID for notifications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5123,7 +5117,6 @@ class TriggerActionFilter(dict):
         """
         :param _builtins.str trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[_builtins.str] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
@@ -5143,7 +5136,6 @@ class TriggerActionFilter(dict):
     def trigger_source(self) -> _builtins.str:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

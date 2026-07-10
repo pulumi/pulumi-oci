@@ -47,7 +47,6 @@ class ConnectionArgs:
         :param pulumi.Input['ConnectionTlsVerifyConfigArgs'] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -198,7 +197,6 @@ class ConnectionArgs:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -249,7 +247,6 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input['ConnectionTlsVerifyConfigArgs'] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -487,7 +484,6 @@ class _ConnectionState:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -573,7 +569,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -738,7 +733,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict']] tls_verify_config: (Updatable) TLS configuration used by build service to verify TLS connection.
         :param pulumi.Input[_builtins.str] username: (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -898,7 +892,6 @@ class Connection(pulumi.CustomResource):
     def username(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Public Bitbucket Cloud Username in plain text(not more than 30 characters)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

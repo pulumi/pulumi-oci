@@ -63,8 +63,7 @@ class SqlEndpointArgs:
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The identifier of the log group used with the SQL Endpoint.
         :param pulumi.Input[_builtins.int] log_retention_duration: (Updatable) Log retention duration in days
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] spark_advanced_configurations: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,8 +332,7 @@ class SqlEndpointArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -400,8 +398,7 @@ class _SqlEndpointState:
         :param pulumi.Input['SqlEndpointNetworkConfigurationArgs'] network_configuration: The network configuration of a SQL Endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] spark_advanced_configurations: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[_builtins.str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -722,8 +719,7 @@ class _SqlEndpointState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -917,8 +913,7 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Union['SqlEndpointNetworkConfigurationArgs', 'SqlEndpointNetworkConfigurationArgsDict']] network_configuration: The network configuration of a SQL Endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] spark_advanced_configurations: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[_builtins.str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1157,8 +1152,7 @@ class SqlEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Union['SqlEndpointNetworkConfigurationArgs', 'SqlEndpointNetworkConfigurationArgsDict']] network_configuration: The network configuration of a SQL Endpoint.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] spark_advanced_configurations: (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[_builtins.str] sql_endpoint_version: The version of the SQL Endpoint.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1373,8 +1367,7 @@ class SqlEndpoint(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

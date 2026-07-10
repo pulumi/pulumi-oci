@@ -102,7 +102,6 @@ export class PingProbe extends pulumi.CustomResource {
     /**
      * A list of names of vantage points from which to execute the probe.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -195,7 +194,6 @@ export interface PingProbeState {
     /**
      * A list of names of vantage points from which to execute the probe.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -228,7 +226,6 @@ export interface PingProbeArgs {
     timeoutInSeconds?: pulumi.Input<number | undefined>;
     /**
      * A list of names of vantage points from which to execute the probe.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

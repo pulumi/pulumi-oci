@@ -66,8 +66,7 @@ export class IotIotDomainChangeDataRetentionPeriod extends pulumi.CustomResource
      */
     declare public readonly iotDomainId: pulumi.Output<string>;
     /**
-     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-     *
+     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -123,8 +122,7 @@ export interface IotIotDomainChangeDataRetentionPeriodState {
      */
     iotDomainId?: pulumi.Input<string | undefined>;
     /**
-     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-     *
+     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,8 +143,7 @@ export interface IotIotDomainChangeDataRetentionPeriodArgs {
      */
     iotDomainId: pulumi.Input<string>;
     /**
-     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-     *
+     * The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

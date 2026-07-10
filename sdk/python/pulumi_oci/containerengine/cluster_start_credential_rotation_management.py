@@ -27,7 +27,6 @@ class ClusterStartCredentialRotationManagementArgs:
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class ClusterStartCredentialRotationManagementArgs:
         """
         The OCID of the cluster.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _ClusterStartCredentialRotationManagementState:
 
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _ClusterStartCredentialRotationManagementState:
     def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,7 +142,6 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -232,7 +227,6 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] auto_completion_delay_duration: The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +251,6 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
     def cluster_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

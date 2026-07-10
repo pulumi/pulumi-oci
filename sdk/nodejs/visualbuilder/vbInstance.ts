@@ -105,7 +105,6 @@ export class VbInstance extends pulumi.CustomResource {
     /**
      * (Updatable) The number of Nodes
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -272,7 +271,6 @@ export interface VbInstanceState {
     /**
      * (Updatable) The number of Nodes
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -353,7 +351,6 @@ export interface VbInstanceArgs {
     networkEndpointDetails?: pulumi.Input<inputs.VisualBuilder.VbInstanceNetworkEndpointDetails | undefined>;
     /**
      * (Updatable) The number of Nodes
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

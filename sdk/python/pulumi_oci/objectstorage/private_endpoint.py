@@ -42,7 +42,7 @@ class PrivateEndpointArgs:
         :param pulumi.Input[_builtins.str] compartment_id: The ID of the compartment in which to create the private endpoint.
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
-        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -131,7 +131,7 @@ class PrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        The ID of the subnet that the private endpoint VNIC will be created and reside in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -286,7 +286,7 @@ class _PrivateEndpointState:
         :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
-        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -511,7 +511,7 @@ class _PrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        The ID of the subnet that the private endpoint VNIC will be created and reside in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -618,7 +618,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
-        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -780,7 +780,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] prefix: The DNS prefix value is part of the URL used to access Object Storage. The DNS prefix is a case-insensitive string using alpha-numeric characters (no special characters). It must be unique within the VCN.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address that is to be assigned to this private endpoint. If it's not available, an error is returned. If you do not provide a value, an available IP address in the subnet is automatically chosen. If you do not provide a value, an available IP address in the subnet is automatically chosen.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private endpoint resource.
-        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        :param pulumi.Input[_builtins.str] subnet_id: The ID of the subnet that the private endpoint VNIC will be created and reside in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -932,7 +932,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        The ID of the subnet that the private endpoint VNIC will be created and reside in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

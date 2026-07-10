@@ -57,7 +57,7 @@ class StorageObjectArgs:
                Note: All specified keys must be in lower case.
         :param pulumi.Input[_builtins.str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[_builtins.str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
@@ -266,7 +266,7 @@ class StorageObjectArgs:
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]:
         """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
         Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         """
         return pulumi.get(self, "source_uri_details")
@@ -332,7 +332,7 @@ class _StorageObjectState:
         :param pulumi.Input[_builtins.str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[_builtins.str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        :param pulumi.Input['StorageObjectSourceUriDetailsArgs'] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[_builtins.str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
@@ -564,7 +564,7 @@ class _StorageObjectState:
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> pulumi.Input[Optional['StorageObjectSourceUriDetailsArgs']]:
         """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
         Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         """
         return pulumi.get(self, "source_uri_details")
@@ -701,7 +701,7 @@ class StorageObject(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[_builtins.str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        :param pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[_builtins.str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
@@ -878,7 +878,7 @@ class StorageObject(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
         :param pulumi.Input[_builtins.str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
-        :param pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        :param pulumi.Input[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict']] source_uri_details: Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
                Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         :param pulumi.Input[_builtins.str] storage_tier: (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
         """
@@ -1035,7 +1035,7 @@ class StorageObject(pulumi.CustomResource):
     @pulumi.getter(name="sourceUriDetails")
     def source_uri_details(self) -> pulumi.Output[Optional['outputs.StorageObjectSourceUriDetails']]:
         """
-        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined. 
+        Details of the source URI of the object in the cloud. Cannot be defined if `content` or `source` is defined.
         Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         """
         return pulumi.get(self, "source_uri_details")

@@ -111,7 +111,6 @@ class SessionTargetResourceDetails(dict):
         :param _builtins.int target_resource_port: The port number to connect to on the target resource.
         :param _builtins.str target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -182,7 +181,6 @@ class SessionTargetResourceDetails(dict):
     def target_resource_private_ip_address(self) -> Optional[_builtins.str]:
         """
         The private IP address of the target resource that the session connects to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

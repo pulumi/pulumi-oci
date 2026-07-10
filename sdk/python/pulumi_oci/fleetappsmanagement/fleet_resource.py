@@ -33,7 +33,6 @@ class FleetResourceInitArgs:
         :param pulumi.Input[_builtins.str] resource_id: The OCID of the resource.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] resource_region: Associated region
@@ -89,7 +88,6 @@ class FleetResourceInitArgs:
     def tenancy_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) OCID of the tenancy to which the resource belongs to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,7 +166,6 @@ class _FleetResourceState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] target_count: Count of targets within the resource.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -415,7 +412,6 @@ class _FleetResourceState:
         """
         (Updatable) OCID of the tenancy to which the resource belongs to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -511,7 +507,6 @@ class FleetResource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_region: Associated region
         :param pulumi.Input[_builtins.str] resource_type: Type of the Resource.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -662,7 +657,6 @@ class FleetResource(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.int] target_count: Count of targets within the resource.
         :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) OCID of the tenancy to which the resource belongs to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -829,7 +823,6 @@ class FleetResource(pulumi.CustomResource):
     def tenancy_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) OCID of the tenancy to which the resource belongs to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

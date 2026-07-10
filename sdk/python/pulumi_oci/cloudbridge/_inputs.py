@@ -4008,7 +4008,6 @@ class AssetVmwareVmArgsDict(TypedDict):
     """
     (Updatable) VMware tools status.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4039,7 +4038,6 @@ class AssetVmwareVmArgs:
         :param pulumi.Input[_builtins.bool] is_disks_uuid_enabled: (Updatable) Whether changed block tracking for this VM's disk is active.
         :param pulumi.Input[_builtins.str] path: (Updatable) Path directory of the asset.
         :param pulumi.Input[_builtins.str] vmware_tools_status: (Updatable) VMware tools status.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4192,7 +4190,6 @@ class AssetVmwareVmArgs:
     def vmware_tools_status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) VMware tools status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

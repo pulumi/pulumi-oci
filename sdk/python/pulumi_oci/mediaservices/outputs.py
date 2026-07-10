@@ -659,7 +659,6 @@ class MediaWorkflowTask(dict):
         :param _builtins.str type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param _builtins.str version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
@@ -706,7 +705,6 @@ class MediaWorkflowTask(dict):
     def version(self) -> _builtins.str:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -958,7 +956,6 @@ class StreamCdnConfigLock(dict):
         :param _builtins.str compartment_id: The compartment ID of the lock.
         :param _builtins.str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -987,7 +984,6 @@ class StreamCdnConfigLock(dict):
     def type(self) -> _builtins.str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1052,7 +1048,6 @@ class StreamDistributionChannelLock(dict):
         :param _builtins.str compartment_id: (Updatable) The compartment ID of the lock.
         :param _builtins.str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -1081,7 +1076,6 @@ class StreamDistributionChannelLock(dict):
     def type(self) -> _builtins.str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

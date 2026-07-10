@@ -95,7 +95,7 @@ publishing {
                 inceptionYear = "2022"
                 name = "pulumi-oci"
                 packaging = "jar"
-                description = "A Pulumi package for creating and managing Oracle Cloud Infrastructure resources."
+                description = $/A Pulumi package for creating and managing Oracle Cloud Infrastructure resources./$
 
                 url = "https://github.com/pulumi/pulumi-oci"
 

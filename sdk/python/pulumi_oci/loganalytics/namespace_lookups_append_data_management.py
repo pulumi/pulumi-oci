@@ -30,8 +30,7 @@ class NamespaceLookupsAppendDataManagementArgs:
 
         :param pulumi.Input[_builtins.str] append_lookup_file: Path to the file containing data for the lookup append.
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77,8 +76,7 @@ class NamespaceLookupsAppendDataManagementArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,8 +141,7 @@ class _NamespaceLookupsAppendDataManagementState:
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,8 +223,7 @@ class _NamespaceLookupsAppendDataManagementState:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -287,8 +283,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -397,8 +392,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] expect: A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
         :param pulumi.Input[_builtins.bool] is_force: is force
         :param pulumi.Input[_builtins.str] lookup_name: The name of the lookup to operate on.
-        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-               
+        :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -459,8 +453,7 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
-        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-
+        The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

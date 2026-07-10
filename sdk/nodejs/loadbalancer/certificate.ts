@@ -107,8 +107,6 @@ export class Certificate extends pulumi.CustomResource {
      * ...
      * -----END CERTIFICATE-----
      *
-     *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -215,8 +213,6 @@ export interface CertificateState {
      * ...
      * -----END CERTIFICATE-----
      *
-     *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -280,8 +276,6 @@ export interface CertificateArgs {
      * YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
      * ...
      * -----END CERTIFICATE-----
-     *
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

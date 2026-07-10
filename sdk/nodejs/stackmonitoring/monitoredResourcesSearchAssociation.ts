@@ -101,8 +101,7 @@ export class MonitoredResourcesSearchAssociation extends pulumi.CustomResource {
      */
     declare public readonly sourceResourceName: pulumi.Output<string | undefined>;
     /**
-     * Source Monitored Resource Type. 
-     *
+     * Source Monitored Resource Type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -188,8 +187,7 @@ export interface MonitoredResourcesSearchAssociationState {
      */
     sourceResourceName?: pulumi.Input<string | undefined>;
     /**
-     * Source Monitored Resource Type. 
-     *
+     * Source Monitored Resource Type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,8 +228,7 @@ export interface MonitoredResourcesSearchAssociationArgs {
      */
     sourceResourceName?: pulumi.Input<string | undefined>;
     /**
-     * Source Monitored Resource Type. 
-     *
+     * Source Monitored Resource Type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

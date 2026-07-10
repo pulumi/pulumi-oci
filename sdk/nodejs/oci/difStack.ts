@@ -232,7 +232,6 @@ export class DifStack extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
      * - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -240,7 +239,7 @@ export class DifStack extends pulumi.CustomResource {
      * - Deploy artifacts (increase deploy_artifacts_trigger)
      * - Change compartment (update compartment_id)
      * - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-     * Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+     *   Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
      * - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
      */
     declare public readonly deployArtifactsTrigger: pulumi.Output<number | undefined>;
@@ -425,7 +424,6 @@ export interface DifStackState {
     /**
      * (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
      * - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -433,7 +431,7 @@ export interface DifStackState {
      * - Deploy artifacts (increase deploy_artifacts_trigger)
      * - Change compartment (update compartment_id)
      * - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-     * Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+     *   Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
      * - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
      */
     deployArtifactsTrigger?: pulumi.Input<number | undefined>;
@@ -538,7 +536,6 @@ export interface DifStackArgs {
     /**
      * (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
      * - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -546,7 +543,7 @@ export interface DifStackArgs {
      * - Deploy artifacts (increase deploy_artifacts_trigger)
      * - Change compartment (update compartment_id)
      * - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-     * Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+     *   Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
      * - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
      */
     deployArtifactsTrigger?: pulumi.Input<number | undefined>;

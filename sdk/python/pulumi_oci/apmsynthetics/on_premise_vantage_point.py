@@ -37,7 +37,6 @@ class OnPremiseVantagePointArgs:
         :param pulumi.Input[_builtins.str] name: Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input[_builtins.str] type: Type of On-premise vantage point.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -119,7 +118,6 @@ class OnPremiseVantagePointArgs:
         """
         Type of On-premise vantage point.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -155,7 +153,6 @@ class _OnPremiseVantagePointState:
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] type: Type of On-premise vantage point.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -284,7 +281,6 @@ class _OnPremiseVantagePointState:
         """
         Type of On-premise vantage point.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -364,7 +360,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input[_builtins.str] type: Type of On-premise vantage point.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -490,7 +485,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[_builtins.str] type: Type of On-premise vantage point.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkersSummaryArgs', 'OnPremiseVantagePointWorkersSummaryArgsDict']]]] workers_summaries: Details of the workers in a specific On-premise vantage point.
@@ -580,7 +574,6 @@ class OnPremiseVantagePoint(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         Type of On-premise vantage point.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

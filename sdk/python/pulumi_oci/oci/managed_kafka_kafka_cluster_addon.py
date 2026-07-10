@@ -33,7 +33,6 @@ class ManagedKafkaKafkaClusterAddonArgs:
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_cidrs: (Updatable) A list of CIDR's for ingress/egress traffic.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) A brief description of the add on being installed.
@@ -89,7 +88,6 @@ class ManagedKafkaKafkaClusterAddonArgs:
     def network_cidrs(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         (Updatable) A list of CIDR's for ingress/egress traffic.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,7 +146,6 @@ class _ManagedKafkaKafkaClusterAddonState:
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
         :param pulumi.Input[_builtins.str] name: A unique user-friendly name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_cidrs: (Updatable) A list of CIDR's for ingress/egress traffic.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +252,6 @@ class _ManagedKafkaKafkaClusterAddonState:
         """
         (Updatable) A list of CIDR's for ingress/egress traffic.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -355,7 +351,6 @@ class ManagedKafkaKafkaClusterAddon(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
         :param pulumi.Input[_builtins.str] name: A unique user-friendly name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_cidrs: (Updatable) A list of CIDR's for ingress/egress traffic.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -481,7 +476,6 @@ class ManagedKafkaKafkaClusterAddon(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: A unique user-friendly name. Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_cidrs: (Updatable) A list of CIDR's for ingress/egress traffic.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the KafkaCluster.
@@ -557,7 +551,6 @@ class ManagedKafkaKafkaClusterAddon(pulumi.CustomResource):
     def network_cidrs(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) A list of CIDR's for ingress/egress traffic.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -105,7 +105,6 @@ export class InstVbsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -225,7 +224,6 @@ export interface InstVbsInstanceState {
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -286,7 +284,6 @@ export interface InstVbsInstanceArgs {
     name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Compartment where VBS may create additional resources for the service instance
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

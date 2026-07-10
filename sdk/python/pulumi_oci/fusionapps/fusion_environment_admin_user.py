@@ -35,7 +35,6 @@ class FusionEnvironmentAdminUserArgs:
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -99,7 +98,6 @@ class FusionEnvironmentAdminUserArgs:
         """
         The username for the administrator.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -128,7 +126,6 @@ class _FusionEnvironmentAdminUserState:
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentAdminUserItemArgs']]] items: A page of AdminUserSummary objects.
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +209,6 @@ class _FusionEnvironmentAdminUserState:
         """
         The username for the administrator.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -273,7 +269,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] fusion_environment_id: unique FusionEnvironment identifier
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -390,7 +385,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_name: The administrator's last name.
         :param pulumi.Input[_builtins.str] username: The username for the administrator.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -451,7 +445,6 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
     def username(self) -> pulumi.Output[_builtins.str]:
         """
         The username for the administrator.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

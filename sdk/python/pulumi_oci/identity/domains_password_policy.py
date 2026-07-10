@@ -491,7 +491,6 @@ class DomainsPasswordPolicyArgs:
                * type: boolean
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1494,7 +1493,6 @@ class DomainsPasswordPolicyArgs:
         * type: boolean
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2092,7 +2090,6 @@ class _DomainsPasswordPolicyState:
                * returned: default
                * type: boolean
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3333,7 +3330,6 @@ class _DomainsPasswordPolicyState:
         * type: boolean
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3896,7 +3892,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4712,7 +4707,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
                * returned: default
                * type: boolean
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5686,7 +5680,6 @@ class DomainsPasswordPolicy(pulumi.CustomResource):
         * returned: default
         * type: boolean
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

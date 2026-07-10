@@ -411,7 +411,6 @@ class JobOutputLocationArgsDict(TypedDict):
     """
     The prefix (directory) in an Object Storage bucket.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -426,7 +425,6 @@ class JobOutputLocationArgs:
         :param pulumi.Input[_builtins.str] bucket: Object Storage bucket name.
         :param pulumi.Input[_builtins.str] namespace: Object Storage namespace name.
         :param pulumi.Input[_builtins.str] prefix: The prefix (directory) in an Object Storage bucket.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -465,7 +463,6 @@ class JobOutputLocationArgs:
     def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The prefix (directory) in an Object Storage bucket.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1607,7 +1604,6 @@ class ModelTrainingDatasetLocationDetailsArgsDict(TypedDict):
     """
     Array of files which need to be processed in the bucket
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1624,7 +1620,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
         :param pulumi.Input[_builtins.str] location_type: Possible object storage location types
         :param pulumi.Input[_builtins.str] namespace: Object storage namespace
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] object_names: Array of files which need to be processed in the bucket
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1675,7 +1670,6 @@ class ModelTrainingDatasetLocationDetailsArgs:
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         Array of files which need to be processed in the bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -28,7 +28,6 @@ class ReportArgs:
 
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the report.
@@ -48,7 +47,6 @@ class ReportArgs:
     def report_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique report identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -128,7 +126,6 @@ class _ReportState:
         :param pulumi.Input[_builtins.str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[_builtins.str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -286,7 +283,6 @@ class _ReportState:
         """
         Unique report identifier
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -404,7 +400,6 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -521,7 +516,6 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the audit report.
@@ -630,7 +624,6 @@ class Report(pulumi.CustomResource):
     def report_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique report identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

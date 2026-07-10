@@ -183,7 +183,6 @@ export class DatabaseToolsMcpServer extends pulumi.CustomResource {
     /**
      * (Updatable) The Database Tools MCP server type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -369,7 +368,6 @@ export interface DatabaseToolsMcpServerState {
     /**
      * (Updatable) The Database Tools MCP server type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -434,7 +432,6 @@ export interface DatabaseToolsMcpServerArgs {
     storage: pulumi.Input<inputs.DatabaseTools.DatabaseToolsMcpServerStorage>;
     /**
      * (Updatable) The Database Tools MCP server type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

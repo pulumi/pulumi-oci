@@ -34,7 +34,6 @@ class SecurityRecipeArgs:
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policies: (Updatable) The list of security policy IDs to include in the recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -84,7 +83,6 @@ class SecurityRecipeArgs:
     def security_policies(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         (Updatable) The list of security policy IDs to include in the recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,7 +161,6 @@ class _SecurityRecipeState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a recipe in the `Failed` state.
         :param pulumi.Input[_builtins.str] owner: The owner of the recipe
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policies: (Updatable) The list of security policy IDs to include in the recipe
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -288,7 +285,6 @@ class _SecurityRecipeState:
         """
         (Updatable) The list of security policy IDs to include in the recipe
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -397,7 +393,6 @@ class SecurityRecipe(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policies: (Updatable) The list of security policy IDs to include in the recipe
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -533,7 +528,6 @@ class SecurityRecipe(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner: The owner of the recipe
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_policies: (Updatable) The list of security policy IDs to include in the recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the recipe
@@ -622,7 +616,6 @@ class SecurityRecipe(pulumi.CustomResource):
     def security_policies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) The list of security policy IDs to include in the recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

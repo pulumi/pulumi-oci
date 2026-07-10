@@ -35,7 +35,6 @@ class JobArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[_builtins.int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -103,7 +102,6 @@ class JobArgs:
         """
         (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -147,7 +145,6 @@ class _JobState:
         :param pulumi.Input[Sequence[pulumi.Input['JobProgressArgs']]] progresses: Percent progress of job phase.
         :param pulumi.Input[_builtins.str] state: The current state of the migration job.
         :param pulumi.Input[_builtins.int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +313,6 @@ class _JobState:
         """
         (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -425,7 +421,6 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[_builtins.str] job_id: The OCID of the job
         :param pulumi.Input[_builtins.int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -547,7 +542,6 @@ class Job(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the migration job.
         :param pulumi.Input[_builtins.int] suspend_trigger: (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -663,7 +657,6 @@ class Job(pulumi.CustomResource):
     def suspend_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Suspend. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

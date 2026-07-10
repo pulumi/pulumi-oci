@@ -270,8 +270,7 @@ class ApplicationTraceConfig(dict):
                  is_enabled: Optional[_builtins.bool] = None):
         """
         :param _builtins.str domain_id: (Updatable) The OCID of the collector (e.g. an APM Domain) trace events will be sent to.
-        :param _builtins.bool is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param _builtins.bool is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,8 +292,7 @@ class ApplicationTraceConfig(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -580,8 +578,7 @@ class FunctionTraceConfig(dict):
     def __init__(__self__, *,
                  is_enabled: Optional[_builtins.bool] = None):
         """
-        :param _builtins.bool is_enabled: (Updatable) Define if tracing is enabled for the resource. 
-               
+        :param _builtins.bool is_enabled: (Updatable) Define if tracing is enabled for the resource.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -593,8 +590,7 @@ class FunctionTraceConfig(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Define if tracing is enabled for the resource. 
-
+        (Updatable) Define if tracing is enabled for the resource.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

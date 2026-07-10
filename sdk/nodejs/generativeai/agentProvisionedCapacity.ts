@@ -91,7 +91,6 @@ export class AgentProvisionedCapacity extends pulumi.CustomResource {
     /**
      * (Updatable) Provisioned Capacity Unit corresponds to the amount of characters processed per minute.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -190,7 +189,6 @@ export interface AgentProvisionedCapacityState {
     /**
      * (Updatable) Provisioned Capacity Unit corresponds to the amount of characters processed per minute.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -239,7 +237,6 @@ export interface AgentProvisionedCapacityArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Provisioned Capacity Unit corresponds to the amount of characters processed per minute.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

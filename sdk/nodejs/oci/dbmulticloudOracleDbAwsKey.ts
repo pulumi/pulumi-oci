@@ -147,7 +147,6 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
     /**
      * AWS Key resource type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +296,6 @@ export interface DbmulticloudOracleDbAwsKeyState {
     /**
      * AWS Key resource type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -355,7 +353,6 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
     targetRegion?: pulumi.Input<string | undefined>;
     /**
      * AWS Key resource type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

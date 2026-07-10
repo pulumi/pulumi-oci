@@ -31,7 +31,6 @@ class RedisClusterCreateIdentityTokenArgs:
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -72,7 +71,6 @@ class RedisClusterCreateIdentityTokenArgs:
     def redis_user(self) -> pulumi.Input[_builtins.str]:
         """
         Redis User generating identity token.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +116,6 @@ class _RedisClusterCreateIdentityTokenState:
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -196,7 +193,6 @@ class _RedisClusterCreateIdentityTokenState:
         """
         Redis User generating identity token.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -249,7 +245,6 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] public_key: User public key pair
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -354,7 +349,6 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
         :param pulumi.Input[_builtins.str] redis_user: Redis User generating identity token.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -409,7 +403,6 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
     def redis_user(self) -> pulumi.Output[_builtins.str]:
         """
         Redis User generating identity token.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

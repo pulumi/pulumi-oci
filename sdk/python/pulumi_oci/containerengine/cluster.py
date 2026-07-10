@@ -40,7 +40,6 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] kubernetes_version: (Updatable) The version of Kubernetes to install into the cluster masters.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ClusterClusterPodNetworkOptionArgs']]] cluster_pod_network_options: Available CNIs and network options for existing and new node pools of the cluster
@@ -104,7 +103,6 @@ class ClusterArgs:
     def vcn_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the virtual cloud network (VCN) in which to create the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -268,7 +266,6 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] state: The state of the cluster masters.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -534,7 +531,6 @@ class _ClusterState:
         """
         The OCID of the virtual cloud network (VCN) in which to create the cluster.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -682,7 +678,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -914,7 +909,6 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1092,7 +1086,6 @@ class Cluster(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the virtual cloud network (VCN) in which to create the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

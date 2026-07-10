@@ -34,7 +34,6 @@ class EmailIpPoolArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -73,7 +72,6 @@ class EmailIpPoolArgs:
     def outbound_ips(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,7 +172,6 @@ class _EmailIpPoolState:
         :param pulumi.Input[Sequence[pulumi.Input['EmailIpPoolLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -314,7 +311,6 @@ class _EmailIpPoolState:
         """
         A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -439,7 +435,6 @@ class EmailIpPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] last_ip_drain_period_in_hours: (Updatable) Last IP will be unassigned from the IP Pool after the period of time (in hours) specified by this parameter. Default is 24 hours.
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -574,7 +569,6 @@ class EmailIpPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The name of the IpPool. The name must be unique within a region.  The name is case sensitive and supported characters include alphanumeric, hyphens ("-") and underscore ("_") characters.  Example: green_pool-1
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] outbound_ips: A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the IpPool.
@@ -671,7 +665,6 @@ class EmailIpPool(pulumi.CustomResource):
     def outbound_ips(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         A list of outbound public IPs for assignment to the IpPool. These IPs must be in the AVAILABLE state to be eligible for assignment.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

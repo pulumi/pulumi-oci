@@ -125,7 +125,6 @@ export class DatabaseToolsIdentity extends pulumi.CustomResource {
     /**
      * (Updatable) The Database Tools identity type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -248,7 +247,6 @@ export interface DatabaseToolsIdentityState {
     /**
      * (Updatable) The Database Tools identity type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -289,7 +287,6 @@ export interface DatabaseToolsIdentityArgs {
     locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsIdentityLock>[] | undefined>;
     /**
      * (Updatable) The Database Tools identity type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

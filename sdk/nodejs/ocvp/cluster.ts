@@ -143,7 +143,7 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
      *
      * **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
      */
@@ -223,8 +223,7 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly vsphereUpgradeObjects: pulumi.Output<outputs.Ocvp.ClusterVsphereUpgradeObject[]>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-     *
+     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -366,7 +365,7 @@ export interface ClusterState {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
      *
      * **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
      */
@@ -446,8 +445,7 @@ export interface ClusterState {
      */
     vsphereUpgradeObjects?: pulumi.Input<pulumi.Input<inputs.Ocvp.ClusterVsphereUpgradeObject>[] | undefined>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-     *
+     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -490,7 +488,7 @@ export interface ClusterArgs {
      */
     displayName?: pulumi.Input<string | undefined>;
     /**
-     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+     * The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
      *
      * **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
      */
@@ -542,8 +540,7 @@ export interface ClusterArgs {
      */
     vmwareSoftwareVersion?: pulumi.Input<string | undefined>;
     /**
-     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-     *
+     * The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

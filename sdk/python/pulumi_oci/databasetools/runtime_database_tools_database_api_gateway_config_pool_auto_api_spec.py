@@ -41,7 +41,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs:
         :param pulumi.Input[_builtins.str] pool_key: The key of the pool config.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] alias: (Updatable) Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
@@ -135,7 +134,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +253,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState:
         :param pulumi.Input[_builtins.str] time_created: The time the resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -465,7 +462,6 @@ class _RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState:
         """
         (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -547,7 +543,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(pulumi.CustomR
         :param pulumi.Input[_builtins.str] scope: (Updatable) The name of the database API gateway config privilege protecting the resource. Only valid for SCOPE JWT Profile pools and BEARER securitySchemes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_schemes: (Updatable) The security schemes that can access this resource. If not specified then the resource is public.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -707,7 +702,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(pulumi.CustomR
         :param pulumi.Input[_builtins.str] time_updated: The time the resource was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -849,7 +843,6 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec(pulumi.CustomR
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The type of the Database Tools database API gateway config auto API spec sub resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -121,7 +121,6 @@ export class MlApplicationInstance extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -268,7 +267,6 @@ export interface MlApplicationInstanceState {
     /**
      * (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -341,7 +339,6 @@ export interface MlApplicationInstanceArgs {
     mlApplicationId: pulumi.Input<string>;
     /**
      * (Updatable) The OCID of ML Application Implementation selected as a certain solution for a given ML problem (ML Application)
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

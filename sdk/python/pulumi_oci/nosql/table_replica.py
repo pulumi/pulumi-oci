@@ -30,7 +30,6 @@ class TableReplicaInitArgs:
         :param pulumi.Input[_builtins.str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
@@ -63,7 +62,6 @@ class TableReplicaInitArgs:
     def table_name_or_id(self) -> pulumi.Input[_builtins.str]:
         """
         A table name within the compartment, or a table OCID.
-
 
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -127,7 +125,6 @@ class _TableReplicaState:
         :param pulumi.Input[_builtins.int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         :param pulumi.Input[_builtins.str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -197,7 +194,6 @@ class _TableReplicaState:
         """
         A table name within the compartment, or a table OCID.
 
-
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
@@ -258,7 +254,6 @@ class TableReplica(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
         :param pulumi.Input[_builtins.str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
@@ -366,7 +361,6 @@ class TableReplica(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] region: Name of the remote region in standard Oracle Cloud Infrastructure format, i.e. us-ashburn-1
         :param pulumi.Input[_builtins.str] table_name_or_id: A table name within the compartment, or a table OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
@@ -418,7 +412,6 @@ class TableReplica(pulumi.CustomResource):
     def table_name_or_id(self) -> pulumi.Output[_builtins.str]:
         """
         A table name within the compartment, or a table OCID.
-
 
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.

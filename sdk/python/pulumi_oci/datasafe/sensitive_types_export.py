@@ -35,8 +35,7 @@ class SensitiveTypesExportArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_include_all_sensitive_types: Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are used.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -131,8 +130,7 @@ class SensitiveTypesExportArgs:
     @pulumi.getter(name="sensitiveTypeIdsForExports")
     def sensitive_type_ids_for_exports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The OCIDs of the sensitive types used to create sensitive types export. 
-
+        The OCIDs of the sensitive types used to create sensitive types export.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -167,8 +165,7 @@ class _SensitiveTypesExportState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_include_all_sensitive_types: Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are used.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -276,8 +273,7 @@ class _SensitiveTypesExportState:
     @pulumi.getter(name="sensitiveTypeIdsForExports")
     def sensitive_type_ids_for_exports(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The OCIDs of the sensitive types used to create sensitive types export. 
-
+        The OCIDs of the sensitive types used to create sensitive types export.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,8 +394,7 @@ class SensitiveTypesExport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_include_all_sensitive_types: Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are used.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -527,8 +522,7 @@ class SensitiveTypesExport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the sensitive types export. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_include_all_sensitive_types: Indicates if all the existing user-defined sensitive types are used for export. If it's set to true, the sensitiveTypeIdsForExport attribute is ignored and all user-defined sensitive types are used.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] sensitive_type_ids_for_exports: The OCIDs of the sensitive types used to create sensitive types export.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -606,8 +600,7 @@ class SensitiveTypesExport(pulumi.CustomResource):
     @pulumi.getter(name="sensitiveTypeIdsForExports")
     def sensitive_type_ids_for_exports(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        The OCIDs of the sensitive types used to create sensitive types export. 
-
+        The OCIDs of the sensitive types used to create sensitive types export.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

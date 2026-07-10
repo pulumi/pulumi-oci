@@ -830,8 +830,7 @@ class MaintenanceWindowSchedule(dict):
         :param _builtins.str maintenance_window_duration: (Updatable) Duration time of each recurrence of each Maintenance Window. It must be specified as a string in ISO 8601 extended format.
         :param _builtins.str maintenance_window_recurrences: (Updatable) A RFC5545 formatted recurrence string which represents the Maintenance Window Recurrence. Please refer this for details:https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 FREQ: Frequency of the Maintenance Window. The supported values are: DAILY and WEEKLY. BYDAY: Comma separated days for Weekly Maintenance Window. BYHOUR: Specifies the start hour of each recurrence after `timeMaintenanceWindowStart` value. BYMINUTE: Specifies the start minute of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 BYSECOND: Specifies the start second of each reccurrence after `timeMaintenanceWindowStart` value. The default value is 00 Other Rules are not supported.
         :param _builtins.str time_maintenance_window_end: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
-        :param _builtins.str time_maintenance_window_start: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-               
+        :param _builtins.str time_maintenance_window_start: (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -882,8 +881,7 @@ class MaintenanceWindowSchedule(dict):
     @pulumi.getter(name="timeMaintenanceWindowStart")
     def time_maintenance_window_start(self) -> Optional[_builtins.str]:
         """
-        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-
+        (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2179,7 +2177,6 @@ class MonitoredResourceTaskTaskDetails(dict):
         """
         :param _builtins.str type: Task type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2251,7 +2248,6 @@ class MonitoredResourceTaskTaskDetails(dict):
     def type(self) -> _builtins.str:
         """
         Task type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4252,8 +4248,7 @@ class MonitoredResourcesSearchItem(dict):
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
-        :param _builtins.str type: A filter to return resources that match resource type. 
-               
+        :param _builtins.str type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4435,8 +4430,7 @@ class MonitoredResourcesSearchItem(dict):
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4683,7 +4677,6 @@ class ProcessSetSpecificationItem(dict):
         :param _builtins.str process_line_regex_pattern: (Updatable) Regex pattern matching on process arguments.
         :param _builtins.str process_user: (Updatable) String literal used for exact matching on process user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4725,7 +4718,6 @@ class ProcessSetSpecificationItem(dict):
     def process_user(self) -> Optional[_builtins.str]:
         """
         (Updatable) String literal used for exact matching on process user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

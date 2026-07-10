@@ -25,7 +25,6 @@ class RepositoryMirrorArgs:
 
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -36,7 +35,6 @@ class RepositoryMirrorArgs:
     def repository_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57,7 +55,6 @@ class _RepositoryMirrorState:
 
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -69,7 +66,6 @@ class _RepositoryMirrorState:
     def repository_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +114,6 @@ class RepositoryMirror(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +198,6 @@ class RepositoryMirror(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] repository_id: Unique repository identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -219,7 +213,6 @@ class RepositoryMirror(pulumi.CustomResource):
     def repository_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique repository identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

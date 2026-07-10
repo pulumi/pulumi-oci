@@ -34,7 +34,6 @@ class SensitiveDataModelReferentialRelationArgs:
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_sensitive: Add to sensitive data model if passed true. If false is passed, then the columns will not be added in the sensitive data model as sensitive columns and  if sensitive type OCIDs are assigned to the columns, then the sensitive type OCIDs will not be retained.
@@ -88,7 +87,6 @@ class SensitiveDataModelReferentialRelationArgs:
         """
         The OCID of the sensitive data model.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -130,7 +128,6 @@ class _SensitiveDataModelReferentialRelationState:
         :param pulumi.Input['SensitiveDataModelReferentialRelationParentArgs'] parent: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +213,6 @@ class _SensitiveDataModelReferentialRelationState:
     def sensitive_data_model_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the sensitive data model.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -304,7 +300,6 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         :param pulumi.Input[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict']] parent: columnsInfo object has details of column group with schema details.
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -435,7 +430,6 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] relation_type: The type of referential relationship the sensitive column has with its parent.  DB_DEFINED indicates that the relationship is defined in the database dictionary.  APP_DEFINED indicates that the relationship is defined at the application level and not in the database dictionary.
         :param pulumi.Input[_builtins.str] sensitive_data_model_id: The OCID of the sensitive data model.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the referential relation.
@@ -498,7 +492,6 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
     def sensitive_data_model_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the sensitive data model.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

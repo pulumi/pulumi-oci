@@ -33,8 +33,7 @@ class CatalogPrivateEndpointArgs:
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,8 +82,7 @@ class CatalogPrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of subnet to which the reverse connection is to be created 
-
+        The OCID of subnet to which the reverse connection is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,8 +172,7 @@ class _CatalogPrivateEndpointState:
         :param pulumi.Input[Sequence[pulumi.Input['CatalogPrivateEndpointLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -336,8 +333,7 @@ class _CatalogPrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of subnet to which the reverse connection is to be created 
-
+        The OCID of subnet to which the reverse connection is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -444,8 +440,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dns_zones: (Updatable) List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -585,8 +580,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CatalogPrivateEndpointLockArgs', 'CatalogPrivateEndpointLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint resource.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of subnet to which the reverse connection is to be created
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -698,8 +692,7 @@ class CatalogPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of subnet to which the reverse connection is to be created 
-
+        The OCID of subnet to which the reverse connection is to be created
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -977,8 +977,7 @@ class VulnerabilityAuditUsageDataArgsDict(TypedDict):
     """
     source_type: pulumi.Input[_builtins.str]
     """
-    The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-
+    The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -995,8 +994,7 @@ class VulnerabilityAuditUsageDataArgs:
         :param pulumi.Input[_builtins.str] bucket: The Object Storage bucket to read the usage data from.
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace to read the usage data from.
         :param pulumi.Input[_builtins.str] object: The Object Storage object name to read the usage data from.
-        :param pulumi.Input[_builtins.str] source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-               
+        :param pulumi.Input[_builtins.str] source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1046,8 +1044,7 @@ class VulnerabilityAuditUsageDataArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[_builtins.str]:
         """
-        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

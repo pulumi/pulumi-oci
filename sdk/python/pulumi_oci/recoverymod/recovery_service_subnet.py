@@ -34,7 +34,6 @@ class RecoveryServiceSubnetArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-provided name for the recovery service subnet. The 'displayName' does not have to be unique, and it can be modified. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
@@ -89,7 +88,6 @@ class RecoveryServiceSubnetArgs:
     def vcn_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +192,6 @@ class _RecoveryServiceSubnetState:
         :param pulumi.Input[_builtins.str] time_created: An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,7 +377,6 @@ class _RecoveryServiceSubnetState:
         """
         The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -454,7 +450,6 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: Deprecated. One of the subnets associated with the Recovery Service subnet.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnets: (Updatable) A list of OCIDs of the subnets associated with the Recovery Service subnet.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -598,7 +593,6 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -723,7 +717,6 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
     def vcn_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the virtual cloud network (VCN) that contains the recovery service subnet. You can create a single recovery service subnet per VCN.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

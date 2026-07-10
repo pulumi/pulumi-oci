@@ -2742,7 +2742,6 @@ class ScriptParameterArgsDict(TypedDict):
     """
     (Updatable) Value of the parameter.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2764,7 +2763,6 @@ class ScriptParameterArgs:
         :param pulumi.Input[_builtins.bool] is_overwritten: If parameter value is default or overwritten.
         :param pulumi.Input[_builtins.bool] is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
         :param pulumi.Input[_builtins.str] param_value: (Updatable) Value of the parameter.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2821,7 +2819,6 @@ class ScriptParameterArgs:
     def param_value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Value of the parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

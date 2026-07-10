@@ -100,7 +100,6 @@ export class ApmDomain extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -202,7 +201,6 @@ export interface ApmDomainState {
     /**
      * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -251,7 +249,6 @@ export interface ApmDomainArgs {
     isFreeTier?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) The OCID of the Log Analytics log group to which the data uploaded to this APM domain will be mapped to.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

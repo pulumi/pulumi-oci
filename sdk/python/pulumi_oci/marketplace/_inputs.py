@@ -337,7 +337,6 @@ class PublicationSupportContactArgsDict(TypedDict):
     """
     (Updatable) The email subject line to use when contacting support.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -354,7 +353,6 @@ class PublicationSupportContactArgs:
         :param pulumi.Input[_builtins.str] name: (Updatable) The name of the contact.
         :param pulumi.Input[_builtins.str] phone: (Updatable) The phone number of the contact.
         :param pulumi.Input[_builtins.str] subject: (Updatable) The email subject line to use when contacting support.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -409,7 +407,6 @@ class PublicationSupportContactArgs:
     def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The email subject line to use when contacting support.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

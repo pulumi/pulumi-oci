@@ -104,7 +104,6 @@ export class SteeringPolicyAttachment extends pulumi.CustomResource {
     /**
      * The OCID of the attached zone. Must be a public zone.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -197,7 +196,6 @@ export interface SteeringPolicyAttachmentState {
     /**
      * The OCID of the attached zone. Must be a public zone.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -222,7 +220,6 @@ export interface SteeringPolicyAttachmentArgs {
     steeringPolicyId: pulumi.Input<string>;
     /**
      * The OCID of the attached zone. Must be a public zone.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

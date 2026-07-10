@@ -37,7 +37,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
 
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] type: Describes the type of decryption profile. The accepted values are - * SSL_FORWARD_PROXY * SSL_INBOUND_INSPECTION
@@ -83,7 +82,6 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     def network_firewall_policy_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,7 +270,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         :param pulumi.Input[_builtins.str] name: Name of the decryption profile.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
@@ -445,7 +442,6 @@ class _NetworkFirewallPolicyDecryptionProfileState:
         """
         Unique Network Firewall Policy identifier
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -553,7 +549,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_untrusted_issuer_blocked: (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param pulumi.Input[_builtins.str] name: Name of the decryption profile.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -703,7 +698,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of the decryption profile.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this decryption profile belongs to.
@@ -822,7 +816,6 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
     def network_firewall_policy_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

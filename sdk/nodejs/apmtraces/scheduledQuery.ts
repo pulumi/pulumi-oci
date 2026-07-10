@@ -111,8 +111,7 @@ export class ScheduledQuery extends pulumi.CustomResource {
      */
     declare public readonly scheduledQuerySchedule: pulumi.Output<string>;
     /**
-     * (Updatable) Scheduled query to be run. 
-     *
+     * (Updatable) Scheduled query to be run.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,8 +251,7 @@ export interface ScheduledQueryState {
      */
     scheduledQuerySchedule?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Scheduled query to be run. 
-     *
+     * (Updatable) Scheduled query to be run.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,8 +324,7 @@ export interface ScheduledQueryArgs {
      */
     scheduledQuerySchedule?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Scheduled query to be run. 
-     *
+     * (Updatable) Scheduled query to be run.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

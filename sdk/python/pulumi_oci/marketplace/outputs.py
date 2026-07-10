@@ -334,7 +334,6 @@ class PublicationSupportContact(dict):
         :param _builtins.str phone: (Updatable) The phone number of the contact.
         :param _builtins.str subject: (Updatable) The email subject line to use when contacting support.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -376,7 +375,6 @@ class PublicationSupportContact(dict):
     def subject(self) -> Optional[_builtins.str]:
         """
         (Updatable) The email subject line to use when contacting support.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

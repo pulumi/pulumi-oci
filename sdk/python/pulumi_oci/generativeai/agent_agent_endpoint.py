@@ -59,7 +59,6 @@ class AgentAgentEndpointArgs:
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.
         :param pulumi.Input[_builtins.bool] should_enable_trace: (Updatable) Whether to show traces in the chat result.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -294,7 +293,6 @@ class AgentAgentEndpointArgs:
         """
         (Updatable) Whether to show traces in the chat result.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -351,7 +349,6 @@ class _AgentAgentEndpointState:
         :param pulumi.Input[_builtins.bool] should_enable_multi_language: (Updatable) Whether to enable multi-language for chat.
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.
         :param pulumi.Input[_builtins.bool] should_enable_trace: (Updatable) Whether to show traces in the chat result.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -615,7 +612,6 @@ class _AgentAgentEndpointState:
         """
         (Updatable) Whether to show traces in the chat result.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -801,7 +797,6 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] should_enable_multi_language: (Updatable) Whether to enable multi-language for chat.
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.
         :param pulumi.Input[_builtins.bool] should_enable_trace: (Updatable) Whether to show traces in the chat result.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1021,7 +1016,6 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] should_enable_session: Whether or not to enable Session-based chat.
         :param pulumi.Input[_builtins.bool] should_enable_trace: (Updatable) Whether to show traces in the chat result.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the endpoint.
@@ -1198,7 +1192,6 @@ class AgentAgentEndpoint(pulumi.CustomResource):
     def should_enable_trace(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) Whether to show traces in the chat result.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

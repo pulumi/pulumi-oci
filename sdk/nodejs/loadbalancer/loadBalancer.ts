@@ -150,7 +150,7 @@ export class LoadBalancer extends pulumi.CustomResource {
      */
     declare public readonly ipMode: pulumi.Output<string>;
     /**
-     * (Updatable) Applies to IPV6 LB creation only. 
+     * (Updatable) Applies to IPV6 LB creation only.
      *
      * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
      *
@@ -239,7 +239,6 @@ export class LoadBalancer extends pulumi.CustomResource {
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -371,7 +370,7 @@ export interface LoadBalancerState {
      */
     ipMode?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Applies to IPV6 LB creation only. 
+     * (Updatable) Applies to IPV6 LB creation only.
      *
      * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
      *
@@ -461,7 +460,6 @@ export interface LoadBalancerState {
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -507,7 +505,7 @@ export interface LoadBalancerArgs {
      */
     ipMode?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Applies to IPV6 LB creation only. 
+     * (Updatable) Applies to IPV6 LB creation only.
      *
      * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
      *
@@ -592,7 +590,6 @@ export interface LoadBalancerArgs {
     shapeDetails?: pulumi.Input<inputs.LoadBalancer.LoadBalancerShapeDetails | undefined>;
     /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

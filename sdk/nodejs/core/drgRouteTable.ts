@@ -98,8 +98,7 @@ export class DrgRouteTable extends pulumi.CustomResource {
      */
     declare public readonly isEcmpEnabled: pulumi.Output<boolean>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
-     *
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -191,8 +190,7 @@ export interface DrgRouteTableState {
      */
     isEcmpEnabled?: pulumi.Input<boolean | undefined>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
-     *
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,8 +235,7 @@ export interface DrgRouteTableArgs {
      */
     isEcmpEnabled?: pulumi.Input<boolean | undefined>;
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null. 
-     *
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

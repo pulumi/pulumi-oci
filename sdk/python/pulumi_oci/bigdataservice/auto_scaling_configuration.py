@@ -51,7 +51,6 @@ class AutoScalingConfigurationArgs:
                An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -169,7 +168,6 @@ class AutoScalingConfigurationArgs:
         """
         (Updatable) The secretId for the clusterAdminPassword.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -215,7 +213,6 @@ class _AutoScalingConfigurationState:
                
                An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -345,7 +342,6 @@ class _AutoScalingConfigurationState:
     def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The secretId for the clusterAdminPassword.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -491,7 +487,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                
                An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -663,7 +658,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                An autoscaling configuration can have one of above supported policies.
         :param pulumi.Input[_builtins.str] secret_id: (Updatable) The secretId for the clusterAdminPassword.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The state of the autoscale configuration.
@@ -758,7 +752,6 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     def secret_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The secretId for the clusterAdminPassword.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

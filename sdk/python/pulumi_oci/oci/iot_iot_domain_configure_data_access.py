@@ -30,7 +30,6 @@ class IotIotDomainConfigureDataAccessArgs:
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: configuration type
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_identity_group_names: List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
@@ -63,7 +62,6 @@ class IotIotDomainConfigureDataAccessArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         configuration type
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,7 +125,6 @@ class _IotIotDomainConfigureDataAccessState:
         :param pulumi.Input[_builtins.str] db_workspace_admin_initial_password: Initial admin password for APEX workspace associated with the IoT domain.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: configuration type
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -197,7 +194,6 @@ class _IotIotDomainConfigureDataAccessState:
         """
         configuration type
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -254,7 +250,6 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] db_workspace_admin_initial_password: Initial admin password for APEX workspace associated with the IoT domain.
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: configuration type
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -360,7 +355,6 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] iot_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain.
         :param pulumi.Input[_builtins.str] type: configuration type
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -412,7 +406,6 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         configuration type
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

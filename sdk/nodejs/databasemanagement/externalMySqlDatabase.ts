@@ -68,7 +68,6 @@ export class ExternalMySqlDatabase extends pulumi.CustomResource {
     /**
      * (Updatable) Name of the External MySQL Database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -122,7 +121,6 @@ export interface ExternalMySqlDatabaseState {
     /**
      * (Updatable) Name of the External MySQL Database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -143,7 +141,6 @@ export interface ExternalMySqlDatabaseArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Name of the External MySQL Database.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

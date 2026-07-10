@@ -264,7 +264,6 @@ class ApiLockArgsDict(TypedDict):
     """
     Type of the lock.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -291,7 +290,6 @@ class ApiLockArgs:
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -311,7 +309,6 @@ class ApiLockArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8488,7 +8485,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgsDict(Typ
     """
     (Updatable) Type of the Response Cache Store Policy.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -8501,7 +8497,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
         """
         :param pulumi.Input[_builtins.int] time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the Response Cache Store Policy.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8526,7 +8521,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Type of the Response Cache Store Policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -9446,7 +9440,6 @@ class UsagePlanLockArgsDict(TypedDict):
     """
     Type of the lock.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -9473,7 +9466,6 @@ class UsagePlanLockArgs:
         """
         :param pulumi.Input[_builtins.str] type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -9493,7 +9485,6 @@ class UsagePlanLockArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

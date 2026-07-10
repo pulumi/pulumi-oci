@@ -47,7 +47,6 @@ class ImageArgs:
                * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -149,7 +148,6 @@ class ImageArgs:
         * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -203,7 +201,6 @@ class _ImageState:
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -383,7 +380,6 @@ class _ImageState:
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -608,7 +604,6 @@ class Image(pulumi.CustomResource):
                * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -821,7 +816,6 @@ class Image(pulumi.CustomResource):
                * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict']]]] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
@@ -947,7 +941,6 @@ class Image(pulumi.CustomResource):
         * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

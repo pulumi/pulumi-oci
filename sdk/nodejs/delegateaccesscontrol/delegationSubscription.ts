@@ -100,7 +100,6 @@ export class DelegationSubscription extends pulumi.CustomResource {
     /**
      * Subscribed Service Provider Service Type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -211,7 +210,6 @@ export interface DelegationSubscriptionState {
     /**
      * Subscribed Service Provider Service Type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -256,7 +254,6 @@ export interface DelegationSubscriptionArgs {
     serviceProviderId: pulumi.Input<string>;
     /**
      * Subscribed Service Provider Service Type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

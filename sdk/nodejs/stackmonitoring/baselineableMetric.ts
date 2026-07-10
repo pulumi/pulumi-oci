@@ -107,7 +107,6 @@ export class BaselineableMetric extends pulumi.CustomResource {
     /**
      * (Updatable) Resource type of the metric
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -242,7 +241,6 @@ export interface BaselineableMetricState {
     /**
      * (Updatable) Resource type of the metric
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -295,7 +293,6 @@ export interface BaselineableMetricArgs {
     resourceGroup?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Resource type of the metric
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

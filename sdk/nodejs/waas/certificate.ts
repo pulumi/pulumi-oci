@@ -109,7 +109,6 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * The private key of the SSL certificate.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -265,7 +264,6 @@ export interface CertificateState {
     /**
      * The private key of the SSL certificate.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -342,7 +340,6 @@ export interface CertificateArgs {
     isTrustVerificationDisabled?: pulumi.Input<boolean | undefined>;
     /**
      * The private key of the SSL certificate.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

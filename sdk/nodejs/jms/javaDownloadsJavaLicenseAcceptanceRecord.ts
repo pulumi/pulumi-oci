@@ -89,7 +89,6 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
     /**
      * License type for the Java version.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -194,7 +193,6 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordState {
     /**
      * License type for the Java version.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -235,7 +233,6 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordArgs {
     licenseAcceptanceStatus: pulumi.Input<string>;
     /**
      * License type for the Java version.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

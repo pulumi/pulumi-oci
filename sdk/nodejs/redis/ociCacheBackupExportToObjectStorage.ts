@@ -73,7 +73,6 @@ export class OciCacheBackupExportToObjectStorage extends pulumi.CustomResource {
     /**
      * Optional prefix under which the service will place the exported object(s).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -136,7 +135,6 @@ export interface OciCacheBackupExportToObjectStorageState {
     /**
      * Optional prefix under which the service will place the exported object(s).
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -161,7 +159,6 @@ export interface OciCacheBackupExportToObjectStorageArgs {
     ociCacheBackupId: pulumi.Input<string>;
     /**
      * Optional prefix under which the service will place the exported object(s).
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

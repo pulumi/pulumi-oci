@@ -33,7 +33,6 @@ class DatabaseDbmFeaturesManagementArgs:
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature.
@@ -66,7 +65,6 @@ class DatabaseDbmFeaturesManagementArgs:
     def enable_database_dbm_feature(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,7 +130,6 @@ class _DatabaseDbmFeaturesManagementState:
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['DatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature.
@@ -176,7 +173,6 @@ class _DatabaseDbmFeaturesManagementState:
     def enable_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -284,7 +280,6 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -411,7 +406,6 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.bool] enable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature.
@@ -446,7 +440,6 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
     def enable_database_dbm_feature(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

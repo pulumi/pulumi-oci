@@ -126,8 +126,7 @@ export class FsuReadinessCheck extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * Type of Exadata Fleet Update Readiness Check. 
-     *
+     * Type of Exadata Fleet Update Readiness Check.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,8 +245,7 @@ export interface FsuReadinessCheckState {
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
-     * Type of Exadata Fleet Update Readiness Check. 
-     *
+     * Type of Exadata Fleet Update Readiness Check.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -280,8 +278,7 @@ export interface FsuReadinessCheckArgs {
      */
     targets?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuReadinessCheckTarget>[] | undefined>;
     /**
-     * Type of Exadata Fleet Update Readiness Check. 
-     *
+     * Type of Exadata Fleet Update Readiness Check.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

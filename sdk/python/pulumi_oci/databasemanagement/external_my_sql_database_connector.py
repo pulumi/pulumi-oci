@@ -33,7 +33,6 @@ class ExternalMySqlDatabaseConnectorArgs:
         :param pulumi.Input[_builtins.bool] is_test_connection_param: Parameter indicating whether database connection needs to be tested.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -85,7 +84,6 @@ class ExternalMySqlDatabaseConnectorArgs:
         """
         (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -126,7 +124,6 @@ class _ExternalMySqlDatabaseConnectorState:
 
         :param pulumi.Input[_builtins.str] associated_services: Oracle Cloud Infrastructure Services associated with this connector.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +210,6 @@ class _ExternalMySqlDatabaseConnectorState:
     def check_connection_status_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -519,7 +515,6 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
@@ -669,7 +664,6 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] associated_services: Oracle Cloud Infrastructure Services associated with this connector.
         :param pulumi.Input[_builtins.int] check_connection_status_trigger: (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) OCID of compartment for the External MySQL Database.
@@ -734,7 +728,6 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
     def check_connection_status_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -35,7 +35,6 @@ class NamedCredentialArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NamedCredentialPropertyArgs']]] properties: (Updatable) Properties for the named credential
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -84,7 +83,6 @@ class NamedCredentialArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         The type of the Named Credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -172,7 +170,6 @@ class _NamedCredentialState:
         :param pulumi.Input[_builtins.str] time_created: The time the Named Credential was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Named Credential data was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +323,6 @@ class _NamedCredentialState:
         """
         The type of the Named Credential.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -431,7 +427,6 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Identifier for Named Credential. This is unique for the Management Agent.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamedCredentialPropertyArgs', 'NamedCredentialPropertyArgsDict']]]] properties: (Updatable) Properties for the named credential
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -601,7 +596,6 @@ class NamedCredential(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the Named Credential data was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: The type of the Named Credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -707,7 +701,6 @@ class NamedCredential(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         The type of the Named Credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

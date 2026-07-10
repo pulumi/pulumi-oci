@@ -642,11 +642,11 @@ class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
 
     Example of threshold alarm:
 
-    -----
+    ***
 
     CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-    -----
+    ***
     """
     resource_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -680,11 +680,11 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
         :param pulumi.Input[_builtins.str] resource_group: The resource group for the query.
         """
         if metric_compartment_id is not None:
@@ -775,11 +775,11 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
+        ***
         """
         return pulumi.get(self, "query")
 

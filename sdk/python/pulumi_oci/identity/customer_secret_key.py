@@ -27,7 +27,6 @@ class CustomerSecretKeyArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class CustomerSecretKeyArgs:
     def user_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,7 +81,6 @@ class _CustomerSecretKeyState:
         :param pulumi.Input[_builtins.str] time_created: Date and time the `CustomerSecretKey` object was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_expires: Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +178,6 @@ class _CustomerSecretKeyState:
         """
         The OCID of the user.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -243,7 +239,6 @@ class CustomerSecretKey(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -361,7 +356,6 @@ class CustomerSecretKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_expires: Date and time when this password will expire, in the format defined by RFC3339. Null if it never expires.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -431,7 +425,6 @@ class CustomerSecretKey(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

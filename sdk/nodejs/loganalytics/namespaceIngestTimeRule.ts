@@ -123,8 +123,7 @@ export class NamespaceIngestTimeRule extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isEnabled: pulumi.Output<boolean>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,8 +242,7 @@ export interface NamespaceIngestTimeRuleState {
      */
     isEnabled?: pulumi.Input<boolean | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -297,8 +295,7 @@ export interface NamespaceIngestTimeRuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

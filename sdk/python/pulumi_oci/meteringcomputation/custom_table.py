@@ -31,7 +31,6 @@ class CustomTableArgs:
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -69,7 +68,6 @@ class CustomTableArgs:
         """
         The associated saved report OCID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -92,7 +90,6 @@ class _CustomTableState:
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input['CustomTableSavedCustomTableArgs'] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +130,6 @@ class _CustomTableState:
     def saved_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The associated saved report OCID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -200,7 +196,6 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID.
         :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -311,7 +306,6 @@ class CustomTable(pulumi.CustomResource):
         :param pulumi.Input[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict']] saved_custom_table: (Updatable) The custom table for Cost Analysis UI rendering.
         :param pulumi.Input[_builtins.str] saved_report_id: The associated saved report OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -345,7 +339,6 @@ class CustomTable(pulumi.CustomResource):
     def saved_report_id(self) -> pulumi.Output[_builtins.str]:
         """
         The associated saved report OCID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

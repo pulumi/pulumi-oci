@@ -89,7 +89,6 @@ export class Addon extends pulumi.CustomResource {
     /**
      * (Updatable) The version of addon to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -188,7 +187,6 @@ export interface AddonState {
     /**
      * (Updatable) The version of addon to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -221,7 +219,6 @@ export interface AddonArgs {
     removeAddonResourcesOnDelete: pulumi.Input<boolean>;
     /**
      * (Updatable) The version of addon to be installed.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

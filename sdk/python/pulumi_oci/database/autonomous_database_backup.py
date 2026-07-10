@@ -35,7 +35,6 @@ class AutonomousDatabaseBackupArgs:
         :param pulumi.Input[_builtins.bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -103,7 +102,6 @@ class AutonomousDatabaseBackupArgs:
         """
         (Updatable) Retention period, in days, for long-term backups
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -162,7 +160,6 @@ class _AutonomousDatabaseBackupState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] region: Name of the region in which backup is taken in.
         :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -424,7 +421,6 @@ class _AutonomousDatabaseBackupState:
         """
         (Updatable) Retention period, in days, for long-term backups
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -593,7 +589,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_long_term_backup: Indicates whether the backup is long-term
         :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -760,7 +755,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] region: Name of the region in which backup is taken in.
         :param pulumi.Input[_builtins.int] retention_period_in_days: (Updatable) Retention period, in days, for long-term backups
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -937,7 +931,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
     def retention_period_in_days(self) -> pulumi.Output[_builtins.int]:
         """
         (Updatable) Retention period, in days, for long-term backups
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -206,8 +206,7 @@ class LogAnalyticsEntityTypeProperty(dict):
                  name: _builtins.str,
                  description: Optional[_builtins.str] = None):
         """
-        :param _builtins.str name: Log analytics entity type property name. 
-               
+        :param _builtins.str name: Log analytics entity type property name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -221,8 +220,7 @@ class LogAnalyticsEntityTypeProperty(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        Log analytics entity type property name. 
-
+        Log analytics entity type property name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

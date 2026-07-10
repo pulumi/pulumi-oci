@@ -148,8 +148,7 @@ class _AdvancedClusterFileSystemState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] mount_point: The mount point of file system.
         :param pulumi.Input[_builtins.str] name: The user-friendly name for the Advanced cluster file system. The name has to be unique.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -291,8 +290,7 @@ class _AdvancedClusterFileSystemState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -561,8 +559,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] mount_point: The mount point of file system.
         :param pulumi.Input[_builtins.str] name: The user-friendly name for the Advanced cluster file system. The name has to be unique.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -662,8 +659,7 @@ class AdvancedClusterFileSystem(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

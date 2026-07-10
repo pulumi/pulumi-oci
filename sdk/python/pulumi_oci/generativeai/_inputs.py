@@ -1225,7 +1225,6 @@ class AgentKnowledgeBaseIndexConfigArgsDict(TypedDict):
     """
     (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1248,7 +1247,6 @@ class AgentKnowledgeBaseIndexConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseIndexConfigIndexArgs']]] indexes: (Updatable) Index configuration for open search.
         :param pulumi.Input['AgentKnowledgeBaseIndexConfigSecretDetailArgs'] secret_detail: (Updatable) The details of configured security configuration on OpenSearch.
         :param pulumi.Input[_builtins.bool] should_enable_hybrid_search: (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1344,7 +1342,6 @@ class AgentKnowledgeBaseIndexConfigArgs:
     def should_enable_hybrid_search(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1734,7 +1731,6 @@ class AgentToolToolConfigArgsDict(TypedDict):
     * `RAG_TOOL_CONFIG`: The config for rag Tool.
     * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1844,7 +1840,6 @@ class AgentToolToolConfigArgs:
                * `RAG_TOOL_CONFIG`: The config for rag Tool.
                * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] agent_endpoint_id: (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
@@ -1915,7 +1910,6 @@ class AgentToolToolConfigArgs:
         * `SQL_TOOL_CONFIG`: The config for sql Tool.
         * `RAG_TOOL_CONFIG`: The config for rag Tool.
         * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3866,7 +3860,7 @@ class ModelFineTuneDetailsArgsDict(TypedDict):
     """
     training_dataset: pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgsDict']
     """
-    The dataset used to fine-tune the model. 
+    The dataset used to fine-tune the model.
 
     Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
     """
@@ -3883,7 +3877,7 @@ class ModelFineTuneDetailsArgs:
                  training_config: pulumi.Input[Optional['ModelFineTuneDetailsTrainingConfigArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
-        :param pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs'] training_dataset: The dataset used to fine-tune the model. 
+        :param pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs'] training_dataset: The dataset used to fine-tune the model.
                
                Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         :param pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs'] training_config: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
@@ -3909,7 +3903,7 @@ class ModelFineTuneDetailsArgs:
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs']:
         """
-        The dataset used to fine-tune the model. 
+        The dataset used to fine-tune the model.
 
         Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         """
@@ -3951,7 +3945,7 @@ class ModelFineTuneDetailsTrainingConfigArgsDict(TypedDict):
     """
     log_model_metrics_interval_in_steps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    Determines how frequently to log model metrics. 
+    Determines how frequently to log model metrics.
 
     Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
     """
@@ -3999,7 +3993,7 @@ class ModelFineTuneDetailsTrainingConfigArgs:
         :param pulumi.Input[_builtins.int] early_stopping_patience: Stop training if the loss metric does not improve beyond 'early_stopping_threshold' for this many times of evaluation.
         :param pulumi.Input[_builtins.float] early_stopping_threshold: How much the loss must improve to prevent early stopping.
         :param pulumi.Input[_builtins.float] learning_rate: The initial learning rate to be used during training
-        :param pulumi.Input[_builtins.int] log_model_metrics_interval_in_steps: Determines how frequently to log model metrics. 
+        :param pulumi.Input[_builtins.int] log_model_metrics_interval_in_steps: Determines how frequently to log model metrics.
                
                Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         :param pulumi.Input[_builtins.int] lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
@@ -4083,7 +4077,7 @@ class ModelFineTuneDetailsTrainingConfigArgs:
     @pulumi.getter(name="logModelMetricsIntervalInSteps")
     def log_model_metrics_interval_in_steps(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        Determines how frequently to log model metrics. 
+        Determines how frequently to log model metrics.
 
         Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
         """
@@ -4621,7 +4615,6 @@ class ProjectShortTermMemoryOptimizationConfigArgsDict(TypedDict):
     """
     (Updatable) Indicates whether short-term memory optimization is enabled.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4638,7 +4631,6 @@ class ProjectShortTermMemoryOptimizationConfigArgs:
         """
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates whether short-term memory optimization is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['ProjectShortTermMemoryOptimizationConfigCondenserConfigArgs'] condenser_config: (Updatable) Configuration for condensing conversation content.
@@ -4652,7 +4644,6 @@ class ProjectShortTermMemoryOptimizationConfigArgs:
     def is_enabled(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) Indicates whether short-term memory optimization is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4915,8 +4906,7 @@ class SemanticStoreSchemasArgs:
 class SemanticStoreSchemasSchemaArgsDict(TypedDict):
     name: pulumi.Input[_builtins.str]
     """
-    (Updatable) 
-
+    (Updatable)
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4927,8 +4917,7 @@ class SemanticStoreSchemasSchemaArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] name: (Updatable) 
-               
+        :param pulumi.Input[_builtins.str] name: (Updatable)
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4939,8 +4928,7 @@ class SemanticStoreSchemasSchemaArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) 
-
+        (Updatable)
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

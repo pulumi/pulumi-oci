@@ -67,7 +67,6 @@ export class ProfileAttachSoftwareSourcesManagement extends pulumi.CustomResourc
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the profile.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -115,7 +114,6 @@ export interface ProfileAttachSoftwareSourcesManagementState {
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the profile.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -132,7 +130,6 @@ export interface ProfileAttachSoftwareSourcesManagementArgs {
     profileId: pulumi.Input<string>;
     /**
      * List of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to attach to the profile.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

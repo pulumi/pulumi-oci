@@ -32,8 +32,7 @@ class ExecutionWindowArgs:
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] execution_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The scheduled start date and time of the execution window.
-        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-               
+        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -92,8 +91,7 @@ class ExecutionWindowArgs:
     @pulumi.getter(name="windowDurationInMins")
     def window_duration_in_mins(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,8 +181,7 @@ class _ExecutionWindowState:
         :param pulumi.Input[_builtins.str] time_started: The date and time that the execution window was started.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the execution window was updated.
         :param pulumi.Input[_builtins.int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
-        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-               
+        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -437,8 +434,7 @@ class _ExecutionWindowState:
     @pulumi.getter(name="windowDurationInMins")
     def window_duration_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -516,8 +512,7 @@ class ExecutionWindow(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_enforced_duration: (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
         :param pulumi.Input[_builtins.str] time_scheduled: (Updatable) The scheduled start date and time of the execution window.
-        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-               
+        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -671,8 +666,7 @@ class ExecutionWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_started: The date and time that the execution window was started.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time that the execution window was updated.
         :param pulumi.Input[_builtins.int] total_time_taken_in_mins: The total time taken by corresponding resource activity in minutes.
-        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-               
+        :param pulumi.Input[_builtins.int] window_duration_in_mins: (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -843,8 +837,7 @@ class ExecutionWindow(pulumi.CustomResource):
     @pulumi.getter(name="windowDurationInMins")
     def window_duration_in_mins(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-
+        (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

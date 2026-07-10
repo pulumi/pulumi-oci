@@ -3193,7 +3193,6 @@ class AssetVmwareVm(dict):
         :param _builtins.str path: (Updatable) Path directory of the asset.
         :param _builtins.str vmware_tools_status: (Updatable) VMware tools status.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3305,7 +3304,6 @@ class AssetVmwareVm(dict):
     def vmware_tools_status(self) -> Optional[_builtins.str]:
         """
         (Updatable) VMware tools status.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5928,7 +5926,7 @@ class GetAssetSourceDiscoveryCredentialResult(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param _builtins.str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -5938,7 +5936,7 @@ class GetAssetSourceDiscoveryCredentialResult(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -5957,7 +5955,7 @@ class GetAssetSourceReplicationCredentialResult(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param _builtins.str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -5967,7 +5965,7 @@ class GetAssetSourceReplicationCredentialResult(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -6268,7 +6266,7 @@ class GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param _builtins.str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -6278,7 +6276,7 @@ class GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         """
         return pulumi.get(self, "secret_id")
 
@@ -6297,7 +6295,7 @@ class GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult(dict):
                  secret_id: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         :param _builtins.str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
         """
         pulumi.set(__self__, "secret_id", secret_id)
@@ -6307,7 +6305,7 @@ class GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult(dict):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
         """
         return pulumi.get(self, "secret_id")
 

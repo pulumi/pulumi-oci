@@ -51,8 +51,7 @@ class ProtectedDatabaseArgs:
                * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_redo_logs_shipped: (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
-        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-               
+        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +227,7 @@ class ProtectedDatabaseArgs:
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,8 +290,7 @@ class _ProtectedDatabaseState:
         :param pulumi.Input[_builtins.str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input['ProtectedDatabaseRecoveryServiceSubnetArgs']]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[_builtins.str] state: The current state of the Protected Database.
-        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-               
+        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -585,8 +582,7 @@ class _ProtectedDatabaseState:
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -727,8 +723,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
         :param pulumi.Input[_builtins.str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
-        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-               
+        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -921,8 +916,7 @@ class ProtectedDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] protection_policy_id: (Updatable) The OCID of the protection policy associated with the protected database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict']]]] recovery_service_subnets: (Updatable) List of recovery service subnet resources associated with the protected database.
         :param pulumi.Input[_builtins.str] state: The current state of the Protected Database.
-        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-               
+        :param pulumi.Input[_builtins.str] subscription_id: (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1119,8 +1113,7 @@ class ProtectedDatabase(pulumi.CustomResource):
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure. 
-
+        (Updatable) The OCID of the cloud service subscription to which you want to link the protected database.  For example, specify the Microsoft Azure subscription ID if you want to provision the protected database in Azure.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

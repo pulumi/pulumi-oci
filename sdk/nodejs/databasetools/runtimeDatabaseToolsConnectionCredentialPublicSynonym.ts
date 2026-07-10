@@ -72,7 +72,6 @@ export class RuntimeDatabaseToolsConnectionCredentialPublicSynonym extends pulum
     /**
      * The name of the public synonym for the credential
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -129,7 +128,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialPublicSynonymState {
     /**
      * The name of the public synonym for the credential
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -150,7 +148,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs {
     databaseToolsConnectionId: pulumi.Input<string>;
     /**
      * The name of the public synonym for the credential
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

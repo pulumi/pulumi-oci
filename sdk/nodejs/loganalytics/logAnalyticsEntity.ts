@@ -173,8 +173,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -350,8 +349,7 @@ export interface LogAnalyticsEntityState {
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -416,8 +414,7 @@ export interface LogAnalyticsEntityArgs {
      */
     timeLastDiscovered?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The timezone region of the log analytics entity. 
-     *
+     * (Updatable) The timezone region of the log analytics entity.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

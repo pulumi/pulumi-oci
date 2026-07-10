@@ -37,7 +37,6 @@ class AddonArgs:
         :param pulumi.Input[_builtins.bool] override_existing: Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of addon to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -117,7 +116,6 @@ class AddonArgs:
         """
         (Updatable) The version of addon to be installed.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -154,7 +152,6 @@ class _AddonState:
         :param pulumi.Input[_builtins.str] state: The state of the addon.
         :param pulumi.Input[_builtins.str] time_created: The time the cluster was created.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of addon to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,7 +291,6 @@ class _AddonState:
         """
         (Updatable) The version of addon to be installed.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -343,7 +339,6 @@ class Addon(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] override_existing: Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
         :param pulumi.Input[_builtins.bool] remove_addon_resources_on_delete: Whether to remove addon resource in deletion.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of addon to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -455,7 +450,6 @@ class Addon(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the cluster was created.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of addon to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -552,7 +546,6 @@ class Addon(pulumi.CustomResource):
     def version(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) The version of addon to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

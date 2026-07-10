@@ -89,8 +89,7 @@ export class NetworkFirewallPolicyService extends pulumi.CustomResource {
      */
     declare public readonly portRanges: pulumi.Output<outputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange[]>;
     /**
-     * Describes the type of Service. The accepted values are 
-     *
+     * Describes the type of Service. The accepted values are
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,8 +163,7 @@ export interface NetworkFirewallPolicyServiceState {
      */
     portRanges?: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange>[] | undefined>;
     /**
-     * Describes the type of Service. The accepted values are 
-     *
+     * Describes the type of Service. The accepted values are
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,8 +192,7 @@ export interface NetworkFirewallPolicyServiceArgs {
      */
     portRanges: pulumi.Input<pulumi.Input<inputs.NetworkFirewall.NetworkFirewallPolicyServicePortRange>[]>;
     /**
-     * Describes the type of Service. The accepted values are 
-     *
+     * Describes the type of Service. The accepted values are
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

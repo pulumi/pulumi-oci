@@ -62,7 +62,6 @@ export class MonitorPluginManagement extends pulumi.CustomResource {
     /**
      * OCID of monitored instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -116,7 +115,6 @@ export interface MonitorPluginManagementState {
     /**
      * OCID of monitored instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -131,7 +129,6 @@ export interface MonitorPluginManagementState {
 export interface MonitorPluginManagementArgs {
     /**
      * OCID of monitored instance.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

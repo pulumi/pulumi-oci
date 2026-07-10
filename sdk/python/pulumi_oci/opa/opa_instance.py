@@ -45,8 +45,7 @@ class OpaInstanceArgs:
         :param pulumi.Input[_builtins.str] idcs_at: IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
         :param pulumi.Input[_builtins.bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[_builtins.str] metering_type: MeteringType Identifier
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,8 +194,7 @@ class OpaInstanceArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,8 +248,7 @@ class _OpaInstanceState:
         :param pulumi.Input[_builtins.bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[_builtins.str] metering_type: MeteringType Identifier
         :param pulumi.Input[_builtins.str] shape_name: Shape of the instance.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -496,8 +493,7 @@ class _OpaInstanceState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -615,8 +611,7 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[_builtins.str] metering_type: MeteringType Identifier
         :param pulumi.Input[_builtins.str] shape_name: Shape of the instance.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -781,8 +776,7 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[_builtins.str] metering_type: MeteringType Identifier
         :param pulumi.Input[_builtins.str] shape_name: Shape of the instance.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -948,8 +942,7 @@ class OpaInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

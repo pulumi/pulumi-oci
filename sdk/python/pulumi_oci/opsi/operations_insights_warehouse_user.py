@@ -36,7 +36,6 @@ class OperationsInsightsWarehouseUserArgs:
         :param pulumi.Input[_builtins.bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -101,7 +100,6 @@ class OperationsInsightsWarehouseUserArgs:
     def operations_insights_warehouse_id(self) -> pulumi.Input[_builtins.str]:
         """
         OPSI Warehouse OCID
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +201,6 @@ class _OperationsInsightsWarehouseUserState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,7 +352,6 @@ class _OperationsInsightsWarehouseUserState:
         """
         OPSI Warehouse OCID
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -481,7 +477,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
         :param pulumi.Input[_builtins.str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: OPSI Warehouse OCID
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -631,7 +626,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: Possible lifecycle states
@@ -736,7 +730,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
     def operations_insights_warehouse_id(self) -> pulumi.Output[_builtins.str]:
         """
         OPSI Warehouse OCID
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

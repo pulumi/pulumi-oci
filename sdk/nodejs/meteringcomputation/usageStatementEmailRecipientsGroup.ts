@@ -84,7 +84,6 @@ export class UsageStatementEmailRecipientsGroup extends pulumi.CustomResource {
     /**
      * The usage statement subscription unique OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -150,7 +149,6 @@ export interface UsageStatementEmailRecipientsGroupState {
     /**
      * The usage statement subscription unique OCID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -172,7 +170,6 @@ export interface UsageStatementEmailRecipientsGroupArgs {
     recipientsLists: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageStatementEmailRecipientsGroupRecipientsList>[]>;
     /**
      * The usage statement subscription unique OCID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

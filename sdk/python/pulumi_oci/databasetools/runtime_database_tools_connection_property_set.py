@@ -42,7 +42,6 @@ class RuntimeDatabaseToolsConnectionPropertySetArgs:
         :param pulumi.Input[_builtins.str] key: (Updatable) The name of the property set
         :param pulumi.Input[_builtins.str] property_set_key: The name of the property set
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] authentication_substitutions: (Updatable) APEX FA Integration key-value pairs.
@@ -112,7 +111,6 @@ class RuntimeDatabaseToolsConnectionPropertySetArgs:
     def property_set_key(self) -> pulumi.Input[_builtins.str]:
         """
         The name of the property set
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -296,7 +294,6 @@ class _RuntimeDatabaseToolsConnectionPropertySetState:
         :param pulumi.Input[Sequence[pulumi.Input['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs']]] prerequisites_checks: The results of a prerequisites check for APEX FA integration
         :param pulumi.Input[_builtins.str] print_server_type: (Updatable) The print server type
         :param pulumi.Input[_builtins.str] property_set_key: The name of the property set
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -526,7 +523,6 @@ class _RuntimeDatabaseToolsConnectionPropertySetState:
         """
         The name of the property set
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -641,7 +637,6 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] object_storage_namespace: (Updatable) The Object Storage Namespace containing the Object Storage Buckets managed by APEX
         :param pulumi.Input[_builtins.str] print_server_type: (Updatable) The print server type
         :param pulumi.Input[_builtins.str] property_set_key: The name of the property set
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -809,7 +804,6 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] print_server_type: (Updatable) The print server type
         :param pulumi.Input[_builtins.str] property_set_key: The name of the property set
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] user_key: The APEX engine schema name
@@ -964,7 +958,6 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
     def property_set_key(self) -> pulumi.Output[_builtins.str]:
         """
         The name of the property set
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -96,7 +96,6 @@ export class ResponderRecipe extends pulumi.CustomResource {
     /**
      * The unique identifier of the source responder recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -225,7 +224,6 @@ export interface ResponderRecipeState {
     /**
      * The unique identifier of the source responder recipe
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -284,7 +282,6 @@ export interface ResponderRecipeArgs {
     responderRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.ResponderRecipeResponderRule>[] | undefined>;
     /**
      * The unique identifier of the source responder recipe
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

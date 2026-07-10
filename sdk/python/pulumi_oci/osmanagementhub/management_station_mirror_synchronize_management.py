@@ -27,7 +27,6 @@ class ManagementStationMirrorSynchronizeManagementArgs:
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class ManagementStationMirrorSynchronizeManagementArgs:
         """
         Unique Software Source identifier
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _ManagementStationMirrorSynchronizeManagementState:
 
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _ManagementStationMirrorSynchronizeManagementState:
     def mirror_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Software Source identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -153,7 +149,6 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,7 +241,6 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] management_station_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
         :param pulumi.Input[_builtins.str] mirror_id: Unique Software Source identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -271,7 +265,6 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
     def mirror_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique Software Source identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

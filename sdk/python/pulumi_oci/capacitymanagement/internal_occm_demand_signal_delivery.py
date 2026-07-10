@@ -36,8 +36,7 @@ class InternalOccmDemandSignalDeliveryArgs:
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy from which the demand signal delivery resource is created.
         :param pulumi.Input[_builtins.str] demand_signal_id: The OCID of the demand signal under which this delivery will be grouped.
         :param pulumi.Input[_builtins.str] demand_signal_item_id: The OCID of the demand signal item corresponding to which this delivery is made.
-        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-               
+        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,8 +114,7 @@ class InternalOccmDemandSignalDeliveryArgs:
     @pulumi.getter(name="occCustomerGroupId")
     def occ_customer_group_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-
+        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,8 +214,7 @@ class _InternalOccmDemandSignalDeliveryState:
         :param pulumi.Input[_builtins.str] justification: (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
         :param pulumi.Input[_builtins.str] lifecycle_details: The enum values corresponding to the various states associated with the delivery resource.
         :param pulumi.Input[_builtins.str] notes: (Updatable) This field acts as a notes section for operators.
-        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-               
+        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,8 +361,7 @@ class _InternalOccmDemandSignalDeliveryState:
     @pulumi.getter(name="occCustomerGroupId")
     def occ_customer_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-
+        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -482,8 +478,7 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] justification: (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
         :param pulumi.Input[_builtins.str] lifecycle_details: The enum values corresponding to the various states associated with the delivery resource.
         :param pulumi.Input[_builtins.str] notes: (Updatable) This field acts as a notes section for operators.
-        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-               
+        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -631,8 +626,7 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] justification: (Updatable) This field could be used by Oracle Cloud Infrastructure to communicate the reason for declining the request.
         :param pulumi.Input[_builtins.str] lifecycle_details: The enum values corresponding to the various states associated with the delivery resource.
         :param pulumi.Input[_builtins.str] notes: (Updatable) This field acts as a notes section for operators.
-        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-               
+        :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -735,8 +729,7 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
     @pulumi.getter(name="occCustomerGroupId")
     def occ_customer_group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-
+        The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

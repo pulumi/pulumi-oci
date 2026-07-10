@@ -41,7 +41,6 @@ class DrPlanArgs:
         :param pulumi.Input[_builtins.str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
         :param pulumi.Input[_builtins.int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -149,7 +148,6 @@ class DrPlanArgs:
         """
         (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -202,7 +200,6 @@ class _DrPlanState:
         :param pulumi.Input[_builtins.str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] type: The type of DR plan to be created.
         :param pulumi.Input[_builtins.int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -454,7 +451,6 @@ class _DrPlanState:
         """
         (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -526,7 +522,6 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source_plan_id: The OCID of the source DR plan that should be cloned.  Example: `ocid1.drplan.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] type: The type of DR plan to be created.
         :param pulumi.Input[_builtins.int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -682,7 +677,6 @@ class DrPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[_builtins.str] type: The type of DR plan to be created.
         :param pulumi.Input[_builtins.int] verify_trigger: (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -852,7 +846,6 @@ class DrPlan(pulumi.CustomResource):
     def verify_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

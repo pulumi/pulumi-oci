@@ -39,7 +39,6 @@ class ExportArgs:
                
                Example: `/mediafiles`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ExportExportOptionArgs']]] export_options: (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
@@ -101,7 +100,6 @@ class ExportArgs:
         Avoid entering confidential information.
 
         Example: `/mediafiles`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +201,6 @@ class _ExportState:
                Avoid entering confidential information.
                
                Example: `/mediafiles`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -317,7 +314,6 @@ class _ExportState:
         Avoid entering confidential information.
 
         Example: `/mediafiles`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -436,7 +432,6 @@ class Export(pulumi.CustomResource):
                Avoid entering confidential information.
                
                Example: `/mediafiles`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -587,7 +582,6 @@ class Export(pulumi.CustomResource):
                
                Example: `/mediafiles`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of this export.
@@ -672,7 +666,6 @@ class Export(pulumi.CustomResource):
         Avoid entering confidential information.
 
         Example: `/mediafiles`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

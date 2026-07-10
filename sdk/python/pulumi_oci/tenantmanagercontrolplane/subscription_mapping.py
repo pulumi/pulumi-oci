@@ -27,7 +27,6 @@ class SubscriptionMappingArgs:
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment. Always a tenancy OCID.
         :param pulumi.Input[_builtins.str] subscription_id: OCID of Subscription.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -51,7 +50,6 @@ class SubscriptionMappingArgs:
     def subscription_id(self) -> pulumi.Input[_builtins.str]:
         """
         OCID of Subscription.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -80,7 +78,6 @@ class _SubscriptionMappingState:
         :param pulumi.Input[_builtins.bool] is_explicitly_assigned: Denotes if the subscription is explicity assigned to the root compartment or tenancy.
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the subscriptionMapping.
         :param pulumi.Input[_builtins.str] subscription_id: OCID of Subscription.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -144,7 +141,6 @@ class _SubscriptionMappingState:
     def subscription_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of Subscription.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -233,7 +229,6 @@ class SubscriptionMapping(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: OCID of the compartment. Always a tenancy OCID.
         :param pulumi.Input[_builtins.str] subscription_id: OCID of Subscription.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,7 +333,6 @@ class SubscriptionMapping(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: Lifecycle state of the subscriptionMapping.
         :param pulumi.Input[_builtins.str] subscription_id: OCID of Subscription.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: Date-time when subscription mapping was created.
@@ -387,7 +381,6 @@ class SubscriptionMapping(pulumi.CustomResource):
     def subscription_id(self) -> pulumi.Output[_builtins.str]:
         """
         OCID of Subscription.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

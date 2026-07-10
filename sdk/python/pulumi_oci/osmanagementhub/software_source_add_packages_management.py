@@ -28,7 +28,6 @@ class SoftwareSourceAddPackagesManagementArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
@@ -55,7 +54,6 @@ class SoftwareSourceAddPackagesManagementArgs:
     def software_source_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -91,7 +89,6 @@ class _SoftwareSourceAddPackagesManagementState:
         :param pulumi.Input[_builtins.bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,7 +129,6 @@ class _SoftwareSourceAddPackagesManagementState:
     def software_source_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,7 +189,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_continue_on_missing_packages: Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -296,7 +291,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] packages: List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -330,7 +324,6 @@ class SoftwareSourceAddPackagesManagement(pulumi.CustomResource):
     def software_source_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

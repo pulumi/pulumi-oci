@@ -31,8 +31,7 @@ class FsuReadinessCheckArgs:
         The set of arguments for constructing a FsuReadinessCheck resource.
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
-        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check. 
-               
+        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68,8 +67,7 @@ class FsuReadinessCheckArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of Exadata Fleet Update Readiness Check. 
-
+        Type of Exadata Fleet Update Readiness Check.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -162,8 +160,7 @@ class _FsuReadinessCheckState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[_builtins.str] time_finished: The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check. 
-               
+        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -357,8 +354,7 @@ class _FsuReadinessCheckState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Type of Exadata Fleet Update Readiness Check. 
-
+        Type of Exadata Fleet Update Readiness Check.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -429,8 +425,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the Exadata Fleet Update Readiness Check resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['FsuReadinessCheckTargetArgs', 'FsuReadinessCheckTargetArgsDict']]]] targets: List of targets that will run the Exadata Fleet Update Readiness Check. The targets have to be of the same entity type.
-        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check. 
-               
+        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -572,8 +567,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the Exadata Fleet Update Readiness Check was created, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
         :param pulumi.Input[_builtins.str] time_finished: The date and time the Exadata Fleet Update Readiness Check was finished, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the Exadata Fleet Update Readiness Check was updated, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check. 
-               
+        :param pulumi.Input[_builtins.str] type: Type of Exadata Fleet Update Readiness Check.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -706,8 +700,7 @@ class FsuReadinessCheck(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        Type of Exadata Fleet Update Readiness Check. 
-
+        Type of Exadata Fleet Update Readiness Check.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -38,7 +38,6 @@ class MediaWorkflowJobArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) ID of the compartment in which the job should be created.
         :param pulumi.Input[_builtins.str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -88,7 +87,6 @@ class MediaWorkflowJobArgs:
     def workflow_identifier_type(self) -> pulumi.Input[_builtins.str]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,7 +250,6 @@ class _MediaWorkflowJobState:
         :param pulumi.Input[_builtins.str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -543,7 +540,6 @@ class _MediaWorkflowJobState:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -630,7 +626,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] media_workflow_name: Name of the system MediaWorkflow that should be run.
         :param pulumi.Input[_builtins.str] parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON. The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         :param pulumi.Input[_builtins.str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -805,7 +800,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_started: Time when the job started to execute. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: Updated time of the job. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] workflow_identifier_type: Discriminate identification of a workflow by name versus a workflow by ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -999,7 +993,6 @@ class MediaWorkflowJob(pulumi.CustomResource):
     def workflow_identifier_type(self) -> pulumi.Output[_builtins.str]:
         """
         Discriminate identification of a workflow by name versus a workflow by ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

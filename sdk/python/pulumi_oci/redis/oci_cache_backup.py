@@ -39,7 +39,6 @@ class OciCacheBackupArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) Backup description
         :param pulumi.Input[_builtins.int] export_to_object_storage_trigger: (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -139,7 +138,6 @@ class OciCacheBackupArgs:
         """
         (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -209,7 +207,6 @@ class _OciCacheBackupState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Backup description
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Backup display name.
         :param pulumi.Input[_builtins.int] export_to_object_storage_trigger: (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -375,7 +372,6 @@ class _OciCacheBackupState:
     def export_to_object_storage_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -558,7 +554,6 @@ class OciCacheBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Backup display name.
         :param pulumi.Input[_builtins.int] export_to_object_storage_trigger: (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -714,7 +709,6 @@ class OciCacheBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Backup display name.
         :param pulumi.Input[_builtins.int] export_to_object_storage_trigger: (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -829,7 +823,6 @@ class OciCacheBackup(pulumi.CustomResource):
     def export_to_object_storage_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

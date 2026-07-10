@@ -143,7 +143,6 @@ export class UnifiedAuditPolicy extends pulumi.CustomResource {
     /**
      * The OCID of the associated unified audit policy definition.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -284,7 +283,6 @@ export interface UnifiedAuditPolicyState {
     /**
      * The OCID of the associated unified audit policy definition.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -329,7 +327,6 @@ export interface UnifiedAuditPolicyArgs {
     status: pulumi.Input<string>;
     /**
      * The OCID of the associated unified audit policy definition.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

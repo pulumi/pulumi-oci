@@ -48,7 +48,6 @@ class InstanceConfigurationArgs:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -151,7 +150,6 @@ class InstanceConfigurationArgs:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -194,7 +192,6 @@ class _InstanceConfigurationState:
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -315,7 +312,6 @@ class _InstanceConfigurationState:
         The following values are supported:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -799,7 +795,6 @@ class InstanceConfiguration(pulumi.CustomResource):
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1324,7 +1319,6 @@ class InstanceConfiguration(pulumi.CustomResource):
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -1412,7 +1406,6 @@ class InstanceConfiguration(pulumi.CustomResource):
         The following values are supported:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

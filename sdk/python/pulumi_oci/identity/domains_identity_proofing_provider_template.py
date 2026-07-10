@@ -80,7 +80,6 @@ class DomainsIdentityProofingProviderTemplateArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -218,7 +217,6 @@ class DomainsIdentityProofingProviderTemplateArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -542,7 +540,6 @@ class _DomainsIdentityProofingProviderTemplateState:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1034,7 +1031,6 @@ class _DomainsIdentityProofingProviderTemplateState:
         * type: string
         * uniqueness: none
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1174,7 +1170,6 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1527,7 +1522,6 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1912,7 +1906,6 @@ class DomainsIdentityProofingProviderTemplate(pulumi.CustomResource):
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -134,8 +134,7 @@ export class DrPlanExecution extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly planExecutionType: pulumi.Output<string>;
     /**
-     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-     *
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -308,8 +307,7 @@ export interface DrPlanExecutionState {
      */
     planExecutionType?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-     *
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -366,8 +364,7 @@ export interface DrPlanExecutionArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID` 
-     *
+     * The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -745,7 +745,6 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetails(dict):
         :param _builtins.str stream_access_type: (Updatable) Type of access Allowed values are:
                * PRIVATE
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -767,7 +766,6 @@ class StreamSourceStreamSourceDetailsStreamNetworkAccessDetails(dict):
         (Updatable) Type of access Allowed values are:
         * PRIVATE
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -787,7 +785,7 @@ class GetModelTestingDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
-               >>>>>>> theirs
+               > > > > > > > theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -825,7 +823,7 @@ class GetModelTestingDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
-        >>>>>>> theirs
+        > > > > > > > theirs
         """
         return pulumi.get(self, "namespace_name")
 
@@ -851,7 +849,7 @@ class GetModelTrainingDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
-               >>>>>>> theirs
+               > > > > > > > theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -889,7 +887,7 @@ class GetModelTrainingDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
-        >>>>>>> theirs
+        > > > > > > > theirs
         """
         return pulumi.get(self, "namespace_name")
 
@@ -915,7 +913,7 @@ class GetModelValidationDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
-               >>>>>>> theirs
+               > > > > > > > theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -953,7 +951,7 @@ class GetModelValidationDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
-        >>>>>>> theirs
+        > > > > > > > theirs
         """
         return pulumi.get(self, "namespace_name")
 

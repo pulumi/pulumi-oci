@@ -41,7 +41,6 @@ class AgentAgentArgs:
         :param pulumi.Input['AgentAgentLlmConfigArgs'] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[_builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -151,7 +150,6 @@ class AgentAgentArgs:
         """
         (Updatable) Details about purpose and responsibility of the agent
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -194,7 +192,6 @@ class _AgentAgentState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -376,7 +373,6 @@ class _AgentAgentState:
         """
         (Updatable) Details about purpose and responsibility of the agent
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -461,7 +457,6 @@ class AgentAgent(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         :param pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[_builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -612,7 +607,6 @@ class AgentAgent(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The date and time the agent was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -736,7 +730,6 @@ class AgentAgent(pulumi.CustomResource):
     def welcome_message(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Details about purpose and responsibility of the agent
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

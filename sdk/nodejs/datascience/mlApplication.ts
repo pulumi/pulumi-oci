@@ -90,7 +90,6 @@ export class MlApplication extends pulumi.CustomResource {
     /**
      * The name of MlApplication. It is unique in a given tenancy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -183,7 +182,6 @@ export interface MlApplicationState {
     /**
      * The name of MlApplication. It is unique in a given tenancy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -228,7 +226,6 @@ export interface MlApplicationArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of MlApplication. It is unique in a given tenancy.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

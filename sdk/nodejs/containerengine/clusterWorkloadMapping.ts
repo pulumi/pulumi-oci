@@ -90,7 +90,6 @@ export class ClusterWorkloadMapping extends pulumi.CustomResource {
     /**
      * The namespace of the workloadMapping.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -177,7 +176,6 @@ export interface ClusterWorkloadMappingState {
     /**
      * The namespace of the workloadMapping.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -214,7 +212,6 @@ export interface ClusterWorkloadMappingArgs {
     mappedCompartmentId: pulumi.Input<string>;
     /**
      * The namespace of the workloadMapping.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

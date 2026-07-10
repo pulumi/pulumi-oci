@@ -47,7 +47,6 @@ class DetectorRecipeArgs:
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] source_detector_recipe_id: The ID of the source detector recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -162,7 +161,6 @@ class DetectorRecipeArgs:
         """
         The ID of the source detector recipe
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -212,7 +210,6 @@ class _DetectorRecipeState:
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] owner: Owner of detector recipe
         :param pulumi.Input[_builtins.str] source_detector_recipe_id: The ID of the source detector recipe
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -387,7 +384,6 @@ class _DetectorRecipeState:
         """
         The ID of the source detector recipe
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -506,7 +502,6 @@ class DetectorRecipe(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] source_detector_recipe_id: The ID of the source detector recipe
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -637,7 +632,6 @@ class DetectorRecipe(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] owner: Owner of detector recipe
         :param pulumi.Input[_builtins.str] source_detector_recipe_id: The ID of the source detector recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource
@@ -759,7 +753,6 @@ class DetectorRecipe(pulumi.CustomResource):
     def source_detector_recipe_id(self) -> pulumi.Output[_builtins.str]:
         """
         The ID of the source detector recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

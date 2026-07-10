@@ -105,8 +105,7 @@ class RuleActionsAction(dict):
                * **ONS:** Send to an Oracle Notification Service topic.
                * **OSS:** Send to a stream from Oracle Streaming Service.
                * **FAAS:** Send to an Oracle Functions Service endpoint.
-        :param _builtins.bool is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-               
+        :param _builtins.bool is_enabled: (Updatable) Whether or not this rule is currently enabled.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -150,8 +149,7 @@ class RuleActionsAction(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> _builtins.bool:
         """
-        (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-
+        (Updatable) Whether or not this rule is currently enabled.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

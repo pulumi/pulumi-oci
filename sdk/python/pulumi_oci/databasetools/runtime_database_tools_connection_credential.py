@@ -35,7 +35,6 @@ class RuntimeDatabaseToolsConnectionCredentialArgs:
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The username for the new credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -99,7 +98,6 @@ class RuntimeDatabaseToolsConnectionCredentialArgs:
         """
         (Updatable) The username for the new credential.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -135,7 +133,6 @@ class _RuntimeDatabaseToolsConnectionCredentialState:
         :param pulumi.Input[Sequence[pulumi.Input['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs']]] related_resources: A related resource for a credential.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The username for the new credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -264,7 +261,6 @@ class _RuntimeDatabaseToolsConnectionCredentialState:
         """
         (Updatable) The username for the new credential.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -337,7 +333,6 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password: (Updatable) The password for the new credential.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The username for the new credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -467,7 +462,6 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of credential.
         :param pulumi.Input[_builtins.str] user_name: (Updatable) The username for the new credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] windows_domain: For a Windows target, the Windows domain to use when logging in
@@ -557,7 +551,6 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
     def user_name(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The username for the new credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

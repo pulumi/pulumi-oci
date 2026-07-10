@@ -50,7 +50,6 @@ class DbmulticloudOracleDbAwsKeyArgs:
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: AWS Key resource type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -225,7 +224,6 @@ class DbmulticloudOracleDbAwsKeyArgs:
         """
         AWS Key resource type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -279,7 +277,6 @@ class _DbmulticloudOracleDbAwsKeyState:
         :param pulumi.Input[_builtins.str] time_created: Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] type: AWS Key resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -542,7 +539,6 @@ class _DbmulticloudOracleDbAwsKeyState:
         """
         AWS Key resource type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -628,7 +624,6 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: AWS Key resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -796,7 +791,6 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Time when the DB AWS Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB AWS Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
         :param pulumi.Input[_builtins.str] type: AWS Key resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -972,7 +966,6 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         AWS Key resource type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

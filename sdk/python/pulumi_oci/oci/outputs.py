@@ -940,8 +940,7 @@ class BatchBatchContextFleet(dict):
         :param 'BatchBatchContextFleetShapeArgs' shape: Shape of the fleet. For `SERVICE_MANAGED_FLEET`, provide the CPU fleet shape fields. For `SERVICE_MANAGED_GPU_FLEET`, provide the GPU fleet shape fields.
         :param _builtins.str type: Type of the fleet. Supported values are `SERVICE_MANAGED_FLEET` and `SERVICE_MANAGED_GPU_FLEET`.
         :param _builtins.str details: A message that describes the current state of the service managed fleet configuration in more detail.
-        :param _builtins.str state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param _builtins.str state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -999,8 +998,7 @@ class BatchBatchContextFleet(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1762,7 +1760,6 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail(dict):
         :param _builtins.str service_private_endpoint: (Updatable) Private endpoint of the AWS service.
         :param _builtins.str service_type: (Updatable) Type of service.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str assume_role_status: Assume role  status.
@@ -1797,7 +1794,6 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail(dict):
     def service_type(self) -> _builtins.str:
         """
         (Updatable) Type of service.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10214,7 +10210,6 @@ class ManagedKafkaKafkaClusterConfigLatestConfig(dict):
         :param _builtins.str time_created: (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.int version_number: (Updatable) Version of the cluster configuration
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10255,7 +10250,6 @@ class ManagedKafkaKafkaClusterConfigLatestConfig(dict):
     def version_number(self) -> Optional[_builtins.int]:
         """
         (Updatable) Version of the cluster configuration
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -10403,7 +10397,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails(d
         :param Sequence[_builtins.str] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10476,7 +10469,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails(d
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10511,7 +10503,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
         :param Sequence[_builtins.str] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s for the private network details.  Example: `["ocid...", "ocid..."]`
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -10533,7 +10524,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsNe
     def subnet_id(self) -> Optional[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet for the private network details.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

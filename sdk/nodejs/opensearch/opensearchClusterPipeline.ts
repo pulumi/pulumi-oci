@@ -179,7 +179,6 @@ export class OpensearchClusterPipeline extends pulumi.CustomResource {
     /**
      * (Updatable) The OCID of the pipeline's VCN.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -374,7 +373,6 @@ export interface OpensearchClusterPipelineState {
     /**
      * (Updatable) The OCID of the pipeline's VCN.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -451,7 +449,6 @@ export interface OpensearchClusterPipelineArgs {
     vcnCompartmentId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The OCID of the pipeline's VCN.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

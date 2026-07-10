@@ -102,7 +102,6 @@ export class Configuration extends pulumi.CustomResource {
     /**
      * The enabled or disabled status of ZPR in the tenancy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -189,7 +188,6 @@ export interface ConfigurationState {
     /**
      * The enabled or disabled status of ZPR in the tenancy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -214,7 +212,6 @@ export interface ConfigurationArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The enabled or disabled status of ZPR in the tenancy.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

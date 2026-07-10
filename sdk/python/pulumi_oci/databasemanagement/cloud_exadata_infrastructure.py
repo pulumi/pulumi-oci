@@ -35,7 +35,6 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vm_cluster_ids: (Updatable) The list of VM Clusters in the Exadata infrastructure.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -77,7 +76,6 @@ class CloudExadataInfrastructureArgs:
     def vm_cluster_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
         """
         (Updatable) The list of VM Clusters in the Exadata infrastructure.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +211,6 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[_builtins.str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[_builtins.str] version: The version of the Exadata resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vm_cluster_ids: (Updatable) The list of VM Clusters in the Exadata infrastructure.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -535,7 +532,6 @@ class _CloudExadataInfrastructureState:
         """
         (Updatable) The list of VM Clusters in the Exadata infrastructure.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -623,7 +619,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the database management resources.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] storage_server_names: (Updatable) The list of all the Exadata storage server names to be included for monitoring purposes. If not specified, all the Exadata storage servers associated with the VM Clusters are included.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vm_cluster_ids: (Updatable) The list of VM Clusters in the Exadata infrastructure.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -797,7 +792,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The timestamp of the last update of the Exadata resource.
         :param pulumi.Input[_builtins.str] version: The version of the Exadata resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vm_cluster_ids: (Updatable) The list of VM Clusters in the Exadata infrastructure.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1011,7 +1005,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def vm_cluster_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) The list of VM Clusters in the Exadata infrastructure.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

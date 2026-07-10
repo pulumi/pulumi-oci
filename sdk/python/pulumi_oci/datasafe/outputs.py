@@ -979,7 +979,6 @@ class AuditPolicyManagementAuditCondition(dict):
         :param _builtins.bool is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param _builtins.bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1031,7 +1030,6 @@ class AuditPolicyManagementAuditCondition(dict):
     def is_priv_users_managed_by_data_safe(self) -> Optional[_builtins.bool]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2525,7 +2523,6 @@ class DiscoveryModTablesForDiscovery(dict):
         :param _builtins.str schema_name: This contains the name of the schema.
         :param Sequence[_builtins.str] table_names: This contains an optional list of the table names.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2546,7 +2543,6 @@ class DiscoveryModTablesForDiscovery(dict):
     def table_names(self) -> Optional[Sequence[_builtins.str]]:
         """
         This contains an optional list of the table names.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3728,7 +3724,6 @@ class ReportDefinitionSummary(dict):
         :param _builtins.bool is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param _builtins.str scim_filter: (Updatable) Additional scim filters used to get the specific summary.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -3788,7 +3783,6 @@ class ReportDefinitionSummary(dict):
     def scim_filter(self) -> Optional[_builtins.str]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5258,7 +5252,6 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfig(dict):
         """
         :param _builtins.str exclude_datasafe_user: (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5270,7 +5263,6 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfig(dict):
     def exclude_datasafe_user(self) -> Optional[_builtins.str]:
         """
         (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6053,7 +6045,6 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param Sequence[_builtins.str] target_database_ids: (Updatable) The list of target database OCIDs to be included in the target database group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -6095,7 +6086,6 @@ class TargetDatabaseGroupMatchingCriteriaInclude(dict):
     def target_database_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
         (Updatable) The list of target database OCIDs to be included in the target database group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7016,7 +7006,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfig(dict):
         :param _builtins.str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param _builtins.str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -7067,7 +7056,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfig(dict):
     def trust_store_content(self) -> Optional[_builtins.str]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7113,7 +7101,6 @@ class TargetDatabaseTlsConfig(dict):
         :param _builtins.str store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param _builtins.str trust_store_content: (Updatable) Base64 encoded string of trust store file content.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -7164,7 +7151,6 @@ class TargetDatabaseTlsConfig(dict):
     def trust_store_content(self) -> Optional[_builtins.str]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -52,11 +52,10 @@ class ConfigurationArgs:
                
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration.
                
                For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -224,7 +223,7 @@ class ConfigurationArgs:
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the shape for the configuration. 
+        The name of the shape for the configuration.
 
         For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         """
@@ -238,8 +237,7 @@ class ConfigurationArgs:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,12 +293,11 @@ class _ConfigurationState:
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration.
                
                For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[_builtins.str] state: The current state of the configuration.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -533,7 +530,7 @@ class _ConfigurationState:
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the shape for the configuration. 
+        The name of the shape for the configuration.
 
         For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         """
@@ -559,8 +556,7 @@ class _ConfigurationState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -669,11 +665,10 @@ class Configuration(pulumi.CustomResource):
                
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration.
                
                For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -851,12 +846,11 @@ class Configuration(pulumi.CustomResource):
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration.
                
                For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[_builtins.str] state: The current state of the configuration.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1015,7 +1009,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the shape for the configuration. 
+        The name of the shape for the configuration.
 
         For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         """
@@ -1033,8 +1027,7 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

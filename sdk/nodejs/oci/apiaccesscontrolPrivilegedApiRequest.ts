@@ -193,8 +193,7 @@ export class ApiaccesscontrolPrivilegedApiRequest extends pulumi.CustomResource 
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-     *
+     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -412,8 +411,7 @@ export interface ApiaccesscontrolPrivilegedApiRequestState {
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
-     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-     *
+     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -478,8 +476,7 @@ export interface ApiaccesscontrolPrivilegedApiRequestArgs {
      */
     ticketNumbers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z' 
-     *
+     * Time in future when the user for the privilegedApi request needs to be created in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

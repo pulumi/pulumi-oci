@@ -74,7 +74,6 @@ export class RedisClusterCreateIdentityToken extends pulumi.CustomResource {
     /**
      * Redis User generating identity token.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -143,7 +142,6 @@ export interface RedisClusterCreateIdentityTokenState {
     /**
      * Redis User generating identity token.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -166,7 +164,6 @@ export interface RedisClusterCreateIdentityTokenArgs {
     redisClusterId: pulumi.Input<string>;
     /**
      * Redis User generating identity token.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

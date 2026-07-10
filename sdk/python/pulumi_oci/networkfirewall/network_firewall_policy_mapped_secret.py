@@ -37,7 +37,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
         :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[_builtins.int] version_number: (Updatable) Version number of the secret to be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the mapped secret. This field can be used to add additional info.
@@ -109,7 +108,6 @@ class NetworkFirewallPolicyMappedSecretArgs:
         """
         (Updatable) Version number of the secret to be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -168,7 +166,6 @@ class _NetworkFirewallPolicyMappedSecretState:
                * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[_builtins.int] version_number: (Updatable) Version number of the secret to be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,7 +279,6 @@ class _NetworkFirewallPolicyMappedSecretState:
         """
         (Updatable) Version number of the secret to be used.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -351,7 +347,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
                * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[_builtins.int] version_number: (Updatable) Version number of the secret to be used.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -480,7 +475,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[_builtins.int] version_number: (Updatable) Version number of the secret to be used.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -561,7 +555,6 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
     def version_number(self) -> pulumi.Output[_builtins.int]:
         """
         (Updatable) Version number of the secret to be used.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

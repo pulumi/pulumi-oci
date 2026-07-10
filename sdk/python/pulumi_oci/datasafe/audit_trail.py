@@ -40,7 +40,6 @@ class AuditTrailArgs:
         :param pulumi.Input[_builtins.bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[_builtins.int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
@@ -153,7 +152,6 @@ class AuditTrailArgs:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -224,7 +222,6 @@ class _AuditTrailState:
         :param pulumi.Input[_builtins.str] purge_job_status: The current status of the audit trail purge job.
         :param pulumi.Input[_builtins.str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param pulumi.Input[_builtins.int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -478,7 +475,6 @@ class _AuditTrailState:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -653,7 +649,6 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_auto_purge_enabled: (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
         :param pulumi.Input[_builtins.int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
@@ -801,7 +796,6 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] purge_job_status: The current status of the audit trail purge job.
         :param pulumi.Input[_builtins.str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
         :param pulumi.Input[_builtins.int] resume_trigger: (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -973,7 +967,6 @@ class AuditTrail(pulumi.CustomResource):
     def resume_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Resume. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

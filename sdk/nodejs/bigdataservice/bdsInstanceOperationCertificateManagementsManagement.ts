@@ -83,7 +83,6 @@ export class BdsInstanceOperationCertificateManagementsManagement extends pulumi
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -178,7 +177,6 @@ export interface BdsInstanceOperationCertificateManagementsManagementState {
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -219,7 +217,6 @@ export interface BdsInstanceOperationCertificateManagementsManagementArgs {
     hostCertDetails?: pulumi.Input<pulumi.Input<inputs.BigDataService.BdsInstanceOperationCertificateManagementsManagementHostCertDetail>[] | undefined>;
     /**
      * (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

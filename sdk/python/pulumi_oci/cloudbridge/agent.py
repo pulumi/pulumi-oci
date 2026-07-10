@@ -39,7 +39,6 @@ class AgentArgs:
         :param pulumi.Input[_builtins.str] environment_id: Environment identifier.
         :param pulumi.Input[_builtins.str] os_version: OS version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -122,7 +121,6 @@ class AgentArgs:
         """
         OS version.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -192,7 +190,6 @@ class _AgentState:
         :param pulumi.Input[_builtins.str] heart_beat_status: The current heartbeat status of the Agent based on its timeLastSyncReceived value.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] os_version: OS version.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +364,6 @@ class _AgentState:
         """
         OS version.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -526,7 +522,6 @@ class Agent(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] os_version: OS version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -683,7 +678,6 @@ class Agent(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] os_version: OS version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict']]]] plugin_lists: List of plugins associated with the agent.
@@ -803,7 +797,6 @@ class Agent(pulumi.CustomResource):
     def os_version(self) -> pulumi.Output[_builtins.str]:
         """
         OS version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

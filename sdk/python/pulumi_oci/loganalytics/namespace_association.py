@@ -36,7 +36,6 @@ class NamespaceAssociationArgs:
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The log group unique identifier.
         :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] source_name: The source name.
@@ -94,7 +93,6 @@ class NamespaceAssociationArgs:
     def namespace(self) -> pulumi.Input[_builtins.str]:
         """
         The Logging Analytics namespace used for the request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -184,7 +182,6 @@ class _NamespaceAssociationState:
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The log group unique identifier.
         :param pulumi.Input[_builtins.str] log_group_name: The log group name.
         :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -420,7 +417,6 @@ class _NamespaceAssociationState:
         """
         The Logging Analytics namespace used for the request.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -553,7 +549,6 @@ class NamespaceAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_from_republish: isFromRepublish
         :param pulumi.Input[_builtins.str] log_group_id: (Updatable) The log group unique identifier.
         :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -721,7 +716,6 @@ class NamespaceAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] log_group_name: The log group name.
         :param pulumi.Input[_builtins.str] namespace: The Logging Analytics namespace used for the request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] retry_count: The number of times the association will be attempted before failing.
@@ -879,7 +873,6 @@ class NamespaceAssociation(pulumi.CustomResource):
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
         The Logging Analytics namespace used for the request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

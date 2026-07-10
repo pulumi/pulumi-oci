@@ -90,7 +90,6 @@ export class View extends pulumi.CustomResource {
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -187,7 +186,6 @@ export interface ViewState {
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -236,7 +234,6 @@ export interface ViewArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

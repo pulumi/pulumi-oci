@@ -43,7 +43,6 @@ class ManagementAgentDataSourceArgs:
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
         :param pulumi.Input[_builtins.str] url: (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] allow_metrics: (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
@@ -123,7 +122,6 @@ class ManagementAgentDataSourceArgs:
     def url(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -300,7 +298,6 @@ class _ManagementAgentDataSourceState:
         :param pulumi.Input[_builtins.str] time_updated: The time the DataSource data was last received. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
         :param pulumi.Input[_builtins.str] url: (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -577,7 +574,6 @@ class _ManagementAgentDataSourceState:
         """
         (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -668,7 +664,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] schedule_mins: (Updatable) Number in minutes. The scraping occurs at the specified interval.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
         :param pulumi.Input[_builtins.str] url: (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -844,7 +839,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the DataSource data was last received. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of the DataSource. Support types: PROMETHEUS_EMITTER
         :param pulumi.Input[_builtins.str] url: (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1029,7 +1023,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
     def url(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The url through which the Prometheus Exporter publishes its metrics. (http only)
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

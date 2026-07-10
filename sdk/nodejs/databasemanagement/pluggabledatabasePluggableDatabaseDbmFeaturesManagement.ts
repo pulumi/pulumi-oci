@@ -86,7 +86,6 @@ export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pul
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -146,7 +145,6 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementState {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -169,7 +167,6 @@ export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementState {
 export interface PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs {
     /**
      * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

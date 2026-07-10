@@ -28,7 +28,6 @@ class ManagedKafkaKafkaClusterSuperusersManagementArgs:
 
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
@@ -47,7 +46,6 @@ class ManagedKafkaKafkaClusterSuperusersManagementArgs:
     def enable_superuser(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,7 +106,6 @@ class _ManagedKafkaKafkaClusterSuperusersManagementState:
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
@@ -140,7 +137,6 @@ class _ManagedKafkaKafkaClusterSuperusersManagementState:
     def enable_superuser(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,7 +208,6 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -306,7 +301,6 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
         :param pulumi.Input[_builtins.bool] enable_superuser: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
@@ -335,7 +329,6 @@ class ManagedKafkaKafkaClusterSuperusersManagement(pulumi.CustomResource):
     def enable_superuser(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

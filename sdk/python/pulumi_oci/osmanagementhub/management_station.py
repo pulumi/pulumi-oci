@@ -49,7 +49,6 @@ class ManagementStationArgs:
         :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -211,7 +210,6 @@ class ManagementStationArgs:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -284,7 +282,6 @@ class _ManagementStationState:
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         :param pulumi.Input['ManagementStationProxyArgs'] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -660,7 +657,6 @@ class _ManagementStationState:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -804,7 +800,6 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] os_family: (Updatable) The operating system family.
         :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1016,7 +1011,6 @@ class ManagementStation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] profile_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile used for the management station.
         :param pulumi.Input[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict']] proxy: (Updatable) Information used to create the proxy configuration for a management station.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1266,7 +1260,6 @@ class ManagementStation(pulumi.CustomResource):
     def refresh_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

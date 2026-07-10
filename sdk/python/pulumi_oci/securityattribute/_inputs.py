@@ -30,8 +30,7 @@ class SecurityAttributeValidatorArgsDict(TypedDict):
     """
     values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    (Updatable) The list of allowed values for a security attribute value. 
-
+    (Updatable) The list of allowed values for a security attribute value.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -44,8 +43,7 @@ class SecurityAttributeValidatorArgs:
                  values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] validator_type: (Updatable) Specifies the type of validation: a static value (no validation) or a list.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) The list of allowed values for a security attribute value. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) The list of allowed values for a security attribute value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -70,8 +68,7 @@ class SecurityAttributeValidatorArgs:
     @pulumi.getter
     def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) The list of allowed values for a security attribute value. 
-
+        (Updatable) The list of allowed values for a security attribute value.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

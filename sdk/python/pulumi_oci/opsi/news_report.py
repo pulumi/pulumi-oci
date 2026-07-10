@@ -51,8 +51,7 @@ class NewsReportArgs:
         :param pulumi.Input[_builtins.str] match_rule: (Updatable) Match rule used for tag filters.
         :param pulumi.Input[_builtins.str] name: (Updatable) The news report name.
         :param pulumi.Input[_builtins.str] status: (Updatable) Defines if the news report will be enabled or disabled.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,8 +239,7 @@ class NewsReportArgs:
     @pulumi.getter(name="tagFilters")
     def tag_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,8 +292,7 @@ class _NewsReportState:
         :param pulumi.Input[_builtins.str] state: The current state of the news report.
         :param pulumi.Input[_builtins.str] status: (Updatable) Defines if the news report will be enabled or disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -537,8 +534,7 @@ class _NewsReportState:
     @pulumi.getter(name="tagFilters")
     def tag_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -663,8 +659,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] news_frequency: (Updatable) News report frequency.
         :param pulumi.Input[_builtins.str] ons_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param pulumi.Input[_builtins.str] status: (Updatable) Defines if the news report will be enabled or disabled.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -849,8 +844,7 @@ class NewsReport(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the news report.
         :param pulumi.Input[_builtins.str] status: (Updatable) Defines if the news report will be enabled or disabled.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tag_filters: (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1014,8 +1008,7 @@ class NewsReport(pulumi.CustomResource):
     @pulumi.getter(name="tagFilters")
     def tag_filters(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>' 
-
+        (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '<TagNamespace>.<TagKey>=<TagValue>'. Example for freeform tags - '<TagKey>=<TagValue>'
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

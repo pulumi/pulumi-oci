@@ -2527,8 +2527,7 @@ class PipelineSourceConnectionDetailsArgs:
 class PipelineTargetConnectionDetailsArgsDict(TypedDict):
     connection_id: pulumi.Input[_builtins.str]
     """
-    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
-
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2539,8 +2538,7 @@ class PipelineTargetConnectionDetailsArgs:
     def __init__(__self__, *,
                  connection_id: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
-               
+        :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2551,8 +2549,7 @@ class PipelineTargetConnectionDetailsArgs:
     @pulumi.getter(name="connectionId")
     def connection_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

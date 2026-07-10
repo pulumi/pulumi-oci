@@ -147,7 +147,7 @@ export class Configuration extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * The name of the shape for the configuration. 
+     * The name of the shape for the configuration.
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
@@ -157,8 +157,7 @@ export class Configuration extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -309,7 +308,7 @@ export interface ConfigurationState {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
-     * The name of the shape for the configuration. 
+     * The name of the shape for the configuration.
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
@@ -319,8 +318,7 @@ export interface ConfigurationState {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -385,14 +383,13 @@ export interface ConfigurationArgs {
      */
     isFlexible?: pulumi.Input<boolean | undefined>;
     /**
-     * The name of the shape for the configuration. 
+     * The name of the shape for the configuration.
      *
      * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
     shape?: pulumi.Input<string | undefined>;
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

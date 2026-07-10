@@ -52,7 +52,6 @@ class DataFileArgs:
                This value can be used by recipients to determine how to interpret or render the content.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Optional user-defined metadata key and value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` is defined. Either one should be defined.
@@ -199,7 +198,6 @@ class DataFileArgs:
         """
         (Updatable) Optional user-defined metadata key and value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -259,7 +257,6 @@ class _DataFileState:
                This value can be used by recipients to determine how to interpret or render the content.
         :param pulumi.Input[_builtins.str] data_file_name: The name of the data file.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Optional user-defined metadata key and value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -423,7 +420,6 @@ class _DataFileState:
         """
         (Updatable) Optional user-defined metadata key and value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -510,7 +506,6 @@ class DataFile(pulumi.CustomResource):
                This value can be used by recipients to determine how to interpret or render the content.
         :param pulumi.Input[_builtins.str] data_file_name: The name of the data file.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Optional user-defined metadata key and value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -642,7 +637,6 @@ class DataFile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] data_file_name: The name of the data file.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: (Updatable) Optional user-defined metadata key and value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] source: An absolute path to a file on the local system. Cannot be defined if `content` is defined. Either one should be defined.
@@ -756,7 +750,6 @@ class DataFile(pulumi.CustomResource):
     def metadata(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:
         """
         (Updatable) Optional user-defined metadata key and value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

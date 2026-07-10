@@ -115,7 +115,6 @@ export class AlertPolicy extends pulumi.CustomResource {
     /**
      * (Updatable) Severity level of the alert raised by this policy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -238,7 +237,6 @@ export interface AlertPolicyState {
     /**
      * (Updatable) Severity level of the alert raised by this policy.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -295,7 +293,6 @@ export interface AlertPolicyArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Severity level of the alert raised by this policy.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

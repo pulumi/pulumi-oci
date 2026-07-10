@@ -1458,8 +1458,7 @@ class ContainerInstanceContainer(dict):
         :param _builtins.str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param 'ContainerInstanceContainerResourceConfigArgs' resource_config: The size and amount of resources available to the container.
         :param 'ContainerInstanceContainerSecurityContextArgs' security_context: Security context for container.
-        :param _builtins.str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param _builtins.str state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1673,8 +1672,7 @@ class ContainerInstanceContainer(dict):
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4382,7 +4380,6 @@ class VirtualNodePoolVirtualNodeTags(dict):
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -4404,7 +4401,6 @@ class VirtualNodePoolVirtualNodeTags(dict):
     def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

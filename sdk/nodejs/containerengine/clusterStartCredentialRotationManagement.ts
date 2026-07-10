@@ -60,7 +60,6 @@ export class ClusterStartCredentialRotationManagement extends pulumi.CustomResou
     /**
      * The OCID of the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -108,7 +107,6 @@ export interface ClusterStartCredentialRotationManagementState {
     /**
      * The OCID of the cluster.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -125,7 +123,6 @@ export interface ClusterStartCredentialRotationManagementArgs {
     autoCompletionDelayDuration: pulumi.Input<string>;
     /**
      * The OCID of the cluster.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

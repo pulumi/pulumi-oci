@@ -175,7 +175,6 @@ export class Provision extends pulumi.CustomResource {
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -385,7 +384,6 @@ export interface ProvisionState {
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -450,7 +448,6 @@ export interface ProvisionArgs {
     tfVariableRegionId: pulumi.Input<string>;
     /**
      * A mandatory variable added to a list of RMS variables for createStack API. Overrides the one supplied in configuration file.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -43,7 +43,6 @@ class BatchBatchTaskProfileArgs:
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -167,7 +166,6 @@ class BatchBatchTaskProfileArgs:
         """
         The minimum required OCPUs.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -206,7 +204,6 @@ class _BatchBatchTaskProfileState:
         :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -344,7 +341,6 @@ class _BatchBatchTaskProfileState:
         """
         The minimum required OCPUs.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -472,7 +468,6 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] min_disk_size_in_gbs: The minimum required size of disk space in GBs.
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -613,7 +608,6 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] min_memory_in_gbs: The minimum required memory.
         :param pulumi.Input[_builtins.int] min_ocpus: The minimum required OCPUs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the batch task profile.
@@ -709,7 +703,6 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
     def min_ocpus(self) -> pulumi.Output[_builtins.int]:
         """
         The minimum required OCPUs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

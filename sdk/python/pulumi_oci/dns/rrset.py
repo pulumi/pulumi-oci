@@ -35,13 +35,12 @@ class RrsetArgs:
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the zone belongs to.
                
                This parameter is deprecated and should be omitted.
-        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
@@ -94,7 +93,6 @@ class RrsetArgs:
         """
         The name or OCID of the target zone.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -123,7 +121,7 @@ class RrsetArgs:
     @pulumi.getter
     def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -175,13 +173,12 @@ class _RrsetState:
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input['RrsetItemArgs']]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +235,7 @@ class _RrsetState:
     @pulumi.getter
     def items(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RrsetItemArgs']]]]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -289,7 +286,6 @@ class _RrsetState:
     def zone_name_or_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,13 +363,12 @@ class Rrset(pulumi.CustomResource):
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -502,13 +497,12 @@ class Rrset(pulumi.CustomResource):
                
                This parameter is deprecated and should be omitted.
         :param pulumi.Input[_builtins.str] domain: The target fully-qualified domain name (FQDN) within the target zone.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable) 
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict']]]] items: (Updatable)
                **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         :param pulumi.Input[_builtins.str] rtype: The type of the target RRSet within the target zone.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the zone is associated with. Required when accessing a private zone by name.
         :param pulumi.Input[_builtins.str] zone_name_or_id: The name or OCID of the target zone.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -549,7 +543,7 @@ class Rrset(pulumi.CustomResource):
     @pulumi.getter
     def items(self) -> pulumi.Output[Sequence['outputs.RrsetItem']]:
         """
-        (Updatable) 
+        (Updatable)
         **NOTE** Omitting `items` at time of create will delete any existing records in the RRSet
         """
         return pulumi.get(self, "items")
@@ -584,7 +578,6 @@ class Rrset(pulumi.CustomResource):
     def zone_name_or_id(self) -> pulumi.Output[_builtins.str]:
         """
         The name or OCID of the target zone.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

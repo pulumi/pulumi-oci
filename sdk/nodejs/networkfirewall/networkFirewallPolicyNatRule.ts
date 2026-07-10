@@ -111,7 +111,6 @@ export class NetworkFirewallPolicyNatRule extends pulumi.CustomResource {
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -209,7 +208,6 @@ export interface NetworkFirewallPolicyNatRuleState {
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -248,7 +246,6 @@ export interface NetworkFirewallPolicyNatRuleArgs {
     /**
      * (Updatable) NAT type:
      * * NATV4 - NATV4 type NAT.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

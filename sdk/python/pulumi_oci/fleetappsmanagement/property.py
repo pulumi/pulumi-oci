@@ -37,7 +37,6 @@ class PropertyArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -130,7 +129,6 @@ class PropertyArgs:
         """
         (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -177,7 +175,6 @@ class _PropertyState:
         :param pulumi.Input[_builtins.str] type: The type of the property.
         :param pulumi.Input[_builtins.str] value_type: (Updatable) Format of the value.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -387,7 +384,6 @@ class _PropertyState:
         """
         (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -458,7 +454,6 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] selection: (Updatable) Text selection of the property.
         :param pulumi.Input[_builtins.str] value_type: (Updatable) Format of the value.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -608,7 +603,6 @@ class Property(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] value_type: (Updatable) Format of the value.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -750,7 +744,6 @@ class Property(pulumi.CustomResource):
     def values(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

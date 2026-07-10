@@ -111,7 +111,6 @@ class DistributedDatabaseDistributedAutonomousDatabaseArgs:
         :param pulumi.Input[_builtins.int] validate_ca_bundle_trigger: (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_network_trigger: (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -713,7 +712,6 @@ class DistributedDatabaseDistributedAutonomousDatabaseArgs:
         """
         (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -838,7 +836,6 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
         :param pulumi.Input[_builtins.int] upload_signed_certificate_and_generate_wallet_trigger: (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_ca_bundle_trigger: (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_network_trigger: (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1634,7 +1631,6 @@ class _DistributedDatabaseDistributedAutonomousDatabaseState:
         """
         (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1856,7 +1852,6 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] upload_signed_certificate_and_generate_wallet_trigger: (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_ca_bundle_trigger: (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_network_trigger: (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2268,7 +2263,6 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] upload_signed_certificate_and_generate_wallet_trigger: (Updatable) An optional property when incremented triggers Upload Signed Certificate And Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_ca_bundle_trigger: (Updatable) An optional property when incremented triggers Validate Ca Bundle. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] validate_network_trigger: (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2777,7 +2771,6 @@ class DistributedDatabaseDistributedAutonomousDatabase(pulumi.CustomResource):
     def validate_network_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

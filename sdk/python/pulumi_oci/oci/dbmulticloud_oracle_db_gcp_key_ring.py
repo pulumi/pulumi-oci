@@ -46,7 +46,6 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -193,7 +192,6 @@ class DbmulticloudOracleDbGcpKeyRingArgs:
         """
         Oracle DB GCP Key Ring resource Type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -243,7 +241,6 @@ class _DbmulticloudOracleDbGcpKeyRingState:
         :param pulumi.Input[_builtins.str] time_created: Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -478,7 +475,6 @@ class _DbmulticloudOracleDbGcpKeyRingState:
         """
         Oracle DB GCP Key Ring resource Type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -558,7 +554,6 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Oracle DB GCP Key Ring resource's properties.
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -717,7 +712,6 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: Oracle DB GCP Key Ring resource Type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -874,7 +868,6 @@ class DbmulticloudOracleDbGcpKeyRing(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         Oracle DB GCP Key Ring resource Type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

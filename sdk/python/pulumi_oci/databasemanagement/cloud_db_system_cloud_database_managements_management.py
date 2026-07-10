@@ -29,7 +29,6 @@ class CloudDbSystemCloudDatabaseManagementsManagementArgs:
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
@@ -59,7 +58,6 @@ class CloudDbSystemCloudDatabaseManagementsManagementArgs:
     def enable_cloud_database_management(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,7 +106,6 @@ class _CloudDbSystemCloudDatabaseManagementsManagementState:
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
@@ -140,7 +137,6 @@ class _CloudDbSystemCloudDatabaseManagementsManagementState:
     def enable_cloud_database_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +209,6 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -308,7 +303,6 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
         :param pulumi.Input[_builtins.bool] enable_cloud_database_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_enabled: The status of the associated service.
@@ -337,7 +331,6 @@ class CloudDbSystemCloudDatabaseManagementsManagement(pulumi.CustomResource):
     def enable_cloud_database_management(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

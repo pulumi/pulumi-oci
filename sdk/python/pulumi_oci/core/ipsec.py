@@ -57,13 +57,11 @@ class IpsecArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
-               Example: `
-               tunnel_configuration {
+               Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"
                associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
                drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
                }`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -211,13 +209,11 @@ class IpsecArgs:
         """
         (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
 
-        Example: `
-        tunnel_configuration {
+        Example: `tunnel_configuration {
         oracle_tunnel_ip = "10.1.5.5"
         associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         }`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -274,13 +270,11 @@ class _IpsecState:
         :param pulumi.Input[_builtins.str] transport_type: The transport type used for the IPSec connection.
         :param pulumi.Input[Sequence[pulumi.Input['IpsecTunnelConfigurationArgs']]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
-               Example: `
-               tunnel_configuration {
+               Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"
                associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
                drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
                }`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -474,13 +468,11 @@ class _IpsecState:
         """
         (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
 
-        Example: `
-        tunnel_configuration {
+        Example: `tunnel_configuration {
         oracle_tunnel_ip = "10.1.5.5"
         associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         }`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -632,13 +624,11 @@ class Ipsec(pulumi.CustomResource):
                Example: `10.0.1.0/24`
         :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
-               Example: `
-               tunnel_configuration {
+               Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"
                associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
                drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
                }`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -858,13 +848,11 @@ class Ipsec(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] transport_type: The transport type used for the IPSec connection.
         :param pulumi.Input[Sequence[pulumi.Input[Union['IpsecTunnelConfigurationArgs', 'IpsecTunnelConfigurationArgsDict']]]] tunnel_configurations: (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
                
-               Example: `
-               tunnel_configuration {
+               Example: `tunnel_configuration {
                oracle_tunnel_ip = "10.1.5.5"
                associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
                drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
                }`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1002,13 +990,11 @@ class Ipsec(pulumi.CustomResource):
         """
         (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
 
-        Example: `
-        tunnel_configuration {
+        Example: `tunnel_configuration {
         oracle_tunnel_ip = "10.1.5.5"
         associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         }`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

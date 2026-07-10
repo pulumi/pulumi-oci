@@ -66,8 +66,7 @@ export class LogAnalyticsPreferencesManagement extends pulumi.CustomResource {
      */
     declare public readonly items: pulumi.Output<outputs.LogAnalytics.LogAnalyticsPreferencesManagementItem[] | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,8 +110,7 @@ export interface LogAnalyticsPreferencesManagementState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[] | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,8 +127,7 @@ export interface LogAnalyticsPreferencesManagementArgs {
      */
     items?: pulumi.Input<pulumi.Input<inputs.LogAnalytics.LogAnalyticsPreferencesManagementItem>[] | undefined>;
     /**
-     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-     *
+     * The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

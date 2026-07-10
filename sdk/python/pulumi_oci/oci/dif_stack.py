@@ -53,7 +53,6 @@ class DifStackArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
                - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -61,7 +60,7 @@ class DifStackArgs:
                - Deploy artifacts (increase deploy_artifacts_trigger)
                - Change compartment (update compartment_id)
                - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-               Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+                 Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DifStackGenaiArgs']]] genais: (Updatable) GenAi Details if genai is included in services.
@@ -219,7 +218,6 @@ class DifStackArgs:
         """
         (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
 
-
         ** IMPORTANT **
         - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
         - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -227,7 +225,7 @@ class DifStackArgs:
         - Deploy artifacts (increase deploy_artifacts_trigger)
         - Change compartment (update compartment_id)
         - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-        Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+          Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
         - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         """
         return pulumi.get(self, "deploy_artifacts_trigger")
@@ -371,7 +369,6 @@ class _DifStackState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
                - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -379,7 +376,7 @@ class _DifStackState:
                - Deploy artifacts (increase deploy_artifacts_trigger)
                - Change compartment (update compartment_id)
                - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-               Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+                 Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -526,7 +523,6 @@ class _DifStackState:
         """
         (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
 
-
         ** IMPORTANT **
         - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
         - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -534,7 +530,7 @@ class _DifStackState:
         - Deploy artifacts (increase deploy_artifacts_trigger)
         - Change compartment (update compartment_id)
         - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-        Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+          Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
         - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         """
         return pulumi.get(self, "deploy_artifacts_trigger")
@@ -954,7 +950,6 @@ class DifStack(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
                - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -962,7 +957,7 @@ class DifStack(pulumi.CustomResource):
                - Deploy artifacts (increase deploy_artifacts_trigger)
                - Change compartment (update compartment_id)
                - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-               Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+                 Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1276,7 +1271,6 @@ class DifStack(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] deploy_artifacts_trigger: (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
                - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -1284,7 +1278,7 @@ class DifStack(pulumi.CustomResource):
                - Deploy artifacts (increase deploy_artifacts_trigger)
                - Change compartment (update compartment_id)
                - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-               Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+                 Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
                - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Should be unique per compartment. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1388,7 +1382,6 @@ class DifStack(pulumi.CustomResource):
         """
         (Updatable) An optional property when incremented triggers Deploy Artifacts. Could be set to any integer value.
 
-
         ** IMPORTANT **
         - Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values.
         - Single-operation per apply: exactly one of the following is allowed in a single pulumi up:
@@ -1396,7 +1389,7 @@ class DifStack(pulumi.CustomResource):
         - Deploy artifacts (increase deploy_artifacts_trigger)
         - Change compartment (update compartment_id)
         - Standard update (all other updatable fields such as tags, service block parameters, etc.)
-        Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
+          Mixing any two or more in the same plan/apply is not allowed and will result in a provider error. Split your changes across separate applies.
         - Additions to services/templates or service blocks require increasing add_service_trigger. Deletions are not permitted.
         """
         return pulumi.get(self, "deploy_artifacts_trigger")

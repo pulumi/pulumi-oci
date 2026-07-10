@@ -146,7 +146,6 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -296,7 +295,6 @@ export interface DbmulticloudOracleDbAzureVaultState {
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -350,7 +348,6 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
     targetRegion?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Oracle DB Azure Vault resource type.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

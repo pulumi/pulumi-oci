@@ -81,7 +81,7 @@ export class Onboarding extends pulumi.CustomResource {
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-     * >>>>>>> theirs
+     * > > > > > > > theirs
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -197,7 +197,7 @@ export interface OnboardingState {
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-     * >>>>>>> theirs
+     * > > > > > > > theirs
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -256,7 +256,7 @@ export interface OnboardingArgs {
     /**
      * A value determining if the Fleet Application Management tagging is enabled or not.
      * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-     * >>>>>>> theirs
+     * > > > > > > > theirs
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the

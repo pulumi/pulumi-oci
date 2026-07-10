@@ -42,7 +42,6 @@ class ConnectorArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['ConnectorTaskArgs']]] tasks: (Updatable) The list of tasks.
@@ -152,7 +151,6 @@ class ConnectorArgs:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -204,7 +202,6 @@ class _ConnectorState:
         :param pulumi.Input[_builtins.str] lifecyle_details: *Please note this property is deprecated and will be removed on January 27, 2026. Use `lifecycleDetails` instead.* A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
         :param pulumi.Input['ConnectorSourceArgs'] source: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -344,7 +341,6 @@ class _ConnectorState:
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -556,7 +552,6 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -780,7 +775,6 @@ class Connector(pulumi.CustomResource):
         :param pulumi.Input[Union['ConnectorSourceArgs', 'ConnectorSourceArgsDict']] source: (Updatable)
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -878,7 +872,6 @@ class Connector(pulumi.CustomResource):
     def state(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The target state for the service connector. Could be set to `ACTIVE` or `INACTIVE`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

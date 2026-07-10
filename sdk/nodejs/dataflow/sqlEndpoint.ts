@@ -193,8 +193,7 @@ export class SqlEndpoint extends pulumi.CustomResource {
      */
     declare public readonly sqlEndpointVersion: pulumi.Output<string>;
     /**
-     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -412,8 +411,7 @@ export interface SqlEndpointState {
      */
     sqlEndpointVersion?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -522,8 +520,7 @@ export interface SqlEndpointArgs {
      */
     sqlEndpointVersion: pulumi.Input<string>;
     /**
-     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Sql Endpoint. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

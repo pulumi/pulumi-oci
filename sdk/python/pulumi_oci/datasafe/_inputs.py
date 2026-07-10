@@ -823,7 +823,6 @@ class AuditPolicyManagementAuditConditionArgsDict(TypedDict):
     """
     Indicates whether the privileged user list is managed by Data Safe.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -842,7 +841,6 @@ class AuditPolicyManagementAuditConditionArgs:
         :param pulumi.Input[_builtins.bool] is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         :param pulumi.Input[_builtins.bool] is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param pulumi.Input[_builtins.bool] is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -911,7 +909,6 @@ class AuditPolicyManagementAuditConditionArgs:
     def is_priv_users_managed_by_data_safe(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Indicates whether the privileged user list is managed by Data Safe.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2785,7 +2782,6 @@ class DiscoveryModTablesForDiscoveryArgsDict(TypedDict):
     """
     This contains an optional list of the table names.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2798,7 +2794,6 @@ class DiscoveryModTablesForDiscoveryArgs:
         """
         :param pulumi.Input[_builtins.str] schema_name: This contains the name of the schema.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] table_names: This contains an optional list of the table names.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2824,7 +2819,6 @@ class DiscoveryModTablesForDiscoveryArgs:
     def table_names(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         This contains an optional list of the table names.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4343,7 +4337,6 @@ class ReportDefinitionSummaryArgsDict(TypedDict):
     """
     (Updatable) Additional scim filters used to get the specific summary.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4364,7 +4357,6 @@ class ReportDefinitionSummaryArgs:
         :param pulumi.Input[_builtins.str] group_by_field_name: (Updatable) A comma-delimited string that specifies the names of the fields by which the records must be aggregated to get the summary.
         :param pulumi.Input[_builtins.bool] is_hidden: (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
         :param pulumi.Input[_builtins.str] scim_filter: (Updatable) Additional scim filters used to get the specific summary.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4445,7 +4437,6 @@ class ReportDefinitionSummaryArgs:
     def scim_filter(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Additional scim filters used to get the specific summary.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6362,7 +6353,6 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
     """
     (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -6373,7 +6363,6 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
                  exclude_datasafe_user: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] exclude_datasafe_user: (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6386,7 +6375,6 @@ class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
     def exclude_datasafe_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7295,7 +7283,6 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
     """
     (Updatable) The list of target database OCIDs to be included in the target database group.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -7312,7 +7299,6 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_database_ids: (Updatable) The list of target database OCIDs to be included in the target database group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7367,7 +7353,6 @@ class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
     def target_database_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) The list of target database OCIDs to be included in the target database group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8516,7 +8501,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgsDict(TypedDict):
     """
     (Updatable) Base64 encoded string of trust store file content.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -8535,7 +8519,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
         :param pulumi.Input[_builtins.str] key_store_content: (Updatable) Base64 encoded string of key store file content.
         :param pulumi.Input[_builtins.str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param pulumi.Input[_builtins.str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8603,7 +8586,6 @@ class TargetDatabasePeerTargetDatabaseTlsConfigArgs:
     def trust_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8636,7 +8618,6 @@ class TargetDatabaseTlsConfigArgsDict(TypedDict):
     """
     (Updatable) Base64 encoded string of trust store file content.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -8655,7 +8636,6 @@ class TargetDatabaseTlsConfigArgs:
         :param pulumi.Input[_builtins.str] key_store_content: (Updatable) Base64 encoded string of key store file content.
         :param pulumi.Input[_builtins.str] store_password: (Updatable) The password to read the trust store and key store files, if they are password protected.
         :param pulumi.Input[_builtins.str] trust_store_content: (Updatable) Base64 encoded string of trust store file content.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -8723,7 +8703,6 @@ class TargetDatabaseTlsConfigArgs:
     def trust_store_content(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Base64 encoded string of trust store file content.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

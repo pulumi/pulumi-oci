@@ -48,7 +48,6 @@ class DbmulticloudOracleDbAzureVaultArgs:
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -209,7 +208,6 @@ class DbmulticloudOracleDbAzureVaultArgs:
         """
         (Updatable) Oracle DB Azure Vault resource type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -263,7 +261,6 @@ class _DbmulticloudOracleDbAzureVaultState:
         :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -526,7 +523,6 @@ class _DbmulticloudOracleDbAzureVaultState:
         """
         (Updatable) Oracle DB Azure Vault resource type.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -609,7 +605,6 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -775,7 +770,6 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -951,7 +945,6 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Oracle DB Azure Vault resource type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -133,8 +133,7 @@ export class ExecutionWindow extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly totalTimeTakenInMins: pulumi.Output<number>;
     /**
-     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-     *
+     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -289,8 +288,7 @@ export interface ExecutionWindowState {
      */
     totalTimeTakenInMins?: pulumi.Input<number | undefined>;
     /**
-     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-     *
+     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -331,8 +329,7 @@ export interface ExecutionWindowArgs {
      */
     timeScheduled: pulumi.Input<string>;
     /**
-     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-     *
+     * (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

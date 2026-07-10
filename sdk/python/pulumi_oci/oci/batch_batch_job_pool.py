@@ -35,8 +35,7 @@ class BatchBatchJobPoolArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch job pool.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchjobpool20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -130,8 +129,7 @@ class BatchBatchJobPoolArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,8 +163,7 @@ class _BatchBatchJobPoolState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch job pool.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchjobpool20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,8 +268,7 @@ class _BatchBatchJobPoolState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,8 +374,7 @@ class BatchBatchJobPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch job pool.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchjobpool20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -504,8 +499,7 @@ class BatchBatchJobPool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Summarized information about the batch job pool.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. If not specified or provided as null or empty string, it be generated as "<resourceType><timeCreated>", where timeCreated corresponds with the resource creation time in ISO 8601 basic format, i.e. omitting separating punctuation, at second-level precision and no UTC offset. Example: batchjobpool20250914115623.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -581,8 +575,7 @@ class BatchBatchJobPool(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Job Pool. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

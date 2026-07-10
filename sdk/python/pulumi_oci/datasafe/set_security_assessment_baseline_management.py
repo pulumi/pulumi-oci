@@ -26,7 +26,6 @@ class SetSecurityAssessmentBaselineManagementArgs:
 
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] target_id: The target OCID for which SA needs to be set as baseline.
@@ -39,7 +38,6 @@ class SetSecurityAssessmentBaselineManagementArgs:
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -75,7 +73,6 @@ class _SetSecurityAssessmentBaselineManagementState:
 
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] target_id: The target OCID for which SA needs to be set as baseline.
@@ -103,7 +100,6 @@ class _SetSecurityAssessmentBaselineManagementState:
     def compartment_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,7 +169,6 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,7 +262,6 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: The compartment OCID of the target.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] target_id: The target OCID for which SA needs to be set as baseline.
@@ -292,7 +286,6 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
         The compartment OCID of the target.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -92,7 +92,6 @@ export class FusionEnvironmentServiceAttachment extends pulumi.CustomResource {
     /**
      * Type of the ServiceInstance being attached.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -203,7 +202,6 @@ export interface FusionEnvironmentServiceAttachmentState {
     /**
      * Type of the ServiceInstance being attached.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -244,7 +242,6 @@ export interface FusionEnvironmentServiceAttachmentArgs {
     serviceInstanceId: pulumi.Input<string>;
     /**
      * Type of the ServiceInstance being attached.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

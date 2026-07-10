@@ -27,7 +27,6 @@ class IotIotDomainGroupConfigureDataAccessArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class IotIotDomainGroupConfigureDataAccessArgs:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _IotIotDomainGroupConfigureDataAccessState:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _IotIotDomainGroupConfigureDataAccessState:
     def iot_domain_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +145,6 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -238,7 +233,6 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_allow_listed_vcn_ids: This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
         :param pulumi.Input[_builtins.str] iot_domain_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -263,7 +257,6 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
     def iot_domain_group_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT Domain Group.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

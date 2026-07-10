@@ -25,7 +25,6 @@ class ClusterCompleteCredentialRotationManagementArgs:
 
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -36,7 +35,6 @@ class ClusterCompleteCredentialRotationManagementArgs:
     def cluster_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57,7 +55,6 @@ class _ClusterCompleteCredentialRotationManagementState:
 
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -69,7 +66,6 @@ class _ClusterCompleteCredentialRotationManagementState:
     def cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,7 +108,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -191,7 +186,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cluster_id: The OCID of the cluster.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -207,7 +201,6 @@ class ClusterCompleteCredentialRotationManagement(pulumi.CustomResource):
     def cluster_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the cluster.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

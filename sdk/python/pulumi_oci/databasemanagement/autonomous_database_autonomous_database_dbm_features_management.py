@@ -30,7 +30,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs:
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
@@ -57,7 +56,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs:
     def enable_autonomous_database_dbm_feature(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -93,7 +91,6 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs'] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
@@ -122,7 +119,6 @@ class _AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState:
     def enable_autonomous_database_dbm_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -205,7 +201,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -319,7 +314,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
         :param pulumi.Input[_builtins.bool] enable_autonomous_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgsDict']] feature_details: The details required to enable the specified Database Management feature for an Autonomous Database.
@@ -346,7 +340,6 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
     def enable_autonomous_database_dbm_feature(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

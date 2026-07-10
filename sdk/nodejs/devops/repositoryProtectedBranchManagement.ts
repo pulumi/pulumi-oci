@@ -72,7 +72,6 @@ export class RepositoryProtectedBranchManagement extends pulumi.CustomResource {
     /**
      * Unique repository identifier.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -132,7 +131,6 @@ export interface RepositoryProtectedBranchManagementState {
     /**
      * Unique repository identifier.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -153,7 +151,6 @@ export interface RepositoryProtectedBranchManagementArgs {
     protectionLevels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Unique repository identifier.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -25,8 +25,7 @@ class GeneratedScopedAccessTokenArgs:
         The set of arguments for constructing a GeneratedScopedAccessToken resource.
 
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
-               
+        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -50,8 +49,7 @@ class GeneratedScopedAccessTokenArgs:
     @pulumi.getter
     def scope(self) -> pulumi.Input[_builtins.str]:
         """
-        Scope definition for the scoped access token 
-
+        Scope definition for the scoped access token
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -73,8 +71,7 @@ class _GeneratedScopedAccessTokenState:
         Input properties used for looking up and filtering GeneratedScopedAccessToken resources.
 
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
-               
+        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,8 +100,7 @@ class _GeneratedScopedAccessTokenState:
     @pulumi.getter
     def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Scope definition for the scoped access token 
-
+        Scope definition for the scoped access token
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,8 +164,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
-               
+        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,8 +257,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] public_key: A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
-        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token 
-               
+        :param pulumi.Input[_builtins.str] scope: Scope definition for the scoped access token
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -290,8 +284,7 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
     @pulumi.getter
     def scope(self) -> pulumi.Output[_builtins.str]:
         """
-        Scope definition for the scoped access token 
-
+        Scope definition for the scoped access token
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

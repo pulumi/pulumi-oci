@@ -51,8 +51,7 @@ class ScheduledQueryArgs:
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_period_in_ms: (Updatable) Retention period for the scheduled query in milliseconds.
         :param pulumi.Input[_builtins.str] scheduled_query_schedule: (Updatable) Schedule for the scheduled query.
-        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run. 
-               
+        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -245,8 +244,7 @@ class ScheduledQueryArgs:
     @pulumi.getter(name="scheduledQueryText")
     def scheduled_query_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Scheduled query to be run. 
-
+        (Updatable) Scheduled query to be run.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -297,8 +295,7 @@ class _ScheduledQueryState:
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_period_in_ms: (Updatable) Retention period for the scheduled query in milliseconds.
         :param pulumi.Input[_builtins.str] scheduled_query_schedule: (Updatable) Schedule for the scheduled query.
-        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run. 
-               
+        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -526,8 +523,7 @@ class _ScheduledQueryState:
     @pulumi.getter(name="scheduledQueryText")
     def scheduled_query_text(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Scheduled query to be run. 
-
+        (Updatable) Scheduled query to be run.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -616,8 +612,7 @@ class ScheduledQuery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_period_in_ms: (Updatable) Retention period for the scheduled query in milliseconds.
         :param pulumi.Input[_builtins.str] scheduled_query_schedule: (Updatable) Schedule for the scheduled query.
-        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run. 
-               
+        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -753,8 +748,7 @@ class ScheduledQuery(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scheduled_query_retention_criteria: (Updatable) Retention criteria for the scheduled query.
         :param pulumi.Input[_builtins.str] scheduled_query_retention_period_in_ms: (Updatable) Retention period for the scheduled query in milliseconds.
         :param pulumi.Input[_builtins.str] scheduled_query_schedule: (Updatable) Schedule for the scheduled query.
-        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run. 
-               
+        :param pulumi.Input[_builtins.str] scheduled_query_text: (Updatable) Scheduled query to be run.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -909,8 +903,7 @@ class ScheduledQuery(pulumi.CustomResource):
     @pulumi.getter(name="scheduledQueryText")
     def scheduled_query_text(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Scheduled query to be run. 
-
+        (Updatable) Scheduled query to be run.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

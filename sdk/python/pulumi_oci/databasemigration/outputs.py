@@ -197,7 +197,6 @@ class AssessmentAssessorActionItem(dict):
         :param _builtins.str name: The property name.
         :param _builtins.str value: The property value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -217,7 +216,6 @@ class AssessmentAssessorActionItem(dict):
     def value(self) -> _builtins.str:
         """
         The property value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -447,7 +445,6 @@ class AssessmentTargetDatabaseConnection(dict):
         :param _builtins.str technology_sub_type: (Updatable) Technology sub-type e.g. ADW_SHARED, ADW_DEDICATED, ATP_SHARED, ATP_DEDICATED
         :param _builtins.str technology_type: (Updatable) The technology type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -499,7 +496,6 @@ class AssessmentTargetDatabaseConnection(dict):
     def technology_type(self) -> Optional[_builtins.str]:
         """
         (Updatable) The technology type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

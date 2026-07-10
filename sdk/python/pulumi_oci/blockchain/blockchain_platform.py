@@ -53,7 +53,6 @@ class BlockchainPlatformArgs:
         :param pulumi.Input[_builtins.bool] is_byol: Bring your own license
         :param pulumi.Input[_builtins.str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] platform_version: Platform version
@@ -227,7 +226,6 @@ class BlockchainPlatformArgs:
         """
         (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -334,7 +332,6 @@ class _BlockchainPlatformState:
         :param pulumi.Input[_builtins.bool] is_multi_ad: True for multi-AD blockchain plaforms, false for single-AD
         :param pulumi.Input[_builtins.str] lifecycle_details: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -580,7 +577,6 @@ class _BlockchainPlatformState:
         """
         (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -814,7 +810,6 @@ class BlockchainPlatform(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_byol: Bring your own license
         :param pulumi.Input[_builtins.str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] platform_role: Role of platform - founder or participant
@@ -1010,7 +1005,6 @@ class BlockchainPlatform(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] load_balancer_shape: (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] platform_role: Role of platform - founder or participant
@@ -1176,7 +1170,6 @@ class BlockchainPlatform(pulumi.CustomResource):
     def load_balancer_shape(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Type of Load Balancer shape - LB_100_MBPS or LB_400_MBPS. Default is LB_100_MBPS.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

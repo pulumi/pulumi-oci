@@ -48,7 +48,6 @@ class ByolArgs:
                * VSAN: storage capacity in TiB (tebibytes)
                * AVI_LOAD_BALANCER: number of instances
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -157,7 +156,6 @@ class ByolArgs:
         * VSAN: storage capacity in TiB (tebibytes)
         * AVI_LOAD_BALANCER: number of instances
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -261,7 +259,6 @@ class _ByolState:
                * VCF, VDEFEND: number of OCPUs
                * VSAN: storage capacity in TiB (tebibytes)
                * AVI_LOAD_BALANCER: number of instances
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -492,7 +489,6 @@ class _ByolState:
         * VSAN: storage capacity in TiB (tebibytes)
         * AVI_LOAD_BALANCER: number of instances
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -585,7 +581,6 @@ class Byol(pulumi.CustomResource):
                * VCF, VDEFEND: number of OCPUs
                * VSAN: storage capacity in TiB (tebibytes)
                * AVI_LOAD_BALANCER: number of instances
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -762,7 +757,6 @@ class Byol(pulumi.CustomResource):
                * VSAN: storage capacity in TiB (tebibytes)
                * AVI_LOAD_BALANCER: number of instances
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -920,7 +914,6 @@ class Byol(pulumi.CustomResource):
         * VCF, VDEFEND: number of OCPUs
         * VSAN: storage capacity in TiB (tebibytes)
         * AVI_LOAD_BALANCER: number of instances
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

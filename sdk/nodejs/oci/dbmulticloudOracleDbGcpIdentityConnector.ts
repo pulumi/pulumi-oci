@@ -130,7 +130,6 @@ export class DbmulticloudOracleDbGcpIdentityConnector extends pulumi.CustomResou
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -295,7 +294,6 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorState {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -364,7 +362,6 @@ export interface DbmulticloudOracleDbGcpIdentityConnectorArgs {
     projectId: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

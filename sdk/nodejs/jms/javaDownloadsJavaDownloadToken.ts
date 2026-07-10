@@ -129,7 +129,6 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
     /**
      * (Updatable) Expiry time of the token.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -285,7 +284,6 @@ export interface JavaDownloadsJavaDownloadTokenState {
     /**
      * (Updatable) Expiry time of the token.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -342,7 +340,6 @@ export interface JavaDownloadsJavaDownloadTokenArgs {
     licenseTypes: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Expiry time of the token.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

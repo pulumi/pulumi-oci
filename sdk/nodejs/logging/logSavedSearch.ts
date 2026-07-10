@@ -89,8 +89,7 @@ export class LogSavedSearch extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * (Updatable) The search query that is saved. 
-     *
+     * (Updatable) The search query that is saved.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,8 +178,7 @@ export interface LogSavedSearchState {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The search query that is saved. 
-     *
+     * (Updatable) The search query that is saved.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,8 +223,7 @@ export interface LogSavedSearchArgs {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The search query that is saved. 
-     *
+     * (Updatable) The search query that is saved.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

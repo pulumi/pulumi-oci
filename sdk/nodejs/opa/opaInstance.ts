@@ -139,8 +139,7 @@ export class OpaInstance extends pulumi.CustomResource {
      */
     declare public readonly shapeName: pulumi.Output<string>;
     /**
-     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -298,8 +297,7 @@ export interface OpaInstanceState {
      */
     shapeName?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,8 +362,7 @@ export interface OpaInstanceArgs {
      */
     shapeName: pulumi.Input<string>;
     /**
-     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

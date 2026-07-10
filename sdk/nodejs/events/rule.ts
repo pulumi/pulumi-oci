@@ -132,8 +132,7 @@ export class Rule extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-     *
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -258,8 +257,7 @@ export interface RuleState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-     *
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -328,8 +326,7 @@ export interface RuleArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-     *
+     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

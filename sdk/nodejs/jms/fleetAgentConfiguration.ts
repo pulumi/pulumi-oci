@@ -139,8 +139,7 @@ export class FleetAgentConfiguration extends pulumi.CustomResource {
      */
     declare public readonly windowsConfiguration: pulumi.Output<outputs.Jms.FleetAgentConfigurationWindowsConfiguration>;
     /**
-     * (Updatable) The validity period in days for work requests. 
-     *
+     * (Updatable) The validity period in days for work requests.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -250,8 +249,7 @@ export interface FleetAgentConfigurationState {
      */
     windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration | undefined>;
     /**
-     * (Updatable) The validity period in days for work requests. 
-     *
+     * (Updatable) The validity period in days for work requests.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -308,8 +306,7 @@ export interface FleetAgentConfigurationArgs {
      */
     windowsConfiguration?: pulumi.Input<inputs.Jms.FleetAgentConfigurationWindowsConfiguration | undefined>;
     /**
-     * (Updatable) The validity period in days for work requests. 
-     *
+     * (Updatable) The validity period in days for work requests.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

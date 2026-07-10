@@ -96,7 +96,6 @@ export class ApiPlatformApiPlatformInstance extends pulumi.CustomResource {
     /**
      * A regionally unique, non-changeable instance name provided by the user during creation
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -201,7 +200,6 @@ export interface ApiPlatformApiPlatformInstanceState {
     /**
      * A regionally unique, non-changeable instance name provided by the user during creation
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -250,7 +248,6 @@ export interface ApiPlatformApiPlatformInstanceArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * A regionally unique, non-changeable instance name provided by the user during creation
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

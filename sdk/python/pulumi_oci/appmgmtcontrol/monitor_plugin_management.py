@@ -25,7 +25,6 @@ class MonitorPluginManagementArgs:
 
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -36,7 +35,6 @@ class MonitorPluginManagementArgs:
     def monitored_instance_id(self) -> pulumi.Input[_builtins.str]:
         """
         OCID of monitored instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -61,7 +59,6 @@ class _MonitorPluginManagementState:
         Input properties used for looking up and filtering MonitorPluginManagement resources.
 
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,7 +108,6 @@ class _MonitorPluginManagementState:
     def monitored_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         OCID of monitored instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -177,7 +173,6 @@ class MonitorPluginManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,7 +266,6 @@ class MonitorPluginManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] monitored_instance_id: OCID of monitored instance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -307,7 +301,6 @@ class MonitorPluginManagement(pulumi.CustomResource):
     def monitored_instance_id(self) -> pulumi.Output[_builtins.str]:
         """
         OCID of monitored instance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

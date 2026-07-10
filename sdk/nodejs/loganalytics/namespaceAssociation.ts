@@ -134,7 +134,6 @@ export class NamespaceAssociation extends pulumi.CustomResource {
     /**
      * The Logging Analytics namespace used for the request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -302,7 +301,6 @@ export interface NamespaceAssociationState {
     /**
      * The Logging Analytics namespace used for the request.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -355,7 +353,6 @@ export interface NamespaceAssociationArgs {
     logGroupId: pulumi.Input<string>;
     /**
      * The Logging Analytics namespace used for the request.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

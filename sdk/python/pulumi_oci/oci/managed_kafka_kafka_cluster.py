@@ -45,7 +45,6 @@ class ManagedKafkaKafkaClusterArgs:
         :param pulumi.Input[_builtins.str] coordination_type: (Updatable) Kafka coordination type. Set of available types depends on Kafka version
         :param pulumi.Input[_builtins.str] kafka_version: Version of Kafka to use to spin up the cluster
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] client_certificate_bundle: (Updatable) CA certificate bundle for mTLS broker authentication.
@@ -160,7 +159,6 @@ class ManagedKafkaKafkaClusterArgs:
         """
         Version of Kafka to use to spin up the cluster
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +255,6 @@ class _ManagedKafkaKafkaClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs']]] kafka_bootstrap_urls: Bootstrap URL that can be used to connect to Kafka
         :param pulumi.Input[_builtins.str] kafka_version: Version of Kafka to use to spin up the cluster
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -457,7 +454,6 @@ class _ManagedKafkaKafkaClusterState:
         """
         Version of Kafka to use to spin up the cluster
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -622,7 +618,6 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] kafka_version: Version of Kafka to use to spin up the cluster
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -803,7 +798,6 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict']]]] kafka_bootstrap_urls: Bootstrap URL that can be used to connect to Kafka
         :param pulumi.Input[_builtins.str] kafka_version: Version of Kafka to use to spin up the cluster
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -939,7 +933,6 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
     def kafka_version(self) -> pulumi.Output[_builtins.str]:
         """
         Version of Kafka to use to spin up the cluster
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

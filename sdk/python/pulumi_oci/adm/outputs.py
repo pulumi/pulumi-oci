@@ -853,8 +853,7 @@ class VulnerabilityAuditUsageData(dict):
         :param _builtins.str bucket: The Object Storage bucket to read the usage data from.
         :param _builtins.str namespace: The Object Storage namespace to read the usage data from.
         :param _builtins.str object: The Object Storage object name to read the usage data from.
-        :param _builtins.str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-               
+        :param _builtins.str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -892,8 +891,7 @@ class VulnerabilityAuditUsageData(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> _builtins.str:
         """
-        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
-
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

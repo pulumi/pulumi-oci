@@ -126,7 +126,6 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
     /**
      * (Updatable) contains Resource details
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -282,7 +281,6 @@ export interface ApiaccesscontrolPrivilegedApiControlState {
     /**
      * (Updatable) contains Resource details
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -359,7 +357,6 @@ export interface ApiaccesscontrolPrivilegedApiControlArgs {
     resourceType: pulumi.Input<string>;
     /**
      * (Updatable) contains Resource details
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -27,7 +27,6 @@ class UnsetSecurityAssessmentBaselineArgs:
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -53,7 +52,6 @@ class UnsetSecurityAssessmentBaselineArgs:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -74,7 +72,6 @@ class _UnsetSecurityAssessmentBaselineState:
 
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -101,7 +98,6 @@ class _UnsetSecurityAssessmentBaselineState:
     def target_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -156,7 +152,6 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,7 +244,6 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] security_assessment_id: The OCID of the security assessment.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -274,7 +268,6 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
     def target_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
         The list of database target OCIDs for which the user intends to unset the baseline.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -90,7 +90,6 @@ export class Catalog extends pulumi.CustomResource {
     /**
      * (Updatable) The status of a service catalog.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -180,7 +179,6 @@ export interface CatalogState {
     /**
      * (Updatable) The status of a service catalog.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -221,7 +219,6 @@ export interface CatalogArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The status of a service catalog.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

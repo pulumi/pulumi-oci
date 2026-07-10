@@ -82,7 +82,6 @@ export class BdsInstanceOsPatchAction extends pulumi.CustomResource {
     /**
      * The version of the OS patch to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -151,7 +150,6 @@ export interface BdsInstanceOsPatchActionState {
     /**
      * The version of the OS patch to be installed.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -178,7 +176,6 @@ export interface BdsInstanceOsPatchActionArgs {
     isDryRun?: pulumi.Input<boolean | undefined>;
     /**
      * The version of the OS patch to be installed.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

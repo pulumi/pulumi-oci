@@ -29,8 +29,7 @@ class ExadataIormConfigArgs:
 
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
-               
+        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68,8 +67,7 @@ class ExadataIormConfigArgs:
     @pulumi.getter
     def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto" 
-
+        (Updatable) Value for the IORM objective Default is "Auto"
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,8 +93,7 @@ class _ExadataIormConfigState:
         :param pulumi.Input[Sequence[pulumi.Input['ExadataIormConfigDbPlanArgs']]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
-        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
-               
+        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -153,8 +150,7 @@ class _ExadataIormConfigState:
     @pulumi.getter
     def objective(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto" 
-
+        (Updatable) Value for the IORM objective Default is "Auto"
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,8 +223,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
-               
+        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -335,8 +330,7 @@ class ExadataIormConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict']]]] db_plans: (Updatable) Array of IORM Setting for all the database in this Exadata DB System
         :param pulumi.Input[_builtins.str] db_system_id: (Updatable) The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current `lifecycleState`.
-        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto" 
-               
+        :param pulumi.Input[_builtins.str] objective: (Updatable) Value for the IORM objective Default is "Auto"
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -381,8 +375,7 @@ class ExadataIormConfig(pulumi.CustomResource):
     @pulumi.getter
     def objective(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Value for the IORM objective Default is "Auto" 
-
+        (Updatable) Value for the IORM objective Default is "Auto"
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

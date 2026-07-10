@@ -272,7 +272,6 @@ class DynamicSetInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -285,7 +284,6 @@ class DynamicSetInstallPackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -312,7 +310,6 @@ class DynamicSetInstallPackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -630,7 +627,6 @@ class DynamicSetRebootManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -643,7 +639,6 @@ class DynamicSetRebootManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -670,7 +665,6 @@ class DynamicSetRebootManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -691,7 +685,6 @@ class DynamicSetRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -704,7 +697,6 @@ class DynamicSetRemovePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -732,7 +724,6 @@ class DynamicSetRemovePackagesManagementWorkRequestDetailsArgs:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -750,8 +741,7 @@ class DynamicSetTargetCompartmentArgsDict(TypedDict):
     """
     does_include_children: pulumi.Input[_builtins.bool]
     """
-    (Updatable) Indicates if the child compartments are included in the matching rule. 
-
+    (Updatable) Indicates if the child compartments are included in the matching rule.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -764,8 +754,7 @@ class DynamicSetTargetCompartmentArgs:
                  does_include_children: pulumi.Input[_builtins.bool]):
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[_builtins.bool] does_include_children: (Updatable) Indicates if the child compartments are included in the matching rule. 
-               
+        :param pulumi.Input[_builtins.bool] does_include_children: (Updatable) Indicates if the child compartments are included in the matching rule.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -789,8 +778,7 @@ class DynamicSetTargetCompartmentArgs:
     @pulumi.getter(name="doesIncludeChildren")
     def does_include_children(self) -> pulumi.Input[_builtins.bool]:
         """
-        (Updatable) Indicates if the child compartments are included in the matching rule. 
-
+        (Updatable) Indicates if the child compartments are included in the matching rule.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -811,7 +799,6 @@ class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -824,7 +811,6 @@ class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -851,7 +837,6 @@ class DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1771,7 +1756,6 @@ class LifecycleEnvironmentStageArgsDict(TypedDict):
     """
     The vendor of the operating system used by the managed instances in the lifecycle environment.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1814,7 +1798,6 @@ class LifecycleEnvironmentStageArgs:
         :param pulumi.Input[_builtins.str] time_created: The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] time_modified: The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[_builtins.str] vendor_name: The vendor of the operating system used by the managed instances in the lifecycle environment.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2050,7 +2033,6 @@ class LifecycleEnvironmentStageArgs:
         """
         The vendor of the operating system used by the managed instances in the lifecycle environment.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2276,7 +2258,6 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2289,7 +2270,6 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2316,7 +2296,6 @@ class LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRe
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2385,7 +2364,6 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2398,7 +2376,6 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2425,7 +2402,6 @@ class LifecycleStageDetachManagedInstancesManagementManagedInstanceDetailsWorkRe
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2446,7 +2422,6 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict(Ty
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2459,7 +2434,6 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2486,7 +2460,6 @@ class LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2507,7 +2480,6 @@ class LifecycleStageRebootManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2520,7 +2492,6 @@ class LifecycleStageRebootManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2547,7 +2518,6 @@ class LifecycleStageRebootManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2568,7 +2538,6 @@ class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgsDict(T
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2581,7 +2550,6 @@ class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2608,7 +2576,6 @@ class ManagedInstanceAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2678,7 +2645,6 @@ class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgsDict(T
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2691,7 +2657,6 @@ class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2718,7 +2683,6 @@ class ManagedInstanceDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2739,7 +2703,6 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2752,7 +2715,6 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2779,7 +2741,6 @@ class ManagedInstanceGroupAttachManagedInstancesManagementWorkRequestDetailsArgs
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2800,7 +2761,6 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgsD
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2813,7 +2773,6 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2840,7 +2799,6 @@ class ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2910,7 +2868,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgsD
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2923,7 +2880,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2950,7 +2906,6 @@ class ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2971,7 +2926,6 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict(Ty
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -2984,7 +2938,6 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3011,7 +2964,6 @@ class ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3032,7 +2984,6 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgsD
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3045,7 +2996,6 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3072,7 +3022,6 @@ class ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3399,7 +3348,6 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDic
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3412,7 +3360,6 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3439,7 +3386,6 @@ class ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3460,7 +3406,6 @@ class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3473,7 +3418,6 @@ class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3500,7 +3444,6 @@ class ManagedInstanceGroupRebootManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3521,7 +3464,6 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgsDict(Typ
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3534,7 +3476,6 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3561,7 +3502,6 @@ class ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3691,7 +3631,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgsDict(
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3704,7 +3643,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3731,7 +3669,6 @@ class ManagedInstanceGroupUpdateAllPackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3752,7 +3689,6 @@ class ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgsDict(TypedDi
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3765,7 +3701,6 @@ class ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3792,7 +3727,6 @@ class ManagedInstanceInstallPackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3921,7 +3855,6 @@ class ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgsDict(TypedDict)
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3934,7 +3867,6 @@ class ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3961,7 +3893,6 @@ class ManagedInstanceInstallSnapsManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3982,7 +3913,6 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(T
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3995,7 +3925,6 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4022,7 +3951,6 @@ class ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4190,7 +4118,6 @@ class ManagedInstanceRebootManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4203,7 +4130,6 @@ class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4230,7 +4156,6 @@ class ManagedInstanceRebootManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4251,7 +4176,6 @@ class ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgsDict(TypedDic
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4264,7 +4188,6 @@ class ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4291,7 +4214,6 @@ class ManagedInstanceRemovePackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4360,7 +4282,6 @@ class ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgsDict(TypedDict):
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4373,7 +4294,6 @@ class ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4400,7 +4320,6 @@ class ManagedInstanceRemoveSnapsManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4578,7 +4497,6 @@ class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgsDict(Typed
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4591,7 +4509,6 @@ class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4618,7 +4535,6 @@ class ManagedInstanceSwitchSnapChannelManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4639,7 +4555,6 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDic
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4652,7 +4567,6 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4679,7 +4593,6 @@ class ManagedInstanceUpdatePackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4700,7 +4613,6 @@ class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict(
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4713,7 +4625,6 @@ class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4740,7 +4651,6 @@ class ManagedInstancesInstallWindowsUpdatesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4761,7 +4671,6 @@ class ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgsDict(TypedDi
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4774,7 +4683,6 @@ class ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs:
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4801,7 +4709,6 @@ class ManagedInstancesUpdatePackagesManagementWorkRequestDetailsArgs:
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4822,7 +4729,6 @@ class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs
     """
     A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4835,7 +4741,6 @@ class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs
         """
         :param pulumi.Input[_builtins.str] description: User-specified information about the job. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] display_name: A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4862,7 +4767,6 @@ class ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs
     def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6411,7 +6315,6 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDi
     """
     The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -6433,7 +6336,6 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
         """
         :param pulumi.Input[_builtins.str] software_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] availability: Availability of the software source to instances in private data centers or third-party clouds.
@@ -6450,7 +6352,6 @@ class SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs:
     def software_source_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6791,7 +6692,6 @@ class SoftwareSourceVendorSoftwareSourceArgsDict(TypedDict):
     """
     (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -6804,7 +6704,6 @@ class SoftwareSourceVendorSoftwareSourceArgs:
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) User-friendly name.
         :param pulumi.Input[_builtins.str] id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6831,7 +6730,6 @@ class SoftwareSourceVendorSoftwareSourceArgs:
     def id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is immutable on creation.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

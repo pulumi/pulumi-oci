@@ -49,7 +49,6 @@ class FileStorageObjectStorageLinkArgs:
         :param pulumi.Input[_builtins.int] stop_export_to_object_trigger: (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] stop_import_from_object_trigger: (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -224,7 +223,6 @@ class FileStorageObjectStorageLinkArgs:
         """
         (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -278,7 +276,6 @@ class _FileStorageObjectStorageLinkState:
         :param pulumi.Input[_builtins.str] state: The current state of the Object Storage link.
         :param pulumi.Input[_builtins.int] stop_export_to_object_trigger: (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] stop_import_from_object_trigger: (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -525,7 +522,6 @@ class _FileStorageObjectStorageLinkState:
         """
         (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -643,7 +639,6 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] start_import_from_object_trigger: (Updatable) An optional property when incremented triggers Start Import From Object. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] stop_export_to_object_trigger: (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] stop_import_from_object_trigger: (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -814,7 +809,6 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] stop_export_to_object_trigger: (Updatable) An optional property when incremented triggers Stop Export To Object. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] stop_import_from_object_trigger: (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -980,7 +974,6 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
     def stop_import_from_object_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Stop Import From Object. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -500,7 +500,6 @@ export class InstanceConfiguration extends pulumi.CustomResource {
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -594,7 +593,6 @@ export interface InstanceConfigurationState {
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -642,7 +640,6 @@ export interface InstanceConfigurationArgs {
      * The following values are supported:
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

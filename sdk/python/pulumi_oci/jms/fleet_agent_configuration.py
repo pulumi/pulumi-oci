@@ -47,8 +47,7 @@ class FleetAgentConfigurationArgs:
         :param pulumi.Input['FleetAgentConfigurationLinuxConfigurationArgs'] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs'] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs'] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests. 
-               
+        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,8 +212,7 @@ class FleetAgentConfigurationArgs:
     @pulumi.getter(name="workRequestValidityPeriodInDays")
     def work_request_validity_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) The validity period in days for work requests. 
-
+        (Updatable) The validity period in days for work requests.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,8 +255,7 @@ class _FleetAgentConfigurationState:
         :param pulumi.Input['FleetAgentConfigurationMacOsConfigurationArgs'] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[_builtins.str] time_last_modified: The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input['FleetAgentConfigurationWindowsConfigurationArgs'] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests. 
-               
+        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -438,8 +435,7 @@ class _FleetAgentConfigurationState:
     @pulumi.getter(name="workRequestValidityPeriodInDays")
     def work_request_validity_period_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) The validity period in days for work requests. 
-
+        (Updatable) The validity period in days for work requests.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -539,8 +535,7 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict']] linux_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests. 
-               
+        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -700,8 +695,7 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict']] mac_os_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
         :param pulumi.Input[_builtins.str] time_last_modified: The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict']] windows_configuration: (Updatable) Management Agent Configuration for list of include/exclude file system paths (specific to operating system).
-        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests. 
-               
+        :param pulumi.Input[_builtins.int] work_request_validity_period_in_days: (Updatable) The validity period in days for work requests.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -825,8 +819,7 @@ class FleetAgentConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="workRequestValidityPeriodInDays")
     def work_request_validity_period_in_days(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) The validity period in days for work requests. 
-
+        (Updatable) The validity period in days for work requests.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

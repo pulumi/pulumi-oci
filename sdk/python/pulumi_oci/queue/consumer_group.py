@@ -32,7 +32,6 @@ class ConsumerGroupArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name of the consumer group.
         :param pulumi.Input[_builtins.str] queue_id: The OCID of the associated queue.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] consumer_group_filter: (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
@@ -71,7 +70,6 @@ class ConsumerGroupArgs:
     def queue_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the associated queue.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +167,6 @@ class _ConsumerGroupState:
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Used to enable or disable the consumer group.  An enabled consumer group will have a lifecycle state of ACTIVE, while a disabled will have its state as INACTIVE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Any additional details about the current state of the consumer group.
         :param pulumi.Input[_builtins.str] queue_id: The OCID of the associated queue.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +290,6 @@ class _ConsumerGroupState:
         """
         The OCID of the associated queue.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -409,7 +405,6 @@ class ConsumerGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Used to enable or disable the consumer group.  An enabled consumer group will have a lifecycle state of ACTIVE, while a disabled will have its state as INACTIVE.
         :param pulumi.Input[_builtins.str] queue_id: The OCID of the associated queue.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -539,7 +534,6 @@ class ConsumerGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Any additional details about the current state of the consumer group.
         :param pulumi.Input[_builtins.str] queue_id: The OCID of the associated queue.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the consumer group.
@@ -626,7 +620,6 @@ class ConsumerGroup(pulumi.CustomResource):
     def queue_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the associated queue.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -49,8 +49,7 @@ export interface GetAutonomousCharacterSetsArgs {
      */
     isDedicated?: boolean;
     /**
-     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-     *
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      * :
      */
@@ -117,8 +116,7 @@ export interface GetAutonomousCharacterSetsOutputArgs {
      */
     isDedicated?: pulumi.Input<boolean | undefined>;
     /**
-     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-     *
+     * Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
      *
      * :
      */

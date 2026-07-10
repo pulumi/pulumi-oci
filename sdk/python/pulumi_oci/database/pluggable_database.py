@@ -50,7 +50,6 @@ class PluggableDatabaseArgs:
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] should_create_pdb_backup: Indicates whether to take Pluggable Database Backup after the operation.
@@ -210,7 +209,6 @@ class PluggableDatabaseArgs:
         """
         (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -309,7 +307,6 @@ class _PluggableDatabaseState:
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabaseRefreshableCloneConfigArgs']]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
         :param pulumi.Input[_builtins.int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -607,7 +604,6 @@ class _PluggableDatabaseState:
         """
         (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -743,7 +739,6 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pdb_name: The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -909,7 +904,6 @@ class PluggableDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabaseRefreshableCloneConfigArgs', 'PluggableDatabaseRefreshableCloneConfigArgsDict']]]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
         :param pulumi.Input[_builtins.int] rotate_key_trigger: (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1109,7 +1103,6 @@ class PluggableDatabase(pulumi.CustomResource):
     def rotate_key_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Rotate Key. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

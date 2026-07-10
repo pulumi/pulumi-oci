@@ -40,7 +40,6 @@ class ResolverEndpointInitArgs:
         :param pulumi.Input[_builtins.str] resolver_id: The OCID of the target resolver.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -119,7 +118,6 @@ class ResolverEndpointInitArgs:
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -286,7 +284,6 @@ class _ResolverEndpointState:
         :param pulumi.Input[_builtins.str] self: The canonical absolute URL of the resource.
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -535,7 +532,6 @@ class _ResolverEndpointState:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -658,7 +654,6 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scope: Value must be `PRIVATE` when creating private name resolver endpoints.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -830,7 +825,6 @@ class ResolverEndpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the resource.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
@@ -998,7 +992,6 @@ class ResolverEndpoint(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of a subnet. Must be part of the VCN that the resolver is attached to.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

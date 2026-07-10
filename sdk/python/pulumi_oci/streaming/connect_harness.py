@@ -29,8 +29,7 @@ class ConnectHarnessArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the connect harness.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-               
+        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -83,8 +82,7 @@ class ConnectHarnessArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-
+        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -113,8 +111,7 @@ class _ConnectHarnessState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Any additional details about the current state of the connect harness.
-        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-               
+        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -188,8 +185,7 @@ class _ConnectHarnessState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-
+        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -275,8 +271,7 @@ class ConnectHarness(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the connect harness.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-               
+        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,8 +381,7 @@ class ConnectHarness(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Any additional details about the current state of the connect harness.
-        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-               
+        :param pulumi.Input[_builtins.str] name: The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -443,8 +437,7 @@ class ConnectHarness(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-
+        The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

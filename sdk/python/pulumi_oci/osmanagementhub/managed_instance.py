@@ -35,8 +35,7 @@ class ManagedInstanceArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) User-specified description of the managed instance. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         :param pulumi.Input[_builtins.str] primary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
-        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-               
+        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,8 +116,7 @@ class ManagedInstanceArgs:
     @pulumi.getter(name="secondaryManagementStationId")
     def secondary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,8 +206,7 @@ class _ManagedInstanceState:
         :param pulumi.Input[_builtins.str] profile: The profile that was used to register this instance with the service.
         :param pulumi.Input[_builtins.str] profile_version: The version of the profile that was used to register this instance with the service.
         :param pulumi.Input[_builtins.int] scheduled_job_count: Number of scheduled jobs associated with this instance.
-        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-               
+        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -674,8 +671,7 @@ class _ManagedInstanceState:
     @pulumi.getter(name="secondaryManagementStationId")
     def secondary_management_station_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -856,8 +852,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
         :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
         :param pulumi.Input[_builtins.str] primary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as primary management station.
-        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-               
+        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1048,8 +1043,7 @@ class ManagedInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] profile: The profile that was used to register this instance with the service.
         :param pulumi.Input[_builtins.str] profile_version: The version of the profile that was used to register this instance with the service.
         :param pulumi.Input[_builtins.int] scheduled_job_count: Number of scheduled jobs associated with this instance.
-        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-               
+        :param pulumi.Input[_builtins.str] secondary_management_station_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1357,8 +1351,7 @@ class ManagedInstance(pulumi.CustomResource):
     @pulumi.getter(name="secondaryManagementStationId")
     def secondary_management_station_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station. 
-
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station for the instance to use as secondary management station.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

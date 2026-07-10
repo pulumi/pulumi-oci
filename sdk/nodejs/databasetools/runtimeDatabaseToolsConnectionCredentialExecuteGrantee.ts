@@ -72,7 +72,6 @@ export class RuntimeDatabaseToolsConnectionCredentialExecuteGrantee extends pulu
     /**
      * The name of the user to grant the EXECUTE privilege on the credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -129,7 +128,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState {
     /**
      * The name of the user to grant the EXECUTE privilege on the credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -150,7 +148,6 @@ export interface RuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs {
     databaseToolsConnectionId: pulumi.Input<string>;
     /**
      * The name of the user to grant the EXECUTE privilege on the credential.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

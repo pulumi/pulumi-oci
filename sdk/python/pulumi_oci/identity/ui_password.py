@@ -25,7 +25,6 @@ class UiPasswordArgs:
 
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -36,7 +35,6 @@ class UiPasswordArgs:
     def user_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64,7 +62,6 @@ class _UiPasswordState:
         :param pulumi.Input[_builtins.str] state: The password's current state.
         :param pulumi.Input[_builtins.str] time_created: Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -134,7 +131,6 @@ class _UiPasswordState:
         """
         The OCID of the user.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -188,7 +184,6 @@ class UiPassword(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -291,7 +286,6 @@ class UiPassword(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Date and time the password was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -343,7 +337,6 @@ class UiPassword(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

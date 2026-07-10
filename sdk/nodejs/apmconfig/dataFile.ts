@@ -96,7 +96,6 @@ export class DataFile extends pulumi.CustomResource {
     /**
      * (Updatable) Optional user-defined metadata key and value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -215,7 +214,6 @@ export interface DataFileState {
     /**
      * (Updatable) Optional user-defined metadata key and value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -277,7 +275,6 @@ export interface DataFileArgs {
     dataFileName: pulumi.Input<string>;
     /**
      * (Updatable) Optional user-defined metadata key and value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

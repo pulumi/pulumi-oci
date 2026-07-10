@@ -102,8 +102,7 @@ export class RuleSet extends pulumi.CustomResource {
      */
     declare public readonly loadBalancerId: pulumi.Output<string>;
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet` 
-     *
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -159,8 +158,7 @@ export interface RuleSetState {
      */
     loadBalancerId?: pulumi.Input<string | undefined>;
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet` 
-     *
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,8 +180,7 @@ export interface RuleSetArgs {
      */
     loadBalancerId: pulumi.Input<string>;
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet` 
-     *
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

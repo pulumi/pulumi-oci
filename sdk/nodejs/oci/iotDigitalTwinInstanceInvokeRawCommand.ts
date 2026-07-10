@@ -93,7 +93,6 @@ export class IotDigitalTwinInstanceInvokeRawCommand extends pulumi.CustomResourc
     /**
      * Device endpoint from which response is expected to come.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -180,7 +179,6 @@ export interface IotDigitalTwinInstanceInvokeRawCommandState {
     /**
      * Device endpoint from which response is expected to come.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -221,7 +219,6 @@ export interface IotDigitalTwinInstanceInvokeRawCommandArgs {
     responseDuration?: pulumi.Input<string | undefined>;
     /**
      * Device endpoint from which response is expected to come.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

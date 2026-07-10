@@ -8642,7 +8642,6 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -8673,7 +8672,6 @@ class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
     def total_storage_in_gbs(self) -> Optional[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -13335,7 +13333,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
                * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
                * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -13381,7 +13378,6 @@ class DatabaseUpgradeDatabaseUpgradeSourceDetails(dict):
         The source of the Oracle Database software to be used for the upgrade.
         * Use `DB_VERSION` to specify a generally-available Oracle Database software version to upgrade the database.
         * Use `DB_SOFTWARE_IMAGE` to specify a [database software image](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/databasesoftwareimage.htm) to upgrade the database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -17431,7 +17427,6 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
         :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
         :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -17462,7 +17457,6 @@ class ExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
     def total_storage_in_gbs(self) -> Optional[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -19810,7 +19804,6 @@ class KeyStoreTypeDetails(dict):
         :param _builtins.str type: (Updatable) The type of key store.
         :param _builtins.str vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -19857,7 +19850,6 @@ class KeyStoreTypeDetails(dict):
     def vault_id(self) -> _builtins.str:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20088,7 +20080,6 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
         """
         :param _builtins.bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Mapping[str, _builtins.str] all_connection_strings: All connection strings to use to connect to the pluggable database.
@@ -20108,7 +20099,6 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
     def enable_pluggabledatabasemanagement(self) -> _builtins.bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20215,7 +20205,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
         """
         :param _builtins.bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str management_status: The status of the Pluggable Database Management service.
@@ -20229,7 +20218,6 @@ class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(di
     def enable_pluggabledatabasemanagement(self) -> _builtins.bool:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -21025,8 +21013,7 @@ class SchedulingPolicySchedulingWindowWindowPreference(dict):
         :param _builtins.bool is_enforced_duration: (Updatable) Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is `FALSE`.
         :param Sequence['SchedulingPolicySchedulingWindowWindowPreferenceMonthArgs'] months: (Updatable) Months during the year when scheduled window should be performed.
         :param _builtins.str start_time: (Updatable) The scheduling window start time. The value must use the ISO-8601 format "hh:mm".
-        :param Sequence[_builtins.int] weeks_of_months: (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
-               
+        :param Sequence[_builtins.int] weeks_of_months: (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -21082,8 +21069,7 @@ class SchedulingPolicySchedulingWindowWindowPreference(dict):
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[_builtins.int]:
         """
-        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed. 
-
+        (Updatable) Weeks during the month when scheduled window should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow scheduling window during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Scheduling window cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and startTime parameters to allow you to specify specific days of the week and hours that scheduled window will be performed.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -21939,7 +21925,6 @@ class VmClusterNetworkVmNetwork(dict):
         :param _builtins.str netmask: (Updatable) The network netmask.
         :param _builtins.str vlan_id: (Updatable) The network VLAN ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -21999,7 +21984,6 @@ class VmClusterNetworkVmNetwork(dict):
     def vlan_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) The network VLAN ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

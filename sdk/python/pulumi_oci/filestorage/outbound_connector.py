@@ -52,7 +52,6 @@ class OutboundConnectorArgs:
         :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -239,7 +238,6 @@ class OutboundConnectorArgs:
         """
         Version of the trusted certificate secret in the Vault to use.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -289,7 +287,6 @@ class _OutboundConnectorState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the outbound connector was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -524,7 +521,6 @@ class _OutboundConnectorState:
         """
         Version of the trusted certificate secret in the Vault to use.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -641,7 +637,6 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] password_secret_version: Version of the password secret in the Vault to use.
         :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -838,7 +833,6 @@ class OutboundConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] trusted_certificate_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the trusted certificate for the LDAP server in the Vault.
         :param pulumi.Input[_builtins.int] trusted_certificate_secret_version: Version of the trusted certificate secret in the Vault to use.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -995,7 +989,6 @@ class OutboundConnector(pulumi.CustomResource):
     def trusted_certificate_secret_version(self) -> pulumi.Output[_builtins.int]:
         """
         Version of the trusted certificate secret in the Vault to use.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

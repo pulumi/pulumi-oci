@@ -40,7 +40,6 @@ class MonitoringTemplateAlarmConditionArgs:
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) The resource group OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] composite_type: (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
@@ -126,7 +125,6 @@ class MonitoringTemplateAlarmConditionArgs:
         """
         (Updatable) The resource group OCID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -202,7 +200,6 @@ class _MonitoringTemplateAlarmConditionState:
         :param pulumi.Input[_builtins.str] monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) The resource group OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -342,7 +339,6 @@ class _MonitoringTemplateAlarmConditionState:
     def resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The resource group OCID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -487,7 +483,6 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] monitoring_template_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitoring template.
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) The resource group OCID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -644,7 +639,6 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) The stack monitoring service or application emitting the metric that is evaluated by the alarm.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) The resource group OCID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the monitoring template
@@ -742,7 +736,6 @@ class MonitoringTemplateAlarmCondition(pulumi.CustomResource):
     def resource_type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The resource group OCID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

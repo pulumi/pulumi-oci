@@ -73,8 +73,7 @@ class ConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
-        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-               
+        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -420,8 +419,7 @@ class ConfigArgs:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-
+        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -497,8 +495,7 @@ class _ConfigState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigRuleArgs']]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
-        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-               
+        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -897,8 +894,7 @@ class _ConfigState:
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-
+        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1085,8 +1081,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
-        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-               
+        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1337,8 +1332,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] process_filters: (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict']]]] rules: (Updatable)
         :param pulumi.Input[_builtins.str] run_as_user: (Updatable) The OS user that should be used to discover Java processes.
-        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-               
+        :param pulumi.Input[_builtins.str] service_name: (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1603,8 +1597,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="serviceName")
     def service_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-
+        (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

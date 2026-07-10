@@ -134,7 +134,6 @@ export class ManagedKafkaKafkaCluster extends pulumi.CustomResource {
     /**
      * Version of Kafka to use to spin up the cluster
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -302,7 +301,6 @@ export interface ManagedKafkaKafkaClusterState {
     /**
      * Version of Kafka to use to spin up the cluster
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -383,7 +381,6 @@ export interface ManagedKafkaKafkaClusterArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * Version of Kafka to use to spin up the cluster
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

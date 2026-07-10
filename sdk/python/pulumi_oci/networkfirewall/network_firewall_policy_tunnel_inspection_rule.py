@@ -37,7 +37,6 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
         :param pulumi.Input[_builtins.str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] action: (Updatable) Types of Inspect Action on the traffic flow.
@@ -92,7 +91,6 @@ class NetworkFirewallPolicyTunnelInspectionRuleArgs:
         """
         (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,7 +193,6 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
         :param pulumi.Input['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs'] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         :param pulumi.Input[_builtins.str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -338,7 +335,6 @@ class _NetworkFirewallPolicyTunnelInspectionRuleState:
         (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -419,7 +415,6 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         :param pulumi.Input[Union['NetworkFirewallPolicyTunnelInspectionRuleProfileArgs', 'NetworkFirewallPolicyTunnelInspectionRuleProfileArgsDict']] profile: (Updatable) Vxlan Inspect profile used in Vxlan Tunnel Inspection Rules.
         :param pulumi.Input[_builtins.str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -561,7 +556,6 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] protocol: (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
                * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -661,7 +655,6 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
         """
         (Updatable) Types of Tunnel Inspection Protocol to be applied on the traffic.
         * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

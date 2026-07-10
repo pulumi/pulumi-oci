@@ -43,7 +43,6 @@ class NamespaceLookupArgs:
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceLookupCategoryArgs']]] categories: (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
@@ -123,7 +122,6 @@ class NamespaceLookupArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         The lookup type. Valid values are Lookup, Dictionary or Module.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -311,7 +309,6 @@ class _NamespaceLookupState:
         :param pulumi.Input[Sequence[pulumi.Input['NamespaceLookupStatusSummaryArgs']]] status_summaries: StatusSummary
         :param pulumi.Input[_builtins.str] time_updated: The last updated date.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -661,7 +658,6 @@ class _NamespaceLookupState:
         """
         The lookup type. Valid values are Lookup, Dictionary or Module.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -767,7 +763,6 @@ class NamespaceLookup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         :param pulumi.Input[_builtins.str] register_lookup_file: Path to the file containing data for lookup creation.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -974,7 +969,6 @@ class NamespaceLookup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NamespaceLookupStatusSummaryArgs', 'NamespaceLookupStatusSummaryArgsDict']]]] status_summaries: StatusSummary
         :param pulumi.Input[_builtins.str] time_updated: The last updated date.
         :param pulumi.Input[_builtins.str] type: The lookup type. Valid values are Lookup, Dictionary or Module.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1207,7 +1201,6 @@ class NamespaceLookup(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         The lookup type. Valid values are Lookup, Dictionary or Module.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -100,7 +100,6 @@ export class StreamGroup extends pulumi.CustomResource {
     /**
      * (Updatable) List of streamSource OCIDs associated with the stream group
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -199,7 +198,6 @@ export interface StreamGroupState {
     /**
      * (Updatable) List of streamSource OCIDs associated with the stream group
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -248,7 +246,6 @@ export interface StreamGroupArgs {
     streamOverlaps?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamGroupStreamOverlap>[] | undefined>;
     /**
      * (Updatable) List of streamSource OCIDs associated with the stream group
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

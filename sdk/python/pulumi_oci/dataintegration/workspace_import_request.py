@@ -36,7 +36,6 @@ class WorkspaceImportRequestArgs:
         :param pulumi.Input[_builtins.str] file_name: Name of the zip file to be imported.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
@@ -88,7 +87,6 @@ class WorkspaceImportRequestArgs:
     def workspace_id(self) -> pulumi.Input[_builtins.str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -200,7 +198,6 @@ class _WorkspaceImportRequestState:
         :param pulumi.Input[_builtins.str] time_started_in_millis: Time at which the request started getting processed.
         :param pulumi.Input[_builtins.int] total_imported_object_count: Number of objects that are imported.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -438,7 +435,6 @@ class _WorkspaceImportRequestState:
         """
         The workspace ID.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -512,7 +508,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] object_storage_region: Region of the object storage (if using object storage of different region)
         :param pulumi.Input[_builtins.str] object_storage_tenancy_id: Optional parameter to point to object storage tenancy (if using Object Storage of different tenancy)
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -667,7 +662,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_started_in_millis: Time at which the request started getting processed.
         :param pulumi.Input[_builtins.int] total_imported_object_count: Number of objects that are imported.
         :param pulumi.Input[_builtins.str] workspace_id: The workspace ID.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -828,7 +822,6 @@ class WorkspaceImportRequest(pulumi.CustomResource):
     def workspace_id(self) -> pulumi.Output[_builtins.str]:
         """
         The workspace ID.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

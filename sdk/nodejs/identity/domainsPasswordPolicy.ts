@@ -801,7 +801,6 @@ export class DomainsPasswordPolicy extends pulumi.CustomResource {
      * * type: boolean
      * * uniqueness: none
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -1640,7 +1639,6 @@ export interface DomainsPasswordPolicyState {
      * * type: boolean
      * * uniqueness: none
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -2205,7 +2203,6 @@ export interface DomainsPasswordPolicyArgs {
      * * returned: default
      * * type: boolean
      * * uniqueness: none
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

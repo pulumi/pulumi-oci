@@ -43,7 +43,6 @@ class BackupDestinationArgs:
         :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -169,7 +168,6 @@ class BackupDestinationArgs:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -230,7 +228,6 @@ class _BackupDestinationState:
         :param pulumi.Input[_builtins.str] type: Type of the backup destination.
         :param pulumi.Input[_builtins.int] utilized_storage_size_in_gbs: The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -542,7 +539,6 @@ class _BackupDestinationState:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -622,7 +618,6 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[_builtins.str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -797,7 +792,6 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] type: Type of the backup destination.
         :param pulumi.Input[_builtins.int] utilized_storage_size_in_gbs: The total amount of space utilized on the backup destination (in GBs), rounded to the nearest integer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1004,7 +998,6 @@ class BackupDestination(pulumi.CustomResource):
     def vpc_users(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
         """
         (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

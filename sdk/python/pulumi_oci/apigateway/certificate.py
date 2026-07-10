@@ -37,7 +37,6 @@ class CertificateArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -91,7 +90,6 @@ class CertificateArgs:
     def private_key(self) -> pulumi.Input[_builtins.str]:
         """
         The private key associated with the certificate in pem format.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +201,6 @@ class _CertificateState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -358,7 +355,6 @@ class _CertificateState:
         """
         The private key associated with the certificate in pem format.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -508,7 +504,6 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -660,7 +655,6 @@ class Certificate(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] private_key: The private key associated with the certificate in pem format.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the certificate.
@@ -766,7 +760,6 @@ class Certificate(pulumi.CustomResource):
     def private_key(self) -> pulumi.Output[_builtins.str]:
         """
         The private key associated with the certificate in pem format.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

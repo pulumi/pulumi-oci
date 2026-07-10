@@ -80,7 +80,6 @@ export class ExternalMySqlDatabaseConnector extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -251,7 +250,6 @@ export interface ExternalMySqlDatabaseConnectorState {
     /**
      * (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -344,7 +342,6 @@ export interface ExternalMySqlDatabaseConnectorState {
 export interface ExternalMySqlDatabaseConnectorArgs {
     /**
      * (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

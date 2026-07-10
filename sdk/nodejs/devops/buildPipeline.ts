@@ -107,7 +107,6 @@ export class BuildPipeline extends pulumi.CustomResource {
     /**
      * The OCID of the DevOps project.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -212,7 +211,6 @@ export interface BuildPipelineState {
     /**
      * The OCID of the DevOps project.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -261,7 +259,6 @@ export interface BuildPipelineArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the DevOps project.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

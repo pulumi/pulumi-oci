@@ -185,7 +185,6 @@ export class ManagementSavedSearch extends pulumi.CustomResource {
     /**
      * (Updatable) The View Model that the saved search uses to render itself.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -422,7 +421,6 @@ export interface ManagementSavedSearchState {
     /**
      * (Updatable) The View Model that the saved search uses to render itself.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -511,7 +509,6 @@ export interface ManagementSavedSearchArgs {
     widgetTemplate: pulumi.Input<string>;
     /**
      * (Updatable) The View Model that the saved search uses to render itself.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

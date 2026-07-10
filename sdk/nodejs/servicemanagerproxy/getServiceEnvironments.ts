@@ -51,7 +51,7 @@ export interface GetServiceEnvironmentsArgs {
     displayName?: string;
     filters?: inputs.ServiceManagerProxy.GetServiceEnvironmentsFilter[];
     /**
-     * The unique identifier associated with the service environment. 
+     * The unique identifier associated with the service environment.
      *
      * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -131,7 +131,7 @@ export interface GetServiceEnvironmentsOutputArgs {
     displayName?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.ServiceManagerProxy.GetServiceEnvironmentsFilterArgs>[] | undefined>;
     /**
-     * The unique identifier associated with the service environment. 
+     * The unique identifier associated with the service environment.
      *
      * **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

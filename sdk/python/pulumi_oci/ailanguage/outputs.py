@@ -368,7 +368,6 @@ class JobOutputLocation(dict):
         :param _builtins.str namespace: Object Storage namespace name.
         :param _builtins.str prefix: The prefix (directory) in an Object Storage bucket.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -398,7 +397,6 @@ class JobOutputLocation(dict):
     def prefix(self) -> Optional[_builtins.str]:
         """
         The prefix (directory) in an Object Storage bucket.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1335,7 +1333,6 @@ class ModelTrainingDatasetLocationDetails(dict):
         :param _builtins.str namespace: Object storage namespace
         :param Sequence[_builtins.str] object_names: Array of files which need to be processed in the bucket
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1373,7 +1370,6 @@ class ModelTrainingDatasetLocationDetails(dict):
     def object_names(self) -> Sequence[_builtins.str]:
         """
         Array of files which need to be processed in the bucket
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

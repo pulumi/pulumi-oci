@@ -37,7 +37,6 @@ class TriggerArgs:
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project to which the trigger belongs to.
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] connection_id: (Updatable) The OCID of the connection resource used to get details for triggered events.
@@ -92,7 +91,6 @@ class TriggerArgs:
     def trigger_source(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +211,6 @@ class _TriggerState:
         :param pulumi.Input[_builtins.str] time_created: The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -426,7 +423,6 @@ class _TriggerState:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -526,7 +522,6 @@ class Trigger(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] project_id: The OCID of the DevOps project to which the trigger belongs to.
         :param pulumi.Input[_builtins.str] repository_id: (Updatable) The OCID of the DevOps code repository.
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -691,7 +686,6 @@ class Trigger(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] trigger_url: The endpoint that listens to trigger events.
@@ -835,7 +829,6 @@ class Trigger(pulumi.CustomResource):
     def trigger_source(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

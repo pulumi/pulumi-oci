@@ -71,8 +71,7 @@ export class AutonomousContainerDatabaseSnapshotStandby extends pulumi.CustomRes
      */
     declare public readonly connectionStringsType: pulumi.Output<string>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-     *
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyState {
      */
     connectionStringsType?: pulumi.Input<string | undefined>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-     *
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,8 +145,7 @@ export interface AutonomousContainerDatabaseSnapshotStandbyArgs {
      */
     connectionStringsType?: pulumi.Input<string | undefined>;
     /**
-     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-     *
+     * The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

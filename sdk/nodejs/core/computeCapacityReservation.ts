@@ -115,8 +115,7 @@ export class ComputeCapacityReservation extends pulumi.CustomResource {
      */
     declare public readonly instanceReservationConfigs: pulumi.Output<outputs.Core.ComputeCapacityReservationInstanceReservationConfig[]>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-     *
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +227,7 @@ export interface ComputeCapacityReservationState {
      */
     instanceReservationConfigs?: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfig>[] | undefined>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-     *
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -288,8 +286,7 @@ export interface ComputeCapacityReservationArgs {
      */
     instanceReservationConfigs: pulumi.Input<pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfig>[]>;
     /**
-     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default). 
-     *
+     * (Updatable) Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

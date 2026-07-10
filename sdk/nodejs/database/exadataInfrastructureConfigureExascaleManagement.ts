@@ -258,7 +258,6 @@ export class ExadataInfrastructureConfigureExascaleManagement extends pulumi.Cus
     /**
      * Storage size needed for Exascale in GBs.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -597,7 +596,6 @@ export interface ExadataInfrastructureConfigureExascaleManagementState {
     /**
      * Storage size needed for Exascale in GBs.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -615,7 +613,6 @@ export interface ExadataInfrastructureConfigureExascaleManagementArgs {
     exadataInfrastructureId: pulumi.Input<string>;
     /**
      * Storage size needed for Exascale in GBs.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

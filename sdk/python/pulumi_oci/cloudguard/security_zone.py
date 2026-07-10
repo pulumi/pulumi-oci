@@ -33,7 +33,6 @@ class SecurityZoneArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The security zone's display name
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -84,7 +83,6 @@ class SecurityZoneArgs:
     def security_zone_recipe_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -176,7 +174,6 @@ class _SecurityZoneState:
         :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -316,7 +313,6 @@ class _SecurityZoneState:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -438,7 +434,6 @@ class SecurityZone(pulumi.CustomResource):
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.bool] is_inheritance_after_delete_enabled: (Updatable) Indicates if upon deletion of the security zone the comparment should inherit parent security zone
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -579,7 +574,6 @@ class SecurityZone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
         :param pulumi.Input[_builtins.str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] security_zone_target_id: The OCID of the target associated with the security zone
@@ -677,7 +671,6 @@ class SecurityZone(pulumi.CustomResource):
     def security_zone_recipe_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -42,8 +42,7 @@ class OccmDemandSignalItemArgs:
         :param pulumi.Input[_builtins.str] region: (Updatable) The name of region for which you want to request the Oracle Cloud Infrastructure resource.
         :param pulumi.Input[_builtins.str] request_type: The type of request (DEMAND or RETURN) that you want to make for this demand signal item.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] resource_properties: (Updatable) A map of various properties associated with the Oracle Cloud Infrastructure resource.
-        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-               
+        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -162,8 +161,7 @@ class OccmDemandSignalItemArgs:
     @pulumi.getter(name="timeNeededBefore")
     def time_needed_before(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-
+        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -278,8 +276,7 @@ class _OccmDemandSignalItemState:
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
-        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-               
+        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -517,8 +514,7 @@ class _OccmDemandSignalItemState:
     @pulumi.getter(name="timeNeededBefore")
     def time_needed_before(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-
+        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -609,8 +605,7 @@ class OccmDemandSignalItem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] request_type: The type of request (DEMAND or RETURN) that you want to make for this demand signal item.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] resource_properties: (Updatable) A map of various properties associated with the Oracle Cloud Infrastructure resource.
         :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
-        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-               
+        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -786,8 +781,7 @@ class OccmDemandSignalItem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
-        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-               
+        :param pulumi.Input[_builtins.str] time_needed_before: (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -949,8 +943,7 @@ class OccmDemandSignalItem(pulumi.CustomResource):
     @pulumi.getter(name="timeNeededBefore")
     def time_needed_before(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-
+        (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

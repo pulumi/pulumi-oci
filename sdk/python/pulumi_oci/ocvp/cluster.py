@@ -47,7 +47,7 @@ class ClusterArgs:
         The set of arguments for constructing a Cluster resource.
 
         :param pulumi.Input[_builtins.str] compute_availability_domain: The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
-        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         :param pulumi.Input['ClusterNetworkConfigurationArgs'] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
@@ -69,8 +69,7 @@ class ClusterArgs:
                For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
         :param pulumi.Input[_builtins.bool] is_shielded_instance_enabled: Indicates whether shielded instance is enabled for this Cluster.
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
-        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-               
+        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,7 +131,7 @@ class ClusterArgs:
     @pulumi.getter(name="esxiHostsCount")
     def esxi_hosts_count(self) -> pulumi.Input[_builtins.int]:
         """
-        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 
         **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         """
@@ -370,8 +369,7 @@ class ClusterArgs:
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -428,7 +426,7 @@ class _ClusterState:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterDatastoreArgs']]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -451,8 +449,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[_builtins.str] vsphere_type: vSphere Cluster types.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterVsphereUpgradeObjectArgs']]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
-        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-               
+        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -647,7 +644,7 @@ class _ClusterState:
     @pulumi.getter(name="esxiHostsCount")
     def esxi_hosts_count(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 
         **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         """
@@ -879,8 +876,7 @@ class _ClusterState:
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1003,7 +999,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -1019,8 +1015,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict']] network_configuration: (Updatable) The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
         :param pulumi.Input[_builtins.str] sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the Cluster belongs to.
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
-        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-               
+        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1245,7 +1240,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict']]]] datastores: A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A descriptive name for the Cluster. Cluster name requirements are 1-22 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        :param pulumi.Input[_builtins.int] esxi_hosts_count: The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
                
                **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         :param pulumi.Input[_builtins.str] esxi_software_version: (Updatable) The ESXi software bundle to install on the ESXi hosts in the Cluster.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
@@ -1268,8 +1263,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] vmware_software_version: (Updatable) The VMware software bundle to install on the ESXi hosts in the Cluster. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
         :param pulumi.Input[_builtins.str] vsphere_type: vSphere Cluster types.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterVsphereUpgradeObjectArgs', 'ClusterVsphereUpgradeObjectArgsDict']]]] vsphere_upgrade_objects: The links to binary objects needed to upgrade vSphere.
-        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-               
+        :param pulumi.Input[_builtins.str] workload_network_cidr: The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1394,7 +1388,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="esxiHostsCount")
     def esxi_hosts_count(self) -> pulumi.Output[_builtins.int]:
         """
-        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). 
+        The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)).
 
         **Note:** If you later delete EXSi hosts from a production Cluster to make SDDC total host count less than 3, you are still billed for the 3 minimum recommended  ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until the  SDDC again has at least 3 ESXi hosts.
         """
@@ -1550,8 +1544,7 @@ class Cluster(pulumi.CustomResource):
     @pulumi.getter(name="workloadNetworkCidr")
     def workload_network_cidr(self) -> pulumi.Output[_builtins.str]:
         """
-        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads. 
-
+        The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

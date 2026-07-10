@@ -245,8 +245,7 @@ export class PipelineRun extends pulumi.CustomResource {
      */
     declare public readonly storageMountConfigurationOverrideDetailsLists: pulumi.Output<outputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList[]>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -431,8 +430,7 @@ export interface PipelineRunState {
      */
     storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -514,8 +512,7 @@ export interface PipelineRunArgs {
      */
     storageMountConfigurationOverrideDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunStorageMountConfigurationOverrideDetailsList>[] | undefined>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

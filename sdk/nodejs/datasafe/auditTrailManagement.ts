@@ -70,7 +70,6 @@ export class AuditTrailManagement extends pulumi.CustomResource {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -232,7 +231,6 @@ export interface AuditTrailManagementState {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -329,7 +327,6 @@ export interface AuditTrailManagementState {
 export interface AuditTrailManagementArgs {
     /**
      * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

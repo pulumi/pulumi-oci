@@ -136,7 +136,6 @@ export class BatchBatchTaskEnvironment extends pulumi.CustomResource {
     /**
      * Container's working directory.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -252,7 +251,6 @@ export interface BatchBatchTaskEnvironmentState {
     /**
      * Container's working directory.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -299,7 +297,6 @@ export interface BatchBatchTaskEnvironmentArgs {
     volumes?: pulumi.Input<pulumi.Input<inputs.oci.BatchBatchTaskEnvironmentVolume>[] | undefined>;
     /**
      * Container's working directory.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

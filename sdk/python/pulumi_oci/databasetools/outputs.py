@@ -604,7 +604,6 @@ class DatabaseToolsConnectionUserPassword(dict):
         :param _builtins.str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param _builtins.str value_type: (Updatable) The value type of the user password.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -624,7 +623,6 @@ class DatabaseToolsConnectionUserPassword(dict):
     def value_type(self) -> _builtins.str:
         """
         (Updatable) The value type of the user password.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -881,7 +879,6 @@ class DatabaseToolsMcpServerEndpoint(dict):
         :param _builtins.str endpoint: The URI endpoint of the MCP server
         :param _builtins.str type: (Updatable) The Database Tools MCP server type.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -903,7 +900,6 @@ class DatabaseToolsMcpServerEndpoint(dict):
     def type(self) -> Optional[_builtins.str]:
         """
         (Updatable) The Database Tools MCP server type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1633,7 +1629,6 @@ class DatabaseToolsSqlReportVariable(dict):
         :param _builtins.str name: (Updatable) The name of the variable
         :param _builtins.str type: (Updatable) The type of the variable
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1662,7 +1657,6 @@ class DatabaseToolsSqlReportVariable(dict):
     def type(self) -> _builtins.str:
         """
         (Updatable) The type of the variable
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

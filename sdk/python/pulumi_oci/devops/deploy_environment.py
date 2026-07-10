@@ -47,7 +47,6 @@ class DeployEnvironmentArgs:
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -198,7 +197,6 @@ class DeployEnvironmentArgs:
         """
         (Updatable) Security attributes to be added in to the deployment environment
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -245,7 +243,6 @@ class _DeployEnvironmentState:
         :param pulumi.Input['DeployEnvironmentNetworkChannelArgs'] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -439,7 +436,6 @@ class _DeployEnvironmentState:
         """
         (Updatable) Security attributes to be added in to the deployment environment
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -581,7 +577,6 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict']] network_channel: (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -748,7 +743,6 @@ class DeployEnvironment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes to be added in to the deployment environment
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the deployment environment.
@@ -880,7 +874,6 @@ class DeployEnvironment(pulumi.CustomResource):
     def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         (Updatable) Security attributes to be added in to the deployment environment
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -1031,7 +1031,6 @@ class AuthenticationPolicyPasswordPolicyArgsDict(TypedDict):
     """
     (Updatable) Minimum password length required.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1052,7 +1051,6 @@ class AuthenticationPolicyPasswordPolicyArgs:
         :param pulumi.Input[_builtins.bool] is_uppercase_characters_required: (Updatable) At least one uppercase character required.
         :param pulumi.Input[_builtins.bool] is_username_containment_allowed: (Updatable) User name is allowed to be part of the password.
         :param pulumi.Input[_builtins.int] minimum_password_length: (Updatable) Minimum password length required.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1135,7 +1133,6 @@ class AuthenticationPolicyPasswordPolicyArgs:
     def minimum_password_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         (Updatable) Minimum password length required.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3101,7 +3098,6 @@ class DomainsApiKeyUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -3170,7 +3166,6 @@ class DomainsApiKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3289,7 +3284,6 @@ class DomainsApiKeyUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -20300,7 +20294,6 @@ class DomainsAppUserRoleArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -20363,7 +20356,6 @@ class DomainsAppUserRoleArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the AppRole.
@@ -20419,7 +20411,6 @@ class DomainsAppUserRoleArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -25272,7 +25263,6 @@ class DomainsAuthTokenUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -25341,7 +25331,6 @@ class DomainsAuthTokenUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -25460,7 +25449,6 @@ class DomainsAuthTokenUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -31899,7 +31887,6 @@ class DomainsCloudGateMappingUpstreamServerGroupArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -31950,7 +31937,6 @@ class DomainsCloudGateMappingUpstreamServerGroupArgs:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -32027,7 +32013,6 @@ class DomainsCloudGateMappingUpstreamServerGroupArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -33827,7 +33812,6 @@ class DomainsCloudGateUpstreamServerArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -33953,7 +33937,6 @@ class DomainsCloudGateUpstreamServerArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of upstream server
@@ -34066,7 +34049,6 @@ class DomainsCloudGateUpstreamServerArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -36394,7 +36376,6 @@ class DomainsCustomerSecretKeyUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -36463,7 +36444,6 @@ class DomainsCustomerSecretKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -36582,7 +36562,6 @@ class DomainsCustomerSecretKeyUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -38094,7 +38073,6 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
     * mutability: readOnly
     * returned: request
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -38138,7 +38116,6 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
                * type: binary
                * mutability: readOnly
                * returned: request
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -38208,7 +38185,6 @@ class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciT
         * type: binary
         * mutability: readOnly
         * returned: request
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -44237,7 +44213,6 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArg
     * type: boolean
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -44261,7 +44236,6 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArg
                * returned: request
                * type: boolean
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -44287,7 +44261,6 @@ class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArg
         * returned: request
         * type: boolean
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -56115,7 +56088,6 @@ class DomainsMyApiKeyUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -56184,7 +56156,6 @@ class DomainsMyApiKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -56303,7 +56274,6 @@ class DomainsMyApiKeyUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57262,7 +57232,6 @@ class DomainsMyAuthTokenUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -57331,7 +57300,6 @@ class DomainsMyAuthTokenUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57450,7 +57418,6 @@ class DomainsMyAuthTokenUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58409,7 +58376,6 @@ class DomainsMyCustomerSecretKeyUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -58478,7 +58444,6 @@ class DomainsMyCustomerSecretKeyUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58597,7 +58562,6 @@ class DomainsMyCustomerSecretKeyUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -59651,7 +59615,6 @@ class DomainsMyOauth2clientCredentialUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -59720,7 +59683,6 @@ class DomainsMyOauth2clientCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -59839,7 +59801,6 @@ class DomainsMyOauth2clientCredentialUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -64665,7 +64626,6 @@ class DomainsMyUserDbCredentialUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -64747,7 +64707,6 @@ class DomainsMyUserDbCredentialUserArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display: (Updatable) The user display name.
@@ -64820,7 +64779,6 @@ class DomainsMyUserDbCredentialUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68234,7 +68192,6 @@ class DomainsOauth2clientCredentialUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -68303,7 +68260,6 @@ class DomainsOauth2clientCredentialUserArgs:
                * returned: always
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -68422,7 +68378,6 @@ class DomainsOauth2clientCredentialUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77770,7 +77725,6 @@ class DomainsSelfRegistrationProfileUserAttributeArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -77841,7 +77795,6 @@ class DomainsSelfRegistrationProfileUserAttributeArgs:
                * returned: default
                * type: string
                * uniqueness: none
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -77918,7 +77871,6 @@ class DomainsSelfRegistrationProfileUserAttributeArgs:
         * returned: default
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -84409,7 +84361,6 @@ class DomainsUserDbCredentialUserArgsDict(TypedDict):
     * type: string
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -84491,7 +84442,6 @@ class DomainsUserDbCredentialUserArgs:
                * type: string
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display: (Updatable) The user display name.
@@ -84564,7 +84514,6 @@ class DomainsUserDbCredentialUserArgs:
         * returned: always
         * type: string
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100219,7 +100168,6 @@ class DomainsUserX509certificateArgsDict(TypedDict):
     * type: binary
     * uniqueness: none
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -100282,7 +100230,6 @@ class DomainsUserX509certificateArgs:
                * type: binary
                * uniqueness: none
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] display: (Updatable) A human readable name, primarily used for display purposes.
@@ -100338,7 +100285,6 @@ class DomainsUserX509certificateArgs:
         * returned: default
         * type: binary
         * uniqueness: none
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

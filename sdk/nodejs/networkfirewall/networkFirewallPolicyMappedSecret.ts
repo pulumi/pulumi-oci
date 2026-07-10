@@ -98,7 +98,6 @@ export class NetworkFirewallPolicyMappedSecret extends pulumi.CustomResource {
     /**
      * (Updatable) Version number of the secret to be used.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -193,7 +192,6 @@ export interface NetworkFirewallPolicyMappedSecretState {
     /**
      * (Updatable) Version number of the secret to be used.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -232,7 +230,6 @@ export interface NetworkFirewallPolicyMappedSecretArgs {
     vaultSecretId: pulumi.Input<string>;
     /**
      * (Updatable) Version number of the secret to be used.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

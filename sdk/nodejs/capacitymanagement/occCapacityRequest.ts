@@ -167,7 +167,6 @@ export class OccCapacityRequest extends pulumi.CustomResource {
     /**
      * Type of Capacity Request(New or Transfer)
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -338,7 +337,6 @@ export interface OccCapacityRequestState {
     /**
      * Type of Capacity Request(New or Transfer)
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -423,7 +421,6 @@ export interface OccCapacityRequestArgs {
     requestState?: pulumi.Input<string | undefined>;
     /**
      * Type of Capacity Request(New or Transfer)
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

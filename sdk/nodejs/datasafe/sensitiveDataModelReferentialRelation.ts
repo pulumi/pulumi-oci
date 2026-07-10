@@ -102,7 +102,6 @@ export class SensitiveDataModelReferentialRelation extends pulumi.CustomResource
     /**
      * The OCID of the sensitive data model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -186,7 +185,6 @@ export interface SensitiveDataModelReferentialRelationState {
     /**
      * The OCID of the sensitive data model.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -219,7 +217,6 @@ export interface SensitiveDataModelReferentialRelationArgs {
     relationType: pulumi.Input<string>;
     /**
      * The OCID of the sensitive data model.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

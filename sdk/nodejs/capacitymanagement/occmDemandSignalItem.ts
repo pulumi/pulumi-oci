@@ -142,8 +142,7 @@ export class OccmDemandSignalItem extends pulumi.CustomResource {
      */
     declare public readonly targetCompartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-     *
+     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -300,8 +299,7 @@ export interface OccmDemandSignalItemState {
      */
     targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-     *
+     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,8 +362,7 @@ export interface OccmDemandSignalItemArgs {
      */
     targetCompartmentId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-     *
+     * (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -29,8 +29,7 @@ class ManagementDashboardsImportArgs:
 
         :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
-        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-               
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -92,8 +91,7 @@ class ManagementDashboardsImportArgs:
     @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
     def override_saved_search_compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,8 +116,7 @@ class _ManagementDashboardsImportState:
 
         :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
-        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-               
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,8 +178,7 @@ class _ManagementDashboardsImportState:
     @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
     def override_saved_search_compartment_ocid(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,8 +240,7 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
-        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-               
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -348,8 +343,7 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
-        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-               
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -395,8 +389,7 @@ class ManagementDashboardsImport(pulumi.CustomResource):
     @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
     def override_saved_search_compartment_ocid(self) -> pulumi.Output[_builtins.str]:
         """
-        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

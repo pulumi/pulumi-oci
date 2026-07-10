@@ -33,8 +33,7 @@ class PrivateEndpointArgs:
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
         :param pulumi.Input[_builtins.str] data_science_resource_type: Data Science resource type.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet. 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -89,8 +88,7 @@ class PrivateEndpointArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the subnet. 
-
+        The OCID of the subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,8 +206,7 @@ class _PrivateEndpointState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[_builtins.str] state: State of the Data Science private endpoint.
         :param pulumi.Input[_builtins.str] sub_domain: Subdomain for a private endpoint FQDN.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet. 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,8 +395,7 @@ class _PrivateEndpointState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The OCID of the subnet. 
-
+        The OCID of the subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -512,8 +508,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[_builtins.str] sub_domain: Subdomain for a private endpoint FQDN.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet. 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -663,8 +658,7 @@ class PrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of network security group OCIDs.
         :param pulumi.Input[_builtins.str] state: State of the Data Science private endpoint.
         :param pulumi.Input[_builtins.str] sub_domain: Subdomain for a private endpoint FQDN.
-        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet. 
-               
+        :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -794,8 +788,7 @@ class PrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the subnet. 
-
+        The OCID of the subnet.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

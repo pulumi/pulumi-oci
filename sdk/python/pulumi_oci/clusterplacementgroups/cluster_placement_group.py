@@ -45,8 +45,7 @@ class ClusterPlacementGroupArgs:
         :param pulumi.Input[_builtins.str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[_builtins.bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
         :param pulumi.Input['ClusterPlacementGroupPlacementInstructionArgs'] placement_instruction: Details that inform cluster placement group provisioning.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,8 +193,7 @@ class ClusterPlacementGroupArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -239,8 +237,7 @@ class _ClusterPlacementGroupState:
         :param pulumi.Input[_builtins.str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[_builtins.bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
         :param pulumi.Input['ClusterPlacementGroupPlacementInstructionArgs'] placement_instruction: Details that inform cluster placement group provisioning.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -415,8 +412,7 @@ class _ClusterPlacementGroupState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -549,8 +545,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[_builtins.bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
         :param pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']] placement_instruction: Details that inform cluster placement group provisioning.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -717,8 +712,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The friendly name of the cluster placement group.
         :param pulumi.Input[_builtins.bool] opc_dry_run: When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
         :param pulumi.Input[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict']] placement_instruction: Details that inform cluster placement group provisioning.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -839,8 +833,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Cluster Placement Group. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -162,7 +162,6 @@ export class OnPremiseVantagePointWorker extends pulumi.CustomResource {
     /**
      * Type of the On-premise VP worker.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -336,7 +335,6 @@ export interface OnPremiseVantagePointWorkerState {
     /**
      * Type of the On-premise VP worker.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -389,7 +387,6 @@ export interface OnPremiseVantagePointWorkerArgs {
     version: pulumi.Input<string>;
     /**
      * Type of the On-premise VP worker.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

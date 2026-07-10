@@ -194,7 +194,6 @@ export class DatabaseToolsMcpToolset extends pulumi.CustomResource {
     /**
      * (Updatable) The MCP toolset version
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -379,7 +378,6 @@ export interface DatabaseToolsMcpToolsetState {
     /**
      * (Updatable) The MCP toolset version
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -462,7 +460,6 @@ export interface DatabaseToolsMcpToolsetArgs {
     variables?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsMcpToolsetVariable>[] | undefined>;
     /**
      * (Updatable) The MCP toolset version
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

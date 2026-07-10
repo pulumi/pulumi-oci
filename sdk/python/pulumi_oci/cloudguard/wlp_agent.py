@@ -33,7 +33,6 @@ class WlpAgentArgs:
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID of the host
         :param pulumi.Input[_builtins.str] os_info: Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -91,7 +90,6 @@ class WlpAgentArgs:
     def os_info(self) -> pulumi.Input[_builtins.str]:
         """
         Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -157,7 +155,6 @@ class _WlpAgentState:
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] host_id: OCID for instance in which WlpAgent is installed
         :param pulumi.Input[_builtins.str] os_info: Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,7 +280,6 @@ class _WlpAgentState:
         """
         Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -402,7 +398,6 @@ class WlpAgent(pulumi.CustomResource):
                
                Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] os_info: Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -540,7 +535,6 @@ class WlpAgent(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] host_id: OCID for instance in which WlpAgent is installed
         :param pulumi.Input[_builtins.str] os_info: Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -629,7 +623,6 @@ class WlpAgent(pulumi.CustomResource):
     def os_info(self) -> pulumi.Output[_builtins.str]:
         """
         Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

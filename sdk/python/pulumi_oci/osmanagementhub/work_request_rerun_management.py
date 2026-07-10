@@ -29,7 +29,6 @@ class WorkRequestRerunManagementArgs:
 
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
@@ -46,7 +45,6 @@ class WorkRequestRerunManagementArgs:
     def work_request_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -95,7 +93,6 @@ class _WorkRequestRerunManagementState:
         :param pulumi.Input['WorkRequestRerunManagementWorkRequestDetailsArgs'] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -135,7 +132,6 @@ class _WorkRequestRerunManagementState:
     def work_request_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +190,6 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instances: List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
         :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -293,7 +288,6 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         :param pulumi.Input[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict']] work_request_details: Provides the name and description of the job.
         :param pulumi.Input[_builtins.str] work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -327,7 +321,6 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
     def work_request_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

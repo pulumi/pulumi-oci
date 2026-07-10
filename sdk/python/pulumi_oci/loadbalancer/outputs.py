@@ -691,7 +691,7 @@ class BackendSetSslConfiguration(dict):
                **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
         :param Sequence[_builtins.str] trusted_certificate_authority_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         :param _builtins.int verify_depth: (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        :param _builtins.bool verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        :param _builtins.bool verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -807,7 +807,7 @@ class BackendSetSslConfiguration(dict):
     @pulumi.getter(name="verifyPeerCertificate")
     def verify_peer_certificate(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -972,8 +972,7 @@ class ListenerSslConfiguration(dict):
                **Note:** This configuration is applicable only when the load balancer is acting as an SSL/HTTPS server. This field is ignored when the `SSLConfiguration` object is associated with a backend set.
         :param Sequence[_builtins.str] trusted_certificate_authority_ids: (Updatable) Ids for Oracle Cloud Infrastructure certificates service CA or CA bundles for the load balancer to trust.  Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
         :param _builtins.int verify_depth: (Updatable) The maximum depth for peer certificate chain verification.  Example: `3`
-        :param _builtins.bool verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-               
+        :param _builtins.bool verify_peer_certificate: (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1099,8 +1098,7 @@ class ListenerSslConfiguration(dict):
     @pulumi.getter(name="verifyPeerCertificate")
     def verify_peer_certificate(self) -> Optional[_builtins.bool]:
         """
-        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
-
+        (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1235,8 +1233,7 @@ class LoadBalancerRoutingPolicyRule(dict):
         """
         :param Sequence['LoadBalancerRoutingPolicyRuleActionArgs'] actions: (Updatable) A list of actions to be applied when conditions of the routing rule are met.
         :param _builtins.str condition: (Updatable) A routing rule to evaluate defined conditions against the incoming HTTP request and perform an action.
-        :param _builtins.str name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-               
+        :param _builtins.str name: (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1265,8 +1262,7 @@ class LoadBalancerRoutingPolicyRule(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-
+        (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1475,7 +1471,6 @@ class PathRouteSetPathRoutePathMatchType(dict):
                
                For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1492,7 +1487,6 @@ class PathRouteSetPathRoutePathMatchType(dict):
         *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
 
         For a full description of how the system handles `matchType` in a path route set containing multiple rules, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

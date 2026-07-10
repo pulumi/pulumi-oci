@@ -106,7 +106,6 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * Name of snapshot bucket
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -280,7 +279,6 @@ export interface MigrationAssetState {
     /**
      * Name of snapshot bucket
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -350,7 +348,6 @@ export interface MigrationAssetArgs {
     replicationScheduleId?: pulumi.Input<string | undefined>;
     /**
      * Name of snapshot bucket
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

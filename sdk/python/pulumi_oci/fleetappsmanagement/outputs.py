@@ -1338,7 +1338,6 @@ class FleetCredentialUser(dict):
         :param _builtins.str value: (Updatable) The value corresponding to the credential.
         :param _builtins.str vault_id: (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1409,7 +1408,6 @@ class FleetCredentialUser(dict):
     def vault_id(self) -> Optional[_builtins.str]:
         """
         (Updatable) OCID for the Vault that will be used to fetch the key to encrypt/decrypt the value given.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1876,7 +1874,6 @@ class FleetResource(dict):
         :param _builtins.str resource_id: OCID of the resource.
         :param _builtins.str tenancy_id: Tenancy Identifier[OCID].
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str fleet_resource_type: Type of the FleetResource.
@@ -1908,7 +1905,6 @@ class FleetResource(dict):
     def tenancy_id(self) -> _builtins.str:
         """
         Tenancy Identifier[OCID].
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3161,7 +3157,7 @@ class ProvisionDeployedResource(dict):
         :param Sequence['ProvisionDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
@@ -3210,7 +3206,7 @@ class ProvisionDeployedResource(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[_builtins.str]:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         return pulumi.get(self, "resource_type")
 
@@ -5561,7 +5557,7 @@ class RunbookVersionGroup(dict):
         :param _builtins.str type: (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
                inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
                Executes tasks across resources in a rolling order.
-               >>>>>>> theirs
+               > > > > > > > theirs
         :param 'RunbookVersionGroupPropertiesArgs' properties: (Updatable) The properties of the component.
         """
         pulumi.set(__self__, "name", name)
@@ -5584,7 +5580,7 @@ class RunbookVersionGroup(dict):
         (Updatable) The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly
         inside a resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly. ROLLING_RESOURCE_GROUP :
         Executes tasks across resources in a rolling order.
-        >>>>>>> theirs
+        > > > > > > > theirs
         """
         return pulumi.get(self, "type")
 
@@ -7732,7 +7728,6 @@ class SchedulerDefinitionSchedule(dict):
         :param _builtins.str execution_startdate: (Updatable) Start Date for the schedule. An RFC3339 formatted datetime string
         :param _builtins.str type: (Updatable) Schedule Type
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str duration: (Updatable) Duration of the schedule.
@@ -7761,7 +7756,6 @@ class SchedulerDefinitionSchedule(dict):
     def type(self) -> _builtins.str:
         """
         (Updatable) Schedule Type
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -18068,7 +18062,7 @@ class GetProvisionDeployedResourceResult(dict):
         :param Sequence['GetProvisionDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "resource_instance_lists", resource_instance_lists)
@@ -18112,7 +18106,7 @@ class GetProvisionDeployedResourceResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         return pulumi.get(self, "resource_type")
 
@@ -18586,7 +18580,7 @@ class GetProvisionsProvisionCollectionItemDeployedResourceResult(dict):
         :param Sequence['GetProvisionsProvisionCollectionItemDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "resource_instance_lists", resource_instance_lists)
@@ -18630,7 +18624,7 @@ class GetProvisionsProvisionCollectionItemDeployedResourceResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
         """
         return pulumi.get(self, "resource_type")
 

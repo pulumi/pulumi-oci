@@ -27,7 +27,6 @@ class ConfigurationArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class ConfigurationArgs:
         """
         (Updatable) List of email IDs associated with the configuration.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -75,7 +73,6 @@ class _ConfigurationState:
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,7 +105,6 @@ class _ConfigurationState:
     def email_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) List of email IDs associated with the configuration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +181,6 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,7 +277,6 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] email_ids: (Updatable) List of email IDs associated with the configuration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: The time the configuration was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
@@ -311,7 +305,6 @@ class Configuration(pulumi.CustomResource):
     def email_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         (Updatable) List of email IDs associated with the configuration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -29,7 +29,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] apps: (Updatable) Collection of application names.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
@@ -59,7 +58,6 @@ class NetworkFirewallPolicyApplicationGroupArgs:
     def network_firewall_policy_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,7 +109,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -172,7 +169,6 @@ class _NetworkFirewallPolicyApplicationGroupState:
     def network_firewall_policy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,7 +251,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the application group. This field can be used to add additional info.
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -362,7 +357,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Name of the application group.
         :param pulumi.Input[_builtins.str] network_firewall_policy_id: Unique Network Firewall Policy identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] parent_resource_id: OCID of the Network Firewall Policy this application group belongs to.
@@ -409,7 +403,6 @@ class NetworkFirewallPolicyApplicationGroup(pulumi.CustomResource):
     def network_firewall_policy_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique Network Firewall Policy identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

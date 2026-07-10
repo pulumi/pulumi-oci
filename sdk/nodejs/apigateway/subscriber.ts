@@ -123,8 +123,7 @@ export class Subscriber extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-     *
+     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,8 +236,7 @@ export interface SubscriberState {
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-     *
+     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -276,8 +274,7 @@ export interface SubscriberArgs {
      */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.SubscriberLock>[] | undefined>;
     /**
-     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
-     *
+     * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

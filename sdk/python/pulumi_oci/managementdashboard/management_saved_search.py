@@ -60,7 +60,6 @@ class ManagementSavedSearchArgs:
         :param pulumi.Input[_builtins.str] widget_template: (Updatable) The UI template that the saved search uses to render itself.
         :param pulumi.Input[_builtins.str] widget_vm: (Updatable) The View Model that the saved search uses to render itself.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -289,7 +288,6 @@ class ManagementSavedSearchArgs:
         """
         (Updatable) The View Model that the saved search uses to render itself.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -394,7 +392,6 @@ class _ManagementSavedSearchState:
         :param pulumi.Input[_builtins.str] updated_by: The principle id of the user that updated this saved search.
         :param pulumi.Input[_builtins.str] widget_template: (Updatable) The UI template that the saved search uses to render itself.
         :param pulumi.Input[_builtins.str] widget_vm: (Updatable) The View Model that the saved search uses to render itself.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -758,7 +755,6 @@ class _ManagementSavedSearchState:
         """
         (Updatable) The View Model that the saved search uses to render itself.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -868,7 +864,6 @@ class ManagementSavedSearch(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ui_config: (Updatable) It defines the visualization type of the widget saved search, the UI options of that visualization type, the binding of data to the visualization.
         :param pulumi.Input[_builtins.str] widget_template: (Updatable) The UI template that the saved search uses to render itself.
         :param pulumi.Input[_builtins.str] widget_vm: (Updatable) The View Model that the saved search uses to render itself.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1102,7 +1097,6 @@ class ManagementSavedSearch(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] updated_by: The principle id of the user that updated this saved search.
         :param pulumi.Input[_builtins.str] widget_template: (Updatable) The UI template that the saved search uses to render itself.
         :param pulumi.Input[_builtins.str] widget_vm: (Updatable) The View Model that the saved search uses to render itself.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1344,7 +1338,6 @@ class ManagementSavedSearch(pulumi.CustomResource):
     def widget_vm(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The View Model that the saved search uses to render itself.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -42,7 +42,6 @@ class MlApplicationImplementationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ml_application_package: (Updatable) Configuration of The ML Application Package to upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] opc_ml_app_package_args: (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
@@ -154,7 +153,6 @@ class MlApplicationImplementationArgs:
         """
         ML Application Implementation name which is unique for given ML Application.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -217,7 +215,6 @@ class _MlApplicationImplementationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ml_application_package: (Updatable) Configuration of The ML Application Package to upload.
         :param pulumi.Input[Sequence[pulumi.Input['MlApplicationImplementationMlApplicationPackageArgumentArgs']]] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -431,7 +428,6 @@ class _MlApplicationImplementationState:
         """
         ML Application Implementation name which is unique for given ML Application.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -598,7 +594,6 @@ class MlApplicationImplementation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ml_application_id: The OCID of the ML Application implemented by this ML Application Implementation
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] ml_application_package: (Updatable) Configuration of The ML Application Package to upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -777,7 +772,6 @@ class MlApplicationImplementation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict']]]] ml_application_package_arguments: List of ML Application package arguments provided during ML Application package upload.
         :param pulumi.Input[_builtins.str] name: ML Application Implementation name which is unique for given ML Application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] opc_ml_app_package_args: (Updatable) ML Application package arguments required during ML Application package upload. Each argument is a simple key-value pair.
@@ -922,7 +916,6 @@ class MlApplicationImplementation(pulumi.CustomResource):
     def name(self) -> pulumi.Output[_builtins.str]:
         """
         ML Application Implementation name which is unique for given ML Application.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

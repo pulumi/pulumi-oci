@@ -1249,7 +1249,6 @@ class MigrationPlanTargetEnvironmentArgsDict(TypedDict):
     """
     (Updatable) Inventory asset Id of the vnic profile
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1282,7 +1281,6 @@ class MigrationPlanTargetEnvironmentArgs:
         :param pulumi.Input[_builtins.str] target_compartment_id: (Updatable) Target compartment identifier
         :param pulumi.Input[_builtins.str] vcn: (Updatable) OCID of the VM configuration VCN.
         :param pulumi.Input[_builtins.str] vnic_profile_asset_id: (Updatable) Inventory asset Id of the vnic profile
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1448,7 +1446,6 @@ class MigrationPlanTargetEnvironmentArgs:
     def vnic_profile_asset_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Inventory asset Id of the vnic profile
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5859,8 +5856,7 @@ class TargetAssetUserSpecShapeConfigArgs:
 class TargetAssetUserSpecSourceDetailsArgsDict(TypedDict):
     source_type: pulumi.Input[_builtins.str]
     """
-    (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-
+    (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
 
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5898,8 +5894,7 @@ class TargetAssetUserSpecSourceDetailsArgs:
                  image_id: pulumi.Input[Optional[_builtins.str]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-               
+        :param pulumi.Input[_builtins.str] source_type: (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5927,8 +5922,7 @@ class TargetAssetUserSpecSourceDetailsArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-
+        (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

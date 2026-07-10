@@ -929,7 +929,6 @@ class CloudGuardDataSourceRegionStatusDetailArgsDict(TypedDict):
     """
     (Updatable) Enablement status of data source.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -942,7 +941,6 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         """
         :param pulumi.Input[_builtins.str] region: Data source replication region
         :param pulumi.Input[_builtins.str] status: (Updatable) Enablement status of data source.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -970,7 +968,6 @@ class CloudGuardDataSourceRegionStatusDetailArgs:
         """
         (Updatable) Enablement status of data source.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -990,7 +987,6 @@ class DataMaskRuleTargetSelectedArgsDict(TypedDict):
     """
     (Updatable) Types of targets
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1003,7 +999,6 @@ class DataMaskRuleTargetSelectedArgs:
         """
         :param pulumi.Input[_builtins.str] kind: (Updatable) Kind of target selection to be used
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) Types of targets
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1029,7 +1024,6 @@ class DataMaskRuleTargetSelectedArgs:
     def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Types of targets
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7642,7 +7636,6 @@ class TargetTargetResponderRecipeResponderRuleArgsDict(TypedDict):
     """
     (Updatable) Unique identifier for target detector recipe
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -7710,7 +7703,6 @@ class TargetTargetResponderRecipeResponderRuleArgs:
         :param pulumi.Input['TargetTargetResponderRecipeResponderRuleDetailsArgs'] details: (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
         :param pulumi.Input[_builtins.str] responder_rule_id: (Updatable) Unique identifier for target detector recipe
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: Compartment OCID where the resource is created
@@ -7768,7 +7760,6 @@ class TargetTargetResponderRecipeResponderRuleArgs:
     def responder_rule_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Unique identifier for target detector recipe
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -33,7 +33,6 @@ class AutonomousDatabaseSoftwareImageArgs:
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -89,7 +88,6 @@ class AutonomousDatabaseSoftwareImageArgs:
     def source_cdb_id(self) -> pulumi.Input[_builtins.str]:
         """
         The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -154,7 +152,6 @@ class _AutonomousDatabaseSoftwareImageState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[_builtins.str] release_update: The Release Updates.
         :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -303,7 +300,6 @@ class _AutonomousDatabaseSoftwareImageState:
         """
         The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -405,7 +401,6 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -542,7 +537,6 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] release_update: The Release Updates.
         :param pulumi.Input[_builtins.str] source_cdb_id: The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous AI Database Software Image.
@@ -645,7 +639,6 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
     def source_cdb_id(self) -> pulumi.Output[_builtins.str]:
         """
         The source Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) from which to create Autonomous AI Database Software Image.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

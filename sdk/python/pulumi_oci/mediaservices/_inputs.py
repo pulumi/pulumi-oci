@@ -762,7 +762,6 @@ class MediaWorkflowTaskArgsDict(TypedDict):
     """
     (Updatable) The version of the MediaWorkflowTaskDeclaration.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -794,7 +793,6 @@ class MediaWorkflowTaskArgs:
         :param pulumi.Input[_builtins.str] parameters: (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
         :param pulumi.Input[_builtins.str] version: (Updatable) The version of the MediaWorkflowTaskDeclaration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -854,7 +852,6 @@ class MediaWorkflowTaskArgs:
     def version(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The version of the MediaWorkflowTaskDeclaration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1159,7 +1156,6 @@ class StreamCdnConfigLockArgsDict(TypedDict):
     """
     Type of the lock.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1187,7 +1183,6 @@ class StreamCdnConfigLockArgs:
         """
         :param pulumi.Input[_builtins.str] compartment_id: The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1221,7 +1216,6 @@ class StreamCdnConfigLockArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1278,7 +1272,6 @@ class StreamDistributionChannelLockArgsDict(TypedDict):
     """
     Type of the lock.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -1306,7 +1299,6 @@ class StreamDistributionChannelLockArgs:
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment ID of the lock.
         :param pulumi.Input[_builtins.str] type: Type of the lock.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1340,7 +1332,6 @@ class StreamDistributionChannelLockArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

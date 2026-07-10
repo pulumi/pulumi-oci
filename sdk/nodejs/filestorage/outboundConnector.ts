@@ -168,7 +168,6 @@ export class OutboundConnector extends pulumi.CustomResource {
     /**
      * Version of the trusted certificate secret in the Vault to use.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -312,7 +311,6 @@ export interface OutboundConnectorState {
     /**
      * Version of the trusted certificate secret in the Vault to use.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -374,7 +372,6 @@ export interface OutboundConnectorArgs {
     trustedCertificateSecretId?: pulumi.Input<string | undefined>;
     /**
      * Version of the trusted certificate secret in the Vault to use.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

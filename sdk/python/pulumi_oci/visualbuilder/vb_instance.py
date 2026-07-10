@@ -39,7 +39,6 @@ class VbInstanceArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Vb Instance Identifier.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['VbInstanceAlternateCustomEndpointArgs']]] alternate_custom_endpoints: (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
@@ -100,7 +99,6 @@ class VbInstanceArgs:
     def node_count(self) -> pulumi.Input[_builtins.int]:
         """
         (Updatable) The number of Nodes
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -249,7 +247,6 @@ class _VbInstanceState:
         :param pulumi.Input[_builtins.str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input['VbInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -466,7 +463,6 @@ class _VbInstanceState:
         """
         (Updatable) The number of Nodes
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -610,7 +606,6 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -753,7 +748,6 @@ class VbInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] management_vcn_id: The Oracle Cloud ID (OCID) of the Visual Builder management VCN
         :param pulumi.Input[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict']] network_endpoint_details: (Updatable) Base representation of a network endpoint. In input payload to update an Visual Builder instance endpoint details, an empty payload will clear out any existing configuration for Public Visual Builder instance.
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of Nodes
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -901,7 +895,6 @@ class VbInstance(pulumi.CustomResource):
     def node_count(self) -> pulumi.Output[_builtins.int]:
         """
         (Updatable) The number of Nodes
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

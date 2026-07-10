@@ -43,8 +43,7 @@ class ModelDeploymentArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,8 +178,7 @@ class ModelDeploymentArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,8 +224,7 @@ class _ModelDeploymentState:
         :param pulumi.Input[_builtins.str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -424,8 +421,7 @@ class _ModelDeploymentState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -494,8 +490,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -623,8 +618,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -759,8 +753,7 @@ class ModelDeployment(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -147,7 +147,6 @@ export class MlApplicationImplementation extends pulumi.CustomResource {
     /**
      * ML Application Implementation name which is unique for given ML Application.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -303,7 +302,6 @@ export interface MlApplicationImplementationState {
     /**
      * ML Application Implementation name which is unique for given ML Application.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -368,7 +366,6 @@ export interface MlApplicationImplementationArgs {
     mlApplicationPackage?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * ML Application Implementation name which is unique for given ML Application.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -35,7 +35,6 @@ class BaselineableMetricArgs:
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group of the metric
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) Resource type of the metric
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -115,7 +114,6 @@ class BaselineableMetricArgs:
         """
         (Updatable) Resource type of the metric
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -159,7 +157,6 @@ class _BaselineableMetricState:
         :param pulumi.Input[_builtins.str] namespace: (Updatable) namespace of the metric
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group of the metric
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) Resource type of the metric
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -328,7 +325,6 @@ class _BaselineableMetricState:
         """
         (Updatable) Resource type of the metric
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -452,7 +448,6 @@ class BaselineableMetric(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: (Updatable) namespace of the metric
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group of the metric
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) Resource type of the metric
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -592,7 +587,6 @@ class BaselineableMetric(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_group: (Updatable) Resource group of the metric
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) Resource type of the metric
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the metric extension
@@ -708,7 +702,6 @@ class BaselineableMetric(pulumi.CustomResource):
     def resource_type(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Resource type of the metric
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -32,7 +32,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecordArgs:
         :param pulumi.Input[_builtins.str] license_acceptance_status: (Updatable) Status of license acceptance.
         :param pulumi.Input[_builtins.str] license_type: License type for the Java version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -72,7 +71,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecordArgs:
     def license_type(self) -> pulumi.Input[_builtins.str]:
         """
         License type for the Java version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -120,7 +118,6 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
         :param pulumi.Input[Sequence[pulumi.Input['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs']]] last_updated_bies: An authorized principal.
         :param pulumi.Input[_builtins.str] license_acceptance_status: (Updatable) Status of license acceptance.
         :param pulumi.Input[_builtins.str] license_type: License type for the Java version.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +227,6 @@ class _JavaDownloadsJavaLicenseAcceptanceRecordState:
         """
         License type for the Java version.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -334,7 +330,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[_builtins.str] license_acceptance_status: (Updatable) Status of license acceptance.
         :param pulumi.Input[_builtins.str] license_type: License type for the Java version.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -454,7 +449,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_acceptance_status: (Updatable) Status of license acceptance.
         :param pulumi.Input[_builtins.str] license_type: License type for the Java version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the JavaLicenseAcceptanceRecord.
@@ -532,7 +526,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
     def license_type(self) -> pulumi.Output[_builtins.str]:
         """
         License type for the Java version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

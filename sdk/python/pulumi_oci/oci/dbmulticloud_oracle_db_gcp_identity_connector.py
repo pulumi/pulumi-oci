@@ -45,7 +45,6 @@ class DbmulticloudOracleDbGcpIdentityConnectorArgs:
         :param pulumi.Input[_builtins.str] project_id: (Updatable) Project id of the customer project.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -167,7 +166,6 @@ class DbmulticloudOracleDbGcpIdentityConnectorArgs:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -240,7 +238,6 @@ class _DbmulticloudOracleDbGcpIdentityConnectorState:
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] project_id: (Updatable) Project id of the customer project.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -448,7 +445,6 @@ class _DbmulticloudOracleDbGcpIdentityConnectorState:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -579,7 +575,6 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] issuer_url: (Updatable) OIDC token issuer Url
         :param pulumi.Input[_builtins.str] project_id: (Updatable) Project id of the customer project.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -752,7 +747,6 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] project_id: (Updatable) Project id of the customer project.
         :param pulumi.Input[_builtins.str] resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the GCP Identity Connector resource.
@@ -893,7 +887,6 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
     def resource_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GCP VM Cluster resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -33,7 +33,6 @@ class SubscriptionRedeemableUserArgs:
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[_builtins.str] user_id: The user ID of the person to send a copy of an email.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -85,7 +84,6 @@ class SubscriptionRedeemableUserArgs:
         """
         The user ID of the person to send a copy of an email.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -110,7 +108,6 @@ class _SubscriptionRedeemableUserState:
         :param pulumi.Input[_builtins.str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[_builtins.str] user_id: The user ID of the person to send a copy of an email.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -165,7 +162,6 @@ class _SubscriptionRedeemableUserState:
     def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The user ID of the person to send a copy of an email.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,7 +224,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subscription_id: The subscription ID for which rewards information is requested for.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[_builtins.str] user_id: The user ID of the person to send a copy of an email.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -337,7 +332,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy.
         :param pulumi.Input[_builtins.str] user_id: The user ID of the person to send a copy of an email.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -380,7 +374,6 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[_builtins.str]:
         """
         The user ID of the person to send a copy of an email.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

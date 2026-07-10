@@ -149,7 +149,6 @@ export class NamedCredential extends pulumi.CustomResource {
     /**
      * The type of the Named Credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -254,7 +253,6 @@ export interface NamedCredentialState {
     /**
      * The type of the Named Credential.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -291,7 +289,6 @@ export interface NamedCredentialArgs {
     properties: pulumi.Input<pulumi.Input<inputs.ManagementAgent.NamedCredentialProperty>[]>;
     /**
      * The type of the Named Credential.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

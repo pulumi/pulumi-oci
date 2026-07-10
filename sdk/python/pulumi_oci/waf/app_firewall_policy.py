@@ -45,8 +45,7 @@ class AppFirewallPolicyArgs:
         :param pulumi.Input['AppFirewallPolicyRequestRateLimitingArgs'] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
         :param pulumi.Input['AppFirewallPolicyResponseAccessControlArgs'] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         :param pulumi.Input['AppFirewallPolicyResponseProtectionArgs'] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -197,8 +196,7 @@ class AppFirewallPolicyArgs:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -243,8 +241,7 @@ class _AppFirewallPolicyState:
         :param pulumi.Input['AppFirewallPolicyResponseAccessControlArgs'] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         :param pulumi.Input['AppFirewallPolicyResponseProtectionArgs'] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         :param pulumi.Input[_builtins.str] state: The current state of the WebAppFirewallPolicy.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -430,8 +427,7 @@ class _AppFirewallPolicyState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -644,8 +640,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
         :param pulumi.Input[Union['AppFirewallPolicyRequestRateLimitingArgs', 'AppFirewallPolicyRequestRateLimitingArgsDict']] request_rate_limiting: (Updatable) Module that allows inspection of HTTP connection properties and to limit requests frequency for a given key.
         :param pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         :param pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -899,8 +894,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
         :param pulumi.Input[Union['AppFirewallPolicyResponseAccessControlArgs', 'AppFirewallPolicyResponseAccessControlArgsDict']] response_access_control: (Updatable) Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         :param pulumi.Input[Union['AppFirewallPolicyResponseProtectionArgs', 'AppFirewallPolicyResponseProtectionArgsDict']] response_protection: (Updatable) Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         :param pulumi.Input[_builtins.str] state: The current state of the WebAppFirewallPolicy.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-               
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1028,8 +1022,7 @@ class AppFirewallPolicy(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-
+        (Updatable) Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

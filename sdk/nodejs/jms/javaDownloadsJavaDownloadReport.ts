@@ -122,8 +122,7 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
      */
     declare public readonly timeEnd: pulumi.Output<string>;
     /**
-     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-     *
+     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -248,8 +247,7 @@ export interface JavaDownloadsJavaDownloadReportState {
      */
     timeEnd?: pulumi.Input<string | undefined>;
     /**
-     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-     *
+     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -282,8 +280,7 @@ export interface JavaDownloadsJavaDownloadReportArgs {
      */
     timeEnd?: pulumi.Input<string | undefined>;
     /**
-     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
-     *
+     * The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

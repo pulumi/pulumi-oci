@@ -41,8 +41,7 @@ class LicenseRecordArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
         :param pulumi.Input[_builtins.str] product_id: (Updatable) The license record product ID.
-        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
+        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -176,8 +175,7 @@ class LicenseRecordArgs:
     @pulumi.getter(name="supportEndDate")
     def support_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
+        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -225,8 +223,7 @@ class _LicenseRecordState:
         :param pulumi.Input[_builtins.str] product_license: The product license name with which the license record is associated.
         :param pulumi.Input[_builtins.str] product_license_id: Unique product license identifier.
         :param pulumi.Input[_builtins.str] state: The current license record state.
-        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
+        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -429,8 +426,7 @@ class _LicenseRecordState:
     @pulumi.getter(name="supportEndDate")
     def support_end_date(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
+        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -546,8 +542,7 @@ class LicenseRecord(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] license_count: (Updatable) The number of license units added by a user in a license record. Default 1
         :param pulumi.Input[_builtins.str] product_id: (Updatable) The license record product ID.
         :param pulumi.Input[_builtins.str] product_license_id: Unique product license identifier.
-        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
+        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -704,8 +699,7 @@ class LicenseRecord(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] product_license: The product license name with which the license record is associated.
         :param pulumi.Input[_builtins.str] product_license_id: Unique product license identifier.
         :param pulumi.Input[_builtins.str] state: The current license record state.
-        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-               
+        :param pulumi.Input[_builtins.str] support_end_date: (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -844,8 +838,7 @@ class LicenseRecord(pulumi.CustomResource):
     @pulumi.getter(name="supportEndDate")
     def support_end_date(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12` 
-
+        (Updatable) The license record support end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

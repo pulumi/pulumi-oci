@@ -95,7 +95,6 @@ export class CostadCostAlertSubscription extends pulumi.CustomResource {
     /**
      * The name of the cost alert subscription. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -197,7 +196,6 @@ export interface CostadCostAlertSubscriptionState {
     /**
      * The name of the cost alert subscription. Avoid entering confidential information.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -246,7 +244,6 @@ export interface CostadCostAlertSubscriptionArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The name of the cost alert subscription. Avoid entering confidential information.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

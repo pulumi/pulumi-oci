@@ -86,7 +86,6 @@ export class OneoffPatch extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -224,7 +223,6 @@ export interface OneoffPatchState {
     /**
      * (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +295,6 @@ export interface OneoffPatchArgs {
     displayName: pulumi.Input<string>;
     /**
      * (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

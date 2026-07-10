@@ -144,7 +144,6 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -294,7 +293,6 @@ export interface WorkspaceExportRequestState {
     /**
      * The workspace ID.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -339,7 +337,6 @@ export interface WorkspaceExportRequestArgs {
     objectStorageTenancyId?: pulumi.Input<string | undefined>;
     /**
      * The workspace ID.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

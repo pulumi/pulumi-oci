@@ -76,8 +76,7 @@ export class JobAdvisorReportCheck extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly items: pulumi.Output<outputs.DatabaseMigration.JobAdvisorReportCheckItem[]>;
     /**
-     * The OCID of the job 
-     *
+     * The OCID of the job
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,8 +144,7 @@ export interface JobAdvisorReportCheckState {
      */
     items?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobAdvisorReportCheckItem>[] | undefined>;
     /**
-     * The OCID of the job 
-     *
+     * The OCID of the job
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,8 +169,7 @@ export interface JobAdvisorReportCheckArgs {
      */
     isReviewed: pulumi.Input<boolean>;
     /**
-     * The OCID of the job 
-     *
+     * The OCID of the job
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

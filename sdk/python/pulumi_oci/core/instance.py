@@ -153,7 +153,6 @@ class InstanceArgs:
         :param pulumi.Input['InstancePlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -657,7 +656,6 @@ class InstanceArgs:
         """
         (Updatable) The platform configuration requested for the instance.
 
-
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
         Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -949,7 +947,6 @@ class _InstanceState:
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param pulumi.Input['InstancePlacementConstraintDetailsArgs'] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input['InstancePlatformConfigArgs'] platform_config: (Updatable) The platform configuration requested for the instance.
-               
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -1524,7 +1521,6 @@ class _InstanceState:
         """
         (Updatable) The platform configuration requested for the instance.
 
-
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 
         Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -1951,7 +1947,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
                
-               
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
                Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
@@ -2325,7 +2320,6 @@ class Instance(pulumi.CustomResource):
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         :param pulumi.Input[Union['InstancePlacementConstraintDetailsArgs', 'InstancePlacementConstraintDetailsArgsDict']] placement_constraint_details: Generic placement details field which is overloaded with bare metal host id or host group id based on the resource we are targeting to launch.
         :param pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']] platform_config: (Updatable) The platform configuration requested for the instance.
-               
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
                
@@ -2727,7 +2721,6 @@ class Instance(pulumi.CustomResource):
     def platform_config(self) -> pulumi.Output['outputs.InstancePlatformConfig']:
         """
         (Updatable) The platform configuration requested for the instance.
-
 
         If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
 

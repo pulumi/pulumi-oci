@@ -25,7 +25,6 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
 
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -36,7 +35,6 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
     def operations_insights_warehouse_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique Ops Insights Warehouse identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57,7 +55,6 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
 
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -69,7 +66,6 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     def operations_insights_warehouse_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Ops Insights Warehouse identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -118,7 +114,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +198,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -219,7 +213,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     def operations_insights_warehouse_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique Ops Insights Warehouse identifier
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

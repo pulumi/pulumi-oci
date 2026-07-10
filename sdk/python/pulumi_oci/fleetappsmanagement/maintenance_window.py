@@ -36,7 +36,6 @@ class MaintenanceWindowArgs:
         :param pulumi.Input[_builtins.str] duration: (Updatable) Duration of the maintenance window. Specify how long the maintenance window remains open.
         :param pulumi.Input[_builtins.str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -94,7 +93,6 @@ class MaintenanceWindowArgs:
     def time_schedule_start(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Specify the date and time of the day that the maintenance window starts.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,7 +225,6 @@ class _MaintenanceWindowState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -440,7 +437,6 @@ class _MaintenanceWindowState:
         """
         (Updatable) Specify the date and time of the day that the maintenance window starts.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -532,7 +528,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_recurring: (Updatable) Is this a recurring maintenance window?
         :param pulumi.Input[_builtins.str] recurrences: (Updatable) Recurrence rule specification if maintenance window recurring. Specify the frequency of running the maintenance window.
         :param pulumi.Input[_builtins.str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -688,7 +683,6 @@ class MaintenanceWindow(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[_builtins.str] time_schedule_start: (Updatable) Specify the date and time of the day that the maintenance window starts.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -832,7 +826,6 @@ class MaintenanceWindow(pulumi.CustomResource):
     def time_schedule_start(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Specify the date and time of the day that the maintenance window starts.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

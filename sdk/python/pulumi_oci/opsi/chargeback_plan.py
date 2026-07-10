@@ -39,7 +39,6 @@ class ChargebackPlanArgs:
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -122,7 +121,6 @@ class ChargebackPlanArgs:
         """
         Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -189,7 +187,6 @@ class _ChargebackPlanState:
         :param pulumi.Input[_builtins.str] plan_description: (Updatable) Description of OPSI Chargeback Plan.
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,7 +352,6 @@ class _ChargebackPlanState:
         """
         Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -481,7 +477,6 @@ class ChargebackPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] plan_description: (Updatable) Description of OPSI Chargeback Plan.
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -637,7 +632,6 @@ class ChargebackPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] plan_name: (Updatable) Name for the OPSI Chargeback plan.
         :param pulumi.Input[_builtins.str] plan_type: Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: Chargeback Plan lifecycle states
@@ -751,7 +745,6 @@ class ChargebackPlan(pulumi.CustomResource):
     def plan_type(self) -> pulumi.Output[_builtins.str]:
         """
         Chargeback Plan type of the chargeback entity. For an Exadata it can be WEIGHTED_ALLOCATION, EQUAL_ALLOCATION, UNUSED_ALLOCATION.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -123,7 +123,6 @@ export class Alert extends pulumi.CustomResource {
     /**
      * (Updatable) The status of the alert.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -300,7 +299,6 @@ export interface AlertState {
     /**
      * (Updatable) The status of the alert.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -353,7 +351,6 @@ export interface AlertArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) The status of the alert.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

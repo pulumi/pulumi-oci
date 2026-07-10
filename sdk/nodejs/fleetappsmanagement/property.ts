@@ -128,7 +128,6 @@ export class Property extends pulumi.CustomResource {
     /**
      * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -260,7 +259,6 @@ export interface PropertyState {
     /**
      * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +295,6 @@ export interface PropertyArgs {
     valueType: pulumi.Input<string>;
     /**
      * (Updatable) Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

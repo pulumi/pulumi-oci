@@ -34,7 +34,6 @@ class BdsInstanceOsPatchActionArgs:
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         :param pulumi.Input[_builtins.str] os_patch_version: The version of the OS patch to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['BdsInstanceOsPatchActionPatchingConfigsArgs'] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
@@ -77,7 +76,6 @@ class BdsInstanceOsPatchActionArgs:
     def os_patch_version(self) -> pulumi.Input[_builtins.str]:
         """
         The version of the OS patch to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,7 +123,6 @@ class _BdsInstanceOsPatchActionState:
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         :param pulumi.Input[_builtins.str] os_patch_version: The version of the OS patch to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +178,6 @@ class _BdsInstanceOsPatchActionState:
     def os_patch_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The version of the OS patch to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -258,7 +254,6 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_admin_password: Base-64 encoded password for the cluster admin user.
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         :param pulumi.Input[_builtins.str] os_patch_version: The version of the OS patch to be installed.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -374,7 +369,6 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
                * `isDryRun` - (Optional) Perform dry run for the patch and stop without actually patching the cluster.
         :param pulumi.Input[_builtins.str] os_patch_version: The version of the OS patch to be installed.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict']] patching_configs: Detailed configurations for defining the behavior when installing ODH patches. If not provided, nodes will be patched with down time.
@@ -417,7 +411,6 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
     def os_patch_version(self) -> pulumi.Output[_builtins.str]:
         """
         The version of the OS patch to be installed.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

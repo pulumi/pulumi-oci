@@ -28,7 +28,6 @@ class UserGroupMembershipArgs:
         :param pulumi.Input[_builtins.str] group_id: The OCID of the group.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
@@ -55,7 +54,6 @@ class UserGroupMembershipArgs:
     def user_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -97,7 +95,6 @@ class _UserGroupMembershipState:
         :param pulumi.Input[_builtins.str] state: The membership's current state.
         :param pulumi.Input[_builtins.str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,7 +178,6 @@ class _UserGroupMembershipState:
         """
         The OCID of the user.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -235,7 +231,6 @@ class UserGroupMembership(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the tenancy containing the user, group, and membership object.
         :param pulumi.Input[_builtins.str] group_id: The OCID of the group.
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +336,6 @@ class UserGroupMembership(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: Date and time the membership was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -402,7 +396,6 @@ class UserGroupMembership(pulumi.CustomResource):
     def user_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the user.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -67,8 +67,7 @@ class NodePoolArgs:
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -379,8 +378,7 @@ class NodePoolArgs:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
+        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -449,8 +447,7 @@ class _NodePoolState:
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -820,8 +817,7 @@ class _NodePoolState:
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
+        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1012,8 +1008,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] quantity_per_subnet: (Updatable) Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property. When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1297,8 +1292,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict']]]] secondary_vnics: (Updatable) A list of secondary vnics to attach to nodes
         :param pulumi.Input[_builtins.str] ssh_public_key: (Updatable) The SSH public key on each node in the node pool on launch.
         :param pulumi.Input[_builtins.str] state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-               
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1541,8 +1535,7 @@ class NodePool(pulumi.CustomResource):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
-        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. 
-
+        (Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

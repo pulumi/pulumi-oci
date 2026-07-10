@@ -43,7 +43,6 @@ class SslCipherSuiteArgs:
                
                example: `example_cipher_suite`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -94,7 +93,6 @@ class SslCipherSuiteArgs:
 
         example: `example_cipher_suite`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -132,7 +130,6 @@ class _SslCipherSuiteState:
                * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
                
                example: `example_cipher_suite`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,7 +184,6 @@ class _SslCipherSuiteState:
         * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 
         example: `example_cipher_suite`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -266,7 +262,6 @@ class SslCipherSuite(pulumi.CustomResource):
                * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
                
                example: `example_cipher_suite`
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,7 +375,6 @@ class SslCipherSuite(pulumi.CustomResource):
                
                example: `example_cipher_suite`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -427,7 +421,6 @@ class SslCipherSuite(pulumi.CustomResource):
         * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
 
         example: `example_cipher_suite`
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -35,7 +35,6 @@ class PluggableDatabasesLocalCloneArgs:
         :param pulumi.Input[_builtins.bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[_builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -102,7 +101,6 @@ class PluggableDatabasesLocalCloneArgs:
         """
         The existing TDE wallet password of the target CDB.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -158,7 +156,6 @@ class _PluggableDatabasesLocalCloneState:
         :param pulumi.Input[_builtins.str] state: The current state of the pluggable database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -427,7 +424,6 @@ class _PluggableDatabasesLocalCloneState:
         """
         The existing TDE wallet password of the target CDB.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -497,7 +493,6 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] pluggable_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[_builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -647,7 +642,6 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the pluggable database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -828,7 +822,6 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
     def target_tde_wallet_password(self) -> pulumi.Output[_builtins.str]:
         """
         The existing TDE wallet password of the target CDB.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

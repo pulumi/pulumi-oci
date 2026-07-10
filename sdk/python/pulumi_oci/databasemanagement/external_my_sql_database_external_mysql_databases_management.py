@@ -27,7 +27,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs:
 
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_my_sql_database_id: The OCID of the External MySQL Database.
@@ -43,7 +42,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagementArgs:
     def enable_external_mysql_database(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -91,7 +89,6 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
         :param pulumi.Input[_builtins.str] connector_id: OCID of External MySQL Database connector.
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_my_sql_database_id: The OCID of the External MySQL Database.
@@ -120,7 +117,6 @@ class _ExternalMySqlDatabaseExternalMysqlDatabasesManagementState:
     def enable_external_mysql_database(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,7 +175,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] connector_id: OCID of External MySQL Database connector.
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -269,7 +264,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
         :param pulumi.Input[_builtins.str] connector_id: OCID of External MySQL Database connector.
         :param pulumi.Input[_builtins.bool] enable_external_mysql_database: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] external_my_sql_database_id: The OCID of the External MySQL Database.
@@ -296,7 +290,6 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
     def enable_external_mysql_database(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

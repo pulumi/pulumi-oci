@@ -30,7 +30,6 @@ class CloudGuardConfigurationArgs:
         :param pulumi.Input[_builtins.str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of Cloud Guard tenant
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
@@ -71,7 +70,6 @@ class CloudGuardConfigurationArgs:
         """
         (Updatable) Status of Cloud Guard tenant
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -108,7 +106,6 @@ class _CloudGuardConfigurationState:
         :param pulumi.Input[_builtins.str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[_builtins.bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of Cloud Guard tenant
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +161,6 @@ class _CloudGuardConfigurationState:
         """
         (Updatable) Status of Cloud Guard tenant
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -219,7 +215,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] reporting_region: (Updatable) The reporting region
         :param pulumi.Input[_builtins.bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of Cloud Guard tenant
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -321,7 +316,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] self_manage_resources: (Updatable) Identifies if Oracle managed resources will be created by customers. If no value is specified false is the default.
         :param pulumi.Input[_builtins.str] status: (Updatable) Status of Cloud Guard tenant
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -364,7 +358,6 @@ class CloudGuardConfiguration(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Status of Cloud Guard tenant
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

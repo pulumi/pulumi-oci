@@ -141,8 +141,7 @@ export class RemediationRecipe extends pulumi.CustomResource {
      */
     declare public readonly scmConfiguration: pulumi.Output<outputs.Adm.RemediationRecipeScmConfiguration>;
     /**
-     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -276,8 +275,7 @@ export interface RemediationRecipeState {
      */
     scmConfiguration?: pulumi.Input<inputs.Adm.RemediationRecipeScmConfiguration | undefined>;
     /**
-     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -342,8 +340,7 @@ export interface RemediationRecipeArgs {
      */
     scmConfiguration: pulumi.Input<inputs.Adm.RemediationRecipeScmConfiguration>;
     /**
-     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-     *
+     * (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

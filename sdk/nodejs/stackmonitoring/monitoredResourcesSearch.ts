@@ -179,8 +179,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
      */
     declare public readonly timeUpdatedLessThan: pulumi.Output<string | undefined>;
     /**
-     * A filter to return resources that match resource type. 
-     *
+     * A filter to return resources that match resource type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -358,8 +357,7 @@ export interface MonitoredResourcesSearchState {
      */
     timeUpdatedLessThan?: pulumi.Input<string | undefined>;
     /**
-     * A filter to return resources that match resource type. 
-     *
+     * A filter to return resources that match resource type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -464,8 +462,7 @@ export interface MonitoredResourcesSearchArgs {
      */
     timeUpdatedLessThan?: pulumi.Input<string | undefined>;
     /**
-     * A filter to return resources that match resource type. 
-     *
+     * A filter to return resources that match resource type.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

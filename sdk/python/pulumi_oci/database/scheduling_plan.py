@@ -34,7 +34,6 @@ class SchedulingPlanArgs:
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
         :param pulumi.Input[_builtins.str] service_type: The service type of the Scheduling Plan.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -93,7 +92,6 @@ class SchedulingPlanArgs:
     def service_type(self) -> pulumi.Input[_builtins.str]:
         """
         The service type of the Scheduling Plan.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,7 +171,6 @@ class _SchedulingPlanState:
         :param pulumi.Input[_builtins.str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
         :param pulumi.Input[_builtins.str] service_type: The service type of the Scheduling Plan.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -339,7 +336,6 @@ class _SchedulingPlanState:
         """
         The service type of the Scheduling Plan.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -453,7 +449,6 @@ class SchedulingPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
         :param pulumi.Input[_builtins.str] service_type: The service type of the Scheduling Plan.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -594,7 +589,6 @@ class SchedulingPlan(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] scheduling_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Scheduling Policy.
         :param pulumi.Input[_builtins.str] service_type: The service type of the Scheduling Plan.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the Scheduling Plan. Valid states are CREATING, NEEDS_ATTENTION, AVAILABLE, UPDATING, FAILED, DELETING and DELETED.
@@ -708,7 +702,6 @@ class SchedulingPlan(pulumi.CustomResource):
     def service_type(self) -> pulumi.Output[_builtins.str]:
         """
         The service type of the Scheduling Plan.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

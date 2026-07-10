@@ -27,7 +27,6 @@ class MarketplaceExternalAttestedMetadataArgs:
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class MarketplaceExternalAttestedMetadataArgs:
         """
         unique id that identifies the associated instance
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -74,7 +72,6 @@ class _MarketplaceExternalAttestedMetadataState:
 
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -104,7 +101,6 @@ class _MarketplaceExternalAttestedMetadataState:
     def instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         unique id that identifies the associated instance
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +165,6 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -264,7 +259,6 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: compartment that associated instance is in
         :param pulumi.Input[_builtins.str] instance_id: unique id that identifies the associated instance
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] serialized_jwt: The serialized JWT token, containing header, payload, signature
@@ -291,7 +285,6 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
     def instance_id(self) -> pulumi.Output[_builtins.str]:
         """
         unique id that identifies the associated instance
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

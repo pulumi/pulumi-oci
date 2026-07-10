@@ -40,8 +40,7 @@ class SelfSubscriptionArgs:
         :param pulumi.Input[_builtins.str] product_id: The unique identifier of the marketplace listing in Oracle Cloud Infrastructure.
         :param pulumi.Input[_builtins.str] seller_id: The OCID for the seller in SELF Service.
         :param pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs'] subscription_details: The details of a subscription
-        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-               
+        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ class SelfSubscriptionArgs:
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,8 +259,7 @@ class _SelfSubscriptionState:
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Subscription.
         :param pulumi.Input['SelfSubscriptionSubscriptionDetailsArgs'] subscription_details: The details of a subscription
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-               
+        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -482,8 +479,7 @@ class _SelfSubscriptionState:
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -650,8 +646,7 @@ class SelfSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] seller_id: The OCID for the seller in SELF Service.
         :param pulumi.Input[_builtins.str] source_type: The type of seller in SELF Service.
         :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']] subscription_details: The details of a subscription
-        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-               
+        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -852,8 +847,7 @@ class SelfSubscription(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Subscription.
         :param pulumi.Input[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict']] subscription_details: The details of a subscription
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-               
+        :param pulumi.Input[_builtins.str] tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1003,8 +997,7 @@ class SelfSubscription(pulumi.CustomResource):
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in. 
-
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

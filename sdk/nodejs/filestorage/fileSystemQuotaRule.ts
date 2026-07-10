@@ -87,8 +87,7 @@ export class FileSystemQuotaRule extends pulumi.CustomResource {
      */
     declare public readonly principalType: pulumi.Output<string>;
     /**
-     * (Updatable) The value of the quota rule. The unit is Gigabyte. 
-     *
+     * (Updatable) The value of the quota rule. The unit is Gigabyte.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,8 +182,7 @@ export interface FileSystemQuotaRuleState {
      */
     principalType?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The value of the quota rule. The unit is Gigabyte. 
-     *
+     * (Updatable) The value of the quota rule. The unit is Gigabyte.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,8 +225,7 @@ export interface FileSystemQuotaRuleArgs {
      */
     principalType: pulumi.Input<string>;
     /**
-     * (Updatable) The value of the quota rule. The unit is Gigabyte. 
-     *
+     * (Updatable) The value of the quota rule. The unit is Gigabyte.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

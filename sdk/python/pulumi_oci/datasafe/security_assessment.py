@@ -50,7 +50,6 @@ class SecurityAssessmentArgs:
         :param pulumi.Input[_builtins.bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -205,7 +204,6 @@ class SecurityAssessmentArgs:
         """
         (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -338,7 +336,6 @@ class _SecurityAssessmentState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security assessment.
         :param pulumi.Input[_builtins.str] link: The summary of findings for the security assessment.
         :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -654,7 +651,6 @@ class _SecurityAssessmentState:
         """
         (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -913,7 +909,6 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -1096,7 +1091,6 @@ class SecurityAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security assessment.
         :param pulumi.Input[_builtins.str] link: The summary of findings for the security assessment.
         :param pulumi.Input[_builtins.int] remove_template_trigger: (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1309,7 +1303,6 @@ class SecurityAssessment(pulumi.CustomResource):
     def remove_template_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

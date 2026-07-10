@@ -38,7 +38,6 @@ class AuditTrailManagementArgs:
 
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
@@ -89,7 +88,6 @@ class AuditTrailManagementArgs:
     def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -287,7 +285,6 @@ class _AuditTrailManagementState:
 
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
@@ -362,7 +359,6 @@ class _AuditTrailManagementState:
     def audit_collection_start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -686,7 +682,6 @@ class AuditTrailManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
@@ -845,7 +840,6 @@ class AuditTrailManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
@@ -903,7 +897,6 @@ class AuditTrailManagement(pulumi.CustomResource):
     def audit_collection_start_time(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

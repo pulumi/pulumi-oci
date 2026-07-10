@@ -42,7 +42,6 @@ class DeploymentBackupArgs:
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -132,7 +131,6 @@ class DeploymentBackupArgs:
     def object(self) -> pulumi.Input[_builtins.str]:
         """
         Name of the object to be uploaded to object storage
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,7 +244,6 @@ class _DeploymentBackupState:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -491,7 +488,6 @@ class _DeploymentBackupState:
         """
         Name of the object to be uploaded to object storage
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -671,7 +667,6 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -853,7 +848,6 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[_builtins.str] object: Name of the object to be uploaded to object storage
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] ogg_version: Version of OGG
@@ -1017,7 +1011,6 @@ class DeploymentBackup(pulumi.CustomResource):
     def object(self) -> pulumi.Output[_builtins.str]:
         """
         Name of the object to be uploaded to object storage
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

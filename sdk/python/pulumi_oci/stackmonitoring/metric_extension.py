@@ -43,7 +43,6 @@ class MetricExtensionArgs:
         :param pulumi.Input[_builtins.str] name: Metric Extension Resource name.
         :param pulumi.Input[_builtins.bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -162,7 +161,6 @@ class MetricExtensionArgs:
         """
         (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -211,7 +209,6 @@ class _MetricExtensionState:
         :param pulumi.Input[Sequence[pulumi.Input['MetricExtensionMetricListArgs']]] metric_lists: (Updatable) List of metrics which are part of this metric extension
         :param pulumi.Input[_builtins.str] name: Metric Extension Resource name.
         :param pulumi.Input[_builtins.bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -402,7 +399,6 @@ class _MetricExtensionState:
     def publish_trigger(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -611,7 +607,6 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Metric Extension Resource name.
         :param pulumi.Input[_builtins.bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']] query_properties: (Updatable) Collection method and query properties details of metric extension
@@ -813,7 +808,6 @@ class MetricExtension(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: Metric Extension Resource name.
         :param pulumi.Input[_builtins.bool] publish_trigger: (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict']] query_properties: (Updatable) Collection method and query properties details of metric extension
@@ -944,7 +938,6 @@ class MetricExtension(pulumi.CustomResource):
     def publish_trigger(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
         (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -27,7 +27,6 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs:
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -52,7 +51,6 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -73,7 +71,6 @@ class _CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
 
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +97,6 @@ class _CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState:
     def enable_costanomalymonitorenabletoggle(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -145,7 +141,6 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -230,7 +225,6 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
         :param pulumi.Input[_builtins.str] cost_anomaly_monitor_id: The unique costAnomalyMonitor OCID.
         :param pulumi.Input[_builtins.bool] enable_costanomalymonitorenabletoggle: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -255,7 +249,6 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
     def enable_costanomalymonitorenabletoggle(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

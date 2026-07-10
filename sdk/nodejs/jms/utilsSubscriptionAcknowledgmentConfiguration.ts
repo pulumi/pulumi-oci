@@ -68,7 +68,6 @@ export class UtilsSubscriptionAcknowledgmentConfiguration extends pulumi.CustomR
     /**
      * (Updatable) Flag to determine whether the subscription was acknowledged or not.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -128,7 +127,6 @@ export interface UtilsSubscriptionAcknowledgmentConfigurationState {
     /**
      * (Updatable) Flag to determine whether the subscription was acknowledged or not.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -149,7 +147,6 @@ export interface UtilsSubscriptionAcknowledgmentConfigurationArgs {
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Flag to determine whether the subscription was acknowledged or not.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

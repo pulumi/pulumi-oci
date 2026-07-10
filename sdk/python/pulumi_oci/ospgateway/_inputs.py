@@ -152,7 +152,6 @@ class AddressActionVerificationAddressArgsDict(TypedDict):
     """
     Street number of the address.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -213,7 +212,6 @@ class AddressActionVerificationAddressArgs:
         :param pulumi.Input[_builtins.str] state_inscription: State Inscription.
         :param pulumi.Input[_builtins.str] street_name: Street name of the address.
         :param pulumi.Input[_builtins.str] street_number: Street number of the address.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -576,7 +574,6 @@ class AddressActionVerificationAddressArgs:
     def street_number(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Street number of the address.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

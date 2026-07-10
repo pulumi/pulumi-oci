@@ -35,7 +35,6 @@ class ApiPlatformApiPlatformInstanceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: A regionally unique, non-changeable instance name provided by the user during creation
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -103,7 +102,6 @@ class ApiPlatformApiPlatformInstanceArgs:
         """
         A regionally unique, non-changeable instance name provided by the user during creation
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -139,7 +137,6 @@ class _ApiPlatformApiPlatformInstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['ApiPlatformApiPlatformInstanceIdcsAppArgs']]] idcs_apps: IDCS app associated with the instance, that can be used to manage the roles of the users
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
         :param pulumi.Input[_builtins.str] name: A regionally unique, non-changeable instance name provided by the user during creation
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -251,7 +248,6 @@ class _ApiPlatformApiPlatformInstanceState:
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         A regionally unique, non-changeable instance name provided by the user during creation
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -378,7 +374,6 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] name: A regionally unique, non-changeable instance name provided by the user during creation
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -503,7 +498,6 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
         :param pulumi.Input[_builtins.str] name: A regionally unique, non-changeable instance name provided by the user during creation
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the instance
@@ -583,7 +577,6 @@ class ApiPlatformApiPlatformInstance(pulumi.CustomResource):
     def name(self) -> pulumi.Output[_builtins.str]:
         """
         A regionally unique, non-changeable instance name provided by the user during creation
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

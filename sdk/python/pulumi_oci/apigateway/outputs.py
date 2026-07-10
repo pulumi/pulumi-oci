@@ -507,7 +507,6 @@ class ApiLock(dict):
         """
         :param _builtins.str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -527,7 +526,6 @@ class ApiLock(dict):
     def type(self) -> _builtins.str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -6970,7 +6968,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
         :param _builtins.int time_to_live_in_seconds: (Updatable) Sets the number of seconds for a response from a backend being stored in the Response Cache before it expires.
         :param _builtins.str type: (Updatable) Type of the Response Cache Store Policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -6990,7 +6987,6 @@ class DeploymentSpecificationRouteResponsePoliciesResponseCacheStore(dict):
     def type(self) -> _builtins.str:
         """
         (Updatable) Type of the Response Cache Store Policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -7774,7 +7770,6 @@ class UsagePlanLock(dict):
         """
         :param _builtins.str type: Type of the lock.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
@@ -7794,7 +7789,6 @@ class UsagePlanLock(dict):
     def type(self) -> _builtins.str:
         """
         Type of the lock.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -157,7 +157,6 @@ export class AwrHubSource extends pulumi.CustomResource {
     /**
      * (Updatable) source type of the database
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -328,7 +327,6 @@ export interface AwrHubSourceState {
     /**
      * (Updatable) source type of the database
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -369,7 +367,6 @@ export interface AwrHubSourceArgs {
     name?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) source type of the database
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

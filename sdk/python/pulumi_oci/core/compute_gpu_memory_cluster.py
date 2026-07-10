@@ -45,8 +45,7 @@ class ComputeGpuMemoryClusterArgs:
         :param pulumi.Input['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_config: (Updatable) Configuration settings for GPU Memory Cluster scaling.
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
-        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster. 
-               
+        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,8 +193,7 @@ class ComputeGpuMemoryClusterArgs:
     @pulumi.getter
     def size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The desired number of instances for the GPU Memory Cluster. 
-
+        (Updatable) The desired number of instances for the GPU Memory Cluster.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,8 +235,7 @@ class _ComputeGpuMemoryClusterState:
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
-        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster. 
-               
+        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -399,8 +396,7 @@ class _ComputeGpuMemoryClusterState:
     @pulumi.getter
     def size(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The desired number of instances for the GPU Memory Cluster. 
-
+        (Updatable) The desired number of instances for the GPU Memory Cluster.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -523,8 +519,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
-        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster. 
-               
+        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -678,8 +673,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] gpu_memory_fabric_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the GPU memory fabric.
         :param pulumi.Input[_builtins.str] instance_configuration_id: (Updatable) Instance Configuration to be used for this GPU Memory Cluster
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_ids: (Updatable) Unique list of OCIDs for private IPs (IPv4/IPv6) associated with the GPU Memory Cluster
-        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster. 
-               
+        :param pulumi.Input[_builtins.str] size: (Updatable) The desired number of instances for the GPU Memory Cluster.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -791,8 +785,7 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
     @pulumi.getter
     def size(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The desired number of instances for the GPU Memory Cluster. 
-
+        (Updatable) The desired number of instances for the GPU Memory Cluster.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -1026,7 +1026,6 @@ export class DomainsIdentityProvider extends pulumi.CustomResource {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -2050,7 +2049,6 @@ export interface DomainsIdentityProviderState {
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -2762,7 +2760,6 @@ export interface DomainsIdentityProviderArgs {
      * * type: string
      * * uniqueness: none
      * * idcsValuePersistedInOtherAttribute: true
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

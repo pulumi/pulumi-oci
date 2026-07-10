@@ -225,7 +225,6 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -597,7 +596,6 @@ export interface DataGuardAssociationState {
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -816,7 +814,6 @@ export interface DataGuardAssociationArgs {
     licenseModel?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

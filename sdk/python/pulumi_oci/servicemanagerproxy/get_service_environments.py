@@ -141,7 +141,7 @@ def get_service_environments(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
     :param _builtins.str display_name: The display name of the resource.
-    :param _builtins.str service_environment_id: The unique identifier associated with the service environment. 
+    :param _builtins.str service_environment_id: The unique identifier associated with the service environment.
            
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".
@@ -190,7 +190,7 @@ def get_service_environments_output(compartment_id: pulumi.Input[Optional[_built
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
     :param _builtins.str display_name: The display name of the resource.
-    :param _builtins.str service_environment_id: The unique identifier associated with the service environment. 
+    :param _builtins.str service_environment_id: The unique identifier associated with the service environment.
            
            **Note:** Not an [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str service_environment_type: The environment's service definition type.  For example, "RGBUOROMS" is the service definition type for "Oracle Retail Order Management Cloud Service".

@@ -81,7 +81,6 @@ class IntegrationInstanceArgs:
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -453,7 +452,6 @@ class IntegrationInstanceArgs:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -556,7 +554,6 @@ class _IntegrationInstanceState:
                }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1052,7 +1049,6 @@ class _IntegrationInstanceState:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1256,7 +1252,6 @@ class IntegrationInstance(pulumi.CustomResource):
                }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1542,7 +1537,6 @@ class IntegrationInstance(pulumi.CustomResource):
                }`
         :param pulumi.Input[_builtins.str] shape: Shape
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1867,7 +1861,6 @@ class IntegrationInstance(pulumi.CustomResource):
     def state(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -30,7 +30,6 @@ class CloudExadataInfrastructureConfigureExascaleManagementArgs:
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -56,7 +55,6 @@ class CloudExadataInfrastructureConfigureExascaleManagementArgs:
     def total_storage_in_gbs(self) -> pulumi.Input[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -161,7 +159,6 @@ class _CloudExadataInfrastructureConfigureExascaleManagementState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -698,7 +695,6 @@ class _CloudExadataInfrastructureConfigureExascaleManagementState:
         """
         Storage size needed for Exascale in GBs.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -772,7 +768,6 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -977,7 +972,6 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1330,7 +1324,6 @@ class CloudExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResourc
     def total_storage_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

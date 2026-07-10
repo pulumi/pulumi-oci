@@ -31,8 +31,7 @@ class DrgRouteDistributionStatementArgs:
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
+        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -82,8 +81,7 @@ class DrgRouteDistributionStatementArgs:
     @pulumi.getter
     def priority(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
+        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,8 +106,7 @@ class _DrgRouteDistributionStatementState:
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input['DrgRouteDistributionStatementMatchCriteriaArgs'] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
+        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,8 +160,7 @@ class _DrgRouteDistributionStatementState:
     @pulumi.getter
     def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
+        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,8 +222,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
+        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -336,8 +331,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] action: Accept: import/export the route "as is"
         :param pulumi.Input[_builtins.str] drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
         :param pulumi.Input[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict']] match_criteria: (Updatable) The action is applied only if all of the match criteria are met. MATCH_ALL match type implies any input is considered a match.
-        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-               
+        :param pulumi.Input[_builtins.int] priority: (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,8 +374,7 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
     @pulumi.getter
     def priority(self) -> pulumi.Output[_builtins.int]:
         """
-        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route. 
-
+        (Updatable) This field is used to specify the priority of each statement in a route distribution. The priority will be represented as a number between 0 and 65535 where a lower number indicates a higher priority. When a route is processed, statements are applied in the order defined by their priority. The first matching rule dictates the action that will be taken on the route.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

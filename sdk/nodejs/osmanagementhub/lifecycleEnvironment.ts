@@ -142,7 +142,6 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
     /**
      * The vendor of the operating system used by the managed instances in the lifecycle environment.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -280,7 +279,6 @@ export interface LifecycleEnvironmentState {
     /**
      * The vendor of the operating system used by the managed instances in the lifecycle environment.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -329,7 +327,6 @@ export interface LifecycleEnvironmentArgs {
     stages: pulumi.Input<pulumi.Input<inputs.OsManagementHub.LifecycleEnvironmentStage>[]>;
     /**
      * The vendor of the operating system used by the managed instances in the lifecycle environment.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

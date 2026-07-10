@@ -45,8 +45,7 @@ class BatchBatchContextArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['BatchBatchContextJobPriorityConfigurationArgs']]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
         :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: (Updatable) Logging configuration of the batch context.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,8 +194,7 @@ class BatchBatchContextArgs:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -240,8 +238,7 @@ class _BatchBatchContextState:
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input['BatchBatchContextLoggingConfigurationArgs'] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input['BatchBatchContextNetworkArgs'] network: Network configuration of the batch context.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -416,8 +413,7 @@ class _BatchBatchContextState:
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -559,8 +555,7 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict']]]] job_priority_configurations: (Updatable) List of job priority configurations related to the batch context.
         :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -734,8 +729,7 @@ class BatchBatchContext(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict']] logging_configuration: (Updatable) Logging configuration of the batch context.
         :param pulumi.Input[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict']] network: Network configuration of the batch context.
-        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-               
+        :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -856,8 +850,7 @@ class BatchBatchContext(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-
+        (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

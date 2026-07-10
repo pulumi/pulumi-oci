@@ -77,8 +77,7 @@ export class ManagementDashboardsImport extends pulumi.CustomResource {
      */
     declare public readonly overrideSameName: pulumi.Output<string>;
     /**
-     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-     *
+     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -131,8 +130,7 @@ export interface ManagementDashboardsImportState {
      */
     overrideSameName?: pulumi.Input<string | undefined>;
     /**
-     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-     *
+     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -155,8 +153,7 @@ export interface ManagementDashboardsImportArgs {
      */
     overrideSameName?: pulumi.Input<string | undefined>;
     /**
-     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-     *
+     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

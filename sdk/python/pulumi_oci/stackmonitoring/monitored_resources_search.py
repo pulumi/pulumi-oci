@@ -75,8 +75,7 @@ class MonitoredResourcesSearchArgs:
         :param pulumi.Input[_builtins.str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
                **Example:** 2016-12-19T16:39:57.600Z
-        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -389,8 +388,7 @@ class MonitoredResourcesSearchArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -461,8 +459,7 @@ class _MonitoredResourcesSearchState:
         :param pulumi.Input[_builtins.str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
                **Example:** 2016-12-19T16:39:57.600Z
-        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -790,8 +787,7 @@ class _MonitoredResourcesSearchState:
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -911,8 +907,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
                **Example:** 2016-12-19T16:39:57.600Z
-        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1112,8 +1107,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated_less_than: Search for resources that were updated within a specific date range, using this parameter to specify the latest creation date for the returned list (exclusive). Specifying this parameter without the corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated before the specified end date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
                
                **Example:** 2016-12-19T16:39:57.600Z
-        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type. 
-               
+        :param pulumi.Input[_builtins.str] type: A filter to return resources that match resource type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1335,8 +1329,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        A filter to return resources that match resource type. 
-
+        A filter to return resources that match resource type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

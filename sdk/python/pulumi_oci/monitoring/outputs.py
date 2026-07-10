@@ -86,15 +86,15 @@ class AlarmOverride(dict):
                
                Example of threshold alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
                
-               -----
+               ***
                
                Example of absence alarm:
                
-               -----
+               ***
                
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
@@ -147,15 +147,15 @@ class AlarmOverride(dict):
 
         Example of threshold alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
 
-        -----
+        ***
 
         Example of absence alarm:
 
-        -----
+        ***
 
         CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
 
@@ -209,8 +209,7 @@ class AlarmSuppression(dict):
                  description: Optional[_builtins.str] = None):
         """
         :param _builtins.str time_suppress_from: (Updatable) The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
-        :param _builtins.str time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-               
+        :param _builtins.str time_suppress_until: (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,8 +236,7 @@ class AlarmSuppression(dict):
     @pulumi.getter(name="timeSuppressUntil")
     def time_suppress_until(self) -> _builtins.str:
         """
-        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
-
+        (Updatable) The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

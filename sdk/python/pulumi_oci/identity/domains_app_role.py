@@ -842,7 +842,6 @@ class _DomainsAppRoleState:
                * type: string
                * uniqueness: server
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1506,7 +1505,6 @@ class _DomainsAppRoleState:
         * returned: always
         * type: string
         * uniqueness: server
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2186,7 +2184,6 @@ class DomainsAppRole(pulumi.CustomResource):
                * type: string
                * uniqueness: server
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -2709,7 +2706,6 @@ class DomainsAppRole(pulumi.CustomResource):
         * returned: always
         * type: string
         * uniqueness: server
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -30,7 +30,6 @@ class UnifiedAuditPolicyDefinitionArgs:
 
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the unified audit policy definition resource.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the unified audit policy definition.
@@ -56,7 +55,6 @@ class UnifiedAuditPolicyDefinitionArgs:
     def unified_audit_policy_definition_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the unified audit policy definition resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +162,6 @@ class _UnifiedAuditPolicyDefinitionState:
         :param pulumi.Input[_builtins.str] time_created: The time the unified audit policy was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the unified audit policy was updated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the unified audit policy definition resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -374,7 +371,6 @@ class _UnifiedAuditPolicyDefinitionState:
         """
         The OCID of the unified audit policy definition resource.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -423,7 +419,6 @@ class UnifiedAuditPolicyDefinition(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the unified audit policy definition resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -545,7 +540,6 @@ class UnifiedAuditPolicyDefinition(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The time the unified audit policy was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the unified audit policy was updated, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] unified_audit_policy_definition_id: The OCID of the unified audit policy definition resource.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -688,7 +682,6 @@ class UnifiedAuditPolicyDefinition(pulumi.CustomResource):
     def unified_audit_policy_definition_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the unified audit policy definition resource.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

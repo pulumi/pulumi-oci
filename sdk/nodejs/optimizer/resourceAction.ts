@@ -124,7 +124,6 @@ export class ResourceAction extends pulumi.CustomResource {
      *
      * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -270,7 +269,6 @@ export interface ResourceActionState {
      *
      * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +295,6 @@ export interface ResourceActionArgs {
      * (Updatable) The date and time the current status will change. The format is defined by RFC3339.
      *
      * For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

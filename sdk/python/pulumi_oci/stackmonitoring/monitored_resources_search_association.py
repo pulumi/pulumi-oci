@@ -39,8 +39,7 @@ class MonitoredResourcesSearchAssociationArgs:
         :param pulumi.Input[_builtins.str] destination_resource_type: Source Monitored Resource Type.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type. 
-               
+        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,8 +148,7 @@ class MonitoredResourcesSearchAssociationArgs:
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source Monitored Resource Type. 
-
+        Source Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,8 +183,7 @@ class _MonitoredResourcesSearchAssociationState:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcesSearchAssociationItemArgs']]] items: List of Monitored Resource Associations.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type. 
-               
+        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -310,8 +307,7 @@ class _MonitoredResourcesSearchAssociationState:
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Source Monitored Resource Type. 
-
+        Source Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -381,8 +377,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] destination_resource_type: Source Monitored Resource Type.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type. 
-               
+        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -504,8 +499,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict']]]] items: List of Monitored Resource Associations.
         :param pulumi.Input[_builtins.str] source_resource_id: Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] source_resource_name: Source Monitored Resource Name.
-        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type. 
-               
+        :param pulumi.Input[_builtins.str] source_resource_type: Source Monitored Resource Type.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -593,8 +587,7 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
     @pulumi.getter(name="sourceResourceType")
     def source_resource_type(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        Source Monitored Resource Type. 
-
+        Source Monitored Resource Type.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

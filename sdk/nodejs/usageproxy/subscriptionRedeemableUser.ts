@@ -83,7 +83,6 @@ export class SubscriptionRedeemableUser extends pulumi.CustomResource {
     /**
      * The user ID of the person to send a copy of an email.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -146,7 +145,6 @@ export interface SubscriptionRedeemableUserState {
     /**
      * The user ID of the person to send a copy of an email.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -171,7 +169,6 @@ export interface SubscriptionRedeemableUserArgs {
     tenancyId: pulumi.Input<string>;
     /**
      * The user ID of the person to send a copy of an email.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

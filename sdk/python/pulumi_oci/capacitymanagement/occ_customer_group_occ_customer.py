@@ -31,7 +31,6 @@ class OccCustomerGroupOccCustomerArgs:
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) The description about the customer group.
@@ -74,7 +73,6 @@ class OccCustomerGroupOccCustomerArgs:
     def tenancy_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of the tenancy belonging to the customer.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -126,7 +124,6 @@ class _OccCustomerGroupOccCustomerState:
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
         :param pulumi.Input[_builtins.str] status: (Updatable) To determine whether the customer is enabled/disabled.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -196,7 +193,6 @@ class _OccCustomerGroupOccCustomerState:
         """
         The OCID of the tenancy belonging to the customer.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -257,7 +253,6 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] occ_customer_group_id: The OCID of the customer group.
         :param pulumi.Input[_builtins.str] status: (Updatable) To determine whether the customer is enabled/disabled.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +362,6 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] status: (Updatable) To determine whether the customer is enabled/disabled.
         :param pulumi.Input[_builtins.str] tenancy_id: The OCID of the tenancy belonging to the customer.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -419,7 +413,6 @@ class OccCustomerGroupOccCustomer(pulumi.CustomResource):
     def tenancy_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the tenancy belonging to the customer.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -144,7 +144,6 @@ export class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool extends pulumi.Cus
     /**
      * (Updatable) The type of the Database Tools database API gateway config pool sub resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -297,7 +296,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState {
     /**
      * (Updatable) The type of the Database Tools database API gateway config pool sub resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -366,7 +364,6 @@ export interface RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs {
     restEnabledSqlStatus?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The type of the Database Tools database API gateway config pool sub resource.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

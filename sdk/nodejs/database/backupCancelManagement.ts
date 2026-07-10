@@ -63,7 +63,6 @@ export class BackupCancelManagement extends pulumi.CustomResource {
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -108,7 +107,6 @@ export interface BackupCancelManagementState {
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -125,7 +123,6 @@ export interface BackupCancelManagementArgs {
     backupId: pulumi.Input<string>;
     /**
      * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

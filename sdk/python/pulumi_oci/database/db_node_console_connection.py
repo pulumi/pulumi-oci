@@ -29,7 +29,6 @@ class DbNodeConsoleConnectionArgs:
         :param pulumi.Input[_builtins.str] db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] public_key: The SSH public key used to authenticate the console connection.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -59,7 +58,6 @@ class DbNodeConsoleConnectionArgs:
     def public_key(self) -> pulumi.Input[_builtins.str]:
         """
         The SSH public key used to authenticate the console connection.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -119,7 +117,6 @@ class _DbNodeConsoleConnectionState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] public_key: The SSH public key used to authenticate the console connection.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,7 +234,6 @@ class _DbNodeConsoleConnectionState:
         """
         The SSH public key used to authenticate the console connection.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -323,7 +319,6 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] public_key: The SSH public key used to authenticate the console connection.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -446,7 +441,6 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] public_key: The SSH public key used to authenticate the console connection.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
@@ -529,7 +523,6 @@ class DbNodeConsoleConnection(pulumi.CustomResource):
     def public_key(self) -> pulumi.Output[_builtins.str]:
         """
         The SSH public key used to authenticate the console connection.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

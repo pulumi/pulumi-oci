@@ -39,7 +39,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ResourceAnalyticsInstance in.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] compute_count: The compute amount (CPUs) available to the Autonomous Database.
@@ -100,7 +99,6 @@ class ResourceAnalyticsResourceAnalyticsInstanceArgs:
     def subnet_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -247,7 +245,6 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
         :param pulumi.Input[_builtins.str] oac_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
         :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -466,7 +463,6 @@ class _ResourceAnalyticsResourceAnalyticsInstanceState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -589,7 +585,6 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to the ADW instance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: List of Network Security Group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)'s.  Example: `["ocid...", "ocid..."]`
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -755,7 +750,6 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the ResourceAnalyticsInstance.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -903,7 +897,6 @@ class ResourceAnalyticsResourceAnalyticsInstance(pulumi.CustomResource):
     def subnet_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

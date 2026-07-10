@@ -178,7 +178,6 @@ export class Profile extends pulumi.CustomResource {
     /**
      * The vendor of the operating system for the instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -367,7 +366,6 @@ export interface ProfileState {
     /**
      * The vendor of the operating system for the instance.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -436,7 +434,6 @@ export interface ProfileArgs {
     softwareSourceIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The vendor of the operating system for the instance.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

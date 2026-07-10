@@ -51,7 +51,6 @@ class OperatorControlArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[_builtins.str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -241,7 +240,6 @@ class OperatorControlArgs:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -297,7 +295,6 @@ class _OperatorControlState:
         :param pulumi.Input[_builtins.str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the operator control.
         :param pulumi.Input[_builtins.str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -558,7 +555,6 @@ class _OperatorControlState:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -659,7 +655,6 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[_builtins.str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[_builtins.str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -812,7 +807,6 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the operator control.
         :param pulumi.Input[_builtins.str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -988,7 +982,6 @@ class OperatorControl(pulumi.CustomResource):
     def system_message(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) This is the message that will be displayed to the operator users while accessing the system.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

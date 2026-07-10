@@ -273,7 +273,6 @@ class QueryQueryDefinition(dict):
         :param 'QueryQueryDefinitionReportQueryArgs' report_query: (Updatable) The request of the generated Cost Analysis report.
         :param _builtins.float version: (Updatable) The saved query version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -311,7 +310,6 @@ class QueryQueryDefinition(dict):
     def version(self) -> _builtins.float:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1389,7 +1387,6 @@ class UsageCarbonEmissionsQueryQueryDefinition(dict):
         :param 'UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs' report_query: (Updatable) The request of the generated carbon emissions usage report.
         :param _builtins.int version: (Updatable) The saved query version.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1427,7 +1424,6 @@ class UsageCarbonEmissionsQueryQueryDefinition(dict):
     def version(self) -> _builtins.int:
         """
         (Updatable) The saved query version.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1938,7 +1934,6 @@ class UsageItem(dict):
         :param _builtins.str time_usage_ended: The usage end time.
         :param _builtins.str time_usage_started: The usage start time.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str unit: The usage unit.
@@ -2229,7 +2224,6 @@ class UsageItem(dict):
     def time_usage_started(self) -> Optional[_builtins.str]:
         """
         The usage start time.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

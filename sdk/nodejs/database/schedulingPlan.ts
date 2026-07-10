@@ -107,7 +107,6 @@ export class SchedulingPlan extends pulumi.CustomResource {
     /**
      * The service type of the Scheduling Plan.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -239,7 +238,6 @@ export interface SchedulingPlanState {
     /**
      * The service type of the Scheduling Plan.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -292,7 +290,6 @@ export interface SchedulingPlanArgs {
     schedulingPolicyId: pulumi.Input<string>;
     /**
      * The service type of the Scheduling Plan.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

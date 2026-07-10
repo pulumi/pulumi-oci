@@ -116,7 +116,6 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -553,7 +552,6 @@ class DataGuardAssociationArgs:
         """
         (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -833,7 +831,6 @@ class _DataGuardAssociationState:
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1315,7 +1312,6 @@ class _DataGuardAssociationState:
         """
         (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -1762,7 +1758,6 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: The Oracle license model that applies to all the databases on the dataguard standby DB system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select the DB edition using the optional parameter, for Autonomous AI Database Serverless.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -2111,7 +2106,6 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycleState, if available.
         :param pulumi.Input[_builtins.int] migrate_trigger: (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] node_count: The number of nodes to launch for the DB system of the standby in the Data Guard association. For a 2-node RAC virtual machine DB system, specify either 1 or 2. If you do not supply this parameter, the default is the node count of the primary DB system.
@@ -2438,7 +2432,6 @@ class DataGuardAssociation(pulumi.CustomResource):
     def migrate_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         (Updatable) An optional property when incremented triggers Migrate. Could be set to any integer value.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

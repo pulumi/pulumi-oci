@@ -59,7 +59,7 @@ export class ExternalPluggableDatabaseOperationsInsightsManagement extends pulum
     }
 
     /**
-     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,7 +115,7 @@ export class ExternalPluggableDatabaseOperationsInsightsManagement extends pulum
  */
 export interface ExternalPluggableDatabaseOperationsInsightsManagementState {
     /**
-     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -136,7 +136,7 @@ export interface ExternalPluggableDatabaseOperationsInsightsManagementState {
  */
 export interface ExternalPluggableDatabaseOperationsInsightsManagementArgs {
     /**
-     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+     * (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

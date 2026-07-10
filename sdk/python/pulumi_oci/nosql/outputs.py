@@ -78,8 +78,7 @@ class ConfigurationKmsKey(dict):
         :param _builtins.str kms_key_state: (Updatable) The current state of the encryption key assigned to this Hosted Environment. Oracle-managed keys will always report an ACTIVE state.
         :param _builtins.str kms_vault_id: (Updatable) The OCID of the vault containing the encryption key assigned to this Hosted Environment. If the Hosted Environment is using an Oracle-managed Key (i.e., not a CMEK), then the kmsVaultId will be a null string.
         :param _builtins.str time_created: (Updatable) The timestamp when encryption key was first enabled for this Hosted Environment. RFC3339 formatted.
-        :param _builtins.str time_updated: (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
-               
+        :param _builtins.str time_updated: (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
                
                ** IMPORTANT **
                The configuration cannot be deleted.
@@ -131,8 +130,7 @@ class ConfigurationKmsKey(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
-
+        (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
 
         ** IMPORTANT **
         The configuration cannot be deleted.
@@ -592,7 +590,6 @@ class TableTableLimits(dict):
         :param _builtins.int max_storage_in_gbs: (Updatable) Maximum size of storage used by the table.
         :param _builtins.int max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
                
-               
                ** IMPORTANT **
                Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param _builtins.str capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
@@ -624,7 +621,6 @@ class TableTableLimits(dict):
     def max_write_units(self) -> _builtins.int:
         """
         (Updatable) Maximum sustained write throughput limit for the table.
-
 
         ** IMPORTANT **
         Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.

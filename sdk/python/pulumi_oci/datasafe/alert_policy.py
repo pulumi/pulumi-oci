@@ -36,7 +36,6 @@ class AlertPolicyArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
         :param pulumi.Input[_builtins.str] severity: (Updatable) Severity level of the alert raised by this policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]] alert_policy_rule_details: The details of the alert policy rule.
@@ -88,7 +87,6 @@ class AlertPolicyArgs:
     def severity(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Severity level of the alert raised by this policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,7 +188,6 @@ class _AlertPolicyState:
         :param pulumi.Input[_builtins.bool] is_user_defined: Indicates if the alert policy is user-defined (true) or pre-defined (false).
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the alert policy.
         :param pulumi.Input[_builtins.str] severity: (Updatable) Severity level of the alert raised by this policy.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -342,7 +339,6 @@ class _AlertPolicyState:
         """
         (Updatable) Severity level of the alert raised by this policy.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -468,7 +464,6 @@ class AlertPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] severity: (Updatable) Severity level of the alert raised by this policy.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -615,7 +610,6 @@ class AlertPolicy(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the alert policy.
         :param pulumi.Input[_builtins.str] severity: (Updatable) Severity level of the alert raised by this policy.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the alert.
@@ -720,7 +714,6 @@ class AlertPolicy(pulumi.CustomResource):
     def severity(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Severity level of the alert raised by this policy.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

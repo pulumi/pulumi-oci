@@ -111,7 +111,6 @@ export class Certificate extends pulumi.CustomResource {
     /**
      * The private key associated with the certificate in pem format.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -245,7 +244,6 @@ export interface CertificateState {
     /**
      * The private key associated with the certificate in pem format.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -311,7 +309,6 @@ export interface CertificateArgs {
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.CertificateLock>[] | undefined>;
     /**
      * The private key associated with the certificate in pem format.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

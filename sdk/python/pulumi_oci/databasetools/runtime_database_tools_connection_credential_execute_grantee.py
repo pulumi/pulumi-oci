@@ -29,7 +29,6 @@ class RuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs:
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] key: The name of the user to grant the EXECUTE privilege on the credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -67,7 +66,6 @@ class RuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs:
         """
         The name of the user to grant the EXECUTE privilege on the credential.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -90,7 +88,6 @@ class _RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState:
         :param pulumi.Input[_builtins.str] credential_key: The name of the credential
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] key: The name of the user to grant the EXECUTE privilege on the credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -131,7 +128,6 @@ class _RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState:
     def key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The name of the user to grant the EXECUTE privilege on the credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,7 +183,6 @@ class RuntimeDatabaseToolsConnectionCredentialExecuteGrantee(pulumi.CustomResour
         :param pulumi.Input[_builtins.str] credential_key: The name of the credential
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] key: The name of the user to grant the EXECUTE privilege on the credential.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -287,7 +282,6 @@ class RuntimeDatabaseToolsConnectionCredentialExecuteGrantee(pulumi.CustomResour
         :param pulumi.Input[_builtins.str] database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
         :param pulumi.Input[_builtins.str] key: The name of the user to grant the EXECUTE privilege on the credential.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -321,7 +315,6 @@ class RuntimeDatabaseToolsConnectionCredentialExecuteGrantee(pulumi.CustomResour
     def key(self) -> pulumi.Output[_builtins.str]:
         """
         The name of the user to grant the EXECUTE privilege on the credential.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

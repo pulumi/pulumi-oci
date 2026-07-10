@@ -155,7 +155,6 @@ export class DbSystem extends pulumi.CustomResource {
     /**
      * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -397,7 +396,6 @@ export interface DbSystemState {
     /**
      * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -524,7 +522,6 @@ export interface DbSystemArgs {
     source?: pulumi.Input<inputs.Psql.DbSystemSource | undefined>;
     /**
      * (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -134,7 +134,6 @@ export class AgentAgent extends pulumi.CustomResource {
     /**
      * (Updatable) Details about purpose and responsibility of the agent
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -245,7 +244,6 @@ export interface AgentAgentState {
     /**
      * (Updatable) Details about purpose and responsibility of the agent
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -286,7 +284,6 @@ export interface AgentAgentArgs {
     llmConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfig | undefined>;
     /**
      * (Updatable) Details about purpose and responsibility of the agent
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

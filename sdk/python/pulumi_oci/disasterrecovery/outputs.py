@@ -200,8 +200,7 @@ class AutomaticDrConfigurationMember(dict):
                  is_auto_switchover_enabled: Optional[_builtins.bool] = None):
         """
         :param _builtins.str member_id: (Updatable) The OCID of the member.  Example: `ocid1.database.oc1..uniqueID`
-        :param _builtins.str member_type: (Updatable) The type of the member. 
-               
+        :param _builtins.str member_type: (Updatable) The type of the member.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -227,8 +226,7 @@ class AutomaticDrConfigurationMember(dict):
     @pulumi.getter(name="memberType")
     def member_type(self) -> _builtins.str:
         """
-        (Updatable) The type of the member. 
-
+        (Updatable) The type of the member.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

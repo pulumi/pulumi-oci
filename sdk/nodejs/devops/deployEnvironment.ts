@@ -137,7 +137,6 @@ export class DeployEnvironment extends pulumi.CustomResource {
     /**
      * (Updatable) Security attributes to be added in to the deployment environment
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -275,7 +274,6 @@ export interface DeployEnvironmentState {
     /**
      * (Updatable) Security attributes to be added in to the deployment environment
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -344,7 +342,6 @@ export interface DeployEnvironmentArgs {
     projectId: pulumi.Input<string>;
     /**
      * (Updatable) Security attributes to be added in to the deployment environment
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

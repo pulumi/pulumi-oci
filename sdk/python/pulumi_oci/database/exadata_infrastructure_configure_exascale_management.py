@@ -30,7 +30,6 @@ class ExadataInfrastructureConfigureExascaleManagementArgs:
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -56,7 +55,6 @@ class ExadataInfrastructureConfigureExascaleManagementArgs:
     def total_storage_in_gbs(self) -> pulumi.Input[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -184,7 +182,6 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the Exadata infrastructure was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -886,7 +883,6 @@ class _ExadataInfrastructureConfigureExascaleManagementState:
         """
         Storage size needed for Exascale in GBs.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -945,7 +941,6 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1181,7 +1176,6 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the Exadata infrastructure was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[_builtins.int] total_storage_in_gbs: Storage size needed for Exascale in GBs.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1640,7 +1634,6 @@ class ExadataInfrastructureConfigureExascaleManagement(pulumi.CustomResource):
     def total_storage_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
         Storage size needed for Exascale in GBs.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

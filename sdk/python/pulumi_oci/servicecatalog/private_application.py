@@ -37,7 +37,6 @@ class PrivateApplicationArgs:
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -99,7 +98,6 @@ class PrivateApplicationArgs:
     def short_description(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) A short description of the private application.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,7 +187,6 @@ class _PrivateApplicationState:
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
         :param pulumi.Input[_builtins.str] package_type: Type of packages within this private application.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +338,6 @@ class _PrivateApplicationState:
         """
         (Updatable) A short description of the private application.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -467,7 +463,6 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] long_description: (Updatable) A long description of the private application.
         :param pulumi.Input[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict']] package_details: A base object for creating a private application package.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -616,7 +611,6 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] package_type: Type of packages within this private application.
         :param pulumi.Input[_builtins.str] short_description: (Updatable) A short description of the private application.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the private application.
@@ -721,7 +715,6 @@ class PrivateApplication(pulumi.CustomResource):
     def short_description(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) A short description of the private application.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

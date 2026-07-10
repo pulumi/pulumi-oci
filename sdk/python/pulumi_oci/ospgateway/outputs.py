@@ -191,7 +191,6 @@ class AddressActionVerificationAddress(dict):
         :param _builtins.str street_name: Street name of the address.
         :param _builtins.str street_number: Street number of the address.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -453,7 +452,6 @@ class AddressActionVerificationAddress(dict):
     def street_number(self) -> Optional[_builtins.str]:
         """
         Street number of the address.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

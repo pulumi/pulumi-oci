@@ -33,8 +33,7 @@ class SecurityAttributeNamespaceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute namespace is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
-        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-               
+        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,8 +113,7 @@ class SecurityAttributeNamespaceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-
+        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,8 +147,7 @@ class _SecurityAttributeNamespaceState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute namespace is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] modes: Indicates possible modes the security attributes in this namespace can be set to. This is not accepted from the user. Currently the supported values are enforce and audit.
-        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-               
+        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,8 +252,7 @@ class _SecurityAttributeNamespaceState:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-
+        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -372,8 +368,7 @@ class SecurityAttributeNamespace(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) The description you assign to the security attribute namespace during creation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute namespace is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
-        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-               
+        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -509,8 +504,7 @@ class SecurityAttributeNamespace(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_retired: Indicates whether the security attribute namespace is retired. See [Managing Security Attribute Namespaces](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] modes: Indicates possible modes the security attributes in this namespace can be set to. This is not accepted from the user. Currently the supported values are enforce and audit.
-        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-               
+        :param pulumi.Input[_builtins.str] name: The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -586,8 +580,7 @@ class SecurityAttributeNamespace(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[_builtins.str]:
         """
-        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-
+        The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -36,7 +36,6 @@ class OciCacheConfigSetArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -95,7 +94,6 @@ class OciCacheConfigSetArgs:
     def software_version(self) -> pulumi.Input[_builtins.str]:
         """
         The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -169,7 +167,6 @@ class _OciCacheConfigSetState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,7 +289,6 @@ class _OciCacheConfigSetState:
     def software_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -417,7 +413,6 @@ class OciCacheConfigSet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -559,7 +554,6 @@ class OciCacheConfigSet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] software_version: The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the Oracle Cloud Infrastructure Cache Config Set.
@@ -646,7 +640,6 @@ class OciCacheConfigSet(pulumi.CustomResource):
     def software_version(self) -> pulumi.Output[_builtins.str]:
         """
         The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

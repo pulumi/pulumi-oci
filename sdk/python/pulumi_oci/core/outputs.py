@@ -1980,8 +1980,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
                  min: _builtins.int):
         """
         :param _builtins.int max: (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
-        :param _builtins.int min: (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-               
+        :param _builtins.int min: (Updatable) The minimum port number, which must not be greater than the maximum port number.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2001,8 +2000,7 @@ class CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRange(dict):
     @pulumi.getter
     def min(self) -> _builtins.int:
         """
-        (Updatable) The minimum port number, which must not be greater than the maximum port number. 
-
+        (Updatable) The minimum port number, which must not be greater than the maximum port number.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -2914,7 +2912,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
         """
         :param _builtins.str subnet_id: The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
@@ -2934,7 +2931,6 @@ class ClusterNetworkPlacementConfigurationSecondaryVnicSubnet(dict):
     def subnet_id(self) -> _builtins.str:
         """
         The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3132,8 +3128,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
                * `BASELINE_1_1` - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the instance, in gigabytes.
         :param _builtins.int nvmes: The number of NVMe drives to be used for storage.
-        :param _builtins.float ocpus: The total number of OCPUs available to the instance. 
-               
+        :param _builtins.float ocpus: The total number of OCPUs available to the instance.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3180,8 +3175,7 @@ class ComputeCapacityReportShapeAvailabilityInstanceShapeConfig(dict):
     @pulumi.getter
     def ocpus(self) -> Optional[_builtins.float]:
         """
-        The total number of OCPUs available to the instance. 
-
+        The total number of OCPUs available to the instance.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3576,8 +3570,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferences(dict):
                  fabric_recycle_level: Optional[_builtins.str] = None):
         """
         :param _builtins.str customer_desired_firmware_bundle_id: (Updatable) The desired firmware bundle id on the GPU memory fabric.
-        :param _builtins.str fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric. 
-               
+        :param _builtins.str fabric_recycle_level: (Updatable) The recycle level of GPU memory fabric.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3599,8 +3592,7 @@ class ComputeGpuMemoryFabricMemoryFabricPreferences(dict):
     @pulumi.getter(name="fabricRecycleLevel")
     def fabric_recycle_level(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The recycle level of GPU memory fabric. 
-
+        (Updatable) The recycle level of GPU memory fabric.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -3901,7 +3893,6 @@ class CrossConnectGroupMacsecProperties(dict):
         """
         :param _builtins.str state: (Updatable) Indicates whether or not MACsec is enabled.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
@@ -3921,7 +3912,6 @@ class CrossConnectGroupMacsecProperties(dict):
     def state(self) -> _builtins.str:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4345,8 +4335,7 @@ class DedicatedVmHostPlacementConstraintDetails(dict):
                  type: _builtins.str,
                  compute_bare_metal_host_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-               
+        :param _builtins.str type: The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4360,8 +4349,7 @@ class DedicatedVmHostPlacementConstraintDetails(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-
+        The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5026,7 +5014,7 @@ class DhcpOptionsOption(dict):
                If you set [DhcpDnsOption](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/DhcpDnsOption/) to `VcnLocalPlusInternet`, and you assign a DNS label to the VCN during creation, the search domain name in the VCN's default set of DHCP options is automatically set to the VCN domain (for example, `vcn1.oraclevcn.com`).
                
                If you don't want to use a search domain name, omit this option from the set of DHCP options. Do not include this option with an empty list of search domain names, or with an empty string as the value for any search domain name.
-        :param _builtins.str server_type: (Updatable) 
+        :param _builtins.str server_type: (Updatable)
                * **VcnLocal:** Reserved for future use.
                * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
                * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -5071,7 +5059,7 @@ class DhcpOptionsOption(dict):
     @pulumi.getter(name="serverType")
     def server_type(self) -> Optional[_builtins.str]:
         """
-        (Updatable) 
+        (Updatable)
         * **VcnLocal:** Reserved for future use.
         * **VcnLocalPlusInternet:** Also referred to as "Internet and VCN Resolver". Instances can resolve internet hostnames (no internet gateway is required), and can resolve hostnames of instances in the VCN. This is the default value in the default set of DHCP options in the VCN. For the Internet and VCN Resolver to work across the VCN, there must also be a DNS label set for the VCN, a DNS label set for each subnet, and a hostname for each instance. The Internet and VCN Resolver also enables reverse DNS lookup, which lets you determine the hostname corresponding to the private IP address. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         * **CustomDnsServer:** Instances use a DNS server of your choice (three maximum).
@@ -13087,7 +13075,6 @@ class InstancePoolLoadBalancer(dict):
         :param _builtins.str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool of the load balancer attachment.
         :param _builtins.str state: (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -13155,7 +13142,6 @@ class InstancePoolLoadBalancer(dict):
     def state(self) -> Optional[_builtins.str]:
         """
         (Updatable) The target state for the instance pool update operation (ignored at create time and should not be set). Could be set to RUNNING or STOPPED.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -15902,7 +15888,7 @@ class VcnByoipv6cidrDetail(dict):
                  ipv6cidr_block: _builtins.str):
         """
         :param _builtins.str byoipv6range_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.
-        :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+        :param _builtins.str ipv6cidr_block: An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
                
                When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
@@ -15921,7 +15907,7 @@ class VcnByoipv6cidrDetail(dict):
     @pulumi.getter(name="ipv6cidrBlock")
     def ipv6cidr_block(self) -> _builtins.str:
         """
-        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48` 
+        An IPv6 prefix required to create a VCN with a BYOIP prefix. It could be the whole prefix identified in `byoipv6RangeId`, or a subrange. Example: `2001:0db8:0123::/48`
 
         When updating `byoipv6cidr_details`, Terraform can add, remove, or replace multiple BYO IPv6 CIDR entries in a single `pulumi up`. This means you can update several BYO IPv6 prefixes at once instead of being limited to a single list edit per apply.
         """
@@ -16776,7 +16762,6 @@ class VolumeBackupPolicySchedule(dict):
                - `UTC`
                - `REGIONAL_DATA_CENTER_TIME`
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -16893,7 +16878,6 @@ class VolumeBackupPolicySchedule(dict):
         - `UTC`
         - `REGIONAL_DATA_CENTER_TIME`
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -16929,7 +16913,6 @@ class VolumeBackupSourceDetails(dict):
         :param _builtins.str region: The region of the volume backup source.
         :param _builtins.str volume_backup_id: The OCID of the source volume backup.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -16952,7 +16935,6 @@ class VolumeBackupSourceDetails(dict):
     def volume_backup_id(self) -> _builtins.str:
         """
         The OCID of the source volume backup.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -17088,8 +17070,6 @@ class VolumeGroupBackupSourceDetails(dict):
         :param _builtins.str region: The region of the volume backup source.
         :param _builtins.str volume_group_backup_id: The OCID of the source volume group backup.
                
-               
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str kms_key_id: The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -17112,8 +17092,6 @@ class VolumeGroupBackupSourceDetails(dict):
     def volume_group_backup_id(self) -> _builtins.str:
         """
         The OCID of the source volume group backup.
-
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -44322,7 +44300,7 @@ class GetIpsecConfigTunnelResult(dict):
                  shared_secret: _builtins.str,
                  time_created: _builtins.str):
         """
-        :param _builtins.str ip_address: The IP address of Oracle's VPN headend.  Example: `203.0.113.50 `
+        :param _builtins.str ip_address: The IP address of Oracle's VPN headend.  Example: ` 203.0.113.50  `
         :param _builtins.str shared_secret: The shared secret of the IPSec tunnel.
         :param _builtins.str time_created: The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -44334,7 +44312,7 @@ class GetIpsecConfigTunnelResult(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> _builtins.str:
         """
-        The IP address of Oracle's VPN headend.  Example: `203.0.113.50 `
+        The IP address of Oracle's VPN headend.  Example: ` 203.0.113.50  `
         """
         return pulumi.get(self, "ip_address")
 
@@ -48298,9 +48276,9 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param _builtins.str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param _builtins.bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
-        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         pulumi.set(__self__, "description", description)
@@ -48366,7 +48344,7 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListEgressSecurityRuleTcpOptionResult']:
         """
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "tcp_options")
@@ -48375,7 +48353,7 @@ class GetSecurityListsSecurityListEgressSecurityRuleResult(dict):
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListEgressSecurityRuleUdpOptionResult']:
         """
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "udp_options")
@@ -48562,9 +48540,9 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
                * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
                * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param _builtins.bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
-        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
-        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleUdpOptionArgs'] udp_options: Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         pulumi.set(__self__, "description", description)
@@ -48632,7 +48610,7 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     @pulumi.getter(name="tcpOptions")
     def tcp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListIngressSecurityRuleTcpOptionResult']:
         """
-        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "tcp_options")
@@ -48641,7 +48619,7 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     @pulumi.getter(name="udpOptions")
     def udp_options(self) -> Sequence['outputs.GetSecurityListsSecurityListIngressSecurityRuleUdpOptionResult']:
         """
-        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         """
         return pulumi.get(self, "udp_options")

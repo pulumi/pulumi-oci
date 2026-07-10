@@ -35,7 +35,6 @@ class PathAnalysiArgs:
 
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] cache_control: The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
@@ -70,7 +69,6 @@ class PathAnalysiArgs:
     def type(self) -> pulumi.Input[_builtins.str]:
         """
         The type of the `PathAnalysis` query.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -203,7 +201,6 @@ class _PathAnalysiState:
         :param pulumi.Input['PathAnalysiSourceEndpointArgs'] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -328,7 +325,6 @@ class _PathAnalysiState:
         """
         The type of the `PathAnalysis` query.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -438,7 +434,6 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.Input[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict']] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -601,7 +596,6 @@ class PathAnalysi(pulumi.CustomResource):
         :param pulumi.Input[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict']] source_endpoint: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[_builtins.str] type: The type of the `PathAnalysis` query.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -689,7 +683,6 @@ class PathAnalysi(pulumi.CustomResource):
     def type(self) -> pulumi.Output[_builtins.str]:
         """
         The type of the `PathAnalysis` query.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

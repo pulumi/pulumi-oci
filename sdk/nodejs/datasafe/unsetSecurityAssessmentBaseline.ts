@@ -69,7 +69,6 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -114,7 +113,6 @@ export interface UnsetSecurityAssessmentBaselineState {
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -131,7 +129,6 @@ export interface UnsetSecurityAssessmentBaselineArgs {
     securityAssessmentId: pulumi.Input<string>;
     /**
      * The list of database target OCIDs for which the user intends to unset the baseline.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -191,7 +191,6 @@ export class NamespaceLookup extends pulumi.CustomResource {
     /**
      * The lookup type. Valid values are Lookup, Dictionary or Module.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -383,7 +382,6 @@ export interface NamespaceLookupState {
     /**
      * The lookup type. Valid values are Lookup, Dictionary or Module.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -448,7 +446,6 @@ export interface NamespaceLookupArgs {
     registerLookupFile: pulumi.Input<string>;
     /**
      * The lookup type. Valid values are Lookup, Dictionary or Module.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

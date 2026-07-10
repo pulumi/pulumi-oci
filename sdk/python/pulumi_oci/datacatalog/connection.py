@@ -36,7 +36,6 @@ class ConnectionArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] description: (Updatable) A description of the connection.
@@ -108,7 +107,6 @@ class ConnectionArgs:
     def type_key(self) -> pulumi.Input[_builtins.str]:
         """
         The key of the object type. Type key's can be found via the '/types' endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +192,6 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] time_status_updated: Time that the connections status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] time_updated: The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -410,7 +407,6 @@ class _ConnectionState:
         """
         The key of the object type. Type key's can be found via the '/types' endpoint.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -504,7 +500,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"properties": { "default": { "username": "user1"}}}` . Terraform treats all map of maps as a flattened map with `.` denoting each level. For more information check out this example
         :param pulumi.Input[_builtins.str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -660,7 +655,6 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The last time that any change was made to the connection. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param pulumi.Input[_builtins.str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] updated_by_id: OCID of the user who modified the connection.
@@ -806,7 +800,6 @@ class Connection(pulumi.CustomResource):
     def type_key(self) -> pulumi.Output[_builtins.str]:
         """
         The key of the object type. Type key's can be found via the '/types' endpoint.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

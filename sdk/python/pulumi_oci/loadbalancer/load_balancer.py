@@ -45,7 +45,6 @@ class LoadBalancerArgs:
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -57,7 +56,7 @@ class LoadBalancerArgs:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only.
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -182,7 +181,6 @@ class LoadBalancerArgs:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -238,7 +236,7 @@ class LoadBalancerArgs:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only.
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -428,7 +426,7 @@ class _LoadBalancerState:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only.
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -484,7 +482,6 @@ class _LoadBalancerState:
         :param pulumi.Input['LoadBalancerShapeDetailsArgs'] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[_builtins.str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -633,7 +630,7 @@ class _LoadBalancerState:
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only.
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -811,7 +808,6 @@ class _LoadBalancerState:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -960,7 +956,7 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only.
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -1015,7 +1011,6 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] shape: (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1225,7 +1220,7 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
-        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only. 
+        :param pulumi.Input[_builtins.str] ipv6subnet_cidr: (Updatable) Applies to IPV6 LB creation only.
                
                Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
                
@@ -1281,7 +1276,6 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict']] shape_details: (Updatable) The configuration details to create load balancer using Flexible shape. This is required only if shapeName is `Flexible`.
         :param pulumi.Input[_builtins.str] state: The current state of the load balancer.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] subnet_ids: An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1383,7 +1377,7 @@ class LoadBalancer(pulumi.CustomResource):
     @pulumi.getter(name="ipv6subnetCidr")
     def ipv6subnet_cidr(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Applies to IPV6 LB creation only. 
+        (Updatable) Applies to IPV6 LB creation only.
 
         Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
 
@@ -1516,7 +1510,6 @@ class LoadBalancer(pulumi.CustomResource):
     def subnet_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
         An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

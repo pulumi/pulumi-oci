@@ -35,7 +35,6 @@ class UserCapabilitiesManagementArgs:
         :param pulumi.Input[_builtins.bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
         :param pulumi.Input[_builtins.bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -117,7 +116,6 @@ class UserCapabilitiesManagementArgs:
         """
         (Updatable) Indicates if the user can use SMTP passwords.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -145,7 +143,6 @@ class _UserCapabilitiesManagementState:
         :param pulumi.Input[_builtins.bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
         :param pulumi.Input[_builtins.bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
         :param pulumi.Input[_builtins.bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -217,7 +214,6 @@ class _UserCapabilitiesManagementState:
     def can_use_smtp_credentials(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) Indicates if the user can use SMTP passwords.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,7 +288,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] can_use_console_password: (Updatable) Indicates if the user can log in to the console.
         :param pulumi.Input[_builtins.bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
         :param pulumi.Input[_builtins.bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -402,7 +397,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] can_use_customer_secret_keys: (Updatable) Indicates if the user can use SigV4 symmetric keys.
         :param pulumi.Input[_builtins.bool] can_use_smtp_credentials: (Updatable) Indicates if the user can use SMTP passwords.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] user_id: The OCID of the user.
@@ -456,7 +450,6 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
     def can_use_smtp_credentials(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) Indicates if the user can use SMTP passwords.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

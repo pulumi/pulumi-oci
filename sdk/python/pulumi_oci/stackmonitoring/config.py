@@ -53,7 +53,6 @@ class ConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -246,7 +245,6 @@ class ConfigArgs:
         """
         (Updatable) Assigned version to given onboard configuration.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -299,7 +297,6 @@ class _ConfigState:
         :param pulumi.Input[_builtins.str] time_updated: The time the Config was updated.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigUserGroupArgs']]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -551,7 +548,6 @@ class _ConfigState:
         """
         (Updatable) Assigned version to given onboard configuration.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -643,7 +639,6 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] resource_type: The type of resource to configure for automatic promotion.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -811,7 +806,6 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_updated: The time the Config was updated.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict']]]] user_groups: (Updatable) List of user groups dedicated for Stack Monitoring.
         :param pulumi.Input[_builtins.str] version: (Updatable) Assigned version to given onboard configuration.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -981,7 +975,6 @@ class Config(pulumi.CustomResource):
     def version(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         (Updatable) Assigned version to given onboard configuration.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

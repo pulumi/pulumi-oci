@@ -33,7 +33,6 @@ class ActionCreateZoneFromZoneFileArgs:
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the resource is associated with.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -85,7 +84,6 @@ class ActionCreateZoneFromZoneFileArgs:
     def view_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The OCID of the view the resource is associated with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -139,7 +137,6 @@ class _ActionCreateZoneFromZoneFileState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[_builtins.str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the resource is associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -391,7 +388,6 @@ class _ActionCreateZoneFromZoneFileState:
         """
         The OCID of the view the resource is associated with.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -472,7 +468,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] create_zone_from_zone_file_details: The zone file contents.
         :param pulumi.Input[_builtins.str] scope: Specifies to operate only on resources that have a matching DNS scope.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the resource is associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -617,7 +612,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created in "YYYY-MM-ddThh:mm:ssZ" format with a Z offset, as defined by RFC 3339.
         :param pulumi.Input[_builtins.str] version: Version is the never-repeating, totally-orderable, version of the zone, from which the serial field of the zone's SOA record is derived.
         :param pulumi.Input[_builtins.str] view_id: The OCID of the view the resource is associated with.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -785,7 +779,6 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
     def view_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of the view the resource is associated with.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

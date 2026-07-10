@@ -109,7 +109,6 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
     /**
      * (Updatable) Private endpoint IP.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -235,7 +234,6 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
     /**
      * (Updatable) Private endpoint IP.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -292,7 +290,6 @@ export interface DbmulticloudOracleDbAzureBlobContainerArgs {
     privateEndpointDnsAlias?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Private endpoint IP.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -27,7 +27,6 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterArgs:
 
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -38,7 +37,6 @@ class OciCacheConfigSetlistAssociatedOciCacheClusterArgs:
     def oci_cache_config_set_id(self) -> pulumi.Input[_builtins.str]:
         """
         Unique Oracle Cloud Infrastructure Cache Config Set identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -60,7 +58,6 @@ class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
 
         :param pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs']]] items: List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -87,7 +84,6 @@ class _OciCacheConfigSetlistAssociatedOciCacheClusterState:
     def oci_cache_config_set_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Unique Oracle Cloud Infrastructure Cache Config Set identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,7 +128,6 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -216,7 +211,6 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs', 'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict']]]] items: List of clusters with the same Oracle Cloud Infrastructure Cache Config Set ID.
         :param pulumi.Input[_builtins.str] oci_cache_config_set_id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -241,7 +235,6 @@ class OciCacheConfigSetlistAssociatedOciCacheCluster(pulumi.CustomResource):
     def oci_cache_config_set_id(self) -> pulumi.Output[_builtins.str]:
         """
         Unique Oracle Cloud Infrastructure Cache Config Set identifier.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

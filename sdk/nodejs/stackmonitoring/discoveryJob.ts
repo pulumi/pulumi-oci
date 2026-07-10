@@ -116,8 +116,7 @@ export class DiscoveryJob extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-     *
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -236,8 +235,7 @@ export interface DiscoveryJobState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-     *
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -302,8 +300,7 @@ export interface DiscoveryJobArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true. 
-     *
+     * If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

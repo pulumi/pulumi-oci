@@ -38,7 +38,6 @@ class DatabaseSnapshotStandbyArgs:
                * SNAPSHOT
                * PHYSICAL
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.int] snapshot_duration_in_days: SnapshotDurationInDays is the duration in day(s) after which the Snapshot Standby Database will get converted back to Physical Standby. The minimum value of snapshotDurationInDays is 3 days and maximum value is 14 days. Default value will be 7 days if not provided in the Request.
@@ -86,7 +85,6 @@ class DatabaseSnapshotStandbyArgs:
         Valid standbyConversionType:
         * SNAPSHOT
         * PHYSICAL
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -192,7 +190,6 @@ class _DatabaseSnapshotStandbyState:
                Valid standbyConversionType:
                * SNAPSHOT
                * PHYSICAL
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -646,7 +643,6 @@ class _DatabaseSnapshotStandbyState:
         * SNAPSHOT
         * PHYSICAL
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -760,7 +756,6 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
                Valid standbyConversionType:
                * SNAPSHOT
                * PHYSICAL
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -963,7 +958,6 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
                Valid standbyConversionType:
                * SNAPSHOT
                * PHYSICAL
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1266,7 +1260,6 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
         Valid standbyConversionType:
         * SNAPSHOT
         * PHYSICAL
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

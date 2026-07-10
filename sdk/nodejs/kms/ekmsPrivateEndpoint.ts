@@ -111,8 +111,7 @@ export class EkmsPrivateEndpoint extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * The OCID of subnet in which the EKMS private endpoint is to be created 
-     *
+     * The OCID of subnet in which the EKMS private endpoint is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -234,8 +233,7 @@ export interface EkmsPrivateEndpointState {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * The OCID of subnet in which the EKMS private endpoint is to be created 
-     *
+     * The OCID of subnet in which the EKMS private endpoint is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -284,8 +282,7 @@ export interface EkmsPrivateEndpointArgs {
      */
     port?: pulumi.Input<number | undefined>;
     /**
-     * The OCID of subnet in which the EKMS private endpoint is to be created 
-     *
+     * The OCID of subnet in which the EKMS private endpoint is to be created
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

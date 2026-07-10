@@ -791,7 +791,6 @@ class BuildPipelineStageWaitCriteriaArgsDict(TypedDict):
     """
     (Updatable) Wait criteria type.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -804,7 +803,6 @@ class BuildPipelineStageWaitCriteriaArgs:
         """
         :param pulumi.Input[_builtins.str] wait_duration: (Updatable) The absolute wait duration. Minimum wait duration must be 5 seconds. Maximum wait duration can be up to 2 days.
         :param pulumi.Input[_builtins.str] wait_type: (Updatable) Wait criteria type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -829,7 +827,6 @@ class BuildPipelineStageWaitCriteriaArgs:
     def wait_type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4331,7 +4328,6 @@ class DeployStageWaitCriteriaArgsDict(TypedDict):
     """
     (Updatable) Wait criteria type.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -4344,7 +4340,6 @@ class DeployStageWaitCriteriaArgs:
         """
         :param pulumi.Input[_builtins.str] wait_duration: (Updatable) The absolute wait duration. An ISO 8601 formatted duration string. Minimum waitDuration should be 5 seconds. Maximum waitDuration can be up to 2 days.
         :param pulumi.Input[_builtins.str] wait_type: (Updatable) Wait criteria type.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -4369,7 +4364,6 @@ class DeployStageWaitCriteriaArgs:
     def wait_type(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Wait criteria type.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5084,7 +5078,6 @@ class ProjectNotificationConfigArgsDict(TypedDict):
     """
     (Updatable) The topic ID for notifications.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -5096,7 +5089,6 @@ class ProjectNotificationConfigArgs:
         """
         :param pulumi.Input[_builtins.str] topic_id: (Updatable) The topic ID for notifications.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -5107,7 +5099,6 @@ class ProjectNotificationConfigArgs:
     def topic_id(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The topic ID for notifications.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -5829,7 +5820,6 @@ class TriggerActionFilterArgsDict(TypedDict):
     """
     (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -5856,7 +5846,6 @@ class TriggerActionFilterArgs:
         """
         :param pulumi.Input[_builtins.str] trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] events: The events, for example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED.
@@ -5876,7 +5865,6 @@ class TriggerActionFilterArgs:
     def trigger_source(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

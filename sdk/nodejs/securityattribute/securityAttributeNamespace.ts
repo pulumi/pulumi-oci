@@ -105,8 +105,7 @@ export class SecurityAttributeNamespace extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly modes: pulumi.Output<string[]>;
     /**
-     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-     *
+     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -201,8 +200,7 @@ export interface SecurityAttributeNamespaceState {
      */
     modes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-     *
+     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -247,8 +245,7 @@ export interface SecurityAttributeNamespaceArgs {
      */
     isRetired?: pulumi.Input<boolean | undefined>;
     /**
-     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-     *
+     * The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

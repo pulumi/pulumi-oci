@@ -37,7 +37,6 @@ class DeployArtifactArgs:
         :param pulumi.Input[_builtins.str] deploy_artifact_type: (Updatable) Type of the deployment artifact.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -99,7 +98,6 @@ class DeployArtifactArgs:
     def project_id(self) -> pulumi.Input[_builtins.str]:
         """
         The OCID of a project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,7 +187,6 @@ class _DeployArtifactState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +338,6 @@ class _DeployArtifactState:
         """
         The OCID of a project.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -479,7 +475,6 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Deployment artifact display name. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -640,7 +635,6 @@ class DeployArtifact(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] project_id: The OCID of a project.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: Current state of the deployment artifact.
@@ -745,7 +739,6 @@ class DeployArtifact(pulumi.CustomResource):
     def project_id(self) -> pulumi.Output[_builtins.str]:
         """
         The OCID of a project.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

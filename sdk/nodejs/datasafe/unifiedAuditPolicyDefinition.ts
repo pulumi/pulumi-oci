@@ -107,7 +107,6 @@ export class UnifiedAuditPolicyDefinition extends pulumi.CustomResource {
     /**
      * The OCID of the unified audit policy definition resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -230,7 +229,6 @@ export interface UnifiedAuditPolicyDefinitionState {
     /**
      * The OCID of the unified audit policy definition resource.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -263,7 +261,6 @@ export interface UnifiedAuditPolicyDefinitionArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The OCID of the unified audit policy definition resource.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

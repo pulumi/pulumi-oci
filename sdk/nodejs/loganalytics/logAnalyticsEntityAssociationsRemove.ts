@@ -70,8 +70,7 @@ export class LogAnalyticsEntityAssociationsRemove extends pulumi.CustomResource 
      */
     declare public readonly logAnalyticsEntityId: pulumi.Output<string>;
     /**
-     * The Log Analytics namespace used for the request. 
-     *
+     * The Log Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,8 +126,7 @@ export interface LogAnalyticsEntityAssociationsRemoveState {
      */
     logAnalyticsEntityId?: pulumi.Input<string | undefined>;
     /**
-     * The Log Analytics namespace used for the request. 
-     *
+     * The Log Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,8 +147,7 @@ export interface LogAnalyticsEntityAssociationsRemoveArgs {
      */
     logAnalyticsEntityId: pulumi.Input<string>;
     /**
-     * The Log Analytics namespace used for the request. 
-     *
+     * The Log Analytics namespace used for the request.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

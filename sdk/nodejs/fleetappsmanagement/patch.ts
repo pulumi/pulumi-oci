@@ -167,7 +167,6 @@ export class Patch extends pulumi.CustomResource {
     /**
      * (Updatable) Date when the patch was released.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -323,7 +322,6 @@ export interface PatchState {
     /**
      * (Updatable) Date when the patch was released.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -384,7 +382,6 @@ export interface PatchArgs {
     severity: pulumi.Input<string>;
     /**
      * (Updatable) Date when the patch was released.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

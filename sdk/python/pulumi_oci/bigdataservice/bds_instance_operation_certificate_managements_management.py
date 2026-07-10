@@ -37,7 +37,6 @@ class BdsInstanceOperationCertificateManagementsManagementArgs:
         :param pulumi.Input[_builtins.bool] enable_operation_certificate_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] services: List of services for which certificate needs to be enabled.
@@ -98,7 +97,6 @@ class BdsInstanceOperationCertificateManagementsManagementArgs:
     def renew_operation_certificate_management(self) -> pulumi.Input[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -178,7 +176,6 @@ class _BdsInstanceOperationCertificateManagementsManagementState:
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs']]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] root_certificate: Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
@@ -255,7 +252,6 @@ class _BdsInstanceOperationCertificateManagementsManagementState:
     def renew_operation_certificate_management(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -355,7 +351,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         :param pulumi.Input[_builtins.bool] enable_operation_certificate_management: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -482,7 +477,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         :param pulumi.Input[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict']]]] host_cert_details: List of leaf certificates to use for services on each host. If custom host certificate is provided the root certificate becomes required.
         :param pulumi.Input[_builtins.bool] renew_operation_certificate_management: (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] root_certificate: Plain text certificate/s in order, separated by new line character. If not provided in request a self-signed root certificate is generated inside the cluster. In case hostCertDetails is provided, root certificate is mandatory.
@@ -540,7 +534,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
     def renew_operation_certificate_management(self) -> pulumi.Output[_builtins.bool]:
         """
         (Updatable) A required field when set to `true` calls renew action and when set to `false` defaults to enable_operation_certificate_management's value action.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -128,7 +128,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
      */
     declare public readonly state: pulumi.Output<string>;
     /**
-     * The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+     * The ID of the subnet that the private endpoint VNIC will be created and reside in.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,7 +277,7 @@ export interface PrivateEndpointState {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+     * The ID of the subnet that the private endpoint VNIC will be created and reside in.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -347,7 +347,7 @@ export interface PrivateEndpointArgs {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+     * The ID of the subnet that the private endpoint VNIC will be created and reside in.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

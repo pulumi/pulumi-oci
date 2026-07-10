@@ -112,8 +112,7 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
      */
     declare public readonly subnetId: pulumi.Output<string>;
     /**
-     * (Updatable) OCID of the customer VCN peered with private access channel. 
-     *
+     * (Updatable) OCID of the customer VCN peered with private access channel.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -217,8 +216,7 @@ export interface AnalyticsInstancePrivateAccessChannelState {
      */
     subnetId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) OCID of the customer VCN peered with private access channel. 
-     *
+     * (Updatable) OCID of the customer VCN peered with private access channel.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -255,8 +253,7 @@ export interface AnalyticsInstancePrivateAccessChannelArgs {
      */
     subnetId: pulumi.Input<string>;
     /**
-     * (Updatable) OCID of the customer VCN peered with private access channel. 
-     *
+     * (Updatable) OCID of the customer VCN peered with private access channel.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

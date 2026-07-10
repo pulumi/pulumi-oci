@@ -82,7 +82,6 @@ export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -159,7 +158,6 @@ export interface AutonomousDatabaseSaasAdminUserState {
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -196,7 +194,6 @@ export interface AutonomousDatabaseSaasAdminUserArgs {
     secretVersionNumber?: pulumi.Input<number | undefined>;
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous AI Database.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

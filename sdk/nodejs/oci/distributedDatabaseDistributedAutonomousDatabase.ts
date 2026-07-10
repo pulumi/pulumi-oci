@@ -355,7 +355,6 @@ export class DistributedDatabaseDistributedAutonomousDatabase extends pulumi.Cus
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -756,7 +755,6 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseState {
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -933,7 +931,6 @@ export interface DistributedDatabaseDistributedAutonomousDatabaseArgs {
     validateNetworkDetails?: pulumi.Input<inputs.oci.DistributedDatabaseDistributedAutonomousDatabaseValidateNetworkDetails | undefined>;
     /**
      * (Updatable) An optional property when incremented triggers Validate Network. Could be set to any integer value.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

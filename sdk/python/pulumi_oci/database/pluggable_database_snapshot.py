@@ -28,7 +28,6 @@ class PluggableDatabaseSnapshotArgs:
 
         :param pulumi.Input[_builtins.str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -48,7 +47,6 @@ class PluggableDatabaseSnapshotArgs:
     def pluggable_database_id(self) -> pulumi.Input[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -119,7 +117,6 @@ class _PluggableDatabaseSnapshotState:
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
         :param pulumi.Input[_builtins.str] name: The user-friendly name for the Database Snapshot. The name should be unique.
         :param pulumi.Input[_builtins.str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,7 +223,6 @@ class _PluggableDatabaseSnapshotState:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
@@ -322,7 +318,6 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] name: The user-friendly name for the Database Snapshot. The name should be unique.
         :param pulumi.Input[_builtins.str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -440,7 +435,6 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] name: The user-friendly name for the Database Snapshot. The name should be unique.
         :param pulumi.Input[_builtins.str] pluggable_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
                
-               
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the Exadata Pluggable Database Snapshot.
@@ -516,7 +510,6 @@ class PluggableDatabaseSnapshot(pulumi.CustomResource):
     def pluggable_database_id(self) -> pulumi.Output[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

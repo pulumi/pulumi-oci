@@ -37,7 +37,7 @@ class OpaInstanceAttachmentArgsDict(TypedDict):
     """
     target_role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The role of the target attachment. 
+    The role of the target attachment.
     * `PARENT` - The target instance is the parent of this attachment.
     * `CHILD` - The target instance is the child of this attachment.
     """
@@ -59,7 +59,7 @@ class OpaInstanceAttachmentArgs:
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param pulumi.Input[_builtins.str] target_instance_url: The dataplane instance URL of the attached instance
-        :param pulumi.Input[_builtins.str] target_role: The role of the target attachment. 
+        :param pulumi.Input[_builtins.str] target_role: The role of the target attachment.
                * `PARENT` - The target instance is the parent of this attachment.
                * `CHILD` - The target instance is the child of this attachment.
         :param pulumi.Input[_builtins.str] target_service_type: The type of the target instance, such as "FUSION".
@@ -116,7 +116,7 @@ class OpaInstanceAttachmentArgs:
     @pulumi.getter(name="targetRole")
     def target_role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The role of the target attachment. 
+        The role of the target attachment.
         * `PARENT` - The target instance is the parent of this attachment.
         * `CHILD` - The target instance is the child of this attachment.
         """

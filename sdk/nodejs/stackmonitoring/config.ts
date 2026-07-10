@@ -149,7 +149,6 @@ export class Config extends pulumi.CustomResource {
     /**
      * (Updatable) Assigned version to given onboard configuration.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -293,7 +292,6 @@ export interface ConfigState {
     /**
      * (Updatable) Assigned version to given onboard configuration.
      *
-     *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
@@ -358,7 +356,6 @@ export interface ConfigArgs {
     userGroups?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.ConfigUserGroup>[] | undefined>;
     /**
      * (Updatable) Assigned version to given onboard configuration.
-     *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

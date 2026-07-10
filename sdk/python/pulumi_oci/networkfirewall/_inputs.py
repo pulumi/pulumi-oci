@@ -173,7 +173,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgsDict(TypedDict):
     """
     (Updatable) Identifier for rule before which this rule lies.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -186,7 +185,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -213,7 +211,6 @@ class NetworkFirewallPolicyDecryptionRulePositionArgs:
     def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -461,7 +458,6 @@ class NetworkFirewallPolicySecurityRulePositionArgsDict(TypedDict):
     """
     (Updatable) Identifier for rule before which this rule lies.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -474,7 +470,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
         """
         :param pulumi.Input[_builtins.str] after_rule: (Updatable) Identifier for rule after which this rule lies.
         :param pulumi.Input[_builtins.str] before_rule: (Updatable) Identifier for rule before which this rule lies.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -501,7 +496,6 @@ class NetworkFirewallPolicySecurityRulePositionArgs:
     def before_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) Identifier for rule before which this rule lies.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -698,7 +692,6 @@ class NetworkFirewallPolicyUrlListUrlArgsDict(TypedDict):
     (Updatable) The type of pattern.
     * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
 
-
     ** IMPORTANT **
     Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
@@ -712,7 +705,6 @@ class NetworkFirewallPolicyUrlListUrlArgs:
         :param pulumi.Input[_builtins.str] pattern: (Updatable) A string consisting of a concatenation of optional host component and optional path component. The host component may start with `*.` to match the case-insensitive domain and all its subdomains. The path component must start with a `/`, and may end with `*` to match all paths of which it is a case-sensitive prefix. A missing host component matches all request domains, and a missing path component matches all request paths. An empty value matches all requests.
         :param pulumi.Input[_builtins.str] type: (Updatable) The type of pattern.
                * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -738,7 +730,6 @@ class NetworkFirewallPolicyUrlListUrlArgs:
         """
         (Updatable) The type of pattern.
         * SIMPLE - The only accepted value is `SIMPLE`. A simple pattern with optional subdomain and/or path suffix wildcards.
-
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

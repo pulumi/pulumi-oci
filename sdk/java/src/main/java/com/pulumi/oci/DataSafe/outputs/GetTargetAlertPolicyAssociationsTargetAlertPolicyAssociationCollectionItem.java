@@ -73,6 +73,11 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
      */
     private String targetId;
     /**
+     * @return A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    private String targetType;
+    /**
      * @return Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -169,6 +174,13 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
         return this.targetId;
     }
     /**
+     * @return A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
+    }
+    /**
      * @return Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
@@ -204,6 +216,7 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
         private String state;
         private Map<String,String> systemTags;
         private String targetId;
+        private String targetType;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -221,6 +234,7 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -322,6 +336,14 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
             return this;
         }
         @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem", "timeCreated");
@@ -351,6 +373,7 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

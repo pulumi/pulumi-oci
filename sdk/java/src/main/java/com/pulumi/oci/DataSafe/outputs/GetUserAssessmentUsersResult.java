@@ -32,6 +32,7 @@ public final class GetUserAssessmentUsersResult {
      * 
      */
     private @Nullable String authenticationType;
+    private @Nullable String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     private @Nullable List<GetUserAssessmentUsersFilter> filters;
     /**
@@ -106,6 +107,9 @@ public final class GetUserAssessmentUsersResult {
      */
     public Optional<String> authenticationType() {
         return Optional.ofNullable(this.authenticationType);
+    }
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
@@ -212,6 +216,7 @@ public final class GetUserAssessmentUsersResult {
         private @Nullable String accountStatus;
         private @Nullable Boolean areAllSchemasAccessible;
         private @Nullable String authenticationType;
+        private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetUserAssessmentUsersFilter> filters;
         private String id;
@@ -240,6 +245,7 @@ public final class GetUserAssessmentUsersResult {
     	      this.accountStatus = defaults.accountStatus;
     	      this.areAllSchemasAccessible = defaults.areAllSchemasAccessible;
     	      this.authenticationType = defaults.authenticationType;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -285,6 +291,12 @@ public final class GetUserAssessmentUsersResult {
         public Builder authenticationType(@Nullable String authenticationType) {
 
             this.authenticationType = authenticationType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -434,6 +446,7 @@ public final class GetUserAssessmentUsersResult {
             _resultValue.accountStatus = accountStatus;
             _resultValue.areAllSchemasAccessible = areAllSchemasAccessible;
             _resultValue.authenticationType = authenticationType;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.filters = filters;
             _resultValue.id = id;

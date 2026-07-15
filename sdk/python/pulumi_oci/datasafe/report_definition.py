@@ -195,6 +195,7 @@ class _ReportDefinitionState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  display_order: pulumi.Input[Optional[_builtins.int]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_schedule_pagination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_seeded: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -225,6 +226,7 @@ class _ReportDefinitionState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[_builtins.int] display_order: Specifies the order in which the summary must be displayed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_schedule_pagination_enabled: Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
         :param pulumi.Input[_builtins.bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param pulumi.Input[_builtins.str] parent_id: The OCID of the parent report definition.
@@ -265,6 +267,8 @@ class _ReportDefinitionState:
             pulumi.set(__self__, "display_order", display_order)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_schedule_pagination_enabled is not None:
+            pulumi.set(__self__, "is_schedule_pagination_enabled", is_schedule_pagination_enabled)
         if is_seeded is not None:
             pulumi.set(__self__, "is_seeded", is_seeded)
         if lifecycle_details is not None:
@@ -439,6 +443,18 @@ class _ReportDefinitionState:
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSchedulePaginationEnabled")
+    def is_schedule_pagination_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        """
+        return pulumi.get(self, "is_schedule_pagination_enabled")
+
+    @is_schedule_pagination_enabled.setter
+    def is_schedule_pagination_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_schedule_pagination_enabled", value)
 
     @_builtins.property
     @pulumi.getter(name="isSeeded")
@@ -849,6 +865,7 @@ class ReportDefinition(pulumi.CustomResource):
             __props__.__dict__["compliance_standards"] = None
             __props__.__dict__["data_source"] = None
             __props__.__dict__["display_order"] = None
+            __props__.__dict__["is_schedule_pagination_enabled"] = None
             __props__.__dict__["is_seeded"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["record_time_span"] = None
@@ -884,6 +901,7 @@ class ReportDefinition(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             display_order: pulumi.Input[Optional[_builtins.int]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_schedule_pagination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_seeded: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             parent_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -918,6 +936,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Specifies the name of the report definition.
         :param pulumi.Input[_builtins.int] display_order: Specifies the order in which the summary must be displayed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_schedule_pagination_enabled: Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
         :param pulumi.Input[_builtins.bool] is_seeded: Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param pulumi.Input[_builtins.str] parent_id: The OCID of the parent report definition.
@@ -950,6 +969,7 @@ class ReportDefinition(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["display_order"] = display_order
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_schedule_pagination_enabled"] = is_schedule_pagination_enabled
         __props__.__dict__["is_seeded"] = is_seeded
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["parent_id"] = parent_id
@@ -1062,6 +1082,14 @@ class ReportDefinition(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="isSchedulePaginationEnabled")
+    def is_schedule_pagination_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        """
+        return pulumi.get(self, "is_schedule_pagination_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isSeeded")

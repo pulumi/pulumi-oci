@@ -45,6 +45,7 @@ namespace Pulumi.Oci.Oda
     ///             { "bar-key", "value" },
     ///         },
     ///         NsgIds = odaPrivateEndpointNsgIds,
+    ///         SecurityAttributes = odaPrivateEndpointSecurityAttributes,
     ///     });
     /// 
     /// });
@@ -96,6 +97,12 @@ namespace Pulumi.Oci.Oda
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        [Output("securityAttributes")]
+        public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the ODA private endpoint.
@@ -225,6 +232,18 @@ namespace Pulumi.Oci.Oda
             set => _nsgIds = value;
         }
 
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
         /// 
@@ -295,6 +314,18 @@ namespace Pulumi.Oci.Oda
         {
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
+        }
+
+        [Input("securityAttributes")]
+        private InputMap<string>? _securityAttributes;
+
+        /// <summary>
+        /// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public InputMap<string> SecurityAttributes
+        {
+            get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
+            set => _securityAttributes = value;
         }
 
         /// <summary>

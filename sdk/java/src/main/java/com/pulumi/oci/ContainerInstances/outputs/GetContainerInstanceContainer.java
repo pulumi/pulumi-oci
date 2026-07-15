@@ -71,6 +71,10 @@ public final class GetContainerInstanceContainer {
      */
     private String lifecycleDetails;
     private List<GetContainerInstanceContainerResourceConfig> resourceConfigs;
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
     private List<GetContainerInstanceContainerSecurityContext> securityContexts;
     /**
      * @return The current state of the container instance.
@@ -184,6 +188,10 @@ public final class GetContainerInstanceContainer {
     public List<GetContainerInstanceContainerResourceConfig> resourceConfigs() {
         return this.resourceConfigs;
     }
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
     public List<GetContainerInstanceContainerSecurityContext> securityContexts() {
         return this.securityContexts;
     }

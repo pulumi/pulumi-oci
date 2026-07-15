@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ComputeClusterArgs', 'ComputeCluster']
 
@@ -23,7 +25,8 @@ class ComputeClusterArgs:
                  compartment_id: pulumi.Input[_builtins.str],
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']] = None):
         """
         The set of arguments for constructing a ComputeCluster resource.
 
@@ -32,9 +35,7 @@ class ComputeClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['ComputeClusterPlacementConstraintDetailsArgs'] placement_constraint_details: (Updatable) The details for providing placement constraints.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +45,8 @@ class ComputeClusterArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -98,15 +101,24 @@ class ComputeClusterArgs:
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']]:
+        """
+        (Updatable) The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
 
 @pulumi.input_type
@@ -117,8 +129,10 @@ class _ComputeClusterState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_created: pulumi.Input[Optional[_builtins.str]] = None):
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ComputeCluster resources.
 
@@ -127,11 +141,10 @@ class _ComputeClusterState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['ComputeClusterPlacementConstraintDetailsArgs'] placement_constraint_details: (Updatable) The details for providing placement constraints.
         :param pulumi.Input[_builtins.str] state: The current state of the compute cluster.
         :param pulumi.Input[_builtins.str] time_created: The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_updated: The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -143,10 +156,14 @@ class _ComputeClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -201,15 +218,24 @@ class _ComputeClusterState:
     def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']]:
+        """
+        (Updatable) The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: pulumi.Input[Optional['ComputeClusterPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter
@@ -235,6 +261,18 @@ class _ComputeClusterState:
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
 
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
 
 @pulumi.type_token("oci:Core/computeCluster:ComputeCluster")
 class ComputeCluster(pulumi.CustomResource):
@@ -247,6 +285,7 @@ class ComputeCluster(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['ComputeClusterPlacementConstraintDetailsArgs', 'ComputeClusterPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         """
         This resource provides the Compute Cluster resource in Oracle Cloud Infrastructure Core service.
@@ -282,6 +321,13 @@ class ComputeCluster(pulumi.CustomResource):
             display_name=compute_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
+            },
+            placement_constraint_details={
+                "type": "COMPUTE_CLUSTER",
+                "hpc_island_id": test_hpc_island["id"],
+                "logical_placement_constraint": compute_cluster_placement_constraint_details_logical_placement_constraint,
+                "target_memory_fabric_ids": compute_cluster_placement_constraint_details_target_memory_fabric_ids,
+                "target_network_block_ids": compute_cluster_placement_constraint_details_target_network_block_ids,
             })
         ```
 
@@ -301,9 +347,7 @@ class ComputeCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Union['ComputeClusterPlacementConstraintDetailsArgs', 'ComputeClusterPlacementConstraintDetailsArgsDict']] placement_constraint_details: (Updatable) The details for providing placement constraints.
         """
         ...
     @overload
@@ -345,6 +389,13 @@ class ComputeCluster(pulumi.CustomResource):
             display_name=compute_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
+            },
+            placement_constraint_details={
+                "type": "COMPUTE_CLUSTER",
+                "hpc_island_id": test_hpc_island["id"],
+                "logical_placement_constraint": compute_cluster_placement_constraint_details_logical_placement_constraint,
+                "target_memory_fabric_ids": compute_cluster_placement_constraint_details_target_memory_fabric_ids,
+                "target_network_block_ids": compute_cluster_placement_constraint_details_target_network_block_ids,
             })
         ```
 
@@ -377,6 +428,7 @@ class ComputeCluster(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: pulumi.Input[Optional[Union['ComputeClusterPlacementConstraintDetailsArgs', 'ComputeClusterPlacementConstraintDetailsArgsDict']]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -395,8 +447,10 @@ class ComputeCluster(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["placement_constraint_details"] = placement_constraint_details
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_updated"] = None
         super(ComputeCluster, __self__).__init__(
             'oci:Core/computeCluster:ComputeCluster',
             resource_name,
@@ -412,8 +466,10 @@ class ComputeCluster(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            placement_constraint_details: pulumi.Input[Optional[Union['ComputeClusterPlacementConstraintDetailsArgs', 'ComputeClusterPlacementConstraintDetailsArgsDict']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeCluster':
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'ComputeCluster':
         """
         Get an existing ComputeCluster resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -426,11 +482,10 @@ class ComputeCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Union['ComputeClusterPlacementConstraintDetailsArgs', 'ComputeClusterPlacementConstraintDetailsArgsDict']] placement_constraint_details: (Updatable) The details for providing placement constraints.
         :param pulumi.Input[_builtins.str] state: The current state of the compute cluster.
         :param pulumi.Input[_builtins.str] time_created: The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_updated: The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -441,8 +496,10 @@ class ComputeCluster(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["placement_constraint_details"] = placement_constraint_details
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_updated"] = time_updated
         return ComputeCluster(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -482,11 +539,16 @@ class ComputeCluster(pulumi.CustomResource):
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> pulumi.Output['outputs.ComputeClusterPlacementConstraintDetails']:
+        """
+        (Updatable) The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter
@@ -503,4 +565,12 @@ class ComputeCluster(pulumi.CustomResource):
         The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
 

@@ -12,6 +12,24 @@ import * as utilities from "../utilities";
  * Gets a list of all target-alert policy associations.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetAlertPolicyAssociations = oci.datasafe.getTargetAlertPolicyAssociations({
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAlertPolicyAssociationAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree === "true",
+ *     state: targetAlertPolicyAssociationState,
+ *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
+ *     targetId: testTarget.id,
+ *     targetType: targetAlertPolicyAssociationTargetType,
+ *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
+ * });
+ * ```
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -24,6 +42,7 @@ export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssoc
         "state": args.state,
         "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
     }, opts);
@@ -62,6 +81,10 @@ export interface GetTargetAlertPolicyAssociationsArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * A optional filter to return only resources that belong to the specified alert policy association type.
+     */
+    targetType?: string;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
@@ -102,9 +125,13 @@ export interface GetTargetAlertPolicyAssociationsResult {
     readonly targetAlertPolicyAssociationCollections: outputs.DataSafe.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection[];
     readonly targetAlertPolicyAssociationId?: string;
     /**
-     * The OCID of the target on which alert policy is to be applied.
+     * The OCID of the target or target database group on which alert policy is to be applied.
      */
     readonly targetId?: string;
+    /**
+     * The resource type that is represented by the target alert policy association.
+     */
+    readonly targetType?: string;
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
@@ -114,6 +141,24 @@ export interface GetTargetAlertPolicyAssociationsResult {
  * Gets a list of all target-alert policy associations.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetAlertPolicyAssociations = oci.datasafe.getTargetAlertPolicyAssociations({
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAlertPolicyAssociationAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree === "true",
+ *     state: targetAlertPolicyAssociationState,
+ *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
+ *     targetId: testTarget.id,
+ *     targetType: targetAlertPolicyAssociationTargetType,
+ *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
+ * });
+ * ```
  */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -126,6 +171,7 @@ export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolic
         "state": args.state,
         "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
     }, opts);
@@ -164,6 +210,10 @@ export interface GetTargetAlertPolicyAssociationsOutputArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string | undefined>;
+    /**
+     * A optional filter to return only resources that belong to the specified alert policy association type.
+     */
+    targetType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *

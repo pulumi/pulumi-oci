@@ -81,8 +81,10 @@ type LookupTargetAlertPolicyAssociationResult struct {
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags                     map[string]string `pulumi:"systemTags"`
 	TargetAlertPolicyAssociationId string            `pulumi:"targetAlertPolicyAssociationId"`
-	// The OCID of the target on which alert policy is to be applied.
+	// The OCID of the target or target database group on which alert policy is to be applied.
 	TargetId string `pulumi:"targetId"`
+	// The resource type that is represented by the target alert policy association.
+	TargetType string `pulumi:"targetType"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -182,9 +184,14 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) TargetAlertPolicyAssocia
 	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TargetAlertPolicyAssociationId }).(pulumi.StringOutput)
 }
 
-// The OCID of the target on which alert policy is to be applied.
+// The OCID of the target or target database group on which alert policy is to be applied.
 func (o LookupTargetAlertPolicyAssociationResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The resource type that is represented by the target alert policy association.
+func (o LookupTargetAlertPolicyAssociationResultOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) string { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

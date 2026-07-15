@@ -18,6 +18,9 @@ from .costad_cost_alert_subscription import *
 from .costad_cost_anomaly_event import *
 from .costad_cost_anomaly_monitor import *
 from .costad_cost_anomaly_monitor_costanomalymonitorenabletoggles_management import *
+from .datacc_infrastructure import *
+from .datacc_vm_cluster_network import *
+from .datacc_vm_instance import *
 from .dbmulticloud_multi_cloud_resource_discovery import *
 from .dbmulticloud_oracle_db_aws_identity_connector import *
 from .dbmulticloud_oracle_db_aws_key import *
@@ -60,6 +63,15 @@ from .get_costad_cost_anomaly_event_analytics import *
 from .get_costad_cost_anomaly_events import *
 from .get_costad_cost_anomaly_monitor import *
 from .get_costad_cost_anomaly_monitors import *
+from .get_datacc_infrastructure import *
+from .get_datacc_infrastructure_scale_option import *
+from .get_datacc_infrastructures import *
+from .get_datacc_maintenance_execution import *
+from .get_datacc_maintenance_executions import *
+from .get_datacc_vm_cluster_network import *
+from .get_datacc_vm_cluster_networks import *
+from .get_datacc_vm_instance import *
+from .get_datacc_vm_instances import *
 from .get_dbmulticloud_multi_cloud_resource_discoveries import *
 from .get_dbmulticloud_multi_cloud_resource_discovery import *
 from .get_dbmulticloud_oracle_db_aws_identity_connector import *

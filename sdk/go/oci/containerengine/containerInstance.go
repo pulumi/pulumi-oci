@@ -135,6 +135,11 @@ import (
 //						Username:         pulumi.Any(containerInstanceImagePullSecretsUsername),
 //					},
 //				},
+//				SecurityContext: &containerengine.ContainerInstanceSecurityContextArgs{
+//					FsGroup:             pulumi.Any(containerInstanceSecurityContextFsGroup),
+//					FsGroupChangePolicy: pulumi.Any(containerInstanceSecurityContextFsGroupChangePolicy),
+//					SecurityContextType: pulumi.Any(containerInstanceSecurityContextSecurityContextType),
+//				},
 //				Volumes: containerengine.ContainerInstanceVolumeArray{
 //					&containerengine.ContainerInstanceVolumeArgs{
 //						Name:         pulumi.Any(containerInstanceVolumesName),
@@ -147,6 +152,27 @@ import (
 //								Path:     pulumi.Any(containerInstanceVolumesConfigsPath),
 //							},
 //						},
+//						Export: &containerengine.ContainerInstanceVolumeExportArgs{
+//							Id:               pulumi.Any(containerInstanceVolumesExportId),
+//							OciFssExportType: pulumi.Any(containerInstanceVolumesExportOciFssExportType),
+//						},
+//						MountCommand: &containerengine.ContainerInstanceVolumeMountCommandArgs{
+//							MountOptions: containerengine.ContainerInstanceVolumeMountCommandMountOptionArray{
+//								&containerengine.ContainerInstanceVolumeMountCommandMountOptionArgs{
+//									Option: pulumi.Any(containerInstanceVolumesMountCommandMountOptionsOption),
+//									Value:  pulumi.Any(containerInstanceVolumesMountCommandMountOptionsValue),
+//								},
+//							},
+//						},
+//						MountTarget: &containerengine.ContainerInstanceVolumeMountTargetArgs{
+//							Id:                    pulumi.Any(containerInstanceVolumesMountTargetId),
+//							OciFssMountTargetType: pulumi.Any(containerInstanceVolumesMountTargetOciFssMountTargetType),
+//						},
+//						Security: &containerengine.ContainerInstanceVolumeSecurityArgs{
+//							Auth:                 pulumi.Any(containerInstanceVolumesSecurityAuth),
+//							IsEncryptedInTransit: pulumi.Any(containerInstanceVolumesSecurityIsEncryptedInTransit),
+//						},
+//						SubnetId: pulumi.Any(testSubnet.Id),
 //					},
 //				},
 //			})
@@ -195,6 +221,8 @@ type ContainerInstance struct {
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayOutput `pulumi:"imagePullSecrets"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Security context for all containers in a container instance.
+	SecurityContext ContainerInstanceSecurityContextOutput `pulumi:"securityContext"`
 	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The size and amount of resources available to the container instance.
@@ -206,6 +234,8 @@ type ContainerInstance struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// TenantId id of the container instance.
+	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -294,6 +324,8 @@ type containerInstanceState struct {
 	ImagePullSecrets []ContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Security context for all containers in a container instance.
+	SecurityContext *ContainerInstanceSecurityContext `pulumi:"securityContext"`
 	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape *string `pulumi:"shape"`
 	// The size and amount of resources available to the container instance.
@@ -305,6 +337,8 @@ type containerInstanceState struct {
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// TenantId id of the container instance.
+	TenantId *string `pulumi:"tenantId"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -346,6 +380,8 @@ type ContainerInstanceState struct {
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayInput
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput
+	// Security context for all containers in a container instance.
+	SecurityContext ContainerInstanceSecurityContextPtrInput
 	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringPtrInput
 	// The size and amount of resources available to the container instance.
@@ -357,6 +393,8 @@ type ContainerInstanceState struct {
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags pulumi.StringMapInput
+	// TenantId id of the container instance.
+	TenantId pulumi.StringPtrInput
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -398,6 +436,8 @@ type containerInstanceArgs struct {
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []ContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
+	// Security context for all containers in a container instance.
+	SecurityContext *ContainerInstanceSecurityContext `pulumi:"securityContext"`
 	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape string `pulumi:"shape"`
 	// The size and amount of resources available to the container instance.
@@ -439,6 +479,8 @@ type ContainerInstanceArgs struct {
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
 	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets ContainerInstanceImagePullSecretArrayInput
+	// Security context for all containers in a container instance.
+	SecurityContext ContainerInstanceSecurityContextPtrInput
 	// The shape of the container instance. The shape determines the resources available to the container instance.
 	Shape pulumi.StringInput
 	// The size and amount of resources available to the container instance.
@@ -608,6 +650,11 @@ func (o ContainerInstanceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Security context for all containers in a container instance.
+func (o ContainerInstanceOutput) SecurityContext() ContainerInstanceSecurityContextOutput {
+	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceSecurityContextOutput { return v.SecurityContext }).(ContainerInstanceSecurityContextOutput)
+}
+
 // The shape of the container instance. The shape determines the resources available to the container instance.
 func (o ContainerInstanceOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
@@ -629,6 +676,11 @@ func (o ContainerInstanceOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o ContainerInstanceOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// TenantId id of the container instance.
+func (o ContainerInstanceOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.TenantId }).(pulumi.StringOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

@@ -17,6 +17,9 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// The value of the mount option.
+        /// </summary>
         public readonly string Value;
 
         [OutputConstructor]

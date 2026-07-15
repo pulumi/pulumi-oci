@@ -26,7 +26,7 @@ class GetOdaPrivateEndpointResult:
     """
     A collection of values returned by getOdaPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, nsg_ids=None, oda_private_endpoint_id=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, nsg_ids=None, oda_private_endpoint_id=None, security_attributes=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,6 +51,9 @@ class GetOdaPrivateEndpointResult:
         if oda_private_endpoint_id and not isinstance(oda_private_endpoint_id, str):
             raise TypeError("Expected argument 'oda_private_endpoint_id' to be a str")
         pulumi.set(__self__, "oda_private_endpoint_id", oda_private_endpoint_id)
+        if security_attributes and not isinstance(security_attributes, dict):
+            raise TypeError("Expected argument 'security_attributes' to be a dict")
+        pulumi.set(__self__, "security_attributes", security_attributes)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -126,6 +129,14 @@ class GetOdaPrivateEndpointResult:
         return pulumi.get(self, "oda_private_endpoint_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -172,6 +183,7 @@ class AwaitableGetOdaPrivateEndpointResult(GetOdaPrivateEndpointResult):
             id=self.id,
             nsg_ids=self.nsg_ids,
             oda_private_endpoint_id=self.oda_private_endpoint_id,
+            security_attributes=self.security_attributes,
             state=self.state,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
@@ -211,6 +223,7 @@ def get_oda_private_endpoint(oda_private_endpoint_id: Optional[_builtins.str] = 
         id=pulumi.get(__ret__, 'id'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         oda_private_endpoint_id=pulumi.get(__ret__, 'oda_private_endpoint_id'),
+        security_attributes=pulumi.get(__ret__, 'security_attributes'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -247,6 +260,7 @@ def get_oda_private_endpoint_output(oda_private_endpoint_id: pulumi.Input[Option
         id=pulumi.get(__response__, 'id'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         oda_private_endpoint_id=pulumi.get(__response__, 'oda_private_endpoint_id'),
+        security_attributes=pulumi.get(__response__, 'security_attributes'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         time_created=pulumi.get(__response__, 'time_created'),

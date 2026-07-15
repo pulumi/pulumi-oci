@@ -19,6 +19,11 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private String assessmentId;
     /**
+     * @return The category of the finding.
+     * 
+     */
+    private String category;
+    /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * 
      */
@@ -121,6 +126,13 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     public String assessmentId() {
         return this.assessmentId;
+    }
+    /**
+     * @return The category of the finding.
+     * 
+     */
+    public String category() {
+        return this.category;
     }
     /**
      * @return The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
@@ -266,6 +278,7 @@ public final class GetSecurityAssessmentFindingsFinding {
     @CustomType.Builder
     public static final class Builder {
         private String assessmentId;
+        private String category;
         private List<String> details;
         private String doclink;
         private Boolean hasTargetDbRiskLevelChanged;
@@ -289,6 +302,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         public Builder(GetSecurityAssessmentFindingsFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
+    	      this.category = defaults.category;
     	      this.details = defaults.details;
     	      this.doclink = defaults.doclink;
     	      this.hasTargetDbRiskLevelChanged = defaults.hasTargetDbRiskLevelChanged;
@@ -316,6 +330,14 @@ public final class GetSecurityAssessmentFindingsFinding {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsFinding", "assessmentId");
             }
             this.assessmentId = assessmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsFinding", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
@@ -479,6 +501,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         public GetSecurityAssessmentFindingsFinding build() {
             final var _resultValue = new GetSecurityAssessmentFindingsFinding();
             _resultValue.assessmentId = assessmentId;
+            _resultValue.category = category;
             _resultValue.details = details;
             _resultValue.doclink = doclink;
             _resultValue.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;

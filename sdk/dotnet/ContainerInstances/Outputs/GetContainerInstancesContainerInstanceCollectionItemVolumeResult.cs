@@ -22,9 +22,29 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult> Configs;
         /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult> Exports;
+        /// <summary>
+        /// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult> MountCommands;
+        /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult> MountTargets;
+        /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Security options for Oracle Cloud Infrastructure FSS File System.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult> Securities;
+        /// <summary>
+        /// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        /// </summary>
+        public readonly string SubnetId;
         /// <summary>
         /// The type of volume.
         /// </summary>
@@ -36,13 +56,28 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult> configs,
 
+            ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult> exports,
+
+            ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult> mountCommands,
+
+            ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult> mountTargets,
+
             string name,
+
+            ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult> securities,
+
+            string subnetId,
 
             string volumeType)
         {
             BackingStore = backingStore;
             Configs = configs;
+            Exports = exports;
+            MountCommands = mountCommands;
+            MountTargets = mountTargets;
             Name = name;
+            Securities = securities;
+            SubnetId = subnetId;
             VolumeType = volumeType;
         }
     }

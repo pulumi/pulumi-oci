@@ -37,6 +37,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccountStatus = userAssessmentUserAccountStatus,
         ///         AreAllSchemasAccessible = userAssessmentUserAreAllSchemasAccessible,
         ///         AuthenticationType = userAssessmentUserAuthenticationType,
+        ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = userAssessmentUserCompartmentIdInSubtree,
         ///         SchemaLists = userAssessmentUserSchemaList,
         ///         TargetId = testTarget.Id,
@@ -88,6 +89,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccountStatus = userAssessmentUserAccountStatus,
         ///         AreAllSchemasAccessible = userAssessmentUserAreAllSchemasAccessible,
         ///         AuthenticationType = userAssessmentUserAuthenticationType,
+        ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = userAssessmentUserCompartmentIdInSubtree,
         ///         SchemaLists = userAssessmentUserSchemaList,
         ///         TargetId = testTarget.Id,
@@ -139,6 +141,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccountStatus = userAssessmentUserAccountStatus,
         ///         AreAllSchemasAccessible = userAssessmentUserAreAllSchemasAccessible,
         ///         AuthenticationType = userAssessmentUserAuthenticationType,
+        ///         CompartmentId = compartmentId,
         ///         CompartmentIdInSubtree = userAssessmentUserCompartmentIdInSubtree,
         ///         SchemaLists = userAssessmentUserSchemaList,
         ///         TargetId = testTarget.Id,
@@ -191,6 +194,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("authenticationType")]
         public string? AuthenticationType { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the specified compartment OCID.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
@@ -358,6 +367,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? AuthenticationType { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the specified compartment OCID.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
         /// </summary>
         [Input("compartmentIdInSubtree")]
@@ -513,6 +528,7 @@ namespace Pulumi.Oci.DataSafe
         /// The user authentication method.
         /// </summary>
         public readonly string? AuthenticationType;
+        public readonly string? CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         public readonly ImmutableArray<Outputs.GetUserAssessmentUsersFilterResult> Filters;
         /// <summary>
@@ -566,6 +582,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? authenticationType,
 
+            string? compartmentId,
+
             bool? compartmentIdInSubtree,
 
             ImmutableArray<Outputs.GetUserAssessmentUsersFilterResult> filters,
@@ -612,6 +630,7 @@ namespace Pulumi.Oci.DataSafe
             AccountStatus = accountStatus;
             AreAllSchemasAccessible = areAllSchemasAccessible;
             AuthenticationType = authenticationType;
+            CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             Filters = filters;
             Id = id;

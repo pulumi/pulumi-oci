@@ -81,6 +81,14 @@ export class Report extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly mimeType: pulumi.Output<string>;
     /**
+     * The OCID of the next report generated.
+     */
+    declare public /*out*/ readonly nextReportId: pulumi.Output<string>;
+    /**
+     * The OCID of the previous report generated.
+     */
+    declare public /*out*/ readonly previousReportId: pulumi.Output<string>;
+    /**
      * The OCID of the report definition.
      */
     declare public /*out*/ readonly reportDefinitionId: pulumi.Output<string>;
@@ -137,6 +145,8 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["mimeType"] = state?.mimeType;
+            resourceInputs["nextReportId"] = state?.nextReportId;
+            resourceInputs["previousReportId"] = state?.previousReportId;
             resourceInputs["reportDefinitionId"] = state?.reportDefinitionId;
             resourceInputs["reportId"] = state?.reportId;
             resourceInputs["state"] = state?.state;
@@ -159,6 +169,8 @@ export class Report extends pulumi.CustomResource {
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["mimeType"] = undefined /*out*/;
+            resourceInputs["nextReportId"] = undefined /*out*/;
+            resourceInputs["previousReportId"] = undefined /*out*/;
             resourceInputs["reportDefinitionId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -208,6 +220,14 @@ export interface ReportState {
      * Specifies the format of report to be .xls or .pdf or .json
      */
     mimeType?: pulumi.Input<string | undefined>;
+    /**
+     * The OCID of the next report generated.
+     */
+    nextReportId?: pulumi.Input<string | undefined>;
+    /**
+     * The OCID of the previous report generated.
+     */
+    previousReportId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the report definition.
      */

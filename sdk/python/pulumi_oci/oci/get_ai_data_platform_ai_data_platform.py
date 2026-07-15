@@ -26,13 +26,16 @@ class GetAiDataPlatformAiDataPlatformResult:
     """
     A collection of values returned by getAiDataPlatformAiDataPlatform.
     """
-    def __init__(__self__, ai_data_platform_id=None, ai_data_platform_type=None, alias_key=None, compartment_id=None, created_by=None, default_workspace_name=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None, web_socket_endpoint=None):
+    def __init__(__self__, ai_data_platform_id=None, ai_data_platform_type=None, ai_feature_status=None, alias_key=None, compartment_id=None, created_by=None, default_workspace_name=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_enable_ai_feature=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None, vector_db_admin_cred=None, vector_db_admin_secret_id=None, vector_db_id=None, web_socket_endpoint=None):
         if ai_data_platform_id and not isinstance(ai_data_platform_id, str):
             raise TypeError("Expected argument 'ai_data_platform_id' to be a str")
         pulumi.set(__self__, "ai_data_platform_id", ai_data_platform_id)
         if ai_data_platform_type and not isinstance(ai_data_platform_type, str):
             raise TypeError("Expected argument 'ai_data_platform_type' to be a str")
         pulumi.set(__self__, "ai_data_platform_type", ai_data_platform_type)
+        if ai_feature_status and not isinstance(ai_feature_status, str):
+            raise TypeError("Expected argument 'ai_feature_status' to be a str")
+        pulumi.set(__self__, "ai_feature_status", ai_feature_status)
         if alias_key and not isinstance(alias_key, str):
             raise TypeError("Expected argument 'alias_key' to be a str")
         pulumi.set(__self__, "alias_key", alias_key)
@@ -57,6 +60,9 @@ class GetAiDataPlatformAiDataPlatformResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_enable_ai_feature and not isinstance(is_enable_ai_feature, bool):
+            raise TypeError("Expected argument 'is_enable_ai_feature' to be a bool")
+        pulumi.set(__self__, "is_enable_ai_feature", is_enable_ai_feature)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -72,6 +78,15 @@ class GetAiDataPlatformAiDataPlatformResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if vector_db_admin_cred and not isinstance(vector_db_admin_cred, str):
+            raise TypeError("Expected argument 'vector_db_admin_cred' to be a str")
+        pulumi.set(__self__, "vector_db_admin_cred", vector_db_admin_cred)
+        if vector_db_admin_secret_id and not isinstance(vector_db_admin_secret_id, str):
+            raise TypeError("Expected argument 'vector_db_admin_secret_id' to be a str")
+        pulumi.set(__self__, "vector_db_admin_secret_id", vector_db_admin_secret_id)
+        if vector_db_id and not isinstance(vector_db_id, str):
+            raise TypeError("Expected argument 'vector_db_id' to be a str")
+        pulumi.set(__self__, "vector_db_id", vector_db_id)
         if web_socket_endpoint and not isinstance(web_socket_endpoint, str):
             raise TypeError("Expected argument 'web_socket_endpoint' to be a str")
         pulumi.set(__self__, "web_socket_endpoint", web_socket_endpoint)
@@ -88,6 +103,14 @@ class GetAiDataPlatformAiDataPlatformResult:
         The AiDataPlatform type.
         """
         return pulumi.get(self, "ai_data_platform_type")
+
+    @_builtins.property
+    @pulumi.getter(name="aiFeatureStatus")
+    def ai_feature_status(self) -> _builtins.str:
+        """
+        The current aiFeatureStatus of the AiDataPlatform.
+        """
+        return pulumi.get(self, "ai_feature_status")
 
     @_builtins.property
     @pulumi.getter(name="aliasKey")
@@ -151,6 +174,11 @@ class GetAiDataPlatformAiDataPlatformResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isEnableAiFeature")
+    def is_enable_ai_feature(self) -> _builtins.bool:
+        return pulumi.get(self, "is_enable_ai_feature")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -191,6 +219,21 @@ class GetAiDataPlatformAiDataPlatformResult:
         return pulumi.get(self, "time_updated")
 
     @_builtins.property
+    @pulumi.getter(name="vectorDbAdminCred")
+    def vector_db_admin_cred(self) -> _builtins.str:
+        return pulumi.get(self, "vector_db_admin_cred")
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminSecretId")
+    def vector_db_admin_secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "vector_db_admin_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbId")
+    def vector_db_id(self) -> _builtins.str:
+        return pulumi.get(self, "vector_db_id")
+
+    @_builtins.property
     @pulumi.getter(name="webSocketEndpoint")
     def web_socket_endpoint(self) -> _builtins.str:
         """
@@ -207,6 +250,7 @@ class AwaitableGetAiDataPlatformAiDataPlatformResult(GetAiDataPlatformAiDataPlat
         return GetAiDataPlatformAiDataPlatformResult(
             ai_data_platform_id=self.ai_data_platform_id,
             ai_data_platform_type=self.ai_data_platform_type,
+            ai_feature_status=self.ai_feature_status,
             alias_key=self.alias_key,
             compartment_id=self.compartment_id,
             created_by=self.created_by,
@@ -215,11 +259,15 @@ class AwaitableGetAiDataPlatformAiDataPlatformResult(GetAiDataPlatformAiDataPlat
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_enable_ai_feature=self.is_enable_ai_feature,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
+            vector_db_admin_cred=self.vector_db_admin_cred,
+            vector_db_admin_secret_id=self.vector_db_admin_secret_id,
+            vector_db_id=self.vector_db_id,
             web_socket_endpoint=self.web_socket_endpoint)
 
 
@@ -250,6 +298,7 @@ def get_ai_data_platform_ai_data_platform(ai_data_platform_id: Optional[_builtin
     return AwaitableGetAiDataPlatformAiDataPlatformResult(
         ai_data_platform_id=pulumi.get(__ret__, 'ai_data_platform_id'),
         ai_data_platform_type=pulumi.get(__ret__, 'ai_data_platform_type'),
+        ai_feature_status=pulumi.get(__ret__, 'ai_feature_status'),
         alias_key=pulumi.get(__ret__, 'alias_key'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by=pulumi.get(__ret__, 'created_by'),
@@ -258,11 +307,15 @@ def get_ai_data_platform_ai_data_platform(ai_data_platform_id: Optional[_builtin
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_enable_ai_feature=pulumi.get(__ret__, 'is_enable_ai_feature'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
+        vector_db_admin_cred=pulumi.get(__ret__, 'vector_db_admin_cred'),
+        vector_db_admin_secret_id=pulumi.get(__ret__, 'vector_db_admin_secret_id'),
+        vector_db_id=pulumi.get(__ret__, 'vector_db_id'),
         web_socket_endpoint=pulumi.get(__ret__, 'web_socket_endpoint'))
 def get_ai_data_platform_ai_data_platform_output(ai_data_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAiDataPlatformAiDataPlatformResult]:
@@ -290,6 +343,7 @@ def get_ai_data_platform_ai_data_platform_output(ai_data_platform_id: pulumi.Inp
     return __ret__.apply(lambda __response__: GetAiDataPlatformAiDataPlatformResult(
         ai_data_platform_id=pulumi.get(__response__, 'ai_data_platform_id'),
         ai_data_platform_type=pulumi.get(__response__, 'ai_data_platform_type'),
+        ai_feature_status=pulumi.get(__response__, 'ai_feature_status'),
         alias_key=pulumi.get(__response__, 'alias_key'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by=pulumi.get(__response__, 'created_by'),
@@ -298,9 +352,13 @@ def get_ai_data_platform_ai_data_platform_output(ai_data_platform_id: pulumi.Inp
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_enable_ai_feature=pulumi.get(__response__, 'is_enable_ai_feature'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
+        vector_db_admin_cred=pulumi.get(__response__, 'vector_db_admin_cred'),
+        vector_db_admin_secret_id=pulumi.get(__response__, 'vector_db_admin_secret_id'),
+        vector_db_id=pulumi.get(__response__, 'vector_db_id'),
         web_socket_endpoint=pulumi.get(__response__, 'web_socket_endpoint')))

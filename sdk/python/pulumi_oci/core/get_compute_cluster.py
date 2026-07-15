@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetComputeClusterResult',
@@ -26,7 +27,7 @@ class GetComputeClusterResult:
     """
     A collection of values returned by getComputeCluster.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, state=None, time_created=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_cluster_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, placement_constraint_details=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -48,12 +49,18 @@ class GetComputeClusterResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if placement_constraint_details and not isinstance(placement_constraint_details, list):
+            raise TypeError("Expected argument 'placement_constraint_details' to be a list")
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_updated and not isinstance(time_updated, str):
+            raise TypeError("Expected argument 'time_updated' to be a str")
+        pulumi.set(__self__, "time_updated", time_updated)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -109,6 +116,14 @@ class GetComputeClusterResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetComputeClusterPlacementConstraintDetailResult']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -124,6 +139,14 @@ class GetComputeClusterResult:
         """
         return pulumi.get(self, "time_created")
 
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
 
 class AwaitableGetComputeClusterResult(GetComputeClusterResult):
     # pylint: disable=using-constant-test
@@ -138,8 +161,10 @@ class AwaitableGetComputeClusterResult(GetComputeClusterResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            placement_constraint_details=self.placement_constraint_details,
             state=self.state,
-            time_created=self.time_created)
+            time_created=self.time_created,
+            time_updated=self.time_updated)
 
 
 def get_compute_cluster(compute_cluster_id: Optional[_builtins.str] = None,
@@ -175,8 +200,10 @@ def get_compute_cluster(compute_cluster_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        placement_constraint_details=pulumi.get(__ret__, 'placement_constraint_details'),
         state=pulumi.get(__ret__, 'state'),
-        time_created=pulumi.get(__ret__, 'time_created'))
+        time_created=pulumi.get(__ret__, 'time_created'),
+        time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_compute_cluster_output(compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetComputeClusterResult]:
     """
@@ -209,5 +236,7 @@ def get_compute_cluster_output(compute_cluster_id: pulumi.Input[Optional[_builti
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        placement_constraint_details=pulumi.get(__response__, 'placement_constraint_details'),
         state=pulumi.get(__response__, 'state'),
-        time_created=pulumi.get(__response__, 'time_created')))
+        time_created=pulumi.get(__response__, 'time_created'),
+        time_updated=pulumi.get(__response__, 'time_updated')))

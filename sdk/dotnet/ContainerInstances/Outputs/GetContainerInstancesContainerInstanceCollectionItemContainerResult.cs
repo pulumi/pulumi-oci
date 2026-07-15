@@ -54,6 +54,9 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult> ResourceConfigs;
+        /// <summary>
+        /// Security context for all containers in a container instance.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult> SecurityContexts;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state.

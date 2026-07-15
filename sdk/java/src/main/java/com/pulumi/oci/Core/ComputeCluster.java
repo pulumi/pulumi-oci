@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Core.ComputeClusterArgs;
 import com.pulumi.oci.Core.inputs.ComputeClusterState;
+import com.pulumi.oci.Core.outputs.ComputeClusterPlacementConstraintDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.Map;
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Core.ComputeCluster;
  * import com.pulumi.oci.Core.ComputeClusterArgs;
+ * import com.pulumi.oci.Core.inputs.ComputeClusterPlacementConstraintDetailsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -63,6 +65,13 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(computeClusterDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .placementConstraintDetails(ComputeClusterPlacementConstraintDetailsArgs.builder()
+ *                 .type("COMPUTE_CLUSTER")
+ *                 .hpcIslandId(testHpcIsland.id())
+ *                 .logicalPlacementConstraint(computeClusterPlacementConstraintDetailsLogicalPlacementConstraint)
+ *                 .targetMemoryFabricIds(computeClusterPlacementConstraintDetailsTargetMemoryFabricIds)
+ *                 .targetNetworkBlockIds(computeClusterPlacementConstraintDetailsTargetNetworkBlockIds)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -140,9 +149,6 @@ public class ComputeCluster extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
@@ -150,12 +156,23 @@ public class ComputeCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * (Updatable) The details for providing placement constraints.
+     * 
+     */
+    @Export(name="placementConstraintDetails", refs={ComputeClusterPlacementConstraintDetails.class}, tree="[0]")
+    private Output<ComputeClusterPlacementConstraintDetails> placementConstraintDetails;
+
+    /**
+     * @return (Updatable) The details for providing placement constraints.
+     * 
+     */
+    public Output<ComputeClusterPlacementConstraintDetails> placementConstraintDetails() {
+        return this.placementConstraintDetails;
     }
     /**
      * The current state of the compute cluster.
@@ -184,6 +201,20 @@ public class ComputeCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    @Export(name="timeUpdated", refs={String.class}, tree="[0]")
+    private Output<String> timeUpdated;
+
+    /**
+     * @return The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public Output<String> timeUpdated() {
+        return this.timeUpdated;
     }
 
     /**

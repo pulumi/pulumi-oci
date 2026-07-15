@@ -25,7 +25,11 @@ class AiDataPlatformAiDataPlatformArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 is_enable_ai_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vector_db_admin_cred: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_admin_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AiDataPlatformAiDataPlatform resource.
 
@@ -35,7 +39,11 @@ class AiDataPlatformAiDataPlatformArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_enable_ai_feature: The flag to enable/disable AiFeatures for the instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] vector_db_admin_cred: (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        :param pulumi.Input[_builtins.str] vector_db_admin_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        :param pulumi.Input[_builtins.str] vector_db_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -51,8 +59,16 @@ class AiDataPlatformAiDataPlatformArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_enable_ai_feature is not None:
+            pulumi.set(__self__, "is_enable_ai_feature", is_enable_ai_feature)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if vector_db_admin_cred is not None:
+            pulumi.set(__self__, "vector_db_admin_cred", vector_db_admin_cred)
+        if vector_db_admin_secret_id is not None:
+            pulumi.set(__self__, "vector_db_admin_secret_id", vector_db_admin_secret_id)
+        if vector_db_id is not None:
+            pulumi.set(__self__, "vector_db_id", vector_db_id)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -127,13 +143,22 @@ class AiDataPlatformAiDataPlatformArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isEnableAiFeature")
+    def is_enable_ai_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        The flag to enable/disable AiFeatures for the instance.
+        """
+        return pulumi.get(self, "is_enable_ai_feature")
+
+    @is_enable_ai_feature.setter
+    def is_enable_ai_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_enable_ai_feature", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 
@@ -141,11 +166,51 @@ class AiDataPlatformAiDataPlatformArgs:
     def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminCred")
+    def vector_db_admin_cred(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        """
+        return pulumi.get(self, "vector_db_admin_cred")
+
+    @vector_db_admin_cred.setter
+    def vector_db_admin_cred(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_admin_cred", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminSecretId")
+    def vector_db_admin_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        """
+        return pulumi.get(self, "vector_db_admin_secret_id")
+
+    @vector_db_admin_secret_id.setter
+    def vector_db_admin_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_admin_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbId")
+    def vector_db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vector_db_id")
+
+    @vector_db_id.setter
+    def vector_db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_id", value)
+
 
 @pulumi.input_type
 class _AiDataPlatformAiDataPlatformState:
     def __init__(__self__, *,
                  ai_data_platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 ai_feature_status: pulumi.Input[Optional[_builtins.str]] = None,
                  alias_key: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  created_by: pulumi.Input[Optional[_builtins.str]] = None,
@@ -153,16 +218,21 @@ class _AiDataPlatformAiDataPlatformState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enable_ai_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_admin_cred: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_admin_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_id: pulumi.Input[Optional[_builtins.str]] = None,
                  web_socket_endpoint: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering AiDataPlatformAiDataPlatform resources.
 
         :param pulumi.Input[_builtins.str] ai_data_platform_type: (Updatable) The AiDataPlatform type.
+        :param pulumi.Input[_builtins.str] ai_feature_status: The current aiFeatureStatus of the AiDataPlatform.
         :param pulumi.Input[_builtins.str] alias_key: The alias Id of the AiDataPlatform which is the short form of OCID.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the AiDataPlatform in.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
@@ -170,18 +240,24 @@ class _AiDataPlatformAiDataPlatformState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_enable_ai_feature: The flag to enable/disable AiFeatures for the instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] state: The current state of the AiDataPlatform.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] time_created: The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_updated: The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] vector_db_admin_cred: (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        :param pulumi.Input[_builtins.str] vector_db_admin_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        :param pulumi.Input[_builtins.str] vector_db_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] time_created: The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[_builtins.str] time_updated: The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] web_socket_endpoint: The WebSocket URL of the AiDataPlatform.
         """
         if ai_data_platform_type is not None:
             pulumi.set(__self__, "ai_data_platform_type", ai_data_platform_type)
+        if ai_feature_status is not None:
+            pulumi.set(__self__, "ai_feature_status", ai_feature_status)
         if alias_key is not None:
             pulumi.set(__self__, "alias_key", alias_key)
         if compartment_id is not None:
@@ -196,6 +272,8 @@ class _AiDataPlatformAiDataPlatformState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_enable_ai_feature is not None:
+            pulumi.set(__self__, "is_enable_ai_feature", is_enable_ai_feature)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
@@ -206,6 +284,12 @@ class _AiDataPlatformAiDataPlatformState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if vector_db_admin_cred is not None:
+            pulumi.set(__self__, "vector_db_admin_cred", vector_db_admin_cred)
+        if vector_db_admin_secret_id is not None:
+            pulumi.set(__self__, "vector_db_admin_secret_id", vector_db_admin_secret_id)
+        if vector_db_id is not None:
+            pulumi.set(__self__, "vector_db_id", vector_db_id)
         if web_socket_endpoint is not None:
             pulumi.set(__self__, "web_socket_endpoint", web_socket_endpoint)
 
@@ -220,6 +304,18 @@ class _AiDataPlatformAiDataPlatformState:
     @ai_data_platform_type.setter
     def ai_data_platform_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ai_data_platform_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="aiFeatureStatus")
+    def ai_feature_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The current aiFeatureStatus of the AiDataPlatform.
+        """
+        return pulumi.get(self, "ai_feature_status")
+
+    @ai_feature_status.setter
+    def ai_feature_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ai_feature_status", value)
 
     @_builtins.property
     @pulumi.getter(name="aliasKey")
@@ -306,6 +402,18 @@ class _AiDataPlatformAiDataPlatformState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isEnableAiFeature")
+    def is_enable_ai_feature(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        The flag to enable/disable AiFeatures for the instance.
+        """
+        return pulumi.get(self, "is_enable_ai_feature")
+
+    @is_enable_ai_feature.setter
+    def is_enable_ai_feature(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_enable_ai_feature", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -334,9 +442,6 @@ class _AiDataPlatformAiDataPlatformState:
     def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
         (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 
@@ -369,6 +474,45 @@ class _AiDataPlatformAiDataPlatformState:
         pulumi.set(self, "time_updated", value)
 
     @_builtins.property
+    @pulumi.getter(name="vectorDbAdminCred")
+    def vector_db_admin_cred(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        """
+        return pulumi.get(self, "vector_db_admin_cred")
+
+    @vector_db_admin_cred.setter
+    def vector_db_admin_cred(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_admin_cred", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminSecretId")
+    def vector_db_admin_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        """
+        return pulumi.get(self, "vector_db_admin_secret_id")
+
+    @vector_db_admin_secret_id.setter
+    def vector_db_admin_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_admin_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbId")
+    def vector_db_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vector_db_id")
+
+    @vector_db_id.setter
+    def vector_db_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vector_db_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="webSocketEndpoint")
     def web_socket_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -393,7 +537,11 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enable_ai_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vector_db_admin_cred: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_admin_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Ai Data Platform resource in Oracle Cloud Infrastructure Ai Data Platform service.
@@ -420,7 +568,11 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            system_tags=ai_data_platform_system_tags)
+            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature == "true",
+            system_tags=ai_data_platform_system_tags,
+            vector_db_admin_cred=ai_data_platform_vector_db_admin_cred,
+            vector_db_admin_secret_id=test_secret["id"],
+            vector_db_id=test_vector_db["id"])
         ```
 
         ## Import
@@ -440,7 +592,11 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_enable_ai_feature: The flag to enable/disable AiFeatures for the instance.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] vector_db_admin_cred: (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        :param pulumi.Input[_builtins.str] vector_db_admin_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        :param pulumi.Input[_builtins.str] vector_db_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -476,7 +632,11 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            system_tags=ai_data_platform_system_tags)
+            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature == "true",
+            system_tags=ai_data_platform_system_tags,
+            vector_db_admin_cred=ai_data_platform_vector_db_admin_cred,
+            vector_db_admin_secret_id=test_secret["id"],
+            vector_db_id=test_vector_db["id"])
         ```
 
         ## Import
@@ -509,7 +669,11 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_enable_ai_feature: pulumi.Input[Optional[_builtins.bool]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 vector_db_admin_cred: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_admin_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vector_db_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -527,7 +691,12 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_enable_ai_feature"] = is_enable_ai_feature
             __props__.__dict__["system_tags"] = system_tags
+            __props__.__dict__["vector_db_admin_cred"] = vector_db_admin_cred
+            __props__.__dict__["vector_db_admin_secret_id"] = vector_db_admin_secret_id
+            __props__.__dict__["vector_db_id"] = vector_db_id
+            __props__.__dict__["ai_feature_status"] = None
             __props__.__dict__["alias_key"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -546,6 +715,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             ai_data_platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ai_feature_status: pulumi.Input[Optional[_builtins.str]] = None,
             alias_key: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             created_by: pulumi.Input[Optional[_builtins.str]] = None,
@@ -553,11 +723,15 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enable_ai_feature: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vector_db_admin_cred: pulumi.Input[Optional[_builtins.str]] = None,
+            vector_db_admin_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vector_db_id: pulumi.Input[Optional[_builtins.str]] = None,
             web_socket_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> 'AiDataPlatformAiDataPlatform':
         """
         Get an existing AiDataPlatformAiDataPlatform resource's state with the given name, id, and optional extra
@@ -567,6 +741,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ai_data_platform_type: (Updatable) The AiDataPlatform type.
+        :param pulumi.Input[_builtins.str] ai_feature_status: The current aiFeatureStatus of the AiDataPlatform.
         :param pulumi.Input[_builtins.str] alias_key: The alias Id of the AiDataPlatform which is the short form of OCID.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the AiDataPlatform in.
         :param pulumi.Input[_builtins.str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IAM user.
@@ -574,14 +749,18 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_enable_ai_feature: The flag to enable/disable AiFeatures for the instance.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] state: The current state of the AiDataPlatform.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] time_created: The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_updated: The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] vector_db_admin_cred: (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        :param pulumi.Input[_builtins.str] vector_db_admin_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        :param pulumi.Input[_builtins.str] vector_db_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] time_created: The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-        :param pulumi.Input[_builtins.str] time_updated: The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] web_socket_endpoint: The WebSocket URL of the AiDataPlatform.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -589,6 +768,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         __props__ = _AiDataPlatformAiDataPlatformState.__new__(_AiDataPlatformAiDataPlatformState)
 
         __props__.__dict__["ai_data_platform_type"] = ai_data_platform_type
+        __props__.__dict__["ai_feature_status"] = ai_feature_status
         __props__.__dict__["alias_key"] = alias_key
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["created_by"] = created_by
@@ -596,11 +776,15 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_enable_ai_feature"] = is_enable_ai_feature
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["vector_db_admin_cred"] = vector_db_admin_cred
+        __props__.__dict__["vector_db_admin_secret_id"] = vector_db_admin_secret_id
+        __props__.__dict__["vector_db_id"] = vector_db_id
         __props__.__dict__["web_socket_endpoint"] = web_socket_endpoint
         return AiDataPlatformAiDataPlatform(resource_name, opts=opts, __props__=__props__)
 
@@ -611,6 +795,14 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         (Updatable) The AiDataPlatform type.
         """
         return pulumi.get(self, "ai_data_platform_type")
+
+    @_builtins.property
+    @pulumi.getter(name="aiFeatureStatus")
+    def ai_feature_status(self) -> pulumi.Output[_builtins.str]:
+        """
+        The current aiFeatureStatus of the AiDataPlatform.
+        """
+        return pulumi.get(self, "ai_feature_status")
 
     @_builtins.property
     @pulumi.getter(name="aliasKey")
@@ -669,6 +861,14 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="isEnableAiFeature")
+    def is_enable_ai_feature(self) -> pulumi.Output[_builtins.bool]:
+        """
+        The flag to enable/disable AiFeatures for the instance.
+        """
+        return pulumi.get(self, "is_enable_ai_feature")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
@@ -689,9 +889,6 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
         (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "system_tags")
 
@@ -710,6 +907,33 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
         The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminCred")
+    def vector_db_admin_cred(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        """
+        return pulumi.get(self, "vector_db_admin_cred")
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbAdminSecretId")
+    def vector_db_admin_secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        """
+        return pulumi.get(self, "vector_db_admin_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="vectorDbId")
+    def vector_db_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vector_db_id")
 
     @_builtins.property
     @pulumi.getter(name="webSocketEndpoint")

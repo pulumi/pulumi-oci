@@ -155,6 +155,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The details for providing placement constraints.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeClusterPlacementConstraintDetailResult> PlacementConstraintDetails;
+        /// <summary>
         /// The current state of the compute cluster.
         /// </summary>
         public readonly string State;
@@ -162,6 +166,10 @@ namespace Pulumi.Oci.Core
         /// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeUpdated;
 
         [OutputConstructor]
         private GetComputeClusterResult(
@@ -179,9 +187,13 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            ImmutableArray<Outputs.GetComputeClusterPlacementConstraintDetailResult> placementConstraintDetails,
+
             string state,
 
-            string timeCreated)
+            string timeCreated,
+
+            string timeUpdated)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
@@ -190,8 +202,10 @@ namespace Pulumi.Oci.Core
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            PlacementConstraintDetails = placementConstraintDetails;
             State = state;
             TimeCreated = timeCreated;
+            TimeUpdated = timeUpdated;
         }
     }
 }

@@ -13,6 +13,6019 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIotDigitalTwinRelationshipsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinRelationshipsFilterInput is an input type that accepts GetIotDigitalTwinRelationshipsFilterArgs and GetIotDigitalTwinRelationshipsFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsFilterInput` via:
+//
+//	GetIotDigitalTwinRelationshipsFilterArgs{...}
+type GetIotDigitalTwinRelationshipsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput
+	ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsFilterOutput
+}
+
+type GetIotDigitalTwinRelationshipsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinRelationshipsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArgs) ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput {
+	return i.ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArgs) ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsFilterOutput)
+}
+
+// GetIotDigitalTwinRelationshipsFilterArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsFilterArray and GetIotDigitalTwinRelationshipsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsFilterArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsFilterArray{ GetIotDigitalTwinRelationshipsFilterArgs{...} }
+type GetIotDigitalTwinRelationshipsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput
+	ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsFilterArray []GetIotDigitalTwinRelationshipsFilterInput
+
+func (GetIotDigitalTwinRelationshipsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArray) ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsFilterArray) ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsFilterArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) ToGetIotDigitalTwinRelationshipsFilterOutput() GetIotDigitalTwinRelationshipsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) ToGetIotDigitalTwinRelationshipsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) ToGetIotDigitalTwinRelationshipsFilterArrayOutput() GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) ToGetIotDigitalTwinRelationshipsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsFilter {
+		return vs[0].([]GetIotDigitalTwinRelationshipsFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsFilterOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDay struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData int `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData int `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData int `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData int `pulumi:"rejectedData"`
+}
+
+// GetIotIotDomainDataRetentionPeriodsInDayInput is an input type that accepts GetIotIotDomainDataRetentionPeriodsInDayArgs and GetIotIotDomainDataRetentionPeriodsInDayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainDataRetentionPeriodsInDayInput` via:
+//
+//	GetIotIotDomainDataRetentionPeriodsInDayArgs{...}
+type GetIotIotDomainDataRetentionPeriodsInDayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput
+	ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArgs struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData pulumi.IntInput `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData pulumi.IntInput `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData pulumi.IntInput `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData pulumi.IntInput `pulumi:"rejectedData"`
+}
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArgs) ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return i.ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArgs) ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
+// GetIotIotDomainDataRetentionPeriodsInDayArrayInput is an input type that accepts GetIotIotDomainDataRetentionPeriodsInDayArray and GetIotIotDomainDataRetentionPeriodsInDayArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainDataRetentionPeriodsInDayArrayInput` via:
+//
+//	GetIotIotDomainDataRetentionPeriodsInDayArray{ GetIotIotDomainDataRetentionPeriodsInDayArgs{...} }
+type GetIotIotDomainDataRetentionPeriodsInDayArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput
+	ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArray []GetIotIotDomainDataRetentionPeriodsInDayInput
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArray) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return i.ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainDataRetentionPeriodsInDayArray) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainDataRetentionPeriodsInDayArrayOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainDataRetentionPeriodsInDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayOutput() GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+// Number of days for which any normalized data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) HistorizedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.HistorizedData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw command data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RawCommandData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RawCommandData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RawData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RawData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any data sent to IoT devices would be retained for.
+func (o GetIotIotDomainDataRetentionPeriodsInDayOutput) RejectedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainDataRetentionPeriodsInDay) int { return v.RejectedData }).(pulumi.IntOutput)
+}
+
+type GetIotIotDomainDataRetentionPeriodsInDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainDataRetentionPeriodsInDayArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainDataRetentionPeriodsInDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainDataRetentionPeriodsInDay {
+		return vs[0].([]GetIotIotDomainDataRetentionPeriodsInDay)[vs[1].(int)]
+	}).(GetIotIotDomainDataRetentionPeriodsInDayOutput)
+}
+
+type GetIotIotDomainGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotIotDomainGroupsFilterInput is an input type that accepts GetIotIotDomainGroupsFilterArgs and GetIotIotDomainGroupsFilterOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsFilterInput` via:
+//
+//	GetIotIotDomainGroupsFilterArgs{...}
+type GetIotIotDomainGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput
+	ToGetIotIotDomainGroupsFilterOutputWithContext(context.Context) GetIotIotDomainGroupsFilterOutput
+}
+
+type GetIotIotDomainGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotIotDomainGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsFilterArgs) ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput {
+	return i.ToGetIotIotDomainGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsFilterArgs) ToGetIotIotDomainGroupsFilterOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsFilterOutput)
+}
+
+// GetIotIotDomainGroupsFilterArrayInput is an input type that accepts GetIotIotDomainGroupsFilterArray and GetIotIotDomainGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsFilterArrayInput` via:
+//
+//	GetIotIotDomainGroupsFilterArray{ GetIotIotDomainGroupsFilterArgs{...} }
+type GetIotIotDomainGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput
+	ToGetIotIotDomainGroupsFilterArrayOutputWithContext(context.Context) GetIotIotDomainGroupsFilterArrayOutput
+}
+
+type GetIotIotDomainGroupsFilterArray []GetIotIotDomainGroupsFilterInput
+
+func (GetIotIotDomainGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsFilterArray) ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput {
+	return i.ToGetIotIotDomainGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsFilterArray) ToGetIotIotDomainGroupsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsFilterArrayOutput)
+}
+
+type GetIotIotDomainGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) ToGetIotIotDomainGroupsFilterOutput() GetIotIotDomainGroupsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) ToGetIotIotDomainGroupsFilterOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotIotDomainGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotIotDomainGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) ToGetIotIotDomainGroupsFilterArrayOutput() GetIotIotDomainGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) ToGetIotIotDomainGroupsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsFilter {
+		return vs[0].([]GetIotIotDomainGroupsFilter)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsFilterOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollection struct {
+	Items []GetIotIotDomainGroupsIotDomainGroupCollectionItem `pulumi:"items"`
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionArgs and GetIotIotDomainGroupsIotDomainGroupCollectionOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionArgs{...}
+type GetIotIotDomainGroupsIotDomainGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArgs struct {
+	Items GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionOutput)
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionArray and GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionArray{ GetIotIotDomainGroupsIotDomainGroupCollectionArgs{...} }
+type GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArray []GetIotIotDomainGroupsIotDomainGroupCollectionInput
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutput() GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionOutput) Items() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollection) []GetIotIotDomainGroupsIotDomainGroupCollectionItem {
+		return v.Items
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsIotDomainGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsIotDomainGroupCollection {
+		return vs[0].([]GetIotIotDomainGroupsIotDomainGroupCollection)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The host name of the database corresponding to the IoT Domain group.
+	DataHost string `pulumi:"dataHost"`
+	// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+	DbAllowListedVcnIds []string `pulumi:"dbAllowListedVcnIds"`
+	// The connection string used to connect to the data host associated with the IoT domain group.
+	DbConnectionString string `pulumi:"dbConnectionString"`
+	// The token scope used to connect to the data host associated with the IoT domain group.
+	DbTokenScope string `pulumi:"dbTokenScope"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type string `pulumi:"type"`
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionItemInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs and GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionItemInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{...}
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The host name of the database corresponding to the IoT Domain group.
+	DataHost pulumi.StringInput `pulumi:"dataHost"`
+	// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+	DbAllowListedVcnIds pulumi.StringArrayInput `pulumi:"dbAllowListedVcnIds"`
+	// The connection string used to connect to the data host associated with the IoT domain group.
+	DbConnectionString pulumi.StringInput `pulumi:"dbConnectionString"`
+	// The token scope used to connect to the data host associated with the IoT domain group.
+	DbTokenScope pulumi.StringInput `pulumi:"dbTokenScope"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput)
+}
+
+// GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput is an input type that accepts GetIotIotDomainGroupsIotDomainGroupCollectionItemArray and GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput` via:
+//
+//	GetIotIotDomainGroupsIotDomainGroupCollectionItemArray{ GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{...} }
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput
+	ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArray []GetIotIotDomainGroupsIotDomainGroupCollectionItemInput
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return i.ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainGroupsIotDomainGroupCollectionItemArray) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The host name of the database corresponding to the IoT Domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DataHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DataHost }).(pulumi.StringOutput)
+}
+
+// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbAllowListedVcnIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) []string { return v.DbAllowListedVcnIds }).(pulumi.StringArrayOutput)
+}
+
+// The connection string used to connect to the data host associated with the IoT domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DbConnectionString }).(pulumi.StringOutput)
+}
+
+// The token scope used to connect to the data host associated with the IoT domain group.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DbTokenScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DbTokenScope }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Filter resources by type. Valid values are LIGHTWEIGHT or STANDARD.
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainGroupsIotDomainGroupCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainGroupsIotDomainGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput() GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) ToGetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainGroupsIotDomainGroupCollectionItem {
+		return vs[0].([]GetIotIotDomainGroupsIotDomainGroupCollectionItem)[vs[1].(int)]
+	}).(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput)
+}
+
+type GetIotIotDomainsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotIotDomainsFilterInput is an input type that accepts GetIotIotDomainsFilterArgs and GetIotIotDomainsFilterOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsFilterInput` via:
+//
+//	GetIotIotDomainsFilterArgs{...}
+type GetIotIotDomainsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput
+	ToGetIotIotDomainsFilterOutputWithContext(context.Context) GetIotIotDomainsFilterOutput
+}
+
+type GetIotIotDomainsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotIotDomainsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsFilterArgs) ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput {
+	return i.ToGetIotIotDomainsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsFilterArgs) ToGetIotIotDomainsFilterOutputWithContext(ctx context.Context) GetIotIotDomainsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsFilterOutput)
+}
+
+// GetIotIotDomainsFilterArrayInput is an input type that accepts GetIotIotDomainsFilterArray and GetIotIotDomainsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsFilterArrayInput` via:
+//
+//	GetIotIotDomainsFilterArray{ GetIotIotDomainsFilterArgs{...} }
+type GetIotIotDomainsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput
+	ToGetIotIotDomainsFilterArrayOutputWithContext(context.Context) GetIotIotDomainsFilterArrayOutput
+}
+
+type GetIotIotDomainsFilterArray []GetIotIotDomainsFilterInput
+
+func (GetIotIotDomainsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsFilterArray) ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput {
+	return i.ToGetIotIotDomainsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsFilterArray) ToGetIotIotDomainsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsFilterArrayOutput)
+}
+
+type GetIotIotDomainsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsFilterOutput) ToGetIotIotDomainsFilterOutput() GetIotIotDomainsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterOutput) ToGetIotIotDomainsFilterOutputWithContext(ctx context.Context) GetIotIotDomainsFilterOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotIotDomainsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotIotDomainsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotIotDomainsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsFilter)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) ToGetIotIotDomainsFilterArrayOutput() GetIotIotDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) ToGetIotIotDomainsFilterArrayOutputWithContext(ctx context.Context) GetIotIotDomainsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsFilter {
+		return vs[0].([]GetIotIotDomainsFilter)[vs[1].(int)]
+	}).(GetIotIotDomainsFilterOutput)
+}
+
+type GetIotIotDomainsIotDomainCollection struct {
+	Items []GetIotIotDomainsIotDomainCollectionItem `pulumi:"items"`
+}
+
+// GetIotIotDomainsIotDomainCollectionInput is an input type that accepts GetIotIotDomainsIotDomainCollectionArgs and GetIotIotDomainsIotDomainCollectionOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionArgs{...}
+type GetIotIotDomainsIotDomainCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput
+	ToGetIotIotDomainsIotDomainCollectionOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionArgs struct {
+	Items GetIotIotDomainsIotDomainCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArgs) ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArgs) ToGetIotIotDomainsIotDomainCollectionOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionArray and GetIotIotDomainsIotDomainCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionArray{ GetIotIotDomainsIotDomainCollectionArgs{...} }
+type GetIotIotDomainsIotDomainCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionArray []GetIotIotDomainsIotDomainCollectionInput
+
+func (GetIotIotDomainsIotDomainCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArray) ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionArray) ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) ToGetIotIotDomainsIotDomainCollectionOutput() GetIotIotDomainsIotDomainCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) ToGetIotIotDomainsIotDomainCollectionOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionOutput) Items() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollection) []GetIotIotDomainsIotDomainCollectionItem { return v.Items }).(GetIotIotDomainsIotDomainCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollection)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) ToGetIotIotDomainsIotDomainCollectionArrayOutput() GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) ToGetIotIotDomainsIotDomainCollectionArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollection {
+		return vs[0].([]GetIotIotDomainsIotDomainCollection)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Data Retention periods
+	DataRetentionPeriodsInDays []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay `pulumi:"dataRetentionPeriodsInDays"`
+	// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+	DbAllowListedIdentityGroupNames []string `pulumi:"dbAllowListedIdentityGroupNames"`
+	// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+	DbAllowedIdentityDomainHost string `pulumi:"dbAllowedIdentityDomainHost"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Host name of an IoT domain, where IoT devices can connect to.
+	DeviceHost string `pulumi:"deviceHost"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+	IotDomainGroupId string `pulumi:"iotDomainGroupId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotIotDomainsIotDomainCollectionItemInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemArgs and GetIotIotDomainsIotDomainCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemArgs{...}
+type GetIotIotDomainsIotDomainCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput
+	ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Data Retention periods
+	DataRetentionPeriodsInDays GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput `pulumi:"dataRetentionPeriodsInDays"`
+	// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+	DbAllowListedIdentityGroupNames pulumi.StringArrayInput `pulumi:"dbAllowListedIdentityGroupNames"`
+	// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+	DbAllowedIdentityDomainHost pulumi.StringInput `pulumi:"dbAllowedIdentityDomainHost"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Host name of an IoT domain, where IoT devices can connect to.
+	DeviceHost pulumi.StringInput `pulumi:"deviceHost"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+	IotDomainGroupId pulumi.StringInput `pulumi:"iotDomainGroupId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArgs) ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArgs) ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionItemArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemArray and GetIotIotDomainsIotDomainCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemArray{ GetIotIotDomainsIotDomainCollectionItemArgs{...} }
+type GetIotIotDomainsIotDomainCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArray []GetIotIotDomainsIotDomainCollectionItemInput
+
+func (GetIotIotDomainsIotDomainCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArray) ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemArray) ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) ToGetIotIotDomainsIotDomainCollectionItemOutput() GetIotIotDomainsIotDomainCollectionItemOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) ToGetIotIotDomainsIotDomainCollectionItemOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Data Retention periods
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DataRetentionPeriodsInDays() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay {
+		return v.DataRetentionPeriodsInDays
+	}).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput)
+}
+
+// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DbAllowListedIdentityGroupNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) []string { return v.DbAllowListedIdentityGroupNames }).(pulumi.StringArrayOutput)
+}
+
+// Host name of identity domain that is used for authenticating connect to data host via ORDS.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DbAllowedIdentityDomainHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DbAllowedIdentityDomainHost }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Host name of an IoT domain, where IoT devices can connect to.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DeviceHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DeviceHost }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain group.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) IotDomainGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.IotDomainGroupId }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotIotDomainsIotDomainCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemArrayOutput() GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollectionItem {
+		return vs[0].([]GetIotIotDomainsIotDomainCollectionItem)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionItemOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData int `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData int `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData int `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData int `pulumi:"rejectedData"`
+}
+
+// GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs and GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{...}
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs struct {
+	// Number of days for which any normalized data sent to IoT devices would be retained for.
+	HistorizedData pulumi.IntInput `pulumi:"historizedData"`
+	// Number of days for which any raw command data sent to IoT devices would be retained for.
+	RawCommandData pulumi.IntInput `pulumi:"rawCommandData"`
+	// Number of days for which any raw data sent to IoT devices would be retained for.
+	RawData pulumi.IntInput `pulumi:"rawData"`
+	// Number of days for which any data sent to IoT devices would be retained for.
+	RejectedData pulumi.IntInput `pulumi:"rejectedData"`
+}
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput)
+}
+
+// GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput is an input type that accepts GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray and GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput values.
+// You can construct a concrete instance of `GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput` via:
+//
+//	GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray{ GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{...} }
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput interface {
+	pulumi.Input
+
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput
+	ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray []GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return i.ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return o
+}
+
+// Number of days for which any normalized data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) HistorizedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.HistorizedData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw command data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RawCommandData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RawCommandData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any raw data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RawData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RawData }).(pulumi.IntOutput)
+}
+
+// Number of days for which any data sent to IoT devices would be retained for.
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput) RejectedData() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay) int { return v.RejectedData }).(pulumi.IntOutput)
+}
+
+type GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)(nil)).Elem()
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput() GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) ToGetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutputWithContext(ctx context.Context) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput {
+	return o
+}
+
+func (o GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput) Index(i pulumi.IntInput) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay {
+		return vs[0].([]GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDay)[vs[1].(int)]
+	}).(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollection struct {
+	// List of kafka Cluster AddonOptions.
+	Items []GetManagedKafkaAddonOptionsAddonOptionCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaAddonOptionsAddonOptionCollectionInput is an input type that accepts GetManagedKafkaAddonOptionsAddonOptionCollectionArgs and GetManagedKafkaAddonOptionsAddonOptionCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsAddonOptionCollectionInput` via:
+//
+//	GetManagedKafkaAddonOptionsAddonOptionCollectionArgs{...}
+type GetManagedKafkaAddonOptionsAddonOptionCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionOutput
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutputWithContext(context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionOutput
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionArgs struct {
+	// List of kafka Cluster AddonOptions.
+	Items GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionArgs) ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionOutput {
+	return i.ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionArgs) ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsAddonOptionCollectionOutput)
+}
+
+// GetManagedKafkaAddonOptionsAddonOptionCollectionArrayInput is an input type that accepts GetManagedKafkaAddonOptionsAddonOptionCollectionArray and GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsAddonOptionCollectionArrayInput` via:
+//
+//	GetManagedKafkaAddonOptionsAddonOptionCollectionArray{ GetManagedKafkaAddonOptionsAddonOptionCollectionArgs{...} }
+type GetManagedKafkaAddonOptionsAddonOptionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutputWithContext(context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionArray []GetManagedKafkaAddonOptionsAddonOptionCollectionInput
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsAddonOptionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionArray) ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput {
+	return i.ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionArray) ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionOutput {
+	return o
+}
+
+// List of kafka Cluster AddonOptions.
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionOutput) Items() GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsAddonOptionCollection) []GetManagedKafkaAddonOptionsAddonOptionCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsAddonOptionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaAddonOptionsAddonOptionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaAddonOptionsAddonOptionCollection {
+		return vs[0].([]GetManagedKafkaAddonOptionsAddonOptionCollection)[vs[1].(int)]
+	}).(GetManagedKafkaAddonOptionsAddonOptionCollectionOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItem struct {
+	// The name to filter on.
+	Name string `pulumi:"name"`
+	// The current state of the KafkaClusterAddon.
+	State string `pulumi:"state"`
+}
+
+// GetManagedKafkaAddonOptionsAddonOptionCollectionItemInput is an input type that accepts GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs and GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsAddonOptionCollectionItemInput` via:
+//
+//	GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs{...}
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutputWithContext(context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs struct {
+	// The name to filter on.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The current state of the KafkaClusterAddon.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput {
+	return i.ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput)
+}
+
+// GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayInput is an input type that accepts GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray and GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray{ GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs{...} }
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput
+	ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray []GetManagedKafkaAddonOptionsAddonOptionCollectionItemInput
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsAddonOptionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsAddonOptionCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The current state of the KafkaClusterAddon.
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsAddonOptionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsAddonOptionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput() GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput) ToGetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaAddonOptionsAddonOptionCollectionItem {
+		return vs[0].([]GetManagedKafkaAddonOptionsAddonOptionCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput)
+}
+
+type GetManagedKafkaAddonOptionsFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaAddonOptionsFilterInput is an input type that accepts GetManagedKafkaAddonOptionsFilterArgs and GetManagedKafkaAddonOptionsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsFilterInput` via:
+//
+//	GetManagedKafkaAddonOptionsFilterArgs{...}
+type GetManagedKafkaAddonOptionsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsFilterOutput() GetManagedKafkaAddonOptionsFilterOutput
+	ToGetManagedKafkaAddonOptionsFilterOutputWithContext(context.Context) GetManagedKafkaAddonOptionsFilterOutput
+}
+
+type GetManagedKafkaAddonOptionsFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaAddonOptionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsFilterArgs) ToGetManagedKafkaAddonOptionsFilterOutput() GetManagedKafkaAddonOptionsFilterOutput {
+	return i.ToGetManagedKafkaAddonOptionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsFilterArgs) ToGetManagedKafkaAddonOptionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsFilterOutput)
+}
+
+// GetManagedKafkaAddonOptionsFilterArrayInput is an input type that accepts GetManagedKafkaAddonOptionsFilterArray and GetManagedKafkaAddonOptionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaAddonOptionsFilterArrayInput` via:
+//
+//	GetManagedKafkaAddonOptionsFilterArray{ GetManagedKafkaAddonOptionsFilterArgs{...} }
+type GetManagedKafkaAddonOptionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaAddonOptionsFilterArrayOutput() GetManagedKafkaAddonOptionsFilterArrayOutput
+	ToGetManagedKafkaAddonOptionsFilterArrayOutputWithContext(context.Context) GetManagedKafkaAddonOptionsFilterArrayOutput
+}
+
+type GetManagedKafkaAddonOptionsFilterArray []GetManagedKafkaAddonOptionsFilterInput
+
+func (GetManagedKafkaAddonOptionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaAddonOptionsFilterArray) ToGetManagedKafkaAddonOptionsFilterArrayOutput() GetManagedKafkaAddonOptionsFilterArrayOutput {
+	return i.ToGetManagedKafkaAddonOptionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaAddonOptionsFilterArray) ToGetManagedKafkaAddonOptionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaAddonOptionsFilterArrayOutput)
+}
+
+type GetManagedKafkaAddonOptionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaAddonOptionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsFilterOutput) ToGetManagedKafkaAddonOptionsFilterOutput() GetManagedKafkaAddonOptionsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsFilterOutput) ToGetManagedKafkaAddonOptionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaAddonOptionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaAddonOptionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaAddonOptionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaAddonOptionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaAddonOptionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaAddonOptionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaAddonOptionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaAddonOptionsFilterArrayOutput) ToGetManagedKafkaAddonOptionsFilterArrayOutput() GetManagedKafkaAddonOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsFilterArrayOutput) ToGetManagedKafkaAddonOptionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaAddonOptionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaAddonOptionsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaAddonOptionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaAddonOptionsFilter {
+		return vs[0].([]GetManagedKafkaAddonOptionsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaAddonOptionsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnet struct {
+	// Subnets OCIDs
+	Subnets []string `pulumi:"subnets"`
+}
+
+// GetManagedKafkaKafkaClusterAccessSubnetInput is an input type that accepts GetManagedKafkaKafkaClusterAccessSubnetArgs and GetManagedKafkaKafkaClusterAccessSubnetOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAccessSubnetInput` via:
+//
+//	GetManagedKafkaKafkaClusterAccessSubnetArgs{...}
+type GetManagedKafkaKafkaClusterAccessSubnetInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput
+	ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArgs struct {
+	// Subnets OCIDs
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
+}
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArgs) ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return i.ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArgs) ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+// GetManagedKafkaKafkaClusterAccessSubnetArrayInput is an input type that accepts GetManagedKafkaKafkaClusterAccessSubnetArray and GetManagedKafkaKafkaClusterAccessSubnetArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAccessSubnetArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterAccessSubnetArray{ GetManagedKafkaKafkaClusterAccessSubnetArgs{...} }
+type GetManagedKafkaKafkaClusterAccessSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput
+	ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArray []GetManagedKafkaKafkaClusterAccessSubnetInput
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArray) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArray) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAccessSubnetArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAccessSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+// Subnets OCIDs
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAccessSubnet) []string { return v.Subnets }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterAccessSubnet {
+		return vs[0].([]GetManagedKafkaKafkaClusterAccessSubnet)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollection struct {
+	Items []GetManagedKafkaKafkaClusterAddonsAddonCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClusterAddonsAddonCollectionInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs and GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsAddonCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs{...}
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs struct {
+	Items GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsAddonCollectionArray and GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsAddonCollectionArray{ GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs{...} }
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionArray []GetManagedKafkaKafkaClusterAddonsAddonCollectionInput
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsAddonCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionArray) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionArray) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput) Items() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollection) []GetManagedKafkaKafkaClusterAddonsAddonCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsAddonCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterAddonsAddonCollection {
+		return vs[0].([]GetManagedKafkaKafkaClusterAddonsAddonCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItem struct {
+	// The type of addon
+	AddonType string `pulumi:"addonType"`
+	// Authentication mechanism.
+	AuthenticationMechanism string `pulumi:"authenticationMechanism"`
+	// The bootstrap url of the kafka cluster.
+	BootstrapUrl string `pulumi:"bootstrapUrl"`
+	// Description of the add on
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	KafkaClusterId string `pulumi:"kafkaClusterId"`
+	// The name to filter on.
+	Name string `pulumi:"name"`
+	// A list of CIDR ranges for ingress/egress traffic.
+	NetworkCidrs []string `pulumi:"networkCidrs"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// The time the addon was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the addon was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagedKafkaKafkaClusterAddonsAddonCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs and GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsAddonCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs{...}
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs struct {
+	// The type of addon
+	AddonType pulumi.StringInput `pulumi:"addonType"`
+	// Authentication mechanism.
+	AuthenticationMechanism pulumi.StringInput `pulumi:"authenticationMechanism"`
+	// The bootstrap url of the kafka cluster.
+	BootstrapUrl pulumi.StringInput `pulumi:"bootstrapUrl"`
+	// Description of the add on
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	KafkaClusterId pulumi.StringInput `pulumi:"kafkaClusterId"`
+	// The name to filter on.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A list of CIDR ranges for ingress/egress traffic.
+	NetworkCidrs pulumi.StringArrayInput `pulumi:"networkCidrs"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the addon was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the addon was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray and GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray{ GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray []GetManagedKafkaKafkaClusterAddonsAddonCollectionItemInput
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsAddonCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput {
+	return o
+}
+
+// The type of addon
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) AddonType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.AddonType }).(pulumi.StringOutput)
+}
+
+// Authentication mechanism.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) AuthenticationMechanism() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.AuthenticationMechanism }).(pulumi.StringOutput)
+}
+
+// The bootstrap url of the kafka cluster.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) BootstrapUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.BootstrapUrl }).(pulumi.StringOutput)
+}
+
+// Description of the add on
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) KafkaClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.KafkaClusterId }).(pulumi.StringOutput)
+}
+
+// The name to filter on.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A list of CIDR ranges for ingress/egress traffic.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) NetworkCidrs() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) []string { return v.NetworkCidrs }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the addon was created.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the addon was updated.
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsAddonCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsAddonCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput() GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterAddonsAddonCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClusterAddonsAddonCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClusterAddonsFilterInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsFilterArgs and GetManagedKafkaKafkaClusterAddonsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsFilterInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsFilterArgs{...}
+type GetManagedKafkaKafkaClusterAddonsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsFilterOutput() GetManagedKafkaKafkaClusterAddonsFilterOutput
+	ToGetManagedKafkaKafkaClusterAddonsFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsFilterOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClusterAddonsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsFilterArgs) ToGetManagedKafkaKafkaClusterAddonsFilterOutput() GetManagedKafkaKafkaClusterAddonsFilterOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsFilterArgs) ToGetManagedKafkaKafkaClusterAddonsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsFilterOutput)
+}
+
+// GetManagedKafkaKafkaClusterAddonsFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClusterAddonsFilterArray and GetManagedKafkaKafkaClusterAddonsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAddonsFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterAddonsFilterArray{ GetManagedKafkaKafkaClusterAddonsFilterArgs{...} }
+type GetManagedKafkaKafkaClusterAddonsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutput() GetManagedKafkaKafkaClusterAddonsFilterArrayOutput
+	ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAddonsFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterAddonsFilterArray []GetManagedKafkaKafkaClusterAddonsFilterInput
+
+func (GetManagedKafkaKafkaClusterAddonsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsFilterArray) ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutput() GetManagedKafkaKafkaClusterAddonsFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAddonsFilterArray) ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAddonsFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterOutput) ToGetManagedKafkaKafkaClusterAddonsFilterOutput() GetManagedKafkaKafkaClusterAddonsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterOutput) ToGetManagedKafkaKafkaClusterAddonsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaKafkaClusterAddonsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAddonsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAddonsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAddonsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAddonsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterArrayOutput) ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutput() GetManagedKafkaKafkaClusterAddonsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterArrayOutput) ToGetManagedKafkaKafkaClusterAddonsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAddonsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAddonsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterAddonsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterAddonsFilter {
+		return vs[0].([]GetManagedKafkaKafkaClusterAddonsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterAddonsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShape struct {
+	// Number of Kafka broker nodes
+	NodeCount int `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape string `pulumi:"nodeShape"`
+	// Number of OCPUs per nodes
+	OcpuCount int `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
+}
+
+// GetManagedKafkaKafkaClusterBrokerShapeInput is an input type that accepts GetManagedKafkaKafkaClusterBrokerShapeArgs and GetManagedKafkaKafkaClusterBrokerShapeOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterBrokerShapeInput` via:
+//
+//	GetManagedKafkaKafkaClusterBrokerShapeArgs{...}
+type GetManagedKafkaKafkaClusterBrokerShapeInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput
+	ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArgs struct {
+	// Number of Kafka broker nodes
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
+	// Number of OCPUs per nodes
+	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs pulumi.IntInput `pulumi:"storageSizeInGbs"`
+}
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArgs) ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return i.ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArgs) ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+// GetManagedKafkaKafkaClusterBrokerShapeArrayInput is an input type that accepts GetManagedKafkaKafkaClusterBrokerShapeArray and GetManagedKafkaKafkaClusterBrokerShapeArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterBrokerShapeArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterBrokerShapeArray{ GetManagedKafkaKafkaClusterBrokerShapeArgs{...} }
+type GetManagedKafkaKafkaClusterBrokerShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput
+	ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArray []GetManagedKafkaKafkaClusterBrokerShapeInput
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArray) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArray) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterBrokerShapeArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterBrokerShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+// Number of Kafka broker nodes
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) string { return v.NodeShape }).(pulumi.StringOutput)
+}
+
+// Number of OCPUs per nodes
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+// Size of the storage per nodes.
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) StorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.StorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterBrokerShape {
+		return vs[0].([]GetManagedKafkaKafkaClusterBrokerShape)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfig struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties map[string]string `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigLatestConfigInput is an input type that accepts GetManagedKafkaKafkaClusterConfigLatestConfigArgs and GetManagedKafkaKafkaClusterConfigLatestConfigOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigLatestConfigInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigLatestConfigArgs{...}
+type GetManagedKafkaKafkaClusterConfigLatestConfigInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigLatestConfigArray and GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigLatestConfigArray{ GetManagedKafkaKafkaClusterConfigLatestConfigArgs{...} }
+type GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArray []GetManagedKafkaKafkaClusterConfigLatestConfigInput
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) string { return v.ConfigId }).(pulumi.StringOutput)
+}
+
+// Cluster configuration key-value pairs
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) int { return v.VersionNumber }).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigLatestConfig {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigLatestConfig)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsFilterInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsFilterArgs and GetManagedKafkaKafkaClusterConfigVersionsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsFilterInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsFilterArray and GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsFilterArray{ GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArray []GetManagedKafkaKafkaClusterConfigVersionsFilterInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsFilter {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection struct {
+	Items []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs struct {
+	Items GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray{ GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) Items() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection) []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray{ GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) string {
+		return v.ConfigId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) int {
+		return v.VersionNumber
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsFilterInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsFilterArgs and GetManagedKafkaKafkaClusterConfigsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsFilterInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsFilterArgs{...}
+type GetManagedKafkaKafkaClusterConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput
+	ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArgs) ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArgs) ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsFilterOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsFilterArray and GetManagedKafkaKafkaClusterConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsFilterArray{ GetManagedKafkaKafkaClusterConfigsFilterArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArray []GetManagedKafkaKafkaClusterConfigsFilterInput
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArray) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArray) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsFilter {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection struct {
+	Items []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs struct {
+	Items GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) Items() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection) []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+	Id string `pulumi:"id"`
+	// A shared configuration object used by 0 or more kafka clusters.
+	LatestConfigs []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig `pulumi:"latestConfigs"`
+	// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A shared configuration object used by 0 or more kafka clusters.
+	LatestConfigs GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput `pulumi:"latestConfigs"`
+	// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A shared configuration object used by 0 or more kafka clusters.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) LatestConfigs() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig {
+		return v.LatestConfigs
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput)
+}
+
+// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties map[string]string `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) string {
+		return v.ConfigId
+	}).(pulumi.StringOutput)
+}
+
+// Cluster configuration key-value pairs
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) map[string]string {
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) int {
+		return v.VersionNumber
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrl struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name string `pulumi:"name"`
+	// Bootstrap URL
+	Url string `pulumi:"url"`
+}
+
+// GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput is an input type that accepts GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs and GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput` via:
+//
+//	GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...}
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name pulumi.StringInput `pulumi:"name"`
+	// Bootstrap URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return i.ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+// GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput is an input type that accepts GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray and GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray{ GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...} }
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray []GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterKafkaBootstrapUrl) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterKafkaBootstrapUrl) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterKafkaBootstrapUrl {
+		return vs[0].([]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilter struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClustersFilterInput is an input type that accepts GetManagedKafkaKafkaClustersFilterArgs and GetManagedKafkaKafkaClustersFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersFilterInput` via:
+//
+//	GetManagedKafkaKafkaClustersFilterArgs{...}
+type GetManagedKafkaKafkaClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput
+	ToGetManagedKafkaKafkaClustersFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClustersFilterOutput
+}
+
+type GetManagedKafkaKafkaClustersFilterArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArgs) ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput {
+	return i.ToGetManagedKafkaKafkaClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArgs) ToGetManagedKafkaKafkaClustersFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersFilterOutput)
+}
+
+// GetManagedKafkaKafkaClustersFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClustersFilterArray and GetManagedKafkaKafkaClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersFilterArray{ GetManagedKafkaKafkaClustersFilterArgs{...} }
+type GetManagedKafkaKafkaClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput
+	ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersFilterArray []GetManagedKafkaKafkaClustersFilterInput
+
+func (GetManagedKafkaKafkaClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArray) ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArray) ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) ToGetManagedKafkaKafkaClustersFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersFilter {
+		return vs[0].([]GetManagedKafkaKafkaClustersFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersFilterOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollection struct {
+	Items []GetManagedKafkaKafkaClustersKafkaClusterCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs struct {
+	Items GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) Items() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollection) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollection {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItem struct {
+	// Subnets where broker/coordinator VNICs will be created.
+	AccessSubnets []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet `pulumi:"accessSubnets"`
+	// Configuration of the broker node.
+	BrokerShapes []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape `pulumi:"brokerShapes"`
+	// CA certificate bundle for mTLS broker authentication.
+	ClientCertificateBundle string `pulumi:"clientCertificateBundle"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+	ClusterConfigId string `pulumi:"clusterConfigId"`
+	// The version of configuration object
+	ClusterConfigVersion int `pulumi:"clusterConfigVersion"`
+	// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+	ClusterType string `pulumi:"clusterType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Kafka coordination type. Set of available types depends on Kafka version
+	CoordinationType string `pulumi:"coordinationType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	Id string `pulumi:"id"`
+	// Bootstrap URL that can be used to connect to Kafka
+	KafkaBootstrapUrls []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl `pulumi:"kafkaBootstrapUrls"`
+	// Version of Kafka to use to spin up the cluster
+	KafkaVersion string `pulumi:"kafkaVersion"`
+	// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+	SecretId string `pulumi:"secretId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs struct {
+	// Subnets where broker/coordinator VNICs will be created.
+	AccessSubnets GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput `pulumi:"accessSubnets"`
+	// Configuration of the broker node.
+	BrokerShapes GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput `pulumi:"brokerShapes"`
+	// CA certificate bundle for mTLS broker authentication.
+	ClientCertificateBundle pulumi.StringInput `pulumi:"clientCertificateBundle"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+	ClusterConfigId pulumi.StringInput `pulumi:"clusterConfigId"`
+	// The version of configuration object
+	ClusterConfigVersion pulumi.IntInput `pulumi:"clusterConfigVersion"`
+	// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+	ClusterType pulumi.StringInput `pulumi:"clusterType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Kafka coordination type. Set of available types depends on Kafka version
+	CoordinationType pulumi.StringInput `pulumi:"coordinationType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Bootstrap URL that can be used to connect to Kafka
+	KafkaBootstrapUrls GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput `pulumi:"kafkaBootstrapUrls"`
+	// Version of Kafka to use to spin up the cluster
+	KafkaVersion pulumi.StringInput `pulumi:"kafkaVersion"`
+	// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return o
+}
+
+// Subnets where broker/coordinator VNICs will be created.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) AccessSubnets() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet {
+		return v.AccessSubnets
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput)
+}
+
+// Configuration of the broker node.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) BrokerShapes() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape {
+		return v.BrokerShapes
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput)
+}
+
+// CA certificate bundle for mTLS broker authentication.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClientCertificateBundle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string {
+		return v.ClientCertificateBundle
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.ClusterConfigId }).(pulumi.StringOutput)
+}
+
+// The version of configuration object
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterConfigVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) int { return v.ClusterConfigVersion }).(pulumi.IntOutput)
+}
+
+// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.ClusterType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Kafka coordination type. Set of available types depends on Kafka version
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) CoordinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.CoordinationType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL that can be used to connect to Kafka
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) KafkaBootstrapUrls() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
+		return v.KafkaBootstrapUrls
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput)
+}
+
+// Version of Kafka to use to spin up the cluster
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) KafkaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.KafkaVersion }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet struct {
+	// Subnets OCIDs
+	Subnets []string `pulumi:"subnets"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs struct {
+	// Subnets OCIDs
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return o
+}
+
+// Subnets OCIDs
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet) []string { return v.Subnets }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape struct {
+	// Number of Kafka broker nodes
+	NodeCount int `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape string `pulumi:"nodeShape"`
+	// Number of OCPUs per nodes
+	OcpuCount int `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs struct {
+	// Number of Kafka broker nodes
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+	NodeShape pulumi.StringInput `pulumi:"nodeShape"`
+	// Number of OCPUs per nodes
+	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs pulumi.IntInput `pulumi:"storageSizeInGbs"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return o
+}
+
+// Number of Kafka broker nodes
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Node shape for broker is passed as part of cluster creation, similar to VM.Standard.A1.Flex
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) NodeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) string { return v.NodeShape }).(pulumi.StringOutput)
+}
+
+// Number of OCPUs per nodes
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+// Size of the storage per nodes.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) StorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int {
+		return v.StorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name string `pulumi:"name"`
+	// Bootstrap URL
+	Url string `pulumi:"url"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name pulumi.StringInput `pulumi:"name"`
+	// Bootstrap URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
+type GetManagedKafkaNodeShapesFilter struct {
+	// The name to filter on.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaNodeShapesFilterInput is an input type that accepts GetManagedKafkaNodeShapesFilterArgs and GetManagedKafkaNodeShapesFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesFilterInput` via:
+//
+//	GetManagedKafkaNodeShapesFilterArgs{...}
+type GetManagedKafkaNodeShapesFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput
+	ToGetManagedKafkaNodeShapesFilterOutputWithContext(context.Context) GetManagedKafkaNodeShapesFilterOutput
+}
+
+type GetManagedKafkaNodeShapesFilterArgs struct {
+	// The name to filter on.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaNodeShapesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesFilterArgs) ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput {
+	return i.ToGetManagedKafkaNodeShapesFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesFilterArgs) ToGetManagedKafkaNodeShapesFilterOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesFilterOutput)
+}
+
+// GetManagedKafkaNodeShapesFilterArrayInput is an input type that accepts GetManagedKafkaNodeShapesFilterArray and GetManagedKafkaNodeShapesFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesFilterArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesFilterArray{ GetManagedKafkaNodeShapesFilterArgs{...} }
+type GetManagedKafkaNodeShapesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput
+	ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesFilterArrayOutput
+}
+
+type GetManagedKafkaNodeShapesFilterArray []GetManagedKafkaNodeShapesFilterInput
+
+func (GetManagedKafkaNodeShapesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesFilterArray) ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesFilterArray) ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesFilterArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) ToGetManagedKafkaNodeShapesFilterOutput() GetManagedKafkaNodeShapesFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) ToGetManagedKafkaNodeShapesFilterOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaNodeShapesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaNodeShapesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) ToGetManagedKafkaNodeShapesFilterArrayOutput() GetManagedKafkaNodeShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) ToGetManagedKafkaNodeShapesFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesFilter {
+		return vs[0].([]GetManagedKafkaNodeShapesFilter)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesFilterOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollection struct {
+	// List of NodeShapeSummary.
+	Items []GetManagedKafkaNodeShapesNodeShapeCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionArgs and GetManagedKafkaNodeShapesNodeShapeCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionArgs{...}
+type GetManagedKafkaNodeShapesNodeShapeCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArgs struct {
+	// List of NodeShapeSummary.
+	Items GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionOutput)
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionArray and GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionArray{ GetManagedKafkaNodeShapesNodeShapeCollectionArgs{...} }
+type GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArray []GetManagedKafkaNodeShapesNodeShapeCollectionInput
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutput() GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return o
+}
+
+// List of NodeShapeSummary.
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionOutput) Items() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesNodeShapeCollection) []GetManagedKafkaNodeShapesNodeShapeCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesNodeShapeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesNodeShapeCollection {
+		return vs[0].([]GetManagedKafkaNodeShapesNodeShapeCollection)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItem struct {
+	// The name to filter on.
+	Name string `pulumi:"name"`
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionItemInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs and GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionItemInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{...}
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs struct {
+	// The name to filter on.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput)
+}
+
+// GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput is an input type that accepts GetManagedKafkaNodeShapesNodeShapeCollectionItemArray and GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaNodeShapesNodeShapeCollectionItemArray{ GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{...} }
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput
+	ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArray []GetManagedKafkaNodeShapesNodeShapeCollectionItemInput
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaNodeShapesNodeShapeCollectionItemArray) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return o
+}
+
+// The name to filter on.
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaNodeShapesNodeShapeCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaNodeShapesNodeShapeCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput() GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) ToGetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaNodeShapesNodeShapeCollectionItem {
+		return vs[0].([]GetManagedKafkaNodeShapesNodeShapeCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection struct {
+	// List of ExternalLocationMappingMetadatumSummary
+	Items []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs struct {
+	// List of ExternalLocationMappingMetadatumSummary
+	Items GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationMappingMetadatumSummary
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput) Items() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection) []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ
+	ExternalLocations []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd string `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd string `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// External location for CSP Region, CSP-Physical-AZ
+	ExternalLocations GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd pulumi.StringInput `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd pulumi.StringInput `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// External location for CSP Region, CSP-Physical-AZ
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure logical ad name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciLogicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciLogicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure physical ad name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciPhysicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciPhysicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation struct {
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz string `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName string `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+	// The serviceName that externalLocation map object belongs to
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs struct {
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz pulumi.StringInput `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName pulumi.StringInput `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+	// The serviceName that externalLocation map object belongs to
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray and GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray{ GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray []GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspPhysicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspPhysicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspPhysicalAZ
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspPhysicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspPhysicalAzDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The serviceName that externalLocation map object belongs to
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationMappingMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataFilterArgs and GetMulticloudExternalLocationMappingMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataFilterArgs{...}
+type GetMulticloudExternalLocationMappingMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput
+	ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArgs) ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArgs) ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationMappingMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationMappingMetadataFilterArray and GetMulticloudExternalLocationMappingMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationMappingMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationMappingMetadataFilterArray{ GetMulticloudExternalLocationMappingMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationMappingMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArray []GetMulticloudExternalLocationMappingMetadataFilterInput
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArray) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationMappingMetadataFilterArray) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationMappingMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) ToGetMulticloudExternalLocationMappingMetadataFilterOutput() GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) ToGetMulticloudExternalLocationMappingMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationMappingMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationMappingMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationMappingMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutput() GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) ToGetMulticloudExternalLocationMappingMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationMappingMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationMappingMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationMappingMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationMappingMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationMappingMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationMappingMetadataFilterOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection struct {
+	// List of ExternalLocationSummariesMetadatumSummary
+	Items []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs struct {
+	// List of ExternalLocationSummariesMetadatumSummary
+	Items GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationSummariesMetadatumSummary
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput) Items() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection) []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// External location for CSP Region
+	ExternalLocations []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// External location for CSP Region
+	ExternalLocations GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// External location for CSP Region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation struct {
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs struct {
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray and GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray{ GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray []GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return o
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationSummariesMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataFilterArgs and GetMulticloudExternalLocationSummariesMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataFilterArgs{...}
+type GetMulticloudExternalLocationSummariesMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput
+	ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArgs) ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArgs) ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationSummariesMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationSummariesMetadataFilterArray and GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationSummariesMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationSummariesMetadataFilterArray{ GetMulticloudExternalLocationSummariesMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationSummariesMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArray []GetMulticloudExternalLocationSummariesMetadataFilterInput
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArray) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationSummariesMetadataFilterArray) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterOutput() GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationSummariesMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationSummariesMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutput() GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) ToGetMulticloudExternalLocationSummariesMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationSummariesMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationSummariesMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationSummariesMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationSummariesMetadataFilterOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection struct {
+	// List of ExternalLocationsMetadatumSummary
+	Items []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem `pulumi:"items"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs struct {
+	// List of ExternalLocationsMetadatumSummary
+	Items GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return o
+}
+
+// List of ExternalLocationsMetadatumSummary
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput) Items() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
+		return v.Items
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollection)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// Cluster Placement Group OCID (deprecated representation)
+	CpgId string `pulumi:"cpgId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The cloud service provider region.
+	ExternalLocations []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd string `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd string `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion string `pulumi:"ociRegion"`
+	// User friendly name of account name for customer's subscription
+	PartnerCloudAccountName string `pulumi:"partnerCloudAccountName"`
+	// Direct URL to partner cloud for customer's account
+	PartnerCloudAccountUrl string `pulumi:"partnerCloudAccountUrl"`
+	// Partner Cloud Name based on service name
+	PartnerCloudName string `pulumi:"partnerCloudName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// Cluster Placement Group OCID (deprecated representation)
+	CpgId pulumi.StringInput `pulumi:"cpgId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The cloud service provider region.
+	ExternalLocations GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput `pulumi:"externalLocations"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Oracle Cloud Infrastructure logical ad name
+	OciLogicalAd pulumi.StringInput `pulumi:"ociLogicalAd"`
+	// Oracle Cloud Infrastructure physical ad name
+	OciPhysicalAd pulumi.StringInput `pulumi:"ociPhysicalAd"`
+	// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+	OciRegion pulumi.StringInput `pulumi:"ociRegion"`
+	// User friendly name of account name for customer's subscription
+	PartnerCloudAccountName pulumi.StringInput `pulumi:"partnerCloudAccountName"`
+	// Direct URL to partner cloud for customer's account
+	PartnerCloudAccountUrl pulumi.StringInput `pulumi:"partnerCloudAccountUrl"`
+	// Partner Cloud Name based on service name
+	PartnerCloudName pulumi.StringInput `pulumi:"partnerCloudName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// Cluster Placement Group OCID (deprecated representation)
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) CpgId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.CpgId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The cloud service provider region.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) ExternalLocations() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation {
+		return v.ExternalLocations
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Oracle Cloud Infrastructure logical ad name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciLogicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciLogicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure physical ad name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciPhysicalAd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciPhysicalAd
+	}).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure region identifier https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) OciRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.OciRegion
+	}).(pulumi.StringOutput)
+}
+
+// User friendly name of account name for customer's subscription
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudAccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudAccountName
+	}).(pulumi.StringOutput)
+}
+
+// Direct URL to partner cloud for customer's account
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudAccountUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudAccountUrl
+	}).(pulumi.StringOutput)
+}
+
+// Partner Cloud Name based on service name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) PartnerCloudName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) string {
+		return v.PartnerCloudName
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItem)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation struct {
+	// A mapping of CSP physical availability zone to CSP logical availability zone.
+	CspLogicalAz string `pulumi:"cspLogicalAz"`
+	// User friendly display name for cspLogicalAZ
+	CspLogicalAzDisplayName string `pulumi:"cspLogicalAzDisplayName"`
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz string `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName string `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion string `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName string `pulumi:"cspRegionDisplayName"`
+	// This is CSP zone key reference
+	CspZoneKeyReferenceIds []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId `pulumi:"cspZoneKeyReferenceIds"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs struct {
+	// A mapping of CSP physical availability zone to CSP logical availability zone.
+	CspLogicalAz pulumi.StringInput `pulumi:"cspLogicalAz"`
+	// User friendly display name for cspLogicalAZ
+	CspLogicalAzDisplayName pulumi.StringInput `pulumi:"cspLogicalAzDisplayName"`
+	// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+	CspPhysicalAz pulumi.StringInput `pulumi:"cspPhysicalAz"`
+	// User friendly display name for cspPhysicalAZ
+	CspPhysicalAzDisplayName pulumi.StringInput `pulumi:"cspPhysicalAzDisplayName"`
+	// CSP region corresponding to the given Oracle Cloud Infrastructure region
+	CspRegion pulumi.StringInput `pulumi:"cspRegion"`
+	// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+	CspRegionDisplayName pulumi.StringInput `pulumi:"cspRegionDisplayName"`
+	// This is CSP zone key reference
+	CspZoneKeyReferenceIds GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput `pulumi:"cspZoneKeyReferenceIds"`
+	// The serviceName that externalLocation map object belongs to.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return o
+}
+
+// A mapping of CSP physical availability zone to CSP logical availability zone.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspLogicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspLogicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspLogicalAZ
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspLogicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspLogicalAzDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// A mapping of Oracle Cloud Infrastructure site group name to CSP physical availability zone name
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspPhysicalAz() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspPhysicalAz
+	}).(pulumi.StringOutput)
+}
+
+// User friendly display name for cspPhysicalAZ
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspPhysicalAzDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspPhysicalAzDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// CSP region corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspRegion
+	}).(pulumi.StringOutput)
+}
+
+// CSP region display Name corresponding to the given Oracle Cloud Infrastructure region
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspRegionDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.CspRegionDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// This is CSP zone key reference
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) CspZoneKeyReferenceIds() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId {
+		return v.CspZoneKeyReferenceIds
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput)
+}
+
+// The serviceName that externalLocation map object belongs to.
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocation)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId struct {
+	// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+	KeyName string `pulumi:"keyName"`
+	// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+	KeyValue string `pulumi:"keyValue"`
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{...}
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs struct {
+	// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+	KeyValue pulumi.StringInput `pulumi:"keyValue"`
+}
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray and GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray{ GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{...} }
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput
+	ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray []GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return o
+}
+
+// KeyName for Azure=AzureSubscriptionId Aws=AwsAccountId GCP=GcpProjectName
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// Value of keyName GcpProjectName: A human-readable name for your project. The project name isn't used by any Google APIs. You can edit the project name at any time during or after project creation. Project names do not need to be unique. AzureSubscriptionId: A unique alphanumeric string that identifies your Azure subscription. AwsAccountId: a unique 12-digit number that identifies an Amazon Web Services (AWS) account
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput) KeyValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId) string {
+		return v.KeyValue
+	}).(pulumi.StringOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput() GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) ToGetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceId)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMulticloudExternalLocationsMetadataFilterInput is an input type that accepts GetMulticloudExternalLocationsMetadataFilterArgs and GetMulticloudExternalLocationsMetadataFilterOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataFilterInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataFilterArgs{...}
+type GetMulticloudExternalLocationsMetadataFilterInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput
+	ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataFilterOutput
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMulticloudExternalLocationsMetadataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArgs) ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArgs) ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataFilterOutput)
+}
+
+// GetMulticloudExternalLocationsMetadataFilterArrayInput is an input type that accepts GetMulticloudExternalLocationsMetadataFilterArray and GetMulticloudExternalLocationsMetadataFilterArrayOutput values.
+// You can construct a concrete instance of `GetMulticloudExternalLocationsMetadataFilterArrayInput` via:
+//
+//	GetMulticloudExternalLocationsMetadataFilterArray{ GetMulticloudExternalLocationsMetadataFilterArgs{...} }
+type GetMulticloudExternalLocationsMetadataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput
+	ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArray []GetMulticloudExternalLocationsMetadataFilterInput
+
+func (GetMulticloudExternalLocationsMetadataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArray) ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return i.ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMulticloudExternalLocationsMetadataFilterArray) ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMulticloudExternalLocationsMetadataFilterArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) ToGetMulticloudExternalLocationsMetadataFilterOutput() GetMulticloudExternalLocationsMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) ToGetMulticloudExternalLocationsMetadataFilterOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMulticloudExternalLocationsMetadataFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMulticloudExternalLocationsMetadataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMulticloudExternalLocationsMetadataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMulticloudExternalLocationsMetadataFilter)(nil)).Elem()
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) ToGetMulticloudExternalLocationsMetadataFilterArrayOutput() GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) ToGetMulticloudExternalLocationsMetadataFilterArrayOutputWithContext(ctx context.Context) GetMulticloudExternalLocationsMetadataFilterArrayOutput {
+	return o
+}
+
+func (o GetMulticloudExternalLocationsMetadataFilterArrayOutput) Index(i pulumi.IntInput) GetMulticloudExternalLocationsMetadataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMulticloudExternalLocationsMetadataFilter {
+		return vs[0].([]GetMulticloudExternalLocationsMetadataFilter)[vs[1].(int)]
+	}).(GetMulticloudExternalLocationsMetadataFilterOutput)
+}
+
 type GetMulticloudMulticloudalertsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -15723,6 +21736,102 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDayInput)(nil)).Elem(), GetIotIotDomainDataRetentionPeriodsInDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDayArrayInput)(nil)).Elem(), GetIotIotDomainDataRetentionPeriodsInDayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsFilterInput)(nil)).Elem(), GetIotIotDomainGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsFilterArrayInput)(nil)).Elem(), GetIotIotDomainGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionArrayInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItemInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayInput)(nil)).Elem(), GetIotIotDomainGroupsIotDomainGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsFilterInput)(nil)).Elem(), GetIotIotDomainsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsFilterArrayInput)(nil)).Elem(), GetIotIotDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayInput)(nil)).Elem(), GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionInput)(nil)).Elem(), GetManagedKafkaAddonOptionsAddonOptionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionArrayInput)(nil)).Elem(), GetManagedKafkaAddonOptionsAddonOptionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionItemInput)(nil)).Elem(), GetManagedKafkaAddonOptionsAddonOptionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaAddonOptionsAddonOptionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsFilterInput)(nil)).Elem(), GetManagedKafkaAddonOptionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaAddonOptionsFilterArrayInput)(nil)).Elem(), GetManagedKafkaAddonOptionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsAddonCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsAddonCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAddonsFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAddonsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShapeInput)(nil)).Elem(), GetManagedKafkaKafkaClusterBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterBrokerShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfigInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigLatestConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesFilterInput)(nil)).Elem(), GetManagedKafkaNodeShapesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesFilterArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItemInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaNodeShapesNodeShapeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationMappingMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationMappingMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationSummariesMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationSummariesMetadataFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudExternalLocationsMetadataFilterArrayInput)(nil)).Elem(), GetMulticloudExternalLocationsMetadataFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsFilterInput)(nil)).Elem(), GetMulticloudMulticloudalertsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsFilterArrayInput)(nil)).Elem(), GetMulticloudMulticloudalertsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMulticloudMulticloudalertsMulticloudAlertCollectionInput)(nil)).Elem(), GetMulticloudMulticloudalertsMulticloudAlertCollectionArgs{})
@@ -15957,6 +22066,102 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainDataRetentionPeriodsInDayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainDataRetentionPeriodsInDayArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainGroupsIotDomainGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayOutput{})
+	pulumi.RegisterOutputType(GetIotIotDomainsIotDomainCollectionItemDataRetentionPeriodsInDayArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsAddonOptionCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsAddonOptionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsAddonOptionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsAddonOptionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaAddonOptionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsAddonCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsAddonCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsAddonCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAddonsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterBrokerShapeOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterBrokerShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigLatestConfigOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaNodeShapesNodeShapeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataExternalLocationMappingMetadatumSummaryCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationMappingMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataExternalLocationSummariesMetadatumSummaryCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationSummariesMetadataFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataExternalLocationsMetadatumCollectionItemExternalLocationCspZoneKeyReferenceIdArrayOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterOutput{})
+	pulumi.RegisterOutputType(GetMulticloudExternalLocationsMetadataFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsFilterOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMulticloudMulticloudalertsMulticloudAlertCollectionOutput{})

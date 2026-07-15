@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationGmcConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetail;
 import java.lang.String;
 import java.util.List;
@@ -39,12 +40,23 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    private List<GetInstanceConfigurationsInstanceConfigurationGmcConfig> gmcConfigs;
+    /**
      * @return The OCID of the volume backup.
      * 
      */
     private String id;
     private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetail> instanceDetails;
     private String instanceId;
+    /**
+     * @return Differentiator for instance configuration.  Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     * 
+     */
     private String source;
     /**
      * @return The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -89,6 +101,13 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
         return this.freeformTags;
     }
     /**
+     * @return The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    public List<GetInstanceConfigurationsInstanceConfigurationGmcConfig> gmcConfigs() {
+        return this.gmcConfigs;
+    }
+    /**
      * @return The OCID of the volume backup.
      * 
      */
@@ -101,6 +120,12 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
     public String instanceId() {
         return this.instanceId;
     }
+    /**
+     * @return Differentiator for instance configuration.  Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     * 
+     */
     public String source() {
         return this.source;
     }
@@ -126,6 +151,7 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
+        private List<GetInstanceConfigurationsInstanceConfigurationGmcConfig> gmcConfigs;
         private String id;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetail> instanceDetails;
         private String instanceId;
@@ -139,6 +165,7 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.gmcConfigs = defaults.gmcConfigs;
     	      this.id = defaults.id;
     	      this.instanceDetails = defaults.instanceDetails;
     	      this.instanceId = defaults.instanceId;
@@ -190,6 +217,17 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder gmcConfigs(List<GetInstanceConfigurationsInstanceConfigurationGmcConfig> gmcConfigs) {
+            if (gmcConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfiguration", "gmcConfigs");
+            }
+            this.gmcConfigs = gmcConfigs;
+            return this;
+        }
+        public Builder gmcConfigs(GetInstanceConfigurationsInstanceConfigurationGmcConfig... gmcConfigs) {
+            return gmcConfigs(List.of(gmcConfigs));
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfiguration", "id");
@@ -239,6 +277,7 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.gmcConfigs = gmcConfigs;
             _resultValue.id = id;
             _resultValue.instanceDetails = instanceDetails;
             _resultValue.instanceId = instanceId;

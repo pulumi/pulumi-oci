@@ -97,6 +97,10 @@ export interface GetInstancePoolResult {
      */
     readonly placementConfigurations: outputs.Core.GetInstancePoolPlacementConfiguration[];
     /**
+     * The type of resources managed by the pool.
+     */
+    readonly poolType: string;
+    /**
      * The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      */
     readonly size: number;

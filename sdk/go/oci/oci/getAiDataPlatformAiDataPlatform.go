@@ -61,6 +61,8 @@ type LookupAiDataPlatformAiDataPlatformResult struct {
 	AiDataPlatformId string `pulumi:"aiDataPlatformId"`
 	// The AiDataPlatform type.
 	AiDataPlatformType string `pulumi:"aiDataPlatformType"`
+	// The current aiFeatureStatus of the AiDataPlatform.
+	AiFeatureStatus string `pulumi:"aiFeatureStatus"`
 	// The alias Id of the AiDataPlatform which is the short form of OCID.
 	AliasKey string `pulumi:"aliasKey"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -75,7 +77,8 @@ type LookupAiDataPlatformAiDataPlatformResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
-	Id string `pulumi:"id"`
+	Id                string `pulumi:"id"`
+	IsEnableAiFeature bool   `pulumi:"isEnableAiFeature"`
 	// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current state of the AiDataPlatform.
@@ -85,7 +88,10 @@ type LookupAiDataPlatformAiDataPlatformResult struct {
 	// The date and time the AiDataPlatform was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated           string `pulumi:"timeUpdated"`
+	VectorDbAdminCred     string `pulumi:"vectorDbAdminCred"`
+	VectorDbAdminSecretId string `pulumi:"vectorDbAdminSecretId"`
+	VectorDbId            string `pulumi:"vectorDbId"`
 	// The WebSocket URL of the AiDataPlatform.
 	WebSocketEndpoint string `pulumi:"webSocketEndpoint"`
 }
@@ -133,6 +139,11 @@ func (o LookupAiDataPlatformAiDataPlatformResultOutput) AiDataPlatformType() pul
 	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.AiDataPlatformType }).(pulumi.StringOutput)
 }
 
+// The current aiFeatureStatus of the AiDataPlatform.
+func (o LookupAiDataPlatformAiDataPlatformResultOutput) AiFeatureStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.AiFeatureStatus }).(pulumi.StringOutput)
+}
+
 // The alias Id of the AiDataPlatform which is the short form of OCID.
 func (o LookupAiDataPlatformAiDataPlatformResultOutput) AliasKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.AliasKey }).(pulumi.StringOutput)
@@ -172,6 +183,10 @@ func (o LookupAiDataPlatformAiDataPlatformResultOutput) Id() pulumi.StringOutput
 	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupAiDataPlatformAiDataPlatformResultOutput) IsEnableAiFeature() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) bool { return v.IsEnableAiFeature }).(pulumi.BoolOutput)
+}
+
 // A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o LookupAiDataPlatformAiDataPlatformResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -195,6 +210,18 @@ func (o LookupAiDataPlatformAiDataPlatformResultOutput) TimeCreated() pulumi.Str
 // The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupAiDataPlatformAiDataPlatformResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o LookupAiDataPlatformAiDataPlatformResultOutput) VectorDbAdminCred() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.VectorDbAdminCred }).(pulumi.StringOutput)
+}
+
+func (o LookupAiDataPlatformAiDataPlatformResultOutput) VectorDbAdminSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.VectorDbAdminSecretId }).(pulumi.StringOutput)
+}
+
+func (o LookupAiDataPlatformAiDataPlatformResultOutput) VectorDbId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAiDataPlatformAiDataPlatformResult) string { return v.VectorDbId }).(pulumi.StringOutput)
 }
 
 // The WebSocket URL of the AiDataPlatform.

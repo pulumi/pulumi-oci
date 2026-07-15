@@ -19,6 +19,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     private Boolean isRootFileSystemReadonly;
     private Integer runAsGroup;
     private Integer runAsUser;
+    /**
+     * @return The type of security context
+     * 
+     */
     private String securityContextType;
 
     private GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext() {}
@@ -37,6 +41,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     public Integer runAsUser() {
         return this.runAsUser;
     }
+    /**
+     * @return The type of security context
+     * 
+     */
     public String securityContextType() {
         return this.securityContextType;
     }

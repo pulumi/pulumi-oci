@@ -18,6 +18,9 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         public readonly bool IsRootFileSystemReadonly;
         public readonly int RunAsGroup;
         public readonly int RunAsUser;
+        /// <summary>
+        /// The type of security context
+        /// </summary>
         public readonly string SecurityContextType;
 
         [OutputConstructor]

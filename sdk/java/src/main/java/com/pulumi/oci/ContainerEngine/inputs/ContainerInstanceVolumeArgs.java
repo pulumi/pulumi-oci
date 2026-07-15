@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeConfigArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeExportArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeMountCommandArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeMountTargetArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeSecurityArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -49,6 +53,51 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    @Import(name="export")
+    private @Nullable Output<ContainerInstanceVolumeExportArgs> export;
+
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    public Optional<Output<ContainerInstanceVolumeExportArgs>> export() {
+        return Optional.ofNullable(this.export);
+    }
+
+    /**
+     * Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    @Import(name="mountCommand")
+    private @Nullable Output<ContainerInstanceVolumeMountCommandArgs> mountCommand;
+
+    /**
+     * @return Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    public Optional<Output<ContainerInstanceVolumeMountCommandArgs>> mountCommand() {
+        return Optional.ofNullable(this.mountCommand);
+    }
+
+    /**
+     * An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    @Import(name="mountTarget")
+    private @Nullable Output<ContainerInstanceVolumeMountTargetArgs> mountTarget;
+
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    public Optional<Output<ContainerInstanceVolumeMountTargetArgs>> mountTarget() {
+        return Optional.ofNullable(this.mountTarget);
+    }
+
+    /**
      * The name of the volume. This must be unique within a single container instance.
      * 
      */
@@ -61,6 +110,36 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
      */
     public Output<String> name() {
         return this.name;
+    }
+
+    /**
+     * Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    @Import(name="security")
+    private @Nullable Output<ContainerInstanceVolumeSecurityArgs> security;
+
+    /**
+     * @return Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    public Optional<Output<ContainerInstanceVolumeSecurityArgs>> security() {
+        return Optional.ofNullable(this.security);
+    }
+
+    /**
+     * Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    @Import(name="subnetId")
+    private @Nullable Output<String> subnetId;
+
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    public Optional<Output<String>> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     /**
@@ -83,7 +162,12 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
     private ContainerInstanceVolumeArgs(ContainerInstanceVolumeArgs $) {
         this.backingStore = $.backingStore;
         this.configs = $.configs;
+        this.export = $.export;
+        this.mountCommand = $.mountCommand;
+        this.mountTarget = $.mountTarget;
         this.name = $.name;
+        this.security = $.security;
+        this.subnetId = $.subnetId;
         this.volumeType = $.volumeType;
     }
 
@@ -158,6 +242,69 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param export An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder export(@Nullable Output<ContainerInstanceVolumeExportArgs> export) {
+            $.export = export;
+            return this;
+        }
+
+        /**
+         * @param export An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder export(ContainerInstanceVolumeExportArgs export) {
+            return export(Output.of(export));
+        }
+
+        /**
+         * @param mountCommand Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mountCommand(@Nullable Output<ContainerInstanceVolumeMountCommandArgs> mountCommand) {
+            $.mountCommand = mountCommand;
+            return this;
+        }
+
+        /**
+         * @param mountCommand Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mountCommand(ContainerInstanceVolumeMountCommandArgs mountCommand) {
+            return mountCommand(Output.of(mountCommand));
+        }
+
+        /**
+         * @param mountTarget An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mountTarget(@Nullable Output<ContainerInstanceVolumeMountTargetArgs> mountTarget) {
+            $.mountTarget = mountTarget;
+            return this;
+        }
+
+        /**
+         * @param mountTarget An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mountTarget(ContainerInstanceVolumeMountTargetArgs mountTarget) {
+            return mountTarget(Output.of(mountTarget));
+        }
+
+        /**
          * @param name The name of the volume. This must be unique within a single container instance.
          * 
          * @return builder
@@ -176,6 +323,48 @@ public final class ContainerInstanceVolumeArgs extends com.pulumi.resources.Reso
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param security Security options for Oracle Cloud Infrastructure FSS File System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder security(@Nullable Output<ContainerInstanceVolumeSecurityArgs> security) {
+            $.security = security;
+            return this;
+        }
+
+        /**
+         * @param security Security options for Oracle Cloud Infrastructure FSS File System.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder security(ContainerInstanceVolumeSecurityArgs security) {
+            return security(Output.of(security));
+        }
+
+        /**
+         * @param subnetId Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(@Nullable Output<String> subnetId) {
+            $.subnetId = subnetId;
+            return this;
+        }
+
+        /**
+         * @param subnetId Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subnetId(String subnetId) {
+            return subnetId(Output.of(subnetId));
         }
 
         /**

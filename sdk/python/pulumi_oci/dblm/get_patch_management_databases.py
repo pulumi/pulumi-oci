@@ -176,6 +176,8 @@ def get_patch_management_databases(compartment_id: Optional[_builtins.str] = Non
     """
     This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
 
+    > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+
     Gets the list of databases
 
     ## Example Usage
@@ -246,6 +248,8 @@ def get_patch_management_databases_output(compartment_id: pulumi.Input[Optional[
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPatchManagementDatabasesResult]:
     """
     This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+
+    > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
 
     Gets the list of databases
 

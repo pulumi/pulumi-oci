@@ -42,6 +42,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Overview of Patch Management.
      * 
      * ## Example Usage
@@ -52,6 +54,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Overview of Patch Management.
      * 
@@ -64,6 +68,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Overview of Patch Management.
      * 
      * ## Example Usage
@@ -74,6 +80,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Overview of Patch Management.
      * 
@@ -86,6 +94,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Overview of Patch Management.
      * 
      * ## Example Usage
@@ -96,6 +106,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the list of databases
      * 
@@ -147,6 +159,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the list of databases
      * 
      * ## Example Usage
@@ -196,6 +210,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the list of databases
      * 
@@ -247,6 +263,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the list of databases
      * 
      * ## Example Usage
@@ -296,6 +314,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the list of databases
      * 
@@ -347,6 +367,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the list of databases
      * 
      * ## Example Usage
@@ -396,6 +418,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the list of databases
      * 
@@ -447,6 +471,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a Vulnerability
      * 
      * ## Example Usage
@@ -457,6 +483,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a Vulnerability
      * 
@@ -469,6 +497,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a Vulnerability
      * 
      * ## Example Usage
@@ -479,6 +509,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a Vulnerability
      * 
@@ -491,6 +523,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a Vulnerability
      * 
      * ## Example Usage
@@ -501,6 +535,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Aggregated Vulnerability Data in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets an AggregatedVulnerabilityData
      * 
@@ -548,6 +584,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Aggregated Vulnerability Data in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets an AggregatedVulnerabilityData
      * 
      * ## Example Usage
@@ -593,6 +631,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Aggregated Vulnerability Data in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets an AggregatedVulnerabilityData
      * 
@@ -640,6 +680,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Aggregated Vulnerability Data in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets an AggregatedVulnerabilityData
      * 
      * ## Example Usage
@@ -685,6 +727,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Aggregated Vulnerability Data in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets an AggregatedVulnerabilityData
      * 
@@ -732,6 +776,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Notifications in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * List of notifications
      * 
      * ## Example Usage
@@ -773,6 +819,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Notifications in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * List of notifications
      * 
@@ -816,6 +864,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Notifications in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * List of notifications
      * 
      * ## Example Usage
@@ -857,6 +907,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Notifications in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * List of notifications
      * 
@@ -900,6 +952,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Notifications in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * List of notifications
      * 
      * ## Example Usage
@@ -941,6 +995,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Resources in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Lists the summary of vulnerable and clean resourcees
      * 
@@ -990,6 +1046,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Resources in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Lists the summary of vulnerable and clean resourcees
      * 
      * ## Example Usage
@@ -1037,6 +1095,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Resources in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Lists the summary of vulnerable and clean resourcees
      * 
@@ -1086,6 +1146,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Resources in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Lists the summary of vulnerable and clean resourcees
      * 
      * ## Example Usage
@@ -1133,6 +1195,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Resources in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Lists the summary of vulnerable and clean resourcees
      * 
@@ -1182,6 +1246,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability Scan resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets information about a VulnerabilityScan.
      * 
      * ## Example Usage
@@ -1223,6 +1289,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Vulnerability Scan resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets information about a VulnerabilityScan.
      * 
@@ -1266,6 +1334,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability Scan resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets information about a VulnerabilityScan.
      * 
      * ## Example Usage
@@ -1307,6 +1377,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides details about a specific Vulnerability Scan resource in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets information about a VulnerabilityScan.
      * 
@@ -1350,6 +1422,8 @@ public final class DblmFunctions {
     /**
      * This data source provides details about a specific Vulnerability Scan resource in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets information about a VulnerabilityScan.
      * 
      * ## Example Usage
@@ -1391,6 +1465,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a list of VulnerabilityScans.
      * 
@@ -1440,6 +1516,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a list of VulnerabilityScans.
      * 
      * ## Example Usage
@@ -1487,6 +1565,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a list of VulnerabilityScans.
      * 
@@ -1536,6 +1616,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a list of VulnerabilityScans.
      * 
      * ## Example Usage
@@ -1583,6 +1665,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a list of VulnerabilityScans.
      * 
@@ -1632,6 +1716,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets a list of VulnerabilityScans.
      * 
      * ## Example Usage
@@ -1679,6 +1765,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Scans in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets a list of VulnerabilityScans.
      * 
@@ -1728,6 +1816,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Vulnerabilities in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the vulnerabilities summary list
      * 
      * ## Example Usage
@@ -1775,6 +1865,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Vulnerabilities in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the vulnerabilities summary list
      * 
@@ -1824,6 +1916,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Vulnerabilities in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the vulnerabilities summary list
      * 
      * ## Example Usage
@@ -1872,6 +1966,8 @@ public final class DblmFunctions {
     /**
      * This data source provides the list of Vulnerability Vulnerabilities in Oracle Cloud Infrastructure Dblm service.
      * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+     * 
      * Gets the vulnerabilities summary list
      * 
      * ## Example Usage
@@ -1919,6 +2015,8 @@ public final class DblmFunctions {
     }
     /**
      * This data source provides the list of Vulnerability Vulnerabilities in Oracle Cloud Infrastructure Dblm service.
+     * 
+     * &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
      * 
      * Gets the vulnerabilities summary list
      * 

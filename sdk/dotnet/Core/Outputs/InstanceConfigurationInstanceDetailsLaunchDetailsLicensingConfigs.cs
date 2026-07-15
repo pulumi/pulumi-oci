@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? LicenseType;
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// Operating System type of the Configuration.
         /// </summary>
         public readonly string Type;
 

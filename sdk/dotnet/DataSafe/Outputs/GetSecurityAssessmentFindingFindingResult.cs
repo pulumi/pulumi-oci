@@ -14,6 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetSecurityAssessmentFindingFindingResult
     {
         public readonly string AssessmentId;
+        public readonly string Category;
         public readonly ImmutableArray<string> Details;
         public readonly string Doclink;
         public readonly bool HasTargetDbRiskLevelChanged;
@@ -37,6 +38,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
         [OutputConstructor]
         private GetSecurityAssessmentFindingFindingResult(
             string assessmentId,
+
+            string category,
 
             ImmutableArray<string> details,
 
@@ -77,6 +80,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string title)
         {
             AssessmentId = assessmentId;
+            Category = category;
             Details = details;
             Doclink = doclink;
             HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;

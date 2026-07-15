@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *     accountStatus: userAssessmentUserAccountStatus,
  *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
+ *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
@@ -53,6 +54,7 @@ export function getUserAssessmentUsers(args: GetUserAssessmentUsersArgs, opts?: 
         "accountStatus": args.accountStatus,
         "areAllSchemasAccessible": args.areAllSchemasAccessible,
         "authenticationType": args.authenticationType,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "schemaLists": args.schemaLists,
@@ -95,6 +97,10 @@ export interface GetUserAssessmentUsersArgs {
      * A filter to return only items that match the specified authentication type.
      */
     authenticationType?: string;
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
+    compartmentId?: string;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
@@ -198,6 +204,7 @@ export interface GetUserAssessmentUsersResult {
      * The user authentication method.
      */
     readonly authenticationType?: string;
+    readonly compartmentId?: string;
     readonly compartmentIdInSubtree?: boolean;
     readonly filters?: outputs.DataSafe.GetUserAssessmentUsersFilter[];
     /**
@@ -261,6 +268,7 @@ export interface GetUserAssessmentUsersResult {
  *     accountStatus: userAssessmentUserAccountStatus,
  *     areAllSchemasAccessible: userAssessmentUserAreAllSchemasAccessible === "true",
  *     authenticationType: userAssessmentUserAuthenticationType,
+ *     compartmentId: compartmentId,
  *     compartmentIdInSubtree: userAssessmentUserCompartmentIdInSubtree === "true",
  *     schemaLists: userAssessmentUserSchemaList,
  *     targetId: testTarget.id,
@@ -288,6 +296,7 @@ export function getUserAssessmentUsersOutput(args: GetUserAssessmentUsersOutputA
         "accountStatus": args.accountStatus,
         "areAllSchemasAccessible": args.areAllSchemasAccessible,
         "authenticationType": args.authenticationType,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "schemaLists": args.schemaLists,
@@ -330,6 +339,10 @@ export interface GetUserAssessmentUsersOutputArgs {
      * A filter to return only items that match the specified authentication type.
      */
     authenticationType?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
+    compartmentId?: pulumi.Input<string | undefined>;
     /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */

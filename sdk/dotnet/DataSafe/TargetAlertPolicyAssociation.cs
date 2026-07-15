@@ -127,6 +127,16 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TargetId { get; private set; } = null!;
 
         /// <summary>
+        /// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("targetType")]
+        public Output<string> TargetType { get; private set; } = null!;
+
+        /// <summary>
         /// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
@@ -244,6 +254,16 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
 
+        /// <summary>
+        /// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
         public TargetAlertPolicyAssociationArgs()
         {
         }
@@ -335,6 +355,16 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         /// <summary>
         /// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

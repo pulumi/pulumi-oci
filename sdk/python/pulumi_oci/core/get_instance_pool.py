@@ -27,7 +27,7 @@ class GetInstancePoolResult:
     """
     A collection of values returned by getInstancePool.
     """
-    def __init__(__self__, actual_size=None, compartment_id=None, current_size=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, size=None, state=None, time_created=None):
+    def __init__(__self__, actual_size=None, compartment_id=None, current_size=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_display_name_formatter=None, instance_hostname_formatter=None, instance_pool_id=None, lifecycle_managements=None, load_balancers=None, placement_configurations=None, pool_type=None, size=None, state=None, time_created=None):
         if actual_size and not isinstance(actual_size, int):
             raise TypeError("Expected argument 'actual_size' to be a int")
         pulumi.set(__self__, "actual_size", actual_size)
@@ -70,6 +70,9 @@ class GetInstancePoolResult:
         if placement_configurations and not isinstance(placement_configurations, list):
             raise TypeError("Expected argument 'placement_configurations' to be a list")
         pulumi.set(__self__, "placement_configurations", placement_configurations)
+        if pool_type and not isinstance(pool_type, str):
+            raise TypeError("Expected argument 'pool_type' to be a str")
+        pulumi.set(__self__, "pool_type", pool_type)
         if size and not isinstance(size, int):
             raise TypeError("Expected argument 'size' to be a int")
         pulumi.set(__self__, "size", size)
@@ -190,6 +193,14 @@ class GetInstancePoolResult:
         return pulumi.get(self, "placement_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="poolType")
+    def pool_type(self) -> _builtins.str:
+        """
+        The type of resources managed by the pool.
+        """
+        return pulumi.get(self, "pool_type")
+
+    @_builtins.property
     @pulumi.getter
     def size(self) -> _builtins.int:
         """
@@ -234,6 +245,7 @@ class AwaitableGetInstancePoolResult(GetInstancePoolResult):
             lifecycle_managements=self.lifecycle_managements,
             load_balancers=self.load_balancers,
             placement_configurations=self.placement_configurations,
+            pool_type=self.pool_type,
             size=self.size,
             state=self.state,
             time_created=self.time_created)
@@ -278,6 +290,7 @@ def get_instance_pool(instance_pool_id: Optional[_builtins.str] = None,
         lifecycle_managements=pulumi.get(__ret__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__ret__, 'load_balancers'),
         placement_configurations=pulumi.get(__ret__, 'placement_configurations'),
+        pool_type=pulumi.get(__ret__, 'pool_type'),
         size=pulumi.get(__ret__, 'size'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
@@ -319,6 +332,7 @@ def get_instance_pool_output(instance_pool_id: pulumi.Input[Optional[_builtins.s
         lifecycle_managements=pulumi.get(__response__, 'lifecycle_managements'),
         load_balancers=pulumi.get(__response__, 'load_balancers'),
         placement_configurations=pulumi.get(__response__, 'placement_configurations'),
+        pool_type=pulumi.get(__response__, 'pool_type'),
         size=pulumi.get(__response__, 'size'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created')))

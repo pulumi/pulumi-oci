@@ -138,6 +138,27 @@ public final class TargetAlertPolicyAssociationArgs extends com.pulumi.resources
         return this.targetId;
     }
 
+    /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
     private TargetAlertPolicyAssociationArgs() {}
 
     private TargetAlertPolicyAssociationArgs(TargetAlertPolicyAssociationArgs $) {
@@ -149,6 +170,7 @@ public final class TargetAlertPolicyAssociationArgs extends com.pulumi.resources
         this.isEnabled = $.isEnabled;
         this.policyId = $.policyId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -335,6 +357,33 @@ public final class TargetAlertPolicyAssociationArgs extends com.pulumi.resources
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         public TargetAlertPolicyAssociationArgs build() {

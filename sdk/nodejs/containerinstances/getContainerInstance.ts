@@ -89,7 +89,7 @@ export interface GetContainerInstanceResult {
      */
     readonly gracefulShutdownTimeoutInSeconds: string;
     /**
-     * An OCID that cannot be changed.
+     * The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
      */
     readonly id: string;
     /**
@@ -100,6 +100,10 @@ export interface GetContainerInstanceResult {
      * A message that describes the current state of the container in more detail. Can be used to provide actionable information.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Security context for all containers in a container instance.
+     */
+    readonly securityContexts: outputs.ContainerInstances.GetContainerInstanceSecurityContext[];
     /**
      * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      */
@@ -116,6 +120,10 @@ export interface GetContainerInstanceResult {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * TenantId id of the container instance.
+     */
+    readonly tenantId: string;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */

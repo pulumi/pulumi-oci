@@ -176,6 +176,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        /// </summary>
+        public readonly bool IsSchedulePaginationEnabled;
+        /// <summary>
         /// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         /// </summary>
         public readonly bool IsSeeded;
@@ -265,6 +269,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool isSchedulePaginationEnabled,
+
             bool isSeeded,
 
             string lifecycleDetails,
@@ -310,6 +316,7 @@ namespace Pulumi.Oci.DataSafe
             DisplayOrder = displayOrder;
             FreeformTags = freeformTags;
             Id = id;
+            IsSchedulePaginationEnabled = isSchedulePaginationEnabled;
             IsSeeded = isSeeded;
             LifecycleDetails = lifecycleDetails;
             ParentId = parentId;

@@ -45,6 +45,10 @@ type Report struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringOutput `pulumi:"mimeType"`
+	// The OCID of the next report generated.
+	NextReportId pulumi.StringOutput `pulumi:"nextReportId"`
+	// The OCID of the previous report generated.
+	PreviousReportId pulumi.StringOutput `pulumi:"previousReportId"`
 	// The OCID of the report definition.
 	ReportDefinitionId pulumi.StringOutput `pulumi:"reportDefinitionId"`
 	// Unique report identifier
@@ -115,6 +119,10 @@ type reportState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType *string `pulumi:"mimeType"`
+	// The OCID of the next report generated.
+	NextReportId *string `pulumi:"nextReportId"`
+	// The OCID of the previous report generated.
+	PreviousReportId *string `pulumi:"previousReportId"`
 	// The OCID of the report definition.
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// Unique report identifier
@@ -153,6 +161,10 @@ type ReportState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringPtrInput
+	// The OCID of the next report generated.
+	NextReportId pulumi.StringPtrInput
+	// The OCID of the previous report generated.
+	PreviousReportId pulumi.StringPtrInput
 	// The OCID of the report definition.
 	ReportDefinitionId pulumi.StringPtrInput
 	// Unique report identifier
@@ -332,6 +344,16 @@ func (o ReportOutput) LifecycleDetails() pulumi.StringOutput {
 // Specifies the format of report to be .xls or .pdf or .json
 func (o ReportOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.MimeType }).(pulumi.StringOutput)
+}
+
+// The OCID of the next report generated.
+func (o ReportOutput) NextReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.NextReportId }).(pulumi.StringOutput)
+}
+
+// The OCID of the previous report generated.
+func (o ReportOutput) PreviousReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.PreviousReportId }).(pulumi.StringOutput)
 }
 
 // The OCID of the report definition.

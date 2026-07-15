@@ -4409,6 +4409,181 @@ func (o ContainerInstanceImagePullSecretArrayOutput) Index(i pulumi.IntInput) Co
 	}).(ContainerInstanceImagePullSecretOutput)
 }
 
+type ContainerInstanceSecurityContext struct {
+	// A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+	FsGroup *int `pulumi:"fsGroup"`
+	// Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+	FsGroupChangePolicy *string `pulumi:"fsGroupChangePolicy"`
+	// The type of security context
+	SecurityContextType *string `pulumi:"securityContextType"`
+}
+
+// ContainerInstanceSecurityContextInput is an input type that accepts ContainerInstanceSecurityContextArgs and ContainerInstanceSecurityContextOutput values.
+// You can construct a concrete instance of `ContainerInstanceSecurityContextInput` via:
+//
+//	ContainerInstanceSecurityContextArgs{...}
+type ContainerInstanceSecurityContextInput interface {
+	pulumi.Input
+
+	ToContainerInstanceSecurityContextOutput() ContainerInstanceSecurityContextOutput
+	ToContainerInstanceSecurityContextOutputWithContext(context.Context) ContainerInstanceSecurityContextOutput
+}
+
+type ContainerInstanceSecurityContextArgs struct {
+	// A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+	FsGroup pulumi.IntPtrInput `pulumi:"fsGroup"`
+	// Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+	FsGroupChangePolicy pulumi.StringPtrInput `pulumi:"fsGroupChangePolicy"`
+	// The type of security context
+	SecurityContextType pulumi.StringPtrInput `pulumi:"securityContextType"`
+}
+
+func (ContainerInstanceSecurityContextArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceSecurityContext)(nil)).Elem()
+}
+
+func (i ContainerInstanceSecurityContextArgs) ToContainerInstanceSecurityContextOutput() ContainerInstanceSecurityContextOutput {
+	return i.ToContainerInstanceSecurityContextOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceSecurityContextArgs) ToContainerInstanceSecurityContextOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceSecurityContextOutput)
+}
+
+func (i ContainerInstanceSecurityContextArgs) ToContainerInstanceSecurityContextPtrOutput() ContainerInstanceSecurityContextPtrOutput {
+	return i.ToContainerInstanceSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceSecurityContextArgs) ToContainerInstanceSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceSecurityContextOutput).ToContainerInstanceSecurityContextPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceSecurityContextPtrInput is an input type that accepts ContainerInstanceSecurityContextArgs, ContainerInstanceSecurityContextPtr and ContainerInstanceSecurityContextPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceSecurityContextPtrInput` via:
+//
+//	        ContainerInstanceSecurityContextArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceSecurityContextPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceSecurityContextPtrOutput() ContainerInstanceSecurityContextPtrOutput
+	ToContainerInstanceSecurityContextPtrOutputWithContext(context.Context) ContainerInstanceSecurityContextPtrOutput
+}
+
+type containerInstanceSecurityContextPtrType ContainerInstanceSecurityContextArgs
+
+func ContainerInstanceSecurityContextPtr(v *ContainerInstanceSecurityContextArgs) ContainerInstanceSecurityContextPtrInput {
+	return (*containerInstanceSecurityContextPtrType)(v)
+}
+
+func (*containerInstanceSecurityContextPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceSecurityContext)(nil)).Elem()
+}
+
+func (i *containerInstanceSecurityContextPtrType) ToContainerInstanceSecurityContextPtrOutput() ContainerInstanceSecurityContextPtrOutput {
+	return i.ToContainerInstanceSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceSecurityContextPtrType) ToContainerInstanceSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceSecurityContextPtrOutput)
+}
+
+type ContainerInstanceSecurityContextOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceSecurityContextOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceSecurityContext)(nil)).Elem()
+}
+
+func (o ContainerInstanceSecurityContextOutput) ToContainerInstanceSecurityContextOutput() ContainerInstanceSecurityContextOutput {
+	return o
+}
+
+func (o ContainerInstanceSecurityContextOutput) ToContainerInstanceSecurityContextOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextOutput {
+	return o
+}
+
+func (o ContainerInstanceSecurityContextOutput) ToContainerInstanceSecurityContextPtrOutput() ContainerInstanceSecurityContextPtrOutput {
+	return o.ToContainerInstanceSecurityContextPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceSecurityContextOutput) ToContainerInstanceSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceSecurityContext) *ContainerInstanceSecurityContext {
+		return &v
+	}).(ContainerInstanceSecurityContextPtrOutput)
+}
+
+// A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+func (o ContainerInstanceSecurityContextOutput) FsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceSecurityContext) *int { return v.FsGroup }).(pulumi.IntPtrOutput)
+}
+
+// Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+func (o ContainerInstanceSecurityContextOutput) FsGroupChangePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceSecurityContext) *string { return v.FsGroupChangePolicy }).(pulumi.StringPtrOutput)
+}
+
+// The type of security context
+func (o ContainerInstanceSecurityContextOutput) SecurityContextType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceSecurityContext) *string { return v.SecurityContextType }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceSecurityContextPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceSecurityContextPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceSecurityContext)(nil)).Elem()
+}
+
+func (o ContainerInstanceSecurityContextPtrOutput) ToContainerInstanceSecurityContextPtrOutput() ContainerInstanceSecurityContextPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceSecurityContextPtrOutput) ToContainerInstanceSecurityContextPtrOutputWithContext(ctx context.Context) ContainerInstanceSecurityContextPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceSecurityContextPtrOutput) Elem() ContainerInstanceSecurityContextOutput {
+	return o.ApplyT(func(v *ContainerInstanceSecurityContext) ContainerInstanceSecurityContext {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceSecurityContext
+		return ret
+	}).(ContainerInstanceSecurityContextOutput)
+}
+
+// A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+func (o ContainerInstanceSecurityContextPtrOutput) FsGroup() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceSecurityContext) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FsGroup
+	}).(pulumi.IntPtrOutput)
+}
+
+// Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+func (o ContainerInstanceSecurityContextPtrOutput) FsGroupChangePolicy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceSecurityContext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FsGroupChangePolicy
+	}).(pulumi.StringPtrOutput)
+}
+
+// The type of security context
+func (o ContainerInstanceSecurityContextPtrOutput) SecurityContextType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceSecurityContext) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityContextType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ContainerInstanceShapeConfig struct {
 	// The total amount of memory available to the container instance (GB).
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
@@ -4786,8 +4961,18 @@ type ContainerInstanceVolume struct {
 	BackingStore *string `pulumi:"backingStore"`
 	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs []ContainerInstanceVolumeConfig `pulumi:"configs"`
+	// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+	Export *ContainerInstanceVolumeExport `pulumi:"export"`
+	// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+	MountCommand *ContainerInstanceVolumeMountCommand `pulumi:"mountCommand"`
+	// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+	MountTarget *ContainerInstanceVolumeMountTarget `pulumi:"mountTarget"`
 	// The name of the volume. This must be unique within a single container instance.
 	Name string `pulumi:"name"`
+	// Security options for Oracle Cloud Infrastructure FSS File System.
+	Security *ContainerInstanceVolumeSecurity `pulumi:"security"`
+	// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+	SubnetId *string `pulumi:"subnetId"`
 	// The type of volume.
 	VolumeType string `pulumi:"volumeType"`
 }
@@ -4808,8 +4993,18 @@ type ContainerInstanceVolumeArgs struct {
 	BackingStore pulumi.StringPtrInput `pulumi:"backingStore"`
 	// Contains key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
 	Configs ContainerInstanceVolumeConfigArrayInput `pulumi:"configs"`
+	// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+	Export ContainerInstanceVolumeExportPtrInput `pulumi:"export"`
+	// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+	MountCommand ContainerInstanceVolumeMountCommandPtrInput `pulumi:"mountCommand"`
+	// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+	MountTarget ContainerInstanceVolumeMountTargetPtrInput `pulumi:"mountTarget"`
 	// The name of the volume. This must be unique within a single container instance.
 	Name pulumi.StringInput `pulumi:"name"`
+	// Security options for Oracle Cloud Infrastructure FSS File System.
+	Security ContainerInstanceVolumeSecurityPtrInput `pulumi:"security"`
+	// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// The type of volume.
 	VolumeType pulumi.StringInput `pulumi:"volumeType"`
 }
@@ -4875,9 +5070,34 @@ func (o ContainerInstanceVolumeOutput) Configs() ContainerInstanceVolumeConfigAr
 	return o.ApplyT(func(v ContainerInstanceVolume) []ContainerInstanceVolumeConfig { return v.Configs }).(ContainerInstanceVolumeConfigArrayOutput)
 }
 
+// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+func (o ContainerInstanceVolumeOutput) Export() ContainerInstanceVolumeExportPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *ContainerInstanceVolumeExport { return v.Export }).(ContainerInstanceVolumeExportPtrOutput)
+}
+
+// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+func (o ContainerInstanceVolumeOutput) MountCommand() ContainerInstanceVolumeMountCommandPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *ContainerInstanceVolumeMountCommand { return v.MountCommand }).(ContainerInstanceVolumeMountCommandPtrOutput)
+}
+
+// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+func (o ContainerInstanceVolumeOutput) MountTarget() ContainerInstanceVolumeMountTargetPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *ContainerInstanceVolumeMountTarget { return v.MountTarget }).(ContainerInstanceVolumeMountTargetPtrOutput)
+}
+
 // The name of the volume. This must be unique within a single container instance.
 func (o ContainerInstanceVolumeOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerInstanceVolume) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Security options for Oracle Cloud Infrastructure FSS File System.
+func (o ContainerInstanceVolumeOutput) Security() ContainerInstanceVolumeSecurityPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *ContainerInstanceVolumeSecurity { return v.Security }).(ContainerInstanceVolumeSecurityPtrOutput)
+}
+
+// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+func (o ContainerInstanceVolumeOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolume) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // The type of volume.
@@ -5018,6 +5238,719 @@ func (o ContainerInstanceVolumeConfigArrayOutput) Index(i pulumi.IntInput) Conta
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVolumeConfig {
 		return vs[0].([]ContainerInstanceVolumeConfig)[vs[1].(int)]
 	}).(ContainerInstanceVolumeConfigOutput)
+}
+
+type ContainerInstanceVolumeExport struct {
+	// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Export.
+	Id string `pulumi:"id"`
+	// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+	OciFssExportType *string `pulumi:"ociFssExportType"`
+}
+
+// ContainerInstanceVolumeExportInput is an input type that accepts ContainerInstanceVolumeExportArgs and ContainerInstanceVolumeExportOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeExportInput` via:
+//
+//	ContainerInstanceVolumeExportArgs{...}
+type ContainerInstanceVolumeExportInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeExportOutput() ContainerInstanceVolumeExportOutput
+	ToContainerInstanceVolumeExportOutputWithContext(context.Context) ContainerInstanceVolumeExportOutput
+}
+
+type ContainerInstanceVolumeExportArgs struct {
+	// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Export.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+	OciFssExportType pulumi.StringPtrInput `pulumi:"ociFssExportType"`
+}
+
+func (ContainerInstanceVolumeExportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeExport)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeExportArgs) ToContainerInstanceVolumeExportOutput() ContainerInstanceVolumeExportOutput {
+	return i.ToContainerInstanceVolumeExportOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeExportArgs) ToContainerInstanceVolumeExportOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeExportOutput)
+}
+
+func (i ContainerInstanceVolumeExportArgs) ToContainerInstanceVolumeExportPtrOutput() ContainerInstanceVolumeExportPtrOutput {
+	return i.ToContainerInstanceVolumeExportPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeExportArgs) ToContainerInstanceVolumeExportPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeExportOutput).ToContainerInstanceVolumeExportPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceVolumeExportPtrInput is an input type that accepts ContainerInstanceVolumeExportArgs, ContainerInstanceVolumeExportPtr and ContainerInstanceVolumeExportPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeExportPtrInput` via:
+//
+//	        ContainerInstanceVolumeExportArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceVolumeExportPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeExportPtrOutput() ContainerInstanceVolumeExportPtrOutput
+	ToContainerInstanceVolumeExportPtrOutputWithContext(context.Context) ContainerInstanceVolumeExportPtrOutput
+}
+
+type containerInstanceVolumeExportPtrType ContainerInstanceVolumeExportArgs
+
+func ContainerInstanceVolumeExportPtr(v *ContainerInstanceVolumeExportArgs) ContainerInstanceVolumeExportPtrInput {
+	return (*containerInstanceVolumeExportPtrType)(v)
+}
+
+func (*containerInstanceVolumeExportPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeExport)(nil)).Elem()
+}
+
+func (i *containerInstanceVolumeExportPtrType) ToContainerInstanceVolumeExportPtrOutput() ContainerInstanceVolumeExportPtrOutput {
+	return i.ToContainerInstanceVolumeExportPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceVolumeExportPtrType) ToContainerInstanceVolumeExportPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeExportPtrOutput)
+}
+
+type ContainerInstanceVolumeExportOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeExportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeExport)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeExportOutput) ToContainerInstanceVolumeExportOutput() ContainerInstanceVolumeExportOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeExportOutput) ToContainerInstanceVolumeExportOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeExportOutput) ToContainerInstanceVolumeExportPtrOutput() ContainerInstanceVolumeExportPtrOutput {
+	return o.ToContainerInstanceVolumeExportPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceVolumeExportOutput) ToContainerInstanceVolumeExportPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceVolumeExport) *ContainerInstanceVolumeExport {
+		return &v
+	}).(ContainerInstanceVolumeExportPtrOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Export.
+func (o ContainerInstanceVolumeExportOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeExport) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+func (o ContainerInstanceVolumeExportOutput) OciFssExportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeExport) *string { return v.OciFssExportType }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeExportPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeExportPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeExport)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeExportPtrOutput) ToContainerInstanceVolumeExportPtrOutput() ContainerInstanceVolumeExportPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeExportPtrOutput) ToContainerInstanceVolumeExportPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeExportPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeExportPtrOutput) Elem() ContainerInstanceVolumeExportOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeExport) ContainerInstanceVolumeExport {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceVolumeExport
+		return ret
+	}).(ContainerInstanceVolumeExportOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Export.
+func (o ContainerInstanceVolumeExportPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeExport) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+func (o ContainerInstanceVolumeExportPtrOutput) OciFssExportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeExport) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OciFssExportType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeMountCommand struct {
+	// List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+	MountOptions []ContainerInstanceVolumeMountCommandMountOption `pulumi:"mountOptions"`
+}
+
+// ContainerInstanceVolumeMountCommandInput is an input type that accepts ContainerInstanceVolumeMountCommandArgs and ContainerInstanceVolumeMountCommandOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountCommandInput` via:
+//
+//	ContainerInstanceVolumeMountCommandArgs{...}
+type ContainerInstanceVolumeMountCommandInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountCommandOutput() ContainerInstanceVolumeMountCommandOutput
+	ToContainerInstanceVolumeMountCommandOutputWithContext(context.Context) ContainerInstanceVolumeMountCommandOutput
+}
+
+type ContainerInstanceVolumeMountCommandArgs struct {
+	// List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+	MountOptions ContainerInstanceVolumeMountCommandMountOptionArrayInput `pulumi:"mountOptions"`
+}
+
+func (ContainerInstanceVolumeMountCommandArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountCommand)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeMountCommandArgs) ToContainerInstanceVolumeMountCommandOutput() ContainerInstanceVolumeMountCommandOutput {
+	return i.ToContainerInstanceVolumeMountCommandOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountCommandArgs) ToContainerInstanceVolumeMountCommandOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountCommandOutput)
+}
+
+func (i ContainerInstanceVolumeMountCommandArgs) ToContainerInstanceVolumeMountCommandPtrOutput() ContainerInstanceVolumeMountCommandPtrOutput {
+	return i.ToContainerInstanceVolumeMountCommandPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountCommandArgs) ToContainerInstanceVolumeMountCommandPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountCommandOutput).ToContainerInstanceVolumeMountCommandPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceVolumeMountCommandPtrInput is an input type that accepts ContainerInstanceVolumeMountCommandArgs, ContainerInstanceVolumeMountCommandPtr and ContainerInstanceVolumeMountCommandPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountCommandPtrInput` via:
+//
+//	        ContainerInstanceVolumeMountCommandArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceVolumeMountCommandPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountCommandPtrOutput() ContainerInstanceVolumeMountCommandPtrOutput
+	ToContainerInstanceVolumeMountCommandPtrOutputWithContext(context.Context) ContainerInstanceVolumeMountCommandPtrOutput
+}
+
+type containerInstanceVolumeMountCommandPtrType ContainerInstanceVolumeMountCommandArgs
+
+func ContainerInstanceVolumeMountCommandPtr(v *ContainerInstanceVolumeMountCommandArgs) ContainerInstanceVolumeMountCommandPtrInput {
+	return (*containerInstanceVolumeMountCommandPtrType)(v)
+}
+
+func (*containerInstanceVolumeMountCommandPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeMountCommand)(nil)).Elem()
+}
+
+func (i *containerInstanceVolumeMountCommandPtrType) ToContainerInstanceVolumeMountCommandPtrOutput() ContainerInstanceVolumeMountCommandPtrOutput {
+	return i.ToContainerInstanceVolumeMountCommandPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceVolumeMountCommandPtrType) ToContainerInstanceVolumeMountCommandPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountCommandPtrOutput)
+}
+
+type ContainerInstanceVolumeMountCommandOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountCommandOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountCommand)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountCommandOutput) ToContainerInstanceVolumeMountCommandOutput() ContainerInstanceVolumeMountCommandOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandOutput) ToContainerInstanceVolumeMountCommandOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandOutput) ToContainerInstanceVolumeMountCommandPtrOutput() ContainerInstanceVolumeMountCommandPtrOutput {
+	return o.ToContainerInstanceVolumeMountCommandPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceVolumeMountCommandOutput) ToContainerInstanceVolumeMountCommandPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceVolumeMountCommand) *ContainerInstanceVolumeMountCommand {
+		return &v
+	}).(ContainerInstanceVolumeMountCommandPtrOutput)
+}
+
+// List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+func (o ContainerInstanceVolumeMountCommandOutput) MountOptions() ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeMountCommand) []ContainerInstanceVolumeMountCommandMountOption {
+		return v.MountOptions
+	}).(ContainerInstanceVolumeMountCommandMountOptionArrayOutput)
+}
+
+type ContainerInstanceVolumeMountCommandPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountCommandPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeMountCommand)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountCommandPtrOutput) ToContainerInstanceVolumeMountCommandPtrOutput() ContainerInstanceVolumeMountCommandPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandPtrOutput) ToContainerInstanceVolumeMountCommandPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandPtrOutput) Elem() ContainerInstanceVolumeMountCommandOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeMountCommand) ContainerInstanceVolumeMountCommand {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceVolumeMountCommand
+		return ret
+	}).(ContainerInstanceVolumeMountCommandOutput)
+}
+
+// List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+func (o ContainerInstanceVolumeMountCommandPtrOutput) MountOptions() ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeMountCommand) []ContainerInstanceVolumeMountCommandMountOption {
+		if v == nil {
+			return nil
+		}
+		return v.MountOptions
+	}).(ContainerInstanceVolumeMountCommandMountOptionArrayOutput)
+}
+
+type ContainerInstanceVolumeMountCommandMountOption struct {
+	// A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+	Option *string `pulumi:"option"`
+	// The value of the mount option.
+	Value *string `pulumi:"value"`
+}
+
+// ContainerInstanceVolumeMountCommandMountOptionInput is an input type that accepts ContainerInstanceVolumeMountCommandMountOptionArgs and ContainerInstanceVolumeMountCommandMountOptionOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountCommandMountOptionInput` via:
+//
+//	ContainerInstanceVolumeMountCommandMountOptionArgs{...}
+type ContainerInstanceVolumeMountCommandMountOptionInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountCommandMountOptionOutput() ContainerInstanceVolumeMountCommandMountOptionOutput
+	ToContainerInstanceVolumeMountCommandMountOptionOutputWithContext(context.Context) ContainerInstanceVolumeMountCommandMountOptionOutput
+}
+
+type ContainerInstanceVolumeMountCommandMountOptionArgs struct {
+	// A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+	Option pulumi.StringPtrInput `pulumi:"option"`
+	// The value of the mount option.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ContainerInstanceVolumeMountCommandMountOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountCommandMountOption)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeMountCommandMountOptionArgs) ToContainerInstanceVolumeMountCommandMountOptionOutput() ContainerInstanceVolumeMountCommandMountOptionOutput {
+	return i.ToContainerInstanceVolumeMountCommandMountOptionOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountCommandMountOptionArgs) ToContainerInstanceVolumeMountCommandMountOptionOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandMountOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountCommandMountOptionOutput)
+}
+
+// ContainerInstanceVolumeMountCommandMountOptionArrayInput is an input type that accepts ContainerInstanceVolumeMountCommandMountOptionArray and ContainerInstanceVolumeMountCommandMountOptionArrayOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountCommandMountOptionArrayInput` via:
+//
+//	ContainerInstanceVolumeMountCommandMountOptionArray{ ContainerInstanceVolumeMountCommandMountOptionArgs{...} }
+type ContainerInstanceVolumeMountCommandMountOptionArrayInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountCommandMountOptionArrayOutput() ContainerInstanceVolumeMountCommandMountOptionArrayOutput
+	ToContainerInstanceVolumeMountCommandMountOptionArrayOutputWithContext(context.Context) ContainerInstanceVolumeMountCommandMountOptionArrayOutput
+}
+
+type ContainerInstanceVolumeMountCommandMountOptionArray []ContainerInstanceVolumeMountCommandMountOptionInput
+
+func (ContainerInstanceVolumeMountCommandMountOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolumeMountCommandMountOption)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeMountCommandMountOptionArray) ToContainerInstanceVolumeMountCommandMountOptionArrayOutput() ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return i.ToContainerInstanceVolumeMountCommandMountOptionArrayOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountCommandMountOptionArray) ToContainerInstanceVolumeMountCommandMountOptionArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountCommandMountOptionArrayOutput)
+}
+
+type ContainerInstanceVolumeMountCommandMountOptionOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountCommandMountOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountCommandMountOption)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountCommandMountOptionOutput) ToContainerInstanceVolumeMountCommandMountOptionOutput() ContainerInstanceVolumeMountCommandMountOptionOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandMountOptionOutput) ToContainerInstanceVolumeMountCommandMountOptionOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandMountOptionOutput {
+	return o
+}
+
+// A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+func (o ContainerInstanceVolumeMountCommandMountOptionOutput) Option() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeMountCommandMountOption) *string { return v.Option }).(pulumi.StringPtrOutput)
+}
+
+// The value of the mount option.
+func (o ContainerInstanceVolumeMountCommandMountOptionOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeMountCommandMountOption) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeMountCommandMountOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountCommandMountOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ContainerInstanceVolumeMountCommandMountOption)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountCommandMountOptionArrayOutput) ToContainerInstanceVolumeMountCommandMountOptionArrayOutput() ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandMountOptionArrayOutput) ToContainerInstanceVolumeMountCommandMountOptionArrayOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountCommandMountOptionArrayOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountCommandMountOptionArrayOutput) Index(i pulumi.IntInput) ContainerInstanceVolumeMountCommandMountOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ContainerInstanceVolumeMountCommandMountOption {
+		return vs[0].([]ContainerInstanceVolumeMountCommandMountOption)[vs[1].(int)]
+	}).(ContainerInstanceVolumeMountCommandMountOptionOutput)
+}
+
+type ContainerInstanceVolumeMountTarget struct {
+	// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+	Id string `pulumi:"id"`
+	// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+	OciFssMountTargetType *string `pulumi:"ociFssMountTargetType"`
+}
+
+// ContainerInstanceVolumeMountTargetInput is an input type that accepts ContainerInstanceVolumeMountTargetArgs and ContainerInstanceVolumeMountTargetOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountTargetInput` via:
+//
+//	ContainerInstanceVolumeMountTargetArgs{...}
+type ContainerInstanceVolumeMountTargetInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountTargetOutput() ContainerInstanceVolumeMountTargetOutput
+	ToContainerInstanceVolumeMountTargetOutputWithContext(context.Context) ContainerInstanceVolumeMountTargetOutput
+}
+
+type ContainerInstanceVolumeMountTargetArgs struct {
+	// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+	OciFssMountTargetType pulumi.StringPtrInput `pulumi:"ociFssMountTargetType"`
+}
+
+func (ContainerInstanceVolumeMountTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountTarget)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeMountTargetArgs) ToContainerInstanceVolumeMountTargetOutput() ContainerInstanceVolumeMountTargetOutput {
+	return i.ToContainerInstanceVolumeMountTargetOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountTargetArgs) ToContainerInstanceVolumeMountTargetOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountTargetOutput)
+}
+
+func (i ContainerInstanceVolumeMountTargetArgs) ToContainerInstanceVolumeMountTargetPtrOutput() ContainerInstanceVolumeMountTargetPtrOutput {
+	return i.ToContainerInstanceVolumeMountTargetPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeMountTargetArgs) ToContainerInstanceVolumeMountTargetPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountTargetOutput).ToContainerInstanceVolumeMountTargetPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceVolumeMountTargetPtrInput is an input type that accepts ContainerInstanceVolumeMountTargetArgs, ContainerInstanceVolumeMountTargetPtr and ContainerInstanceVolumeMountTargetPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeMountTargetPtrInput` via:
+//
+//	        ContainerInstanceVolumeMountTargetArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceVolumeMountTargetPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeMountTargetPtrOutput() ContainerInstanceVolumeMountTargetPtrOutput
+	ToContainerInstanceVolumeMountTargetPtrOutputWithContext(context.Context) ContainerInstanceVolumeMountTargetPtrOutput
+}
+
+type containerInstanceVolumeMountTargetPtrType ContainerInstanceVolumeMountTargetArgs
+
+func ContainerInstanceVolumeMountTargetPtr(v *ContainerInstanceVolumeMountTargetArgs) ContainerInstanceVolumeMountTargetPtrInput {
+	return (*containerInstanceVolumeMountTargetPtrType)(v)
+}
+
+func (*containerInstanceVolumeMountTargetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeMountTarget)(nil)).Elem()
+}
+
+func (i *containerInstanceVolumeMountTargetPtrType) ToContainerInstanceVolumeMountTargetPtrOutput() ContainerInstanceVolumeMountTargetPtrOutput {
+	return i.ToContainerInstanceVolumeMountTargetPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceVolumeMountTargetPtrType) ToContainerInstanceVolumeMountTargetPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeMountTargetPtrOutput)
+}
+
+type ContainerInstanceVolumeMountTargetOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeMountTarget)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountTargetOutput) ToContainerInstanceVolumeMountTargetOutput() ContainerInstanceVolumeMountTargetOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountTargetOutput) ToContainerInstanceVolumeMountTargetOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountTargetOutput) ToContainerInstanceVolumeMountTargetPtrOutput() ContainerInstanceVolumeMountTargetPtrOutput {
+	return o.ToContainerInstanceVolumeMountTargetPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceVolumeMountTargetOutput) ToContainerInstanceVolumeMountTargetPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceVolumeMountTarget) *ContainerInstanceVolumeMountTarget {
+		return &v
+	}).(ContainerInstanceVolumeMountTargetPtrOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+func (o ContainerInstanceVolumeMountTargetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeMountTarget) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+func (o ContainerInstanceVolumeMountTargetOutput) OciFssMountTargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeMountTarget) *string { return v.OciFssMountTargetType }).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeMountTargetPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeMountTargetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeMountTarget)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeMountTargetPtrOutput) ToContainerInstanceVolumeMountTargetPtrOutput() ContainerInstanceVolumeMountTargetPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountTargetPtrOutput) ToContainerInstanceVolumeMountTargetPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeMountTargetPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeMountTargetPtrOutput) Elem() ContainerInstanceVolumeMountTargetOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeMountTarget) ContainerInstanceVolumeMountTarget {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceVolumeMountTarget
+		return ret
+	}).(ContainerInstanceVolumeMountTargetOutput)
+}
+
+// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+func (o ContainerInstanceVolumeMountTargetPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeMountTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+func (o ContainerInstanceVolumeMountTargetPtrOutput) OciFssMountTargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeMountTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OciFssMountTargetType
+	}).(pulumi.StringPtrOutput)
+}
+
+type ContainerInstanceVolumeSecurity struct {
+	// NFS authentication type to be used. Currently, only auth type SYS is supported.
+	Auth *string `pulumi:"auth"`
+	// Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+	IsEncryptedInTransit *bool `pulumi:"isEncryptedInTransit"`
+}
+
+// ContainerInstanceVolumeSecurityInput is an input type that accepts ContainerInstanceVolumeSecurityArgs and ContainerInstanceVolumeSecurityOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeSecurityInput` via:
+//
+//	ContainerInstanceVolumeSecurityArgs{...}
+type ContainerInstanceVolumeSecurityInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeSecurityOutput() ContainerInstanceVolumeSecurityOutput
+	ToContainerInstanceVolumeSecurityOutputWithContext(context.Context) ContainerInstanceVolumeSecurityOutput
+}
+
+type ContainerInstanceVolumeSecurityArgs struct {
+	// NFS authentication type to be used. Currently, only auth type SYS is supported.
+	Auth pulumi.StringPtrInput `pulumi:"auth"`
+	// Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+	IsEncryptedInTransit pulumi.BoolPtrInput `pulumi:"isEncryptedInTransit"`
+}
+
+func (ContainerInstanceVolumeSecurityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeSecurity)(nil)).Elem()
+}
+
+func (i ContainerInstanceVolumeSecurityArgs) ToContainerInstanceVolumeSecurityOutput() ContainerInstanceVolumeSecurityOutput {
+	return i.ToContainerInstanceVolumeSecurityOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeSecurityArgs) ToContainerInstanceVolumeSecurityOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeSecurityOutput)
+}
+
+func (i ContainerInstanceVolumeSecurityArgs) ToContainerInstanceVolumeSecurityPtrOutput() ContainerInstanceVolumeSecurityPtrOutput {
+	return i.ToContainerInstanceVolumeSecurityPtrOutputWithContext(context.Background())
+}
+
+func (i ContainerInstanceVolumeSecurityArgs) ToContainerInstanceVolumeSecurityPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeSecurityOutput).ToContainerInstanceVolumeSecurityPtrOutputWithContext(ctx)
+}
+
+// ContainerInstanceVolumeSecurityPtrInput is an input type that accepts ContainerInstanceVolumeSecurityArgs, ContainerInstanceVolumeSecurityPtr and ContainerInstanceVolumeSecurityPtrOutput values.
+// You can construct a concrete instance of `ContainerInstanceVolumeSecurityPtrInput` via:
+//
+//	        ContainerInstanceVolumeSecurityArgs{...}
+//
+//	or:
+//
+//	        nil
+type ContainerInstanceVolumeSecurityPtrInput interface {
+	pulumi.Input
+
+	ToContainerInstanceVolumeSecurityPtrOutput() ContainerInstanceVolumeSecurityPtrOutput
+	ToContainerInstanceVolumeSecurityPtrOutputWithContext(context.Context) ContainerInstanceVolumeSecurityPtrOutput
+}
+
+type containerInstanceVolumeSecurityPtrType ContainerInstanceVolumeSecurityArgs
+
+func ContainerInstanceVolumeSecurityPtr(v *ContainerInstanceVolumeSecurityArgs) ContainerInstanceVolumeSecurityPtrInput {
+	return (*containerInstanceVolumeSecurityPtrType)(v)
+}
+
+func (*containerInstanceVolumeSecurityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeSecurity)(nil)).Elem()
+}
+
+func (i *containerInstanceVolumeSecurityPtrType) ToContainerInstanceVolumeSecurityPtrOutput() ContainerInstanceVolumeSecurityPtrOutput {
+	return i.ToContainerInstanceVolumeSecurityPtrOutputWithContext(context.Background())
+}
+
+func (i *containerInstanceVolumeSecurityPtrType) ToContainerInstanceVolumeSecurityPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ContainerInstanceVolumeSecurityPtrOutput)
+}
+
+type ContainerInstanceVolumeSecurityOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeSecurityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ContainerInstanceVolumeSecurity)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeSecurityOutput) ToContainerInstanceVolumeSecurityOutput() ContainerInstanceVolumeSecurityOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeSecurityOutput) ToContainerInstanceVolumeSecurityOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeSecurityOutput) ToContainerInstanceVolumeSecurityPtrOutput() ContainerInstanceVolumeSecurityPtrOutput {
+	return o.ToContainerInstanceVolumeSecurityPtrOutputWithContext(context.Background())
+}
+
+func (o ContainerInstanceVolumeSecurityOutput) ToContainerInstanceVolumeSecurityPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerInstanceVolumeSecurity) *ContainerInstanceVolumeSecurity {
+		return &v
+	}).(ContainerInstanceVolumeSecurityPtrOutput)
+}
+
+// NFS authentication type to be used. Currently, only auth type SYS is supported.
+func (o ContainerInstanceVolumeSecurityOutput) Auth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeSecurity) *string { return v.Auth }).(pulumi.StringPtrOutput)
+}
+
+// Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+func (o ContainerInstanceVolumeSecurityOutput) IsEncryptedInTransit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ContainerInstanceVolumeSecurity) *bool { return v.IsEncryptedInTransit }).(pulumi.BoolPtrOutput)
+}
+
+type ContainerInstanceVolumeSecurityPtrOutput struct{ *pulumi.OutputState }
+
+func (ContainerInstanceVolumeSecurityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ContainerInstanceVolumeSecurity)(nil)).Elem()
+}
+
+func (o ContainerInstanceVolumeSecurityPtrOutput) ToContainerInstanceVolumeSecurityPtrOutput() ContainerInstanceVolumeSecurityPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeSecurityPtrOutput) ToContainerInstanceVolumeSecurityPtrOutputWithContext(ctx context.Context) ContainerInstanceVolumeSecurityPtrOutput {
+	return o
+}
+
+func (o ContainerInstanceVolumeSecurityPtrOutput) Elem() ContainerInstanceVolumeSecurityOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeSecurity) ContainerInstanceVolumeSecurity {
+		if v != nil {
+			return *v
+		}
+		var ret ContainerInstanceVolumeSecurity
+		return ret
+	}).(ContainerInstanceVolumeSecurityOutput)
+}
+
+// NFS authentication type to be used. Currently, only auth type SYS is supported.
+func (o ContainerInstanceVolumeSecurityPtrOutput) Auth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeSecurity) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Auth
+	}).(pulumi.StringPtrOutput)
+}
+
+// Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+func (o ContainerInstanceVolumeSecurityPtrOutput) IsEncryptedInTransit() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ContainerInstanceVolumeSecurity) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEncryptedInTransit
+	}).(pulumi.BoolPtrOutput)
 }
 
 type NodePoolInitialNodeLabel struct {
@@ -22545,6 +23478,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceDnsConfigPtrInput)(nil)).Elem(), ContainerInstanceDnsConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceImagePullSecretInput)(nil)).Elem(), ContainerInstanceImagePullSecretArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceImagePullSecretArrayInput)(nil)).Elem(), ContainerInstanceImagePullSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceSecurityContextInput)(nil)).Elem(), ContainerInstanceSecurityContextArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceSecurityContextPtrInput)(nil)).Elem(), ContainerInstanceSecurityContextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceShapeConfigInput)(nil)).Elem(), ContainerInstanceShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceShapeConfigPtrInput)(nil)).Elem(), ContainerInstanceShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVnicInput)(nil)).Elem(), ContainerInstanceVnicArgs{})
@@ -22553,6 +23488,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeArrayInput)(nil)).Elem(), ContainerInstanceVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeConfigInput)(nil)).Elem(), ContainerInstanceVolumeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeConfigArrayInput)(nil)).Elem(), ContainerInstanceVolumeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeExportInput)(nil)).Elem(), ContainerInstanceVolumeExportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeExportPtrInput)(nil)).Elem(), ContainerInstanceVolumeExportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountCommandInput)(nil)).Elem(), ContainerInstanceVolumeMountCommandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountCommandPtrInput)(nil)).Elem(), ContainerInstanceVolumeMountCommandArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountCommandMountOptionInput)(nil)).Elem(), ContainerInstanceVolumeMountCommandMountOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountCommandMountOptionArrayInput)(nil)).Elem(), ContainerInstanceVolumeMountCommandMountOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountTargetInput)(nil)).Elem(), ContainerInstanceVolumeMountTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeMountTargetPtrInput)(nil)).Elem(), ContainerInstanceVolumeMountTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeSecurityInput)(nil)).Elem(), ContainerInstanceVolumeSecurityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ContainerInstanceVolumeSecurityPtrInput)(nil)).Elem(), ContainerInstanceVolumeSecurityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolInitialNodeLabelInput)(nil)).Elem(), NodePoolInitialNodeLabelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolInitialNodeLabelArrayInput)(nil)).Elem(), NodePoolInitialNodeLabelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodePoolNodeInput)(nil)).Elem(), NodePoolNodeArgs{})
@@ -22868,6 +23813,8 @@ func init() {
 	pulumi.RegisterOutputType(ContainerInstanceDnsConfigPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceImagePullSecretOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceImagePullSecretArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceSecurityContextOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceSecurityContextPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceShapeConfigOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceVnicOutput{})
@@ -22876,6 +23823,16 @@ func init() {
 	pulumi.RegisterOutputType(ContainerInstanceVolumeArrayOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceVolumeConfigOutput{})
 	pulumi.RegisterOutputType(ContainerInstanceVolumeConfigArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeExportOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeExportPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountCommandOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountCommandPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountCommandMountOptionOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountCommandMountOptionArrayOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountTargetOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeMountTargetPtrOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeSecurityOutput{})
+	pulumi.RegisterOutputType(ContainerInstanceVolumeSecurityPtrOutput{})
 	pulumi.RegisterOutputType(NodePoolInitialNodeLabelOutput{})
 	pulumi.RegisterOutputType(NodePoolInitialNodeLabelArrayOutput{})
 	pulumi.RegisterOutputType(NodePoolNodeOutput{})

@@ -79,6 +79,21 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
     }
 
     /**
+     * A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
      * 
      */
@@ -384,6 +399,7 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
         this.accountStatus = $.accountStatus;
         this.areAllSchemasAccessible = $.areAllSchemasAccessible;
         this.authenticationType = $.authenticationType;
+        this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.schemaLists = $.schemaLists;
@@ -464,6 +480,17 @@ public final class GetUserAssessmentUsersPlainArgs extends com.pulumi.resources.
          */
         public Builder authenticationType(@Nullable String authenticationType) {
             $.authenticationType = authenticationType;
+            return this;
+        }
+
+        /**
+         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
             return this;
         }
 

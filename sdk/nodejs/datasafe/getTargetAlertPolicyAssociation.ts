@@ -87,9 +87,13 @@ export interface GetTargetAlertPolicyAssociationResult {
     readonly systemTags: {[key: string]: string};
     readonly targetAlertPolicyAssociationId: string;
     /**
-     * The OCID of the target on which alert policy is to be applied.
+     * The OCID of the target or target database group on which alert policy is to be applied.
      */
     readonly targetId: string;
+    /**
+     * The resource type that is represented by the target alert policy association.
+     */
+    readonly targetType: string;
     /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */

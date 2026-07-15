@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceImagePullSecretArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceSecurityContextArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVnicArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeArgs;
@@ -220,6 +221,21 @@ public final class ContainerInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * Security context for all containers in a container instance.
+     * 
+     */
+    @Import(name="securityContext")
+    private @Nullable Output<ContainerInstanceSecurityContextArgs> securityContext;
+
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    public Optional<Output<ContainerInstanceSecurityContextArgs>> securityContext() {
+        return Optional.ofNullable(this.securityContext);
+    }
+
+    /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
@@ -283,6 +299,21 @@ public final class ContainerInstanceState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
+     * TenantId id of the container instance.
+     * 
+     */
+    @Import(name="tenantId")
+    private @Nullable Output<String> tenantId;
+
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    public Optional<Output<String>> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
 
     /**
@@ -380,10 +411,12 @@ public final class ContainerInstanceState extends com.pulumi.resources.ResourceA
         this.gracefulShutdownTimeoutInSeconds = $.gracefulShutdownTimeoutInSeconds;
         this.imagePullSecrets = $.imagePullSecrets;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.securityContext = $.securityContext;
         this.shape = $.shape;
         this.shapeConfig = $.shapeConfig;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.tenantId = $.tenantId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.vnics = $.vnics;
@@ -703,6 +736,27 @@ public final class ContainerInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param securityContext Security context for all containers in a container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(@Nullable Output<ContainerInstanceSecurityContextArgs> securityContext) {
+            $.securityContext = securityContext;
+            return this;
+        }
+
+        /**
+         * @param securityContext Security context for all containers in a container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(ContainerInstanceSecurityContextArgs securityContext) {
+            return securityContext(Output.of(securityContext));
+        }
+
+        /**
          * @param shape The shape of the container instance. The shape determines the resources available to the container instance.
          * 
          * @return builder
@@ -790,6 +844,27 @@ public final class ContainerInstanceState extends com.pulumi.resources.ResourceA
          */
         public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param tenantId TenantId id of the container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenantId(@Nullable Output<String> tenantId) {
+            $.tenantId = tenantId;
+            return this;
+        }
+
+        /**
+         * @param tenantId TenantId id of the container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tenantId(String tenantId) {
+            return tenantId(Output.of(tenantId));
         }
 
         /**

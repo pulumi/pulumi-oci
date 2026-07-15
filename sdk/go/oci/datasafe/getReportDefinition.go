@@ -84,6 +84,8 @@ type LookupReportDefinitionResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the report definition.
 	Id string `pulumi:"id"`
+	// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+	IsSchedulePaginationEnabled bool `pulumi:"isSchedulePaginationEnabled"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded bool `pulumi:"isSeeded"`
 	// Details about the current state of the report definition in Data Safe.
@@ -214,6 +216,11 @@ func (o LookupReportDefinitionResultOutput) FreeformTags() pulumi.StringMapOutpu
 // The OCID of the report definition.
 func (o LookupReportDefinitionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+func (o LookupReportDefinitionResultOutput) IsSchedulePaginationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) bool { return v.IsSchedulePaginationEnabled }).(pulumi.BoolOutput)
 }
 
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.

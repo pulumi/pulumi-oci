@@ -149,6 +149,12 @@ namespace Pulumi.Oci.ContainerEngine
     ///                 Username = containerInstanceImagePullSecretsUsername,
     ///             },
     ///         },
+    ///         SecurityContext = new Oci.ContainerEngine.Inputs.ContainerInstanceSecurityContextArgs
+    ///         {
+    ///             FsGroup = containerInstanceSecurityContextFsGroup,
+    ///             FsGroupChangePolicy = containerInstanceSecurityContextFsGroupChangePolicy,
+    ///             SecurityContextType = containerInstanceSecurityContextSecurityContextType,
+    ///         },
     ///         Volumes = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeArgs
@@ -165,6 +171,33 @@ namespace Pulumi.Oci.ContainerEngine
     ///                         Path = containerInstanceVolumesConfigsPath,
     ///                     },
     ///                 },
+    ///                 Export = new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeExportArgs
+    ///                 {
+    ///                     Id = containerInstanceVolumesExportId,
+    ///                     OciFssExportType = containerInstanceVolumesExportOciFssExportType,
+    ///                 },
+    ///                 MountCommand = new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeMountCommandArgs
+    ///                 {
+    ///                     MountOptions = new[]
+    ///                     {
+    ///                         new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeMountCommandMountOptionArgs
+    ///                         {
+    ///                             Option = containerInstanceVolumesMountCommandMountOptionsOption,
+    ///                             Value = containerInstanceVolumesMountCommandMountOptionsValue,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///                 MountTarget = new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeMountTargetArgs
+    ///                 {
+    ///                     Id = containerInstanceVolumesMountTargetId,
+    ///                     OciFssMountTargetType = containerInstanceVolumesMountTargetOciFssMountTargetType,
+    ///                 },
+    ///                 Security = new Oci.ContainerEngine.Inputs.ContainerInstanceVolumeSecurityArgs
+    ///                 {
+    ///                     Auth = containerInstanceVolumesSecurityAuth,
+    ///                     IsEncryptedInTransit = containerInstanceVolumesSecurityIsEncryptedInTransit,
+    ///                 },
+    ///                 SubnetId = testSubnet.Id,
     ///             },
     ///         },
     ///     });
@@ -262,6 +295,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Security context for all containers in a container instance.
+        /// </summary>
+        [Output("securityContext")]
+        public Output<Outputs.ContainerInstanceSecurityContext> SecurityContext { get; private set; } = null!;
+
+        /// <summary>
         /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Output("shape")]
@@ -288,6 +327,12 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// TenantId id of the container instance.
+        /// </summary>
+        [Output("tenantId")]
+        public Output<string> TenantId { get; private set; } = null!;
 
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -458,6 +503,12 @@ namespace Pulumi.Oci.ContainerEngine
         }
 
         /// <summary>
+        /// Security context for all containers in a container instance.
+        /// </summary>
+        [Input("securityContext")]
+        public Input<Inputs.ContainerInstanceSecurityContextArgs>? SecurityContext { get; set; }
+
+        /// <summary>
         /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Input("shape", required: true)]
@@ -616,6 +667,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// Security context for all containers in a container instance.
+        /// </summary>
+        [Input("securityContext")]
+        public Input<Inputs.ContainerInstanceSecurityContextGetArgs>? SecurityContext { get; set; }
+
+        /// <summary>
         /// The shape of the container instance. The shape determines the resources available to the container instance.
         /// </summary>
         [Input("shape")]
@@ -648,6 +705,12 @@ namespace Pulumi.Oci.ContainerEngine
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// TenantId id of the container instance.
+        /// </summary>
+        [Input("tenantId")]
+        public Input<string>? TenantId { get; set; }
 
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

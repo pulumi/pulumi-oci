@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceContainerArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceImagePullSecretArgs;
+import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceSecurityContextArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceShapeConfigArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVnicArgs;
 import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeArgs;
@@ -190,6 +191,21 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Security context for all containers in a container instance.
+     * 
+     */
+    @Import(name="securityContext")
+    private @Nullable Output<ContainerInstanceSecurityContextArgs> securityContext;
+
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    public Optional<Output<ContainerInstanceSecurityContextArgs>> securityContext() {
+        return Optional.ofNullable(this.securityContext);
+    }
+
+    /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
@@ -288,6 +304,7 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
         this.freeformTags = $.freeformTags;
         this.gracefulShutdownTimeoutInSeconds = $.gracefulShutdownTimeoutInSeconds;
         this.imagePullSecrets = $.imagePullSecrets;
+        this.securityContext = $.securityContext;
         this.shape = $.shape;
         this.shapeConfig = $.shapeConfig;
         this.state = $.state;
@@ -562,6 +579,27 @@ public final class ContainerInstanceArgs extends com.pulumi.resources.ResourceAr
          */
         public Builder imagePullSecrets(ContainerInstanceImagePullSecretArgs... imagePullSecrets) {
             return imagePullSecrets(List.of(imagePullSecrets));
+        }
+
+        /**
+         * @param securityContext Security context for all containers in a container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(@Nullable Output<ContainerInstanceSecurityContextArgs> securityContext) {
+            $.securityContext = securityContext;
+            return this;
+        }
+
+        /**
+         * @param securityContext Security context for all containers in a container instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityContext(ContainerInstanceSecurityContextArgs securityContext) {
+            return securityContext(Output.of(securityContext));
         }
 
         /**

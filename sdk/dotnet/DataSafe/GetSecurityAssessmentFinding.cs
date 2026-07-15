@@ -36,6 +36,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
 
+        [Input("containsOracleDefinedSeverities")]
+        private List<string>? _containsOracleDefinedSeverities;
+        public List<string> ContainsOracleDefinedSeverities
+        {
+            get => _containsOracleDefinedSeverities ?? (_containsOracleDefinedSeverities = new List<string>());
+            set => _containsOracleDefinedSeverities = value;
+        }
+
         [Input("containsReferences")]
         private List<string>? _containsReferences;
         public List<string> ContainsReferences
@@ -120,6 +128,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
+        [Input("containsOracleDefinedSeverities")]
+        private InputList<string>? _containsOracleDefinedSeverities;
+        public InputList<string> ContainsOracleDefinedSeverities
+        {
+            get => _containsOracleDefinedSeverities ?? (_containsOracleDefinedSeverities = new InputList<string>());
+            set => _containsOracleDefinedSeverities = value;
+        }
+
         [Input("containsReferences")]
         private InputList<string>? _containsReferences;
         public InputList<string> ContainsReferences
@@ -198,6 +214,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? Category;
         public readonly string? CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> ContainsOracleDefinedSeverities;
         public readonly ImmutableArray<string> ContainsReferences;
         public readonly ImmutableArray<string> ContainsSeverities;
         public readonly ImmutableArray<string> Fields;
@@ -226,6 +243,8 @@ namespace Pulumi.Oci.DataSafe
             string? compartmentId,
 
             bool? compartmentIdInSubtree,
+
+            ImmutableArray<string> containsOracleDefinedSeverities,
 
             ImmutableArray<string> containsReferences,
 
@@ -261,6 +280,7 @@ namespace Pulumi.Oci.DataSafe
             Category = category;
             CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            ContainsOracleDefinedSeverities = containsOracleDefinedSeverities;
             ContainsReferences = containsReferences;
             ContainsSeverities = containsSeverities;
             Fields = fields;

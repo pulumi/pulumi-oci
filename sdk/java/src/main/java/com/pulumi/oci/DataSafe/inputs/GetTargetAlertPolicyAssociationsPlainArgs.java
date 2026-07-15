@@ -131,6 +131,21 @@ public final class GetTargetAlertPolicyAssociationsPlainArgs extends com.pulumi.
     }
 
     /**
+     * A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable String targetType;
+
+    /**
+     * @return A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
+    /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      * 
      * **Example:** 2016-12-19T16:39:57.600Z
@@ -179,6 +194,7 @@ public final class GetTargetAlertPolicyAssociationsPlainArgs extends com.pulumi.
         this.state = $.state;
         this.targetAlertPolicyAssociationId = $.targetAlertPolicyAssociationId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
     }
@@ -284,6 +300,17 @@ public final class GetTargetAlertPolicyAssociationsPlainArgs extends com.pulumi.
          */
         public Builder targetId(@Nullable String targetId) {
             $.targetId = targetId;
+            return this;
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified alert policy association type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable String targetType) {
+            $.targetType = targetType;
             return this;
         }
 

@@ -30,6 +30,9 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         public readonly ImmutableArray<string> NsgIds;
         public readonly string PrivateIp;
         public readonly bool SkipSourceDestCheck;
+        /// <summary>
+        /// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        /// </summary>
         public readonly string SubnetId;
         /// <summary>
         /// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.

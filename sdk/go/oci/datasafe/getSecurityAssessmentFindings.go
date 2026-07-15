@@ -34,6 +34,8 @@ type GetSecurityAssessmentFindingsArgs struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+	ContainsOracleDefinedSeverities []string `pulumi:"containsOracleDefinedSeverities"`
 	// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
 	ContainsReferences []string `pulumi:"containsReferences"`
 	// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
@@ -69,14 +71,15 @@ type GetSecurityAssessmentFindingsArgs struct {
 type GetSecurityAssessmentFindingsResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
 	// The category to which the finding belongs to.
-	Category               *string                               `pulumi:"category"`
-	CompartmentId          *string                               `pulumi:"compartmentId"`
-	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     []string                              `pulumi:"containsReferences"`
-	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
-	Fields                 []string                              `pulumi:"fields"`
-	Filters                []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
-	FindingKey             *string                               `pulumi:"findingKey"`
+	Category                        *string                               `pulumi:"category"`
+	CompartmentId                   *string                               `pulumi:"compartmentId"`
+	CompartmentIdInSubtree          *bool                                 `pulumi:"compartmentIdInSubtree"`
+	ContainsOracleDefinedSeverities []string                              `pulumi:"containsOracleDefinedSeverities"`
+	ContainsReferences              []string                              `pulumi:"containsReferences"`
+	ContainsSeverities              []string                              `pulumi:"containsSeverities"`
+	Fields                          []string                              `pulumi:"fields"`
+	Filters                         []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
+	FindingKey                      *string                               `pulumi:"findingKey"`
 	// The list of findings.
 	Findings []GetSecurityAssessmentFindingsFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
@@ -115,6 +118,8 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+	ContainsOracleDefinedSeverities pulumi.StringArrayInput `pulumi:"containsOracleDefinedSeverities"`
 	// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
 	ContainsReferences pulumi.StringArrayInput `pulumi:"containsReferences"`
 	// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
@@ -180,6 +185,10 @@ func (o GetSecurityAssessmentFindingsResultOutput) CompartmentId() pulumi.String
 
 func (o GetSecurityAssessmentFindingsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) ContainsOracleDefinedSeverities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) []string { return v.ContainsOracleDefinedSeverities }).(pulumi.StringArrayOutput)
 }
 
 func (o GetSecurityAssessmentFindingsResultOutput) ContainsReferences() pulumi.StringArrayOutput {

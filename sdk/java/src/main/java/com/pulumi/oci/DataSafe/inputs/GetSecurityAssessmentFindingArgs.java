@@ -47,6 +47,13 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    @Import(name="containsOracleDefinedSeverities")
+    private @Nullable Output<List<String>> containsOracleDefinedSeverities;
+
+    public Optional<Output<List<String>>> containsOracleDefinedSeverities() {
+        return Optional.ofNullable(this.containsOracleDefinedSeverities);
+    }
+
     @Import(name="containsReferences")
     private @Nullable Output<List<String>> containsReferences;
 
@@ -145,6 +152,7 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsOracleDefinedSeverities = $.containsOracleDefinedSeverities;
         this.containsReferences = $.containsReferences;
         this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
@@ -212,6 +220,19 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        public Builder containsOracleDefinedSeverities(@Nullable Output<List<String>> containsOracleDefinedSeverities) {
+            $.containsOracleDefinedSeverities = containsOracleDefinedSeverities;
+            return this;
+        }
+
+        public Builder containsOracleDefinedSeverities(List<String> containsOracleDefinedSeverities) {
+            return containsOracleDefinedSeverities(Output.of(containsOracleDefinedSeverities));
+        }
+
+        public Builder containsOracleDefinedSeverities(String... containsOracleDefinedSeverities) {
+            return containsOracleDefinedSeverities(List.of(containsOracleDefinedSeverities));
         }
 
         public Builder containsReferences(@Nullable Output<List<String>> containsReferences) {

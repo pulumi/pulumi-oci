@@ -72,10 +72,14 @@ type LookupComputeClusterResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
 	Id string `pulumi:"id"`
+	// The details for providing placement constraints.
+	PlacementConstraintDetails []GetComputeClusterPlacementConstraintDetail `pulumi:"placementConstraintDetails"`
 	// The current state of the compute cluster.
 	State string `pulumi:"state"`
 	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
 func LookupComputeClusterOutput(ctx *pulumi.Context, args LookupComputeClusterOutputArgs, opts ...pulumi.InvokeOption) LookupComputeClusterResultOutput {
@@ -146,6 +150,13 @@ func (o LookupComputeClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The details for providing placement constraints.
+func (o LookupComputeClusterResultOutput) PlacementConstraintDetails() GetComputeClusterPlacementConstraintDetailArrayOutput {
+	return o.ApplyT(func(v LookupComputeClusterResult) []GetComputeClusterPlacementConstraintDetail {
+		return v.PlacementConstraintDetails
+	}).(GetComputeClusterPlacementConstraintDetailArrayOutput)
+}
+
 // The current state of the compute cluster.
 func (o LookupComputeClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.State }).(pulumi.StringOutput)
@@ -154,6 +165,11 @@ func (o LookupComputeClusterResultOutput) State() pulumi.StringOutput {
 // The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupComputeClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o LookupComputeClusterResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeClusterResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {

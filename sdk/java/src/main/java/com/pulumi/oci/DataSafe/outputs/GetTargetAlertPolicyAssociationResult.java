@@ -69,10 +69,15 @@ public final class GetTargetAlertPolicyAssociationResult {
     private Map<String,String> systemTags;
     private String targetAlertPolicyAssociationId;
     /**
-     * @return The OCID of the target on which alert policy is to be applied.
+     * @return The OCID of the target or target database group on which alert policy is to be applied.
      * 
      */
     private String targetId;
+    /**
+     * @return The resource type that is represented by the target alert policy association.
+     * 
+     */
+    private String targetType;
     /**
      * @return Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
@@ -166,11 +171,18 @@ public final class GetTargetAlertPolicyAssociationResult {
         return this.targetAlertPolicyAssociationId;
     }
     /**
-     * @return The OCID of the target on which alert policy is to be applied.
+     * @return The OCID of the target or target database group on which alert policy is to be applied.
      * 
      */
     public String targetId() {
         return this.targetId;
+    }
+    /**
+     * @return The resource type that is represented by the target alert policy association.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
     }
     /**
      * @return Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -209,6 +221,7 @@ public final class GetTargetAlertPolicyAssociationResult {
         private Map<String,String> systemTags;
         private String targetAlertPolicyAssociationId;
         private String targetId;
+        private String targetType;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -227,6 +240,7 @@ public final class GetTargetAlertPolicyAssociationResult {
     	      this.systemTags = defaults.systemTags;
     	      this.targetAlertPolicyAssociationId = defaults.targetAlertPolicyAssociationId;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -336,6 +350,14 @@ public final class GetTargetAlertPolicyAssociationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationResult", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetTargetAlertPolicyAssociationResult", "timeCreated");
@@ -366,6 +388,7 @@ public final class GetTargetAlertPolicyAssociationResult {
             _resultValue.systemTags = systemTags;
             _resultValue.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

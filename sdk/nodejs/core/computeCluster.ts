@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -38,6 +40,13 @@ import * as utilities from "../utilities";
  *     displayName: computeClusterDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
+ *     },
+ *     placementConstraintDetails: {
+ *         type: "COMPUTE_CLUSTER",
+ *         hpcIslandId: testHpcIsland.id,
+ *         logicalPlacementConstraint: computeClusterPlacementConstraintDetailsLogicalPlacementConstraint,
+ *         targetMemoryFabricIds: computeClusterPlacementConstraintDetailsTargetMemoryFabricIds,
+ *         targetNetworkBlockIds: computeClusterPlacementConstraintDetailsTargetNetworkBlockIds,
  *     },
  * });
  * ```
@@ -96,11 +105,12 @@ export class ComputeCluster extends pulumi.CustomResource {
     declare public readonly displayName: pulumi.Output<string>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) The details for providing placement constraints.
+     */
+    declare public readonly placementConstraintDetails: pulumi.Output<outputs.Core.ComputeClusterPlacementConstraintDetails>;
     /**
      * The current state of the compute cluster.
      */
@@ -109,6 +119,10 @@ export class ComputeCluster extends pulumi.CustomResource {
      * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
     /**
      * Create a ComputeCluster resource with the given unique name, arguments, and options.
@@ -128,8 +142,10 @@ export class ComputeCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["placementConstraintDetails"] = state?.placementConstraintDetails;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
             const args = argsOrState as ComputeClusterArgs | undefined;
             if (args?.availabilityDomain === undefined && !opts.urn) {
@@ -143,8 +159,10 @@ export class ComputeCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["placementConstraintDetails"] = args?.placementConstraintDetails;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(ComputeCluster.__pulumiType, name, resourceInputs, opts);
@@ -173,11 +191,12 @@ export interface ComputeClusterState {
     displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The details for providing placement constraints.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.ComputeClusterPlacementConstraintDetails | undefined>;
     /**
      * The current state of the compute cluster.
      */
@@ -186,6 +205,10 @@ export interface ComputeClusterState {
      * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    timeUpdated?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -210,9 +233,10 @@ export interface ComputeClusterArgs {
     displayName?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The details for providing placement constraints.
+     */
+    placementConstraintDetails?: pulumi.Input<inputs.Core.ComputeClusterPlacementConstraintDetails | undefined>;
 }

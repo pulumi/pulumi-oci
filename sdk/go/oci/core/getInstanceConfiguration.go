@@ -68,12 +68,18 @@ type LookupInstanceConfigurationResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs []GetInstanceConfigurationGmcConfig `pulumi:"gmcConfigs"`
 	// The OCID of the volume backup.
-	Id                      string                                   `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
 	InstanceConfigurationId string                                   `pulumi:"instanceConfigurationId"`
 	InstanceDetails         []GetInstanceConfigurationInstanceDetail `pulumi:"instanceDetails"`
 	InstanceId              string                                   `pulumi:"instanceId"`
-	Source                  string                                   `pulumi:"source"`
+	// Differentiator for instance configuration.  Following values are supported:
+	// * INSTANCE : All details related to instance will be passed within instanceDetails.
+	// * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+	Source string `pulumi:"source"`
 	// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -137,11 +143,17 @@ func (o LookupInstanceConfigurationResultOutput) FreeformTags() pulumi.StringMap
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The GPU Memory Cluster configuration entries for.
+func (o LookupInstanceConfigurationResultOutput) GmcConfigs() GetInstanceConfigurationGmcConfigArrayOutput {
+	return o.ApplyT(func(v LookupInstanceConfigurationResult) []GetInstanceConfigurationGmcConfig { return v.GmcConfigs }).(GetInstanceConfigurationGmcConfigArrayOutput)
+}
+
 // The OCID of the volume backup.
 func (o LookupInstanceConfigurationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
 func (o LookupInstanceConfigurationResultOutput) InstanceConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
 }
@@ -156,6 +168,9 @@ func (o LookupInstanceConfigurationResultOutput) InstanceId() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
+// Differentiator for instance configuration.  Following values are supported:
+// * INSTANCE : All details related to instance will be passed within instanceDetails.
+// * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
 func (o LookupInstanceConfigurationResultOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceConfigurationResult) string { return v.Source }).(pulumi.StringOutput)
 }

@@ -305,14 +305,28 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
         return this.placementConfigurations;
     }
     /**
-     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+     * The type of resources managed by the pool.
+     * 
+     */
+    @Export(name="poolType", refs={String.class}, tree="[0]")
+    private Output<String> poolType;
+
+    /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public Output<String> poolType() {
+        return this.poolType;
+    }
+    /**
+     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      * 
      */
     @Export(name="size", refs={Integer.class}, tree="[0]")
     private Output<Integer> size;
 
     /**
-     * @return (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+     * @return (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      * 
      */
     public Output<Integer> size() {

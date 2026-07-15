@@ -47,6 +47,10 @@ export interface GetAiDataPlatformAiDataPlatformResult {
      */
     readonly aiDataPlatformType: string;
     /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     */
+    readonly aiFeatureStatus: string;
+    /**
      * The alias Id of the AiDataPlatform which is the short form of OCID.
      */
     readonly aliasKey: string;
@@ -75,6 +79,7 @@ export interface GetAiDataPlatformAiDataPlatformResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
      */
     readonly id: string;
+    readonly isEnableAiFeature: boolean;
     /**
      * A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
@@ -95,6 +100,9 @@ export interface GetAiDataPlatformAiDataPlatformResult {
      * The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
+    readonly vectorDbAdminCred: string;
+    readonly vectorDbAdminSecretId: string;
+    readonly vectorDbId: string;
     /**
      * The WebSocket URL of the AiDataPlatform.
      */

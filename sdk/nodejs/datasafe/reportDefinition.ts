@@ -148,6 +148,10 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+     */
+    declare public /*out*/ readonly isSchedulePaginationEnabled: pulumi.Output<boolean>;
+    /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
     declare public /*out*/ readonly isSeeded: pulumi.Output<boolean>;
@@ -233,6 +237,7 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["displayOrder"] = state?.displayOrder;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isSchedulePaginationEnabled"] = state?.isSchedulePaginationEnabled;
             resourceInputs["isSeeded"] = state?.isSeeded;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["parentId"] = state?.parentId;
@@ -285,6 +290,7 @@ export class ReportDefinition extends pulumi.CustomResource {
             resourceInputs["complianceStandards"] = undefined /*out*/;
             resourceInputs["dataSource"] = undefined /*out*/;
             resourceInputs["displayOrder"] = undefined /*out*/;
+            resourceInputs["isSchedulePaginationEnabled"] = undefined /*out*/;
             resourceInputs["isSeeded"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["recordTimeSpan"] = undefined /*out*/;
@@ -356,6 +362,10 @@ export interface ReportDefinitionState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+     */
+    isSchedulePaginationEnabled?: pulumi.Input<boolean | undefined>;
     /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */

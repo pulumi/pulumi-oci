@@ -12,6 +12,7 @@ import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceState;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainer;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceDnsConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceImagePullSecret;
+import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceSecurityContext;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceVnic;
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceVolume;
@@ -52,8 +53,14 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVnicArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceDnsConfigArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceImagePullSecretArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceSecurityContextArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeArgs;
  * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeConfigArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeExportArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeMountCommandArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeMountCommandMountOptionArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeMountTargetArgs;
+ * import com.pulumi.oci.ContainerEngine.inputs.ContainerInstanceVolumeSecurityArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -153,6 +160,11 @@ import javax.annotation.Nullable;
  *                 .secretId(testSecret.id())
  *                 .username(containerInstanceImagePullSecretsUsername)
  *                 .build())
+ *             .securityContext(ContainerInstanceSecurityContextArgs.builder()
+ *                 .fsGroup(containerInstanceSecurityContextFsGroup)
+ *                 .fsGroupChangePolicy(containerInstanceSecurityContextFsGroupChangePolicy)
+ *                 .securityContextType(containerInstanceSecurityContextSecurityContextType)
+ *                 .build())
  *             .volumes(ContainerInstanceVolumeArgs.builder()
  *                 .name(containerInstanceVolumesName)
  *                 .volumeType(containerInstanceVolumesVolumeType)
@@ -162,6 +174,25 @@ import javax.annotation.Nullable;
  *                     .fileName(containerInstanceVolumesConfigsFileName)
  *                     .path(containerInstanceVolumesConfigsPath)
  *                     .build())
+ *                 .export(ContainerInstanceVolumeExportArgs.builder()
+ *                     .id(containerInstanceVolumesExportId)
+ *                     .ociFssExportType(containerInstanceVolumesExportOciFssExportType)
+ *                     .build())
+ *                 .mountCommand(ContainerInstanceVolumeMountCommandArgs.builder()
+ *                     .mountOptions(ContainerInstanceVolumeMountCommandMountOptionArgs.builder()
+ *                         .option(containerInstanceVolumesMountCommandMountOptionsOption)
+ *                         .value(containerInstanceVolumesMountCommandMountOptionsValue)
+ *                         .build())
+ *                     .build())
+ *                 .mountTarget(ContainerInstanceVolumeMountTargetArgs.builder()
+ *                     .id(containerInstanceVolumesMountTargetId)
+ *                     .ociFssMountTargetType(containerInstanceVolumesMountTargetOciFssMountTargetType)
+ *                     .build())
+ *                 .security(ContainerInstanceVolumeSecurityArgs.builder()
+ *                     .auth(containerInstanceVolumesSecurityAuth)
+ *                     .isEncryptedInTransit(containerInstanceVolumesSecurityIsEncryptedInTransit)
+ *                     .build())
+ *                 .subnetId(testSubnet.id())
  *                 .build())
  *             .build());
  * 
@@ -364,6 +395,20 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * Security context for all containers in a container instance.
+     * 
+     */
+    @Export(name="securityContext", refs={ContainerInstanceSecurityContext.class}, tree="[0]")
+    private Output<ContainerInstanceSecurityContext> securityContext;
+
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    public Output<ContainerInstanceSecurityContext> securityContext() {
+        return this.securityContext;
+    }
+    /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      * 
      */
@@ -424,6 +469,20 @@ public class ContainerInstance extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * TenantId id of the container instance.
+     * 
+     */
+    @Export(name="tenantId", refs={String.class}, tree="[0]")
+    private Output<String> tenantId;
+
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    public Output<String> tenantId() {
+        return this.tenantId;
     }
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

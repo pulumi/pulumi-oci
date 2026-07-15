@@ -65,6 +65,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DedicatedVmHost{}
 	case "oci:Core/defaultDhcpOptions:DefaultDhcpOptions":
 		r = &DefaultDhcpOptions{}
+	case "oci:Core/defaultDrgRouteTable:DefaultDrgRouteTable":
+		r = &DefaultDrgRouteTable{}
 	case "oci:Core/defaultRouteTable:DefaultRouteTable":
 		r = &DefaultRouteTable{}
 	case "oci:Core/defaultSecurityList:DefaultSecurityList":
@@ -288,6 +290,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/defaultDhcpOptions",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/defaultDrgRouteTable",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -31,10 +31,40 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        /// </summary>
+        [Input("export")]
+        public Input<Inputs.ContainerInstanceVolumeExportArgs>? Export { get; set; }
+
+        /// <summary>
+        /// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        /// </summary>
+        [Input("mountCommand")]
+        public Input<Inputs.ContainerInstanceVolumeMountCommandArgs>? MountCommand { get; set; }
+
+        /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+        /// </summary>
+        [Input("mountTarget")]
+        public Input<Inputs.ContainerInstanceVolumeMountTargetArgs>? MountTarget { get; set; }
+
+        /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
+
+        /// <summary>
+        /// Security options for Oracle Cloud Infrastructure FSS File System.
+        /// </summary>
+        [Input("security")]
+        public Input<Inputs.ContainerInstanceVolumeSecurityArgs>? Security { get; set; }
+
+        /// <summary>
+        /// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         /// <summary>
         /// The type of volume.

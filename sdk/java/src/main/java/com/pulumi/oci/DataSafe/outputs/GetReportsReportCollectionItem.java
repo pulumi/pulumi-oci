@@ -57,6 +57,16 @@ public final class GetReportsReportCollectionItem {
      */
     private String mimeType;
     /**
+     * @return The OCID of the next report generated.
+     * 
+     */
+    private String nextReportId;
+    /**
+     * @return The OCID of the previous report generated.
+     * 
+     */
+    private String previousReportId;
+    /**
      * @return The ID of the report definition to filter the list of reports
      * 
      */
@@ -158,6 +168,20 @@ public final class GetReportsReportCollectionItem {
         return this.mimeType;
     }
     /**
+     * @return The OCID of the next report generated.
+     * 
+     */
+    public String nextReportId() {
+        return this.nextReportId;
+    }
+    /**
+     * @return The OCID of the previous report generated.
+     * 
+     */
+    public String previousReportId() {
+        return this.previousReportId;
+    }
+    /**
      * @return The ID of the report definition to filter the list of reports
      * 
      */
@@ -228,6 +252,8 @@ public final class GetReportsReportCollectionItem {
         private String id;
         private String lifecycleDetails;
         private String mimeType;
+        private String nextReportId;
+        private String previousReportId;
         private String reportDefinitionId;
         private String reportId;
         private String state;
@@ -248,6 +274,8 @@ public final class GetReportsReportCollectionItem {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.mimeType = defaults.mimeType;
+    	      this.nextReportId = defaults.nextReportId;
+    	      this.previousReportId = defaults.previousReportId;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
     	      this.reportId = defaults.reportId;
     	      this.state = defaults.state;
@@ -331,6 +359,22 @@ public final class GetReportsReportCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder nextReportId(String nextReportId) {
+            if (nextReportId == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "nextReportId");
+            }
+            this.nextReportId = nextReportId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder previousReportId(String previousReportId) {
+            if (previousReportId == null) {
+              throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "previousReportId");
+            }
+            this.previousReportId = previousReportId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder reportDefinitionId(String reportDefinitionId) {
             if (reportDefinitionId == null) {
               throw new MissingRequiredPropertyException("GetReportsReportCollectionItem", "reportDefinitionId");
@@ -405,6 +449,8 @@ public final class GetReportsReportCollectionItem {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.mimeType = mimeType;
+            _resultValue.nextReportId = nextReportId;
+            _resultValue.previousReportId = previousReportId;
             _resultValue.reportDefinitionId = reportDefinitionId;
             _resultValue.reportId = reportId;
             _resultValue.state = state;

@@ -21,7 +21,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingCon
      */
     private @Nullable String licenseType;
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return Operating System type of the Configuration.
      * 
      */
     private String type;
@@ -38,7 +38,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingCon
         return Optional.ofNullable(this.licenseType);
     }
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return Operating System type of the Configuration.
      * 
      */
     public String type() {

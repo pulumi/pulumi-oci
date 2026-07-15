@@ -146,6 +146,34 @@ public class Report extends com.pulumi.resources.CustomResource {
         return this.mimeType;
     }
     /**
+     * The OCID of the next report generated.
+     * 
+     */
+    @Export(name="nextReportId", refs={String.class}, tree="[0]")
+    private Output<String> nextReportId;
+
+    /**
+     * @return The OCID of the next report generated.
+     * 
+     */
+    public Output<String> nextReportId() {
+        return this.nextReportId;
+    }
+    /**
+     * The OCID of the previous report generated.
+     * 
+     */
+    @Export(name="previousReportId", refs={String.class}, tree="[0]")
+    private Output<String> previousReportId;
+
+    /**
+     * @return The OCID of the previous report generated.
+     * 
+     */
+    public Output<String> previousReportId() {
+        return this.previousReportId;
+    }
+    /**
      * The OCID of the report definition.
      * 
      */

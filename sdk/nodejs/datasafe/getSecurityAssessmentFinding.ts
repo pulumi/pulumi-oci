@@ -13,6 +13,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
         "category": args.category,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsOracleDefinedSeverities": args.containsOracleDefinedSeverities,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
         "fields": args.fields,
@@ -37,6 +38,7 @@ export interface GetSecurityAssessmentFindingArgs {
     category?: string;
     compartmentId?: string;
     compartmentIdInSubtree?: boolean;
+    containsOracleDefinedSeverities?: string[];
     containsReferences?: string[];
     containsSeverities?: string[];
     fields?: string[];
@@ -60,6 +62,7 @@ export interface GetSecurityAssessmentFindingResult {
     readonly category?: string;
     readonly compartmentId?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly containsOracleDefinedSeverities?: string[];
     readonly containsReferences?: string[];
     readonly containsSeverities?: string[];
     readonly fields?: string[];
@@ -86,6 +89,7 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
         "category": args.category,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsOracleDefinedSeverities": args.containsOracleDefinedSeverities,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
         "fields": args.fields,
@@ -110,6 +114,7 @@ export interface GetSecurityAssessmentFindingOutputArgs {
     category?: pulumi.Input<string | undefined>;
     compartmentId?: pulumi.Input<string | undefined>;
     compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    containsOracleDefinedSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     containsReferences?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     containsSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     fields?: pulumi.Input<pulumi.Input<string>[] | undefined>;

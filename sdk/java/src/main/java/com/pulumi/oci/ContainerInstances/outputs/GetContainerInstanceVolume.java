@@ -6,6 +6,10 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeConfig;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeExport;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeMountCommand;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeMountTarget;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolumeSecurity;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,10 +27,35 @@ public final class GetContainerInstanceVolume {
      */
     private List<GetContainerInstanceVolumeConfig> configs;
     /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    private List<GetContainerInstanceVolumeExport> exports;
+    /**
+     * @return Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    private List<GetContainerInstanceVolumeMountCommand> mountCommands;
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    private List<GetContainerInstanceVolumeMountTarget> mountTargets;
+    /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
+    /**
+     * @return Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    private List<GetContainerInstanceVolumeSecurity> securities;
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    private String subnetId;
     /**
      * @return The type of volume.
      * 
@@ -49,11 +78,46 @@ public final class GetContainerInstanceVolume {
         return this.configs;
     }
     /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    public List<GetContainerInstanceVolumeExport> exports() {
+        return this.exports;
+    }
+    /**
+     * @return Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    public List<GetContainerInstanceVolumeMountCommand> mountCommands() {
+        return this.mountCommands;
+    }
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    public List<GetContainerInstanceVolumeMountTarget> mountTargets() {
+        return this.mountTargets;
+    }
+    /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    public List<GetContainerInstanceVolumeSecurity> securities() {
+        return this.securities;
+    }
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
     }
     /**
      * @return The type of volume.
@@ -74,14 +138,24 @@ public final class GetContainerInstanceVolume {
     public static final class Builder {
         private String backingStore;
         private List<GetContainerInstanceVolumeConfig> configs;
+        private List<GetContainerInstanceVolumeExport> exports;
+        private List<GetContainerInstanceVolumeMountCommand> mountCommands;
+        private List<GetContainerInstanceVolumeMountTarget> mountTargets;
         private String name;
+        private List<GetContainerInstanceVolumeSecurity> securities;
+        private String subnetId;
         private String volumeType;
         public Builder() {}
         public Builder(GetContainerInstanceVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backingStore = defaults.backingStore;
     	      this.configs = defaults.configs;
+    	      this.exports = defaults.exports;
+    	      this.mountCommands = defaults.mountCommands;
+    	      this.mountTargets = defaults.mountTargets;
     	      this.name = defaults.name;
+    	      this.securities = defaults.securities;
+    	      this.subnetId = defaults.subnetId;
     	      this.volumeType = defaults.volumeType;
         }
 
@@ -105,11 +179,63 @@ public final class GetContainerInstanceVolume {
             return configs(List.of(configs));
         }
         @CustomType.Setter
+        public Builder exports(List<GetContainerInstanceVolumeExport> exports) {
+            if (exports == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "exports");
+            }
+            this.exports = exports;
+            return this;
+        }
+        public Builder exports(GetContainerInstanceVolumeExport... exports) {
+            return exports(List.of(exports));
+        }
+        @CustomType.Setter
+        public Builder mountCommands(List<GetContainerInstanceVolumeMountCommand> mountCommands) {
+            if (mountCommands == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "mountCommands");
+            }
+            this.mountCommands = mountCommands;
+            return this;
+        }
+        public Builder mountCommands(GetContainerInstanceVolumeMountCommand... mountCommands) {
+            return mountCommands(List.of(mountCommands));
+        }
+        @CustomType.Setter
+        public Builder mountTargets(List<GetContainerInstanceVolumeMountTarget> mountTargets) {
+            if (mountTargets == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "mountTargets");
+            }
+            this.mountTargets = mountTargets;
+            return this;
+        }
+        public Builder mountTargets(GetContainerInstanceVolumeMountTarget... mountTargets) {
+            return mountTargets(List.of(mountTargets));
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securities(List<GetContainerInstanceVolumeSecurity> securities) {
+            if (securities == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "securities");
+            }
+            this.securities = securities;
+            return this;
+        }
+        public Builder securities(GetContainerInstanceVolumeSecurity... securities) {
+            return securities(List.of(securities));
+        }
+        @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceVolume", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
@@ -124,7 +250,12 @@ public final class GetContainerInstanceVolume {
             final var _resultValue = new GetContainerInstanceVolume();
             _resultValue.backingStore = backingStore;
             _resultValue.configs = configs;
+            _resultValue.exports = exports;
+            _resultValue.mountCommands = mountCommands;
+            _resultValue.mountTargets = mountTargets;
             _resultValue.name = name;
+            _resultValue.securities = securities;
+            _resultValue.subnetId = subnetId;
             _resultValue.volumeType = volumeType;
             return _resultValue;
         }

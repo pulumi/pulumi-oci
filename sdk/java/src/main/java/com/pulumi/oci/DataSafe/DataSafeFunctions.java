@@ -264,6 +264,8 @@ import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSqlFirewallViolationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetTargetDatabaseArgs;
@@ -445,6 +447,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationAnalyticsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSqlFirewallViolationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationResult;
+import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetAlertPolicyAssociationsResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseGroupGroupMemberResult;
 import com.pulumi.oci.DataSafe.outputs.GetTargetDatabaseGroupResult;
@@ -31372,11 +31375,261 @@ public final class DataSafeFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", TypeShape.of(GetTargetAlertPolicyAssociationResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Target Alert Policy Association Unassociated Target Members in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult> getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs args) {
+        return getTargetAlertPolicyAssociationUnassociatedTargetMembers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Alert Policy Association Unassociated Target Members in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult> getTargetAlertPolicyAssociationUnassociatedTargetMembersPlain(GetTargetAlertPolicyAssociationUnassociatedTargetMembersPlainArgs args) {
+        return getTargetAlertPolicyAssociationUnassociatedTargetMembersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Target Alert Policy Association Unassociated Target Members in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult> getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociationUnassociatedTargetMembers:getTargetAlertPolicyAssociationUnassociatedTargetMembers", TypeShape.of(GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Alert Policy Association Unassociated Target Members in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult> getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociationUnassociatedTargetMembers:getTargetAlertPolicyAssociationUnassociatedTargetMembers", TypeShape.of(GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Target Alert Policy Association Unassociated Target Members in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets the details of target-alert policy association and its unassociated members by its ID.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociationUnassociatedTargetMembers = DataSafeFunctions.getTargetAlertPolicyAssociationUnassociatedTargetMembers(GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs.builder()
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult> getTargetAlertPolicyAssociationUnassociatedTargetMembersPlain(GetTargetAlertPolicyAssociationUnassociatedTargetMembersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getTargetAlertPolicyAssociationUnassociatedTargetMembers:getTargetAlertPolicyAssociationUnassociatedTargetMembers", TypeShape.of(GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .targetType(targetAlertPolicyAssociationTargetType)
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args) {
@@ -31389,6 +31642,46 @@ public final class DataSafeFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .targetType(targetAlertPolicyAssociationTargetType)
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args) {
         return getTargetAlertPolicyAssociationsPlain(args, InvokeOptions.Empty);
@@ -31399,6 +31692,46 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .targetType(targetAlertPolicyAssociationTargetType)
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions options) {
@@ -31411,6 +31744,46 @@ public final class DataSafeFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .targetType(targetAlertPolicyAssociationTargetType)
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", TypeShape.of(GetTargetAlertPolicyAssociationsResult.class), args, Utilities.withVersion(options));
@@ -31421,6 +31794,46 @@ public final class DataSafeFunctions {
      * Gets a list of all target-alert policy associations.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetTargetAlertPolicyAssociationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .targetType(targetAlertPolicyAssociationTargetType)
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args, InvokeOptions options) {
@@ -36974,6 +37387,7 @@ public final class DataSafeFunctions {
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
      *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
      *             .targetId(testTarget.id())
@@ -37040,6 +37454,7 @@ public final class DataSafeFunctions {
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
      *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
      *             .targetId(testTarget.id())
@@ -37106,6 +37521,7 @@ public final class DataSafeFunctions {
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
      *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
      *             .targetId(testTarget.id())
@@ -37172,6 +37588,7 @@ public final class DataSafeFunctions {
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
      *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
      *             .targetId(testTarget.id())
@@ -37238,6 +37655,7 @@ public final class DataSafeFunctions {
      *             .accountStatus(userAssessmentUserAccountStatus)
      *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
      *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
      *             .schemaLists(userAssessmentUserSchemaList)
      *             .targetId(testTarget.id())

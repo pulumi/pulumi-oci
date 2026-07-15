@@ -202,7 +202,13 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<Outputs.InstancePoolPlacementConfiguration>> PlacementConfigurations { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+        /// The type of resources managed by the pool.
+        /// </summary>
+        [Output("poolType")]
+        public Output<string> PoolType { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
         /// </summary>
         [Output("size")]
         public Output<int> Size { get; private set; } = null!;
@@ -356,7 +362,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
         /// </summary>
         [Input("size", required: true)]
         public Input<int> Size { get; set; } = null!;
@@ -478,7 +484,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+        /// The type of resources managed by the pool.
+        /// </summary>
+        [Input("poolType")]
+        public Input<string>? PoolType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
         /// </summary>
         [Input("size")]
         public Input<int>? Size { get; set; }

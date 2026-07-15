@@ -27,7 +27,8 @@ class DataSafePrivateEndpointArgs:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None):
+                 private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DataSafePrivateEndpoint resource.
 
@@ -43,6 +44,7 @@ class DataSafePrivateEndpointArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -58,6 +60,8 @@ class DataSafePrivateEndpointArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -170,6 +174,18 @@ class DataSafePrivateEndpointArgs:
     def private_endpoint_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip", value)
 
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
 
 @pulumi.input_type
 class _DataSafePrivateEndpointState:
@@ -183,6 +199,7 @@ class _DataSafePrivateEndpointState:
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -200,6 +217,7 @@ class _DataSafePrivateEndpointState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_endpoint_id: The OCID of the underlying private endpoint.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -227,6 +245,8 @@ class _DataSafePrivateEndpointState:
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if security_attributes is not None:
+            pulumi.set(__self__, "security_attributes", security_attributes)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
@@ -347,6 +367,18 @@ class _DataSafePrivateEndpointState:
         pulumi.set(self, "private_endpoint_ip", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
+
+    @security_attributes.setter
+    def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -423,6 +455,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -453,7 +486,8 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
                 "Department": "Finance",
             },
             nsg_ids=data_safe_private_endpoint_nsg_ids,
-            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip)
+            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip,
+            security_attributes=data_safe_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -474,6 +508,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the VCN.
                
@@ -513,7 +548,8 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
                 "Department": "Finance",
             },
             nsg_ids=data_safe_private_endpoint_nsg_ids,
-            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip)
+            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip,
+            security_attributes=data_safe_private_endpoint_security_attributes)
         ```
 
         ## Import
@@ -547,6 +583,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
@@ -569,6 +606,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
+            __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
@@ -599,6 +637,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
             private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -620,6 +659,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[_builtins.str] private_endpoint_id: The OCID of the underlying private endpoint.
         :param pulumi.Input[_builtins.str] private_endpoint_ip: The private IP address of the private endpoint.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] state: The current state of the private endpoint.
         :param pulumi.Input[_builtins.str] subnet_id: The OCID of the subnet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -642,6 +682,7 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_endpoint_id"] = private_endpoint_id
         __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
+        __props__.__dict__["security_attributes"] = security_attributes
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["system_tags"] = system_tags
@@ -720,6 +761,14 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         The private IP address of the private endpoint.
         """
         return pulumi.get(self, "private_endpoint_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter

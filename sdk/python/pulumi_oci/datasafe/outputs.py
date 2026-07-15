@@ -464,6 +464,9 @@ __all__ = [
     'GetSqlFirewallViolationsFilterResult',
     'GetSqlFirewallViolationsSqlFirewallViolationsCollectionResult',
     'GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemResult',
+    'GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult',
+    'GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionResult',
+    'GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemResult',
     'GetTargetAlertPolicyAssociationsFilterResult',
     'GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult',
     'GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemResult',
@@ -12542,6 +12545,7 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
                  nsg_ids: Sequence[_builtins.str],
                  private_endpoint_id: _builtins.str,
                  private_endpoint_ip: _builtins.str,
+                 security_attributes: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -12558,6 +12562,7 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
         :param Sequence[_builtins.str] nsg_ids: The OCIDs of the network security groups that the private endpoint belongs to.
         :param _builtins.str private_endpoint_id: The OCID of the underlying private endpoint.
         :param _builtins.str private_endpoint_ip: The private IP address of the private endpoint.
+        :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state.
         :param _builtins.str subnet_id: The OCID of the subnet.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -12574,6 +12579,7 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -12659,6 +12665,14 @@ class GetDataSafePrivateEndpointsDataSafePrivateEndpointResult(dict):
         The private IP address of the private endpoint.
         """
         return pulumi.get(self, "private_endpoint_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="securityAttributes")
+    def security_attributes(self) -> Mapping[str, _builtins.str]:
+        """
+        Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        """
+        return pulumi.get(self, "security_attributes")
 
     @_builtins.property
     @pulumi.getter
@@ -17734,6 +17748,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
                  display_order: _builtins.int,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_schedule_pagination_enabled: _builtins.bool,
                  is_seeded: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  parent_id: _builtins.str,
@@ -17763,6 +17778,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param _builtins.int display_order: Specifies the order in which the summary must be displayed.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the report definition.
+        :param _builtins.bool is_schedule_pagination_enabled: Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
         :param _builtins.bool is_seeded: A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
         :param _builtins.str lifecycle_details: Details about the current state of the report definition in Data Safe.
         :param _builtins.str parent_id: The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
@@ -17792,6 +17808,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         pulumi.set(__self__, "display_order", display_order)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_schedule_pagination_enabled", is_schedule_pagination_enabled)
         pulumi.set(__self__, "is_seeded", is_seeded)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "parent_id", parent_id)
@@ -17911,6 +17928,14 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         The OCID of the report definition.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isSchedulePaginationEnabled")
+    def is_schedule_pagination_enabled(self) -> _builtins.bool:
+        """
+        Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        """
+        return pulumi.get(self, "is_schedule_pagination_enabled")
 
     @_builtins.property
     @pulumi.getter(name="isSeeded")
@@ -18343,6 +18368,8 @@ class GetReportsReportCollectionItemResult(dict):
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  mime_type: _builtins.str,
+                 next_report_id: _builtins.str,
+                 previous_report_id: _builtins.str,
                  report_definition_id: _builtins.str,
                  report_id: _builtins.str,
                  state: _builtins.str,
@@ -18361,6 +18388,8 @@ class GetReportsReportCollectionItemResult(dict):
         :param _builtins.str id: The OCID of the report.
         :param _builtins.str lifecycle_details: Details about the current state of the report in Data Safe.
         :param _builtins.str mime_type: An optional filter to return only resources that match the specified mime type.
+        :param _builtins.str next_report_id: The OCID of the next report generated.
+        :param _builtins.str previous_report_id: The OCID of the previous report generated.
         :param _builtins.str report_definition_id: The ID of the report definition to filter the list of reports
         :param _builtins.str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -18378,6 +18407,8 @@ class GetReportsReportCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "mime_type", mime_type)
+        pulumi.set(__self__, "next_report_id", next_report_id)
+        pulumi.set(__self__, "previous_report_id", previous_report_id)
         pulumi.set(__self__, "report_definition_id", report_definition_id)
         pulumi.set(__self__, "report_id", report_id)
         pulumi.set(__self__, "state", state)
@@ -18458,6 +18489,22 @@ class GetReportsReportCollectionItemResult(dict):
         An optional filter to return only resources that match the specified mime type.
         """
         return pulumi.get(self, "mime_type")
+
+    @_builtins.property
+    @pulumi.getter(name="nextReportId")
+    def next_report_id(self) -> _builtins.str:
+        """
+        The OCID of the next report generated.
+        """
+        return pulumi.get(self, "next_report_id")
+
+    @_builtins.property
+    @pulumi.getter(name="previousReportId")
+    def previous_report_id(self) -> _builtins.str:
+        """
+        The OCID of the previous report generated.
+        """
+        return pulumi.get(self, "previous_report_id")
 
     @_builtins.property
     @pulumi.getter(name="reportDefinitionId")
@@ -23598,6 +23645,7 @@ class GetSecurityAssessmentFindingFilterResult(dict):
 class GetSecurityAssessmentFindingFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: _builtins.str,
+                 category: _builtins.str,
                  details: Sequence[_builtins.str],
                  doclink: _builtins.str,
                  has_target_db_risk_level_changed: _builtins.bool,
@@ -23618,6 +23666,7 @@ class GetSecurityAssessmentFindingFindingResult(dict):
                  time_valid_until: _builtins.str,
                  title: _builtins.str):
         pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "details", details)
         pulumi.set(__self__, "doclink", doclink)
         pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
@@ -23642,6 +23691,11 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     @pulumi.getter(name="assessmentId")
     def assessment_id(self) -> _builtins.str:
         return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        return pulumi.get(self, "category")
 
     @_builtins.property
     @pulumi.getter
@@ -24005,6 +24059,7 @@ class GetSecurityAssessmentFindingsFilterResult(dict):
 class GetSecurityAssessmentFindingsFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: _builtins.str,
+                 category: _builtins.str,
                  details: Sequence[_builtins.str],
                  doclink: _builtins.str,
                  has_target_db_risk_level_changed: _builtins.bool,
@@ -24026,6 +24081,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
                  title: _builtins.str):
         """
         :param _builtins.str assessment_id: The OCID of the assessment that generated this finding.
+        :param _builtins.str category: The category of the finding.
         :param Sequence[_builtins.str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         :param _builtins.str doclink: Documentation link provided by Oracle that explains a specific security finding or check.
         :param _builtins.bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
@@ -24047,6 +24103,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param _builtins.str title: The short title for the finding.
         """
         pulumi.set(__self__, "assessment_id", assessment_id)
+        pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "details", details)
         pulumi.set(__self__, "doclink", doclink)
         pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
@@ -24074,6 +24131,14 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         The OCID of the assessment that generated this finding.
         """
         return pulumi.get(self, "assessment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        The category of the finding.
+        """
+        return pulumi.get(self, "category")
 
     @_builtins.property
     @pulumi.getter
@@ -35194,6 +35259,124 @@ class GetSqlFirewallViolationsSqlFirewallViolationsCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetTargetAlertPolicyAssociationUnassociatedTargetMembersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemResult']):
+        """
+        :param Sequence['GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemArgs'] items: Array of unassociated target alert policy association summary.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemResult']:
+        """
+        Array of unassociated target alert policy association summary.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetTargetAlertPolicyAssociationUnassociatedTargetMembersTargetAlertPolicyUnassociatedCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 is_enabled: _builtins.bool,
+                 not_applied_reason: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 target_database_id: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param _builtins.bool is_enabled: Indicates if the target-alert policy association is enabled or disabled by user.
+        :param _builtins.str not_applied_reason: Details on why policy is not applied on target.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str target_database_id: The OCID of the target database that differs from the alert policy association of the target database group.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "not_applied_reason", not_applied_reason)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "target_database_id", target_database_id)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Indicates if the target-alert policy association is enabled or disabled by user.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="notAppliedReason")
+    def not_applied_reason(self) -> _builtins.str:
+        """
+        Details on why policy is not applied on target.
+        """
+        return pulumi.get(self, "not_applied_reason")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseId")
+    def target_database_id(self) -> _builtins.str:
+        """
+        The OCID of the target database that differs from the alert policy association of the target database group.
+        """
+        return pulumi.get(self, "target_database_id")
+
+
+@pulumi.output_type
 class GetTargetAlertPolicyAssociationsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -35247,6 +35430,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  target_id: _builtins.str,
+                 target_type: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -35262,6 +35446,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         :param _builtins.str state: An optional filter to return only alert policies that have the given life-cycle state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+        :param _builtins.str target_type: A optional filter to return only resources that belong to the specified alert policy association type.
         :param _builtins.str time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -35277,6 +35462,7 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_type", target_type)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -35375,6 +35561,14 @@ class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem
         A filter to return only items related to a specific target OCID.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        A optional filter to return only resources that belong to the specified alert policy association type.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

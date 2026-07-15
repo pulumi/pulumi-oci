@@ -6,6 +6,7 @@ package com.pulumi.oci.Core;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationGmcConfigsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsArgs;
 import java.lang.String;
 import java.util.Map;
@@ -78,6 +79,21 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.freeformTags);
     }
 
+    /**
+     * The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    @Import(name="gmcConfigs")
+    private @Nullable Output<InstanceConfigurationGmcConfigsArgs> gmcConfigs;
+
+    /**
+     * @return The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationGmcConfigsArgs>> gmcConfigs() {
+        return Optional.ofNullable(this.gmcConfigs);
+    }
+
     @Import(name="instanceDetails")
     private @Nullable Output<InstanceConfigurationInstanceDetailsArgs> instanceDetails;
 
@@ -112,6 +128,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
      * The following values are supported:
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+     * * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -132,6 +149,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
      * The following values are supported:
      * * `NONE`: Creates an instance configuration using the list of settings that you specify.
      * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+     * * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,6 +166,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.gmcConfigs = $.gmcConfigs;
         this.instanceDetails = $.instanceDetails;
         this.instanceId = $.instanceId;
         this.source = $.source;
@@ -255,6 +274,27 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
             return freeformTags(Output.of(freeformTags));
         }
 
+        /**
+         * @param gmcConfigs The GPU Memory Cluster configuration entries for.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gmcConfigs(@Nullable Output<InstanceConfigurationGmcConfigsArgs> gmcConfigs) {
+            $.gmcConfigs = gmcConfigs;
+            return this;
+        }
+
+        /**
+         * @param gmcConfigs The GPU Memory Cluster configuration entries for.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gmcConfigs(InstanceConfigurationGmcConfigsArgs gmcConfigs) {
+            return gmcConfigs(Output.of(gmcConfigs));
+        }
+
         public Builder instanceDetails(@Nullable Output<InstanceConfigurationInstanceDetailsArgs> instanceDetails) {
             $.instanceDetails = instanceDetails;
             return this;
@@ -297,6 +337,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
          * The following values are supported:
          * * `NONE`: Creates an instance configuration using the list of settings that you specify.
          * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+         * * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -321,6 +362,7 @@ public final class InstanceConfigurationArgs extends com.pulumi.resources.Resour
          * The following values are supported:
          * * `NONE`: Creates an instance configuration using the list of settings that you specify.
          * * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+         * * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

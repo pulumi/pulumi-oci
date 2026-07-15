@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationGmcConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationInstanceDetail;
 import java.lang.String;
 import java.util.List;
@@ -39,13 +40,28 @@ public final class GetInstanceConfigurationResult {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    private List<GetInstanceConfigurationGmcConfig> gmcConfigs;
+    /**
      * @return The OCID of the volume backup.
      * 
      */
     private String id;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+     * 
+     */
     private String instanceConfigurationId;
     private List<GetInstanceConfigurationInstanceDetail> instanceDetails;
     private String instanceId;
+    /**
+     * @return Differentiator for instance configuration.  Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     * 
+     */
     private String source;
     /**
      * @return The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -90,12 +106,23 @@ public final class GetInstanceConfigurationResult {
         return this.freeformTags;
     }
     /**
+     * @return The GPU Memory Cluster configuration entries for.
+     * 
+     */
+    public List<GetInstanceConfigurationGmcConfig> gmcConfigs() {
+        return this.gmcConfigs;
+    }
+    /**
      * @return The OCID of the volume backup.
      * 
      */
     public String id() {
         return this.id;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+     * 
+     */
     public String instanceConfigurationId() {
         return this.instanceConfigurationId;
     }
@@ -105,6 +132,12 @@ public final class GetInstanceConfigurationResult {
     public String instanceId() {
         return this.instanceId;
     }
+    /**
+     * @return Differentiator for instance configuration.  Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     * 
+     */
     public String source() {
         return this.source;
     }
@@ -130,6 +163,7 @@ public final class GetInstanceConfigurationResult {
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
+        private List<GetInstanceConfigurationGmcConfig> gmcConfigs;
         private String id;
         private String instanceConfigurationId;
         private List<GetInstanceConfigurationInstanceDetail> instanceDetails;
@@ -144,6 +178,7 @@ public final class GetInstanceConfigurationResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.gmcConfigs = defaults.gmcConfigs;
     	      this.id = defaults.id;
     	      this.instanceConfigurationId = defaults.instanceConfigurationId;
     	      this.instanceDetails = defaults.instanceDetails;
@@ -194,6 +229,17 @@ public final class GetInstanceConfigurationResult {
             }
             this.freeformTags = freeformTags;
             return this;
+        }
+        @CustomType.Setter
+        public Builder gmcConfigs(List<GetInstanceConfigurationGmcConfig> gmcConfigs) {
+            if (gmcConfigs == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationResult", "gmcConfigs");
+            }
+            this.gmcConfigs = gmcConfigs;
+            return this;
+        }
+        public Builder gmcConfigs(GetInstanceConfigurationGmcConfig... gmcConfigs) {
+            return gmcConfigs(List.of(gmcConfigs));
         }
         @CustomType.Setter
         public Builder id(String id) {
@@ -253,6 +299,7 @@ public final class GetInstanceConfigurationResult {
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.gmcConfigs = gmcConfigs;
             _resultValue.id = id;
             _resultValue.instanceConfigurationId = instanceConfigurationId;
             _resultValue.instanceDetails = instanceDetails;

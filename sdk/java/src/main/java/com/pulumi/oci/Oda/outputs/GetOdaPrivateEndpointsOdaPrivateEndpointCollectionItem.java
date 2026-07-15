@@ -48,6 +48,11 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
      */
     private List<String> nsgIds;
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    private Map<String,String> securityAttributes;
+    /**
      * @return List only the ODA Private Endpoints that are in this lifecycle state.
      * 
      */
@@ -119,6 +124,13 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
         return this.nsgIds;
     }
     /**
+     * @return Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Map<String,String> securityAttributes() {
+        return this.securityAttributes;
+    }
+    /**
      * @return List only the ODA Private Endpoints that are in this lifecycle state.
      * 
      */
@@ -163,6 +175,7 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private List<String> nsgIds;
+        private Map<String,String> securityAttributes;
         private String state;
         private String subnetId;
         private String timeCreated;
@@ -177,6 +190,7 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.securityAttributes = defaults.securityAttributes;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -243,6 +257,14 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
             return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
+        public Builder securityAttributes(Map<String,String> securityAttributes) {
+            if (securityAttributes == null) {
+              throw new MissingRequiredPropertyException("GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem", "securityAttributes");
+            }
+            this.securityAttributes = securityAttributes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem", "state");
@@ -283,6 +305,7 @@ public final class GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.securityAttributes = securityAttributes;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.timeCreated = timeCreated;

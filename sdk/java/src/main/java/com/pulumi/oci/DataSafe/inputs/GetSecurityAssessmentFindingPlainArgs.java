@@ -46,6 +46,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    @Import(name="containsOracleDefinedSeverities")
+    private @Nullable List<String> containsOracleDefinedSeverities;
+
+    public Optional<List<String>> containsOracleDefinedSeverities() {
+        return Optional.ofNullable(this.containsOracleDefinedSeverities);
+    }
+
     @Import(name="containsReferences")
     private @Nullable List<String> containsReferences;
 
@@ -144,6 +151,7 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsOracleDefinedSeverities = $.containsOracleDefinedSeverities;
         this.containsReferences = $.containsReferences;
         this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
@@ -195,6 +203,15 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+
+        public Builder containsOracleDefinedSeverities(@Nullable List<String> containsOracleDefinedSeverities) {
+            $.containsOracleDefinedSeverities = containsOracleDefinedSeverities;
+            return this;
+        }
+
+        public Builder containsOracleDefinedSeverities(String... containsOracleDefinedSeverities) {
+            return containsOracleDefinedSeverities(List.of(containsOracleDefinedSeverities));
         }
 
         public Builder containsReferences(@Nullable List<String> containsReferences) {

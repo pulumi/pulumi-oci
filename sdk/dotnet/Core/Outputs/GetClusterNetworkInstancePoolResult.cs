@@ -52,6 +52,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterNetworkInstancePoolPlacementConfigurationResult> PlacementConfigurations;
         /// <summary>
+        /// The type of resources managed by the pool.
+        /// </summary>
+        public readonly string PoolType;
+        /// <summary>
         /// The number of instances that should be in the instance pool.
         /// </summary>
         public readonly int Size;
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetClusterNetworkInstancePoolPlacementConfigurationResult> placementConfigurations,
 
+            string poolType,
+
             int size,
 
             string state,
@@ -105,6 +111,7 @@ namespace Pulumi.Oci.Core.Outputs
             InstanceHostnameFormatter = instanceHostnameFormatter;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;
+            PoolType = poolType;
             Size = size;
             State = state;
             TimeCreated = timeCreated;

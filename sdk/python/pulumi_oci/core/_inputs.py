@@ -95,6 +95,8 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgsDict',
     'ComputeCapacityTopologyCapacitySourceArgs',
     'ComputeCapacityTopologyCapacitySourceArgsDict',
+    'ComputeClusterPlacementConstraintDetailsArgs',
+    'ComputeClusterPlacementConstraintDetailsArgsDict',
     'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs',
     'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict',
     'ComputeGpuMemoryFabricMemoryFabricPreferencesArgs',
@@ -171,6 +173,10 @@ __all__ = [
     'InstanceAgentConfigPluginsConfigArgsDict',
     'InstanceAvailabilityConfigArgs',
     'InstanceAvailabilityConfigArgsDict',
+    'InstanceConfigurationGmcConfigsArgs',
+    'InstanceConfigurationGmcConfigsArgsDict',
+    'InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs',
+    'InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgsDict',
     'InstanceConfigurationInstanceDetailsArgs',
     'InstanceConfigurationInstanceDetailsArgsDict',
     'InstanceConfigurationInstanceDetailsBlockVolumeArgs',
@@ -2230,6 +2236,10 @@ class ClusterNetworkInstancePoolArgsDict(TypedDict):
     """
     The placement configurations for the instance pool.
     """
+    pool_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of resources managed by the pool.
+    """
     state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The current state of the cluster network.
@@ -2254,6 +2264,7 @@ class ClusterNetworkInstancePoolArgs:
                  instance_hostname_formatter: pulumi.Input[Optional[_builtins.str]] = None,
                  load_balancers: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]]] = None,
                  placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]] = None,
+                 pool_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -2267,6 +2278,7 @@ class ClusterNetworkInstancePoolArgs:
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolLoadBalancerArgs']]] load_balancers: The load balancers attached to the instance pool.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]] placement_configurations: The placement configurations for the instance pool.
+        :param pulumi.Input[_builtins.str] pool_type: The type of resources managed by the pool.
         :param pulumi.Input[_builtins.str] state: The current state of the cluster network.
         :param pulumi.Input[_builtins.str] time_created: The date and time the resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -2292,6 +2304,8 @@ class ClusterNetworkInstancePoolArgs:
             pulumi.set(__self__, "load_balancers", load_balancers)
         if placement_configurations is not None:
             pulumi.set(__self__, "placement_configurations", placement_configurations)
+        if pool_type is not None:
+            pulumi.set(__self__, "pool_type", pool_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -2434,6 +2448,18 @@ class ClusterNetworkInstancePoolArgs:
     @placement_configurations.setter
     def placement_configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterNetworkInstancePoolPlacementConfigurationArgs']]]]):
         pulumi.set(self, "placement_configurations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="poolType")
+    def pool_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of resources managed by the pool.
+        """
+        return pulumi.get(self, "pool_type")
+
+    @pool_type.setter
+    def pool_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pool_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -3844,6 +3870,153 @@ class ComputeCapacityTopologyCapacitySourceArgs:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+
+class ComputeClusterPlacementConstraintDetailsArgsDict(TypedDict):
+    type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The type for the placement constraints. Supported value: `COMPUTE_CLUSTER`.
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+    hpc_island_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island for the compute cluster.
+
+    This field cannot be updated after creation of the compute cluster.
+    """
+    logical_placement_constraint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The logical placement strategy to apply. Allowed values are `SINGLE_TIER`, `SINGLE_BLOCK`, and `PACKED_DISTRIBUTION_MULTI_BLOCK`.
+    """
+    target_memory_fabric_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The list of target GPU memory fabric OCIDs to constrain placement. Up to 15 items are allowed.
+
+    If GMFs are passed in, the `hpcIslandId` must be set on the compute cluster, and the provided GMFs must belong to that same HPC island.
+
+    The ordering of the array will be preserved. Ensure that all items in the array are unique.
+    """
+    target_network_block_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The list of target network block OCIDs to constrain placement. Up to 15 items are allowed.
+
+    If `targetNetworkBlockIds` is provided, the `hpcIslandId` must be set on the compute cluster, and the provided network blocks must belong to that same HPC island.
+
+    The ordering of the array will be preserved. Ensure that all items in the array are unique.
+    """
+
+@pulumi.input_type
+class ComputeClusterPlacementConstraintDetailsArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 logical_placement_constraint: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_memory_fabric_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_network_block_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: (Updatable) The type for the placement constraints. Supported value: `COMPUTE_CLUSTER`.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island for the compute cluster.
+               
+               This field cannot be updated after creation of the compute cluster.
+        :param pulumi.Input[_builtins.str] logical_placement_constraint: The logical placement strategy to apply. Allowed values are `SINGLE_TIER`, `SINGLE_BLOCK`, and `PACKED_DISTRIBUTION_MULTI_BLOCK`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_memory_fabric_ids: The list of target GPU memory fabric OCIDs to constrain placement. Up to 15 items are allowed.
+               
+               If GMFs are passed in, the `hpcIslandId` must be set on the compute cluster, and the provided GMFs must belong to that same HPC island.
+               
+               The ordering of the array will be preserved. Ensure that all items in the array are unique.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_network_block_ids: The list of target network block OCIDs to constrain placement. Up to 15 items are allowed.
+               
+               If `targetNetworkBlockIds` is provided, the `hpcIslandId` must be set on the compute cluster, and the provided network blocks must belong to that same HPC island.
+               
+               The ordering of the array will be preserved. Ensure that all items in the array are unique.
+        """
+        pulumi.set(__self__, "type", type)
+        if hpc_island_id is not None:
+            pulumi.set(__self__, "hpc_island_id", hpc_island_id)
+        if logical_placement_constraint is not None:
+            pulumi.set(__self__, "logical_placement_constraint", logical_placement_constraint)
+        if target_memory_fabric_ids is not None:
+            pulumi.set(__self__, "target_memory_fabric_ids", target_memory_fabric_ids)
+        if target_network_block_ids is not None:
+            pulumi.set(__self__, "target_network_block_ids", target_network_block_ids)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type for the placement constraints. Supported value: `COMPUTE_CLUSTER`.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hpcIslandId")
+    def hpc_island_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island for the compute cluster.
+
+        This field cannot be updated after creation of the compute cluster.
+        """
+        return pulumi.get(self, "hpc_island_id")
+
+    @hpc_island_id.setter
+    def hpc_island_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hpc_island_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logicalPlacementConstraint")
+    def logical_placement_constraint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The logical placement strategy to apply. Allowed values are `SINGLE_TIER`, `SINGLE_BLOCK`, and `PACKED_DISTRIBUTION_MULTI_BLOCK`.
+        """
+        return pulumi.get(self, "logical_placement_constraint")
+
+    @logical_placement_constraint.setter
+    def logical_placement_constraint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "logical_placement_constraint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetMemoryFabricIds")
+    def target_memory_fabric_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of target GPU memory fabric OCIDs to constrain placement. Up to 15 items are allowed.
+
+        If GMFs are passed in, the `hpcIslandId` must be set on the compute cluster, and the provided GMFs must belong to that same HPC island.
+
+        The ordering of the array will be preserved. Ensure that all items in the array are unique.
+        """
+        return pulumi.get(self, "target_memory_fabric_ids")
+
+    @target_memory_fabric_ids.setter
+    def target_memory_fabric_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "target_memory_fabric_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetNetworkBlockIds")
+    def target_network_block_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The list of target network block OCIDs to constrain placement. Up to 15 items are allowed.
+
+        If `targetNetworkBlockIds` is provided, the `hpcIslandId` must be set on the compute cluster, and the provided network blocks must belong to that same HPC island.
+
+        The ordering of the array will be preserved. Ensure that all items in the array are unique.
+        """
+        return pulumi.get(self, "target_network_block_ids")
+
+    @target_network_block_ids.setter
+    def target_network_block_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "target_network_block_ids", value)
 
 
 class ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict(TypedDict):
@@ -6813,6 +6986,240 @@ class InstanceAvailabilityConfigArgs:
         pulumi.set(self, "recovery_action", value)
 
 
+class InstanceConfigurationGmcConfigsArgsDict(TypedDict):
+    availability_domain: pulumi.Input[_builtins.str]
+    """
+    The availability domain for this GMC configuration entry.
+    """
+    compartment_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment associated with this GMC configuration entry.
+    """
+    instance_configuration_id: pulumi.Input[_builtins.str]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+    """
+    defined_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+    """
+    freeform_tags: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    """
+    gpu_memory_cluster_scale_config: NotRequired[pulumi.Input[Optional['InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgsDict']]]
+    """
+    Configuration settings for GPU Memory Cluster scaling.
+    """
+    size: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The desired number of instances for this GMC configuration entry.
+    """
+
+@pulumi.input_type
+class InstanceConfigurationGmcConfigsArgs:
+    def __init__(__self__, *,
+                 availability_domain: pulumi.Input[_builtins.str],
+                 compartment_id: pulumi.Input[_builtins.str],
+                 instance_configuration_id: pulumi.Input[_builtins.str],
+                 defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gpu_memory_cluster_scale_config: pulumi.Input[Optional['InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs']] = None,
+                 size: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] availability_domain: The availability domain for this GMC configuration entry.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment associated with this GMC configuration entry.
+        :param pulumi.Input[_builtins.str] instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs'] gpu_memory_cluster_scale_config: Configuration settings for GPU Memory Cluster scaling.
+        :param pulumi.Input[_builtins.str] size: The desired number of instances for this GMC configuration entry.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "instance_configuration_id", instance_configuration_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gpu_memory_cluster_scale_config is not None:
+            pulumi.set(__self__, "gpu_memory_cluster_scale_config", gpu_memory_cluster_scale_config)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> pulumi.Input[_builtins.str]:
+        """
+        The availability domain for this GMC configuration entry.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @availability_domain.setter
+    def availability_domain(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "availability_domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment associated with this GMC configuration entry.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfigurationId")
+    def instance_configuration_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+        """
+        return pulumi.get(self, "instance_configuration_id")
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "instance_configuration_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gpuMemoryClusterScaleConfig")
+    def gpu_memory_cluster_scale_config(self) -> pulumi.Input[Optional['InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs']]:
+        """
+        Configuration settings for GPU Memory Cluster scaling.
+        """
+        return pulumi.get(self, "gpu_memory_cluster_scale_config")
+
+    @gpu_memory_cluster_scale_config.setter
+    def gpu_memory_cluster_scale_config(self, value: pulumi.Input[Optional['InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs']]):
+        pulumi.set(self, "gpu_memory_cluster_scale_config", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The desired number of instances for this GMC configuration entry.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "size", value)
+
+
+class InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgsDict(TypedDict):
+    is_upsize_enabled: pulumi.Input[_builtins.bool]
+    """
+    Enables upsizing towards the target size.
+    """
+    is_downsize_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Enables downsizing towards the target size.
+    """
+    target_size: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The configured target size for the GPU Memory Cluster.
+    """
+
+@pulumi.input_type
+class InstanceConfigurationGmcConfigsGpuMemoryClusterScaleConfigArgs:
+    def __init__(__self__, *,
+                 is_upsize_enabled: pulumi.Input[_builtins.bool],
+                 is_downsize_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 target_size: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_upsize_enabled: Enables upsizing towards the target size.
+        :param pulumi.Input[_builtins.bool] is_downsize_enabled: Enables downsizing towards the target size.
+        :param pulumi.Input[_builtins.str] target_size: The configured target size for the GPU Memory Cluster.
+        """
+        pulumi.set(__self__, "is_upsize_enabled", is_upsize_enabled)
+        if is_downsize_enabled is not None:
+            pulumi.set(__self__, "is_downsize_enabled", is_downsize_enabled)
+        if target_size is not None:
+            pulumi.set(__self__, "target_size", target_size)
+
+    @_builtins.property
+    @pulumi.getter(name="isUpsizeEnabled")
+    def is_upsize_enabled(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Enables upsizing towards the target size.
+        """
+        return pulumi.get(self, "is_upsize_enabled")
+
+    @is_upsize_enabled.setter
+    def is_upsize_enabled(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_upsize_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDownsizeEnabled")
+    def is_downsize_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enables downsizing towards the target size.
+        """
+        return pulumi.get(self, "is_downsize_enabled")
+
+    @is_downsize_enabled.setter
+    def is_downsize_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_downsize_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetSize")
+    def target_size(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The configured target size for the GPU Memory Cluster.
+        """
+        return pulumi.get(self, "target_size")
+
+    @target_size.setter
+    def target_size(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_size", value)
+
+
 class InstanceConfigurationInstanceDetailsArgsDict(TypedDict):
     instance_type: pulumi.Input[_builtins.str]
     """
@@ -9164,7 +9571,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs:
 class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict(TypedDict):
     type: pulumi.Input[_builtins.str]
     """
-    The type of action to run when the instance is interrupted for eviction.
+    Operating System type of the Configuration.
     """
     license_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -9180,7 +9587,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
                  type: pulumi.Input[_builtins.str],
                  license_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: The type of action to run when the instance is interrupted for eviction.
+        :param pulumi.Input[_builtins.str] type: Operating System type of the Configuration.
         :param pulumi.Input[_builtins.str] license_type: License Type for the OS license.
                * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
                * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
@@ -9194,7 +9601,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of action to run when the instance is interrupted for eviction.
+        Operating System type of the Configuration.
         """
         return pulumi.get(self, "type")
 

@@ -158,6 +158,7 @@ from .get_sql_firewall_policy_analytics import *
 from .get_sql_firewall_violation_analytics import *
 from .get_sql_firewall_violations import *
 from .get_target_alert_policy_association import *
+from .get_target_alert_policy_association_unassociated_target_members import *
 from .get_target_alert_policy_associations import *
 from .get_target_database import *
 from .get_target_database_group import *

@@ -18,6 +18,7 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
         "category": args.category,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsOracleDefinedSeverities": args.containsOracleDefinedSeverities,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
         "fields": args.fields,
@@ -54,6 +55,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: boolean;
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     */
+    containsOracleDefinedSeverities?: string[];
     /**
      * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
      */
@@ -120,6 +125,7 @@ export interface GetSecurityAssessmentFindingsResult {
     readonly category?: string;
     readonly compartmentId?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly containsOracleDefinedSeverities?: string[];
     readonly containsReferences?: string[];
     readonly containsSeverities?: string[];
     readonly fields?: string[];
@@ -169,6 +175,7 @@ export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentF
         "category": args.category,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsOracleDefinedSeverities": args.containsOracleDefinedSeverities,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
         "fields": args.fields,
@@ -205,6 +212,10 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean | undefined>;
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     */
+    containsOracleDefinedSeverities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
      */

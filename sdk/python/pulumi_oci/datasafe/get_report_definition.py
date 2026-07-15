@@ -27,7 +27,7 @@ class GetReportDefinitionResult:
     """
     A collection of values returned by getReportDefinition.
     """
-    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, compliance_standards=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_seeded=None, lifecycle_details=None, parent_id=None, record_time_span=None, report_definition_id=None, schedule=None, scheduled_report_compartment_id=None, scheduled_report_mime_type=None, scheduled_report_name=None, scheduled_report_row_limit=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, compliance_standards=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_schedule_pagination_enabled=None, is_seeded=None, lifecycle_details=None, parent_id=None, record_time_span=None, report_definition_id=None, schedule=None, scheduled_report_compartment_id=None, scheduled_report_mime_type=None, scheduled_report_name=None, scheduled_report_row_limit=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
@@ -67,6 +67,9 @@ class GetReportDefinitionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_schedule_pagination_enabled and not isinstance(is_schedule_pagination_enabled, bool):
+            raise TypeError("Expected argument 'is_schedule_pagination_enabled' to be a bool")
+        pulumi.set(__self__, "is_schedule_pagination_enabled", is_schedule_pagination_enabled)
         if is_seeded and not isinstance(is_seeded, bool):
             raise TypeError("Expected argument 'is_seeded' to be a bool")
         pulumi.set(__self__, "is_seeded", is_seeded)
@@ -221,6 +224,14 @@ class GetReportDefinitionResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isSchedulePaginationEnabled")
+    def is_schedule_pagination_enabled(self) -> _builtins.bool:
+        """
+        Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        """
+        return pulumi.get(self, "is_schedule_pagination_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="isSeeded")
     def is_seeded(self) -> _builtins.bool:
         """
@@ -365,6 +376,7 @@ class AwaitableGetReportDefinitionResult(GetReportDefinitionResult):
             display_order=self.display_order,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_schedule_pagination_enabled=self.is_schedule_pagination_enabled,
             is_seeded=self.is_seeded,
             lifecycle_details=self.lifecycle_details,
             parent_id=self.parent_id,
@@ -421,6 +433,7 @@ def get_report_definition(report_definition_id: Optional[_builtins.str] = None,
         display_order=pulumi.get(__ret__, 'display_order'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_schedule_pagination_enabled=pulumi.get(__ret__, 'is_schedule_pagination_enabled'),
         is_seeded=pulumi.get(__ret__, 'is_seeded'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         parent_id=pulumi.get(__ret__, 'parent_id'),
@@ -474,6 +487,7 @@ def get_report_definition_output(report_definition_id: pulumi.Input[Optional[_bu
         display_order=pulumi.get(__response__, 'display_order'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_schedule_pagination_enabled=pulumi.get(__response__, 'is_schedule_pagination_enabled'),
         is_seeded=pulumi.get(__response__, 'is_seeded'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         parent_id=pulumi.get(__response__, 'parent_id'),

@@ -206,14 +206,29 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+     * The type of resources managed by the pool.
+     * 
+     */
+    @Import(name="poolType")
+    private @Nullable Output<String> poolType;
+
+    /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public Optional<Output<String>> poolType() {
+        return Optional.ofNullable(this.poolType);
+    }
+
+    /**
+     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      * 
      */
     @Import(name="size")
     private @Nullable Output<Integer> size;
 
     /**
-     * @return (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+     * @return (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      * 
      */
     public Optional<Output<Integer>> size() {
@@ -271,6 +286,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleManagement = $.lifecycleManagement;
         this.loadBalancers = $.loadBalancers;
         this.placementConfigurations = $.placementConfigurations;
+        this.poolType = $.poolType;
         this.size = $.size;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -573,7 +589,28 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+         * @param poolType The type of resources managed by the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolType(@Nullable Output<String> poolType) {
+            $.poolType = poolType;
+            return this;
+        }
+
+        /**
+         * @param poolType The type of resources managed by the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolType(String poolType) {
+            return poolType(Output.of(poolType));
+        }
+
+        /**
+         * @param size (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
          * 
          * @return builder
          * 
@@ -584,7 +621,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param size (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute.
+         * @param size (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool&#39;s actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool&#39;s actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
          * 
          * @return builder
          * 

@@ -129,6 +129,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string AiDataPlatformType;
         /// <summary>
+        /// The current aiFeatureStatus of the AiDataPlatform.
+        /// </summary>
+        public readonly string AiFeatureStatus;
+        /// <summary>
         /// The alias Id of the AiDataPlatform which is the short form of OCID.
         /// </summary>
         public readonly string AliasKey;
@@ -157,6 +161,7 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the AiDataPlatform.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsEnableAiFeature;
         /// <summary>
         /// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
@@ -177,6 +182,9 @@ namespace Pulumi.Oci.Oci
         /// The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly string VectorDbAdminCred;
+        public readonly string VectorDbAdminSecretId;
+        public readonly string VectorDbId;
         /// <summary>
         /// The WebSocket URL of the AiDataPlatform.
         /// </summary>
@@ -187,6 +195,8 @@ namespace Pulumi.Oci.Oci
             string aiDataPlatformId,
 
             string aiDataPlatformType,
+
+            string aiFeatureStatus,
 
             string aliasKey,
 
@@ -204,6 +214,8 @@ namespace Pulumi.Oci.Oci
 
             string id,
 
+            bool isEnableAiFeature,
+
             string lifecycleDetails,
 
             string state,
@@ -214,10 +226,17 @@ namespace Pulumi.Oci.Oci
 
             string timeUpdated,
 
+            string vectorDbAdminCred,
+
+            string vectorDbAdminSecretId,
+
+            string vectorDbId,
+
             string webSocketEndpoint)
         {
             AiDataPlatformId = aiDataPlatformId;
             AiDataPlatformType = aiDataPlatformType;
+            AiFeatureStatus = aiFeatureStatus;
             AliasKey = aliasKey;
             CompartmentId = compartmentId;
             CreatedBy = createdBy;
@@ -226,11 +245,15 @@ namespace Pulumi.Oci.Oci
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsEnableAiFeature = isEnableAiFeature;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            VectorDbAdminCred = vectorDbAdminCred;
+            VectorDbAdminSecretId = vectorDbAdminSecretId;
+            VectorDbId = vectorDbId;
             WebSocketEndpoint = webSocketEndpoint;
         }
     }

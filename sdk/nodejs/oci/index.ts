@@ -65,6 +65,21 @@ export type CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = 
 export const CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement: typeof import("./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement").CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = null as any;
 utilities.lazyLoad(exports, ["CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"], () => require("./costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"));
 
+export { DataccInfrastructureArgs, DataccInfrastructureState } from "./dataccInfrastructure";
+export type DataccInfrastructure = import("./dataccInfrastructure").DataccInfrastructure;
+export const DataccInfrastructure: typeof import("./dataccInfrastructure").DataccInfrastructure = null as any;
+utilities.lazyLoad(exports, ["DataccInfrastructure"], () => require("./dataccInfrastructure"));
+
+export { DataccVmClusterNetworkArgs, DataccVmClusterNetworkState } from "./dataccVmClusterNetwork";
+export type DataccVmClusterNetwork = import("./dataccVmClusterNetwork").DataccVmClusterNetwork;
+export const DataccVmClusterNetwork: typeof import("./dataccVmClusterNetwork").DataccVmClusterNetwork = null as any;
+utilities.lazyLoad(exports, ["DataccVmClusterNetwork"], () => require("./dataccVmClusterNetwork"));
+
+export { DataccVmInstanceArgs, DataccVmInstanceState } from "./dataccVmInstance";
+export type DataccVmInstance = import("./dataccVmInstance").DataccVmInstance;
+export const DataccVmInstance: typeof import("./dataccVmInstance").DataccVmInstance = null as any;
+utilities.lazyLoad(exports, ["DataccVmInstance"], () => require("./dataccVmInstance"));
+
 export { DbmulticloudMultiCloudResourceDiscoveryArgs, DbmulticloudMultiCloudResourceDiscoveryState } from "./dbmulticloudMultiCloudResourceDiscovery";
 export type DbmulticloudMultiCloudResourceDiscovery = import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery;
 export const DbmulticloudMultiCloudResourceDiscovery: typeof import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery = null as any;
@@ -274,6 +289,51 @@ export { GetCostadCostAnomalyMonitorsArgs, GetCostadCostAnomalyMonitorsResult, G
 export const getCostadCostAnomalyMonitors: typeof import("./getCostadCostAnomalyMonitors").getCostadCostAnomalyMonitors = null as any;
 export const getCostadCostAnomalyMonitorsOutput: typeof import("./getCostadCostAnomalyMonitors").getCostadCostAnomalyMonitorsOutput = null as any;
 utilities.lazyLoad(exports, ["getCostadCostAnomalyMonitors","getCostadCostAnomalyMonitorsOutput"], () => require("./getCostadCostAnomalyMonitors"));
+
+export { GetDataccInfrastructureArgs, GetDataccInfrastructureResult, GetDataccInfrastructureOutputArgs } from "./getDataccInfrastructure";
+export const getDataccInfrastructure: typeof import("./getDataccInfrastructure").getDataccInfrastructure = null as any;
+export const getDataccInfrastructureOutput: typeof import("./getDataccInfrastructure").getDataccInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccInfrastructure","getDataccInfrastructureOutput"], () => require("./getDataccInfrastructure"));
+
+export { GetDataccInfrastructureScaleOptionArgs, GetDataccInfrastructureScaleOptionResult, GetDataccInfrastructureScaleOptionOutputArgs } from "./getDataccInfrastructureScaleOption";
+export const getDataccInfrastructureScaleOption: typeof import("./getDataccInfrastructureScaleOption").getDataccInfrastructureScaleOption = null as any;
+export const getDataccInfrastructureScaleOptionOutput: typeof import("./getDataccInfrastructureScaleOption").getDataccInfrastructureScaleOptionOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccInfrastructureScaleOption","getDataccInfrastructureScaleOptionOutput"], () => require("./getDataccInfrastructureScaleOption"));
+
+export { GetDataccInfrastructuresArgs, GetDataccInfrastructuresResult, GetDataccInfrastructuresOutputArgs } from "./getDataccInfrastructures";
+export const getDataccInfrastructures: typeof import("./getDataccInfrastructures").getDataccInfrastructures = null as any;
+export const getDataccInfrastructuresOutput: typeof import("./getDataccInfrastructures").getDataccInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccInfrastructures","getDataccInfrastructuresOutput"], () => require("./getDataccInfrastructures"));
+
+export { GetDataccMaintenanceExecutionArgs, GetDataccMaintenanceExecutionResult, GetDataccMaintenanceExecutionOutputArgs } from "./getDataccMaintenanceExecution";
+export const getDataccMaintenanceExecution: typeof import("./getDataccMaintenanceExecution").getDataccMaintenanceExecution = null as any;
+export const getDataccMaintenanceExecutionOutput: typeof import("./getDataccMaintenanceExecution").getDataccMaintenanceExecutionOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccMaintenanceExecution","getDataccMaintenanceExecutionOutput"], () => require("./getDataccMaintenanceExecution"));
+
+export { GetDataccMaintenanceExecutionsArgs, GetDataccMaintenanceExecutionsResult, GetDataccMaintenanceExecutionsOutputArgs } from "./getDataccMaintenanceExecutions";
+export const getDataccMaintenanceExecutions: typeof import("./getDataccMaintenanceExecutions").getDataccMaintenanceExecutions = null as any;
+export const getDataccMaintenanceExecutionsOutput: typeof import("./getDataccMaintenanceExecutions").getDataccMaintenanceExecutionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccMaintenanceExecutions","getDataccMaintenanceExecutionsOutput"], () => require("./getDataccMaintenanceExecutions"));
+
+export { GetDataccVmClusterNetworkArgs, GetDataccVmClusterNetworkResult, GetDataccVmClusterNetworkOutputArgs } from "./getDataccVmClusterNetwork";
+export const getDataccVmClusterNetwork: typeof import("./getDataccVmClusterNetwork").getDataccVmClusterNetwork = null as any;
+export const getDataccVmClusterNetworkOutput: typeof import("./getDataccVmClusterNetwork").getDataccVmClusterNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccVmClusterNetwork","getDataccVmClusterNetworkOutput"], () => require("./getDataccVmClusterNetwork"));
+
+export { GetDataccVmClusterNetworksArgs, GetDataccVmClusterNetworksResult, GetDataccVmClusterNetworksOutputArgs } from "./getDataccVmClusterNetworks";
+export const getDataccVmClusterNetworks: typeof import("./getDataccVmClusterNetworks").getDataccVmClusterNetworks = null as any;
+export const getDataccVmClusterNetworksOutput: typeof import("./getDataccVmClusterNetworks").getDataccVmClusterNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccVmClusterNetworks","getDataccVmClusterNetworksOutput"], () => require("./getDataccVmClusterNetworks"));
+
+export { GetDataccVmInstanceArgs, GetDataccVmInstanceResult, GetDataccVmInstanceOutputArgs } from "./getDataccVmInstance";
+export const getDataccVmInstance: typeof import("./getDataccVmInstance").getDataccVmInstance = null as any;
+export const getDataccVmInstanceOutput: typeof import("./getDataccVmInstance").getDataccVmInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccVmInstance","getDataccVmInstanceOutput"], () => require("./getDataccVmInstance"));
+
+export { GetDataccVmInstancesArgs, GetDataccVmInstancesResult, GetDataccVmInstancesOutputArgs } from "./getDataccVmInstances";
+export const getDataccVmInstances: typeof import("./getDataccVmInstances").getDataccVmInstances = null as any;
+export const getDataccVmInstancesOutput: typeof import("./getDataccVmInstances").getDataccVmInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDataccVmInstances","getDataccVmInstancesOutput"], () => require("./getDataccVmInstances"));
 
 export { GetDbmulticloudMultiCloudResourceDiscoveriesArgs, GetDbmulticloudMultiCloudResourceDiscoveriesResult, GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs } from "./getDbmulticloudMultiCloudResourceDiscoveries";
 export const getDbmulticloudMultiCloudResourceDiscoveries: typeof import("./getDbmulticloudMultiCloudResourceDiscoveries").getDbmulticloudMultiCloudResourceDiscoveries = null as any;
@@ -944,6 +1004,12 @@ const _module = {
                 return new CostadCostAnomalyMonitor(name, <any>undefined, { urn })
             case "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement":
                 return new CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(name, <any>undefined, { urn })
+            case "oci:oci/dataccInfrastructure:DataccInfrastructure":
+                return new DataccInfrastructure(name, <any>undefined, { urn })
+            case "oci:oci/dataccVmClusterNetwork:DataccVmClusterNetwork":
+                return new DataccVmClusterNetwork(name, <any>undefined, { urn })
+            case "oci:oci/dataccVmInstance:DataccVmInstance":
+                return new DataccVmInstance(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
                 return new DbmulticloudMultiCloudResourceDiscovery(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -1031,6 +1097,9 @@ pulumi.runtime.registerResourceModule("oci", "oci/costadCostAlertSubscription", 
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyEvent", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyMonitor", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dataccInfrastructure", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dataccVmClusterNetwork", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dataccVmInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKey", _module)

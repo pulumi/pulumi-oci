@@ -28,7 +28,7 @@ class GetUserAssessmentUsersResult:
     """
     A collection of values returned by getUserAssessmentUsers.
     """
-    def __init__(__self__, access_level=None, account_status=None, are_all_schemas_accessible=None, authentication_type=None, compartment_id_in_subtree=None, filters=None, id=None, schema_lists=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_expiry_greater_than_or_equal_to=None, time_password_expiry_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, user_profile=None, user_role=None, user_type=None, users=None):
+    def __init__(__self__, access_level=None, account_status=None, are_all_schemas_accessible=None, authentication_type=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, schema_lists=None, target_id=None, time_last_login_greater_than_or_equal_to=None, time_last_login_less_than=None, time_password_expiry_greater_than_or_equal_to=None, time_password_expiry_less_than=None, time_password_last_changed_greater_than_or_equal_to=None, time_password_last_changed_less_than=None, time_user_created_greater_than_or_equal_to=None, time_user_created_less_than=None, user_assessment_id=None, user_category=None, user_key=None, user_name=None, user_profile=None, user_role=None, user_type=None, users=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -41,6 +41,9 @@ class GetUserAssessmentUsersResult:
         if authentication_type and not isinstance(authentication_type, str):
             raise TypeError("Expected argument 'authentication_type' to be a str")
         pulumi.set(__self__, "authentication_type", authentication_type)
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -133,6 +136,11 @@ class GetUserAssessmentUsersResult:
         The user authentication method.
         """
         return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentIdInSubtree")
@@ -271,6 +279,7 @@ class AwaitableGetUserAssessmentUsersResult(GetUserAssessmentUsersResult):
             account_status=self.account_status,
             are_all_schemas_accessible=self.are_all_schemas_accessible,
             authentication_type=self.authentication_type,
+            compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             filters=self.filters,
             id=self.id,
@@ -298,6 +307,7 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
                               account_status: Optional[_builtins.str] = None,
                               are_all_schemas_accessible: Optional[_builtins.bool] = None,
                               authentication_type: Optional[_builtins.str] = None,
+                              compartment_id: Optional[_builtins.str] = None,
                               compartment_id_in_subtree: Optional[_builtins.bool] = None,
                               filters: Optional[Sequence[Union['GetUserAssessmentUsersFilterArgs', 'GetUserAssessmentUsersFilterArgsDict']]] = None,
                               schema_lists: Optional[Sequence[_builtins.str]] = None,
@@ -337,6 +347,7 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
         account_status=user_assessment_user_account_status,
         are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible == "true",
         authentication_type=user_assessment_user_authentication_type,
+        compartment_id=compartment_id,
         compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree == "true",
         schema_lists=user_assessment_user_schema_list,
         target_id=test_target["id"],
@@ -361,6 +372,7 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
     :param _builtins.str account_status: A filter to return only items that match the specified account status.
     :param _builtins.bool are_all_schemas_accessible: A filter to return only items that match the criteria that all schemas can be accessed by a user.
     :param _builtins.str authentication_type: A filter to return only items that match the specified authentication type.
+    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param Sequence[_builtins.str] schema_lists: A filter to return items that contain the specified schema list.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
@@ -396,6 +408,7 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
     __args__['accountStatus'] = account_status
     __args__['areAllSchemasAccessible'] = are_all_schemas_accessible
     __args__['authenticationType'] = authentication_type
+    __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['schemaLists'] = schema_lists
@@ -423,6 +436,7 @@ def get_user_assessment_users(access_level: Optional[_builtins.str] = None,
         account_status=pulumi.get(__ret__, 'account_status'),
         are_all_schemas_accessible=pulumi.get(__ret__, 'are_all_schemas_accessible'),
         authentication_type=pulumi.get(__ret__, 'authentication_type'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -448,6 +462,7 @@ def get_user_assessment_users_output(access_level: pulumi.Input[Optional[Optiona
                                      account_status: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      are_all_schemas_accessible: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                      authentication_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetUserAssessmentUsersFilterArgs', 'GetUserAssessmentUsersFilterArgsDict']]]]] = None,
                                      schema_lists: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
@@ -487,6 +502,7 @@ def get_user_assessment_users_output(access_level: pulumi.Input[Optional[Optiona
         account_status=user_assessment_user_account_status,
         are_all_schemas_accessible=user_assessment_user_are_all_schemas_accessible == "true",
         authentication_type=user_assessment_user_authentication_type,
+        compartment_id=compartment_id,
         compartment_id_in_subtree=user_assessment_user_compartment_id_in_subtree == "true",
         schema_lists=user_assessment_user_schema_list,
         target_id=test_target["id"],
@@ -511,6 +527,7 @@ def get_user_assessment_users_output(access_level: pulumi.Input[Optional[Optiona
     :param _builtins.str account_status: A filter to return only items that match the specified account status.
     :param _builtins.bool are_all_schemas_accessible: A filter to return only items that match the criteria that all schemas can be accessed by a user.
     :param _builtins.str authentication_type: A filter to return only items that match the specified authentication type.
+    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param Sequence[_builtins.str] schema_lists: A filter to return items that contain the specified schema list.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
@@ -546,6 +563,7 @@ def get_user_assessment_users_output(access_level: pulumi.Input[Optional[Optiona
     __args__['accountStatus'] = account_status
     __args__['areAllSchemasAccessible'] = are_all_schemas_accessible
     __args__['authenticationType'] = authentication_type
+    __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['schemaLists'] = schema_lists
@@ -572,6 +590,7 @@ def get_user_assessment_users_output(access_level: pulumi.Input[Optional[Optiona
         account_status=pulumi.get(__response__, 'account_status'),
         are_all_schemas_accessible=pulumi.get(__response__, 'are_all_schemas_accessible'),
         authentication_type=pulumi.get(__response__, 'authentication_type'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

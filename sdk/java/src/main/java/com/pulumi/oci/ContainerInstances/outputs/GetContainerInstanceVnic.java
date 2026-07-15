@@ -33,6 +33,10 @@ public final class GetContainerInstanceVnic {
     private List<String> nsgIds;
     private String privateIp;
     private Boolean skipSourceDestCheck;
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
     private String subnetId;
     /**
      * @return The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
@@ -77,6 +81,10 @@ public final class GetContainerInstanceVnic {
     public Boolean skipSourceDestCheck() {
         return this.skipSourceDestCheck;
     }
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
     public String subnetId() {
         return this.subnetId;
     }

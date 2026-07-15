@@ -26,7 +26,7 @@ class GetReportResult:
     """
     A collection of values returned by getReport.
     """
-    def __init__(__self__, compartment_id=None, data_source=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_created=None, time_generated=None, time_updated=None, type=None):
+    def __init__(__self__, compartment_id=None, data_source=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mime_type=None, next_report_id=None, previous_report_id=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_created=None, time_generated=None, time_updated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54,6 +54,12 @@ class GetReportResult:
         if mime_type and not isinstance(mime_type, str):
             raise TypeError("Expected argument 'mime_type' to be a str")
         pulumi.set(__self__, "mime_type", mime_type)
+        if next_report_id and not isinstance(next_report_id, str):
+            raise TypeError("Expected argument 'next_report_id' to be a str")
+        pulumi.set(__self__, "next_report_id", next_report_id)
+        if previous_report_id and not isinstance(previous_report_id, str):
+            raise TypeError("Expected argument 'previous_report_id' to be a str")
+        pulumi.set(__self__, "previous_report_id", previous_report_id)
         if report_definition_id and not isinstance(report_definition_id, str):
             raise TypeError("Expected argument 'report_definition_id' to be a str")
         pulumi.set(__self__, "report_definition_id", report_definition_id)
@@ -152,6 +158,22 @@ class GetReportResult:
         return pulumi.get(self, "mime_type")
 
     @_builtins.property
+    @pulumi.getter(name="nextReportId")
+    def next_report_id(self) -> _builtins.str:
+        """
+        The OCID of the next report generated.
+        """
+        return pulumi.get(self, "next_report_id")
+
+    @_builtins.property
+    @pulumi.getter(name="previousReportId")
+    def previous_report_id(self) -> _builtins.str:
+        """
+        The OCID of the previous report generated.
+        """
+        return pulumi.get(self, "previous_report_id")
+
+    @_builtins.property
     @pulumi.getter(name="reportDefinitionId")
     def report_definition_id(self) -> _builtins.str:
         """
@@ -228,6 +250,8 @@ class AwaitableGetReportResult(GetReportResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             mime_type=self.mime_type,
+            next_report_id=self.next_report_id,
+            previous_report_id=self.previous_report_id,
             report_definition_id=self.report_definition_id,
             report_id=self.report_id,
             state=self.state,
@@ -272,6 +296,8 @@ def get_report(report_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         mime_type=pulumi.get(__ret__, 'mime_type'),
+        next_report_id=pulumi.get(__ret__, 'next_report_id'),
+        previous_report_id=pulumi.get(__ret__, 'previous_report_id'),
         report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
         report_id=pulumi.get(__ret__, 'report_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -313,6 +339,8 @@ def get_report_output(report_id: pulumi.Input[Optional[_builtins.str]] = None,
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         mime_type=pulumi.get(__response__, 'mime_type'),
+        next_report_id=pulumi.get(__response__, 'next_report_id'),
+        previous_report_id=pulumi.get(__response__, 'previous_report_id'),
         report_definition_id=pulumi.get(__response__, 'report_definition_id'),
         report_id=pulumi.get(__response__, 'report_id'),
         state=pulumi.get(__response__, 'state'),

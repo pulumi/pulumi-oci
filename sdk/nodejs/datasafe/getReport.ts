@@ -78,6 +78,14 @@ export interface GetReportResult {
      */
     readonly mimeType: string;
     /**
+     * The OCID of the next report generated.
+     */
+    readonly nextReportId: string;
+    /**
+     * The OCID of the previous report generated.
+     */
+    readonly previousReportId: string;
+    /**
      * The OCID of the report definition.
      */
     readonly reportDefinitionId: string;

@@ -63,6 +63,11 @@ public final class GetClusterNetworkInstancePool {
      */
     private List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    private String poolType;
+    /**
      * @return The number of instances that should be in the instance pool.
      * 
      */
@@ -149,6 +154,13 @@ public final class GetClusterNetworkInstancePool {
         return this.placementConfigurations;
     }
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public String poolType() {
+        return this.poolType;
+    }
+    /**
      * @return The number of instances that should be in the instance pool.
      * 
      */
@@ -190,6 +202,7 @@ public final class GetClusterNetworkInstancePool {
         private String instanceHostnameFormatter;
         private List<GetClusterNetworkInstancePoolLoadBalancer> loadBalancers;
         private List<GetClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
+        private String poolType;
         private Integer size;
         private String state;
         private String timeCreated;
@@ -207,6 +220,7 @@ public final class GetClusterNetworkInstancePool {
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
+    	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -307,6 +321,14 @@ public final class GetClusterNetworkInstancePool {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
+        public Builder poolType(String poolType) {
+            if (poolType == null) {
+              throw new MissingRequiredPropertyException("GetClusterNetworkInstancePool", "poolType");
+            }
+            this.poolType = poolType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder size(Integer size) {
             if (size == null) {
               throw new MissingRequiredPropertyException("GetClusterNetworkInstancePool", "size");
@@ -343,6 +365,7 @@ public final class GetClusterNetworkInstancePool {
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
             _resultValue.loadBalancers = loadBalancers;
             _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.poolType = poolType;
             _resultValue.size = size;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

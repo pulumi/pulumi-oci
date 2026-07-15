@@ -280,6 +280,20 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    @Export(name="isSchedulePaginationEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isSchedulePaginationEnabled;
+
+    /**
+     * @return Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    public Output<Boolean> isSchedulePaginationEnabled() {
+        return this.isSchedulePaginationEnabled;
+    }
+    /**
      * Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */

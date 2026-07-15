@@ -204,6 +204,21 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    @Import(name="isSchedulePaginationEnabled")
+    private @Nullable Output<Boolean> isSchedulePaginationEnabled;
+
+    /**
+     * @return Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    public Optional<Output<Boolean>> isSchedulePaginationEnabled() {
+        return Optional.ofNullable(this.isSchedulePaginationEnabled);
+    }
+
+    /**
      * Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
@@ -443,6 +458,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         this.displayName = $.displayName;
         this.displayOrder = $.displayOrder;
         this.freeformTags = $.freeformTags;
+        this.isSchedulePaginationEnabled = $.isSchedulePaginationEnabled;
         this.isSeeded = $.isSeeded;
         this.lifecycleDetails = $.lifecycleDetails;
         this.parentId = $.parentId;
@@ -768,6 +784,27 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isSchedulePaginationEnabled Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulePaginationEnabled(@Nullable Output<Boolean> isSchedulePaginationEnabled) {
+            $.isSchedulePaginationEnabled = isSchedulePaginationEnabled;
+            return this;
+        }
+
+        /**
+         * @param isSchedulePaginationEnabled Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSchedulePaginationEnabled(Boolean isSchedulePaginationEnabled) {
+            return isSchedulePaginationEnabled(Output.of(isSchedulePaginationEnabled));
         }
 
         /**

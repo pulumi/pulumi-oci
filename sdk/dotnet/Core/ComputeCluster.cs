@@ -51,6 +51,14 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         PlacementConstraintDetails = new Oci.Core.Inputs.ComputeClusterPlacementConstraintDetailsArgs
+    ///         {
+    ///             Type = "COMPUTE_CLUSTER",
+    ///             HpcIslandId = testHpcIsland.Id,
+    ///             LogicalPlacementConstraint = computeClusterPlacementConstraintDetailsLogicalPlacementConstraint,
+    ///             TargetMemoryFabricIds = computeClusterPlacementConstraintDetailsTargetMemoryFabricIds,
+    ///             TargetNetworkBlockIds = computeClusterPlacementConstraintDetailsTargetNetworkBlockIds,
+    ///         },
     ///     });
     /// 
     /// });
@@ -92,14 +100,16 @@ namespace Pulumi.Oci.Core
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The details for providing placement constraints.
+        /// </summary>
+        [Output("placementConstraintDetails")]
+        public Output<Outputs.ComputeClusterPlacementConstraintDetails> PlacementConstraintDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the compute cluster.
@@ -112,6 +122,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Output("timeUpdated")]
+        public Output<string> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>
@@ -193,17 +209,19 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The details for providing placement constraints.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.ComputeClusterPlacementConstraintDetailsArgs>? PlacementConstraintDetails { get; set; }
 
         public ComputeClusterArgs()
         {
@@ -247,17 +265,19 @@ namespace Pulumi.Oci.Core
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The details for providing placement constraints.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.ComputeClusterPlacementConstraintDetailsGetArgs>? PlacementConstraintDetails { get; set; }
 
         /// <summary>
         /// The current state of the compute cluster.
@@ -270,6 +290,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        [Input("timeUpdated")]
+        public Input<string>? TimeUpdated { get; set; }
 
         public ComputeClusterState()
         {

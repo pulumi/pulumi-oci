@@ -83,6 +83,11 @@ public final class GetInstancePoolResult {
      */
     private List<GetInstancePoolPlacementConfiguration> placementConfigurations;
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    private String poolType;
+    /**
      * @return The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      * 
      */
@@ -194,6 +199,13 @@ public final class GetInstancePoolResult {
         return this.placementConfigurations;
     }
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public String poolType() {
+        return this.poolType;
+    }
+    /**
      * @return The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
      * 
      */
@@ -238,6 +250,7 @@ public final class GetInstancePoolResult {
         private List<GetInstancePoolLifecycleManagement> lifecycleManagements;
         private List<GetInstancePoolLoadBalancer> loadBalancers;
         private List<GetInstancePoolPlacementConfiguration> placementConfigurations;
+        private String poolType;
         private Integer size;
         private String state;
         private String timeCreated;
@@ -258,6 +271,7 @@ public final class GetInstancePoolResult {
     	      this.lifecycleManagements = defaults.lifecycleManagements;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
+    	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -385,6 +399,14 @@ public final class GetInstancePoolResult {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
+        public Builder poolType(String poolType) {
+            if (poolType == null) {
+              throw new MissingRequiredPropertyException("GetInstancePoolResult", "poolType");
+            }
+            this.poolType = poolType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder size(Integer size) {
             if (size == null) {
               throw new MissingRequiredPropertyException("GetInstancePoolResult", "size");
@@ -424,6 +446,7 @@ public final class GetInstancePoolResult {
             _resultValue.lifecycleManagements = lifecycleManagements;
             _resultValue.loadBalancers = loadBalancers;
             _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.poolType = poolType;
             _resultValue.size = size;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

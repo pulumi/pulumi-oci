@@ -28,7 +28,7 @@ class GetSecurityAssessmentFindingsResult:
     """
     A collection of values returned by getSecurityAssessmentFindings.
     """
-    def __init__(__self__, access_level=None, category=None, compartment_id=None, compartment_id_in_subtree=None, contains_references=None, contains_severities=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None, target_ids=None):
+    def __init__(__self__, access_level=None, category=None, compartment_id=None, compartment_id_in_subtree=None, contains_oracle_defined_severities=None, contains_references=None, contains_severities=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None, target_ids=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -41,6 +41,9 @@ class GetSecurityAssessmentFindingsResult:
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if contains_oracle_defined_severities and not isinstance(contains_oracle_defined_severities, list):
+            raise TypeError("Expected argument 'contains_oracle_defined_severities' to be a list")
+        pulumi.set(__self__, "contains_oracle_defined_severities", contains_oracle_defined_severities)
         if contains_references and not isinstance(contains_references, list):
             raise TypeError("Expected argument 'contains_references' to be a list")
         pulumi.set(__self__, "contains_references", contains_references)
@@ -109,6 +112,11 @@ class GetSecurityAssessmentFindingsResult:
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
+
+    @_builtins.property
+    @pulumi.getter(name="containsOracleDefinedSeverities")
+    def contains_oracle_defined_severities(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "contains_oracle_defined_severities")
 
     @_builtins.property
     @pulumi.getter(name="containsReferences")
@@ -217,6 +225,7 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
             category=self.category,
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
+            contains_oracle_defined_severities=self.contains_oracle_defined_severities,
             contains_references=self.contains_references,
             contains_severities=self.contains_severities,
             fields=self.fields,
@@ -238,6 +247,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
                                      category: Optional[_builtins.str] = None,
                                      compartment_id: Optional[_builtins.str] = None,
                                      compartment_id_in_subtree: Optional[_builtins.bool] = None,
+                                     contains_oracle_defined_severities: Optional[Sequence[_builtins.str]] = None,
                                      contains_references: Optional[Sequence[_builtins.str]] = None,
                                      contains_severities: Optional[Sequence[_builtins.str]] = None,
                                      fields: Optional[Sequence[_builtins.str]] = None,
@@ -262,6 +272,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     :param _builtins.str category: The category of the finding.
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[_builtins.str] contains_oracle_defined_severities: A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
     :param Sequence[_builtins.str] contains_references: An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
     :param Sequence[_builtins.str] contains_severities: A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
     :param Sequence[_builtins.str] fields: Specifies a subset of fields to be returned in the response.
@@ -284,6 +295,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['containsOracleDefinedSeverities'] = contains_oracle_defined_severities
     __args__['containsReferences'] = contains_references
     __args__['containsSeverities'] = contains_severities
     __args__['fields'] = fields
@@ -305,6 +317,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
         category=pulumi.get(__ret__, 'category'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        contains_oracle_defined_severities=pulumi.get(__ret__, 'contains_oracle_defined_severities'),
         contains_references=pulumi.get(__ret__, 'contains_references'),
         contains_severities=pulumi.get(__ret__, 'contains_severities'),
         fields=pulumi.get(__ret__, 'fields'),
@@ -324,6 +337,7 @@ def get_security_assessment_findings_output(access_level: pulumi.Input[Optional[
                                             category: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                             compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                            contains_oracle_defined_severities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             contains_references: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             contains_severities: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                             fields: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
@@ -348,6 +362,7 @@ def get_security_assessment_findings_output(access_level: pulumi.Input[Optional[
     :param _builtins.str category: The category of the finding.
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[_builtins.str] contains_oracle_defined_severities: A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
     :param Sequence[_builtins.str] contains_references: An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
     :param Sequence[_builtins.str] contains_severities: A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
     :param Sequence[_builtins.str] fields: Specifies a subset of fields to be returned in the response.
@@ -370,6 +385,7 @@ def get_security_assessment_findings_output(access_level: pulumi.Input[Optional[
     __args__['category'] = category
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['containsOracleDefinedSeverities'] = contains_oracle_defined_severities
     __args__['containsReferences'] = contains_references
     __args__['containsSeverities'] = contains_severities
     __args__['fields'] = fields
@@ -390,6 +406,7 @@ def get_security_assessment_findings_output(access_level: pulumi.Input[Optional[
         category=pulumi.get(__response__, 'category'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        contains_oracle_defined_severities=pulumi.get(__response__, 'contains_oracle_defined_severities'),
         contains_references=pulumi.get(__response__, 'contains_references'),
         contains_severities=pulumi.get(__response__, 'contains_severities'),
         fields=pulumi.get(__response__, 'fields'),

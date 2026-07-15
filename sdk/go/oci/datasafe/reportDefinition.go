@@ -125,6 +125,8 @@ type ReportDefinition struct {
 	DisplayOrder pulumi.IntOutput `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+	IsSchedulePaginationEnabled pulumi.BoolOutput `pulumi:"isSchedulePaginationEnabled"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolOutput `pulumi:"isSeeded"`
 	// Details about the current state of the report definition in Data Safe.
@@ -232,6 +234,8 @@ type reportDefinitionState struct {
 	DisplayOrder *int `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+	IsSchedulePaginationEnabled *bool `pulumi:"isSchedulePaginationEnabled"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded *bool `pulumi:"isSeeded"`
 	// Details about the current state of the report definition in Data Safe.
@@ -289,6 +293,8 @@ type ReportDefinitionState struct {
 	DisplayOrder pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+	IsSchedulePaginationEnabled pulumi.BoolPtrInput
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolPtrInput
 	// Details about the current state of the report definition in Data Safe.
@@ -517,6 +523,11 @@ func (o ReportDefinitionOutput) DisplayOrder() pulumi.IntOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o ReportDefinitionOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+func (o ReportDefinitionOutput) IsSchedulePaginationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ReportDefinition) pulumi.BoolOutput { return v.IsSchedulePaginationEnabled }).(pulumi.BoolOutput)
 }
 
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.

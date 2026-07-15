@@ -28,6 +28,7 @@ from .cross_connect import *
 from .cross_connect_group import *
 from .dedicated_vm_host import *
 from .default_dhcp_options import *
+from .default_drg_route_table import *
 from .default_route_table import *
 from .default_security_list import *
 from .dhcp_options import *

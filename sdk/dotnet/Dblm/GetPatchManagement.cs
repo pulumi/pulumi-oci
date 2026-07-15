@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Dblm
         /// <summary>
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
         /// 
+        /// &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+        /// 
         /// Overview of Patch Management.
         /// 
         /// 
@@ -25,6 +27,8 @@ namespace Pulumi.Oci.Dblm
         /// <summary>
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
         /// 
+        /// &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+        /// 
         /// Overview of Patch Management.
         /// 
         /// 
@@ -35,6 +39,8 @@ namespace Pulumi.Oci.Dblm
 
         /// <summary>
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+        /// 
+        /// &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
         /// 
         /// Overview of Patch Management.
         /// 

@@ -97,6 +97,12 @@ namespace Pulumi.Oci.Core.Inputs
         }
 
         /// <summary>
+        /// The type of resources managed by the pool.
+        /// </summary>
+        [Input("poolType")]
+        public Input<string>? PoolType { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of instances that should be in the instance pool.
         /// </summary>
         [Input("size", required: true)]

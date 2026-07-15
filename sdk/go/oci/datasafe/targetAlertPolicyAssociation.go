@@ -46,7 +46,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				TargetType: targetAlertPolicyAssociationTargetType,
+//				TargetType: pulumi.Any(targetAlertPolicyAssociationTargetType),
 //			})
 //			if err != nil {
 //				return err
@@ -89,6 +89,11 @@ type TargetAlertPolicyAssociation struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target or target database group.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType pulumi.StringOutput `pulumi:"targetType"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -159,6 +164,11 @@ type targetAlertPolicyAssociationState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target or target database group.
 	TargetId *string `pulumi:"targetId"`
+	// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType *string `pulumi:"targetType"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -188,6 +198,11 @@ type TargetAlertPolicyAssociationState struct {
 	SystemTags pulumi.StringMapInput
 	// The OCID of the target or target database group.
 	TargetId pulumi.StringPtrInput
+	// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType pulumi.StringPtrInput
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -215,6 +230,11 @@ type targetAlertPolicyAssociationArgs struct {
 	PolicyId string `pulumi:"policyId"`
 	// The OCID of the target or target database group.
 	TargetId string `pulumi:"targetId"`
+	// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType *string `pulumi:"targetType"`
 }
 
 // The set of arguments for constructing a TargetAlertPolicyAssociation resource.
@@ -235,6 +255,11 @@ type TargetAlertPolicyAssociationArgs struct {
 	PolicyId pulumi.StringInput
 	// The OCID of the target or target database group.
 	TargetId pulumi.StringInput
+	// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TargetType pulumi.StringPtrInput
 }
 
 func (TargetAlertPolicyAssociationArgs) ElementType() reflect.Type {
@@ -377,6 +402,14 @@ func (o TargetAlertPolicyAssociationOutput) SystemTags() pulumi.StringMapOutput 
 // The OCID of the target or target database group.
 func (o TargetAlertPolicyAssociationOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TargetAlertPolicyAssociationOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

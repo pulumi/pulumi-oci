@@ -12,8 +12,8 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datasafe
  *
- * Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
- * it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
+ * Creates a new saved security assessment for a target database or target database group in a compartment. When this operation is performed,
+ * it will save the latest assessment in the specified compartment. If a schedule is passed, it will persist the latest assessment,
  * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
  *
  * ## Import

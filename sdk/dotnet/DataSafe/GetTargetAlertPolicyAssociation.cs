@@ -169,9 +169,13 @@ namespace Pulumi.Oci.DataSafe
         public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TargetAlertPolicyAssociationId;
         /// <summary>
-        /// The OCID of the target on which alert policy is to be applied.
+        /// The OCID of the target or target database group on which alert policy is to be applied.
         /// </summary>
         public readonly string TargetId;
+        /// <summary>
+        /// The resource type that is represented by the target alert policy association.
+        /// </summary>
+        public readonly string TargetType;
         /// <summary>
         /// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
@@ -209,6 +213,8 @@ namespace Pulumi.Oci.DataSafe
 
             string targetId,
 
+            string targetType,
+
             string timeCreated,
 
             string timeUpdated)
@@ -226,6 +232,7 @@ namespace Pulumi.Oci.DataSafe
             SystemTags = systemTags;
             TargetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

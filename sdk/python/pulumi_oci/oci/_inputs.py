@@ -45,6 +45,30 @@ __all__ = [
     'BatchBatchTaskProfileExtendedInformationArgsDict',
     'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs',
     'CostadCostAnomalyMonitorCostAlertSubscriptionMapArgsDict',
+    'DataccInfrastructureComputeCapacityArgs',
+    'DataccInfrastructureComputeCapacityArgsDict',
+    'DataccInfrastructureContactArgs',
+    'DataccInfrastructureContactArgsDict',
+    'DataccInfrastructureMaintenanceWindowArgs',
+    'DataccInfrastructureMaintenanceWindowArgsDict',
+    'DataccInfrastructureServerArgs',
+    'DataccInfrastructureServerArgsDict',
+    'DataccInfrastructureServerComputeCapacityArgs',
+    'DataccInfrastructureServerComputeCapacityArgsDict',
+    'DataccInfrastructureStorageCapacityArgs',
+    'DataccInfrastructureStorageCapacityArgsDict',
+    'DataccInfrastructureSystemStorageCapacityArgs',
+    'DataccInfrastructureSystemStorageCapacityArgsDict',
+    'DataccInfrastructureSystemStorageCapacityAcfArgs',
+    'DataccInfrastructureSystemStorageCapacityAcfArgsDict',
+    'DataccInfrastructureSystemStorageCapacityDiskGroupArgs',
+    'DataccInfrastructureSystemStorageCapacityDiskGroupArgsDict',
+    'DataccVmClusterNetworkScanArgs',
+    'DataccVmClusterNetworkScanArgsDict',
+    'DataccVmClusterNetworkVmNetworkArgs',
+    'DataccVmClusterNetworkVmNetworkArgsDict',
+    'DataccVmClusterNetworkVmNetworkNodeArgs',
+    'DataccVmClusterNetworkVmNetworkNodeArgsDict',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgs',
@@ -295,6 +319,14 @@ __all__ = [
     'GetCostadCostAnomalyEventsFilterArgsDict',
     'GetCostadCostAnomalyMonitorsFilterArgs',
     'GetCostadCostAnomalyMonitorsFilterArgsDict',
+    'GetDataccInfrastructuresFilterArgs',
+    'GetDataccInfrastructuresFilterArgsDict',
+    'GetDataccMaintenanceExecutionsFilterArgs',
+    'GetDataccMaintenanceExecutionsFilterArgsDict',
+    'GetDataccVmClusterNetworksFilterArgs',
+    'GetDataccVmClusterNetworksFilterArgsDict',
+    'GetDataccVmInstancesFilterArgs',
+    'GetDataccVmInstancesFilterArgsDict',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs',
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs',
@@ -1573,6 +1605,1451 @@ class CostadCostAnomalyMonitorCostAlertSubscriptionMapArgs:
     @threshold_relative_percent.setter
     def threshold_relative_percent(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threshold_relative_percent", value)
+
+
+class DataccInfrastructureComputeCapacityArgsDict(TypedDict):
+    allocated_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total CPU cores count allocated..
+    """
+    available_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total available CPU cores count.
+    """
+    available_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Available memory, in gigabytes (GB).
+    """
+    reserved_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total Reserved CPU cores count.
+    """
+    reserved_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Reserved memory, in gigabytes (GB).
+    """
+    total_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total CPU cores count.
+    """
+    total_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total memory allocated, in gigabytes (GB).
+    """
+    used_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+    """
+
+@pulumi.input_type
+class DataccInfrastructureComputeCapacityArgs:
+    def __init__(__self__, *,
+                 allocated_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 used_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] allocated_cores: Total CPU cores count allocated..
+        :param pulumi.Input[_builtins.int] available_cores: Total available CPU cores count.
+        :param pulumi.Input[_builtins.str] available_memory_in_gbs: Available memory, in gigabytes (GB).
+        :param pulumi.Input[_builtins.int] reserved_cores: Total Reserved CPU cores count.
+        :param pulumi.Input[_builtins.str] reserved_memory_in_gbs: Reserved memory, in gigabytes (GB).
+        :param pulumi.Input[_builtins.int] total_cores: Total CPU cores count.
+        :param pulumi.Input[_builtins.str] total_memory_in_gbs: Total memory allocated, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] used_memory_in_gbs: Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+        """
+        if allocated_cores is not None:
+            pulumi.set(__self__, "allocated_cores", allocated_cores)
+        if available_cores is not None:
+            pulumi.set(__self__, "available_cores", available_cores)
+        if available_memory_in_gbs is not None:
+            pulumi.set(__self__, "available_memory_in_gbs", available_memory_in_gbs)
+        if reserved_cores is not None:
+            pulumi.set(__self__, "reserved_cores", reserved_cores)
+        if reserved_memory_in_gbs is not None:
+            pulumi.set(__self__, "reserved_memory_in_gbs", reserved_memory_in_gbs)
+        if total_cores is not None:
+            pulumi.set(__self__, "total_cores", total_cores)
+        if total_memory_in_gbs is not None:
+            pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        if used_memory_in_gbs is not None:
+            pulumi.set(__self__, "used_memory_in_gbs", used_memory_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="allocatedCores")
+    def allocated_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total CPU cores count allocated..
+        """
+        return pulumi.get(self, "allocated_cores")
+
+    @allocated_cores.setter
+    def allocated_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "allocated_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableCores")
+    def available_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total available CPU cores count.
+        """
+        return pulumi.get(self, "available_cores")
+
+    @available_cores.setter
+    def available_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableMemoryInGbs")
+    def available_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Available memory, in gigabytes (GB).
+        """
+        return pulumi.get(self, "available_memory_in_gbs")
+
+    @available_memory_in_gbs.setter
+    def available_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "available_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedCores")
+    def reserved_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total Reserved CPU cores count.
+        """
+        return pulumi.get(self, "reserved_cores")
+
+    @reserved_cores.setter
+    def reserved_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "reserved_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedMemoryInGbs")
+    def reserved_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Reserved memory, in gigabytes (GB).
+        """
+        return pulumi.get(self, "reserved_memory_in_gbs")
+
+    @reserved_memory_in_gbs.setter
+    def reserved_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reserved_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalCores")
+    def total_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total CPU cores count.
+        """
+        return pulumi.get(self, "total_cores")
+
+    @total_cores.setter
+    def total_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total memory allocated, in gigabytes (GB).
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @total_memory_in_gbs.setter
+    def total_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usedMemoryInGbs")
+    def used_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+        """
+        return pulumi.get(self, "used_memory_in_gbs")
+
+    @used_memory_in_gbs.setter
+    def used_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "used_memory_in_gbs", value)
+
+
+class DataccInfrastructureContactArgsDict(TypedDict):
+    email: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The email for the Database Infrastructure contact.
+    """
+    is_primary: pulumi.Input[_builtins.bool]
+    """
+    (Updatable) If `true`, this Database Infrastructure contact is a primary contact.  If `false`, this Database Infrastructure is a secondary contact.
+    """
+    name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the Database Infrastructure contact.
+    """
+    is_contact_mos_validated: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) If `true`, this Database Infrastructure contact is a valid My Oracle Support (MOS) contact.  If `false`, this Database Infrastructure contact is not a valid MOS contact.
+    """
+    phone_number: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The phone number for the Database Infrastructure contact.
+    """
+
+@pulumi.input_type
+class DataccInfrastructureContactArgs:
+    def __init__(__self__, *,
+                 email: pulumi.Input[_builtins.str],
+                 is_primary: pulumi.Input[_builtins.bool],
+                 name: pulumi.Input[_builtins.str],
+                 is_contact_mos_validated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 phone_number: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] email: (Updatable) The email for the Database Infrastructure contact.
+        :param pulumi.Input[_builtins.bool] is_primary: (Updatable) If `true`, this Database Infrastructure contact is a primary contact.  If `false`, this Database Infrastructure is a secondary contact.
+        :param pulumi.Input[_builtins.str] name: (Updatable) The name of the Database Infrastructure contact.
+        :param pulumi.Input[_builtins.bool] is_contact_mos_validated: (Updatable) If `true`, this Database Infrastructure contact is a valid My Oracle Support (MOS) contact.  If `false`, this Database Infrastructure contact is not a valid MOS contact.
+        :param pulumi.Input[_builtins.str] phone_number: (Updatable) The phone number for the Database Infrastructure contact.
+        """
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "is_primary", is_primary)
+        pulumi.set(__self__, "name", name)
+        if is_contact_mos_validated is not None:
+            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The email for the Database Infrastructure contact.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "email", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> pulumi.Input[_builtins.bool]:
+        """
+        (Updatable) If `true`, this Database Infrastructure contact is a primary contact.  If `false`, this Database Infrastructure is a secondary contact.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @is_primary.setter
+    def is_primary(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_primary", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the Database Infrastructure contact.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isContactMosValidated")
+    def is_contact_mos_validated(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) If `true`, this Database Infrastructure contact is a valid My Oracle Support (MOS) contact.  If `false`, this Database Infrastructure contact is not a valid MOS contact.
+        """
+        return pulumi.get(self, "is_contact_mos_validated")
+
+    @is_contact_mos_validated.setter
+    def is_contact_mos_validated(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_contact_mos_validated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The phone number for the Database Infrastructure contact.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "phone_number", value)
+
+
+class DataccInfrastructureMaintenanceWindowArgsDict(TypedDict):
+    custom_action_timeout_in_mins: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Determines the amount of time the system will wait before the start of each Database Infrastructure server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+    """
+    days_of_weeks: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) Days during the week when maintenance should be performed.
+    """
+    hours_of_days: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
+    """
+    (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+    """
+    is_custom_action_timeout_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between Database Infrastructure server patching operations.
+    """
+    is_monthly_patching_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) If true, enables the monthly patching option.
+    """
+    lead_time_in_weeks: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Lead time window allows user to set a lead time to prepare for a down time.  The lead time is in weeks and valid value is between 1 to 4.
+    """
+    months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) Months during the year when maintenance should be performed.
+    """
+    patching_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Cloud Database Infrastructure node patching method. *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Database Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)  for more information.
+    """
+    preference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The maintenance window scheduling preference.
+    """
+    weeks_of_months: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
+    """
+    (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and  22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates,  not days of the week.For example, to allow maintenance during the 2nd week of the month  (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction  with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and  hours that maintenance will be performed.
+    """
+
+@pulumi.input_type
+class DataccInfrastructureMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+                 days_of_weeks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 hours_of_days: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 is_custom_action_timeout_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_monthly_patching_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 lead_time_in_weeks: pulumi.Input[Optional[_builtins.int]] = None,
+                 months: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 preference: pulumi.Input[Optional[_builtins.str]] = None,
+                 weeks_of_months: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None):
+        """
+        :param pulumi.Input[_builtins.int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each Database Infrastructure server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[_builtins.bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between Database Infrastructure server patching operations.
+        :param pulumi.Input[_builtins.bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
+        :param pulumi.Input[_builtins.int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time.  The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] months: (Updatable) Months during the year when maintenance should be performed.
+        :param pulumi.Input[_builtins.str] patching_mode: (Updatable) Cloud Database Infrastructure node patching method. *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Database Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)  for more information.
+        :param pulumi.Input[_builtins.str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and  22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates,  not days of the week.For example, to allow maintenance during the 2nd week of the month  (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction  with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and  hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @_builtins.property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Determines the amount of time the system will wait before the start of each Database Infrastructure server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between Database Infrastructure server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Lead time window allows user to set a lead time to prepare for a down time.  The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def months(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "months", value)
+
+    @_builtins.property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Cloud Database Infrastructure node patching method. *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Database Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle)  for more information.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "patching_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def preference(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "preference", value)
+
+    @_builtins.property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and  22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates,  not days of the week.For example, to allow maintenance during the 2nd week of the month  (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction  with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and  hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+class DataccInfrastructureServerArgsDict(TypedDict):
+    base_vm_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of database virtual machines hosted on the server.
+    """
+    compute_capacities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureServerComputeCapacityArgsDict']]]]]
+    """
+    Capacity details of the Database Infrastructure.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Data Server of Infrastructure.
+    """
+    ilom_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Database Infrastructure Server ILOM IP address.
+    """
+    ilom_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Database Infrastructure Server ILOM name.
+    """
+    instance_vm_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of instances hosted on the server.
+    """
+    server_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Database Infrastructure Server IP address.
+    """
+    server_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Database Infrastructure Server name.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The current state of the Database Infrastructure.
+    """
+
+@pulumi.input_type
+class DataccInfrastructureServerArgs:
+    def __init__(__self__, *,
+                 base_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 compute_capacities: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureServerComputeCapacityArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 ilom_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 ilom_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_vm_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 server_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 server_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] base_vm_count: Number of database virtual machines hosted on the server.
+        :param pulumi.Input[Sequence[pulumi.Input['DataccInfrastructureServerComputeCapacityArgs']]] compute_capacities: Capacity details of the Database Infrastructure.
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Data Server of Infrastructure.
+        :param pulumi.Input[_builtins.str] ilom_ip_address: Database Infrastructure Server ILOM IP address.
+        :param pulumi.Input[_builtins.str] ilom_name: Database Infrastructure Server ILOM name.
+        :param pulumi.Input[_builtins.int] instance_vm_count: Number of instances hosted on the server.
+        :param pulumi.Input[_builtins.str] server_ip_address: Database Infrastructure Server IP address.
+        :param pulumi.Input[_builtins.str] server_name: Database Infrastructure Server name.
+        :param pulumi.Input[_builtins.str] state: The current state of the Database Infrastructure.
+        """
+        if base_vm_count is not None:
+            pulumi.set(__self__, "base_vm_count", base_vm_count)
+        if compute_capacities is not None:
+            pulumi.set(__self__, "compute_capacities", compute_capacities)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if ilom_ip_address is not None:
+            pulumi.set(__self__, "ilom_ip_address", ilom_ip_address)
+        if ilom_name is not None:
+            pulumi.set(__self__, "ilom_name", ilom_name)
+        if instance_vm_count is not None:
+            pulumi.set(__self__, "instance_vm_count", instance_vm_count)
+        if server_ip_address is not None:
+            pulumi.set(__self__, "server_ip_address", server_ip_address)
+        if server_name is not None:
+            pulumi.set(__self__, "server_name", server_name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="baseVmCount")
+    def base_vm_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of database virtual machines hosted on the server.
+        """
+        return pulumi.get(self, "base_vm_count")
+
+    @base_vm_count.setter
+    def base_vm_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "base_vm_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCapacities")
+    def compute_capacities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureServerComputeCapacityArgs']]]]:
+        """
+        Capacity details of the Database Infrastructure.
+        """
+        return pulumi.get(self, "compute_capacities")
+
+    @compute_capacities.setter
+    def compute_capacities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureServerComputeCapacityArgs']]]]):
+        pulumi.set(self, "compute_capacities", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Data Server of Infrastructure.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ilomIpAddress")
+    def ilom_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Database Infrastructure Server ILOM IP address.
+        """
+        return pulumi.get(self, "ilom_ip_address")
+
+    @ilom_ip_address.setter
+    def ilom_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ilom_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ilomName")
+    def ilom_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Database Infrastructure Server ILOM name.
+        """
+        return pulumi.get(self, "ilom_name")
+
+    @ilom_name.setter
+    def ilom_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ilom_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceVmCount")
+    def instance_vm_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of instances hosted on the server.
+        """
+        return pulumi.get(self, "instance_vm_count")
+
+    @instance_vm_count.setter
+    def instance_vm_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "instance_vm_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverIpAddress")
+    def server_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Database Infrastructure Server IP address.
+        """
+        return pulumi.get(self, "server_ip_address")
+
+    @server_ip_address.setter
+    def server_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "server_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverName")
+    def server_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Database Infrastructure Server name.
+        """
+        return pulumi.get(self, "server_name")
+
+    @server_name.setter
+    def server_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "server_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The current state of the Database Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class DataccInfrastructureServerComputeCapacityArgsDict(TypedDict):
+    allocated_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total CPU cores count allocated..
+    """
+    available_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total available CPU cores count.
+    """
+    available_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Available memory, in gigabytes (GB).
+    """
+    reserved_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total Reserved CPU cores count.
+    """
+    reserved_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Reserved memory, in gigabytes (GB).
+    """
+    total_cores: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total CPU cores count.
+    """
+    total_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total memory allocated, in gigabytes (GB).
+    """
+    used_memory_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+    """
+
+@pulumi.input_type
+class DataccInfrastructureServerComputeCapacityArgs:
+    def __init__(__self__, *,
+                 allocated_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 reserved_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 reserved_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_cores: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 used_memory_in_gbs: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] allocated_cores: Total CPU cores count allocated..
+        :param pulumi.Input[_builtins.int] available_cores: Total available CPU cores count.
+        :param pulumi.Input[_builtins.str] available_memory_in_gbs: Available memory, in gigabytes (GB).
+        :param pulumi.Input[_builtins.int] reserved_cores: Total Reserved CPU cores count.
+        :param pulumi.Input[_builtins.str] reserved_memory_in_gbs: Reserved memory, in gigabytes (GB).
+        :param pulumi.Input[_builtins.int] total_cores: Total CPU cores count.
+        :param pulumi.Input[_builtins.str] total_memory_in_gbs: Total memory allocated, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] used_memory_in_gbs: Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+        """
+        if allocated_cores is not None:
+            pulumi.set(__self__, "allocated_cores", allocated_cores)
+        if available_cores is not None:
+            pulumi.set(__self__, "available_cores", available_cores)
+        if available_memory_in_gbs is not None:
+            pulumi.set(__self__, "available_memory_in_gbs", available_memory_in_gbs)
+        if reserved_cores is not None:
+            pulumi.set(__self__, "reserved_cores", reserved_cores)
+        if reserved_memory_in_gbs is not None:
+            pulumi.set(__self__, "reserved_memory_in_gbs", reserved_memory_in_gbs)
+        if total_cores is not None:
+            pulumi.set(__self__, "total_cores", total_cores)
+        if total_memory_in_gbs is not None:
+            pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        if used_memory_in_gbs is not None:
+            pulumi.set(__self__, "used_memory_in_gbs", used_memory_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="allocatedCores")
+    def allocated_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total CPU cores count allocated..
+        """
+        return pulumi.get(self, "allocated_cores")
+
+    @allocated_cores.setter
+    def allocated_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "allocated_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableCores")
+    def available_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total available CPU cores count.
+        """
+        return pulumi.get(self, "available_cores")
+
+    @available_cores.setter
+    def available_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableMemoryInGbs")
+    def available_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Available memory, in gigabytes (GB).
+        """
+        return pulumi.get(self, "available_memory_in_gbs")
+
+    @available_memory_in_gbs.setter
+    def available_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "available_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedCores")
+    def reserved_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total Reserved CPU cores count.
+        """
+        return pulumi.get(self, "reserved_cores")
+
+    @reserved_cores.setter
+    def reserved_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "reserved_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedMemoryInGbs")
+    def reserved_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Reserved memory, in gigabytes (GB).
+        """
+        return pulumi.get(self, "reserved_memory_in_gbs")
+
+    @reserved_memory_in_gbs.setter
+    def reserved_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reserved_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalCores")
+    def total_cores(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total CPU cores count.
+        """
+        return pulumi.get(self, "total_cores")
+
+    @total_cores.setter
+    def total_cores(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_cores", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total memory allocated, in gigabytes (GB).
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @total_memory_in_gbs.setter
+    def total_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_memory_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usedMemoryInGbs")
+    def used_memory_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Memory allocated to Oracle database virtual machine cluster or Instance, in gigabytes (GB).
+        """
+        return pulumi.get(self, "used_memory_in_gbs")
+
+    @used_memory_in_gbs.setter
+    def used_memory_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "used_memory_in_gbs", value)
+
+
+class DataccInfrastructureStorageCapacityArgsDict(TypedDict):
+    disk_group: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Disk group name.
+    """
+    logical_free_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The total amount of logical disk space that is currently available for use in a disk group, in gigabytes (GB).
+    """
+    phy_free_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The total amount of physical disk space that is currently available for use in a disk group, in gigabytes (GB).
+    """
+    phy_reserved_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The total amount of physical disk space that is reserved for system use in a disk group, in gigabytes (GB).
+    """
+    phy_total_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The total amount of physical disk space available in a disk group, in gigabytes (GB).
+    """
+    storage_disk_redundancy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Disk redundancy for Database Infrastructure storage.
+    """
+
+@pulumi.input_type
+class DataccInfrastructureStorageCapacityArgs:
+    def __init__(__self__, *,
+                 disk_group: pulumi.Input[Optional[_builtins.str]] = None,
+                 logical_free_space_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 phy_free_space_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 phy_reserved_space_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 phy_total_space_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_disk_redundancy: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] disk_group: Disk group name.
+        :param pulumi.Input[_builtins.str] logical_free_space_in_gbs: The total amount of logical disk space that is currently available for use in a disk group, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] phy_free_space_in_gbs: The total amount of physical disk space that is currently available for use in a disk group, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] phy_reserved_space_in_gbs: The total amount of physical disk space that is reserved for system use in a disk group, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] phy_total_space_in_gbs: The total amount of physical disk space available in a disk group, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] storage_disk_redundancy: The Disk redundancy for Database Infrastructure storage.
+        """
+        if disk_group is not None:
+            pulumi.set(__self__, "disk_group", disk_group)
+        if logical_free_space_in_gbs is not None:
+            pulumi.set(__self__, "logical_free_space_in_gbs", logical_free_space_in_gbs)
+        if phy_free_space_in_gbs is not None:
+            pulumi.set(__self__, "phy_free_space_in_gbs", phy_free_space_in_gbs)
+        if phy_reserved_space_in_gbs is not None:
+            pulumi.set(__self__, "phy_reserved_space_in_gbs", phy_reserved_space_in_gbs)
+        if phy_total_space_in_gbs is not None:
+            pulumi.set(__self__, "phy_total_space_in_gbs", phy_total_space_in_gbs)
+        if storage_disk_redundancy is not None:
+            pulumi.set(__self__, "storage_disk_redundancy", storage_disk_redundancy)
+
+    @_builtins.property
+    @pulumi.getter(name="diskGroup")
+    def disk_group(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Disk group name.
+        """
+        return pulumi.get(self, "disk_group")
+
+    @disk_group.setter
+    def disk_group(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "disk_group", value)
+
+    @_builtins.property
+    @pulumi.getter(name="logicalFreeSpaceInGbs")
+    def logical_free_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The total amount of logical disk space that is currently available for use in a disk group, in gigabytes (GB).
+        """
+        return pulumi.get(self, "logical_free_space_in_gbs")
+
+    @logical_free_space_in_gbs.setter
+    def logical_free_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "logical_free_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="phyFreeSpaceInGbs")
+    def phy_free_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The total amount of physical disk space that is currently available for use in a disk group, in gigabytes (GB).
+        """
+        return pulumi.get(self, "phy_free_space_in_gbs")
+
+    @phy_free_space_in_gbs.setter
+    def phy_free_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "phy_free_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="phyReservedSpaceInGbs")
+    def phy_reserved_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The total amount of physical disk space that is reserved for system use in a disk group, in gigabytes (GB).
+        """
+        return pulumi.get(self, "phy_reserved_space_in_gbs")
+
+    @phy_reserved_space_in_gbs.setter
+    def phy_reserved_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "phy_reserved_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="phyTotalSpaceInGbs")
+    def phy_total_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The total amount of physical disk space available in a disk group, in gigabytes (GB).
+        """
+        return pulumi.get(self, "phy_total_space_in_gbs")
+
+    @phy_total_space_in_gbs.setter
+    def phy_total_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "phy_total_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageDiskRedundancy")
+    def storage_disk_redundancy(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Disk redundancy for Database Infrastructure storage.
+        """
+        return pulumi.get(self, "storage_disk_redundancy")
+
+    @storage_disk_redundancy.setter
+    def storage_disk_redundancy(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "storage_disk_redundancy", value)
+
+
+class DataccInfrastructureSystemStorageCapacityArgsDict(TypedDict):
+    acfs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityAcfArgsDict']]]]]
+    """
+    The amount of storage (in GB) in the DATA disk group that is currently utilized for creating local storage for VM Clusters and application VMs.
+    """
+    disk_groups: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityDiskGroupArgsDict']]]]]
+    """
+    List of storage disk group capacity details.
+    """
+
+@pulumi.input_type
+class DataccInfrastructureSystemStorageCapacityArgs:
+    def __init__(__self__, *,
+                 acfs: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityAcfArgs']]]] = None,
+                 disk_groups: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityDiskGroupArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityAcfArgs']]] acfs: The amount of storage (in GB) in the DATA disk group that is currently utilized for creating local storage for VM Clusters and application VMs.
+        :param pulumi.Input[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityDiskGroupArgs']]] disk_groups: List of storage disk group capacity details.
+        """
+        if acfs is not None:
+            pulumi.set(__self__, "acfs", acfs)
+        if disk_groups is not None:
+            pulumi.set(__self__, "disk_groups", disk_groups)
+
+    @_builtins.property
+    @pulumi.getter
+    def acfs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityAcfArgs']]]]:
+        """
+        The amount of storage (in GB) in the DATA disk group that is currently utilized for creating local storage for VM Clusters and application VMs.
+        """
+        return pulumi.get(self, "acfs")
+
+    @acfs.setter
+    def acfs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityAcfArgs']]]]):
+        pulumi.set(self, "acfs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diskGroups")
+    def disk_groups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityDiskGroupArgs']]]]:
+        """
+        List of storage disk group capacity details.
+        """
+        return pulumi.get(self, "disk_groups")
+
+    @disk_groups.setter
+    def disk_groups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DataccInfrastructureSystemStorageCapacityDiskGroupArgs']]]]):
+        pulumi.set(self, "disk_groups", value)
+
+
+class DataccInfrastructureSystemStorageCapacityAcfArgsDict(TypedDict):
+    free_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+    """
+    total_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of logical disk space available, in gigabytes (GB).
+    """
+
+@pulumi.input_type
+class DataccInfrastructureSystemStorageCapacityAcfArgs:
+    def __init__(__self__, *,
+                 free_space_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 total_space_in_gbs: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] free_space_in_gbs: The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+        :param pulumi.Input[_builtins.float] total_space_in_gbs: The total amount of logical disk space available, in gigabytes (GB).
+        """
+        if free_space_in_gbs is not None:
+            pulumi.set(__self__, "free_space_in_gbs", free_space_in_gbs)
+        if total_space_in_gbs is not None:
+            pulumi.set(__self__, "total_space_in_gbs", total_space_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="freeSpaceInGbs")
+    def free_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+        """
+        return pulumi.get(self, "free_space_in_gbs")
+
+    @free_space_in_gbs.setter
+    def free_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "free_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSpaceInGbs")
+    def total_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of logical disk space available, in gigabytes (GB).
+        """
+        return pulumi.get(self, "total_space_in_gbs")
+
+    @total_space_in_gbs.setter
+    def total_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "total_space_in_gbs", value)
+
+
+class DataccInfrastructureSystemStorageCapacityDiskGroupArgsDict(TypedDict):
+    free_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+    """
+    reserved_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of logical disk space that is reserved for system use, in gigabytes (GB).
+    """
+    storage_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The storage type for the Cloud Database Infrastructure.
+    """
+    total_space_in_gbs: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The total amount of logical disk space available, in gigabytes (GB).
+    """
+
+@pulumi.input_type
+class DataccInfrastructureSystemStorageCapacityDiskGroupArgs:
+    def __init__(__self__, *,
+                 free_space_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 reserved_space_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+                 storage_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_space_in_gbs: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] free_space_in_gbs: The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+        :param pulumi.Input[_builtins.float] reserved_space_in_gbs: The total amount of logical disk space that is reserved for system use, in gigabytes (GB).
+        :param pulumi.Input[_builtins.str] storage_type: The storage type for the Cloud Database Infrastructure.
+        :param pulumi.Input[_builtins.float] total_space_in_gbs: The total amount of logical disk space available, in gigabytes (GB).
+        """
+        if free_space_in_gbs is not None:
+            pulumi.set(__self__, "free_space_in_gbs", free_space_in_gbs)
+        if reserved_space_in_gbs is not None:
+            pulumi.set(__self__, "reserved_space_in_gbs", reserved_space_in_gbs)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
+        if total_space_in_gbs is not None:
+            pulumi.set(__self__, "total_space_in_gbs", total_space_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="freeSpaceInGbs")
+    def free_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of logical disk space that is currently available for use, in gigabytes (GB).
+        """
+        return pulumi.get(self, "free_space_in_gbs")
+
+    @free_space_in_gbs.setter
+    def free_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "free_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="reservedSpaceInGbs")
+    def reserved_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of logical disk space that is reserved for system use, in gigabytes (GB).
+        """
+        return pulumi.get(self, "reserved_space_in_gbs")
+
+    @reserved_space_in_gbs.setter
+    def reserved_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "reserved_space_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The storage type for the Cloud Database Infrastructure.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @storage_type.setter
+    def storage_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "storage_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSpaceInGbs")
+    def total_space_in_gbs(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The total amount of logical disk space available, in gigabytes (GB).
+        """
+        return pulumi.get(self, "total_space_in_gbs")
+
+    @total_space_in_gbs.setter
+    def total_space_in_gbs(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "total_space_in_gbs", value)
+
+
+class DataccVmClusterNetworkScanArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The SCAN hostname.
+    """
+    ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+    """
+
+@pulumi.input_type
+class DataccVmClusterNetworkScanArgs:
+    def __init__(__self__, *,
+                 hostname: pulumi.Input[_builtins.str],
+                 ips: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] hostname: (Updatable) The SCAN hostname.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ips: (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ips", ips)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The SCAN hostname.
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "hostname", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ips(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        """
+        return pulumi.get(self, "ips")
+
+    @ips.setter
+    def ips(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "ips", value)
+
+
+class DataccVmClusterNetworkVmNetworkArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The network domain name.
+    """
+    gateway: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The network gateway.
+    """
+    netmask: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The network netmask.
+    """
+    network_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The network type.
+    """
+    nodes: pulumi.Input[Sequence[pulumi.Input['DataccVmClusterNetworkVmNetworkNodeArgsDict']]]
+    """
+    (Updatable) The list of node details.
+    """
+    prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The network domain name prefix.
+    """
+    vlan_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The network VLAN ID.
+
+    ** IMPORTANT **
+    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+    """
+
+@pulumi.input_type
+class DataccVmClusterNetworkVmNetworkArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[_builtins.str],
+                 gateway: pulumi.Input[_builtins.str],
+                 netmask: pulumi.Input[_builtins.str],
+                 network_type: pulumi.Input[_builtins.str],
+                 nodes: pulumi.Input[Sequence[pulumi.Input['DataccVmClusterNetworkVmNetworkNodeArgs']]],
+                 prefix: pulumi.Input[Optional[_builtins.str]] = None,
+                 vlan_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] domain_name: (Updatable) The network domain name.
+        :param pulumi.Input[_builtins.str] gateway: (Updatable) The network gateway.
+        :param pulumi.Input[_builtins.str] netmask: (Updatable) The network netmask.
+        :param pulumi.Input[_builtins.str] network_type: (Updatable) The network type.
+        :param pulumi.Input[Sequence[pulumi.Input['DataccVmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
+        :param pulumi.Input[_builtins.str] prefix: (Updatable) The network domain name prefix.
+        :param pulumi.Input[_builtins.str] vlan_id: (Updatable) The network VLAN ID.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "gateway", gateway)
+        pulumi.set(__self__, "netmask", netmask)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "nodes", nodes)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+        if vlan_id is not None:
+            pulumi.set(__self__, "vlan_id", vlan_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The network domain name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gateway(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The network gateway.
+        """
+        return pulumi.get(self, "gateway")
+
+    @gateway.setter
+    def gateway(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "gateway", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def netmask(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The network netmask.
+        """
+        return pulumi.get(self, "netmask")
+
+    @netmask.setter
+    def netmask(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "netmask", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @network_type.setter
+    def network_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "network_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def nodes(self) -> pulumi.Input[Sequence[pulumi.Input['DataccVmClusterNetworkVmNetworkNodeArgs']]]:
+        """
+        (Updatable) The list of node details.
+        """
+        return pulumi.get(self, "nodes")
+
+    @nodes.setter
+    def nodes(self, value: pulumi.Input[Sequence[pulumi.Input['DataccVmClusterNetworkVmNetworkNodeArgs']]]):
+        pulumi.set(self, "nodes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The network domain name prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+    @prefix.setter
+    def prefix(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "prefix", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vlanId")
+    def vlan_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The network VLAN ID.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "vlan_id")
+
+    @vlan_id.setter
+    def vlan_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vlan_id", value)
+
+
+class DataccVmClusterNetworkVmNetworkNodeArgsDict(TypedDict):
+    hostname: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The node host name.
+    """
+    ip: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The node IP address.
+    """
+    vip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The node virtual IP (VIP) address.
+    """
+    vip_hostname: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The node virtual IP (VIP) host name.
+    """
+
+@pulumi.input_type
+class DataccVmClusterNetworkVmNetworkNodeArgs:
+    def __init__(__self__, *,
+                 hostname: pulumi.Input[_builtins.str],
+                 ip: pulumi.Input[_builtins.str],
+                 vip: pulumi.Input[Optional[_builtins.str]] = None,
+                 vip_hostname: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hostname: (Updatable) The node host name.
+        :param pulumi.Input[_builtins.str] ip: (Updatable) The node IP address.
+        :param pulumi.Input[_builtins.str] vip: (Updatable) The node virtual IP (VIP) address.
+        :param pulumi.Input[_builtins.str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
+        """
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "ip", ip)
+        if vip is not None:
+            pulumi.set(__self__, "vip", vip)
+        if vip_hostname is not None:
+            pulumi.set(__self__, "vip_hostname", vip_hostname)
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The node host name.
+        """
+        return pulumi.get(self, "hostname")
+
+    @hostname.setter
+    def hostname(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "hostname", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ip(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The node IP address.
+        """
+        return pulumi.get(self, "ip")
+
+    @ip.setter
+    def ip(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ip", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The node virtual IP (VIP) address.
+        """
+        return pulumi.get(self, "vip")
+
+    @vip.setter
+    def vip(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vipHostname")
+    def vip_hostname(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The node virtual IP (VIP) host name.
+        """
+        return pulumi.get(self, "vip_hostname")
+
+    @vip_hostname.setter
+    def vip_hostname(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vip_hostname", value)
 
 
 class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
@@ -14164,6 +15641,191 @@ class GetCostadCostAnomalyMonitorsFilterArgs:
         """
         Unique, non-changeable resource name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDataccInfrastructuresFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the Database Infrastructure contact.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDataccInfrastructuresFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the Database Infrastructure contact.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the Database Infrastructure contact.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDataccMaintenanceExecutionsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDataccMaintenanceExecutionsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDataccVmClusterNetworksFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDataccVmClusterNetworksFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDataccVmInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDataccVmInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

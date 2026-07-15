@@ -67,6 +67,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      */
     private String lifecycleDetails;
     private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
     private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
     /**
      * @return A filter to only return resources that match the given lifecycle state.
@@ -176,6 +180,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs() {
         return this.resourceConfigs;
     }
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts() {
         return this.securityContexts;
     }

@@ -26,7 +26,8 @@ class TargetAlertPolicyAssociationArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
-                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a TargetAlertPolicyAssociation resource.
 
@@ -38,6 +39,10 @@ class TargetAlertPolicyAssociationArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) Describes the target-alert policy association.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -51,6 +56,8 @@ class TargetAlertPolicyAssociationArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -148,6 +155,21 @@ class TargetAlertPolicyAssociationArgs:
     def freeform_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
 
 @pulumi.input_type
 class _TargetAlertPolicyAssociationState:
@@ -163,6 +185,7 @@ class _TargetAlertPolicyAssociationState:
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -179,6 +202,10 @@ class _TargetAlertPolicyAssociationState:
         :param pulumi.Input[_builtins.str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -204,6 +231,8 @@ class _TargetAlertPolicyAssociationState:
             pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -342,6 +371,21 @@ class _TargetAlertPolicyAssociationState:
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -380,6 +424,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
@@ -430,6 +475,10 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         :param pulumi.Input[_builtins.str] policy_id: The OCID of the alert policy.
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -499,6 +548,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  policy_id: pulumi.Input[Optional[_builtins.str]] = None,
                  target_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -524,6 +574,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
             if target_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_id'")
             __props__.__dict__["target_id"] = target_id
+            __props__.__dict__["target_type"] = target_type
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -550,6 +601,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'TargetAlertPolicyAssociation':
         """
@@ -570,6 +622,10 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the target-alert policy association.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target or target database group.
+        :param pulumi.Input[_builtins.str] target_type: The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -588,6 +644,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_id"] = target_id
+        __props__.__dict__["target_type"] = target_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return TargetAlertPolicyAssociation(resource_name, opts=opts, __props__=__props__)
@@ -679,6 +736,17 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         The OCID of the target or target database group.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

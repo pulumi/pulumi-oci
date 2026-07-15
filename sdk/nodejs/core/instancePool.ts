@@ -166,7 +166,11 @@ export class InstancePool extends pulumi.CustomResource {
      */
     declare public readonly placementConfigurations: pulumi.Output<outputs.Core.InstancePoolPlacementConfiguration[]>;
     /**
-     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+     * The type of resources managed by the pool.
+     */
+    declare public /*out*/ readonly poolType: pulumi.Output<string>;
+    /**
+     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      */
     declare public readonly size: pulumi.Output<number>;
     /**
@@ -206,6 +210,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["lifecycleManagement"] = state?.lifecycleManagement;
             resourceInputs["loadBalancers"] = state?.loadBalancers;
             resourceInputs["placementConfigurations"] = state?.placementConfigurations;
+            resourceInputs["poolType"] = state?.poolType;
             resourceInputs["size"] = state?.size;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -237,6 +242,7 @@ export class InstancePool extends pulumi.CustomResource {
             resourceInputs["state"] = args?.state;
             resourceInputs["actualSize"] = undefined /*out*/;
             resourceInputs["currentSize"] = undefined /*out*/;
+            resourceInputs["poolType"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -299,7 +305,11 @@ export interface InstancePoolState {
      */
     placementConfigurations?: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[] | undefined>;
     /**
-     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+     * The type of resources managed by the pool.
+     */
+    poolType?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      */
     size?: pulumi.Input<number | undefined>;
     /**
@@ -362,7 +372,7 @@ export interface InstancePoolArgs {
      */
     placementConfigurations: pulumi.Input<pulumi.Input<inputs.Core.InstancePoolPlacementConfiguration>[]>;
     /**
-     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute.
+     * (Updatable) The number of instances that should be in the instance pool. Modifying this value will override the size of the instance pool. If the instance pool is linked with autoscaling configuration, autoscaling configuration could resize the instance pool at a later point. The instance pool's actual size may differ from the configured size if it is associated with an autoscaling configuration, instance pool's actual size will be reflected in this size attribute. For a GMC-enabled resource pool, this is the number of GMC resources that should be in the pool.
      */
     size: pulumi.Input<number>;
     /**

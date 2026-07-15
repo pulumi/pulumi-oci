@@ -9,6 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
  *
+ * > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+ *
  * Gets the list of databases
  *
  * ## Example Usage
@@ -124,6 +126,8 @@ export interface GetPatchManagementDatabasesResult {
 }
 /**
  * This data source provides the list of Patch Management Databases in Oracle Cloud Infrastructure Dblm service.
+ *
+ * > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
  *
  * Gets the list of databases
  *

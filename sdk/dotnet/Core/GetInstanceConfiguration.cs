@@ -144,12 +144,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// The GPU Memory Cluster configuration entries for.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceConfigurationGmcConfigResult> GmcConfigs;
+        /// <summary>
         /// The OCID of the volume backup.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+        /// </summary>
         public readonly string InstanceConfigurationId;
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailResult> InstanceDetails;
         public readonly string InstanceId;
+        /// <summary>
+        /// Differentiator for instance configuration.  Following values are supported:
+        /// * INSTANCE : All details related to instance will be passed within instanceDetails.
+        /// * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+        /// </summary>
         public readonly string Source;
         /// <summary>
         /// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -168,6 +180,8 @@ namespace Pulumi.Oci.Core
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<Outputs.GetInstanceConfigurationGmcConfigResult> gmcConfigs,
+
             string id,
 
             string instanceConfigurationId,
@@ -185,6 +199,7 @@ namespace Pulumi.Oci.Core
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            GmcConfigs = gmcConfigs;
             Id = id;
             InstanceConfigurationId = instanceConfigurationId;
             InstanceDetails = instanceDetails;

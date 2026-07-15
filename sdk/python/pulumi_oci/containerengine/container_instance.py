@@ -35,6 +35,7 @@ class ContainerInstanceArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
+                 security_context: pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  volumes: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVolumeArgs']]]] = None):
         """
@@ -54,6 +55,7 @@ class ContainerInstanceArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input['ContainerInstanceSecurityContextArgs'] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
                
                ** IMPORTANT **
@@ -84,6 +86,8 @@ class ContainerInstanceArgs:
             pulumi.set(__self__, "graceful_shutdown_timeout_in_seconds", graceful_shutdown_timeout_in_seconds)
         if image_pull_secrets is not None:
             pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if volumes is not None:
@@ -258,6 +262,18 @@ class ContainerInstanceArgs:
         pulumi.set(self, "image_pull_secrets", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityContext")
+    def security_context(self) -> pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']]:
+        """
+        Security context for all containers in a container instance.
+        """
+        return pulumi.get(self, "security_context")
+
+    @security_context.setter
+    def security_context(self, value: pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']]):
+        pulumi.set(self, "security_context", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -303,10 +319,12 @@ class _ContainerInstanceState:
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_context: pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional['ContainerInstanceShapeConfigArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_updated: pulumi.Input[Optional[_builtins.str]] = None,
                  vnics: pulumi.Input[Optional[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
@@ -328,6 +346,7 @@ class _ContainerInstanceState:
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param pulumi.Input['ContainerInstanceSecurityContextArgs'] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -335,6 +354,7 @@ class _ContainerInstanceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param pulumi.Input[_builtins.str] tenant_id: TenantId id of the container instance.
         :param pulumi.Input[_builtins.str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]] vnics: The networks available to containers on this container instance.
@@ -369,6 +389,8 @@ class _ContainerInstanceState:
             pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if security_context is not None:
+            pulumi.set(__self__, "security_context", security_context)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if shape_config is not None:
@@ -377,6 +399,8 @@ class _ContainerInstanceState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -545,6 +569,18 @@ class _ContainerInstanceState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
+    @pulumi.getter(name="securityContext")
+    def security_context(self) -> pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']]:
+        """
+        Security context for all containers in a container instance.
+        """
+        return pulumi.get(self, "security_context")
+
+    @security_context.setter
+    def security_context(self, value: pulumi.Input[Optional['ContainerInstanceSecurityContextArgs']]):
+        pulumi.set(self, "security_context", value)
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -594,6 +630,18 @@ class _ContainerInstanceState:
     @system_tags.setter
     def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TenantId id of the container instance.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @tenant_id.setter
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenant_id", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -675,6 +723,7 @@ class ContainerInstance(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -785,6 +834,11 @@ class ContainerInstance(pulumi.CustomResource):
                 "secret_id": test_secret["id"],
                 "username": container_instance_image_pull_secrets_username,
             }],
+            security_context={
+                "fs_group": int(container_instance_security_context_fs_group),
+                "fs_group_change_policy": container_instance_security_context_fs_group_change_policy,
+                "security_context_type": container_instance_security_context_security_context_type,
+            },
             volumes=[{
                 "name": container_instance_volumes_name,
                 "volume_type": container_instance_volumes_volume_type,
@@ -794,6 +848,25 @@ class ContainerInstance(pulumi.CustomResource):
                     "file_name": container_instance_volumes_configs_file_name,
                     "path": container_instance_volumes_configs_path,
                 }],
+                "export": {
+                    "id": container_instance_volumes_export_id,
+                    "oci_fss_export_type": container_instance_volumes_export_oci_fss_export_type,
+                },
+                "mount_command": {
+                    "mount_options": [{
+                        "option": container_instance_volumes_mount_command_mount_options_option,
+                        "value": container_instance_volumes_mount_command_mount_options_value,
+                    }],
+                },
+                "mount_target": {
+                    "id": container_instance_volumes_mount_target_id,
+                    "oci_fss_mount_target_type": container_instance_volumes_mount_target_oci_fss_mount_target_type,
+                },
+                "security": {
+                    "auth": container_instance_volumes_security_auth,
+                    "is_encrypted_in_transit": container_instance_volumes_security_is_encrypted_in_transit == "true",
+                },
+                "subnet_id": test_subnet["id"],
             }])
         ```
 
@@ -819,6 +892,7 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
+        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -940,6 +1014,11 @@ class ContainerInstance(pulumi.CustomResource):
                 "secret_id": test_secret["id"],
                 "username": container_instance_image_pull_secrets_username,
             }],
+            security_context={
+                "fs_group": int(container_instance_security_context_fs_group),
+                "fs_group_change_policy": container_instance_security_context_fs_group_change_policy,
+                "security_context_type": container_instance_security_context_security_context_type,
+            },
             volumes=[{
                 "name": container_instance_volumes_name,
                 "volume_type": container_instance_volumes_volume_type,
@@ -949,6 +1028,25 @@ class ContainerInstance(pulumi.CustomResource):
                     "file_name": container_instance_volumes_configs_file_name,
                     "path": container_instance_volumes_configs_path,
                 }],
+                "export": {
+                    "id": container_instance_volumes_export_id,
+                    "oci_fss_export_type": container_instance_volumes_export_oci_fss_export_type,
+                },
+                "mount_command": {
+                    "mount_options": [{
+                        "option": container_instance_volumes_mount_command_mount_options_option,
+                        "value": container_instance_volumes_mount_command_mount_options_value,
+                    }],
+                },
+                "mount_target": {
+                    "id": container_instance_volumes_mount_target_id,
+                    "oci_fss_mount_target_type": container_instance_volumes_mount_target_oci_fss_mount_target_type,
+                },
+                "security": {
+                    "auth": container_instance_volumes_security_auth,
+                    "is_encrypted_in_transit": container_instance_volumes_security_is_encrypted_in_transit == "true",
+                },
+                "subnet_id": test_subnet["id"],
             }])
         ```
 
@@ -987,6 +1085,7 @@ class ContainerInstance(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
                  image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
+                 security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
                  shape: pulumi.Input[Optional[_builtins.str]] = None,
                  shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1018,6 +1117,7 @@ class ContainerInstance(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["graceful_shutdown_timeout_in_seconds"] = graceful_shutdown_timeout_in_seconds
             __props__.__dict__["image_pull_secrets"] = image_pull_secrets
+            __props__.__dict__["security_context"] = security_context
             if shape is None and not opts.urn:
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
@@ -1032,6 +1132,7 @@ class ContainerInstance(pulumi.CustomResource):
             __props__.__dict__["container_count"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["tenant_id"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["volume_count"] = None
@@ -1058,10 +1159,12 @@ class ContainerInstance(pulumi.CustomResource):
             graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
             image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']]] = None,
             shape: pulumi.Input[Optional[_builtins.str]] = None,
             shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_updated: pulumi.Input[Optional[_builtins.str]] = None,
             vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
@@ -1087,6 +1190,7 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param pulumi.Input[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict']] security_context: Security context for all containers in a container instance.
         :param pulumi.Input[_builtins.str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
         :param pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
@@ -1094,6 +1198,7 @@ class ContainerInstance(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param pulumi.Input[_builtins.str] tenant_id: TenantId id of the container instance.
         :param pulumi.Input[_builtins.str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
@@ -1119,10 +1224,12 @@ class ContainerInstance(pulumi.CustomResource):
         __props__.__dict__["graceful_shutdown_timeout_in_seconds"] = graceful_shutdown_timeout_in_seconds
         __props__.__dict__["image_pull_secrets"] = image_pull_secrets
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["security_context"] = security_context
         __props__.__dict__["shape"] = shape
         __props__.__dict__["shape_config"] = shape_config
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tenant_id"] = tenant_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["vnics"] = vnics
@@ -1235,6 +1342,14 @@ class ContainerInstance(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="securityContext")
+    def security_context(self) -> pulumi.Output['outputs.ContainerInstanceSecurityContext']:
+        """
+        Security context for all containers in a container instance.
+        """
+        return pulumi.get(self, "security_context")
+
+    @_builtins.property
     @pulumi.getter
     def shape(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1268,6 +1383,14 @@ class ContainerInstance(pulumi.CustomResource):
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        TenantId id of the container instance.
+        """
+        return pulumi.get(self, "tenant_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

@@ -26,7 +26,7 @@ class GetTargetAlertPolicyAssociationResult:
     """
     A collection of values returned by getTargetAlertPolicyAssociation.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, policy_id=None, state=None, system_tags=None, target_alert_policy_association_id=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, lifecycle_details=None, policy_id=None, state=None, system_tags=None, target_alert_policy_association_id=None, target_id=None, target_type=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,6 +66,9 @@ class GetTargetAlertPolicyAssociationResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -170,9 +173,17 @@ class GetTargetAlertPolicyAssociationResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         """
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        The resource type that is represented by the target alert policy association.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -210,6 +221,7 @@ class AwaitableGetTargetAlertPolicyAssociationResult(GetTargetAlertPolicyAssocia
             system_tags=self.system_tags,
             target_alert_policy_association_id=self.target_alert_policy_association_id,
             target_id=self.target_id,
+            target_type=self.target_type,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -252,6 +264,7 @@ def get_target_alert_policy_association(target_alert_policy_association_id: Opti
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_alert_policy_association_id=pulumi.get(__ret__, 'target_alert_policy_association_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_target_alert_policy_association_output(target_alert_policy_association_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -291,5 +304,6 @@ def get_target_alert_policy_association_output(target_alert_policy_association_i
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_alert_policy_association_id=pulumi.get(__response__, 'target_alert_policy_association_id'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

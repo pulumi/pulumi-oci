@@ -25,6 +25,7 @@ class InstanceConfigurationArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gmc_configs: pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']] = None,
                  instance_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None):
@@ -35,6 +36,7 @@ class InstanceConfigurationArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['InstanceConfigurationGmcConfigsArgs'] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                
@@ -47,6 +49,7 @@ class InstanceConfigurationArgs:
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+               * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -58,6 +61,8 @@ class InstanceConfigurationArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gmc_configs is not None:
+            pulumi.set(__self__, "gmc_configs", gmc_configs)
         if instance_details is not None:
             pulumi.set(__self__, "instance_details", instance_details)
         if instance_id is not None:
@@ -114,6 +119,18 @@ class InstanceConfigurationArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="gmcConfigs")
+    def gmc_configs(self) -> pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']]:
+        """
+        The GPU Memory Cluster configuration entries for.
+        """
+        return pulumi.get(self, "gmc_configs")
+
+    @gmc_configs.setter
+    def gmc_configs(self, value: pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']]):
+        pulumi.set(self, "gmc_configs", value)
+
+    @_builtins.property
     @pulumi.getter(name="instanceDetails")
     def instance_details(self) -> pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]:
         return pulumi.get(self, "instance_details")
@@ -149,6 +166,7 @@ class InstanceConfigurationArgs:
         The following values are supported:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+        * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -168,6 +186,7 @@ class _InstanceConfigurationState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gmc_configs: pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']] = None,
                  instance_details: pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
@@ -180,6 +199,7 @@ class _InstanceConfigurationState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input['InstanceConfigurationGmcConfigsArgs'] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                
@@ -192,6 +212,7 @@ class _InstanceConfigurationState:
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+               * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,6 +228,8 @@ class _InstanceConfigurationState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gmc_configs is not None:
+            pulumi.set(__self__, "gmc_configs", gmc_configs)
         if instance_details is not None:
             pulumi.set(__self__, "instance_details", instance_details)
         if instance_id is not None:
@@ -277,6 +300,18 @@ class _InstanceConfigurationState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="gmcConfigs")
+    def gmc_configs(self) -> pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']]:
+        """
+        The GPU Memory Cluster configuration entries for.
+        """
+        return pulumi.get(self, "gmc_configs")
+
+    @gmc_configs.setter
+    def gmc_configs(self, value: pulumi.Input[Optional['InstanceConfigurationGmcConfigsArgs']]):
+        pulumi.set(self, "gmc_configs", value)
+
+    @_builtins.property
     @pulumi.getter(name="instanceDetails")
     def instance_details(self) -> pulumi.Input[Optional['InstanceConfigurationInstanceDetailsArgs']]:
         return pulumi.get(self, "instance_details")
@@ -312,6 +347,7 @@ class _InstanceConfigurationState:
         The following values are supported:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+        * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -345,6 +381,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
                  instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
@@ -356,417 +393,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
 
         Creates an instance configuration. An instance configuration is a template that defines the
-        settings to use when creating Compute instances.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_configuration = oci.core.InstanceConfiguration("test_instance_configuration",
-            compartment_id=compartment_id,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=instance_configuration_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_details={
-                "instance_type": instance_configuration_instance_details_instance_type,
-                "block_volumes": [{
-                    "attach_details": {
-                        "type": instance_configuration_instance_details_block_volumes_attach_details_type,
-                        "device": instance_configuration_instance_details_block_volumes_attach_details_device,
-                        "display_name": instance_configuration_instance_details_block_volumes_attach_details_display_name,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
-                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only == "true",
-                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable == "true",
-                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap == "true",
-                    },
-                    "create_details": {
-                        "autotune_policies": [{
-                            "autotune_type": instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type,
-                            "max_vpus_per_gb": instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
-                        }],
-                        "availability_domain": instance_configuration_instance_details_block_volumes_create_details_availability_domain,
-                        "backup_policy_id": test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
-                        "block_volume_replicas": {
-                            "availability_domain": instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
-                            "display_name": instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
-                        },
-                        "cluster_placement_group_id": cluster_placement_group_id,
-                        "compartment_id": compartment_id,
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_block_volumes_create_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled == "true",
-                        "is_reservations_enabled": instance_configuration_instance_details_block_volumes_create_details_is_reservations_enabled,
-                        "kms_key_id": test_key["id"],
-                        "size_in_gbs": instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
-                        "source_details": {
-                            "type": instance_configuration_instance_details_block_volumes_create_details_source_details_type,
-                            "id": instance_configuration_instance_details_block_volumes_create_details_source_details_id,
-                        },
-                        "vpus_per_gb": instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb,
-                        "xrc_kms_key_id": test_key["id"],
-                    },
-                    "volume_id": test_volume["id"],
-                }],
-                "launch_details": {
-                    "agent_config": {
-                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled == "true",
-                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled == "true",
-                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled == "true",
-                        "plugins_configs": [{
-                            "desired_state": instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state,
-                            "name": instance_configuration_instance_details_launch_details_agent_config_plugins_config_name,
-                        }],
-                    },
-                    "availability_config": {
-                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred == "true",
-                        "recovery_action": instance_configuration_instance_details_launch_details_availability_config_recovery_action,
-                    },
-                    "availability_domain": instance_configuration_instance_details_launch_details_availability_domain,
-                    "capacity_reservation_id": test_capacity_reservation["id"],
-                    "cluster_placement_group_id": test_group["id"],
-                    "compartment_id": compartment_id,
-                    "compute_cluster_id": test_compute_cluster["id"],
-                    "create_vnic_details": {
-                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
-                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record == "true",
-                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip == "true",
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_launch_details_create_vnic_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "hostname_label": instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
-                        "ipv6address_ipv6subnet_cidr_pair_details": [{
-                            "ipv6address": instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                            "ipv6id": test_ipv6["id"],
-                            "ipv6subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                        }],
-                        "nsg_ids": instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids,
-                        "private_ip": instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
-                        "private_ip_id": test_private_ip["id"],
-                        "security_attributes": instance_configuration_instance_details_launch_details_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check == "true",
-                        "subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_subnet_cidr,
-                        "subnet_id": test_subnet["id"],
-                    },
-                    "dedicated_vm_host_id": test_dedicated_vm_host["id"],
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "display_name": instance_configuration_instance_details_launch_details_display_name,
-                    "extended_metadata": instance_configuration_instance_details_launch_details_extended_metadata,
-                    "fault_domain": instance_configuration_instance_details_launch_details_fault_domain,
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
-                    "instance_options": {
-                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
-                    },
-                    "ipxe_script": instance_configuration_instance_details_launch_details_ipxe_script,
-                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled == "true",
-                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled == "true",
-                    "launch_mode": instance_configuration_instance_details_launch_details_launch_mode,
-                    "launch_options": {
-                        "boot_volume_type": instance_configuration_instance_details_launch_details_launch_options_boot_volume_type,
-                        "firmware": instance_configuration_instance_details_launch_details_launch_options_firmware,
-                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
-                        "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
-                        "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
-                    },
-                    "licensing_configs": {
-                        "type": instance_configuration_instance_details_launch_details_licensing_configs_type,
-                        "license_type": instance_configuration_instance_details_launch_details_licensing_configs_license_type,
-                    },
-                    "metadata": instance_configuration_instance_details_launch_details_metadata,
-                    "placement_constraint_details": {
-                        "compute_host_group_id": test_compute_host_group["id"],
-                        "type": instance_configuration_instance_details_launch_details_placement_constraint_details_type,
-                    },
-                    "platform_config": {
-                        "type": instance_configuration_instance_details_launch_details_platform_config_type,
-                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled == "true",
-                        "config_map": instance_configuration_instance_details_launch_details_platform_config_config_map,
-                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled == "true",
-                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
-                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled == "true",
-                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled == "true",
-                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled == "true",
-                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
-                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
-                        "numa_nodes_per_socket": instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
-                        "percentage_of_cores_enabled": int(instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
-                    },
-                    "preemptible_instance_config": {
-                        "preemption_action": {
-                            "type": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type,
-                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
-                        },
-                    },
-                    "preferred_maintenance_action": instance_configuration_instance_details_launch_details_preferred_maintenance_action,
-                    "security_attributes": instance_configuration_instance_details_launch_details_security_attributes,
-                    "shape": instance_configuration_instance_details_launch_details_shape,
-                    "shape_config": {
-                        "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
-                        "local_volume_size_in_gbs": int(instance_configuration_instance_details_launch_details_shape_config_local_volume_size_in_gbs),
-                        "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
-                        "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
-                        "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
-                        "resource_management": instance_configuration_instance_details_launch_details_shape_config_resource_management,
-                        "vcpus": int(instance_configuration_instance_details_launch_details_shape_config_vcpus),
-                    },
-                    "source_details": {
-                        "source_type": instance_configuration_instance_details_launch_details_source_details_source_type,
-                        "boot_volume_id": test_boot_volume["id"],
-                        "boot_volume_size_in_gbs": instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
-                        "boot_volume_vpus_per_gb": instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
-                        "image_id": test_image["id"],
-                        "kms_key_id": test_key["id"],
-                        "instance_source_image_filter_details": {
-                            "compartment_id": compartment_id,
-                            "defined_tags_filter": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-                            "operating_system": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system,
-                            "operating_system_version": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
-                        },
-                    },
-                },
-                "options": [{
-                    "block_volumes": [{
-                        "attach_details": {
-                            "type": instance_configuration_instance_details_options_block_volumes_attach_details_type,
-                            "device": instance_configuration_instance_details_options_block_volumes_attach_details_device,
-                            "display_name": instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
-                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only == "true",
-                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable == "true",
-                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap == "true",
-                        },
-                        "create_details": {
-                            "autotune_policies": [{
-                                "autotune_type": instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type,
-                                "max_vpus_per_gb": instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
-                            }],
-                            "availability_domain": instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
-                            "backup_policy_id": test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
-                            "cluster_placement_group_id": cluster_placement_group_id,
-                            "compartment_id": compartment_id,
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_block_volumes_create_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled == "true",
-                            "is_reservations_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_reservations_enabled,
-                            "kms_key_id": test_key["id"],
-                            "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
-                            "source_details": {
-                                "type": instance_configuration_instance_details_options_block_volumes_create_details_source_details_type,
-                                "id": instance_configuration_instance_details_options_block_volumes_create_details_source_details_id,
-                            },
-                            "vpus_per_gb": instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb,
-                            "xrc_kms_key_id": test_key["id"],
-                        },
-                        "volume_id": test_volume["id"],
-                    }],
-                    "launch_details": {
-                        "agent_config": {
-                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled == "true",
-                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled == "true",
-                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled == "true",
-                            "plugins_configs": [{
-                                "desired_state": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
-                                "name": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
-                            }],
-                        },
-                        "availability_config": {
-                            "recovery_action": instance_configuration_instance_details_options_launch_details_availability_config_recovery_action,
-                        },
-                        "availability_domain": instance_configuration_instance_details_options_launch_details_availability_domain,
-                        "capacity_reservation_id": test_capacity_reservation["id"],
-                        "cluster_placement_group_id": test_group["id"],
-                        "compartment_id": compartment_id,
-                        "compute_cluster_id": test_compute_cluster["id"],
-                        "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
-                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record == "true",
-                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip == "true",
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "hostname_label": instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
-                            "ipv6address_ipv6subnet_cidr_pair_details": [{
-                                "ipv6address": instance_configuration_instance_details_options_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                                "ipv6id": test_ipv6["id"],
-                                "ipv6subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                            }],
-                            "nsg_ids": instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
-                            "private_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
-                            "private_ip_id": test_private_ip["id"],
-                            "security_attributes": instance_configuration_instance_details_options_launch_details_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check == "true",
-                            "subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_subnet_cidr,
-                            "subnet_id": test_subnet["id"],
-                        },
-                        "dedicated_vm_host_id": test_dedicated_vm_host["id"],
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_options_launch_details_display_name,
-                        "extended_metadata": instance_configuration_instance_details_options_launch_details_extended_metadata,
-                        "fault_domain": instance_configuration_instance_details_options_launch_details_fault_domain,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "instance_options": {
-                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
-                        },
-                        "ipxe_script": instance_configuration_instance_details_options_launch_details_ipxe_script,
-                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled == "true",
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled == "true",
-                        "launch_mode": instance_configuration_instance_details_options_launch_details_launch_mode,
-                        "launch_options": {
-                            "boot_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
-                            "firmware": instance_configuration_instance_details_options_launch_details_launch_options_firmware,
-                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
-                            "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
-                            "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
-                        },
-                        "licensing_configs": {
-                            "type": instance_configuration_instance_details_options_launch_details_licensing_configs_type,
-                            "license_type": instance_configuration_instance_details_options_launch_details_licensing_configs_license_type,
-                        },
-                        "metadata": instance_configuration_instance_details_options_launch_details_metadata,
-                        "placement_constraint_details": {
-                            "compute_host_group_id": test_compute_host_group["id"],
-                            "type": instance_configuration_instance_details_options_launch_details_placement_constraint_details_type,
-                        },
-                        "platform_config": {
-                            "type": instance_configuration_instance_details_options_launch_details_platform_config_type,
-                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled == "true",
-                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled == "true",
-                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
-                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled == "true",
-                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled == "true",
-                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled == "true",
-                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
-                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
-                            "numa_nodes_per_socket": instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
-                            "percentage_of_cores_enabled": int(instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled),
-                        },
-                        "preemptible_instance_config": {
-                            "preemption_action": {
-                                "type": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
-                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
-                            },
-                        },
-                        "preferred_maintenance_action": instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
-                        "security_attributes": instance_configuration_instance_details_options_launch_details_security_attributes,
-                        "shape": instance_configuration_instance_details_options_launch_details_shape,
-                        "shape_config": {
-                            "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
-                            "local_volume_size_in_gbs": int(instance_configuration_instance_details_options_launch_details_shape_config_local_volume_size_in_gbs),
-                            "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
-                            "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
-                            "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
-                            "resource_management": instance_configuration_instance_details_options_launch_details_shape_config_resource_management,
-                            "vcpus": int(instance_configuration_instance_details_options_launch_details_shape_config_vcpus),
-                        },
-                        "source_details": {
-                            "source_type": instance_configuration_instance_details_options_launch_details_source_details_source_type,
-                            "boot_volume_id": test_boot_volume["id"],
-                            "boot_volume_size_in_gbs": instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs,
-                            "boot_volume_vpus_per_gb": instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb,
-                            "image_id": test_image["id"],
-                            "instance_source_image_filter_details": {
-                                "compartment_id": compartment_id,
-                                "defined_tags_filter": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-                                "operating_system": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system,
-                                "operating_system_version": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
-                            },
-                        },
-                    },
-                    "secondary_vnics": [{
-                        "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
-                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
-                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip == "true",
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "hostname_label": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
-                            "ipv6address_ipv6subnet_cidr_pair_details": [{
-                                "ipv6address": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                                "ipv6id": test_ipv6["id"],
-                                "ipv6subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                            }],
-                            "nsg_ids": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
-                            "private_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
-                            "private_ip_id": test_private_ip["id"],
-                            "security_attributes": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
-                            "subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_subnet_cidr,
-                            "subnet_id": test_subnet["id"],
-                        },
-                        "display_name": instance_configuration_instance_details_options_secondary_vnics_display_name,
-                        "nic_index": int(instance_configuration_instance_details_options_secondary_vnics_nic_index),
-                    }],
-                }],
-                "secondary_vnics": [{
-                    "create_vnic_details": {
-                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
-                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip == "true",
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "hostname_label": instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label,
-                        "ipv6address_ipv6subnet_cidr_pair_details": [{
-                            "ipv6address": instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                            "ipv6id": test_ipv6["id"],
-                            "ipv6subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                        }],
-                        "nsg_ids": instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids,
-                        "private_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip,
-                        "private_ip_id": test_private_ip["id"],
-                        "security_attributes": instance_configuration_instance_details_secondary_vnics_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
-                        "subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_subnet_cidr,
-                        "subnet_id": test_subnet["id"],
-                    },
-                    "display_name": instance_configuration_instance_details_secondary_vnics_display_name,
-                    "nic_index": int(instance_configuration_instance_details_secondary_vnics_nic_index),
-                }],
-            },
-            instance_id=test_instance["id"],
-            source=instance_configuration_source)
-        ```
+        settings to use when creating Compute instances or GPU Memory Clusters.
 
         ## Import
 
@@ -783,6 +410,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                
@@ -795,6 +423,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+               * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -812,417 +441,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
 
         Creates an instance configuration. An instance configuration is a template that defines the
-        settings to use when creating Compute instances.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_instance_configuration = oci.core.InstanceConfiguration("test_instance_configuration",
-            compartment_id=compartment_id,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            display_name=instance_configuration_display_name,
-            freeform_tags={
-                "Department": "Finance",
-            },
-            instance_details={
-                "instance_type": instance_configuration_instance_details_instance_type,
-                "block_volumes": [{
-                    "attach_details": {
-                        "type": instance_configuration_instance_details_block_volumes_attach_details_type,
-                        "device": instance_configuration_instance_details_block_volumes_attach_details_device,
-                        "display_name": instance_configuration_instance_details_block_volumes_attach_details_display_name,
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
-                        "is_read_only": instance_configuration_instance_details_block_volumes_attach_details_is_read_only == "true",
-                        "is_shareable": instance_configuration_instance_details_block_volumes_attach_details_is_shareable == "true",
-                        "use_chap": instance_configuration_instance_details_block_volumes_attach_details_use_chap == "true",
-                    },
-                    "create_details": {
-                        "autotune_policies": [{
-                            "autotune_type": instance_configuration_instance_details_block_volumes_create_details_autotune_policies_autotune_type,
-                            "max_vpus_per_gb": instance_configuration_instance_details_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
-                        }],
-                        "availability_domain": instance_configuration_instance_details_block_volumes_create_details_availability_domain,
-                        "backup_policy_id": test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
-                        "block_volume_replicas": {
-                            "availability_domain": instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_availability_domain,
-                            "display_name": instance_configuration_instance_details_block_volumes_create_details_block_volume_replicas_display_name,
-                        },
-                        "cluster_placement_group_id": cluster_placement_group_id,
-                        "compartment_id": compartment_id,
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_block_volumes_create_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "is_auto_tune_enabled": instance_configuration_instance_details_block_volumes_create_details_is_auto_tune_enabled == "true",
-                        "is_reservations_enabled": instance_configuration_instance_details_block_volumes_create_details_is_reservations_enabled,
-                        "kms_key_id": test_key["id"],
-                        "size_in_gbs": instance_configuration_instance_details_block_volumes_create_details_size_in_gbs,
-                        "source_details": {
-                            "type": instance_configuration_instance_details_block_volumes_create_details_source_details_type,
-                            "id": instance_configuration_instance_details_block_volumes_create_details_source_details_id,
-                        },
-                        "vpus_per_gb": instance_configuration_instance_details_block_volumes_create_details_vpus_per_gb,
-                        "xrc_kms_key_id": test_key["id"],
-                    },
-                    "volume_id": test_volume["id"],
-                }],
-                "launch_details": {
-                    "agent_config": {
-                        "are_all_plugins_disabled": instance_configuration_instance_details_launch_details_agent_config_are_all_plugins_disabled == "true",
-                        "is_management_disabled": instance_configuration_instance_details_launch_details_agent_config_is_management_disabled == "true",
-                        "is_monitoring_disabled": instance_configuration_instance_details_launch_details_agent_config_is_monitoring_disabled == "true",
-                        "plugins_configs": [{
-                            "desired_state": instance_configuration_instance_details_launch_details_agent_config_plugins_config_desired_state,
-                            "name": instance_configuration_instance_details_launch_details_agent_config_plugins_config_name,
-                        }],
-                    },
-                    "availability_config": {
-                        "is_live_migration_preferred": instance_configuration_instance_details_launch_details_availability_config_is_live_migration_preferred == "true",
-                        "recovery_action": instance_configuration_instance_details_launch_details_availability_config_recovery_action,
-                    },
-                    "availability_domain": instance_configuration_instance_details_launch_details_availability_domain,
-                    "capacity_reservation_id": test_capacity_reservation["id"],
-                    "cluster_placement_group_id": test_group["id"],
-                    "compartment_id": compartment_id,
-                    "compute_cluster_id": test_compute_cluster["id"],
-                    "create_vnic_details": {
-                        "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
-                        "assign_private_dns_record": instance_configuration_instance_details_launch_details_create_vnic_details_assign_private_dns_record == "true",
-                        "assign_public_ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_public_ip == "true",
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_launch_details_create_vnic_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "hostname_label": instance_configuration_instance_details_launch_details_create_vnic_details_hostname_label,
-                        "ipv6address_ipv6subnet_cidr_pair_details": [{
-                            "ipv6address": instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                            "ipv6id": test_ipv6["id"],
-                            "ipv6subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                        }],
-                        "nsg_ids": instance_configuration_instance_details_launch_details_create_vnic_details_nsg_ids,
-                        "private_ip": instance_configuration_instance_details_launch_details_create_vnic_details_private_ip,
-                        "private_ip_id": test_private_ip["id"],
-                        "security_attributes": instance_configuration_instance_details_launch_details_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_launch_details_create_vnic_details_skip_source_dest_check == "true",
-                        "subnet_cidr": instance_configuration_instance_details_launch_details_create_vnic_details_subnet_cidr,
-                        "subnet_id": test_subnet["id"],
-                    },
-                    "dedicated_vm_host_id": test_dedicated_vm_host["id"],
-                    "defined_tags": {
-                        "Operations.CostCenter": "42",
-                    },
-                    "display_name": instance_configuration_instance_details_launch_details_display_name,
-                    "extended_metadata": instance_configuration_instance_details_launch_details_extended_metadata,
-                    "fault_domain": instance_configuration_instance_details_launch_details_fault_domain,
-                    "freeform_tags": {
-                        "Department": "Finance",
-                    },
-                    "instance_options": {
-                        "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
-                    },
-                    "ipxe_script": instance_configuration_instance_details_launch_details_ipxe_script,
-                    "is_ai_enterprise_enabled": instance_configuration_instance_details_launch_details_is_ai_enterprise_enabled == "true",
-                    "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_is_pv_encryption_in_transit_enabled == "true",
-                    "launch_mode": instance_configuration_instance_details_launch_details_launch_mode,
-                    "launch_options": {
-                        "boot_volume_type": instance_configuration_instance_details_launch_details_launch_options_boot_volume_type,
-                        "firmware": instance_configuration_instance_details_launch_details_launch_options_firmware,
-                        "is_consistent_volume_naming_enabled": instance_configuration_instance_details_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
-                        "network_type": instance_configuration_instance_details_launch_details_launch_options_network_type,
-                        "remote_data_volume_type": instance_configuration_instance_details_launch_details_launch_options_remote_data_volume_type,
-                    },
-                    "licensing_configs": {
-                        "type": instance_configuration_instance_details_launch_details_licensing_configs_type,
-                        "license_type": instance_configuration_instance_details_launch_details_licensing_configs_license_type,
-                    },
-                    "metadata": instance_configuration_instance_details_launch_details_metadata,
-                    "placement_constraint_details": {
-                        "compute_host_group_id": test_compute_host_group["id"],
-                        "type": instance_configuration_instance_details_launch_details_placement_constraint_details_type,
-                    },
-                    "platform_config": {
-                        "type": instance_configuration_instance_details_launch_details_platform_config_type,
-                        "are_virtual_instructions_enabled": instance_configuration_instance_details_launch_details_platform_config_are_virtual_instructions_enabled == "true",
-                        "config_map": instance_configuration_instance_details_launch_details_platform_config_config_map,
-                        "is_access_control_service_enabled": instance_configuration_instance_details_launch_details_platform_config_is_access_control_service_enabled == "true",
-                        "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
-                        "is_measured_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_measured_boot_enabled == "true",
-                        "is_memory_encryption_enabled": instance_configuration_instance_details_launch_details_platform_config_is_memory_encryption_enabled == "true",
-                        "is_secure_boot_enabled": instance_configuration_instance_details_launch_details_platform_config_is_secure_boot_enabled == "true",
-                        "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
-                        "is_trusted_platform_module_enabled": instance_configuration_instance_details_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
-                        "numa_nodes_per_socket": instance_configuration_instance_details_launch_details_platform_config_numa_nodes_per_socket,
-                        "percentage_of_cores_enabled": int(instance_configuration_instance_details_launch_details_platform_config_percentage_of_cores_enabled),
-                    },
-                    "preemptible_instance_config": {
-                        "preemption_action": {
-                            "type": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_type,
-                            "preserve_boot_volume": instance_configuration_instance_details_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
-                        },
-                    },
-                    "preferred_maintenance_action": instance_configuration_instance_details_launch_details_preferred_maintenance_action,
-                    "security_attributes": instance_configuration_instance_details_launch_details_security_attributes,
-                    "shape": instance_configuration_instance_details_launch_details_shape,
-                    "shape_config": {
-                        "baseline_ocpu_utilization": instance_configuration_instance_details_launch_details_shape_config_baseline_ocpu_utilization,
-                        "local_volume_size_in_gbs": int(instance_configuration_instance_details_launch_details_shape_config_local_volume_size_in_gbs),
-                        "memory_in_gbs": instance_configuration_instance_details_launch_details_shape_config_memory_in_gbs,
-                        "nvmes": int(instance_configuration_instance_details_launch_details_shape_config_nvmes),
-                        "ocpus": instance_configuration_instance_details_launch_details_shape_config_ocpus,
-                        "resource_management": instance_configuration_instance_details_launch_details_shape_config_resource_management,
-                        "vcpus": int(instance_configuration_instance_details_launch_details_shape_config_vcpus),
-                    },
-                    "source_details": {
-                        "source_type": instance_configuration_instance_details_launch_details_source_details_source_type,
-                        "boot_volume_id": test_boot_volume["id"],
-                        "boot_volume_size_in_gbs": instance_configuration_instance_details_launch_details_source_details_boot_volume_size_in_gbs,
-                        "boot_volume_vpus_per_gb": instance_configuration_instance_details_launch_details_source_details_boot_volume_vpus_per_gb,
-                        "image_id": test_image["id"],
-                        "kms_key_id": test_key["id"],
-                        "instance_source_image_filter_details": {
-                            "compartment_id": compartment_id,
-                            "defined_tags_filter": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-                            "operating_system": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system,
-                            "operating_system_version": instance_configuration_instance_details_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
-                        },
-                    },
-                },
-                "options": [{
-                    "block_volumes": [{
-                        "attach_details": {
-                            "type": instance_configuration_instance_details_options_block_volumes_attach_details_type,
-                            "device": instance_configuration_instance_details_options_block_volumes_attach_details_device,
-                            "display_name": instance_configuration_instance_details_options_block_volumes_attach_details_display_name,
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_block_volumes_attach_details_is_pv_encryption_in_transit_enabled == "true",
-                            "is_read_only": instance_configuration_instance_details_options_block_volumes_attach_details_is_read_only == "true",
-                            "is_shareable": instance_configuration_instance_details_options_block_volumes_attach_details_is_shareable == "true",
-                            "use_chap": instance_configuration_instance_details_options_block_volumes_attach_details_use_chap == "true",
-                        },
-                        "create_details": {
-                            "autotune_policies": [{
-                                "autotune_type": instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_autotune_type,
-                                "max_vpus_per_gb": instance_configuration_instance_details_options_block_volumes_create_details_autotune_policies_max_vpus_per_gb,
-                            }],
-                            "availability_domain": instance_configuration_instance_details_options_block_volumes_create_details_availability_domain,
-                            "backup_policy_id": test_volume_backup_policies["volumeBackupPolicies"][0]["id"],
-                            "cluster_placement_group_id": cluster_placement_group_id,
-                            "compartment_id": compartment_id,
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_block_volumes_create_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "is_auto_tune_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_auto_tune_enabled == "true",
-                            "is_reservations_enabled": instance_configuration_instance_details_options_block_volumes_create_details_is_reservations_enabled,
-                            "kms_key_id": test_key["id"],
-                            "size_in_gbs": instance_configuration_instance_details_options_block_volumes_create_details_size_in_gbs,
-                            "source_details": {
-                                "type": instance_configuration_instance_details_options_block_volumes_create_details_source_details_type,
-                                "id": instance_configuration_instance_details_options_block_volumes_create_details_source_details_id,
-                            },
-                            "vpus_per_gb": instance_configuration_instance_details_options_block_volumes_create_details_vpus_per_gb,
-                            "xrc_kms_key_id": test_key["id"],
-                        },
-                        "volume_id": test_volume["id"],
-                    }],
-                    "launch_details": {
-                        "agent_config": {
-                            "are_all_plugins_disabled": instance_configuration_instance_details_options_launch_details_agent_config_are_all_plugins_disabled == "true",
-                            "is_management_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_management_disabled == "true",
-                            "is_monitoring_disabled": instance_configuration_instance_details_options_launch_details_agent_config_is_monitoring_disabled == "true",
-                            "plugins_configs": [{
-                                "desired_state": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_desired_state,
-                                "name": instance_configuration_instance_details_options_launch_details_agent_config_plugins_config_name,
-                            }],
-                        },
-                        "availability_config": {
-                            "recovery_action": instance_configuration_instance_details_options_launch_details_availability_config_recovery_action,
-                        },
-                        "availability_domain": instance_configuration_instance_details_options_launch_details_availability_domain,
-                        "capacity_reservation_id": test_capacity_reservation["id"],
-                        "cluster_placement_group_id": test_group["id"],
-                        "compartment_id": compartment_id,
-                        "compute_cluster_id": test_compute_cluster["id"],
-                        "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_launch_details_create_vnic_details_assign_ipv6ip == "true",
-                            "assign_private_dns_record": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_private_dns_record == "true",
-                            "assign_public_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_assign_public_ip == "true",
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_launch_details_create_vnic_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "hostname_label": instance_configuration_instance_details_options_launch_details_create_vnic_details_hostname_label,
-                            "ipv6address_ipv6subnet_cidr_pair_details": [{
-                                "ipv6address": instance_configuration_instance_details_options_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                                "ipv6id": test_ipv6["id"],
-                                "ipv6subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                            }],
-                            "nsg_ids": instance_configuration_instance_details_options_launch_details_create_vnic_details_nsg_ids,
-                            "private_ip": instance_configuration_instance_details_options_launch_details_create_vnic_details_private_ip,
-                            "private_ip_id": test_private_ip["id"],
-                            "security_attributes": instance_configuration_instance_details_options_launch_details_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_launch_details_create_vnic_details_skip_source_dest_check == "true",
-                            "subnet_cidr": instance_configuration_instance_details_options_launch_details_create_vnic_details_subnet_cidr,
-                            "subnet_id": test_subnet["id"],
-                        },
-                        "dedicated_vm_host_id": test_dedicated_vm_host["id"],
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_options_launch_details_display_name,
-                        "extended_metadata": instance_configuration_instance_details_options_launch_details_extended_metadata,
-                        "fault_domain": instance_configuration_instance_details_options_launch_details_fault_domain,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "instance_options": {
-                            "are_legacy_imds_endpoints_disabled": instance_configuration_instance_details_options_launch_details_instance_options_are_legacy_imds_endpoints_disabled == "true",
-                        },
-                        "ipxe_script": instance_configuration_instance_details_options_launch_details_ipxe_script,
-                        "is_ai_enterprise_enabled": instance_configuration_instance_details_options_launch_details_is_ai_enterprise_enabled == "true",
-                        "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_is_pv_encryption_in_transit_enabled == "true",
-                        "launch_mode": instance_configuration_instance_details_options_launch_details_launch_mode,
-                        "launch_options": {
-                            "boot_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_boot_volume_type,
-                            "firmware": instance_configuration_instance_details_options_launch_details_launch_options_firmware,
-                            "is_consistent_volume_naming_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_consistent_volume_naming_enabled == "true",
-                            "is_pv_encryption_in_transit_enabled": instance_configuration_instance_details_options_launch_details_launch_options_is_pv_encryption_in_transit_enabled == "true",
-                            "network_type": instance_configuration_instance_details_options_launch_details_launch_options_network_type,
-                            "remote_data_volume_type": instance_configuration_instance_details_options_launch_details_launch_options_remote_data_volume_type,
-                        },
-                        "licensing_configs": {
-                            "type": instance_configuration_instance_details_options_launch_details_licensing_configs_type,
-                            "license_type": instance_configuration_instance_details_options_launch_details_licensing_configs_license_type,
-                        },
-                        "metadata": instance_configuration_instance_details_options_launch_details_metadata,
-                        "placement_constraint_details": {
-                            "compute_host_group_id": test_compute_host_group["id"],
-                            "type": instance_configuration_instance_details_options_launch_details_placement_constraint_details_type,
-                        },
-                        "platform_config": {
-                            "type": instance_configuration_instance_details_options_launch_details_platform_config_type,
-                            "are_virtual_instructions_enabled": instance_configuration_instance_details_options_launch_details_platform_config_are_virtual_instructions_enabled == "true",
-                            "is_access_control_service_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_access_control_service_enabled == "true",
-                            "is_input_output_memory_management_unit_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_input_output_memory_management_unit_enabled == "true",
-                            "is_measured_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_measured_boot_enabled == "true",
-                            "is_memory_encryption_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_memory_encryption_enabled == "true",
-                            "is_secure_boot_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_secure_boot_enabled == "true",
-                            "is_symmetric_multi_threading_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_symmetric_multi_threading_enabled == "true",
-                            "is_trusted_platform_module_enabled": instance_configuration_instance_details_options_launch_details_platform_config_is_trusted_platform_module_enabled == "true",
-                            "numa_nodes_per_socket": instance_configuration_instance_details_options_launch_details_platform_config_numa_nodes_per_socket,
-                            "percentage_of_cores_enabled": int(instance_configuration_instance_details_options_launch_details_platform_config_percentage_of_cores_enabled),
-                        },
-                        "preemptible_instance_config": {
-                            "preemption_action": {
-                                "type": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_type,
-                                "preserve_boot_volume": instance_configuration_instance_details_options_launch_details_preemptible_instance_config_preemption_action_preserve_boot_volume == "true",
-                            },
-                        },
-                        "preferred_maintenance_action": instance_configuration_instance_details_options_launch_details_preferred_maintenance_action,
-                        "security_attributes": instance_configuration_instance_details_options_launch_details_security_attributes,
-                        "shape": instance_configuration_instance_details_options_launch_details_shape,
-                        "shape_config": {
-                            "baseline_ocpu_utilization": instance_configuration_instance_details_options_launch_details_shape_config_baseline_ocpu_utilization,
-                            "local_volume_size_in_gbs": int(instance_configuration_instance_details_options_launch_details_shape_config_local_volume_size_in_gbs),
-                            "memory_in_gbs": instance_configuration_instance_details_options_launch_details_shape_config_memory_in_gbs,
-                            "nvmes": int(instance_configuration_instance_details_options_launch_details_shape_config_nvmes),
-                            "ocpus": instance_configuration_instance_details_options_launch_details_shape_config_ocpus,
-                            "resource_management": instance_configuration_instance_details_options_launch_details_shape_config_resource_management,
-                            "vcpus": int(instance_configuration_instance_details_options_launch_details_shape_config_vcpus),
-                        },
-                        "source_details": {
-                            "source_type": instance_configuration_instance_details_options_launch_details_source_details_source_type,
-                            "boot_volume_id": test_boot_volume["id"],
-                            "boot_volume_size_in_gbs": instance_configuration_instance_details_options_launch_details_source_details_boot_volume_size_in_gbs,
-                            "boot_volume_vpus_per_gb": instance_configuration_instance_details_options_launch_details_source_details_boot_volume_vpus_per_gb,
-                            "image_id": test_image["id"],
-                            "instance_source_image_filter_details": {
-                                "compartment_id": compartment_id,
-                                "defined_tags_filter": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_defined_tags_filter,
-                                "operating_system": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system,
-                                "operating_system_version": instance_configuration_instance_details_options_launch_details_source_details_instance_source_image_filter_details_operating_system_version,
-                            },
-                        },
-                    },
-                    "secondary_vnics": [{
-                        "create_vnic_details": {
-                            "assign_ipv6ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_ipv6ip == "true",
-                            "assign_private_dns_record": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
-                            "assign_public_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_assign_public_ip == "true",
-                            "defined_tags": {
-                                "Operations.CostCenter": "42",
-                            },
-                            "display_name": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_display_name,
-                            "freeform_tags": {
-                                "Department": "Finance",
-                            },
-                            "hostname_label": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_hostname_label,
-                            "ipv6address_ipv6subnet_cidr_pair_details": [{
-                                "ipv6address": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                                "ipv6id": test_ipv6["id"],
-                                "ipv6subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                            }],
-                            "nsg_ids": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_nsg_ids,
-                            "private_ip": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_private_ip,
-                            "private_ip_id": test_private_ip["id"],
-                            "security_attributes": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_security_attributes,
-                            "skip_source_dest_check": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
-                            "subnet_cidr": instance_configuration_instance_details_options_secondary_vnics_create_vnic_details_subnet_cidr,
-                            "subnet_id": test_subnet["id"],
-                        },
-                        "display_name": instance_configuration_instance_details_options_secondary_vnics_display_name,
-                        "nic_index": int(instance_configuration_instance_details_options_secondary_vnics_nic_index),
-                    }],
-                }],
-                "secondary_vnics": [{
-                    "create_vnic_details": {
-                        "assign_private_dns_record": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_private_dns_record == "true",
-                        "assign_public_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_assign_public_ip == "true",
-                        "defined_tags": {
-                            "Operations.CostCenter": "42",
-                        },
-                        "display_name": instance_configuration_instance_details_secondary_vnics_create_vnic_details_display_name,
-                        "freeform_tags": {
-                            "Department": "Finance",
-                        },
-                        "hostname_label": instance_configuration_instance_details_secondary_vnics_create_vnic_details_hostname_label,
-                        "ipv6address_ipv6subnet_cidr_pair_details": [{
-                            "ipv6address": instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6address,
-                            "ipv6id": test_ipv6["id"],
-                            "ipv6subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
-                        }],
-                        "nsg_ids": instance_configuration_instance_details_secondary_vnics_create_vnic_details_nsg_ids,
-                        "private_ip": instance_configuration_instance_details_secondary_vnics_create_vnic_details_private_ip,
-                        "private_ip_id": test_private_ip["id"],
-                        "security_attributes": instance_configuration_instance_details_secondary_vnics_create_vnic_details_security_attributes,
-                        "skip_source_dest_check": instance_configuration_instance_details_secondary_vnics_create_vnic_details_skip_source_dest_check == "true",
-                        "subnet_cidr": instance_configuration_instance_details_secondary_vnics_create_vnic_details_subnet_cidr,
-                        "subnet_id": test_subnet["id"],
-                    },
-                    "display_name": instance_configuration_instance_details_secondary_vnics_display_name,
-                    "nic_index": int(instance_configuration_instance_details_secondary_vnics_nic_index),
-                }],
-            },
-            instance_id=test_instance["id"],
-            source=instance_configuration_source)
-        ```
+        settings to use when creating Compute instances or GPU Memory Clusters.
 
         ## Import
 
@@ -1252,6 +471,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
                  instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
                  instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1270,6 +490,7 @@ class InstanceConfiguration(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["gmc_configs"] = gmc_configs
             __props__.__dict__["instance_details"] = instance_details
             __props__.__dict__["instance_id"] = instance_id
             __props__.__dict__["source"] = source
@@ -1290,6 +511,7 @@ class InstanceConfiguration(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']]] = None,
             instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict']]] = None,
             instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1306,6 +528,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict']] gmc_configs: The GPU Memory Cluster configuration entries for.
         :param pulumi.Input[_builtins.str] instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
         :param pulumi.Input[_builtins.str] source: The source of the instance configuration. An instance configuration defines the settings to use when creating Compute instances, including details such as the base image, shape, and metadata. You can also specify the associated resources for the instance, such as block volume attachments and network configuration.
                
@@ -1318,6 +541,7 @@ class InstanceConfiguration(pulumi.CustomResource):
                The following values are supported:
                * `NONE`: Creates an instance configuration using the list of settings that you specify.
                * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+               * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1332,6 +556,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["gmc_configs"] = gmc_configs
         __props__.__dict__["instance_details"] = instance_details
         __props__.__dict__["instance_id"] = instance_id
         __props__.__dict__["source"] = source
@@ -1379,6 +604,14 @@ class InstanceConfiguration(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="gmcConfigs")
+    def gmc_configs(self) -> pulumi.Output[Optional['outputs.InstanceConfigurationGmcConfigs']]:
+        """
+        The GPU Memory Cluster configuration entries for.
+        """
+        return pulumi.get(self, "gmc_configs")
+
+    @_builtins.property
     @pulumi.getter(name="instanceDetails")
     def instance_details(self) -> pulumi.Output['outputs.InstanceConfigurationInstanceDetails']:
         return pulumi.get(self, "instance_details")
@@ -1406,6 +639,7 @@ class InstanceConfiguration(pulumi.CustomResource):
         The following values are supported:
         * `NONE`: Creates an instance configuration using the list of settings that you specify.
         * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+        * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

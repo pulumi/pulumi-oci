@@ -33,6 +33,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     nsgIds: odaPrivateEndpointNsgIds,
+ *     securityAttributes: odaPrivateEndpointSecurityAttributes,
  * });
  * ```
  *
@@ -97,6 +98,10 @@ export class OdaPrivateEndpoint extends pulumi.CustomResource {
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
      * The current state of the ODA private endpoint.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -135,6 +140,7 @@ export class OdaPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["nsgIds"] = state?.nsgIds;
+            resourceInputs["securityAttributes"] = state?.securityAttributes;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -153,6 +159,7 @@ export class OdaPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["nsgIds"] = args?.nsgIds;
+            resourceInputs["securityAttributes"] = args?.securityAttributes;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -191,6 +198,10 @@ export interface OdaPrivateEndpointState {
      * (Updatable) List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The current state of the ODA private endpoint.
      */
@@ -240,6 +251,10 @@ export interface OdaPrivateEndpointArgs {
      * (Updatable) List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+     */
+    securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      *

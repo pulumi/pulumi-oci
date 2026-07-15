@@ -27,7 +27,7 @@ class GetInstanceConfigurationResult:
     """
     A collection of values returned by getInstanceConfiguration.
     """
-    def __init__(__self__, compartment_id=None, deferred_fields=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, instance_configuration_id=None, instance_details=None, instance_id=None, source=None, time_created=None):
+    def __init__(__self__, compartment_id=None, deferred_fields=None, defined_tags=None, display_name=None, freeform_tags=None, gmc_configs=None, id=None, instance_configuration_id=None, instance_details=None, instance_id=None, source=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -43,6 +43,9 @@ class GetInstanceConfigurationResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if gmc_configs and not isinstance(gmc_configs, list):
+            raise TypeError("Expected argument 'gmc_configs' to be a list")
+        pulumi.set(__self__, "gmc_configs", gmc_configs)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -103,6 +106,14 @@ class GetInstanceConfigurationResult:
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="gmcConfigs")
+    def gmc_configs(self) -> Sequence['outputs.GetInstanceConfigurationGmcConfigResult']:
+        """
+        The GPU Memory Cluster configuration entries for.
+        """
+        return pulumi.get(self, "gmc_configs")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -113,6 +124,9 @@ class GetInstanceConfigurationResult:
     @_builtins.property
     @pulumi.getter(name="instanceConfigurationId")
     def instance_configuration_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+        """
         return pulumi.get(self, "instance_configuration_id")
 
     @_builtins.property
@@ -128,6 +142,11 @@ class GetInstanceConfigurationResult:
     @_builtins.property
     @pulumi.getter
     def source(self) -> _builtins.str:
+        """
+        Differentiator for instance configuration.  Following values are supported:
+        * INSTANCE : All details related to instance will be passed within instanceDetails.
+        * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+        """
         return pulumi.get(self, "source")
 
     @_builtins.property
@@ -150,6 +169,7 @@ class AwaitableGetInstanceConfigurationResult(GetInstanceConfigurationResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            gmc_configs=self.gmc_configs,
             id=self.id,
             instance_configuration_id=self.instance_configuration_id,
             instance_details=self.instance_details,
@@ -188,6 +208,7 @@ def get_instance_configuration(instance_configuration_id: Optional[_builtins.str
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        gmc_configs=pulumi.get(__ret__, 'gmc_configs'),
         id=pulumi.get(__ret__, 'id'),
         instance_configuration_id=pulumi.get(__ret__, 'instance_configuration_id'),
         instance_details=pulumi.get(__ret__, 'instance_details'),
@@ -223,6 +244,7 @@ def get_instance_configuration_output(instance_configuration_id: pulumi.Input[Op
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        gmc_configs=pulumi.get(__response__, 'gmc_configs'),
         id=pulumi.get(__response__, 'id'),
         instance_configuration_id=pulumi.get(__response__, 'instance_configuration_id'),
         instance_details=pulumi.get(__response__, 'instance_details'),

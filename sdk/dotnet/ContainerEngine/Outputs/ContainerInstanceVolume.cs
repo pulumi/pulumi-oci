@@ -22,9 +22,29 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ContainerInstanceVolumeConfig> Configs;
         /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceVolumeExport? Export;
+        /// <summary>
+        /// Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceVolumeMountCommand? MountCommand;
+        /// <summary>
+        /// An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceVolumeMountTarget? MountTarget;
+        /// <summary>
         /// The name of the volume. This must be unique within a single container instance.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Security options for Oracle Cloud Infrastructure FSS File System.
+        /// </summary>
+        public readonly Outputs.ContainerInstanceVolumeSecurity? Security;
+        /// <summary>
+        /// Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        /// </summary>
+        public readonly string? SubnetId;
         /// <summary>
         /// The type of volume.
         /// </summary>
@@ -36,13 +56,28 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             ImmutableArray<Outputs.ContainerInstanceVolumeConfig> configs,
 
+            Outputs.ContainerInstanceVolumeExport? export,
+
+            Outputs.ContainerInstanceVolumeMountCommand? mountCommand,
+
+            Outputs.ContainerInstanceVolumeMountTarget? mountTarget,
+
             string name,
+
+            Outputs.ContainerInstanceVolumeSecurity? security,
+
+            string? subnetId,
 
             string volumeType)
         {
             BackingStore = backingStore;
             Configs = configs;
+            Export = export;
+            MountCommand = mountCommand;
+            MountTarget = mountTarget;
             Name = name;
+            Security = security;
+            SubnetId = subnetId;
             VolumeType = volumeType;
         }
     }

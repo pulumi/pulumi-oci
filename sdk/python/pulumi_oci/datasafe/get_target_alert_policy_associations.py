@@ -28,7 +28,7 @@ class GetTargetAlertPolicyAssociationsResult:
     """
     A collection of values returned by getTargetAlertPolicyAssociations.
     """
-    def __init__(__self__, access_level=None, alert_policy_id=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, state=None, target_alert_policy_association_collections=None, target_alert_policy_association_id=None, target_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
+    def __init__(__self__, access_level=None, alert_policy_id=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, state=None, target_alert_policy_association_collections=None, target_alert_policy_association_id=None, target_id=None, target_type=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -59,6 +59,9 @@ class GetTargetAlertPolicyAssociationsResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created_greater_than_or_equal_to and not isinstance(time_created_greater_than_or_equal_to, str):
             raise TypeError("Expected argument 'time_created_greater_than_or_equal_to' to be a str")
         pulumi.set(__self__, "time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
@@ -127,9 +130,17 @@ class GetTargetAlertPolicyAssociationsResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the target on which alert policy is to be applied.
+        The OCID of the target or target database group on which alert policy is to be applied.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[_builtins.str]:
+        """
+        The resource type that is represented by the target alert policy association.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedGreaterThanOrEqualTo")
@@ -158,6 +169,7 @@ class AwaitableGetTargetAlertPolicyAssociationsResult(GetTargetAlertPolicyAssoci
             target_alert_policy_association_collections=self.target_alert_policy_association_collections,
             target_alert_policy_association_id=self.target_alert_policy_association_id,
             target_id=self.target_id,
+            target_type=self.target_type,
             time_created_greater_than_or_equal_to=self.time_created_greater_than_or_equal_to,
             time_created_less_than=self.time_created_less_than)
 
@@ -170,6 +182,7 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
                                          state: Optional[_builtins.str] = None,
                                          target_alert_policy_association_id: Optional[_builtins.str] = None,
                                          target_id: Optional[_builtins.str] = None,
+                                         target_type: Optional[_builtins.str] = None,
                                          time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
                                          time_created_less_than: Optional[_builtins.str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetTargetAlertPolicyAssociationsResult:
@@ -180,6 +193,22 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_target_alert_policy_associations = oci.datasafe.get_target_alert_policy_associations(compartment_id=compartment_id,
+        access_level=target_alert_policy_association_access_level,
+        alert_policy_id=test_alert_policy["id"],
+        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree == "true",
+        state=target_alert_policy_association_state,
+        target_alert_policy_association_id=test_target_alert_policy_association["id"],
+        target_id=test_target["id"],
+        target_type=target_alert_policy_association_target_type,
+        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
+        time_created_less_than=target_alert_policy_association_time_created_less_than)
+    ```
+
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str alert_policy_id: A filter to return policy by it's OCID.
@@ -188,6 +217,7 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
     :param _builtins.str state: An optional filter to return only alert policies that have the given life-cycle state.
     :param _builtins.str target_alert_policy_association_id: A filter to return only items related to a specific target-alert policy association ID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified alert policy association type.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -204,6 +234,7 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
     __args__['state'] = state
     __args__['targetAlertPolicyAssociationId'] = target_alert_policy_association_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -220,6 +251,7 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
         target_alert_policy_association_collections=pulumi.get(__ret__, 'target_alert_policy_association_collections'),
         target_alert_policy_association_id=pulumi.get(__ret__, 'target_alert_policy_association_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
 def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -230,6 +262,7 @@ def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optio
                                                 state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 target_alert_policy_association_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 target_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                                target_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 time_created_greater_than_or_equal_to: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 time_created_less_than: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetTargetAlertPolicyAssociationsResult]:
@@ -240,6 +273,22 @@ def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optio
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_target_alert_policy_associations = oci.datasafe.get_target_alert_policy_associations(compartment_id=compartment_id,
+        access_level=target_alert_policy_association_access_level,
+        alert_policy_id=test_alert_policy["id"],
+        compartment_id_in_subtree=target_alert_policy_association_compartment_id_in_subtree == "true",
+        state=target_alert_policy_association_state,
+        target_alert_policy_association_id=test_target_alert_policy_association["id"],
+        target_id=test_target["id"],
+        target_type=target_alert_policy_association_target_type,
+        time_created_greater_than_or_equal_to=target_alert_policy_association_time_created_greater_than_or_equal_to,
+        time_created_less_than=target_alert_policy_association_time_created_less_than)
+    ```
+
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str alert_policy_id: A filter to return policy by it's OCID.
@@ -248,6 +297,7 @@ def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optio
     :param _builtins.str state: An optional filter to return only alert policies that have the given life-cycle state.
     :param _builtins.str target_alert_policy_association_id: A filter to return only items related to a specific target-alert policy association ID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified alert policy association type.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -264,6 +314,7 @@ def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optio
     __args__['state'] = state
     __args__['targetAlertPolicyAssociationId'] = target_alert_policy_association_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -279,5 +330,6 @@ def get_target_alert_policy_associations_output(access_level: pulumi.Input[Optio
         target_alert_policy_association_collections=pulumi.get(__response__, 'target_alert_policy_association_collections'),
         target_alert_policy_association_id=pulumi.get(__response__, 'target_alert_policy_association_id'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__response__, 'time_created_less_than')))

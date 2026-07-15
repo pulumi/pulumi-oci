@@ -79,6 +79,21 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
     }
 
     /**
+     * A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     * 
+     */
+    @Import(name="containsOracleDefinedSeverities")
+    private @Nullable List<String> containsOracleDefinedSeverities;
+
+    /**
+     * @return A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+     * 
+     */
+    public Optional<List<String>> containsOracleDefinedSeverities() {
+        return Optional.ofNullable(this.containsOracleDefinedSeverities);
+    }
+
+    /**
      * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
      * 
      */
@@ -280,6 +295,7 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsOracleDefinedSeverities = $.containsOracleDefinedSeverities;
         this.containsReferences = $.containsReferences;
         this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
@@ -355,6 +371,27 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+
+        /**
+         * @param containsOracleDefinedSeverities A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containsOracleDefinedSeverities(@Nullable List<String> containsOracleDefinedSeverities) {
+            $.containsOracleDefinedSeverities = containsOracleDefinedSeverities;
+            return this;
+        }
+
+        /**
+         * @param containsOracleDefinedSeverities A filter to return only findings that match the specified risk level(s). Use containsOracleDefinedSeverity parameter if need to filter by one or multiple risk levels.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder containsOracleDefinedSeverities(String... containsOracleDefinedSeverities) {
+            return containsOracleDefinedSeverities(List.of(containsOracleDefinedSeverities));
         }
 
         /**

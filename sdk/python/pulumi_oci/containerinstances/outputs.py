@@ -25,6 +25,7 @@ __all__ = [
     'GetContainerInstanceContainerVolumeMountResult',
     'GetContainerInstanceDnsConfigResult',
     'GetContainerInstanceImagePullSecretResult',
+    'GetContainerInstanceSecurityContextResult',
     'GetContainerInstanceShapeConfigResult',
     'GetContainerInstanceShapeItemResult',
     'GetContainerInstanceShapeItemMemoryOptionResult',
@@ -39,6 +40,11 @@ __all__ = [
     'GetContainerInstanceVnicResult',
     'GetContainerInstanceVolumeResult',
     'GetContainerInstanceVolumeConfigResult',
+    'GetContainerInstanceVolumeExportResult',
+    'GetContainerInstanceVolumeMountCommandResult',
+    'GetContainerInstanceVolumeMountCommandMountOptionResult',
+    'GetContainerInstanceVolumeMountTargetResult',
+    'GetContainerInstanceVolumeSecurityResult',
     'GetContainerInstancesContainerInstanceCollectionResult',
     'GetContainerInstancesContainerInstanceCollectionItemResult',
     'GetContainerInstancesContainerInstanceCollectionItemContainerResult',
@@ -50,10 +56,16 @@ __all__ = [
     'GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMountResult',
     'GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult',
     'GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult',
+    'GetContainerInstancesContainerInstanceCollectionItemSecurityContextResult',
     'GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult',
     'GetContainerInstancesContainerInstanceCollectionItemVnicResult',
     'GetContainerInstancesContainerInstanceCollectionItemVolumeResult',
     'GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult',
+    'GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult',
+    'GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult',
+    'GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandMountOptionResult',
+    'GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult',
+    'GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult',
     'GetContainerInstancesFilterResult',
 ]
 
@@ -95,6 +107,7 @@ class GetContainerInstanceContainerResult(dict):
         :param _builtins.str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param Sequence['GetContainerInstanceContainerSecurityContextArgs'] security_contexts: Security context for all containers in a container instance.
         :param _builtins.str state: The current state of the container instance.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param _builtins.str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -241,6 +254,9 @@ class GetContainerInstanceContainerResult(dict):
     @_builtins.property
     @pulumi.getter(name="securityContexts")
     def security_contexts(self) -> Sequence['outputs.GetContainerInstanceContainerSecurityContextResult']:
+        """
+        Security context for all containers in a container instance.
+        """
         return pulumi.get(self, "security_contexts")
 
     @_builtins.property
@@ -404,6 +420,7 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str name: The name of the volume. This must be unique within a single container instance.
+        :param _builtins.str value: The value of the mount option.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -419,6 +436,9 @@ class GetContainerInstanceContainerHealthCheckHeaderResult(dict):
     @_builtins.property
     @pulumi.getter
     def value(self) -> _builtins.str:
+        """
+        The value of the mount option.
+        """
         return pulumi.get(self, "value")
 
 
@@ -450,6 +470,9 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
                  run_as_group: _builtins.int,
                  run_as_user: _builtins.int,
                  security_context_type: _builtins.str):
+        """
+        :param _builtins.str security_context_type: The type of security context
+        """
         pulumi.set(__self__, "capabilities", capabilities)
         pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
@@ -485,6 +508,9 @@ class GetContainerInstanceContainerSecurityContextResult(dict):
     @_builtins.property
     @pulumi.getter(name="securityContextType")
     def security_context_type(self) -> _builtins.str:
+        """
+        The type of security context
+        """
         return pulumi.get(self, "security_context_type")
 
 
@@ -639,6 +665,46 @@ class GetContainerInstanceImagePullSecretResult(dict):
     @pulumi.getter
     def username(self) -> _builtins.str:
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetContainerInstanceSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 fs_group: _builtins.int,
+                 fs_group_change_policy: _builtins.str,
+                 security_context_type: _builtins.str):
+        """
+        :param _builtins.int fs_group: A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+        :param _builtins.str fs_group_change_policy: Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+        :param _builtins.str security_context_type: The type of security context
+        """
+        pulumi.set(__self__, "fs_group", fs_group)
+        pulumi.set(__self__, "fs_group_change_policy", fs_group_change_policy)
+        pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> _builtins.int:
+        """
+        A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroupChangePolicy")
+    def fs_group_change_policy(self) -> _builtins.str:
+        """
+        Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+        """
+        return pulumi.get(self, "fs_group_change_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> _builtins.str:
+        """
+        The type of security context
+        """
+        return pulumi.get(self, "security_context_type")
 
 
 @pulumi.output_type
@@ -1146,6 +1212,7 @@ class GetContainerInstanceVnicResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param _builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str subnet_id: Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
         :param _builtins.str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1211,6 +1278,9 @@ class GetContainerInstanceVnicResult(dict):
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
+        """
+        Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        """
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
@@ -1227,17 +1297,32 @@ class GetContainerInstanceVolumeResult(dict):
     def __init__(__self__, *,
                  backing_store: _builtins.str,
                  configs: Sequence['outputs.GetContainerInstanceVolumeConfigResult'],
+                 exports: Sequence['outputs.GetContainerInstanceVolumeExportResult'],
+                 mount_commands: Sequence['outputs.GetContainerInstanceVolumeMountCommandResult'],
+                 mount_targets: Sequence['outputs.GetContainerInstanceVolumeMountTargetResult'],
                  name: _builtins.str,
+                 securities: Sequence['outputs.GetContainerInstanceVolumeSecurityResult'],
+                 subnet_id: _builtins.str,
                  volume_type: _builtins.str):
         """
         :param _builtins.str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['GetContainerInstanceVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+        :param Sequence['GetContainerInstanceVolumeExportArgs'] exports: An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        :param Sequence['GetContainerInstanceVolumeMountCommandArgs'] mount_commands: Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        :param Sequence['GetContainerInstanceVolumeMountTargetArgs'] mount_targets: An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
         :param _builtins.str name: The name of the volume. This must be unique within a single container instance.
+        :param Sequence['GetContainerInstanceVolumeSecurityArgs'] securities: Security options for Oracle Cloud Infrastructure FSS File System.
+        :param _builtins.str subnet_id: Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
         :param _builtins.str volume_type: The type of volume.
         """
         pulumi.set(__self__, "backing_store", backing_store)
         pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "exports", exports)
+        pulumi.set(__self__, "mount_commands", mount_commands)
+        pulumi.set(__self__, "mount_targets", mount_targets)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "securities", securities)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "volume_type", volume_type)
 
     @_builtins.property
@@ -1258,11 +1343,51 @@ class GetContainerInstanceVolumeResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def exports(self) -> Sequence['outputs.GetContainerInstanceVolumeExportResult']:
+        """
+        An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        """
+        return pulumi.get(self, "exports")
+
+    @_builtins.property
+    @pulumi.getter(name="mountCommands")
+    def mount_commands(self) -> Sequence['outputs.GetContainerInstanceVolumeMountCommandResult']:
+        """
+        Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        """
+        return pulumi.get(self, "mount_commands")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargets")
+    def mount_targets(self) -> Sequence['outputs.GetContainerInstanceVolumeMountTargetResult']:
+        """
+        An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+        """
+        return pulumi.get(self, "mount_targets")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def securities(self) -> Sequence['outputs.GetContainerInstanceVolumeSecurityResult']:
+        """
+        Security options for Oracle Cloud Infrastructure FSS File System.
+        """
+        return pulumi.get(self, "securities")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        """
+        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="volumeType")
@@ -1314,6 +1439,140 @@ class GetContainerInstanceVolumeConfigResult(dict):
 
 
 @pulumi.output_type
+class GetContainerInstanceVolumeExportResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 oci_fss_export_type: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        :param _builtins.str oci_fss_export_type: Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "oci_fss_export_type", oci_fss_export_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociFssExportType")
+    def oci_fss_export_type(self) -> _builtins.str:
+        """
+        Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+        """
+        return pulumi.get(self, "oci_fss_export_type")
+
+
+@pulumi.output_type
+class GetContainerInstanceVolumeMountCommandResult(dict):
+    def __init__(__self__, *,
+                 mount_options: Sequence['outputs.GetContainerInstanceVolumeMountCommandMountOptionResult']):
+        """
+        :param Sequence['GetContainerInstanceVolumeMountCommandMountOptionArgs'] mount_options: List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+        """
+        pulumi.set(__self__, "mount_options", mount_options)
+
+    @_builtins.property
+    @pulumi.getter(name="mountOptions")
+    def mount_options(self) -> Sequence['outputs.GetContainerInstanceVolumeMountCommandMountOptionResult']:
+        """
+        List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+        """
+        return pulumi.get(self, "mount_options")
+
+
+@pulumi.output_type
+class GetContainerInstanceVolumeMountCommandMountOptionResult(dict):
+    def __init__(__self__, *,
+                 option: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str option: A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+        :param _builtins.str value: The value of the mount option.
+        """
+        pulumi.set(__self__, "option", option)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def option(self) -> _builtins.str:
+        """
+        A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+        """
+        return pulumi.get(self, "option")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the mount option.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetContainerInstanceVolumeMountTargetResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 oci_fss_mount_target_type: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        :param _builtins.str oci_fss_mount_target_type: Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "oci_fss_mount_target_type", oci_fss_mount_target_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociFssMountTargetType")
+    def oci_fss_mount_target_type(self) -> _builtins.str:
+        """
+        Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+        """
+        return pulumi.get(self, "oci_fss_mount_target_type")
+
+
+@pulumi.output_type
+class GetContainerInstanceVolumeSecurityResult(dict):
+    def __init__(__self__, *,
+                 auth: _builtins.str,
+                 is_encrypted_in_transit: _builtins.bool):
+        """
+        :param _builtins.str auth: NFS authentication type to be used. Currently, only auth type SYS is supported.
+        :param _builtins.bool is_encrypted_in_transit: Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+        """
+        pulumi.set(__self__, "auth", auth)
+        pulumi.set(__self__, "is_encrypted_in_transit", is_encrypted_in_transit)
+
+    @_builtins.property
+    @pulumi.getter
+    def auth(self) -> _builtins.str:
+        """
+        NFS authentication type to be used. Currently, only auth type SYS is supported.
+        """
+        return pulumi.get(self, "auth")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncryptedInTransit")
+    def is_encrypted_in_transit(self) -> _builtins.bool:
+        """
+        Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+        """
+        return pulumi.get(self, "is_encrypted_in_transit")
+
+
+@pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemResult']):
@@ -1342,10 +1601,12 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
                  id: _builtins.str,
                  image_pull_secrets: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult'],
                  lifecycle_details: _builtins.str,
+                 security_contexts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemSecurityContextResult'],
                  shape: _builtins.str,
                  shape_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
+                 tenant_id: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  vnics: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult'],
@@ -1363,13 +1624,15 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         :param _builtins.str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
-        :param _builtins.str id: An OCID that cannot be changed.
+        :param _builtins.str id: The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs'] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param _builtins.str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemSecurityContextArgs'] security_contexts: Security context for all containers in a container instance.
         :param _builtins.str shape: The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs'] shape_configs: The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param _builtins.str tenant_id: TenantId id of the container instance.
         :param _builtins.str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVnicArgs'] vnics: The virtual networks available to the containers in the container instance.
@@ -1390,10 +1653,12 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_pull_secrets", image_pull_secrets)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "security_contexts", security_contexts)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "shape_configs", shape_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tenant_id", tenant_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "vnics", vnics)
@@ -1492,7 +1757,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        An OCID that cannot be changed.
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
         """
         return pulumi.get(self, "id")
 
@@ -1511,6 +1776,14 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="securityContexts")
+    def security_contexts(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemSecurityContextResult']:
+        """
+        Security context for all containers in a container instance.
+        """
+        return pulumi.get(self, "security_contexts")
 
     @_builtins.property
     @pulumi.getter
@@ -1543,6 +1816,14 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        TenantId id of the container instance.
+        """
+        return pulumi.get(self, "tenant_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -1622,6 +1903,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         :param _builtins.str fault_domain: The fault domain to place the container instance.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextArgs'] security_contexts: Security context for all containers in a container instance.
         :param _builtins.str state: A filter to only return resources that match the given lifecycle state.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param _builtins.str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -1765,6 +2047,9 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
     @_builtins.property
     @pulumi.getter(name="securityContexts")
     def security_contexts(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult']:
+        """
+        Security context for all containers in a container instance.
+        """
         return pulumi.get(self, "security_contexts")
 
     @_builtins.property
@@ -1928,6 +2213,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
                  value: _builtins.str):
         """
         :param _builtins.str name: The name of the volume. This must be unique within a single container instance.
+        :param _builtins.str value: The value of the mount option.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
@@ -1943,6 +2229,9 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHe
     @_builtins.property
     @pulumi.getter
     def value(self) -> _builtins.str:
+        """
+        The value of the mount option.
+        """
         return pulumi.get(self, "value")
 
 
@@ -1974,6 +2263,9 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
                  run_as_group: _builtins.int,
                  run_as_user: _builtins.int,
                  security_context_type: _builtins.str):
+        """
+        :param _builtins.str security_context_type: The type of security context
+        """
         pulumi.set(__self__, "capabilities", capabilities)
         pulumi.set(__self__, "is_non_root_user_check_enabled", is_non_root_user_check_enabled)
         pulumi.set(__self__, "is_root_file_system_readonly", is_root_file_system_readonly)
@@ -2009,6 +2301,9 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerSecurityConte
     @_builtins.property
     @pulumi.getter(name="securityContextType")
     def security_context_type(self) -> _builtins.str:
+        """
+        The type of security context
+        """
         return pulumi.get(self, "security_context_type")
 
 
@@ -2166,6 +2461,46 @@ class GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult(
 
 
 @pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemSecurityContextResult(dict):
+    def __init__(__self__, *,
+                 fs_group: _builtins.int,
+                 fs_group_change_policy: _builtins.str,
+                 security_context_type: _builtins.str):
+        """
+        :param _builtins.int fs_group: A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+        :param _builtins.str fs_group_change_policy: Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+        :param _builtins.str security_context_type: The type of security context
+        """
+        pulumi.set(__self__, "fs_group", fs_group)
+        pulumi.set(__self__, "fs_group_change_policy", fs_group_change_policy)
+        pulumi.set(__self__, "security_context_type", security_context_type)
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroup")
+    def fs_group(self) -> _builtins.int:
+        """
+        A special supplemental group that applies to all containers in the container instance. Some volume types allow the container instance to change ownership of the volume. The owning GID will be the fsGroup, the setgid bit will be set (new files will be owned by the fsGroup), and the permission bits are OR'd with rw-rw----. If unset, the container instance will not modify the ownership and permissions of volumes.
+        """
+        return pulumi.get(self, "fs_group")
+
+    @_builtins.property
+    @pulumi.getter(name="fsGroupChangePolicy")
+    def fs_group_change_policy(self) -> _builtins.str:
+        """
+        Defines behavior of changing ownership and permission of the volume before being exposed inside the containers. This only applies to volumes which support fsGroup ownership and permissions, and will have no effect on ephemeral volumes. ON_ROOT_MISMATCH only changes permissions and ownership if the permission and ownership of the root directory does not match the expected permissions and ownership of the volume. This can improve container instance start times. ALWAYS  changes permission and ownership of the volume when it is mounted. If unset, ALWAYS is used.
+        """
+        return pulumi.get(self, "fs_group_change_policy")
+
+    @_builtins.property
+    @pulumi.getter(name="securityContextType")
+    def security_context_type(self) -> _builtins.str:
+        """
+        The type of security context
+        """
+        return pulumi.get(self, "security_context_type")
+
+
+@pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
@@ -2233,6 +2568,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str subnet_id: Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
         :param _builtins.str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2298,6 +2634,9 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
     @_builtins.property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
+        """
+        Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        """
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
@@ -2314,17 +2653,32 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
     def __init__(__self__, *,
                  backing_store: _builtins.str,
                  configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult'],
+                 exports: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult'],
+                 mount_commands: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult'],
+                 mount_targets: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult'],
                  name: _builtins.str,
+                 securities: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult'],
+                 subnet_id: _builtins.str,
                  volume_type: _builtins.str):
         """
         :param _builtins.str backing_store: The volume type of the empty directory, can be either File Storage or Memory.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeConfigArgs'] configs: Contains string key value pairs which can be mounted as individual files inside the container. The value needs to be base64 encoded. It is decoded to plain text before the mount.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeExportArgs'] exports: An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandArgs'] mount_commands: Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetArgs'] mount_targets: An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
         :param _builtins.str name: The name of the volume. This must be unique within a single container instance.
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityArgs'] securities: Security options for Oracle Cloud Infrastructure FSS File System.
+        :param _builtins.str subnet_id: Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
         :param _builtins.str volume_type: The type of volume.
         """
         pulumi.set(__self__, "backing_store", backing_store)
         pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "exports", exports)
+        pulumi.set(__self__, "mount_commands", mount_commands)
+        pulumi.set(__self__, "mount_targets", mount_targets)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "securities", securities)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "volume_type", volume_type)
 
     @_builtins.property
@@ -2345,11 +2699,51 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def exports(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult']:
+        """
+        An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+        """
+        return pulumi.get(self, "exports")
+
+    @_builtins.property
+    @pulumi.getter(name="mountCommands")
+    def mount_commands(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult']:
+        """
+        Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+        """
+        return pulumi.get(self, "mount_commands")
+
+    @_builtins.property
+    @pulumi.getter(name="mountTargets")
+    def mount_targets(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult']:
+        """
+        An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+        """
+        return pulumi.get(self, "mount_targets")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         The name of the volume. This must be unique within a single container instance.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def securities(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult']:
+        """
+        Security options for Oracle Cloud Infrastructure FSS File System.
+        """
+        return pulumi.get(self, "securities")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+        """
+        return pulumi.get(self, "subnet_id")
 
     @_builtins.property
     @pulumi.getter(name="volumeType")
@@ -2398,6 +2792,140 @@ class GetContainerInstancesContainerInstanceCollectionItemVolumeConfigResult(dic
         (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
         """
         return pulumi.get(self, "path")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemVolumeExportResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 oci_fss_export_type: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        :param _builtins.str oci_fss_export_type: Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "oci_fss_export_type", oci_fss_export_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociFssExportType")
+    def oci_fss_export_type(self) -> _builtins.str:
+        """
+        Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Export details. The value must be an OCID unless your tenancy is allowed to use PATH as a value.
+        """
+        return pulumi.get(self, "oci_fss_export_type")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandResult(dict):
+    def __init__(__self__, *,
+                 mount_options: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandMountOptionResult']):
+        """
+        :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandMountOptionArgs'] mount_options: List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+        """
+        pulumi.set(__self__, "mount_options", mount_options)
+
+    @_builtins.property
+    @pulumi.getter(name="mountOptions")
+    def mount_options(self) -> Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandMountOptionResult']:
+        """
+        List of mount options to be used in the mount command. The order of this array will be maintained while preparing the mount command.
+        """
+        return pulumi.get(self, "mount_options")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommandMountOptionResult(dict):
+    def __init__(__self__, *,
+                 option: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str option: A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+        :param _builtins.str value: The value of the mount option.
+        """
+        pulumi.set(__self__, "option", option)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def option(self) -> _builtins.str:
+        """
+        A generic (https://man7.org/linux/man-pages/man8/mount.8.html) or nfs (https://man7.org/linux/man-pages/man5/nfs.5.html) mount option.
+        """
+        return pulumi.get(self, "option")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value of the mount option.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemVolumeMountTargetResult(dict):
+    def __init__(__self__, *,
+                 id: _builtins.str,
+                 oci_fss_mount_target_type: _builtins.str):
+        """
+        :param _builtins.str id: The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        :param _builtins.str oci_fss_mount_target_type: Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "oci_fss_mount_target_type", oci_fss_mount_target_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="ociFssMountTargetType")
+    def oci_fss_mount_target_type(self) -> _builtins.str:
+        """
+        Determines the mode for supplying the Oracle Cloud Infrastructure File Storage Service (FSS) Mount target details. The value must be an OCID unless your tenancy is allowed to use HOST as a value.
+        """
+        return pulumi.get(self, "oci_fss_mount_target_type")
+
+
+@pulumi.output_type
+class GetContainerInstancesContainerInstanceCollectionItemVolumeSecurityResult(dict):
+    def __init__(__self__, *,
+                 auth: _builtins.str,
+                 is_encrypted_in_transit: _builtins.bool):
+        """
+        :param _builtins.str auth: NFS authentication type to be used. Currently, only auth type SYS is supported.
+        :param _builtins.bool is_encrypted_in_transit: Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+        """
+        pulumi.set(__self__, "auth", auth)
+        pulumi.set(__self__, "is_encrypted_in_transit", is_encrypted_in_transit)
+
+    @_builtins.property
+    @pulumi.getter
+    def auth(self) -> _builtins.str:
+        """
+        NFS authentication type to be used. Currently, only auth type SYS is supported.
+        """
+        return pulumi.get(self, "auth")
+
+    @_builtins.property
+    @pulumi.getter(name="isEncryptedInTransit")
+    def is_encrypted_in_transit(self) -> _builtins.bool:
+        """
+        Determines whether in-transit encryption needs to be enables.  Check https://docs.oracle.com/en-us/iaas/Content/File/Tasks/intransitencryption.htm#Using_Intransit_Encryption for more details.
+        """
+        return pulumi.get(self, "is_encrypted_in_transit")
 
 
 @pulumi.output_type

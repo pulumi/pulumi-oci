@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? LicenseType { get; set; }
 
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// Operating System type of the Configuration.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

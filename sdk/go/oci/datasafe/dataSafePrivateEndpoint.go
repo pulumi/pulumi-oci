@@ -45,8 +45,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				NsgIds:            pulumi.Any(dataSafePrivateEndpointNsgIds),
-//				PrivateEndpointIp: pulumi.Any(dataSafePrivateEndpointPrivateEndpointIp),
+//				NsgIds:             pulumi.Any(dataSafePrivateEndpointNsgIds),
+//				PrivateEndpointIp:  pulumi.Any(dataSafePrivateEndpointPrivateEndpointIp),
+//				SecurityAttributes: pulumi.Any(dataSafePrivateEndpointSecurityAttributes),
 //			})
 //			if err != nil {
 //				return err
@@ -85,6 +86,8 @@ type DataSafePrivateEndpoint struct {
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
 	// The private IP address of the private endpoint.
 	PrivateEndpointIp pulumi.StringOutput `pulumi:"privateEndpointIp"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
 	// The current state of the private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of the subnet.
@@ -160,6 +163,8 @@ type dataSafePrivateEndpointState struct {
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The private IP address of the private endpoint.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The current state of the private endpoint.
 	State *string `pulumi:"state"`
 	// The OCID of the subnet.
@@ -194,6 +199,8 @@ type DataSafePrivateEndpointState struct {
 	PrivateEndpointId pulumi.StringPtrInput
 	// The private IP address of the private endpoint.
 	PrivateEndpointIp pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The current state of the private endpoint.
 	State pulumi.StringPtrInput
 	// The OCID of the subnet.
@@ -228,6 +235,8 @@ type dataSafePrivateEndpointArgs struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the private endpoint.
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// The OCID of the VCN.
@@ -253,6 +262,8 @@ type DataSafePrivateEndpointArgs struct {
 	NsgIds pulumi.StringArrayInput
 	// The private IP address of the private endpoint.
 	PrivateEndpointIp pulumi.StringPtrInput
+	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput
 	// The OCID of the subnet.
 	SubnetId pulumi.StringInput
 	// The OCID of the VCN.
@@ -392,6 +403,11 @@ func (o DataSafePrivateEndpointOutput) PrivateEndpointId() pulumi.StringOutput {
 // The private IP address of the private endpoint.
 func (o DataSafePrivateEndpointOutput) PrivateEndpointIp() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringOutput { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o DataSafePrivateEndpointOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
 // The current state of the private endpoint.

@@ -2032,6 +2032,8 @@ type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem struct {
 	Id string `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds []string `pulumi:"nsgIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// List only the ODA Private Endpoints that are in this lifecycle state.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -2068,6 +2070,8 @@ type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
 	// List only the ODA Private Endpoints that are in this lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -2164,6 +2168,13 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Id() pulum
 // List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
 func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
 }
 
 // List only the ODA Private Endpoints that are in this lifecycle state.

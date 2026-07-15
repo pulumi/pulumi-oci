@@ -63,6 +63,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> PlacementConfigurations;
         /// <summary>
+        /// The type of resources managed by the pool.
+        /// </summary>
+        public readonly string PoolType;
+        /// <summary>
         /// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
         /// </summary>
         public readonly int Size;
@@ -103,6 +107,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstancePoolsInstancePoolPlacementConfigurationResult> placementConfigurations,
 
+            string poolType,
+
             int size,
 
             string state,
@@ -122,6 +128,7 @@ namespace Pulumi.Oci.Core.Outputs
             LifecycleManagements = lifecycleManagements;
             LoadBalancers = loadBalancers;
             PlacementConfigurations = placementConfigurations;
+            PoolType = poolType;
             Size = size;
             State = state;
             TimeCreated = timeCreated;

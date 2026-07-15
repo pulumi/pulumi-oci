@@ -115,6 +115,11 @@ export type DefaultDhcpOptions = import("./defaultDhcpOptions").DefaultDhcpOptio
 export const DefaultDhcpOptions: typeof import("./defaultDhcpOptions").DefaultDhcpOptions = null as any;
 utilities.lazyLoad(exports, ["DefaultDhcpOptions"], () => require("./defaultDhcpOptions"));
 
+export { DefaultDrgRouteTableArgs, DefaultDrgRouteTableState } from "./defaultDrgRouteTable";
+export type DefaultDrgRouteTable = import("./defaultDrgRouteTable").DefaultDrgRouteTable;
+export const DefaultDrgRouteTable: typeof import("./defaultDrgRouteTable").DefaultDrgRouteTable = null as any;
+utilities.lazyLoad(exports, ["DefaultDrgRouteTable"], () => require("./defaultDrgRouteTable"));
+
 export { DefaultRouteTableArgs, DefaultRouteTableState } from "./defaultRouteTable";
 export type DefaultRouteTable = import("./defaultRouteTable").DefaultRouteTable;
 export const DefaultRouteTable: typeof import("./defaultRouteTable").DefaultRouteTable = null as any;
@@ -1249,6 +1254,8 @@ const _module = {
                 return new DedicatedVmHost(name, <any>undefined, { urn })
             case "oci:Core/defaultDhcpOptions:DefaultDhcpOptions":
                 return new DefaultDhcpOptions(name, <any>undefined, { urn })
+            case "oci:Core/defaultDrgRouteTable:DefaultDrgRouteTable":
+                return new DefaultDrgRouteTable(name, <any>undefined, { urn })
             case "oci:Core/defaultRouteTable:DefaultRouteTable":
                 return new DefaultRouteTable(name, <any>undefined, { urn })
             case "oci:Core/defaultSecurityList:DefaultSecurityList":
@@ -1378,6 +1385,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/crossConnect", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/crossConnectGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/dedicatedVmHost", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/defaultDhcpOptions", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/defaultDrgRouteTable", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/defaultRouteTable", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/defaultSecurityList", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/dhcpOptions", _module)

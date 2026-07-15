@@ -76,6 +76,10 @@ type LookupReportResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType string `pulumi:"mimeType"`
+	// The OCID of the next report generated.
+	NextReportId string `pulumi:"nextReportId"`
+	// The OCID of the previous report generated.
+	PreviousReportId string `pulumi:"previousReportId"`
 	// The OCID of the report definition.
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
 	ReportId           string `pulumi:"reportId"`
@@ -170,6 +174,16 @@ func (o LookupReportResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Specifies the format of report to be .xls or .pdf or .json
 func (o LookupReportResultOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.MimeType }).(pulumi.StringOutput)
+}
+
+// The OCID of the next report generated.
+func (o LookupReportResultOutput) NextReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.NextReportId }).(pulumi.StringOutput)
+}
+
+// The OCID of the previous report generated.
+func (o LookupReportResultOutput) PreviousReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.PreviousReportId }).(pulumi.StringOutput)
 }
 
 // The OCID of the report definition.

@@ -6,6 +6,7 @@ package com.pulumi.oci.Core;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.inputs.ComputeClusterPlacementConstraintDetailsArgs;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -80,9 +81,6 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
@@ -90,12 +88,24 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * (Updatable) The details for providing placement constraints.
+     * 
+     */
+    @Import(name="placementConstraintDetails")
+    private @Nullable Output<ComputeClusterPlacementConstraintDetailsArgs> placementConstraintDetails;
+
+    /**
+     * @return (Updatable) The details for providing placement constraints.
+     * 
+     */
+    public Optional<Output<ComputeClusterPlacementConstraintDetailsArgs>> placementConstraintDetails() {
+        return Optional.ofNullable(this.placementConstraintDetails);
     }
 
     private ComputeClusterArgs() {}
@@ -106,6 +116,7 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.placementConstraintDetails = $.placementConstraintDetails;
     }
 
     public static Builder builder() {
@@ -213,9 +224,6 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -227,14 +235,32 @@ public final class ComputeClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param placementConstraintDetails (Updatable) The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(@Nullable Output<ComputeClusterPlacementConstraintDetailsArgs> placementConstraintDetails) {
+            $.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+
+        /**
+         * @param placementConstraintDetails (Updatable) The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(ComputeClusterPlacementConstraintDetailsArgs placementConstraintDetails) {
+            return placementConstraintDetails(Output.of(placementConstraintDetails));
         }
 
         public ComputeClusterArgs build() {

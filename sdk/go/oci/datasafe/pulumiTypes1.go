@@ -13,6 +13,380 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs and GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray and GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray{ GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray []GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string {
+		return v.CertificateStoreType
+	}).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseTlsConfig struct {
+	// The format of the certificate store.
+	CertificateStoreType string `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent string `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status string `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword string `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent string `pulumi:"trustStoreContent"`
+}
+
+// GetTargetDatabasesTargetDatabaseTlsConfigInput is an input type that accepts GetTargetDatabasesTargetDatabaseTlsConfigArgs and GetTargetDatabasesTargetDatabaseTlsConfigOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseTlsConfigInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseTlsConfigArgs{...}
+type GetTargetDatabasesTargetDatabaseTlsConfigInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabaseTlsConfigOutput
+	ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseTlsConfigOutput
+}
+
+type GetTargetDatabasesTargetDatabaseTlsConfigArgs struct {
+	// The format of the certificate store.
+	CertificateStoreType pulumi.StringInput `pulumi:"certificateStoreType"`
+	// Base64 encoded string of key store file content.
+	KeyStoreContent pulumi.StringInput `pulumi:"keyStoreContent"`
+	// Status to represent whether the database connection is TLS enabled or not.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The password to read the trust store and key store files, if they are password protected.
+	StorePassword pulumi.StringInput `pulumi:"storePassword"`
+	// Base64 encoded string of trust store file content.
+	TrustStoreContent pulumi.StringInput `pulumi:"trustStoreContent"`
+}
+
+func (GetTargetDatabasesTargetDatabaseTlsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabaseTlsConfigOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArgs) ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseTlsConfigOutput)
+}
+
+// GetTargetDatabasesTargetDatabaseTlsConfigArrayInput is an input type that accepts GetTargetDatabasesTargetDatabaseTlsConfigArray and GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput values.
+// You can construct a concrete instance of `GetTargetDatabasesTargetDatabaseTlsConfigArrayInput` via:
+//
+//	GetTargetDatabasesTargetDatabaseTlsConfigArray{ GetTargetDatabasesTargetDatabaseTlsConfigArgs{...} }
+type GetTargetDatabasesTargetDatabaseTlsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput
+	ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(context.Context) GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput
+}
+
+type GetTargetDatabasesTargetDatabaseTlsConfigArray []GetTargetDatabasesTargetDatabaseTlsConfigInput
+
+func (GetTargetDatabasesTargetDatabaseTlsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
+	return i.ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetTargetDatabasesTargetDatabaseTlsConfigArray) ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseTlsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseTlsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigOutput() GetTargetDatabasesTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigOutput {
+	return o
+}
+
+// The format of the certificate store.
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) CertificateStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseTlsConfig) string { return v.CertificateStoreType }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of key store file content.
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) KeyStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseTlsConfig) string { return v.KeyStoreContent }).(pulumi.StringOutput)
+}
+
+// Status to represent whether the database connection is TLS enabled or not.
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseTlsConfig) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The password to read the trust store and key store files, if they are password protected.
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) StorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseTlsConfig) string { return v.StorePassword }).(pulumi.StringOutput)
+}
+
+// Base64 encoded string of trust store file content.
+func (o GetTargetDatabasesTargetDatabaseTlsConfigOutput) TrustStoreContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabaseTlsConfig) string { return v.TrustStoreContent }).(pulumi.StringOutput)
+}
+
+type GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTargetDatabasesTargetDatabaseTlsConfig)(nil)).Elem()
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutput() GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) ToGetTargetDatabasesTargetDatabaseTlsConfigArrayOutputWithContext(ctx context.Context) GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput {
+	return o
+}
+
+func (o GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput) Index(i pulumi.IntInput) GetTargetDatabasesTargetDatabaseTlsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTargetDatabasesTargetDatabaseTlsConfig {
+		return vs[0].([]GetTargetDatabasesTargetDatabaseTlsConfig)[vs[1].(int)]
+	}).(GetTargetDatabasesTargetDatabaseTlsConfigOutput)
+}
+
+type GetUnifiedAuditPoliciesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUnifiedAuditPoliciesFilterInput is an input type that accepts GetUnifiedAuditPoliciesFilterArgs and GetUnifiedAuditPoliciesFilterOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesFilterInput` via:
+//
+//	GetUnifiedAuditPoliciesFilterArgs{...}
+type GetUnifiedAuditPoliciesFilterInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesFilterOutput() GetUnifiedAuditPoliciesFilterOutput
+	ToGetUnifiedAuditPoliciesFilterOutputWithContext(context.Context) GetUnifiedAuditPoliciesFilterOutput
+}
+
+type GetUnifiedAuditPoliciesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUnifiedAuditPoliciesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesFilterArgs) ToGetUnifiedAuditPoliciesFilterOutput() GetUnifiedAuditPoliciesFilterOutput {
+	return i.ToGetUnifiedAuditPoliciesFilterOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesFilterArgs) ToGetUnifiedAuditPoliciesFilterOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesFilterOutput)
+}
+
+// GetUnifiedAuditPoliciesFilterArrayInput is an input type that accepts GetUnifiedAuditPoliciesFilterArray and GetUnifiedAuditPoliciesFilterArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesFilterArrayInput` via:
+//
+//	GetUnifiedAuditPoliciesFilterArray{ GetUnifiedAuditPoliciesFilterArgs{...} }
+type GetUnifiedAuditPoliciesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesFilterArrayOutput() GetUnifiedAuditPoliciesFilterArrayOutput
+	ToGetUnifiedAuditPoliciesFilterArrayOutputWithContext(context.Context) GetUnifiedAuditPoliciesFilterArrayOutput
+}
+
+type GetUnifiedAuditPoliciesFilterArray []GetUnifiedAuditPoliciesFilterInput
+
+func (GetUnifiedAuditPoliciesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesFilterArray) ToGetUnifiedAuditPoliciesFilterArrayOutput() GetUnifiedAuditPoliciesFilterArrayOutput {
+	return i.ToGetUnifiedAuditPoliciesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesFilterArray) ToGetUnifiedAuditPoliciesFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesFilterArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesFilterOutput) ToGetUnifiedAuditPoliciesFilterOutput() GetUnifiedAuditPoliciesFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesFilterOutput) ToGetUnifiedAuditPoliciesFilterOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUnifiedAuditPoliciesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUnifiedAuditPoliciesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesFilterArrayOutput) ToGetUnifiedAuditPoliciesFilterArrayOutput() GetUnifiedAuditPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesFilterArrayOutput) ToGetUnifiedAuditPoliciesFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPoliciesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPoliciesFilter {
+		return vs[0].([]GetUnifiedAuditPoliciesFilter)[vs[1].(int)]
+	}).(GetUnifiedAuditPoliciesFilterOutput)
+}
+
 type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollection struct {
 	Items []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem `pulumi:"items"`
 }
@@ -4083,6 +4457,12 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfigInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseTlsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTargetDatabasesTargetDatabaseTlsConfigArrayInput)(nil)).Elem(), GetTargetDatabasesTargetDatabaseTlsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesFilterInput)(nil)).Elem(), GetUnifiedAuditPoliciesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesFilterArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs{})
@@ -4143,6 +4523,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabasePeerTargetDatabaseTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseTlsConfigOutput{})
+	pulumi.RegisterOutputType(GetTargetDatabasesTargetDatabaseTlsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesFilterOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput{})

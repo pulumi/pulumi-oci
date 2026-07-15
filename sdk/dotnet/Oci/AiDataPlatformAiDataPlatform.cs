@@ -41,7 +41,11 @@ namespace Pulumi.Oci.Oci
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsEnableAiFeature = aiDataPlatformIsEnableAiFeature,
     ///         SystemTags = aiDataPlatformSystemTags,
+    ///         VectorDbAdminCred = aiDataPlatformVectorDbAdminCred,
+    ///         VectorDbAdminSecretId = testSecret.Id,
+    ///         VectorDbId = testVectorDb.Id,
     ///     });
     /// 
     /// });
@@ -63,6 +67,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("aiDataPlatformType")]
         public Output<string> AiDataPlatformType { get; private set; } = null!;
+
+        /// <summary>
+        /// The current aiFeatureStatus of the AiDataPlatform.
+        /// </summary>
+        [Output("aiFeatureStatus")]
+        public Output<string> AiFeatureStatus { get; private set; } = null!;
 
         /// <summary>
         /// The alias Id of the AiDataPlatform which is the short form of OCID.
@@ -107,6 +117,12 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The flag to enable/disable AiFeatures for the instance.
+        /// </summary>
+        [Output("isEnableAiFeature")]
+        public Output<bool> IsEnableAiFeature { get; private set; } = null!;
+
+        /// <summary>
         /// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -119,11 +135,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
@@ -139,6 +151,28 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        /// </summary>
+        [Output("vectorDbAdminCred")]
+        public Output<string> VectorDbAdminCred { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        /// </summary>
+        [Output("vectorDbAdminSecretId")]
+        public Output<string> VectorDbAdminSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("vectorDbId")]
+        public Output<string> VectorDbId { get; private set; } = null!;
 
         /// <summary>
         /// The WebSocket URL of the AiDataPlatform.
@@ -240,21 +274,45 @@ namespace Pulumi.Oci.Oci
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// The flag to enable/disable AiFeatures for the instance.
+        /// </summary>
+        [Input("isEnableAiFeature")]
+        public Input<bool>? IsEnableAiFeature { get; set; }
+
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public InputMap<string> SystemTags
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        /// </summary>
+        [Input("vectorDbAdminCred")]
+        public Input<string>? VectorDbAdminCred { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        /// </summary>
+        [Input("vectorDbAdminSecretId")]
+        public Input<string>? VectorDbAdminSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("vectorDbId")]
+        public Input<string>? VectorDbId { get; set; }
 
         public AiDataPlatformAiDataPlatformArgs()
         {
@@ -269,6 +327,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("aiDataPlatformType")]
         public Input<string>? AiDataPlatformType { get; set; }
+
+        /// <summary>
+        /// The current aiFeatureStatus of the AiDataPlatform.
+        /// </summary>
+        [Input("aiFeatureStatus")]
+        public Input<string>? AiFeatureStatus { get; set; }
 
         /// <summary>
         /// The alias Id of the AiDataPlatform which is the short form of OCID.
@@ -325,6 +389,12 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
+        /// The flag to enable/disable AiFeatures for the instance.
+        /// </summary>
+        [Input("isEnableAiFeature")]
+        public Input<bool>? IsEnableAiFeature { get; set; }
+
+        /// <summary>
         /// A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -340,11 +410,7 @@ namespace Pulumi.Oci.Oci
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         public InputMap<string> SystemTags
         {
@@ -363,6 +429,28 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+        /// </summary>
+        [Input("vectorDbAdminCred")]
+        public Input<string>? VectorDbAdminCred { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+        /// </summary>
+        [Input("vectorDbAdminSecretId")]
+        public Input<string>? VectorDbAdminSecretId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("vectorDbId")]
+        public Input<string>? VectorDbId { get; set; }
 
         /// <summary>
         /// The WebSocket URL of the AiDataPlatform.

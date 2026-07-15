@@ -15,6 +15,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * 
      */
     private String name;
+    /**
+     * @return The value of the mount option.
+     * 
+     */
     private String value;
 
     private GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckHeader() {}
@@ -25,6 +29,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     public String name() {
         return this.name;
     }
+    /**
+     * @return The value of the mount option.
+     * 
+     */
     public String value() {
         return this.value;
     }

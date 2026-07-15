@@ -50,6 +50,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string MimeType;
         /// <summary>
+        /// The OCID of the next report generated.
+        /// </summary>
+        public readonly string NextReportId;
+        /// <summary>
+        /// The OCID of the previous report generated.
+        /// </summary>
+        public readonly string PreviousReportId;
+        /// <summary>
         /// The ID of the report definition to filter the list of reports
         /// </summary>
         public readonly string ReportDefinitionId;
@@ -99,6 +107,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string mimeType,
 
+            string nextReportId,
+
+            string previousReportId,
+
             string reportDefinitionId,
 
             string reportId,
@@ -124,6 +136,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             MimeType = mimeType;
+            NextReportId = nextReportId;
+            PreviousReportId = previousReportId;
             ReportDefinitionId = reportDefinitionId;
             ReportId = reportId;
             State = state;

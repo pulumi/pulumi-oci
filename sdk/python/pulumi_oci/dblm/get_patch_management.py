@@ -217,6 +217,8 @@ def get_patch_management(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
 
+    > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
+
     Overview of Patch Management.
 
     ## Example Usage
@@ -258,6 +260,8 @@ def get_patch_management_output(compartment_id: pulumi.Input[Optional[_builtins.
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPatchManagementResult]:
     """
     This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
+
+    > **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
 
     Overview of Patch Management.
 

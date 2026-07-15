@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Oda.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// List only the ODA Private Endpoints that are in this lifecycle state.
         /// </summary>
         public readonly string State;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.Oda.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -89,6 +95,7 @@ namespace Pulumi.Oci.Oda.Outputs
             FreeformTags = freeformTags;
             Id = id;
             NsgIds = nsgIds;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

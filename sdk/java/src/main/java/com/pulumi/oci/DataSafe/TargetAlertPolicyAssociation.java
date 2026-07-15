@@ -230,6 +230,26 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
         return this.targetId;
     }
     /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="targetType", refs={String.class}, tree="[0]")
+    private Output<String> targetType;
+
+    /**
+     * @return The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> targetType() {
+        return this.targetType;
+    }
+    /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */

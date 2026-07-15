@@ -38,6 +38,7 @@ import (
 //				AccountStatus:                               pulumi.StringRef(userAssessmentUserAccountStatus),
 //				AreAllSchemasAccessible:                     pulumi.BoolRef(userAssessmentUserAreAllSchemasAccessible),
 //				AuthenticationType:                          pulumi.StringRef(userAssessmentUserAuthenticationType),
+//				CompartmentId:                               pulumi.StringRef(compartmentId),
 //				CompartmentIdInSubtree:                      pulumi.BoolRef(userAssessmentUserCompartmentIdInSubtree),
 //				SchemaLists:                                 pulumi.ToArray(userAssessmentUserSchemaList),
 //				TargetId:                                    pulumi.StringRef(testTarget.Id),
@@ -84,6 +85,8 @@ type GetUserAssessmentUsersArgs struct {
 	AreAllSchemasAccessible *bool `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType *string `pulumi:"authenticationType"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUsersFilter `pulumi:"filters"`
@@ -143,6 +146,7 @@ type GetUserAssessmentUsersResult struct {
 	AreAllSchemasAccessible *bool `pulumi:"areAllSchemasAccessible"`
 	// The user authentication method.
 	AuthenticationType     *string                        `pulumi:"authenticationType"`
+	CompartmentId          *string                        `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                          `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetUserAssessmentUsersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -192,6 +196,8 @@ type GetUserAssessmentUsersOutputArgs struct {
 	AreAllSchemasAccessible pulumi.BoolPtrInput `pulumi:"areAllSchemasAccessible"`
 	// A filter to return only items that match the specified authentication type.
 	AuthenticationType pulumi.StringPtrInput `pulumi:"authenticationType"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput                    `pulumi:"compartmentIdInSubtree"`
 	Filters                GetUserAssessmentUsersFilterArrayInput `pulumi:"filters"`
@@ -278,6 +284,10 @@ func (o GetUserAssessmentUsersResultOutput) AreAllSchemasAccessible() pulumi.Boo
 // The user authentication method.
 func (o GetUserAssessmentUsersResultOutput) AuthenticationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.AuthenticationType }).(pulumi.StringPtrOutput)
+}
+
+func (o GetUserAssessmentUsersResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentUsersResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentUsersResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {

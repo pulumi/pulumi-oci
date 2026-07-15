@@ -81,12 +81,14 @@ type GetContainerInstanceResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds string `pulumi:"gracefulShutdownTimeoutInSeconds"`
-	// An OCID that cannot be changed.
+	// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
 	Id string `pulumi:"id"`
 	// The image pulls secrets so you can access private registry to pull container images.
 	ImagePullSecrets []GetContainerInstanceImagePullSecret `pulumi:"imagePullSecrets"`
 	// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Security context for all containers in a container instance.
+	SecurityContexts []GetContainerInstanceSecurityContext `pulumi:"securityContexts"`
 	// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
 	Shape string `pulumi:"shape"`
 	// The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
@@ -95,6 +97,8 @@ type GetContainerInstanceResult struct {
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// TenantId id of the container instance.
+	TenantId string `pulumi:"tenantId"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -200,7 +204,7 @@ func (o GetContainerInstanceResultOutput) GracefulShutdownTimeoutInSeconds() pul
 	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.GracefulShutdownTimeoutInSeconds }).(pulumi.StringOutput)
 }
 
-// An OCID that cannot be changed.
+// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
 func (o GetContainerInstanceResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -213,6 +217,11 @@ func (o GetContainerInstanceResultOutput) ImagePullSecrets() GetContainerInstanc
 // A message that describes the current state of the container in more detail. Can be used to provide actionable information.
 func (o GetContainerInstanceResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Security context for all containers in a container instance.
+func (o GetContainerInstanceResultOutput) SecurityContexts() GetContainerInstanceSecurityContextArrayOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) []GetContainerInstanceSecurityContext { return v.SecurityContexts }).(GetContainerInstanceSecurityContextArrayOutput)
 }
 
 // The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
@@ -233,6 +242,11 @@ func (o GetContainerInstanceResultOutput) State() pulumi.StringOutput {
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
 func (o GetContainerInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetContainerInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// TenantId id of the container instance.
+func (o GetContainerInstanceResultOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerInstanceResult) string { return v.TenantId }).(pulumi.StringOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

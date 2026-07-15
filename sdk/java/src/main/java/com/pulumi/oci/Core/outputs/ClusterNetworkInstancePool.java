@@ -65,6 +65,11 @@ public final class ClusterNetworkInstancePool {
      */
     private @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    private @Nullable String poolType;
+    /**
      * @return (Updatable) The number of instances that should be in the instance pool.
      * 
      */
@@ -151,6 +156,13 @@ public final class ClusterNetworkInstancePool {
         return this.placementConfigurations == null ? List.of() : this.placementConfigurations;
     }
     /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public Optional<String> poolType() {
+        return Optional.ofNullable(this.poolType);
+    }
+    /**
      * @return (Updatable) The number of instances that should be in the instance pool.
      * 
      */
@@ -192,6 +204,7 @@ public final class ClusterNetworkInstancePool {
         private @Nullable String instanceHostnameFormatter;
         private @Nullable List<ClusterNetworkInstancePoolLoadBalancer> loadBalancers;
         private @Nullable List<ClusterNetworkInstancePoolPlacementConfiguration> placementConfigurations;
+        private @Nullable String poolType;
         private Integer size;
         private @Nullable String state;
         private @Nullable String timeCreated;
@@ -209,6 +222,7 @@ public final class ClusterNetworkInstancePool {
     	      this.instanceHostnameFormatter = defaults.instanceHostnameFormatter;
     	      this.loadBalancers = defaults.loadBalancers;
     	      this.placementConfigurations = defaults.placementConfigurations;
+    	      this.poolType = defaults.poolType;
     	      this.size = defaults.size;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -289,6 +303,12 @@ public final class ClusterNetworkInstancePool {
             return placementConfigurations(List.of(placementConfigurations));
         }
         @CustomType.Setter
+        public Builder poolType(@Nullable String poolType) {
+
+            this.poolType = poolType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder size(Integer size) {
             if (size == null) {
               throw new MissingRequiredPropertyException("ClusterNetworkInstancePool", "size");
@@ -321,6 +341,7 @@ public final class ClusterNetworkInstancePool {
             _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
             _resultValue.loadBalancers = loadBalancers;
             _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.poolType = poolType;
             _resultValue.size = size;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

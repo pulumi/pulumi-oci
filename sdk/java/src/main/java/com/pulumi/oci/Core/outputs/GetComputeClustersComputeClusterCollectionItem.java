@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -42,6 +44,11 @@ public final class GetComputeClustersComputeClusterCollectionItem {
      */
     private String id;
     /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    private List<GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail> placementConstraintDetails;
+    /**
      * @return The current state of the compute cluster.
      * 
      */
@@ -51,6 +58,11 @@ public final class GetComputeClustersComputeClusterCollectionItem {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    private String timeUpdated;
 
     private GetComputeClustersComputeClusterCollectionItem() {}
     /**
@@ -96,6 +108,13 @@ public final class GetComputeClustersComputeClusterCollectionItem {
         return this.id;
     }
     /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    public List<GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail> placementConstraintDetails() {
+        return this.placementConstraintDetails;
+    }
+    /**
      * @return The current state of the compute cluster.
      * 
      */
@@ -108,6 +127,13 @@ public final class GetComputeClustersComputeClusterCollectionItem {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
+    public String timeUpdated() {
+        return this.timeUpdated;
     }
 
     public static Builder builder() {
@@ -125,8 +151,10 @@ public final class GetComputeClustersComputeClusterCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail> placementConstraintDetails;
         private String state;
         private String timeCreated;
+        private String timeUpdated;
         public Builder() {}
         public Builder(GetComputeClustersComputeClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -136,8 +164,10 @@ public final class GetComputeClustersComputeClusterCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeUpdated = defaults.timeUpdated;
         }
 
         @CustomType.Setter
@@ -189,6 +219,17 @@ public final class GetComputeClustersComputeClusterCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(List<GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail> placementConstraintDetails) {
+            if (placementConstraintDetails == null) {
+              throw new MissingRequiredPropertyException("GetComputeClustersComputeClusterCollectionItem", "placementConstraintDetails");
+            }
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        public Builder placementConstraintDetails(GetComputeClustersComputeClusterCollectionItemPlacementConstraintDetail... placementConstraintDetails) {
+            return placementConstraintDetails(List.of(placementConstraintDetails));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetComputeClustersComputeClusterCollectionItem", "state");
@@ -204,6 +245,14 @@ public final class GetComputeClustersComputeClusterCollectionItem {
             this.timeCreated = timeCreated;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeUpdated(String timeUpdated) {
+            if (timeUpdated == null) {
+              throw new MissingRequiredPropertyException("GetComputeClustersComputeClusterCollectionItem", "timeUpdated");
+            }
+            this.timeUpdated = timeUpdated;
+            return this;
+        }
         public GetComputeClustersComputeClusterCollectionItem build() {
             final var _resultValue = new GetComputeClustersComputeClusterCollectionItem();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -212,8 +261,10 @@ public final class GetComputeClustersComputeClusterCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }
     }

@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceContainer;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceDnsConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceImagePullSecret;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceSecurityContext;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceShapeConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVnic;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstanceVolume;
@@ -76,7 +77,7 @@ public final class GetContainerInstanceResult {
      */
     private String gracefulShutdownTimeoutInSeconds;
     /**
-     * @return An OCID that cannot be changed.
+     * @return The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
      * 
      */
     private String id;
@@ -90,6 +91,11 @@ public final class GetContainerInstanceResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    private List<GetContainerInstanceSecurityContext> securityContexts;
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
@@ -110,6 +116,11 @@ public final class GetContainerInstanceResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    private String tenantId;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -218,7 +229,7 @@ public final class GetContainerInstanceResult {
         return this.gracefulShutdownTimeoutInSeconds;
     }
     /**
-     * @return An OCID that cannot be changed.
+     * @return The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
      * 
      */
     public String id() {
@@ -237,6 +248,13 @@ public final class GetContainerInstanceResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    public List<GetContainerInstanceSecurityContext> securityContexts() {
+        return this.securityContexts;
     }
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
@@ -265,6 +283,13 @@ public final class GetContainerInstanceResult {
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    public String tenantId() {
+        return this.tenantId;
     }
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -326,10 +351,12 @@ public final class GetContainerInstanceResult {
         private String id;
         private List<GetContainerInstanceImagePullSecret> imagePullSecrets;
         private String lifecycleDetails;
+        private List<GetContainerInstanceSecurityContext> securityContexts;
         private String shape;
         private List<GetContainerInstanceShapeConfig> shapeConfigs;
         private String state;
         private Map<String,String> systemTags;
+        private String tenantId;
         private String timeCreated;
         private String timeUpdated;
         private List<GetContainerInstanceVnic> vnics;
@@ -353,10 +380,12 @@ public final class GetContainerInstanceResult {
     	      this.id = defaults.id;
     	      this.imagePullSecrets = defaults.imagePullSecrets;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.securityContexts = defaults.securityContexts;
     	      this.shape = defaults.shape;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tenantId = defaults.tenantId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.vnics = defaults.vnics;
@@ -494,6 +523,17 @@ public final class GetContainerInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityContexts(List<GetContainerInstanceSecurityContext> securityContexts) {
+            if (securityContexts == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "securityContexts");
+            }
+            this.securityContexts = securityContexts;
+            return this;
+        }
+        public Builder securityContexts(GetContainerInstanceSecurityContext... securityContexts) {
+            return securityContexts(List.of(securityContexts));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetContainerInstanceResult", "shape");
@@ -526,6 +566,14 @@ public final class GetContainerInstanceResult {
               throw new MissingRequiredPropertyException("GetContainerInstanceResult", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tenantId(String tenantId) {
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstanceResult", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
@@ -591,10 +639,12 @@ public final class GetContainerInstanceResult {
             _resultValue.id = id;
             _resultValue.imagePullSecrets = imagePullSecrets;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.securityContexts = securityContexts;
             _resultValue.shape = shape;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.tenantId = tenantId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.vnics = vnics;

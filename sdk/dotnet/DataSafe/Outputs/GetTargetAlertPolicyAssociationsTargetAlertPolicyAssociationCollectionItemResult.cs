@@ -62,6 +62,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TargetId;
         /// <summary>
+        /// A optional filter to return only resources that belong to the specified alert policy association type.
+        /// </summary>
+        public readonly string TargetType;
+        /// <summary>
         /// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeCreated;
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string targetId,
 
+            string targetType,
+
             string timeCreated,
 
             string timeUpdated)
@@ -112,6 +118,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             State = state;
             SystemTags = systemTags;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

@@ -96,6 +96,10 @@ export interface GetReportDefinitionResult {
      */
     readonly id: string;
     /**
+     * Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+     */
+    readonly isSchedulePaginationEnabled: boolean;
+    /**
      * Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
      */
     readonly isSeeded: boolean;

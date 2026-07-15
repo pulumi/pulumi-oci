@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string AssessmentId;
         /// <summary>
+        /// The category of the finding.
+        /// </summary>
+        public readonly string Category;
+        /// <summary>
         /// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         /// </summary>
         public readonly ImmutableArray<string> Details;
@@ -98,6 +102,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetSecurityAssessmentFindingsFindingResult(
             string assessmentId,
 
+            string category,
+
             ImmutableArray<string> details,
 
             string doclink,
@@ -137,6 +143,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string title)
         {
             AssessmentId = assessmentId;
+            Category = category;
             Details = details;
             Doclink = doclink;
             HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;

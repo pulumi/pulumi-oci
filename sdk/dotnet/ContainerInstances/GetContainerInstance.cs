@@ -169,7 +169,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// </summary>
         public readonly string GracefulShutdownTimeoutInSeconds;
         /// <summary>
-        /// An OCID that cannot be changed.
+        /// The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -180,6 +180,10 @@ namespace Pulumi.Oci.ContainerInstances
         /// A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Security context for all containers in a container instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetContainerInstanceSecurityContextResult> SecurityContexts;
         /// <summary>
         /// The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         /// </summary>
@@ -196,6 +200,10 @@ namespace Pulumi.Oci.ContainerInstances
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
+        /// TenantId id of the container instance.
+        /// </summary>
+        public readonly string TenantId;
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
@@ -249,6 +257,8 @@ namespace Pulumi.Oci.ContainerInstances
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetContainerInstanceSecurityContextResult> securityContexts,
+
             string shape,
 
             ImmutableArray<Outputs.GetContainerInstanceShapeConfigResult> shapeConfigs,
@@ -256,6 +266,8 @@ namespace Pulumi.Oci.ContainerInstances
             string state,
 
             ImmutableDictionary<string, string> systemTags,
+
+            string tenantId,
 
             string timeCreated,
 
@@ -282,10 +294,12 @@ namespace Pulumi.Oci.ContainerInstances
             Id = id;
             ImagePullSecrets = imagePullSecrets;
             LifecycleDetails = lifecycleDetails;
+            SecurityContexts = securityContexts;
             Shape = shape;
             ShapeConfigs = shapeConfigs;
             State = state;
             SystemTags = systemTags;
+            TenantId = tenantId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Vnics = vnics;

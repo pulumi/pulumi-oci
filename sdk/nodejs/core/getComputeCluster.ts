@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -68,6 +70,10 @@ export interface GetComputeClusterResult {
      */
     readonly id: string;
     /**
+     * The details for providing placement constraints.
+     */
+    readonly placementConstraintDetails: outputs.Core.GetComputeClusterPlacementConstraintDetail[];
+    /**
      * The current state of the compute cluster.
      */
     readonly state: string;
@@ -75,6 +81,10 @@ export interface GetComputeClusterResult {
      * The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
+    /**
+     * The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.

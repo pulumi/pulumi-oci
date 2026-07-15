@@ -175,6 +175,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        /// </summary>
+        [Output("isSchedulePaginationEnabled")]
+        public Output<bool> IsSchedulePaginationEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
         /// </summary>
         [Output("isSeeded")]
@@ -521,6 +527,12 @@ namespace Pulumi.Oci.DataSafe
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be 'true' or 'false'.
+        /// </summary>
+        [Input("isSchedulePaginationEnabled")]
+        public Input<bool>? IsSchedulePaginationEnabled { get; set; }
 
         /// <summary>
         /// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.

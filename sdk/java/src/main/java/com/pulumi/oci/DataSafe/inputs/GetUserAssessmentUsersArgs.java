@@ -80,6 +80,21 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
      * 
      */
@@ -385,6 +400,7 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
         this.accountStatus = $.accountStatus;
         this.areAllSchemasAccessible = $.areAllSchemasAccessible;
         this.authenticationType = $.authenticationType;
+        this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.schemaLists = $.schemaLists;
@@ -506,6 +522,27 @@ public final class GetUserAssessmentUsersArgs extends com.pulumi.resources.Invok
          */
         public Builder authenticationType(String authenticationType) {
             return authenticationType(Output.of(authenticationType));
+        }
+
+        /**
+         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**

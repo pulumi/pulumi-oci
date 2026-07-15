@@ -105,6 +105,8 @@ class _ReportState:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 next_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous_report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  report_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
                  report_id: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -124,6 +126,8 @@ class _ReportState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the report in Data Safe.
         :param pulumi.Input[_builtins.str] mime_type: Specifies the format of report to be .xls or .pdf or .json
+        :param pulumi.Input[_builtins.str] next_report_id: The OCID of the next report generated.
+        :param pulumi.Input[_builtins.str] previous_report_id: The OCID of the previous report generated.
         :param pulumi.Input[_builtins.str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
                
@@ -152,6 +156,10 @@ class _ReportState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if mime_type is not None:
             pulumi.set(__self__, "mime_type", mime_type)
+        if next_report_id is not None:
+            pulumi.set(__self__, "next_report_id", next_report_id)
+        if previous_report_id is not None:
+            pulumi.set(__self__, "previous_report_id", previous_report_id)
         if report_definition_id is not None:
             pulumi.set(__self__, "report_definition_id", report_definition_id)
         if report_id is not None:
@@ -264,6 +272,30 @@ class _ReportState:
     @mime_type.setter
     def mime_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "mime_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="nextReportId")
+    def next_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the next report generated.
+        """
+        return pulumi.get(self, "next_report_id")
+
+    @next_report_id.setter
+    def next_report_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "next_report_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="previousReportId")
+    def previous_report_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the previous report generated.
+        """
+        return pulumi.get(self, "previous_report_id")
+
+    @previous_report_id.setter
+    def previous_report_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "previous_report_id", value)
 
     @_builtins.property
     @pulumi.getter(name="reportDefinitionId")
@@ -465,6 +497,8 @@ class Report(pulumi.CustomResource):
             __props__.__dict__["display_name"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["mime_type"] = None
+            __props__.__dict__["next_report_id"] = None
+            __props__.__dict__["previous_report_id"] = None
             __props__.__dict__["report_definition_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -490,6 +524,8 @@ class Report(pulumi.CustomResource):
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+            next_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_report_id: pulumi.Input[Optional[_builtins.str]] = None,
             report_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
             report_id: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -513,6 +549,8 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the report in Data Safe.
         :param pulumi.Input[_builtins.str] mime_type: Specifies the format of report to be .xls or .pdf or .json
+        :param pulumi.Input[_builtins.str] next_report_id: The OCID of the next report generated.
+        :param pulumi.Input[_builtins.str] previous_report_id: The OCID of the previous report generated.
         :param pulumi.Input[_builtins.str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[_builtins.str] report_id: Unique report identifier
                
@@ -537,6 +575,8 @@ class Report(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["mime_type"] = mime_type
+        __props__.__dict__["next_report_id"] = next_report_id
+        __props__.__dict__["previous_report_id"] = previous_report_id
         __props__.__dict__["report_definition_id"] = report_definition_id
         __props__.__dict__["report_id"] = report_id
         __props__.__dict__["state"] = state
@@ -610,6 +650,22 @@ class Report(pulumi.CustomResource):
         Specifies the format of report to be .xls or .pdf or .json
         """
         return pulumi.get(self, "mime_type")
+
+    @_builtins.property
+    @pulumi.getter(name="nextReportId")
+    def next_report_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the next report generated.
+        """
+        return pulumi.get(self, "next_report_id")
+
+    @_builtins.property
+    @pulumi.getter(name="previousReportId")
+    def previous_report_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the previous report generated.
+        """
+        return pulumi.get(self, "previous_report_id")
 
     @_builtins.property
     @pulumi.getter(name="reportDefinitionId")

@@ -84,6 +84,11 @@ public final class GetReportDefinitionResult {
      */
     private String id;
     /**
+     * @return Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    private Boolean isSchedulePaginationEnabled;
+    /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
@@ -253,6 +258,13 @@ public final class GetReportDefinitionResult {
         return this.id;
     }
     /**
+     * @return Indicates if the reports being generated should be paginated. If set to true, multiple reports can be generated and the details of next and previous report are present in Report. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * 
+     */
+    public Boolean isSchedulePaginationEnabled() {
+        return this.isSchedulePaginationEnabled;
+    }
+    /**
      * @return Signifies whether the definition is seeded or user defined. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
@@ -383,6 +395,7 @@ public final class GetReportDefinitionResult {
         private Integer displayOrder;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isSchedulePaginationEnabled;
         private Boolean isSeeded;
         private String lifecycleDetails;
         private String parentId;
@@ -415,6 +428,7 @@ public final class GetReportDefinitionResult {
     	      this.displayOrder = defaults.displayOrder;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isSchedulePaginationEnabled = defaults.isSchedulePaginationEnabled;
     	      this.isSeeded = defaults.isSeeded;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.parentId = defaults.parentId;
@@ -547,6 +561,14 @@ public final class GetReportDefinitionResult {
               throw new MissingRequiredPropertyException("GetReportDefinitionResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSchedulePaginationEnabled(Boolean isSchedulePaginationEnabled) {
+            if (isSchedulePaginationEnabled == null) {
+              throw new MissingRequiredPropertyException("GetReportDefinitionResult", "isSchedulePaginationEnabled");
+            }
+            this.isSchedulePaginationEnabled = isSchedulePaginationEnabled;
             return this;
         }
         @CustomType.Setter
@@ -695,6 +717,7 @@ public final class GetReportDefinitionResult {
             _resultValue.displayOrder = displayOrder;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isSchedulePaginationEnabled = isSchedulePaginationEnabled;
             _resultValue.isSeeded = isSeeded;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.parentId = parentId;

@@ -16,6 +16,39 @@ import (
 // Gets a list of all target-alert policy associations.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/datasafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datasafe.GetTargetAlertPolicyAssociations(ctx, &datasafe.GetTargetAlertPolicyAssociationsArgs{
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(targetAlertPolicyAssociationAccessLevel),
+//				AlertPolicyId:                   pulumi.StringRef(testAlertPolicy.Id),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(targetAlertPolicyAssociationCompartmentIdInSubtree),
+//				State:                           pulumi.StringRef(targetAlertPolicyAssociationState),
+//				TargetAlertPolicyAssociationId:  pulumi.StringRef(testTargetAlertPolicyAssociation.Id),
+//				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TargetType:                      pulumi.StringRef(targetAlertPolicyAssociationTargetType),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedLessThan),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetTargetAlertPolicyAssociations(ctx *pulumi.Context, args *GetTargetAlertPolicyAssociationsArgs, opts ...pulumi.InvokeOption) (*GetTargetAlertPolicyAssociationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetAlertPolicyAssociationsResult
@@ -43,6 +76,8 @@ type GetTargetAlertPolicyAssociationsArgs struct {
 	TargetAlertPolicyAssociationId *string `pulumi:"targetAlertPolicyAssociationId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified alert policy association type.
+	TargetType *string `pulumi:"targetType"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -68,8 +103,10 @@ type GetTargetAlertPolicyAssociationsResult struct {
 	// The list of target_alert_policy_association_collection.
 	TargetAlertPolicyAssociationCollections []GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection `pulumi:"targetAlertPolicyAssociationCollections"`
 	TargetAlertPolicyAssociationId          *string                                                                  `pulumi:"targetAlertPolicyAssociationId"`
-	// The OCID of the target on which alert policy is to be applied.
-	TargetId                        *string `pulumi:"targetId"`
+	// The OCID of the target or target database group on which alert policy is to be applied.
+	TargetId *string `pulumi:"targetId"`
+	// The resource type that is represented by the target alert policy association.
+	TargetType                      *string `pulumi:"targetType"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
 }
@@ -100,6 +137,8 @@ type GetTargetAlertPolicyAssociationsOutputArgs struct {
 	TargetAlertPolicyAssociationId pulumi.StringPtrInput `pulumi:"targetAlertPolicyAssociationId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// A optional filter to return only resources that belong to the specified alert policy association type.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -173,9 +212,14 @@ func (o GetTargetAlertPolicyAssociationsResultOutput) TargetAlertPolicyAssociati
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsResult) *string { return v.TargetAlertPolicyAssociationId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the target on which alert policy is to be applied.
+// The OCID of the target or target database group on which alert policy is to be applied.
 func (o GetTargetAlertPolicyAssociationsResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// The resource type that is represented by the target alert policy association.
+func (o GetTargetAlertPolicyAssociationsResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetTargetAlertPolicyAssociationsResultOutput) TimeCreatedGreaterThanOrEqualTo() pulumi.StringPtrOutput {

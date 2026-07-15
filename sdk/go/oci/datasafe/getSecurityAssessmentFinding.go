@@ -23,37 +23,39 @@ func LookupSecurityAssessmentFinding(ctx *pulumi.Context, args *LookupSecurityAs
 
 // A collection of arguments for invoking getSecurityAssessmentFinding.
 type LookupSecurityAssessmentFindingArgs struct {
-	AccessLevel            *string                              `pulumi:"accessLevel"`
-	Category               *string                              `pulumi:"category"`
-	CompartmentId          *string                              `pulumi:"compartmentId"`
-	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     []string                             `pulumi:"containsReferences"`
-	ContainsSeverities     []string                             `pulumi:"containsSeverities"`
-	Fields                 []string                             `pulumi:"fields"`
-	Filters                []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
-	FindingKey             *string                              `pulumi:"findingKey"`
-	IsTopFinding           *bool                                `pulumi:"isTopFinding"`
-	References             *string                              `pulumi:"references"`
-	ScimQuery              *string                              `pulumi:"scimQuery"`
-	SecurityAssessmentId   string                               `pulumi:"securityAssessmentId"`
-	Severity               *string                              `pulumi:"severity"`
-	State                  *string                              `pulumi:"state"`
-	TargetId               *string                              `pulumi:"targetId"`
-	TargetIds              []string                             `pulumi:"targetIds"`
+	AccessLevel                     *string                              `pulumi:"accessLevel"`
+	Category                        *string                              `pulumi:"category"`
+	CompartmentId                   *string                              `pulumi:"compartmentId"`
+	CompartmentIdInSubtree          *bool                                `pulumi:"compartmentIdInSubtree"`
+	ContainsOracleDefinedSeverities []string                             `pulumi:"containsOracleDefinedSeverities"`
+	ContainsReferences              []string                             `pulumi:"containsReferences"`
+	ContainsSeverities              []string                             `pulumi:"containsSeverities"`
+	Fields                          []string                             `pulumi:"fields"`
+	Filters                         []GetSecurityAssessmentFindingFilter `pulumi:"filters"`
+	FindingKey                      *string                              `pulumi:"findingKey"`
+	IsTopFinding                    *bool                                `pulumi:"isTopFinding"`
+	References                      *string                              `pulumi:"references"`
+	ScimQuery                       *string                              `pulumi:"scimQuery"`
+	SecurityAssessmentId            string                               `pulumi:"securityAssessmentId"`
+	Severity                        *string                              `pulumi:"severity"`
+	State                           *string                              `pulumi:"state"`
+	TargetId                        *string                              `pulumi:"targetId"`
+	TargetIds                       []string                             `pulumi:"targetIds"`
 }
 
 // A collection of values returned by getSecurityAssessmentFinding.
 type LookupSecurityAssessmentFindingResult struct {
-	AccessLevel            *string                               `pulumi:"accessLevel"`
-	Category               *string                               `pulumi:"category"`
-	CompartmentId          *string                               `pulumi:"compartmentId"`
-	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     []string                              `pulumi:"containsReferences"`
-	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
-	Fields                 []string                              `pulumi:"fields"`
-	Filters                []GetSecurityAssessmentFindingFilter  `pulumi:"filters"`
-	FindingKey             *string                               `pulumi:"findingKey"`
-	Findings               []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
+	AccessLevel                     *string                               `pulumi:"accessLevel"`
+	Category                        *string                               `pulumi:"category"`
+	CompartmentId                   *string                               `pulumi:"compartmentId"`
+	CompartmentIdInSubtree          *bool                                 `pulumi:"compartmentIdInSubtree"`
+	ContainsOracleDefinedSeverities []string                              `pulumi:"containsOracleDefinedSeverities"`
+	ContainsReferences              []string                              `pulumi:"containsReferences"`
+	ContainsSeverities              []string                              `pulumi:"containsSeverities"`
+	Fields                          []string                              `pulumi:"fields"`
+	Filters                         []GetSecurityAssessmentFindingFilter  `pulumi:"filters"`
+	FindingKey                      *string                               `pulumi:"findingKey"`
+	Findings                        []GetSecurityAssessmentFindingFinding `pulumi:"findings"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                   string   `pulumi:"id"`
 	IsTopFinding         *bool    `pulumi:"isTopFinding"`
@@ -77,23 +79,24 @@ func LookupSecurityAssessmentFindingOutput(ctx *pulumi.Context, args LookupSecur
 
 // A collection of arguments for invoking getSecurityAssessmentFinding.
 type LookupSecurityAssessmentFindingOutputArgs struct {
-	AccessLevel            pulumi.StringPtrInput                        `pulumi:"accessLevel"`
-	Category               pulumi.StringPtrInput                        `pulumi:"category"`
-	CompartmentId          pulumi.StringPtrInput                        `pulumi:"compartmentId"`
-	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     pulumi.StringArrayInput                      `pulumi:"containsReferences"`
-	ContainsSeverities     pulumi.StringArrayInput                      `pulumi:"containsSeverities"`
-	Fields                 pulumi.StringArrayInput                      `pulumi:"fields"`
-	Filters                GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
-	FindingKey             pulumi.StringPtrInput                        `pulumi:"findingKey"`
-	IsTopFinding           pulumi.BoolPtrInput                          `pulumi:"isTopFinding"`
-	References             pulumi.StringPtrInput                        `pulumi:"references"`
-	ScimQuery              pulumi.StringPtrInput                        `pulumi:"scimQuery"`
-	SecurityAssessmentId   pulumi.StringInput                           `pulumi:"securityAssessmentId"`
-	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
-	State                  pulumi.StringPtrInput                        `pulumi:"state"`
-	TargetId               pulumi.StringPtrInput                        `pulumi:"targetId"`
-	TargetIds              pulumi.StringArrayInput                      `pulumi:"targetIds"`
+	AccessLevel                     pulumi.StringPtrInput                        `pulumi:"accessLevel"`
+	Category                        pulumi.StringPtrInput                        `pulumi:"category"`
+	CompartmentId                   pulumi.StringPtrInput                        `pulumi:"compartmentId"`
+	CompartmentIdInSubtree          pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
+	ContainsOracleDefinedSeverities pulumi.StringArrayInput                      `pulumi:"containsOracleDefinedSeverities"`
+	ContainsReferences              pulumi.StringArrayInput                      `pulumi:"containsReferences"`
+	ContainsSeverities              pulumi.StringArrayInput                      `pulumi:"containsSeverities"`
+	Fields                          pulumi.StringArrayInput                      `pulumi:"fields"`
+	Filters                         GetSecurityAssessmentFindingFilterArrayInput `pulumi:"filters"`
+	FindingKey                      pulumi.StringPtrInput                        `pulumi:"findingKey"`
+	IsTopFinding                    pulumi.BoolPtrInput                          `pulumi:"isTopFinding"`
+	References                      pulumi.StringPtrInput                        `pulumi:"references"`
+	ScimQuery                       pulumi.StringPtrInput                        `pulumi:"scimQuery"`
+	SecurityAssessmentId            pulumi.StringInput                           `pulumi:"securityAssessmentId"`
+	Severity                        pulumi.StringPtrInput                        `pulumi:"severity"`
+	State                           pulumi.StringPtrInput                        `pulumi:"state"`
+	TargetId                        pulumi.StringPtrInput                        `pulumi:"targetId"`
+	TargetIds                       pulumi.StringArrayInput                      `pulumi:"targetIds"`
 }
 
 func (LookupSecurityAssessmentFindingOutputArgs) ElementType() reflect.Type {
@@ -129,6 +132,10 @@ func (o LookupSecurityAssessmentFindingResultOutput) CompartmentId() pulumi.Stri
 
 func (o LookupSecurityAssessmentFindingResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) ContainsOracleDefinedSeverities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) []string { return v.ContainsOracleDefinedSeverities }).(pulumi.StringArrayOutput)
 }
 
 func (o LookupSecurityAssessmentFindingResultOutput) ContainsReferences() pulumi.StringArrayOutput {

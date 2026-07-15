@@ -63,6 +63,24 @@ import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorPlainArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsArgs;
 import com.pulumi.oci.oci.inputs.GetCostadCostAnomalyMonitorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructurePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetDataccVmInstancesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
@@ -306,6 +324,15 @@ import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyEventsResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyMonitorResult;
 import com.pulumi.oci.oci.outputs.GetCostadCostAnomalyMonitorsResult;
+import com.pulumi.oci.oci.outputs.GetDataccInfrastructureResult;
+import com.pulumi.oci.oci.outputs.GetDataccInfrastructureScaleOptionResult;
+import com.pulumi.oci.oci.outputs.GetDataccInfrastructuresResult;
+import com.pulumi.oci.oci.outputs.GetDataccMaintenanceExecutionResult;
+import com.pulumi.oci.oci.outputs.GetDataccMaintenanceExecutionsResult;
+import com.pulumi.oci.oci.outputs.GetDataccVmClusterNetworkResult;
+import com.pulumi.oci.oci.outputs.GetDataccVmClusterNetworksResult;
+import com.pulumi.oci.oci.outputs.GetDataccVmInstanceResult;
+import com.pulumi.oci.oci.outputs.GetDataccVmInstancesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorResult;
@@ -7298,6 +7325,2021 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetCostadCostAnomalyMonitorsResult> getCostadCostAnomalyMonitorsPlain(GetCostadCostAnomalyMonitorsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getCostadCostAnomalyMonitors:getCostadCostAnomalyMonitors", TypeShape.of(GetCostadCostAnomalyMonitorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureResult> getDataccInfrastructure(GetDataccInfrastructureArgs args) {
+        return getDataccInfrastructure(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Infrastructure resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructureResult> getDataccInfrastructurePlain(GetDataccInfrastructurePlainArgs args) {
+        return getDataccInfrastructurePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Infrastructure resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureResult> getDataccInfrastructure(GetDataccInfrastructureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructure:getDataccInfrastructure", TypeShape.of(GetDataccInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureResult> getDataccInfrastructure(GetDataccInfrastructureArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructure:getDataccInfrastructure", TypeShape.of(GetDataccInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructureResult> getDataccInfrastructurePlain(GetDataccInfrastructurePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccInfrastructure:getDataccInfrastructure", TypeShape.of(GetDataccInfrastructureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Scale Option resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Get the available scale options for the infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
+     *             .infrastructureId(testInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureScaleOptionResult> getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs args) {
+        return getDataccInfrastructureScaleOption(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Scale Option resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Get the available scale options for the infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
+     *             .infrastructureId(testInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructureScaleOptionResult> getDataccInfrastructureScaleOptionPlain(GetDataccInfrastructureScaleOptionPlainArgs args) {
+        return getDataccInfrastructureScaleOptionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Scale Option resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Get the available scale options for the infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
+     *             .infrastructureId(testInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureScaleOptionResult> getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructureScaleOption:getDataccInfrastructureScaleOption", TypeShape.of(GetDataccInfrastructureScaleOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Scale Option resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Get the available scale options for the infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
+     *             .infrastructureId(testInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructureScaleOptionResult> getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructureScaleOption:getDataccInfrastructureScaleOption", TypeShape.of(GetDataccInfrastructureScaleOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Infrastructure Scale Option resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Get the available scale options for the infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructureScaleOptionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
+     *             .infrastructureId(testInfrastructure.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructureScaleOptionResult> getDataccInfrastructureScaleOptionPlain(GetDataccInfrastructureScaleOptionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccInfrastructureScaleOption:getDataccInfrastructureScaleOption", TypeShape.of(GetDataccInfrastructureScaleOptionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of Database Infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructures = OciFunctions.getDataccInfrastructures(GetDataccInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(infrastructureDisplayName)
+     *             .states(infrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructuresResult> getDataccInfrastructures(GetDataccInfrastructuresArgs args) {
+        return getDataccInfrastructures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of Database Infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructures = OciFunctions.getDataccInfrastructures(GetDataccInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(infrastructureDisplayName)
+     *             .states(infrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructuresResult> getDataccInfrastructuresPlain(GetDataccInfrastructuresPlainArgs args) {
+        return getDataccInfrastructuresPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of Database Infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructures = OciFunctions.getDataccInfrastructures(GetDataccInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(infrastructureDisplayName)
+     *             .states(infrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructuresResult> getDataccInfrastructures(GetDataccInfrastructuresArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructures:getDataccInfrastructures", TypeShape.of(GetDataccInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of Database Infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructures = OciFunctions.getDataccInfrastructures(GetDataccInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(infrastructureDisplayName)
+     *             .states(infrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccInfrastructuresResult> getDataccInfrastructures(GetDataccInfrastructuresArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccInfrastructures:getDataccInfrastructures", TypeShape.of(GetDataccInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of Database Infrastructures.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInfrastructures = OciFunctions.getDataccInfrastructures(GetDataccInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(infrastructureDisplayName)
+     *             .states(infrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccInfrastructuresResult> getDataccInfrastructuresPlain(GetDataccInfrastructuresPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccInfrastructures:getDataccInfrastructures", TypeShape.of(GetDataccInfrastructuresResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Execution resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets information about the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionResult> getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs args) {
+        return getDataccMaintenanceExecution(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Execution resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets information about the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccMaintenanceExecutionResult> getDataccMaintenanceExecutionPlain(GetDataccMaintenanceExecutionPlainArgs args) {
+        return getDataccMaintenanceExecutionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Maintenance Execution resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets information about the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionResult> getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccMaintenanceExecution:getDataccMaintenanceExecution", TypeShape.of(GetDataccMaintenanceExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Execution resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets information about the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionResult> getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccMaintenanceExecution:getDataccMaintenanceExecution", TypeShape.of(GetDataccMaintenanceExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Maintenance Execution resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets information about the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccMaintenanceExecutionResult> getDataccMaintenanceExecutionPlain(GetDataccMaintenanceExecutionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccMaintenanceExecution:getDataccMaintenanceExecution", TypeShape.of(GetDataccMaintenanceExecutionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets a list of the maintenance executions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(maintenanceExecutionDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
+     *             .maintenanceType(maintenanceExecutionMaintenanceType)
+     *             .state(maintenanceExecutionState)
+     *             .targetResourceType(maintenanceExecutionTargetResourceType)
+     *             .timeAcceptedGreaterThanOrEqualTo(maintenanceExecutionTimeAcceptedGreaterThanOrEqualTo)
+     *             .timeAcceptedLessThanOrEqualTo(maintenanceExecutionTimeAcceptedLessThanOrEqualTo)
+     *             .type(maintenanceExecutionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionsResult> getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs args) {
+        return getDataccMaintenanceExecutions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets a list of the maintenance executions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(maintenanceExecutionDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
+     *             .maintenanceType(maintenanceExecutionMaintenanceType)
+     *             .state(maintenanceExecutionState)
+     *             .targetResourceType(maintenanceExecutionTargetResourceType)
+     *             .timeAcceptedGreaterThanOrEqualTo(maintenanceExecutionTimeAcceptedGreaterThanOrEqualTo)
+     *             .timeAcceptedLessThanOrEqualTo(maintenanceExecutionTimeAcceptedLessThanOrEqualTo)
+     *             .type(maintenanceExecutionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccMaintenanceExecutionsResult> getDataccMaintenanceExecutionsPlain(GetDataccMaintenanceExecutionsPlainArgs args) {
+        return getDataccMaintenanceExecutionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets a list of the maintenance executions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(maintenanceExecutionDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
+     *             .maintenanceType(maintenanceExecutionMaintenanceType)
+     *             .state(maintenanceExecutionState)
+     *             .targetResourceType(maintenanceExecutionTargetResourceType)
+     *             .timeAcceptedGreaterThanOrEqualTo(maintenanceExecutionTimeAcceptedGreaterThanOrEqualTo)
+     *             .timeAcceptedLessThanOrEqualTo(maintenanceExecutionTimeAcceptedLessThanOrEqualTo)
+     *             .type(maintenanceExecutionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionsResult> getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccMaintenanceExecutions:getDataccMaintenanceExecutions", TypeShape.of(GetDataccMaintenanceExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets a list of the maintenance executions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(maintenanceExecutionDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
+     *             .maintenanceType(maintenanceExecutionMaintenanceType)
+     *             .state(maintenanceExecutionState)
+     *             .targetResourceType(maintenanceExecutionTargetResourceType)
+     *             .timeAcceptedGreaterThanOrEqualTo(maintenanceExecutionTimeAcceptedGreaterThanOrEqualTo)
+     *             .timeAcceptedLessThanOrEqualTo(maintenanceExecutionTimeAcceptedLessThanOrEqualTo)
+     *             .type(maintenanceExecutionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccMaintenanceExecutionsResult> getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccMaintenanceExecutions:getDataccMaintenanceExecutions", TypeShape.of(GetDataccMaintenanceExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Gets a list of the maintenance executions in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccMaintenanceExecutionsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(maintenanceExecutionDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
+     *             .maintenanceType(maintenanceExecutionMaintenanceType)
+     *             .state(maintenanceExecutionState)
+     *             .targetResourceType(maintenanceExecutionTargetResourceType)
+     *             .timeAcceptedGreaterThanOrEqualTo(maintenanceExecutionTimeAcceptedGreaterThanOrEqualTo)
+     *             .timeAcceptedLessThanOrEqualTo(maintenanceExecutionTimeAcceptedLessThanOrEqualTo)
+     *             .type(maintenanceExecutionType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccMaintenanceExecutionsResult> getDataccMaintenanceExecutionsPlain(GetDataccMaintenanceExecutionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccMaintenanceExecutions:getDataccMaintenanceExecutions", TypeShape.of(GetDataccMaintenanceExecutionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM cluster network on Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworkResult> getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs args) {
+        return getDataccVmClusterNetwork(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM cluster network on Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmClusterNetworkResult> getDataccVmClusterNetworkPlain(GetDataccVmClusterNetworkPlainArgs args) {
+        return getDataccVmClusterNetworkPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM cluster network on Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworkResult> getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmClusterNetwork:getDataccVmClusterNetwork", TypeShape.of(GetDataccVmClusterNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM cluster network on Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworkResult> getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmClusterNetwork:getDataccVmClusterNetwork", TypeShape.of(GetDataccVmClusterNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Cluster Network resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM cluster network on Database Infrastructure that has the specified
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworkArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmClusterNetworkResult> getDataccVmClusterNetworkPlain(GetDataccVmClusterNetworkPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccVmClusterNetwork:getDataccVmClusterNetwork", TypeShape.of(GetDataccVmClusterNetworkResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM cluster networks on Database Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
+     *             .nodeCount(vmClusterNetworkNodeCount)
+     *             .states(vmClusterNetworkState)
+     *             .vmNetworkConsumerType(vmClusterNetworkVmNetworkConsumerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworksResult> getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs args) {
+        return getDataccVmClusterNetworks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM cluster networks on Database Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
+     *             .nodeCount(vmClusterNetworkNodeCount)
+     *             .states(vmClusterNetworkState)
+     *             .vmNetworkConsumerType(vmClusterNetworkVmNetworkConsumerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmClusterNetworksResult> getDataccVmClusterNetworksPlain(GetDataccVmClusterNetworksPlainArgs args) {
+        return getDataccVmClusterNetworksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM cluster networks on Database Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
+     *             .nodeCount(vmClusterNetworkNodeCount)
+     *             .states(vmClusterNetworkState)
+     *             .vmNetworkConsumerType(vmClusterNetworkVmNetworkConsumerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworksResult> getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmClusterNetworks:getDataccVmClusterNetworks", TypeShape.of(GetDataccVmClusterNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM cluster networks on Database Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
+     *             .nodeCount(vmClusterNetworkNodeCount)
+     *             .states(vmClusterNetworkState)
+     *             .vmNetworkConsumerType(vmClusterNetworkVmNetworkConsumerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmClusterNetworksResult> getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmClusterNetworks:getDataccVmClusterNetworks", TypeShape.of(GetDataccVmClusterNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM cluster networks on Database Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmClusterNetworksArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
+     *             .nodeCount(vmClusterNetworkNodeCount)
+     *             .states(vmClusterNetworkState)
+     *             .vmNetworkConsumerType(vmClusterNetworkVmNetworkConsumerType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmClusterNetworksResult> getDataccVmClusterNetworksPlain(GetDataccVmClusterNetworksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccVmClusterNetworks:getDataccVmClusterNetworks", TypeShape.of(GetDataccVmClusterNetworksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Instance resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM instance on Database Infrastructure that has the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstanceResult> getDataccVmInstance(GetDataccVmInstanceArgs args) {
+        return getDataccVmInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vm Instance resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM instance on Database Infrastructure that has the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmInstanceResult> getDataccVmInstancePlain(GetDataccVmInstancePlainArgs args) {
+        return getDataccVmInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vm Instance resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM instance on Database Infrastructure that has the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstanceResult> getDataccVmInstance(GetDataccVmInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmInstance:getDataccVmInstance", TypeShape.of(GetDataccVmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Instance resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM instance on Database Infrastructure that has the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstanceResult> getDataccVmInstance(GetDataccVmInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmInstance:getDataccVmInstance", TypeShape.of(GetDataccVmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vm Instance resource in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain the VM instance on Database Infrastructure that has the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmInstanceResult> getDataccVmInstancePlain(GetDataccVmInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccVmInstance:getDataccVmInstance", TypeShape.of(GetDataccVmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .baseServerId(testBaseServer.id())
+     *             .displayName(vmInstanceDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .states(vmInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstancesResult> getDataccVmInstances(GetDataccVmInstancesArgs args) {
+        return getDataccVmInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .baseServerId(testBaseServer.id())
+     *             .displayName(vmInstanceDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .states(vmInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmInstancesResult> getDataccVmInstancesPlain(GetDataccVmInstancesPlainArgs args) {
+        return getDataccVmInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .baseServerId(testBaseServer.id())
+     *             .displayName(vmInstanceDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .states(vmInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstancesResult> getDataccVmInstances(GetDataccVmInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmInstances:getDataccVmInstances", TypeShape.of(GetDataccVmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .baseServerId(testBaseServer.id())
+     *             .displayName(vmInstanceDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .states(vmInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDataccVmInstancesResult> getDataccVmInstances(GetDataccVmInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDataccVmInstances:getDataccVmInstances", TypeShape.of(GetDataccVmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
+     * 
+     * Obtain a list of VM instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDataccVmInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .baseServerId(testBaseServer.id())
+     *             .displayName(vmInstanceDisplayName)
+     *             .infrastructureId(testInfrastructure.id())
+     *             .states(vmInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDataccVmInstancesResult> getDataccVmInstancesPlain(GetDataccVmInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDataccVmInstances:getDataccVmInstances", TypeShape.of(GetDataccVmInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.

@@ -27,7 +27,7 @@ class GetContainerInstanceResult:
     """
     A collection of values returned by getContainerInstance.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, container_count=None, container_instance_id=None, container_restart_policy=None, containers=None, defined_tags=None, display_name=None, dns_configs=None, fault_domain=None, freeform_tags=None, graceful_shutdown_timeout_in_seconds=None, id=None, image_pull_secrets=None, lifecycle_details=None, shape=None, shape_configs=None, state=None, system_tags=None, time_created=None, time_updated=None, vnics=None, volume_count=None, volumes=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, container_count=None, container_instance_id=None, container_restart_policy=None, containers=None, defined_tags=None, display_name=None, dns_configs=None, fault_domain=None, freeform_tags=None, graceful_shutdown_timeout_in_seconds=None, id=None, image_pull_secrets=None, lifecycle_details=None, security_contexts=None, shape=None, shape_configs=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, vnics=None, volume_count=None, volumes=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -73,6 +73,9 @@ class GetContainerInstanceResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if security_contexts and not isinstance(security_contexts, list):
+            raise TypeError("Expected argument 'security_contexts' to be a list")
+        pulumi.set(__self__, "security_contexts", security_contexts)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -85,6 +88,9 @@ class GetContainerInstanceResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tenant_id and not isinstance(tenant_id, str):
+            raise TypeError("Expected argument 'tenant_id' to be a str")
+        pulumi.set(__self__, "tenant_id", tenant_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -198,7 +204,7 @@ class GetContainerInstanceResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        An OCID that cannot be changed.
+        The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
         """
         return pulumi.get(self, "id")
 
@@ -217,6 +223,14 @@ class GetContainerInstanceResult:
         A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="securityContexts")
+    def security_contexts(self) -> Sequence['outputs.GetContainerInstanceSecurityContextResult']:
+        """
+        Security context for all containers in a container instance.
+        """
+        return pulumi.get(self, "security_contexts")
 
     @_builtins.property
     @pulumi.getter
@@ -249,6 +263,14 @@ class GetContainerInstanceResult:
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        TenantId id of the container instance.
+        """
+        return pulumi.get(self, "tenant_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -312,10 +334,12 @@ class AwaitableGetContainerInstanceResult(GetContainerInstanceResult):
             id=self.id,
             image_pull_secrets=self.image_pull_secrets,
             lifecycle_details=self.lifecycle_details,
+            security_contexts=self.security_contexts,
             shape=self.shape,
             shape_configs=self.shape_configs,
             state=self.state,
             system_tags=self.system_tags,
+            tenant_id=self.tenant_id,
             time_created=self.time_created,
             time_updated=self.time_updated,
             vnics=self.vnics,
@@ -363,10 +387,12 @@ def get_container_instance(container_instance_id: Optional[_builtins.str] = None
         id=pulumi.get(__ret__, 'id'),
         image_pull_secrets=pulumi.get(__ret__, 'image_pull_secrets'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        security_contexts=pulumi.get(__ret__, 'security_contexts'),
         shape=pulumi.get(__ret__, 'shape'),
         shape_configs=pulumi.get(__ret__, 'shape_configs'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tenant_id=pulumi.get(__ret__, 'tenant_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         vnics=pulumi.get(__ret__, 'vnics'),
@@ -411,10 +437,12 @@ def get_container_instance_output(container_instance_id: pulumi.Input[Optional[_
         id=pulumi.get(__response__, 'id'),
         image_pull_secrets=pulumi.get(__response__, 'image_pull_secrets'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        security_contexts=pulumi.get(__response__, 'security_contexts'),
         shape=pulumi.get(__response__, 'shape'),
         shape_configs=pulumi.get(__response__, 'shape_configs'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        tenant_id=pulumi.get(__response__, 'tenant_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         vnics=pulumi.get(__response__, 'vnics'),

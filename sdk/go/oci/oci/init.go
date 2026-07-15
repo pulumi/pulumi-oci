@@ -45,6 +45,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CostadCostAnomalyMonitor{}
 	case "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement":
 		r = &CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement{}
+	case "oci:oci/dataccInfrastructure:DataccInfrastructure":
+		r = &DataccInfrastructure{}
+	case "oci:oci/dataccVmClusterNetwork:DataccVmClusterNetwork":
+		r = &DataccVmClusterNetwork{}
+	case "oci:oci/dataccVmInstance:DataccVmInstance":
+		r = &DataccVmInstance{}
 	case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
 		r = &DbmulticloudMultiCloudResourceDiscovery{}
 	case "oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector":
@@ -186,6 +192,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dataccInfrastructure",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dataccVmClusterNetwork",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dataccVmInstance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

@@ -18,6 +18,31 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetAlertPolicyAssociations = Oci.DataSafe.GetTargetAlertPolicyAssociations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAlertPolicyAssociationAccessLevel,
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         CompartmentIdInSubtree = targetAlertPolicyAssociationCompartmentIdInSubtree,
+        ///         State = targetAlertPolicyAssociationState,
+        ///         TargetAlertPolicyAssociationId = testTargetAlertPolicyAssociation.Id,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = targetAlertPolicyAssociationTargetType,
+        ///         TimeCreatedGreaterThanOrEqualTo = targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = targetAlertPolicyAssociationTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetTargetAlertPolicyAssociationsResult> InvokeAsync(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsArgs(), options.WithDefaults());
@@ -29,6 +54,31 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetAlertPolicyAssociations = Oci.DataSafe.GetTargetAlertPolicyAssociations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAlertPolicyAssociationAccessLevel,
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         CompartmentIdInSubtree = targetAlertPolicyAssociationCompartmentIdInSubtree,
+        ///         State = targetAlertPolicyAssociationState,
+        ///         TargetAlertPolicyAssociationId = testTargetAlertPolicyAssociation.Id,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = targetAlertPolicyAssociationTargetType,
+        ///         TimeCreatedGreaterThanOrEqualTo = targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = targetAlertPolicyAssociationTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
@@ -40,6 +90,31 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testTargetAlertPolicyAssociations = Oci.DataSafe.GetTargetAlertPolicyAssociations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAlertPolicyAssociationAccessLevel,
+        ///         AlertPolicyId = testAlertPolicy.Id,
+        ///         CompartmentIdInSubtree = targetAlertPolicyAssociationCompartmentIdInSubtree,
+        ///         State = targetAlertPolicyAssociationState,
+        ///         TargetAlertPolicyAssociationId = testTargetAlertPolicyAssociation.Id,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = targetAlertPolicyAssociationTargetType,
+        ///         TimeCreatedGreaterThanOrEqualTo = targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = targetAlertPolicyAssociationTimeCreatedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
@@ -97,6 +172,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("targetId")]
         public string? TargetId { get; set; }
+
+        /// <summary>
+        /// A optional filter to return only resources that belong to the specified alert policy association type.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
 
         /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -173,6 +254,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TargetId { get; set; }
 
         /// <summary>
+        /// A optional filter to return only resources that belong to the specified alert policy association type.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
+        /// <summary>
         /// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
         /// 
         /// **Example:** 2016-12-19T16:39:57.600Z
@@ -220,9 +307,13 @@ namespace Pulumi.Oci.DataSafe
         public readonly ImmutableArray<Outputs.GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionResult> TargetAlertPolicyAssociationCollections;
         public readonly string? TargetAlertPolicyAssociationId;
         /// <summary>
-        /// The OCID of the target on which alert policy is to be applied.
+        /// The OCID of the target or target database group on which alert policy is to be applied.
         /// </summary>
         public readonly string? TargetId;
+        /// <summary>
+        /// The resource type that is represented by the target alert policy association.
+        /// </summary>
+        public readonly string? TargetType;
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
 
@@ -248,6 +339,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? targetId,
 
+            string? targetType,
+
             string? timeCreatedGreaterThanOrEqualTo,
 
             string? timeCreatedLessThan)
@@ -262,6 +355,7 @@ namespace Pulumi.Oci.DataSafe
             TargetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
             TargetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             TimeCreatedLessThan = timeCreatedLessThan;
         }

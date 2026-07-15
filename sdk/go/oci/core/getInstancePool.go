@@ -85,6 +85,8 @@ type LookupInstancePoolResult struct {
 	LoadBalancers []GetInstancePoolLoadBalancer `pulumi:"loadBalancers"`
 	// The placement configurations for the instance pool.
 	PlacementConfigurations []GetInstancePoolPlacementConfiguration `pulumi:"placementConfigurations"`
+	// The type of resources managed by the pool.
+	PoolType string `pulumi:"poolType"`
 	// The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.
 	Size int `pulumi:"size"`
 	// The current state of the instance pool.
@@ -196,6 +198,11 @@ func (o LookupInstancePoolResultOutput) PlacementConfigurations() GetInstancePoo
 	return o.ApplyT(func(v LookupInstancePoolResult) []GetInstancePoolPlacementConfiguration {
 		return v.PlacementConfigurations
 	}).(GetInstancePoolPlacementConfigurationArrayOutput)
+}
+
+// The type of resources managed by the pool.
+func (o LookupInstancePoolResultOutput) PoolType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupInstancePoolResult) string { return v.PoolType }).(pulumi.StringOutput)
 }
 
 // The number of actual instances in the instance pool on the cloud. This attribute will be different when instance pool is used along with autoScaling Configuration.

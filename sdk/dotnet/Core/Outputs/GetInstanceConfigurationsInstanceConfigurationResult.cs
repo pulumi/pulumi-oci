@@ -34,11 +34,20 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// The GPU Memory Cluster configuration entries for.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationGmcConfigResult> GmcConfigs;
+        /// <summary>
         /// The OCID of the volume backup.
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailResult> InstanceDetails;
         public readonly string InstanceId;
+        /// <summary>
+        /// Differentiator for instance configuration.  Following values are supported:
+        /// * INSTANCE : All details related to instance will be passed within instanceDetails.
+        /// * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+        /// </summary>
         public readonly string Source;
         /// <summary>
         /// The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -57,6 +66,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string> freeformTags,
 
+            ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationGmcConfigResult> gmcConfigs,
+
             string id,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailResult> instanceDetails,
@@ -72,6 +83,7 @@ namespace Pulumi.Oci.Core.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            GmcConfigs = gmcConfigs;
             Id = id;
             InstanceDetails = instanceDetails;
             InstanceId = instanceId;

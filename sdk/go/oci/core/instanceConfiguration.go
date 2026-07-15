@@ -18,459 +18,7 @@ import (
 // Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/
 //
 // Creates an instance configuration. An instance configuration is a template that defines the
-// settings to use when creating Compute instances.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/core"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := core.NewInstanceConfiguration(ctx, "test_instance_configuration", &core.InstanceConfigurationArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				DisplayName: pulumi.Any(instanceConfigurationDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				InstanceDetails: &core.InstanceConfigurationInstanceDetailsArgs{
-//					InstanceType: pulumi.Any(instanceConfigurationInstanceDetailsInstanceType),
-//					BlockVolumes: core.InstanceConfigurationInstanceDetailsBlockVolumeArray{
-//						&core.InstanceConfigurationInstanceDetailsBlockVolumeArgs{
-//							AttachDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsArgs{
-//								Type:                           pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsType),
-//								Device:                         pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDevice),
-//								DisplayName:                    pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsDisplayName),
-//								IsPvEncryptionInTransitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled),
-//								IsReadOnly:                     pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsReadOnly),
-//								IsShareable:                    pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsIsShareable),
-//								UseChap:                        pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesAttachDetailsUseChap),
-//							},
-//							CreateDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsArgs{
-//								AutotunePolicies: core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArray{
-//									&core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicyArgs{
-//										AutotuneType: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesAutotuneType),
-//										MaxVpusPerGb: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesMaxVpusPerGb),
-//									},
-//								},
-//								AvailabilityDomain: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAvailabilityDomain),
-//								BackupPolicyId:     pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
-//								BlockVolumeReplicas: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs{
-//									AvailabilityDomain: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasAvailabilityDomain),
-//									DisplayName:        pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasDisplayName),
-//								},
-//								ClusterPlacementGroupId: pulumi.Any(clusterPlacementGroupId),
-//								CompartmentId:           pulumi.Any(compartmentId),
-//								DefinedTags: pulumi.StringMap{
-//									"Operations.CostCenter": pulumi.String("42"),
-//								},
-//								DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsDisplayName),
-//								FreeformTags: pulumi.StringMap{
-//									"Department": pulumi.String("Finance"),
-//								},
-//								IsAutoTuneEnabled:     pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled),
-//								IsReservationsEnabled: instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsReservationsEnabled,
-//								KmsKeyId:              pulumi.Any(testKey.Id),
-//								SizeInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSizeInGbs),
-//								SourceDetails: &core.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetailsArgs{
-//									Type: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsType),
-//									Id:   pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsId),
-//								},
-//								VpusPerGb:   pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsVpusPerGb),
-//								XrcKmsKeyId: pulumi.Any(testKey.Id),
-//							},
-//							VolumeId: pulumi.Any(testVolume.Id),
-//						},
-//					},
-//					LaunchDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsArgs{
-//						AgentConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigArgs{
-//							AreAllPluginsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigAreAllPluginsDisabled),
-//							IsManagementDisabled:  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsManagementDisabled),
-//							IsMonitoringDisabled:  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigIsMonitoringDisabled),
-//							PluginsConfigs: core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArray{
-//								&core.InstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigArgs{
-//									DesiredState: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigDesiredState),
-//									Name:         pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigName),
-//								},
-//							},
-//						},
-//						AvailabilityConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigArgs{
-//							IsLiveMigrationPreferred: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigIsLiveMigrationPreferred),
-//							RecoveryAction:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigRecoveryAction),
-//						},
-//						AvailabilityDomain:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsAvailabilityDomain),
-//						CapacityReservationId:   pulumi.Any(testCapacityReservation.Id),
-//						ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
-//						CompartmentId:           pulumi.Any(compartmentId),
-//						ComputeClusterId:        pulumi.Any(testComputeCluster.Id),
-//						CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs{
-//							AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip),
-//							AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord),
-//							AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp),
-//							DefinedTags: pulumi.StringMap{
-//								"Operations.CostCenter": pulumi.String("42"),
-//							},
-//							DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsDisplayName),
-//							FreeformTags: pulumi.StringMap{
-//								"Department": pulumi.String("Finance"),
-//							},
-//							HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsHostnameLabel),
-//							Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
-//								&core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//									Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//									Ipv6id:         pulumi.Any(testIpv6.Id),
-//									Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
-//								},
-//							},
-//							NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsNsgIds),
-//							PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsPrivateIp),
-//							PrivateIpId:         pulumi.Any(testPrivateIp.Id),
-//							SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSecurityAttributes),
-//							SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck),
-//							SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsSubnetCidr),
-//							SubnetId:            pulumi.Any(testSubnet.Id),
-//						},
-//						DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
-//						DefinedTags: pulumi.StringMap{
-//							"Operations.CostCenter": pulumi.String("42"),
-//						},
-//						DisplayName:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsDisplayName),
-//						ExtendedMetadata: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsExtendedMetadata),
-//						FaultDomain:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsFaultDomain),
-//						FreeformTags: pulumi.StringMap{
-//							"Department": pulumi.String("Finance"),
-//						},
-//						InstanceOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs{
-//							AreLegacyImdsEndpointsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled),
-//						},
-//						IpxeScript:                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsIpxeScript),
-//						IsAiEnterpriseEnabled:          pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsIsAiEnterpriseEnabled),
-//						IsPvEncryptionInTransitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsIsPvEncryptionInTransitEnabled),
-//						LaunchMode:                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchMode),
-//						LaunchOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs{
-//							BootVolumeType:                  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsBootVolumeType),
-//							Firmware:                        pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsFirmware),
-//							IsConsistentVolumeNamingEnabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled),
-//							IsPvEncryptionInTransitEnabled:  pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled),
-//							NetworkType:                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsNetworkType),
-//							RemoteDataVolumeType:            pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsRemoteDataVolumeType),
-//						},
-//						LicensingConfigs: &core.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs{
-//							Type:        pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsType),
-//							LicenseType: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsLicenseType),
-//						},
-//						Metadata: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsMetadata),
-//						PlacementConstraintDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs{
-//							ComputeHostGroupId: pulumi.Any(testComputeHostGroup.Id),
-//							Type:               pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsType),
-//						},
-//						PlatformConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs{
-//							Type:                                     pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigType),
-//							AreVirtualInstructionsEnabled:            pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled),
-//							ConfigMap:                                pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigConfigMap),
-//							IsAccessControlServiceEnabled:            pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled),
-//							IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled),
-//							IsMeasuredBootEnabled:                    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMeasuredBootEnabled),
-//							IsMemoryEncryptionEnabled:                pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled),
-//							IsSecureBootEnabled:                      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSecureBootEnabled),
-//							IsSymmetricMultiThreadingEnabled:         pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled),
-//							IsTrustedPlatformModuleEnabled:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled),
-//							NumaNodesPerSocket:                       pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigNumaNodesPerSocket),
-//							PercentageOfCoresEnabled:                 pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigPercentageOfCoresEnabled),
-//						},
-//						PreemptibleInstanceConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs{
-//							PreemptionAction: &core.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs{
-//								Type:               pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType),
-//								PreserveBootVolume: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume),
-//							},
-//						},
-//						PreferredMaintenanceAction: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsPreferredMaintenanceAction),
-//						SecurityAttributes:         pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSecurityAttributes),
-//						Shape:                      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShape),
-//						ShapeConfig: &core.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs{
-//							BaselineOcpuUtilization: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigBaselineOcpuUtilization),
-//							LocalVolumeSizeInGbs:    pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
-//							MemoryInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigMemoryInGbs),
-//							Nvmes:                   pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigNvmes),
-//							Ocpus:                   pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOcpus),
-//							ResourceManagement:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigResourceManagement),
-//							Vcpus:                   pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsShapeConfigVcpus),
-//						},
-//						SourceDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsArgs{
-//							SourceType:          pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsSourceType),
-//							BootVolumeId:        pulumi.Any(testBootVolume.Id),
-//							BootVolumeSizeInGbs: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsBootVolumeSizeInGbs),
-//							BootVolumeVpusPerGb: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsBootVolumeVpusPerGb),
-//							ImageId:             pulumi.Any(testImage.Id),
-//							KmsKeyId:            pulumi.Any(testKey.Id),
-//							InstanceSourceImageFilterDetails: &core.InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs{
-//								CompartmentId:          pulumi.Any(compartmentId),
-//								DefinedTagsFilter:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter),
-//								OperatingSystem:        pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem),
-//								OperatingSystemVersion: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion),
-//							},
-//						},
-//					},
-//					Options: core.InstanceConfigurationInstanceDetailsOptionArray{
-//						&core.InstanceConfigurationInstanceDetailsOptionArgs{
-//							BlockVolumes: core.InstanceConfigurationInstanceDetailsOptionBlockVolumeArray{
-//								&core.InstanceConfigurationInstanceDetailsOptionBlockVolumeArgs{
-//									AttachDetails: &core.InstanceConfigurationInstanceDetailsOptionBlockVolumeAttachDetailsArgs{
-//										Type:                           pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsType),
-//										Device:                         pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDevice),
-//										DisplayName:                    pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsDisplayName),
-//										IsPvEncryptionInTransitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsPvEncryptionInTransitEnabled),
-//										IsReadOnly:                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsReadOnly),
-//										IsShareable:                    pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsIsShareable),
-//										UseChap:                        pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsUseChap),
-//									},
-//									CreateDetails: &core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsArgs{
-//										AutotunePolicies: core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArray{
-//											&core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsAutotunePolicyArgs{
-//												AutotuneType: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesAutotuneType),
-//												MaxVpusPerGb: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesMaxVpusPerGb),
-//											},
-//										},
-//										AvailabilityDomain:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAvailabilityDomain),
-//										BackupPolicyId:          pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
-//										ClusterPlacementGroupId: pulumi.Any(clusterPlacementGroupId),
-//										CompartmentId:           pulumi.Any(compartmentId),
-//										DefinedTags: pulumi.StringMap{
-//											"Operations.CostCenter": pulumi.String("42"),
-//										},
-//										DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsDisplayName),
-//										FreeformTags: pulumi.StringMap{
-//											"Department": pulumi.String("Finance"),
-//										},
-//										IsAutoTuneEnabled:     pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsIsAutoTuneEnabled),
-//										IsReservationsEnabled: instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsIsReservationsEnabled,
-//										KmsKeyId:              pulumi.Any(testKey.Id),
-//										SizeInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSizeInGbs),
-//										SourceDetails: &core.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsSourceDetailsArgs{
-//											Type: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsType),
-//											Id:   pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsId),
-//										},
-//										VpusPerGb:   pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsVpusPerGb),
-//										XrcKmsKeyId: pulumi.Any(testKey.Id),
-//									},
-//									VolumeId: pulumi.Any(testVolume.Id),
-//								},
-//							},
-//							LaunchDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs{
-//								AgentConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigArgs{
-//									AreAllPluginsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigAreAllPluginsDisabled),
-//									IsManagementDisabled:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsManagementDisabled),
-//									IsMonitoringDisabled:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigIsMonitoringDisabled),
-//									PluginsConfigs: core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArray{
-//										&core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentConfigPluginsConfigArgs{
-//											DesiredState: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigDesiredState),
-//											Name:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigName),
-//										},
-//									},
-//								},
-//								AvailabilityConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsAvailabilityConfigArgs{
-//									RecoveryAction: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigRecoveryAction),
-//								},
-//								AvailabilityDomain:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityDomain),
-//								CapacityReservationId:   pulumi.Any(testCapacityReservation.Id),
-//								ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
-//								CompartmentId:           pulumi.Any(compartmentId),
-//								ComputeClusterId:        pulumi.Any(testComputeCluster.Id),
-//								CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs{
-//									AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip),
-//									AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord),
-//									AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp),
-//									DefinedTags: pulumi.StringMap{
-//										"Operations.CostCenter": pulumi.String("42"),
-//									},
-//									DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsDisplayName),
-//									FreeformTags: pulumi.StringMap{
-//										"Department": pulumi.String("Finance"),
-//									},
-//									HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsHostnameLabel),
-//									Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
-//										&core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//											Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//											Ipv6id:         pulumi.Any(testIpv6.Id),
-//											Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
-//										},
-//									},
-//									NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsNsgIds),
-//									PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsPrivateIp),
-//									PrivateIpId:         pulumi.Any(testPrivateIp.Id),
-//									SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSecurityAttributes),
-//									SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSkipSourceDestCheck),
-//									SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsSubnetCidr),
-//									SubnetId:            pulumi.Any(testSubnet.Id),
-//								},
-//								DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
-//								DefinedTags: pulumi.StringMap{
-//									"Operations.CostCenter": pulumi.String("42"),
-//								},
-//								DisplayName:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsDisplayName),
-//								ExtendedMetadata: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsExtendedMetadata),
-//								FaultDomain:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsFaultDomain),
-//								FreeformTags: pulumi.StringMap{
-//									"Department": pulumi.String("Finance"),
-//								},
-//								InstanceOptions: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs{
-//									AreLegacyImdsEndpointsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled),
-//								},
-//								IpxeScript:                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsIpxeScript),
-//								IsAiEnterpriseEnabled:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsAiEnterpriseEnabled),
-//								IsPvEncryptionInTransitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsIsPvEncryptionInTransitEnabled),
-//								LaunchMode:                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchMode),
-//								LaunchOptions: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs{
-//									BootVolumeType:                  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsBootVolumeType),
-//									Firmware:                        pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsFirmware),
-//									IsConsistentVolumeNamingEnabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsConsistentVolumeNamingEnabled),
-//									IsPvEncryptionInTransitEnabled:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsIsPvEncryptionInTransitEnabled),
-//									NetworkType:                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsNetworkType),
-//									RemoteDataVolumeType:            pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsRemoteDataVolumeType),
-//								},
-//								LicensingConfigs: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs{
-//									Type:        pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsType),
-//									LicenseType: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsLicensingConfigsLicenseType),
-//								},
-//								Metadata: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsMetadata),
-//								PlacementConstraintDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs{
-//									ComputeHostGroupId: pulumi.Any(testComputeHostGroup.Id),
-//									Type:               pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlacementConstraintDetailsType),
-//								},
-//								PlatformConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs{
-//									Type:                                     pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigType),
-//									AreVirtualInstructionsEnabled:            pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigAreVirtualInstructionsEnabled),
-//									IsAccessControlServiceEnabled:            pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsAccessControlServiceEnabled),
-//									IsInputOutputMemoryManagementUnitEnabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsInputOutputMemoryManagementUnitEnabled),
-//									IsMeasuredBootEnabled:                    pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMeasuredBootEnabled),
-//									IsMemoryEncryptionEnabled:                pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsMemoryEncryptionEnabled),
-//									IsSecureBootEnabled:                      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSecureBootEnabled),
-//									IsSymmetricMultiThreadingEnabled:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsSymmetricMultiThreadingEnabled),
-//									IsTrustedPlatformModuleEnabled:           pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigIsTrustedPlatformModuleEnabled),
-//									NumaNodesPerSocket:                       pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigNumaNodesPerSocket),
-//									PercentageOfCoresEnabled:                 pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigPercentageOfCoresEnabled),
-//								},
-//								PreemptibleInstanceConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs{
-//									PreemptionAction: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionActionArgs{
-//										Type:               pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionType),
-//										PreserveBootVolume: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionPreserveBootVolume),
-//									},
-//								},
-//								PreferredMaintenanceAction: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsPreferredMaintenanceAction),
-//								SecurityAttributes:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSecurityAttributes),
-//								Shape:                      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShape),
-//								ShapeConfig: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs{
-//									BaselineOcpuUtilization: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigBaselineOcpuUtilization),
-//									LocalVolumeSizeInGbs:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigLocalVolumeSizeInGbs),
-//									MemoryInGbs:             pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigMemoryInGbs),
-//									Nvmes:                   pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigNvmes),
-//									Ocpus:                   pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOcpus),
-//									ResourceManagement:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigResourceManagement),
-//									Vcpus:                   pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigVcpus),
-//								},
-//								SourceDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs{
-//									SourceType:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsSourceType),
-//									BootVolumeId:        pulumi.Any(testBootVolume.Id),
-//									BootVolumeSizeInGbs: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsBootVolumeSizeInGbs),
-//									BootVolumeVpusPerGb: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsBootVolumeVpusPerGb),
-//									ImageId:             pulumi.Any(testImage.Id),
-//									InstanceSourceImageFilterDetails: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs{
-//										CompartmentId:          pulumi.Any(compartmentId),
-//										DefinedTagsFilter:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsDefinedTagsFilter),
-//										OperatingSystem:        pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystem),
-//										OperatingSystemVersion: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOperatingSystemVersion),
-//									},
-//								},
-//							},
-//							SecondaryVnics: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArray{
-//								&core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicArgs{
-//									CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsArgs{
-//										AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip),
-//										AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord),
-//										AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp),
-//										DefinedTags: pulumi.StringMap{
-//											"Operations.CostCenter": pulumi.String("42"),
-//										},
-//										DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsDisplayName),
-//										FreeformTags: pulumi.StringMap{
-//											"Department": pulumi.String("Finance"),
-//										},
-//										HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsHostnameLabel),
-//										Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
-//											&core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//												Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//												Ipv6id:         pulumi.Any(testIpv6.Id),
-//												Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
-//											},
-//										},
-//										NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsNsgIds),
-//										PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsPrivateIp),
-//										PrivateIpId:         pulumi.Any(testPrivateIp.Id),
-//										SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSecurityAttributes),
-//										SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
-//										SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsSubnetCidr),
-//										SubnetId:            pulumi.Any(testSubnet.Id),
-//									},
-//									DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsDisplayName),
-//									NicIndex:    pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsNicIndex),
-//								},
-//							},
-//						},
-//					},
-//					SecondaryVnics: core.InstanceConfigurationInstanceDetailsSecondaryVnicArray{
-//						&core.InstanceConfigurationInstanceDetailsSecondaryVnicArgs{
-//							CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs{
-//								AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord),
-//								AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp),
-//								DefinedTags: pulumi.StringMap{
-//									"Operations.CostCenter": pulumi.String("42"),
-//								},
-//								DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsDisplayName),
-//								FreeformTags: pulumi.StringMap{
-//									"Department": pulumi.String("Finance"),
-//								},
-//								HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel),
-//								Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
-//									&core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs{
-//										Ipv6address:    pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address),
-//										Ipv6id:         pulumi.Any(testIpv6.Id),
-//										Ipv6subnetCidr: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
-//									},
-//								},
-//								NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds),
-//								PrivateIp:           pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsPrivateIp),
-//								PrivateIpId:         pulumi.Any(testPrivateIp.Id),
-//								SecurityAttributes:  pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSecurityAttributes),
-//								SkipSourceDestCheck: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck),
-//								SubnetCidr:          pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsSubnetCidr),
-//								SubnetId:            pulumi.Any(testSubnet.Id),
-//							},
-//							DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsDisplayName),
-//							NicIndex:    pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsNicIndex),
-//						},
-//					},
-//				},
-//				InstanceId: pulumi.Any(testInstance.Id),
-//				Source:     pulumi.Any(instanceConfigurationSource),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
+// settings to use when creating Compute instances or GPU Memory Clusters.
 //
 // ## Import
 //
@@ -491,7 +39,9 @@ type InstanceConfiguration struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.StringMapOutput                     `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs      InstanceConfigurationGmcConfigsPtrOutput   `pulumi:"gmcConfigs"`
 	InstanceDetails InstanceConfigurationInstanceDetailsOutput `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
@@ -506,6 +56,7 @@ type InstanceConfiguration struct {
 	// The following values are supported:
 	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
 	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -556,7 +107,9 @@ type instanceConfigurationState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    map[string]string                     `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs      *InstanceConfigurationGmcConfigs      `pulumi:"gmcConfigs"`
 	InstanceDetails *InstanceConfigurationInstanceDetails `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId *string `pulumi:"instanceId"`
@@ -571,6 +124,7 @@ type instanceConfigurationState struct {
 	// The following values are supported:
 	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
 	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -589,7 +143,9 @@ type InstanceConfigurationState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.StringMapInput
+	FreeformTags pulumi.StringMapInput
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs      InstanceConfigurationGmcConfigsPtrInput
 	InstanceDetails InstanceConfigurationInstanceDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringPtrInput
@@ -604,6 +160,7 @@ type InstanceConfigurationState struct {
 	// The following values are supported:
 	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
 	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -624,7 +181,9 @@ type instanceConfigurationArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    map[string]string                     `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs      *InstanceConfigurationGmcConfigs      `pulumi:"gmcConfigs"`
 	InstanceDetails *InstanceConfigurationInstanceDetails `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId *string `pulumi:"instanceId"`
@@ -639,6 +198,7 @@ type instanceConfigurationArgs struct {
 	// The following values are supported:
 	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
 	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -654,7 +214,9 @@ type InstanceConfigurationArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.StringMapInput
+	FreeformTags pulumi.StringMapInput
+	// The GPU Memory Cluster configuration entries for.
+	GmcConfigs      InstanceConfigurationGmcConfigsPtrInput
 	InstanceDetails InstanceConfigurationInstanceDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringPtrInput
@@ -669,6 +231,7 @@ type InstanceConfigurationArgs struct {
 	// The following values are supported:
 	// * `NONE`: Creates an instance configuration using the list of settings that you specify.
 	// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+	// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -787,6 +350,11 @@ func (o InstanceConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The GPU Memory Cluster configuration entries for.
+func (o InstanceConfigurationOutput) GmcConfigs() InstanceConfigurationGmcConfigsPtrOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) InstanceConfigurationGmcConfigsPtrOutput { return v.GmcConfigs }).(InstanceConfigurationGmcConfigsPtrOutput)
+}
+
 func (o InstanceConfigurationOutput) InstanceDetails() InstanceConfigurationInstanceDetailsOutput {
 	return o.ApplyT(func(v *InstanceConfiguration) InstanceConfigurationInstanceDetailsOutput { return v.InstanceDetails }).(InstanceConfigurationInstanceDetailsOutput)
 }
@@ -807,6 +375,7 @@ func (o InstanceConfigurationOutput) InstanceId() pulumi.StringOutput {
 // The following values are supported:
 // * `NONE`: Creates an instance configuration using the list of settings that you specify.
 // * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
+// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

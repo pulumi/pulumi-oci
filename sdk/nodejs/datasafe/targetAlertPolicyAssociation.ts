@@ -116,6 +116,13 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
      */
     declare public readonly targetId: pulumi.Output<string>;
     /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly targetType: pulumi.Output<string>;
+    /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
@@ -148,6 +155,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["targetId"] = state?.targetId;
+            resourceInputs["targetType"] = state?.targetType;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
         } else {
@@ -172,6 +180,7 @@ export class TargetAlertPolicyAssociation extends pulumi.CustomResource {
             resourceInputs["isEnabled"] = args?.isEnabled;
             resourceInputs["policyId"] = args?.policyId;
             resourceInputs["targetId"] = args?.targetId;
+            resourceInputs["targetType"] = args?.targetType;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -232,6 +241,13 @@ export interface TargetAlertPolicyAssociationState {
      */
     targetId?: pulumi.Input<string | undefined>;
     /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    targetType?: pulumi.Input<string | undefined>;
+    /**
      * Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeCreated?: pulumi.Input<string | undefined>;
@@ -277,4 +293,11 @@ export interface TargetAlertPolicyAssociationArgs {
      * The OCID of the target or target database group.
      */
     targetId: pulumi.Input<string>;
+    /**
+     * The resource type that is represented by the alert policy association. Default is considered as TARGET_DATABASE.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    targetType?: pulumi.Input<string | undefined>;
 }

@@ -1543,6 +1543,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Core/defaultDrgRouteTable",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/defaultDrgRouteTable:DefaultDrgRouteTable": "DefaultDrgRouteTable"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Core/defaultRouteTable",
   "fqn": "pulumi_oci.core",
   "classes": {
@@ -7995,6 +8003,30 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement": "CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dataccInfrastructure",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dataccInfrastructure:DataccInfrastructure": "DataccInfrastructure"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dataccVmClusterNetwork",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dataccVmClusterNetwork:DataccVmClusterNetwork": "DataccVmClusterNetwork"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dataccVmInstance",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dataccVmInstance:DataccVmInstance": "DataccVmInstance"
   }
  },
  {

@@ -6,6 +6,10 @@ package com.pulumi.oci.ContainerInstances.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeConfig;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeExport;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,10 +27,35 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
      */
     private List<GetContainerInstancesContainerInstanceCollectionItemVolumeConfig> configs;
     /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    private List<GetContainerInstancesContainerInstanceCollectionItemVolumeExport> exports;
+    /**
+     * @return Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    private List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand> mountCommands;
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    private List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget> mountTargets;
+    /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     private String name;
+    /**
+     * @return Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    private List<GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity> securities;
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    private String subnetId;
     /**
      * @return The type of volume.
      * 
@@ -49,11 +78,46 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
         return this.configs;
     }
     /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Export. Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/Export/ for more details.
+     * 
+     */
+    public List<GetContainerInstancesContainerInstanceCollectionItemVolumeExport> exports() {
+        return this.exports;
+    }
+    /**
+     * @return Specifications for the mount command to mount the Oracle Cloud Infrastructure File Storage Service (FSS) File System to Containers.
+     * 
+     */
+    public List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand> mountCommands() {
+        return this.mountCommands;
+    }
+    /**
+     * @return An Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.  Check https://docs.oracle.com/en-us/iaas/api/#/en/filestorage/20171215/MountTarget for more details.
+     * 
+     */
+    public List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget> mountTargets() {
+        return this.mountTargets;
+    }
+    /**
      * @return The name of the volume. This must be unique within a single container instance.
      * 
      */
     public String name() {
         return this.name;
+    }
+    /**
+     * @return Security options for Oracle Cloud Infrastructure FSS File System.
+     * 
+     */
+    public List<GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity> securities() {
+        return this.securities;
+    }
+    /**
+     * @return Specifies the network interface to be used for the Oracle Cloud Infrastructure File Storage Service (FSS) volume. This is a required parameter when a Container Instance is attached to more than one subnets.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
     }
     /**
      * @return The type of volume.
@@ -74,14 +138,24 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
     public static final class Builder {
         private String backingStore;
         private List<GetContainerInstancesContainerInstanceCollectionItemVolumeConfig> configs;
+        private List<GetContainerInstancesContainerInstanceCollectionItemVolumeExport> exports;
+        private List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand> mountCommands;
+        private List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget> mountTargets;
         private String name;
+        private List<GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity> securities;
+        private String subnetId;
         private String volumeType;
         public Builder() {}
         public Builder(GetContainerInstancesContainerInstanceCollectionItemVolume defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backingStore = defaults.backingStore;
     	      this.configs = defaults.configs;
+    	      this.exports = defaults.exports;
+    	      this.mountCommands = defaults.mountCommands;
+    	      this.mountTargets = defaults.mountTargets;
     	      this.name = defaults.name;
+    	      this.securities = defaults.securities;
+    	      this.subnetId = defaults.subnetId;
     	      this.volumeType = defaults.volumeType;
         }
 
@@ -105,11 +179,63 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
             return configs(List.of(configs));
         }
         @CustomType.Setter
+        public Builder exports(List<GetContainerInstancesContainerInstanceCollectionItemVolumeExport> exports) {
+            if (exports == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "exports");
+            }
+            this.exports = exports;
+            return this;
+        }
+        public Builder exports(GetContainerInstancesContainerInstanceCollectionItemVolumeExport... exports) {
+            return exports(List.of(exports));
+        }
+        @CustomType.Setter
+        public Builder mountCommands(List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand> mountCommands) {
+            if (mountCommands == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "mountCommands");
+            }
+            this.mountCommands = mountCommands;
+            return this;
+        }
+        public Builder mountCommands(GetContainerInstancesContainerInstanceCollectionItemVolumeMountCommand... mountCommands) {
+            return mountCommands(List.of(mountCommands));
+        }
+        @CustomType.Setter
+        public Builder mountTargets(List<GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget> mountTargets) {
+            if (mountTargets == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "mountTargets");
+            }
+            this.mountTargets = mountTargets;
+            return this;
+        }
+        public Builder mountTargets(GetContainerInstancesContainerInstanceCollectionItemVolumeMountTarget... mountTargets) {
+            return mountTargets(List.of(mountTargets));
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "name");
             }
             this.name = name;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securities(List<GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity> securities) {
+            if (securities == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "securities");
+            }
+            this.securities = securities;
+            return this;
+        }
+        public Builder securities(GetContainerInstancesContainerInstanceCollectionItemVolumeSecurity... securities) {
+            return securities(List.of(securities));
+        }
+        @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemVolume", "subnetId");
+            }
+            this.subnetId = subnetId;
             return this;
         }
         @CustomType.Setter
@@ -124,7 +250,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
             final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemVolume();
             _resultValue.backingStore = backingStore;
             _resultValue.configs = configs;
+            _resultValue.exports = exports;
+            _resultValue.mountCommands = mountCommands;
+            _resultValue.mountTargets = mountTargets;
             _resultValue.name = name;
+            _resultValue.securities = securities;
+            _resultValue.subnetId = subnetId;
             _resultValue.volumeType = volumeType;
             return _resultValue;
         }

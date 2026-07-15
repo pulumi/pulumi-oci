@@ -765,6 +765,11 @@ export const getTargetAlertPolicyAssociation: typeof import("./getTargetAlertPol
 export const getTargetAlertPolicyAssociationOutput: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociationOutput = null as any;
 utilities.lazyLoad(exports, ["getTargetAlertPolicyAssociation","getTargetAlertPolicyAssociationOutput"], () => require("./getTargetAlertPolicyAssociation"));
 
+export { GetTargetAlertPolicyAssociationUnassociatedTargetMembersArgs, GetTargetAlertPolicyAssociationUnassociatedTargetMembersResult, GetTargetAlertPolicyAssociationUnassociatedTargetMembersOutputArgs } from "./getTargetAlertPolicyAssociationUnassociatedTargetMembers";
+export const getTargetAlertPolicyAssociationUnassociatedTargetMembers: typeof import("./getTargetAlertPolicyAssociationUnassociatedTargetMembers").getTargetAlertPolicyAssociationUnassociatedTargetMembers = null as any;
+export const getTargetAlertPolicyAssociationUnassociatedTargetMembersOutput: typeof import("./getTargetAlertPolicyAssociationUnassociatedTargetMembers").getTargetAlertPolicyAssociationUnassociatedTargetMembersOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetAlertPolicyAssociationUnassociatedTargetMembers","getTargetAlertPolicyAssociationUnassociatedTargetMembersOutput"], () => require("./getTargetAlertPolicyAssociationUnassociatedTargetMembers"));
+
 export { GetTargetAlertPolicyAssociationsArgs, GetTargetAlertPolicyAssociationsResult, GetTargetAlertPolicyAssociationsOutputArgs } from "./getTargetAlertPolicyAssociations";
 export const getTargetAlertPolicyAssociations: typeof import("./getTargetAlertPolicyAssociations").getTargetAlertPolicyAssociations = null as any;
 export const getTargetAlertPolicyAssociationsOutput: typeof import("./getTargetAlertPolicyAssociations").getTargetAlertPolicyAssociationsOutput = null as any;

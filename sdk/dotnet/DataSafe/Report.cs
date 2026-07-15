@@ -77,6 +77,18 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> MimeType { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the next report generated.
+        /// </summary>
+        [Output("nextReportId")]
+        public Output<string> NextReportId { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the previous report generated.
+        /// </summary>
+        [Output("previousReportId")]
+        public Output<string> PreviousReportId { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the report definition.
         /// </summary>
         [Output("reportDefinitionId")]
@@ -281,6 +293,18 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("mimeType")]
         public Input<string>? MimeType { get; set; }
+
+        /// <summary>
+        /// The OCID of the next report generated.
+        /// </summary>
+        [Input("nextReportId")]
+        public Input<string>? NextReportId { get; set; }
+
+        /// <summary>
+        /// The OCID of the previous report generated.
+        /// </summary>
+        [Input("previousReportId")]
+        public Input<string>? PreviousReportId { get; set; }
 
         /// <summary>
         /// The OCID of the report definition.

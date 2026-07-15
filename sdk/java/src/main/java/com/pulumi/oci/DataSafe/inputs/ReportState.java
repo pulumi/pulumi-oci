@@ -137,6 +137,36 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the next report generated.
+     * 
+     */
+    @Import(name="nextReportId")
+    private @Nullable Output<String> nextReportId;
+
+    /**
+     * @return The OCID of the next report generated.
+     * 
+     */
+    public Optional<Output<String>> nextReportId() {
+        return Optional.ofNullable(this.nextReportId);
+    }
+
+    /**
+     * The OCID of the previous report generated.
+     * 
+     */
+    @Import(name="previousReportId")
+    private @Nullable Output<String> previousReportId;
+
+    /**
+     * @return The OCID of the previous report generated.
+     * 
+     */
+    public Optional<Output<String>> previousReportId() {
+        return Optional.ofNullable(this.previousReportId);
+    }
+
+    /**
      * The OCID of the report definition.
      * 
      */
@@ -273,6 +303,8 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.mimeType = $.mimeType;
+        this.nextReportId = $.nextReportId;
+        this.previousReportId = $.previousReportId;
         this.reportDefinitionId = $.reportDefinitionId;
         this.reportId = $.reportId;
         this.state = $.state;
@@ -467,6 +499,48 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder mimeType(String mimeType) {
             return mimeType(Output.of(mimeType));
+        }
+
+        /**
+         * @param nextReportId The OCID of the next report generated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextReportId(@Nullable Output<String> nextReportId) {
+            $.nextReportId = nextReportId;
+            return this;
+        }
+
+        /**
+         * @param nextReportId The OCID of the next report generated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nextReportId(String nextReportId) {
+            return nextReportId(Output.of(nextReportId));
+        }
+
+        /**
+         * @param previousReportId The OCID of the previous report generated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder previousReportId(@Nullable Output<String> previousReportId) {
+            $.previousReportId = previousReportId;
+            return this;
+        }
+
+        /**
+         * @param previousReportId The OCID of the previous report generated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder previousReportId(String previousReportId) {
+            return previousReportId(Output.of(previousReportId));
         }
 
         /**

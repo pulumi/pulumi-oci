@@ -132,6 +132,21 @@ public final class GetTargetAlertPolicyAssociationsArgs extends com.pulumi.resou
     }
 
     /**
+     * A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return A optional filter to return only resources that belong to the specified alert policy association type.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
+    /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      * 
      * **Example:** 2016-12-19T16:39:57.600Z
@@ -180,6 +195,7 @@ public final class GetTargetAlertPolicyAssociationsArgs extends com.pulumi.resou
         this.state = $.state;
         this.targetAlertPolicyAssociationId = $.targetAlertPolicyAssociationId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
     }
@@ -360,6 +376,27 @@ public final class GetTargetAlertPolicyAssociationsArgs extends com.pulumi.resou
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified alert policy association type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified alert policy association type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         /**

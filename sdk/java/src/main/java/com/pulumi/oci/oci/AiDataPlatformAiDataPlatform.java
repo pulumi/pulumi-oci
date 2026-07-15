@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.AiDataPlatformAiDataPlatformArgs;
 import com.pulumi.oci.oci.inputs.AiDataPlatformAiDataPlatformState;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -53,7 +54,11 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(aiDataPlatformDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isEnableAiFeature(aiDataPlatformIsEnableAiFeature)
  *             .systemTags(aiDataPlatformSystemTags)
+ *             .vectorDbAdminCred(aiDataPlatformVectorDbAdminCred)
+ *             .vectorDbAdminSecretId(testSecret.id())
+ *             .vectorDbId(testVectorDb.id())
  *             .build());
  * 
  *     }
@@ -85,6 +90,20 @@ public class AiDataPlatformAiDataPlatform extends com.pulumi.resources.CustomRes
      */
     public Output<String> aiDataPlatformType() {
         return this.aiDataPlatformType;
+    }
+    /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     * 
+     */
+    @Export(name="aiFeatureStatus", refs={String.class}, tree="[0]")
+    private Output<String> aiFeatureStatus;
+
+    /**
+     * @return The current aiFeatureStatus of the AiDataPlatform.
+     * 
+     */
+    public Output<String> aiFeatureStatus() {
+        return this.aiFeatureStatus;
     }
     /**
      * The alias Id of the AiDataPlatform which is the short form of OCID.
@@ -185,6 +204,20 @@ public class AiDataPlatformAiDataPlatform extends com.pulumi.resources.CustomRes
         return this.freeformTags;
     }
     /**
+     * The flag to enable/disable AiFeatures for the instance.
+     * 
+     */
+    @Export(name="isEnableAiFeature", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isEnableAiFeature;
+
+    /**
+     * @return The flag to enable/disable AiFeatures for the instance.
+     * 
+     */
+    public Output<Boolean> isEnableAiFeature() {
+        return this.isEnableAiFeature;
+    }
+    /**
      * A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
@@ -215,18 +248,12 @@ public class AiDataPlatformAiDataPlatform extends com.pulumi.resources.CustomRes
     /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
     /**
      * @return (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,String>> systemTags() {
@@ -259,6 +286,54 @@ public class AiDataPlatformAiDataPlatform extends com.pulumi.resources.CustomRes
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+     * 
+     */
+    @Export(name="vectorDbAdminCred", refs={String.class}, tree="[0]")
+    private Output<String> vectorDbAdminCred;
+
+    /**
+     * @return (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+     * 
+     */
+    public Output<String> vectorDbAdminCred() {
+        return this.vectorDbAdminCred;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     * 
+     */
+    @Export(name="vectorDbAdminSecretId", refs={String.class}, tree="[0]")
+    private Output<String> vectorDbAdminSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     * 
+     */
+    public Output<String> vectorDbAdminSecretId() {
+        return this.vectorDbAdminSecretId;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="vectorDbId", refs={String.class}, tree="[0]")
+    private Output<String> vectorDbId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> vectorDbId() {
+        return this.vectorDbId;
     }
     /**
      * The WebSocket URL of the AiDataPlatform.

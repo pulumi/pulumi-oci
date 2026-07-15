@@ -29,7 +29,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isEnableAiFeature: aiDataPlatformIsEnableAiFeature === "true",
  *     systemTags: aiDataPlatformSystemTags,
+ *     vectorDbAdminCred: aiDataPlatformVectorDbAdminCred,
+ *     vectorDbAdminSecretId: testSecret.id,
+ *     vectorDbId: testVectorDb.id,
  * });
  * ```
  *
@@ -74,6 +78,10 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
      */
     declare public readonly aiDataPlatformType: pulumi.Output<string>;
     /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     */
+    declare public /*out*/ readonly aiFeatureStatus: pulumi.Output<string>;
+    /**
      * The alias Id of the AiDataPlatform which is the short form of OCID.
      */
     declare public /*out*/ readonly aliasKey: pulumi.Output<string>;
@@ -102,6 +110,10 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * The flag to enable/disable AiFeatures for the instance.
+     */
+    declare public readonly isEnableAiFeature: pulumi.Output<boolean>;
+    /**
      * A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
@@ -111,9 +123,6 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
@@ -124,6 +133,21 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
      * The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
+    /**
+     * (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+     */
+    declare public readonly vectorDbAdminCred: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     */
+    declare public readonly vectorDbAdminSecretId: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly vectorDbId: pulumi.Output<string>;
     /**
      * The WebSocket URL of the AiDataPlatform.
      */
@@ -143,6 +167,7 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AiDataPlatformAiDataPlatformState | undefined;
             resourceInputs["aiDataPlatformType"] = state?.aiDataPlatformType;
+            resourceInputs["aiFeatureStatus"] = state?.aiFeatureStatus;
             resourceInputs["aliasKey"] = state?.aliasKey;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["createdBy"] = state?.createdBy;
@@ -150,11 +175,15 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isEnableAiFeature"] = state?.isEnableAiFeature;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["vectorDbAdminCred"] = state?.vectorDbAdminCred;
+            resourceInputs["vectorDbAdminSecretId"] = state?.vectorDbAdminSecretId;
+            resourceInputs["vectorDbId"] = state?.vectorDbId;
             resourceInputs["webSocketEndpoint"] = state?.webSocketEndpoint;
         } else {
             const args = argsOrState as AiDataPlatformAiDataPlatformArgs | undefined;
@@ -167,7 +196,12 @@ export class AiDataPlatformAiDataPlatform extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isEnableAiFeature"] = args?.isEnableAiFeature;
             resourceInputs["systemTags"] = args?.systemTags;
+            resourceInputs["vectorDbAdminCred"] = args?.vectorDbAdminCred;
+            resourceInputs["vectorDbAdminSecretId"] = args?.vectorDbAdminSecretId;
+            resourceInputs["vectorDbId"] = args?.vectorDbId;
+            resourceInputs["aiFeatureStatus"] = undefined /*out*/;
             resourceInputs["aliasKey"] = undefined /*out*/;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -189,6 +223,10 @@ export interface AiDataPlatformAiDataPlatformState {
      * (Updatable) The AiDataPlatform type.
      */
     aiDataPlatformType?: pulumi.Input<string | undefined>;
+    /**
+     * The current aiFeatureStatus of the AiDataPlatform.
+     */
+    aiFeatureStatus?: pulumi.Input<string | undefined>;
     /**
      * The alias Id of the AiDataPlatform which is the short form of OCID.
      */
@@ -218,6 +256,10 @@ export interface AiDataPlatformAiDataPlatformState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * The flag to enable/disable AiFeatures for the instance.
+     */
+    isEnableAiFeature?: pulumi.Input<boolean | undefined>;
+    /**
      * A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
@@ -227,9 +269,6 @@ export interface AiDataPlatformAiDataPlatformState {
     state?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
@@ -240,6 +279,21 @@ export interface AiDataPlatformAiDataPlatformState {
      * The date and time the AiDataPlatform was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeUpdated?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+     */
+    vectorDbAdminCred?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     */
+    vectorDbAdminSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    vectorDbId?: pulumi.Input<string | undefined>;
     /**
      * The WebSocket URL of the AiDataPlatform.
      */
@@ -275,10 +329,26 @@ export interface AiDataPlatformAiDataPlatformArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * The flag to enable/disable AiFeatures for the instance.
+     */
+    isEnableAiFeature?: pulumi.Input<boolean | undefined>;
+    /**
      * (Updatable) System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) The Vector DB Lakehouse 26ai ADMIN user password.
+     */
+    vectorDbAdminCred?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret holding the vector db Lakehouse 26ai Admin user password.
+     */
+    vectorDbAdminSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vector db Lakehouse 26ai.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    vectorDbId?: pulumi.Input<string | undefined>;
 }

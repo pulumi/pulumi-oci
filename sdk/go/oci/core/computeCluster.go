@@ -54,6 +54,13 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				PlacementConstraintDetails: &core.ComputeClusterPlacementConstraintDetailsArgs{
+//					Type:                       pulumi.String("COMPUTE_CLUSTER"),
+//					HpcIslandId:                pulumi.Any(testHpcIsland.Id),
+//					LogicalPlacementConstraint: pulumi.Any(computeClusterPlacementConstraintDetailsLogicalPlacementConstraint),
+//					TargetMemoryFabricIds:      pulumi.Any(computeClusterPlacementConstraintDetailsTargetMemoryFabricIds),
+//					TargetNetworkBlockIds:      pulumi.Any(computeClusterPlacementConstraintDetailsTargetNetworkBlockIds),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -83,14 +90,15 @@ type ComputeCluster struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) The details for providing placement constraints.
+	PlacementConstraintDetails ComputeClusterPlacementConstraintDetailsOutput `pulumi:"placementConstraintDetails"`
 	// The current state of the compute cluster.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
 // NewComputeCluster registers a new resource with the given unique name, arguments, and options.
@@ -138,14 +146,15 @@ type computeClusterState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The details for providing placement constraints.
+	PlacementConstraintDetails *ComputeClusterPlacementConstraintDetails `pulumi:"placementConstraintDetails"`
 	// The current state of the compute cluster.
 	State *string `pulumi:"state"`
 	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type ComputeClusterState struct {
@@ -158,14 +167,15 @@ type ComputeClusterState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The details for providing placement constraints.
+	PlacementConstraintDetails ComputeClusterPlacementConstraintDetailsPtrInput
 	// The current state of the compute cluster.
 	State pulumi.StringPtrInput
 	// The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringPtrInput
 }
 
 func (ComputeClusterState) ElementType() reflect.Type {
@@ -182,10 +192,9 @@ type computeClusterArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The details for providing placement constraints.
+	PlacementConstraintDetails *ComputeClusterPlacementConstraintDetails `pulumi:"placementConstraintDetails"`
 }
 
 // The set of arguments for constructing a ComputeCluster resource.
@@ -199,10 +208,9 @@ type ComputeClusterArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The details for providing placement constraints.
+	PlacementConstraintDetails ComputeClusterPlacementConstraintDetailsPtrInput
 }
 
 func (ComputeClusterArgs) ElementType() reflect.Type {
@@ -313,11 +321,15 @@ func (o ComputeClusterOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ComputeClusterOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ComputeCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The details for providing placement constraints.
+func (o ComputeClusterOutput) PlacementConstraintDetails() ComputeClusterPlacementConstraintDetailsOutput {
+	return o.ApplyT(func(v *ComputeCluster) ComputeClusterPlacementConstraintDetailsOutput {
+		return v.PlacementConstraintDetails
+	}).(ComputeClusterPlacementConstraintDetailsOutput)
 }
 
 // The current state of the compute cluster.
@@ -328,6 +340,11 @@ func (o ComputeClusterOutput) State() pulumi.StringOutput {
 // The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o ComputeClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ComputeCluster) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the compute cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o ComputeClusterOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v *ComputeCluster) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 type ComputeClusterArrayOutput struct{ *pulumi.OutputState }

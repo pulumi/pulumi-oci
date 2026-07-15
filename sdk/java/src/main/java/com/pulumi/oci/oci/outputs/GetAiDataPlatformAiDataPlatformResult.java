@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class GetAiDataPlatformAiDataPlatformResult {
      * 
      */
     private String aiDataPlatformType;
+    /**
+     * @return The current aiFeatureStatus of the AiDataPlatform.
+     * 
+     */
+    private String aiFeatureStatus;
     /**
      * @return The alias Id of the AiDataPlatform which is the short form of OCID.
      * 
@@ -53,6 +59,7 @@ public final class GetAiDataPlatformAiDataPlatformResult {
      * 
      */
     private String id;
+    private Boolean isEnableAiFeature;
     /**
      * @return A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -78,6 +85,9 @@ public final class GetAiDataPlatformAiDataPlatformResult {
      * 
      */
     private String timeUpdated;
+    private String vectorDbAdminCred;
+    private String vectorDbAdminSecretId;
+    private String vectorDbId;
     /**
      * @return The WebSocket URL of the AiDataPlatform.
      * 
@@ -94,6 +104,13 @@ public final class GetAiDataPlatformAiDataPlatformResult {
      */
     public String aiDataPlatformType() {
         return this.aiDataPlatformType;
+    }
+    /**
+     * @return The current aiFeatureStatus of the AiDataPlatform.
+     * 
+     */
+    public String aiFeatureStatus() {
+        return this.aiFeatureStatus;
     }
     /**
      * @return The alias Id of the AiDataPlatform which is the short form of OCID.
@@ -147,6 +164,9 @@ public final class GetAiDataPlatformAiDataPlatformResult {
     public String id() {
         return this.id;
     }
+    public Boolean isEnableAiFeature() {
+        return this.isEnableAiFeature;
+    }
     /**
      * @return A message that describes the current state of the AiDataPlatform in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -182,6 +202,15 @@ public final class GetAiDataPlatformAiDataPlatformResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    public String vectorDbAdminCred() {
+        return this.vectorDbAdminCred;
+    }
+    public String vectorDbAdminSecretId() {
+        return this.vectorDbAdminSecretId;
+    }
+    public String vectorDbId() {
+        return this.vectorDbId;
+    }
     /**
      * @return The WebSocket URL of the AiDataPlatform.
      * 
@@ -201,6 +230,7 @@ public final class GetAiDataPlatformAiDataPlatformResult {
     public static final class Builder {
         private String aiDataPlatformId;
         private String aiDataPlatformType;
+        private String aiFeatureStatus;
         private String aliasKey;
         private String compartmentId;
         private String createdBy;
@@ -209,17 +239,22 @@ public final class GetAiDataPlatformAiDataPlatformResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isEnableAiFeature;
         private String lifecycleDetails;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private String vectorDbAdminCred;
+        private String vectorDbAdminSecretId;
+        private String vectorDbId;
         private String webSocketEndpoint;
         public Builder() {}
         public Builder(GetAiDataPlatformAiDataPlatformResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.aiDataPlatformId = defaults.aiDataPlatformId;
     	      this.aiDataPlatformType = defaults.aiDataPlatformType;
+    	      this.aiFeatureStatus = defaults.aiFeatureStatus;
     	      this.aliasKey = defaults.aliasKey;
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdBy = defaults.createdBy;
@@ -228,11 +263,15 @@ public final class GetAiDataPlatformAiDataPlatformResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isEnableAiFeature = defaults.isEnableAiFeature;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.vectorDbAdminCred = defaults.vectorDbAdminCred;
+    	      this.vectorDbAdminSecretId = defaults.vectorDbAdminSecretId;
+    	      this.vectorDbId = defaults.vectorDbId;
     	      this.webSocketEndpoint = defaults.webSocketEndpoint;
         }
 
@@ -250,6 +289,14 @@ public final class GetAiDataPlatformAiDataPlatformResult {
               throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "aiDataPlatformType");
             }
             this.aiDataPlatformType = aiDataPlatformType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder aiFeatureStatus(String aiFeatureStatus) {
+            if (aiFeatureStatus == null) {
+              throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "aiFeatureStatus");
+            }
+            this.aiFeatureStatus = aiFeatureStatus;
             return this;
         }
         @CustomType.Setter
@@ -317,6 +364,14 @@ public final class GetAiDataPlatformAiDataPlatformResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isEnableAiFeature(Boolean isEnableAiFeature) {
+            if (isEnableAiFeature == null) {
+              throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "isEnableAiFeature");
+            }
+            this.isEnableAiFeature = isEnableAiFeature;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "lifecycleDetails");
@@ -357,6 +412,30 @@ public final class GetAiDataPlatformAiDataPlatformResult {
             return this;
         }
         @CustomType.Setter
+        public Builder vectorDbAdminCred(String vectorDbAdminCred) {
+            if (vectorDbAdminCred == null) {
+              throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "vectorDbAdminCred");
+            }
+            this.vectorDbAdminCred = vectorDbAdminCred;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vectorDbAdminSecretId(String vectorDbAdminSecretId) {
+            if (vectorDbAdminSecretId == null) {
+              throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "vectorDbAdminSecretId");
+            }
+            this.vectorDbAdminSecretId = vectorDbAdminSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vectorDbId(String vectorDbId) {
+            if (vectorDbId == null) {
+              throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "vectorDbId");
+            }
+            this.vectorDbId = vectorDbId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder webSocketEndpoint(String webSocketEndpoint) {
             if (webSocketEndpoint == null) {
               throw new MissingRequiredPropertyException("GetAiDataPlatformAiDataPlatformResult", "webSocketEndpoint");
@@ -368,6 +447,7 @@ public final class GetAiDataPlatformAiDataPlatformResult {
             final var _resultValue = new GetAiDataPlatformAiDataPlatformResult();
             _resultValue.aiDataPlatformId = aiDataPlatformId;
             _resultValue.aiDataPlatformType = aiDataPlatformType;
+            _resultValue.aiFeatureStatus = aiFeatureStatus;
             _resultValue.aliasKey = aliasKey;
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdBy = createdBy;
@@ -376,11 +456,15 @@ public final class GetAiDataPlatformAiDataPlatformResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isEnableAiFeature = isEnableAiFeature;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vectorDbAdminCred = vectorDbAdminCred;
+            _resultValue.vectorDbAdminSecretId = vectorDbAdminSecretId;
+            _resultValue.vectorDbId = vectorDbId;
             _resultValue.webSocketEndpoint = webSocketEndpoint;
             return _resultValue;
         }

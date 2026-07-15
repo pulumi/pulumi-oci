@@ -42,10 +42,15 @@ public final class GetTargetAlertPolicyAssociationsResult {
     private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
     private @Nullable String targetAlertPolicyAssociationId;
     /**
-     * @return The OCID of the target on which alert policy is to be applied.
+     * @return The OCID of the target or target database group on which alert policy is to be applied.
      * 
      */
     private @Nullable String targetId;
+    /**
+     * @return The resource type that is represented by the target alert policy association.
+     * 
+     */
+    private @Nullable String targetType;
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
 
@@ -94,11 +99,18 @@ public final class GetTargetAlertPolicyAssociationsResult {
         return Optional.ofNullable(this.targetAlertPolicyAssociationId);
     }
     /**
-     * @return The OCID of the target on which alert policy is to be applied.
+     * @return The OCID of the target or target database group on which alert policy is to be applied.
      * 
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+    /**
+     * @return The resource type that is represented by the target alert policy association.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
     public Optional<String> timeCreatedGreaterThanOrEqualTo() {
         return Optional.ofNullable(this.timeCreatedGreaterThanOrEqualTo);
@@ -126,6 +138,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
         private List<GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection> targetAlertPolicyAssociationCollections;
         private @Nullable String targetAlertPolicyAssociationId;
         private @Nullable String targetId;
+        private @Nullable String targetType;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
         public Builder() {}
@@ -141,6 +154,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
     	      this.targetAlertPolicyAssociationCollections = defaults.targetAlertPolicyAssociationCollections;
     	      this.targetAlertPolicyAssociationId = defaults.targetAlertPolicyAssociationId;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreatedGreaterThanOrEqualTo = defaults.timeCreatedGreaterThanOrEqualTo;
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
         }
@@ -218,6 +232,12 @@ public final class GetTargetAlertPolicyAssociationsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreatedGreaterThanOrEqualTo(@Nullable String timeCreatedGreaterThanOrEqualTo) {
 
             this.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
@@ -241,6 +261,7 @@ public final class GetTargetAlertPolicyAssociationsResult {
             _resultValue.targetAlertPolicyAssociationCollections = targetAlertPolicyAssociationCollections;
             _resultValue.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             _resultValue.timeCreatedLessThan = timeCreatedLessThan;
             return _resultValue;

@@ -153,6 +153,10 @@ namespace Pulumi.Oci.Oda
         public readonly ImmutableArray<string> NsgIds;
         public readonly string OdaPrivateEndpointId;
         /// <summary>
+        /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        /// <summary>
         /// The current state of the ODA private endpoint.
         /// </summary>
         public readonly string State;
@@ -187,6 +191,8 @@ namespace Pulumi.Oci.Oda
 
             string odaPrivateEndpointId,
 
+            ImmutableDictionary<string, string> securityAttributes,
+
             string state,
 
             string subnetId,
@@ -203,6 +209,7 @@ namespace Pulumi.Oci.Oda
             Id = id;
             NsgIds = nsgIds;
             OdaPrivateEndpointId = odaPrivateEndpointId;
+            SecurityAttributes = securityAttributes;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

@@ -110,6 +110,11 @@ import * as utilities from "../utilities";
  *         secretId: testSecret.id,
  *         username: containerInstanceImagePullSecretsUsername,
  *     }],
+ *     securityContext: {
+ *         fsGroup: Number(containerInstanceSecurityContextFsGroup),
+ *         fsGroupChangePolicy: containerInstanceSecurityContextFsGroupChangePolicy,
+ *         securityContextType: containerInstanceSecurityContextSecurityContextType,
+ *     },
  *     volumes: [{
  *         name: containerInstanceVolumesName,
  *         volumeType: containerInstanceVolumesVolumeType,
@@ -119,6 +124,25 @@ import * as utilities from "../utilities";
  *             fileName: containerInstanceVolumesConfigsFileName,
  *             path: containerInstanceVolumesConfigsPath,
  *         }],
+ *         "export": {
+ *             id: containerInstanceVolumesExportId,
+ *             ociFssExportType: containerInstanceVolumesExportOciFssExportType,
+ *         },
+ *         mountCommand: {
+ *             mountOptions: [{
+ *                 option: containerInstanceVolumesMountCommandMountOptionsOption,
+ *                 value: containerInstanceVolumesMountCommandMountOptionsValue,
+ *             }],
+ *         },
+ *         mountTarget: {
+ *             id: containerInstanceVolumesMountTargetId,
+ *             ociFssMountTargetType: containerInstanceVolumesMountTargetOciFssMountTargetType,
+ *         },
+ *         security: {
+ *             auth: containerInstanceVolumesSecurityAuth,
+ *             isEncryptedInTransit: containerInstanceVolumesSecurityIsEncryptedInTransit === "true",
+ *         },
+ *         subnetId: testSubnet.id,
  *     }],
  * });
  * ```
@@ -212,6 +236,10 @@ export class ContainerInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
+     * Security context for all containers in a container instance.
+     */
+    declare public readonly securityContext: pulumi.Output<outputs.ContainerEngine.ContainerInstanceSecurityContext>;
+    /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
     declare public readonly shape: pulumi.Output<string>;
@@ -230,6 +258,10 @@ export class ContainerInstance extends pulumi.CustomResource {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
+     * TenantId id of the container instance.
+     */
+    declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
@@ -279,10 +311,12 @@ export class ContainerInstance extends pulumi.CustomResource {
             resourceInputs["gracefulShutdownTimeoutInSeconds"] = state?.gracefulShutdownTimeoutInSeconds;
             resourceInputs["imagePullSecrets"] = state?.imagePullSecrets;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["securityContext"] = state?.securityContext;
             resourceInputs["shape"] = state?.shape;
             resourceInputs["shapeConfig"] = state?.shapeConfig;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
+            resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
             resourceInputs["vnics"] = state?.vnics;
@@ -319,6 +353,7 @@ export class ContainerInstance extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["gracefulShutdownTimeoutInSeconds"] = args?.gracefulShutdownTimeoutInSeconds;
             resourceInputs["imagePullSecrets"] = args?.imagePullSecrets;
+            resourceInputs["securityContext"] = args?.securityContext;
             resourceInputs["shape"] = args?.shape;
             resourceInputs["shapeConfig"] = args?.shapeConfig;
             resourceInputs["state"] = args?.state;
@@ -327,6 +362,7 @@ export class ContainerInstance extends pulumi.CustomResource {
             resourceInputs["containerCount"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["tenantId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["volumeCount"] = undefined /*out*/;
@@ -393,6 +429,10 @@ export interface ContainerInstanceState {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
+     * Security context for all containers in a container instance.
+     */
+    securityContext?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceSecurityContext | undefined>;
+    /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */
     shape?: pulumi.Input<string | undefined>;
@@ -411,6 +451,10 @@ export interface ContainerInstanceState {
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * TenantId id of the container instance.
+     */
+    tenantId?: pulumi.Input<string | undefined>;
     /**
      * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      */
@@ -483,6 +527,10 @@ export interface ContainerInstanceArgs {
      * The image pulls secrets so you can access private registry to pull container images.
      */
     imagePullSecrets?: pulumi.Input<pulumi.Input<inputs.ContainerEngine.ContainerInstanceImagePullSecret>[] | undefined>;
+    /**
+     * Security context for all containers in a container instance.
+     */
+    securityContext?: pulumi.Input<inputs.ContainerEngine.ContainerInstanceSecurityContext | undefined>;
     /**
      * The shape of the container instance. The shape determines the resources available to the container instance.
      */

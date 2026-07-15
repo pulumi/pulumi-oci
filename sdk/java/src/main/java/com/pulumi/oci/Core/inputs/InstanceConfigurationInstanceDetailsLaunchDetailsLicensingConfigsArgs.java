@@ -38,14 +38,14 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingCon
     }
 
     /**
-     * The type of action to run when the instance is interrupted for eviction.
+     * Operating System type of the Configuration.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return Operating System type of the Configuration.
      * 
      */
     public Output<String> type() {
@@ -105,7 +105,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingCon
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type Operating System type of the Configuration.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingCon
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type Operating System type of the Configuration.
          * 
          * @return builder
          * 

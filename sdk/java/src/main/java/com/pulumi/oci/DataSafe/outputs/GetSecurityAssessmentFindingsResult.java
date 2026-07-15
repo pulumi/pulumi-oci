@@ -24,6 +24,7 @@ public final class GetSecurityAssessmentFindingsResult {
     private @Nullable String category;
     private @Nullable String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
+    private @Nullable List<String> containsOracleDefinedSeverities;
     private @Nullable List<String> containsReferences;
     private @Nullable List<String> containsSeverities;
     private @Nullable List<String> fields;
@@ -84,6 +85,9 @@ public final class GetSecurityAssessmentFindingsResult {
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+    public List<String> containsOracleDefinedSeverities() {
+        return this.containsOracleDefinedSeverities == null ? List.of() : this.containsOracleDefinedSeverities;
     }
     public List<String> containsReferences() {
         return this.containsReferences == null ? List.of() : this.containsReferences;
@@ -172,6 +176,7 @@ public final class GetSecurityAssessmentFindingsResult {
         private @Nullable String category;
         private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable List<String> containsOracleDefinedSeverities;
         private @Nullable List<String> containsReferences;
         private @Nullable List<String> containsSeverities;
         private @Nullable List<String> fields;
@@ -194,6 +199,7 @@ public final class GetSecurityAssessmentFindingsResult {
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
+    	      this.containsOracleDefinedSeverities = defaults.containsOracleDefinedSeverities;
     	      this.containsReferences = defaults.containsReferences;
     	      this.containsSeverities = defaults.containsSeverities;
     	      this.fields = defaults.fields;
@@ -234,6 +240,15 @@ public final class GetSecurityAssessmentFindingsResult {
 
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+        @CustomType.Setter
+        public Builder containsOracleDefinedSeverities(@Nullable List<String> containsOracleDefinedSeverities) {
+
+            this.containsOracleDefinedSeverities = containsOracleDefinedSeverities;
+            return this;
+        }
+        public Builder containsOracleDefinedSeverities(String... containsOracleDefinedSeverities) {
+            return containsOracleDefinedSeverities(List.of(containsOracleDefinedSeverities));
         }
         @CustomType.Setter
         public Builder containsReferences(@Nullable List<String> containsReferences) {
@@ -355,6 +370,7 @@ public final class GetSecurityAssessmentFindingsResult {
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.containsOracleDefinedSeverities = containsOracleDefinedSeverities;
             _resultValue.containsReferences = containsReferences;
             _resultValue.containsSeverities = containsSeverities;
             _resultValue.fields = fields;

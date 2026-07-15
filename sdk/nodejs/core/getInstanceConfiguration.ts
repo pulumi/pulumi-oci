@@ -64,12 +64,24 @@ export interface GetInstanceConfigurationResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
+     * The GPU Memory Cluster configuration entries for.
+     */
+    readonly gmcConfigs: outputs.Core.GetInstanceConfigurationGmcConfig[];
+    /**
      * The OCID of the volume backup.
      */
     readonly id: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the base compute instance configuration associated with this GMC configuration entry.
+     */
     readonly instanceConfigurationId: string;
     readonly instanceDetails: outputs.Core.GetInstanceConfigurationInstanceDetail[];
     readonly instanceId: string;
+    /**
+     * Differentiator for instance configuration.  Following values are supported:
+     * * INSTANCE : All details related to instance will be passed within instanceDetails.
+     * * GMC : All details related to gpu memory cluster will be passed within gmcConfigs.
+     */
     readonly source: string;
     /**
      * The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

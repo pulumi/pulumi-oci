@@ -14,6 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityAssessmentFindingFinding {
     private String assessmentId;
+    private String category;
     private List<String> details;
     private String doclink;
     private Boolean hasTargetDbRiskLevelChanged;
@@ -37,6 +38,9 @@ public final class GetSecurityAssessmentFindingFinding {
     private GetSecurityAssessmentFindingFinding() {}
     public String assessmentId() {
         return this.assessmentId;
+    }
+    public String category() {
+        return this.category;
     }
     public List<String> details() {
         return this.details;
@@ -106,6 +110,7 @@ public final class GetSecurityAssessmentFindingFinding {
     @CustomType.Builder
     public static final class Builder {
         private String assessmentId;
+        private String category;
         private List<String> details;
         private String doclink;
         private Boolean hasTargetDbRiskLevelChanged;
@@ -129,6 +134,7 @@ public final class GetSecurityAssessmentFindingFinding {
         public Builder(GetSecurityAssessmentFindingFinding defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
+    	      this.category = defaults.category;
     	      this.details = defaults.details;
     	      this.doclink = defaults.doclink;
     	      this.hasTargetDbRiskLevelChanged = defaults.hasTargetDbRiskLevelChanged;
@@ -156,6 +162,14 @@ public final class GetSecurityAssessmentFindingFinding {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "assessmentId");
             }
             this.assessmentId = assessmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder category(String category) {
+            if (category == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "category");
+            }
+            this.category = category;
             return this;
         }
         @CustomType.Setter
@@ -319,6 +333,7 @@ public final class GetSecurityAssessmentFindingFinding {
         public GetSecurityAssessmentFindingFinding build() {
             final var _resultValue = new GetSecurityAssessmentFindingFinding();
             _resultValue.assessmentId = assessmentId;
+            _resultValue.category = category;
             _resultValue.details = details;
             _resultValue.doclink = doclink;
             _resultValue.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;

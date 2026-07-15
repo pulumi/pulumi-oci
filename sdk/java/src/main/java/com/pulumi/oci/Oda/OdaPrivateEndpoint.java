@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .displayName(odaPrivateEndpointDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(odaPrivateEndpointNsgIds)
+ *             .securityAttributes(odaPrivateEndpointSecurityAttributes)
  *             .build());
  * 
  *     }
@@ -159,6 +160,20 @@ public class OdaPrivateEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> nsgIds() {
         return this.nsgIds;
+    }
+    /**
+     * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    @Export(name="securityAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> securityAttributes;
+
+    /**
+     * @return (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Oracle-ZPR&#34;: {&#34;MaxEgressCount&#34;: {&#34;value&#34;: &#34;42&#34;, &#34;mode&#34;: &#34;enforce&#34;}}}`
+     * 
+     */
+    public Output<Map<String,String>> securityAttributes() {
+        return this.securityAttributes;
     }
     /**
      * The current state of the ODA private endpoint.

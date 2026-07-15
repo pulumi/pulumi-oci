@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainer;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecret;
+import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemSecurityContext;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfig;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVnic;
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemVolume;
@@ -75,7 +76,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      */
     private String gracefulShutdownTimeoutInSeconds;
     /**
-     * @return An OCID that cannot be changed.
+     * @return The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
      * 
      */
     private String id;
@@ -89,6 +90,11 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    private List<GetContainerInstancesContainerInstanceCollectionItemSecurityContext> securityContexts;
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * 
@@ -109,6 +115,11 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    private String tenantId;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -214,7 +225,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
         return this.gracefulShutdownTimeoutInSeconds;
     }
     /**
-     * @return An OCID that cannot be changed.
+     * @return The OCID of the Oracle Cloud Infrastructure File Storage Service (FSS) Mount Target.
      * 
      */
     public String id() {
@@ -233,6 +244,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Security context for all containers in a container instance.
+     * 
+     */
+    public List<GetContainerInstancesContainerInstanceCollectionItemSecurityContext> securityContexts() {
+        return this.securityContexts;
     }
     /**
      * @return The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
@@ -261,6 +279,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * @return TenantId id of the container instance.
+     * 
+     */
+    public String tenantId() {
+        return this.tenantId;
     }
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -321,10 +346,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
         private String id;
         private List<GetContainerInstancesContainerInstanceCollectionItemImagePullSecret> imagePullSecrets;
         private String lifecycleDetails;
+        private List<GetContainerInstancesContainerInstanceCollectionItemSecurityContext> securityContexts;
         private String shape;
         private List<GetContainerInstancesContainerInstanceCollectionItemShapeConfig> shapeConfigs;
         private String state;
         private Map<String,String> systemTags;
+        private String tenantId;
         private String timeCreated;
         private String timeUpdated;
         private List<GetContainerInstancesContainerInstanceCollectionItemVnic> vnics;
@@ -347,10 +374,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
     	      this.id = defaults.id;
     	      this.imagePullSecrets = defaults.imagePullSecrets;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.securityContexts = defaults.securityContexts;
     	      this.shape = defaults.shape;
     	      this.shapeConfigs = defaults.shapeConfigs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tenantId = defaults.tenantId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.vnics = defaults.vnics;
@@ -480,6 +509,17 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder securityContexts(List<GetContainerInstancesContainerInstanceCollectionItemSecurityContext> securityContexts) {
+            if (securityContexts == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItem", "securityContexts");
+            }
+            this.securityContexts = securityContexts;
+            return this;
+        }
+        public Builder securityContexts(GetContainerInstancesContainerInstanceCollectionItemSecurityContext... securityContexts) {
+            return securityContexts(List.of(securityContexts));
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             if (shape == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItem", "shape");
@@ -512,6 +552,14 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItem", "systemTags");
             }
             this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder tenantId(String tenantId) {
+            if (tenantId == null) {
+              throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItem", "tenantId");
+            }
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
@@ -576,10 +624,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItem {
             _resultValue.id = id;
             _resultValue.imagePullSecrets = imagePullSecrets;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.securityContexts = securityContexts;
             _resultValue.shape = shape;
             _resultValue.shapeConfigs = shapeConfigs;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.tenantId = tenantId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.vnics = vnics;

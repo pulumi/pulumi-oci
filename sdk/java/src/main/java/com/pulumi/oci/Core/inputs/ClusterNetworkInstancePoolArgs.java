@@ -171,6 +171,21 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The type of resources managed by the pool.
+     * 
+     */
+    @Import(name="poolType")
+    private @Nullable Output<String> poolType;
+
+    /**
+     * @return The type of resources managed by the pool.
+     * 
+     */
+    public Optional<Output<String>> poolType() {
+        return Optional.ofNullable(this.poolType);
+    }
+
+    /**
      * (Updatable) The number of instances that should be in the instance pool.
      * 
      */
@@ -229,6 +244,7 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
         this.instanceHostnameFormatter = $.instanceHostnameFormatter;
         this.loadBalancers = $.loadBalancers;
         this.placementConfigurations = $.placementConfigurations;
+        this.poolType = $.poolType;
         this.size = $.size;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -477,6 +493,27 @@ public final class ClusterNetworkInstancePoolArgs extends com.pulumi.resources.R
          */
         public Builder placementConfigurations(ClusterNetworkInstancePoolPlacementConfigurationArgs... placementConfigurations) {
             return placementConfigurations(List.of(placementConfigurations));
+        }
+
+        /**
+         * @param poolType The type of resources managed by the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolType(@Nullable Output<String> poolType) {
+            $.poolType = poolType;
+            return this;
+        }
+
+        /**
+         * @param poolType The type of resources managed by the pool.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder poolType(String poolType) {
+            return poolType(Output.of(poolType));
         }
 
         /**

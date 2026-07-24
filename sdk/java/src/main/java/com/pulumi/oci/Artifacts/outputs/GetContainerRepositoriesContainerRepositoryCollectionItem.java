@@ -71,7 +71,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     private Integer layerCount;
     /**
-     * @return Total storage in bytes consumed by layers.
+     * @return Total size of layers.
      * 
      */
     private String layersSizeInBytes;
@@ -185,7 +185,7 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         return this.layerCount;
     }
     /**
-     * @return Total storage in bytes consumed by layers.
+     * @return Total size of layers.
      * 
      */
     public String layersSizeInBytes() {

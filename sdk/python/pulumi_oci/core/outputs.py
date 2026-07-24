@@ -65,6 +65,7 @@ __all__ = [
     'ComputeHostRecycleDetail',
     'CrossConnectGroupMacsecProperties',
     'CrossConnectGroupMacsecPropertiesPrimaryKey',
+    'CrossConnectLoaProperties',
     'CrossConnectMacsecProperties',
     'CrossConnectMacsecPropertiesPrimaryKey',
     'DedicatedVmHostCapacityBin',
@@ -398,6 +399,7 @@ __all__ = [
     'GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult',
     'GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyResult',
     'GetCrossConnectGroupsFilterResult',
+    'GetCrossConnectLoaPropertyResult',
     'GetCrossConnectLocationsCrossConnectLocationResult',
     'GetCrossConnectLocationsFilterResult',
     'GetCrossConnectMacsecPropertyResult',
@@ -405,6 +407,7 @@ __all__ = [
     'GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShapeResult',
     'GetCrossConnectPortSpeedShapeFilterResult',
     'GetCrossConnectsCrossConnectResult',
+    'GetCrossConnectsCrossConnectLoaPropertyResult',
     'GetCrossConnectsCrossConnectMacsecPropertyResult',
     'GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyResult',
     'GetCrossConnectsFilterResult',
@@ -680,6 +683,7 @@ __all__ = [
     'GetIpsecStatusTunnelResult',
     'GetIpv6sFilterResult',
     'GetIpv6sIpv6Result',
+    'GetLetterOfAuthorityExtensionDetailResult',
     'GetListingResourceVersionsAppCatalogListingResourceVersionResult',
     'GetListingResourceVersionsFilterResult',
     'GetLocalPeeringGatewaysFilterResult',
@@ -4030,9 +4034,6 @@ class CrossConnectGroupMacsecProperties(dict):
                  primary_key: Optional['outputs.CrossConnectGroupMacsecPropertiesPrimaryKey'] = None):
         """
         :param _builtins.str state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         :param _builtins.bool is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param 'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs' primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
@@ -4050,9 +4051,6 @@ class CrossConnectGroupMacsecProperties(dict):
     def state(self) -> _builtins.str:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -4163,6 +4161,56 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
         NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_version")
+
+
+@pulumi.output_type
+class CrossConnectLoaProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authorizedAgent":
+            suggest = "authorized_agent"
+        elif key == "expiryExtensionCount":
+            suggest = "expiry_extension_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CrossConnectLoaProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CrossConnectLoaProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CrossConnectLoaProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authorized_agent: Optional[_builtins.str] = None,
+                 expiry_extension_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str authorized_agent: (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        :param _builtins.int expiry_extension_count: (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        if authorized_agent is not None:
+            pulumi.set(__self__, "authorized_agent", authorized_agent)
+        if expiry_extension_count is not None:
+            pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        """
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -27386,7 +27434,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 interface_down_timer_value_in_milliseconds: _builtins.int,
+                 is_interface_hold_timer_enabled: _builtins.bool,
+                 is_qos_enabled: _builtins.bool,
                  macsec_properties: Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult'],
+                 minimum_links: _builtins.int,
                  oci_logical_device_name: _builtins.str,
                  oci_physical_device_name: _builtins.str,
                  state: _builtins.str,
@@ -27398,7 +27450,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The cross-connect group's Oracle ID (OCID).
+        :param _builtins.int interface_down_timer_value_in_milliseconds: The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param _builtins.bool is_interface_hold_timer_enabled: The flag to enable or disable the down timer for the interface.
+        :param _builtins.bool is_qos_enabled: The flag to enable or disable the Qos for the cross-connect-group.
         :param Sequence['GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
+        :param _builtins.int minimum_links: Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
         :param _builtins.str oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param _builtins.str oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -27410,7 +27466,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
         pulumi.set(__self__, "macsec_properties", macsec_properties)
+        pulumi.set(__self__, "minimum_links", minimum_links)
         pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
         pulumi.set(__self__, "oci_physical_device_name", oci_physical_device_name)
         pulumi.set(__self__, "state", state)
@@ -27465,12 +27525,44 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect-group.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult']:
         """
         Properties used for MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> _builtins.int:
+        """
+        Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+        """
+        return pulumi.get(self, "minimum_links")
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")
@@ -27632,6 +27724,25 @@ class GetCrossConnectGroupsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCrossConnectLoaPropertyResult(dict):
+    def __init__(__self__, *,
+                 authorized_agent: _builtins.str,
+                 expiry_extension_count: _builtins.int):
+        pulumi.set(__self__, "authorized_agent", authorized_agent)
+        pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> _builtins.str:
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> _builtins.int:
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -27871,8 +27982,12 @@ class GetCrossConnectsCrossConnectResult(dict):
                  far_cross_connect_or_cross_connect_group_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 interface_down_timer_value_in_milliseconds: _builtins.int,
                  interface_name: _builtins.str,
                  is_active: _builtins.bool,
+                 is_interface_hold_timer_enabled: _builtins.bool,
+                 is_qos_enabled: _builtins.bool,
+                 loa_properties: Sequence['outputs.GetCrossConnectsCrossConnectLoaPropertyResult'],
                  location_name: _builtins.str,
                  macsec_properties: Sequence['outputs.GetCrossConnectsCrossConnectMacsecPropertyResult'],
                  near_cross_connect_or_cross_connect_group_id: _builtins.str,
@@ -27890,6 +28005,10 @@ class GetCrossConnectsCrossConnectResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The cross-connect's Oracle ID (OCID).
+        :param _builtins.int interface_down_timer_value_in_milliseconds: The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param _builtins.str interface_name: The name of the FastConnect interface where this cross-connect is installed.
+        :param _builtins.bool is_interface_hold_timer_enabled: The flag to enable or disable the down timer for the interface.
+        :param _builtins.bool is_qos_enabled: The flag to enable or disable the Qos for the cross-connect.
         :param _builtins.str location_name: The name of the FastConnect location where this cross-connect is installed.
         :param Sequence['GetCrossConnectsCrossConnectMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
         :param _builtins.str oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -27907,8 +28026,12 @@ class GetCrossConnectsCrossConnectResult(dict):
         pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
         pulumi.set(__self__, "interface_name", interface_name)
         pulumi.set(__self__, "is_active", is_active)
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
+        pulumi.set(__self__, "loa_properties", loa_properties)
         pulumi.set(__self__, "location_name", location_name)
         pulumi.set(__self__, "macsec_properties", macsec_properties)
         pulumi.set(__self__, "near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
@@ -27981,14 +28104,46 @@ class GetCrossConnectsCrossConnectResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> _builtins.str:
+        """
+        The name of the FastConnect interface where this cross-connect is installed.
+        """
         return pulumi.get(self, "interface_name")
 
     @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> _builtins.bool:
         return pulumi.get(self, "is_active")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> Sequence['outputs.GetCrossConnectsCrossConnectLoaPropertyResult']:
+        return pulumi.get(self, "loa_properties")
 
     @_builtins.property
     @pulumi.getter(name="locationName")
@@ -28058,6 +28213,25 @@ class GetCrossConnectsCrossConnectResult(dict):
         The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetCrossConnectsCrossConnectLoaPropertyResult(dict):
+    def __init__(__self__, *,
+                 authorized_agent: _builtins.str,
+                 expiry_extension_count: _builtins.int):
+        pulumi.set(__self__, "authorized_agent", authorized_agent)
+        pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> _builtins.str:
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> _builtins.int:
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -46869,6 +47043,35 @@ class GetIpv6sIpv6Result(dict):
 
 
 @pulumi.output_type
+class GetLetterOfAuthorityExtensionDetailResult(dict):
+    def __init__(__self__, *,
+                 histories: Sequence[_builtins.str],
+                 remaining_extensions: _builtins.str):
+        """
+        :param Sequence[_builtins.str] histories: Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+        :param _builtins.str remaining_extensions: The number of self-service LOA expiry extensions still available.
+        """
+        pulumi.set(__self__, "histories", histories)
+        pulumi.set(__self__, "remaining_extensions", remaining_extensions)
+
+    @_builtins.property
+    @pulumi.getter
+    def histories(self) -> Sequence[_builtins.str]:
+        """
+        Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+        """
+        return pulumi.get(self, "histories")
+
+    @_builtins.property
+    @pulumi.getter(name="remainingExtensions")
+    def remaining_extensions(self) -> _builtins.str:
+        """
+        The number of self-service LOA expiry extensions still available.
+        """
+        return pulumi.get(self, "remaining_extensions")
+
+
+@pulumi.output_type
 class GetListingResourceVersionsAppCatalogListingResourceVersionResult(dict):
     def __init__(__self__, *,
                  accessible_ports: Sequence[_builtins.int],
@@ -52592,6 +52795,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
+                 traffic_mode: _builtins.str,
                  type: _builtins.str,
                  virtual_circuit_id: _builtins.str,
                  virtual_circuit_redundancy_metadatas: Sequence['outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult']):
@@ -52624,6 +52828,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         :param _builtins.str service_type: Provider service type.
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param _builtins.str time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str traffic_mode: The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
         :param _builtins.str type: Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param Sequence['GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs'] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
@@ -52655,6 +52860,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "traffic_mode", traffic_mode)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "virtual_circuit_id", virtual_circuit_id)
         pulumi.set(__self__, "virtual_circuit_redundancy_metadatas", virtual_circuit_redundancy_metadatas)
@@ -52884,6 +53090,14 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> _builtins.str:
+        """
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
 
     @_builtins.property
     @pulumi.getter

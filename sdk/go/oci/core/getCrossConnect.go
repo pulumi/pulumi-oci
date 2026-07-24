@@ -73,9 +73,17 @@ type LookupCrossConnectResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id            string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The name of the FastConnect interface where this cross-connect is installed.
 	InterfaceName string `pulumi:"interfaceName"`
 	IsActive      bool   `pulumi:"isActive"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect.
+	IsQosEnabled  bool                         `pulumi:"isQosEnabled"`
+	LoaProperties []GetCrossConnectLoaProperty `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName string `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -172,12 +180,32 @@ func (o LookupCrossConnectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCrossConnectResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o LookupCrossConnectResultOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCrossConnectResult) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The name of the FastConnect interface where this cross-connect is installed.
 func (o LookupCrossConnectResultOutput) InterfaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCrossConnectResult) string { return v.InterfaceName }).(pulumi.StringOutput)
 }
 
 func (o LookupCrossConnectResultOutput) IsActive() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupCrossConnectResult) bool { return v.IsActive }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o LookupCrossConnectResultOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCrossConnectResult) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect.
+func (o LookupCrossConnectResultOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCrossConnectResult) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
+func (o LookupCrossConnectResultOutput) LoaProperties() GetCrossConnectLoaPropertyArrayOutput {
+	return o.ApplyT(func(v LookupCrossConnectResult) []GetCrossConnectLoaProperty { return v.LoaProperties }).(GetCrossConnectLoaPropertyArrayOutput)
 }
 
 // The name of the FastConnect location where this cross-connect is installed.

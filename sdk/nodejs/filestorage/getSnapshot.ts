@@ -48,6 +48,10 @@ export interface GetSnapshotResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     */
+    readonly exclusiveBytes: string;
+    /**
      * The time when this snapshot will be deleted.
      */
     readonly expirationTime: string;

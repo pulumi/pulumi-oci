@@ -168,6 +168,7 @@ class SnapshotArgs:
 class _SnapshotState:
     def __init__(__self__, *,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 exclusive_bytes: pulumi.Input[Optional[_builtins.str]] = None,
                  expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
                  file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  filesystem_snapshot_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -189,6 +190,7 @@ class _SnapshotState:
         Input properties used for looking up and filtering Snapshot resources.
 
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] exclusive_bytes: Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
         :param pulumi.Input[_builtins.str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[_builtins.str] filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
@@ -218,6 +220,8 @@ class _SnapshotState:
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if exclusive_bytes is not None:
+            pulumi.set(__self__, "exclusive_bytes", exclusive_bytes)
         if expiration_time is not None:
             pulumi.set(__self__, "expiration_time", expiration_time)
         if file_system_id is not None:
@@ -264,6 +268,18 @@ class _SnapshotState:
     @defined_tags.setter
     def defined_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveBytes")
+    def exclusive_bytes(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        """
+        return pulumi.get(self, "exclusive_bytes")
+
+    @exclusive_bytes.setter
+    def exclusive_bytes(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "exclusive_bytes", value)
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")
@@ -651,6 +667,7 @@ class Snapshot(pulumi.CustomResource):
             __props__.__dict__["lock_duration_details"] = lock_duration_details
             __props__.__dict__["locks"] = locks
             __props__.__dict__["name"] = name
+            __props__.__dict__["exclusive_bytes"] = None
             __props__.__dict__["filesystem_snapshot_policy_id"] = None
             __props__.__dict__["is_clone_source"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -672,6 +689,7 @@ class Snapshot(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            exclusive_bytes: pulumi.Input[Optional[_builtins.str]] = None,
             expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
             file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
             filesystem_snapshot_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -697,6 +715,7 @@ class Snapshot(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] exclusive_bytes: Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
         :param pulumi.Input[_builtins.str] expiration_time: (Updatable) The time when this snapshot will be deleted.
         :param pulumi.Input[_builtins.str] file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system to take a snapshot of.
         :param pulumi.Input[_builtins.str] filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
@@ -729,6 +748,7 @@ class Snapshot(pulumi.CustomResource):
         __props__ = _SnapshotState.__new__(_SnapshotState)
 
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["exclusive_bytes"] = exclusive_bytes
         __props__.__dict__["expiration_time"] = expiration_time
         __props__.__dict__["file_system_id"] = file_system_id
         __props__.__dict__["filesystem_snapshot_policy_id"] = filesystem_snapshot_policy_id
@@ -755,6 +775,14 @@ class Snapshot(pulumi.CustomResource):
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveBytes")
+    def exclusive_bytes(self) -> pulumi.Output[_builtins.str]:
+        """
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        """
+        return pulumi.get(self, "exclusive_bytes")
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")

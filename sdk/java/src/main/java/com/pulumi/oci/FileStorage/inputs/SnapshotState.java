@@ -36,6 +36,21 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    @Import(name="exclusiveBytes")
+    private @Nullable Output<String> exclusiveBytes;
+
+    /**
+     * @return Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     * 
+     */
+    public Optional<Output<String>> exclusiveBytes() {
+        return Optional.ofNullable(this.exclusiveBytes);
+    }
+
+    /**
      * (Updatable) The time when this snapshot will be deleted.
      * 
      */
@@ -306,6 +321,7 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     private SnapshotState(SnapshotState $) {
         this.definedTags = $.definedTags;
+        this.exclusiveBytes = $.exclusiveBytes;
         this.expirationTime = $.expirationTime;
         this.fileSystemId = $.fileSystemId;
         this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
@@ -362,6 +378,27 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param exclusiveBytes Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exclusiveBytes(@Nullable Output<String> exclusiveBytes) {
+            $.exclusiveBytes = exclusiveBytes;
+            return this;
+        }
+
+        /**
+         * @param exclusiveBytes Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exclusiveBytes(String exclusiveBytes) {
+            return exclusiveBytes(Output.of(exclusiveBytes));
         }
 
         /**

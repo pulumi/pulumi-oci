@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Analytics.Inputs
     public sealed class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Description of private source dns zone.
+        /// (Updatable) Description of the private source DNS zone.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        /// (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         /// </summary>
         [Input("dnsZone", required: true)]
         public Input<string> DnsZone { get; set; } = null!;

@@ -27,7 +27,7 @@ class GetAnalyticsInstanceResult:
     """
     A collection of values returned by getAnalyticsInstance.
     """
-    def __init__(__self__, admin_user=None, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, domain_id=None, email_notification=None, feature_bundle=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, service_url=None, state=None, system_tags=None, time_created=None, time_updated=None, update_channel=None):
+    def __init__(__self__, admin_user=None, analytics_instance_id=None, capacities=None, compartment_id=None, defined_tags=None, description=None, domain_id=None, email_notification=None, feature_bundle=None, feature_set=None, freeform_tags=None, id=None, idcs_access_token=None, kms_key_id=None, license_type=None, name=None, network_endpoint_details=None, resource_groups=None, service_url=None, state=None, system_tags=None, time_created=None, time_updated=None, update_channel=None):
         if admin_user and not isinstance(admin_user, str):
             raise TypeError("Expected argument 'admin_user' to be a str")
         pulumi.set(__self__, "admin_user", admin_user)
@@ -79,6 +79,9 @@ class GetAnalyticsInstanceResult:
         if network_endpoint_details and not isinstance(network_endpoint_details, list):
             raise TypeError("Expected argument 'network_endpoint_details' to be a list")
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        if resource_groups and not isinstance(resource_groups, list):
+            raise TypeError("Expected argument 'resource_groups' to be a list")
+        pulumi.set(__self__, "resource_groups", resource_groups)
         if service_url and not isinstance(service_url, str):
             raise TypeError("Expected argument 'service_url' to be a str")
         pulumi.set(__self__, "service_url", service_url)
@@ -112,7 +115,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetAnalyticsInstanceCapacityResult']:
         """
-        Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        The capacity (in OCPU's) to be allocated for this resource.
         """
         return pulumi.get(self, "capacities")
 
@@ -136,7 +139,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        Description of the vanity url.
+        Description of the vanity URL.
         """
         return pulumi.get(self, "description")
 
@@ -168,7 +171,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="featureSet")
     def feature_set(self) -> _builtins.str:
         """
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         """
         return pulumi.get(self, "feature_set")
 
@@ -184,7 +187,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The Virtual Cloud Network OCID.
+        Unique identifier and name of resource group.  Must be unique within the instance
         """
         return pulumi.get(self, "id")
 
@@ -197,7 +200,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
-        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -213,7 +216,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         """
         return pulumi.get(self, "name")
 
@@ -226,10 +229,18 @@ class GetAnalyticsInstanceResult:
         return pulumi.get(self, "network_endpoint_details")
 
     @_builtins.property
+    @pulumi.getter(name="resourceGroups")
+    def resource_groups(self) -> Sequence['outputs.GetAnalyticsInstanceResourceGroupResult']:
+        """
+        List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        """
+        return pulumi.get(self, "resource_groups")
+
+    @_builtins.property
     @pulumi.getter(name="serviceUrl")
     def service_url(self) -> _builtins.str:
         """
-        URL of the Analytics service.
+        URL of the Analytics instance.
         """
         return pulumi.get(self, "service_url")
 
@@ -237,7 +248,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of an instance.
+        The current state of the Analytics instance.
         """
         return pulumi.get(self, "state")
 
@@ -253,7 +264,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -261,7 +272,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
         """
         return pulumi.get(self, "time_updated")
 
@@ -269,7 +280,7 @@ class GetAnalyticsInstanceResult:
     @pulumi.getter(name="updateChannel")
     def update_channel(self) -> _builtins.str:
         """
-        Analytics instance update channel.
+        The Analytics instance update cycle.
         """
         return pulumi.get(self, "update_channel")
 
@@ -297,6 +308,7 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
             license_type=self.license_type,
             name=self.name,
             network_endpoint_details=self.network_endpoint_details,
+            resource_groups=self.resource_groups,
             service_url=self.service_url,
             state=self.state,
             system_tags=self.system_tags,
@@ -310,7 +322,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
     """
     This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
 
-    Info for a specific Analytics instance.
+    Information about a specific Analytics instance.
 
     ## Example Usage
 
@@ -322,7 +334,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
     ```
 
 
-    :param _builtins.str analytics_instance_id: The OCID of the AnalyticsInstance.
+    :param _builtins.str analytics_instance_id: The OCID of the Analytics instance.
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
@@ -347,6 +359,7 @@ def get_analytics_instance(analytics_instance_id: Optional[_builtins.str] = None
         license_type=pulumi.get(__ret__, 'license_type'),
         name=pulumi.get(__ret__, 'name'),
         network_endpoint_details=pulumi.get(__ret__, 'network_endpoint_details'),
+        resource_groups=pulumi.get(__ret__, 'resource_groups'),
         service_url=pulumi.get(__ret__, 'service_url'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -358,7 +371,7 @@ def get_analytics_instance_output(analytics_instance_id: pulumi.Input[Optional[_
     """
     This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
 
-    Info for a specific Analytics instance.
+    Information about a specific Analytics instance.
 
     ## Example Usage
 
@@ -370,7 +383,7 @@ def get_analytics_instance_output(analytics_instance_id: pulumi.Input[Optional[_
     ```
 
 
-    :param _builtins.str analytics_instance_id: The OCID of the AnalyticsInstance.
+    :param _builtins.str analytics_instance_id: The OCID of the Analytics instance.
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
@@ -394,6 +407,7 @@ def get_analytics_instance_output(analytics_instance_id: pulumi.Input[Optional[_
         license_type=pulumi.get(__response__, 'license_type'),
         name=pulumi.get(__response__, 'name'),
         network_endpoint_details=pulumi.get(__response__, 'network_endpoint_details'),
+        resource_groups=pulumi.get(__response__, 'resource_groups'),
         service_url=pulumi.get(__response__, 'service_url'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

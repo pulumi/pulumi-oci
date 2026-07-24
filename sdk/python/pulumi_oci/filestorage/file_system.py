@@ -247,6 +247,7 @@ class _FileSystemState:
                  clone_attach_status: pulumi.Input[Optional[_builtins.str]] = None,
                  clone_count: pulumi.Input[Optional[_builtins.int]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 compartment_quota_enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  detach_clone_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -276,6 +277,7 @@ class _FileSystemState:
         :param pulumi.Input[_builtins.str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[_builtins.int] clone_count: Specifies the total number of children of a file system.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
+        :param pulumi.Input[_builtins.str] compartment_quota_enforcement_state: Displays the compartment-level quota enforcement state affecting this file system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] detach_clone_trigger: (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
                
@@ -312,6 +314,8 @@ class _FileSystemState:
             pulumi.set(__self__, "clone_count", clone_count)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_quota_enforcement_state is not None:
+            pulumi.set(__self__, "compartment_quota_enforcement_state", compartment_quota_enforcement_state)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if detach_clone_trigger is not None:
@@ -414,6 +418,18 @@ class _FileSystemState:
     @compartment_id.setter
     def compartment_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentQuotaEnforcementState")
+    def compartment_quota_enforcement_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Displays the compartment-level quota enforcement state affecting this file system.
+        """
+        return pulumi.get(self, "compartment_quota_enforcement_state")
+
+    @compartment_quota_enforcement_state.setter
+    def compartment_quota_enforcement_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "compartment_quota_enforcement_state", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -919,6 +935,7 @@ class FileSystem(pulumi.CustomResource):
             __props__.__dict__["locks"] = locks
             __props__.__dict__["source_snapshot_id"] = source_snapshot_id
             __props__.__dict__["clone_count"] = None
+            __props__.__dict__["compartment_quota_enforcement_state"] = None
             __props__.__dict__["is_clone_parent"] = None
             __props__.__dict__["is_hydrated"] = None
             __props__.__dict__["is_targetable"] = None
@@ -946,6 +963,7 @@ class FileSystem(pulumi.CustomResource):
             clone_attach_status: pulumi.Input[Optional[_builtins.str]] = None,
             clone_count: pulumi.Input[Optional[_builtins.int]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_quota_enforcement_state: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             detach_clone_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -979,6 +997,7 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] clone_attach_status: Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
         :param pulumi.Input[_builtins.int] clone_count: Specifies the total number of children of a file system.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
+        :param pulumi.Input[_builtins.str] compartment_quota_enforcement_state: Displays the compartment-level quota enforcement state affecting this file system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.int] detach_clone_trigger: (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
                
@@ -1014,6 +1033,7 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["clone_attach_status"] = clone_attach_status
         __props__.__dict__["clone_count"] = clone_count
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compartment_quota_enforcement_state"] = compartment_quota_enforcement_state
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["detach_clone_trigger"] = detach_clone_trigger
         __props__.__dict__["display_name"] = display_name
@@ -1076,6 +1096,14 @@ class FileSystem(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentQuotaEnforcementState")
+    def compartment_quota_enforcement_state(self) -> pulumi.Output[_builtins.str]:
+        """
+        Displays the compartment-level quota enforcement state affecting this file system.
+        """
+        return pulumi.get(self, "compartment_quota_enforcement_state")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")

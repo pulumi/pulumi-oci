@@ -19,14 +19,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     public static final AnalyticsInstancePrivateAccessChannelState Empty = new AnalyticsInstancePrivateAccessChannelState();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId")
     private @Nullable Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Optional<Output<String>> analyticsInstanceId() {
@@ -34,14 +34,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) Display Name of the Private Access Channel.
+     * (Updatable) Display name of the private access channel.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Display Name of the Private Access Channel.
+     * @return (Updatable) Display name of the private access channel.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -49,14 +49,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     @Import(name="egressSourceIpAddresses")
     private @Nullable Output<List<String>> egressSourceIpAddresses;
 
     /**
-     * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * @return List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     public Optional<Output<List<String>>> egressSourceIpAddresses() {
@@ -64,14 +64,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * IP Address of the Private Access channel.
+     * IP address of the private access channel.
      * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
-     * @return IP Address of the Private Access channel.
+     * @return IP address of the private access channel.
      * 
      */
     public Optional<Output<String>> ipAddress() {
@@ -79,14 +79,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * Private Access Channel unique identifier key.
+     * Private access channel unique identifier key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Private Access Channel unique identifier key.
+     * @return Private access channel unique identifier key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -94,14 +94,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * (Updatable) Network Security Group OCIDs for the Analytics instance.
      * 
      */
     @Import(name="networkSecurityGroupIds")
     private @Nullable Output<List<String>> networkSecurityGroupIds;
 
     /**
-     * @return (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * @return (Updatable) Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public Optional<Output<List<String>>> networkSecurityGroupIds() {
@@ -109,14 +109,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     @Import(name="privateSourceDnsZones")
     private @Nullable Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs>> privateSourceDnsZones;
 
     /**
-     * @return (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * @return (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     public Optional<Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs>>> privateSourceDnsZones() {
@@ -124,14 +124,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     @Import(name="privateSourceScanHosts")
     private @Nullable Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>> privateSourceScanHosts;
 
     /**
-     * @return (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * @return (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     public Optional<Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs>>> privateSourceScanHosts() {
@@ -139,14 +139,14 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) OCID of the customer subnet connected to private access channel.
+     * (Updatable) OCID of the customer subnet connected to the private access channel.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return (Updatable) OCID of the customer subnet connected to private access channel.
+     * @return (Updatable) OCID of the customer subnet connected to the private access channel.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -154,7 +154,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     }
 
     /**
-     * (Updatable) OCID of the customer VCN peered with private access channel.
+     * (Updatable) OCID of the customer VCN peered with the private access channel.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -164,7 +164,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
     private @Nullable Output<String> vcnId;
 
     /**
-     * @return (Updatable) OCID of the customer VCN peered with private access channel.
+     * @return (Updatable) OCID of the customer VCN peered with the private access channel.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -208,7 +208,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param displayName (Updatable) Display Name of the Private Access Channel.
+         * @param displayName (Updatable) Display name of the private access channel.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param displayName (Updatable) Display Name of the Private Access Channel.
+         * @param displayName (Updatable) Display name of the private access channel.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param egressSourceIpAddresses The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+         * @param egressSourceIpAddresses List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
          * 
          * @return builder
          * 
@@ -261,7 +261,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param egressSourceIpAddresses The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+         * @param egressSourceIpAddresses List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param egressSourceIpAddresses The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+         * @param egressSourceIpAddresses List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param ipAddress IP Address of the Private Access channel.
+         * @param ipAddress IP address of the private access channel.
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param ipAddress IP Address of the Private Access channel.
+         * @param ipAddress IP address of the private access channel.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param key Private Access Channel unique identifier key.
+         * @param key Private access channel unique identifier key.
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param key Private Access Channel unique identifier key.
+         * @param key Private access channel unique identifier key.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds (Updatable) Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceDnsZones (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         * @param privateSourceDnsZones (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceDnsZones (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         * @param privateSourceDnsZones (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceDnsZones (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+         * @param privateSourceDnsZones (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * @param privateSourceScanHosts (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * @param privateSourceScanHosts (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param privateSourceScanHosts (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+         * @param privateSourceScanHosts (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param subnetId (Updatable) OCID of the customer subnet connected to private access channel.
+         * @param subnetId (Updatable) OCID of the customer subnet connected to the private access channel.
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param subnetId (Updatable) OCID of the customer subnet connected to private access channel.
+         * @param subnetId (Updatable) OCID of the customer subnet connected to the private access channel.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param vcnId (Updatable) OCID of the customer VCN peered with private access channel.
+         * @param vcnId (Updatable) OCID of the customer VCN peered with the private access channel.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -451,7 +451,7 @@ public final class AnalyticsInstancePrivateAccessChannelState extends com.pulumi
         }
 
         /**
-         * @param vcnId (Updatable) OCID of the customer VCN peered with private access channel.
+         * @param vcnId (Updatable) OCID of the customer VCN peered with the private access channel.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

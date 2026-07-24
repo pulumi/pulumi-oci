@@ -60,6 +60,8 @@ type LookupSnapshotArgs struct {
 type LookupSnapshotResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes string `pulumi:"exclusiveBytes"`
 	// The time when this snapshot will be deleted.
 	ExpirationTime string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
@@ -138,6 +140,11 @@ func (o LookupSnapshotResultOutput) ToLookupSnapshotResultOutputWithContext(ctx 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o LookupSnapshotResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSnapshotResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+func (o LookupSnapshotResultOutput) ExclusiveBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) string { return v.ExclusiveBytes }).(pulumi.StringOutput)
 }
 
 // The time when this snapshot will be deleted.

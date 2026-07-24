@@ -15,49 +15,49 @@ import java.util.Objects;
 public final class GetAnalyticsInstancePrivateAccessChannelResult {
     private String analyticsInstanceId;
     /**
-     * @return Display Name of the Private Access Channel.
+     * @return Display name of the private access channel.
      * 
      */
     private String displayName;
     /**
-     * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * @return List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     private List<String> egressSourceIpAddresses;
     private String id;
     /**
-     * @return IP Address of the Private Access channel.
+     * @return IP address of the private access channel.
      * 
      */
     private String ipAddress;
     /**
-     * @return Private Access Channel unique identifier key.
+     * @return Private access channel unique identifier key.
      * 
      */
     private String key;
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     private List<String> networkSecurityGroupIds;
     private String privateAccessChannelKey;
     /**
-     * @return List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * @return List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones;
     /**
-     * @return List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * @return List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     private List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts;
     /**
-     * @return OCID of the customer subnet connected to private access channel.
+     * @return OCID of the customer subnet connected to the private access channel.
      * 
      */
     private String subnetId;
     /**
-     * @return OCID of the customer VCN peered with private access channel.
+     * @return OCID of the customer VCN peered with the private access channel.
      * 
      */
     private String vcnId;
@@ -67,14 +67,14 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         return this.analyticsInstanceId;
     }
     /**
-     * @return Display Name of the Private Access Channel.
+     * @return Display name of the private access channel.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * @return List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     public List<String> egressSourceIpAddresses() {
@@ -84,21 +84,21 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         return this.id;
     }
     /**
-     * @return IP Address of the Private Access channel.
+     * @return IP address of the private access channel.
      * 
      */
     public String ipAddress() {
         return this.ipAddress;
     }
     /**
-     * @return Private Access Channel unique identifier key.
+     * @return Private access channel unique identifier key.
      * 
      */
     public String key() {
         return this.key;
     }
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public List<String> networkSecurityGroupIds() {
@@ -108,28 +108,28 @@ public final class GetAnalyticsInstancePrivateAccessChannelResult {
         return this.privateAccessChannelKey;
     }
     /**
-     * @return List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * @return List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     public List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone> privateSourceDnsZones() {
         return this.privateSourceDnsZones;
     }
     /**
-     * @return List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * @return List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     public List<GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost> privateSourceScanHosts() {
         return this.privateSourceScanHosts;
     }
     /**
-     * @return OCID of the customer subnet connected to private access channel.
+     * @return OCID of the customer subnet connected to the private access channel.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return OCID of the customer VCN peered with private access channel.
+     * @return OCID of the customer VCN peered with the private access channel.
      * 
      */
     public String vcnId() {

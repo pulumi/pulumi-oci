@@ -42,8 +42,24 @@ namespace Pulumi.Oci.Core.Outputs
         /// The cross-connect's Oracle ID (OCID).
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        public readonly int InterfaceDownTimerValueInMilliseconds;
+        /// <summary>
+        /// The name of the FastConnect interface where this cross-connect is installed.
+        /// </summary>
         public readonly string InterfaceName;
         public readonly bool IsActive;
+        /// <summary>
+        /// The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        public readonly bool IsInterfaceHoldTimerEnabled;
+        /// <summary>
+        /// The flag to enable or disable the Qos for the cross-connect.
+        /// </summary>
+        public readonly bool IsQosEnabled;
+        public readonly ImmutableArray<Outputs.GetCrossConnectsCrossConnectLoaPropertyResult> LoaProperties;
         /// <summary>
         /// The name of the FastConnect location where this cross-connect is installed.
         /// </summary>
@@ -96,9 +112,17 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            int interfaceDownTimerValueInMilliseconds,
+
             string interfaceName,
 
             bool isActive,
+
+            bool isInterfaceHoldTimerEnabled,
+
+            bool isQosEnabled,
+
+            ImmutableArray<Outputs.GetCrossConnectsCrossConnectLoaPropertyResult> loaProperties,
 
             string locationName,
 
@@ -126,8 +150,12 @@ namespace Pulumi.Oci.Core.Outputs
             FarCrossConnectOrCrossConnectGroupId = farCrossConnectOrCrossConnectGroupId;
             FreeformTags = freeformTags;
             Id = id;
+            InterfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
             InterfaceName = interfaceName;
             IsActive = isActive;
+            IsInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            IsQosEnabled = isQosEnabled;
+            LoaProperties = loaProperties;
             LocationName = locationName;
             MacsecProperties = macsecProperties;
             NearCrossConnectOrCrossConnectGroupId = nearCrossConnectOrCrossConnectGroupId;

@@ -28,7 +28,7 @@ class GetGenerativeAiPrivateEndpointsResult:
     """
     A collection of values returned by getGenerativeAiPrivateEndpoints.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, generative_ai_private_endpoint_collections=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, generative_ai_private_endpoint_collections=None, id=None, resource_type=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetGenerativeAiPrivateEndpointsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -86,6 +89,14 @@ class GetGenerativeAiPrivateEndpointsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[_builtins.str]:
+        """
+        The resource type that Generative AI private endpoint can be used for.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -105,6 +116,7 @@ class AwaitableGetGenerativeAiPrivateEndpointsResult(GetGenerativeAiPrivateEndpo
             filters=self.filters,
             generative_ai_private_endpoint_collections=self.generative_ai_private_endpoint_collections,
             id=self.id,
+            resource_type=self.resource_type,
             state=self.state)
 
 
@@ -112,6 +124,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
                                         display_name: Optional[_builtins.str] = None,
                                         filters: Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]] = None,
                                         id: Optional[_builtins.str] = None,
+                                        resource_type: Optional[_builtins.str] = None,
                                         state: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGenerativeAiPrivateEndpointsResult:
     """
@@ -128,6 +141,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
     test_generative_ai_private_endpoints = oci.generativeai.get_generative_ai_private_endpoints(compartment_id=compartment_id,
         display_name=generative_ai_private_endpoint_display_name,
         id=generative_ai_private_endpoint_id,
+        resource_type=generative_ai_private_endpoint_resource_type,
         state=generative_ai_private_endpoint_state)
     ```
 
@@ -135,6 +149,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    :param _builtins.str resource_type: Query by the resource type of Generative AI private endpoints.
     :param _builtins.str state: The lifecycle state of Generative AI private endpoints.
     """
     __args__ = dict()
@@ -142,6 +157,7 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['resourceType'] = resource_type
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints', __args__, opts=opts, typ=GetGenerativeAiPrivateEndpointsResult).value
@@ -152,11 +168,13 @@ def get_generative_ai_private_endpoints(compartment_id: Optional[_builtins.str] 
         filters=pulumi.get(__ret__, 'filters'),
         generative_ai_private_endpoint_collections=pulumi.get(__ret__, 'generative_ai_private_endpoint_collections'),
         id=pulumi.get(__ret__, 'id'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                                display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetGenerativeAiPrivateEndpointsFilterArgs', 'GetGenerativeAiPrivateEndpointsFilterArgsDict']]]]] = None,
                                                id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               resource_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetGenerativeAiPrivateEndpointsResult]:
     """
@@ -173,6 +191,7 @@ def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Opti
     test_generative_ai_private_endpoints = oci.generativeai.get_generative_ai_private_endpoints(compartment_id=compartment_id,
         display_name=generative_ai_private_endpoint_display_name,
         id=generative_ai_private_endpoint_id,
+        resource_type=generative_ai_private_endpoint_resource_type,
         state=generative_ai_private_endpoint_state)
     ```
 
@@ -180,6 +199,7 @@ def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Opti
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+    :param _builtins.str resource_type: Query by the resource type of Generative AI private endpoints.
     :param _builtins.str state: The lifecycle state of Generative AI private endpoints.
     """
     __args__ = dict()
@@ -187,6 +207,7 @@ def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Opti
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['id'] = id
+    __args__['resourceType'] = resource_type
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints', __args__, opts=opts, typ=GetGenerativeAiPrivateEndpointsResult)
@@ -196,4 +217,5 @@ def get_generative_ai_private_endpoints_output(compartment_id: pulumi.Input[Opti
         filters=pulumi.get(__response__, 'filters'),
         generative_ai_private_endpoint_collections=pulumi.get(__response__, 'generative_ai_private_endpoint_collections'),
         id=pulumi.get(__response__, 'id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state')))

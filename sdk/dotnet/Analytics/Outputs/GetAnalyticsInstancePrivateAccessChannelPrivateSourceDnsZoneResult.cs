@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Analytics.Outputs
     public sealed class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult
     {
         /// <summary>
-        /// Description of private source scan host zone.
+        /// Description of private source SCAN host zone.
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        /// Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         /// </summary>
         public readonly string DnsZone;
 

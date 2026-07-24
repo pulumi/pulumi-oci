@@ -13,6 +13,374 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig struct {
+	// The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...}
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs struct {
+	// The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
+}
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...} }
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
+	return o
+}
+
+// The action to run when the preemptible instance is interrupted for eviction.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) PreemptionActions() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
+		return v.PreemptionActions
+	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
+		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...}
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs struct {
+	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...} }
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) bool {
+		return v.PreserveBootVolume
+	}).(pulumi.BoolOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
+		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
+	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement string `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus int `pulumi:"vcpus"`
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...}
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// This field is reserved for internal use.
+	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntInput `pulumi:"vcpus"`
+}
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
+}
+
+// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput` via:
+//
+//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...} }
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
+	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
+	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
+		return v.BaselineOcpuUtilization
+	}).(pulumi.StringOutput)
+}
+
+// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int {
+		return v.LocalVolumeSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// This field is reserved for internal use.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
+		return v.ResourceManagement
+	}).(pulumi.StringOutput)
+}
+
+// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Vcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Vcpus }).(pulumi.IntOutput)
+}
+
+type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig {
+		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
+}
+
 type GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail struct {
 	// The OCID of the boot volume used to boot the instance.
 	BootVolumeId string `pulumi:"bootVolumeId"`
@@ -24246,6 +24614,112 @@ func (o GetIpv6sIpv6ArrayOutput) Index(i pulumi.IntInput) GetIpv6sIpv6Output {
 	}).(GetIpv6sIpv6Output)
 }
 
+type GetLetterOfAuthorityExtensionDetail struct {
+	// Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+	Histories []string `pulumi:"histories"`
+	// The number of self-service LOA expiry extensions still available.
+	RemainingExtensions string `pulumi:"remainingExtensions"`
+}
+
+// GetLetterOfAuthorityExtensionDetailInput is an input type that accepts GetLetterOfAuthorityExtensionDetailArgs and GetLetterOfAuthorityExtensionDetailOutput values.
+// You can construct a concrete instance of `GetLetterOfAuthorityExtensionDetailInput` via:
+//
+//	GetLetterOfAuthorityExtensionDetailArgs{...}
+type GetLetterOfAuthorityExtensionDetailInput interface {
+	pulumi.Input
+
+	ToGetLetterOfAuthorityExtensionDetailOutput() GetLetterOfAuthorityExtensionDetailOutput
+	ToGetLetterOfAuthorityExtensionDetailOutputWithContext(context.Context) GetLetterOfAuthorityExtensionDetailOutput
+}
+
+type GetLetterOfAuthorityExtensionDetailArgs struct {
+	// Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+	Histories pulumi.StringArrayInput `pulumi:"histories"`
+	// The number of self-service LOA expiry extensions still available.
+	RemainingExtensions pulumi.StringInput `pulumi:"remainingExtensions"`
+}
+
+func (GetLetterOfAuthorityExtensionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLetterOfAuthorityExtensionDetail)(nil)).Elem()
+}
+
+func (i GetLetterOfAuthorityExtensionDetailArgs) ToGetLetterOfAuthorityExtensionDetailOutput() GetLetterOfAuthorityExtensionDetailOutput {
+	return i.ToGetLetterOfAuthorityExtensionDetailOutputWithContext(context.Background())
+}
+
+func (i GetLetterOfAuthorityExtensionDetailArgs) ToGetLetterOfAuthorityExtensionDetailOutputWithContext(ctx context.Context) GetLetterOfAuthorityExtensionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLetterOfAuthorityExtensionDetailOutput)
+}
+
+// GetLetterOfAuthorityExtensionDetailArrayInput is an input type that accepts GetLetterOfAuthorityExtensionDetailArray and GetLetterOfAuthorityExtensionDetailArrayOutput values.
+// You can construct a concrete instance of `GetLetterOfAuthorityExtensionDetailArrayInput` via:
+//
+//	GetLetterOfAuthorityExtensionDetailArray{ GetLetterOfAuthorityExtensionDetailArgs{...} }
+type GetLetterOfAuthorityExtensionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetLetterOfAuthorityExtensionDetailArrayOutput() GetLetterOfAuthorityExtensionDetailArrayOutput
+	ToGetLetterOfAuthorityExtensionDetailArrayOutputWithContext(context.Context) GetLetterOfAuthorityExtensionDetailArrayOutput
+}
+
+type GetLetterOfAuthorityExtensionDetailArray []GetLetterOfAuthorityExtensionDetailInput
+
+func (GetLetterOfAuthorityExtensionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLetterOfAuthorityExtensionDetail)(nil)).Elem()
+}
+
+func (i GetLetterOfAuthorityExtensionDetailArray) ToGetLetterOfAuthorityExtensionDetailArrayOutput() GetLetterOfAuthorityExtensionDetailArrayOutput {
+	return i.ToGetLetterOfAuthorityExtensionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetLetterOfAuthorityExtensionDetailArray) ToGetLetterOfAuthorityExtensionDetailArrayOutputWithContext(ctx context.Context) GetLetterOfAuthorityExtensionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLetterOfAuthorityExtensionDetailArrayOutput)
+}
+
+type GetLetterOfAuthorityExtensionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetLetterOfAuthorityExtensionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLetterOfAuthorityExtensionDetail)(nil)).Elem()
+}
+
+func (o GetLetterOfAuthorityExtensionDetailOutput) ToGetLetterOfAuthorityExtensionDetailOutput() GetLetterOfAuthorityExtensionDetailOutput {
+	return o
+}
+
+func (o GetLetterOfAuthorityExtensionDetailOutput) ToGetLetterOfAuthorityExtensionDetailOutputWithContext(ctx context.Context) GetLetterOfAuthorityExtensionDetailOutput {
+	return o
+}
+
+// Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+func (o GetLetterOfAuthorityExtensionDetailOutput) Histories() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLetterOfAuthorityExtensionDetail) []string { return v.Histories }).(pulumi.StringArrayOutput)
+}
+
+// The number of self-service LOA expiry extensions still available.
+func (o GetLetterOfAuthorityExtensionDetailOutput) RemainingExtensions() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLetterOfAuthorityExtensionDetail) string { return v.RemainingExtensions }).(pulumi.StringOutput)
+}
+
+type GetLetterOfAuthorityExtensionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLetterOfAuthorityExtensionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLetterOfAuthorityExtensionDetail)(nil)).Elem()
+}
+
+func (o GetLetterOfAuthorityExtensionDetailArrayOutput) ToGetLetterOfAuthorityExtensionDetailArrayOutput() GetLetterOfAuthorityExtensionDetailArrayOutput {
+	return o
+}
+
+func (o GetLetterOfAuthorityExtensionDetailArrayOutput) ToGetLetterOfAuthorityExtensionDetailArrayOutputWithContext(ctx context.Context) GetLetterOfAuthorityExtensionDetailArrayOutput {
+	return o
+}
+
+func (o GetLetterOfAuthorityExtensionDetailArrayOutput) Index(i pulumi.IntInput) GetLetterOfAuthorityExtensionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLetterOfAuthorityExtensionDetail {
+		return vs[0].([]GetLetterOfAuthorityExtensionDetail)[vs[1].(int)]
+	}).(GetLetterOfAuthorityExtensionDetailOutput)
+}
+
 type GetListingResourceVersionsAppCatalogListingResourceVersion struct {
 	AccessiblePorts        []int    `pulumi:"accessiblePorts"`
 	AllowedActions         []string `pulumi:"allowedActions"`
@@ -37944,6 +38418,8 @@ type GetVirtualCircuitsVirtualCircuit struct {
 	State string `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+	TrafficMode string `pulumi:"trafficMode"`
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             string `pulumi:"type"`
 	VirtualCircuitId string `pulumi:"virtualCircuitId"`
@@ -38023,6 +38499,8 @@ type GetVirtualCircuitsVirtualCircuitArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringInput `pulumi:"trafficMode"`
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             pulumi.StringInput `pulumi:"type"`
 	VirtualCircuitId pulumi.StringInput `pulumi:"virtualCircuitId"`
@@ -38227,6 +38705,11 @@ func (o GetVirtualCircuitsVirtualCircuitOutput) State() pulumi.StringOutput {
 // The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetVirtualCircuitsVirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+func (o GetVirtualCircuitsVirtualCircuitOutput) TrafficMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualCircuitsVirtualCircuit) string { return v.TrafficMode }).(pulumi.StringOutput)
 }
 
 // Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
@@ -44875,6 +45358,12 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailArgs{})
@@ -45203,6 +45692,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sFilterArrayInput)(nil)).Elem(), GetIpv6sFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sIpv6Input)(nil)).Elem(), GetIpv6sIpv6Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6sIpv6ArrayInput)(nil)).Elem(), GetIpv6sIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLetterOfAuthorityExtensionDetailInput)(nil)).Elem(), GetLetterOfAuthorityExtensionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLetterOfAuthorityExtensionDetailArrayInput)(nil)).Elem(), GetLetterOfAuthorityExtensionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersionInput)(nil)).Elem(), GetListingResourceVersionsAppCatalogListingResourceVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsAppCatalogListingResourceVersionArrayInput)(nil)).Elem(), GetListingResourceVersionsAppCatalogListingResourceVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingResourceVersionsFilterInput)(nil)).Elem(), GetListingResourceVersionsFilterArgs{})
@@ -45505,6 +45996,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailOutput{})
@@ -45833,6 +46330,8 @@ func init() {
 	pulumi.RegisterOutputType(GetIpv6sFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetIpv6sIpv6Output{})
 	pulumi.RegisterOutputType(GetIpv6sIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetLetterOfAuthorityExtensionDetailOutput{})
+	pulumi.RegisterOutputType(GetLetterOfAuthorityExtensionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetListingResourceVersionsAppCatalogListingResourceVersionOutput{})
 	pulumi.RegisterOutputType(GetListingResourceVersionsAppCatalogListingResourceVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetListingResourceVersionsFilterOutput{})

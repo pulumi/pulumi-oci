@@ -65,7 +65,10 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				InterfaceName: pulumi.Any(crossConnectInterfaceName),
+//				InterfaceDownTimerValueInMilliseconds: pulumi.Any(crossConnectInterfaceDownTimerValueInMilliseconds),
+//				InterfaceName:                         pulumi.Any(crossConnectInterfaceName),
+//				IsInterfaceHoldTimerEnabled:           pulumi.Any(crossConnectIsInterfaceHoldTimerEnabled),
+//				IsQosEnabled:                          pulumi.Any(crossConnectIsQosEnabled),
 //				MacsecProperties: &core.CrossConnectMacsecPropertiesArgs{
 //					State:                       pulumi.Any(crossConnectMacsecPropertiesState),
 //					EncryptionCipher:            pulumi.Any(crossConnectMacsecPropertiesEncryptionCipher),
@@ -77,6 +80,9 @@ import (
 //				},
 //				NearCrossConnectOrCrossConnectGroupId: pulumi.Any(testCrossConnectGroup.Id),
 //				OciPhysicalDeviceName:                 pulumi.Any(crossConnectOciPhysicalDeviceName),
+//				LoaProperties: &core.CrossConnectLoaPropertiesArgs{
+//					AuthorizedAgent: pulumi.Any(crossConnectLoaPropertiesAuthorizedAgent),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -111,10 +117,18 @@ type CrossConnect struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringOutput `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntOutput `pulumi:"interfaceDownTimerValueInMilliseconds"`
 	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	InterfaceName pulumi.StringOutput `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrOutput `pulumi:"isActive"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolOutput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolOutput `pulumi:"isQosEnabled"`
+	// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+	LoaProperties CrossConnectLoaPropertiesOutput `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName pulumi.StringOutput `pulumi:"locationName"`
 	// (Updatable) Properties used to configure MACsec (if capable).
@@ -191,10 +205,18 @@ type crossConnectState struct {
 	FarCrossConnectOrCrossConnectGroupId *string `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds *int `pulumi:"interfaceDownTimerValueInMilliseconds"`
 	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	InterfaceName *string `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive *bool `pulumi:"isActive"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled *bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled *bool `pulumi:"isQosEnabled"`
+	// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+	LoaProperties *CrossConnectLoaProperties `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName *string `pulumi:"locationName"`
 	// (Updatable) Properties used to configure MACsec (if capable).
@@ -233,10 +255,18 @@ type CrossConnectState struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntPtrInput
 	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	InterfaceName pulumi.StringPtrInput
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrInput
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolPtrInput
+	// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolPtrInput
+	// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+	LoaProperties CrossConnectLoaPropertiesPtrInput
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName pulumi.StringPtrInput
 	// (Updatable) Properties used to configure MACsec (if capable).
@@ -279,10 +309,18 @@ type crossConnectArgs struct {
 	FarCrossConnectOrCrossConnectGroupId *string `pulumi:"farCrossConnectOrCrossConnectGroupId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds *int `pulumi:"interfaceDownTimerValueInMilliseconds"`
 	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	InterfaceName *string `pulumi:"interfaceName"`
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive *bool `pulumi:"isActive"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled *bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled *bool `pulumi:"isQosEnabled"`
+	// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+	LoaProperties *CrossConnectLoaProperties `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName string `pulumi:"locationName"`
 	// (Updatable) Properties used to configure MACsec (if capable).
@@ -314,10 +352,18 @@ type CrossConnectArgs struct {
 	FarCrossConnectOrCrossConnectGroupId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntPtrInput
 	// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 	InterfaceName pulumi.StringPtrInput
 	// (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 	IsActive pulumi.BoolPtrInput
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolPtrInput
+	// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolPtrInput
+	// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+	LoaProperties CrossConnectLoaPropertiesPtrInput
 	// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
 	LocationName pulumi.StringInput
 	// (Updatable) Properties used to configure MACsec (if capable).
@@ -455,6 +501,11 @@ func (o CrossConnectOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o CrossConnectOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.IntOutput { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
 // The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
 func (o CrossConnectOutput) InterfaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.StringOutput { return v.InterfaceName }).(pulumi.StringOutput)
@@ -463,6 +514,21 @@ func (o CrossConnectOutput) InterfaceName() pulumi.StringOutput {
 // (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
 func (o CrossConnectOutput) IsActive() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *CrossConnect) pulumi.BoolPtrOutput { return v.IsActive }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The flag to enable or disable the down timer for the interface.
+func (o CrossConnectOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.BoolOutput { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+func (o CrossConnectOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CrossConnect) pulumi.BoolOutput { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+func (o CrossConnectOutput) LoaProperties() CrossConnectLoaPropertiesOutput {
+	return o.ApplyT(func(v *CrossConnect) CrossConnectLoaPropertiesOutput { return v.LoaProperties }).(CrossConnectLoaPropertiesOutput)
 }
 
 // The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`

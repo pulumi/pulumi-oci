@@ -18,14 +18,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
     public static final AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs Empty = new AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs();
 
     /**
-     * (Updatable) Description of private source scan host zone.
+     * (Updatable) Description of private source SCAN host zone.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description of private source scan host zone.
+     * @return (Updatable) Description of private source SCAN host zone.
      * 
      */
     public Optional<Output<String>> description() {
@@ -33,14 +33,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
     }
 
     /**
-     * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
     @Import(name="scanHostname", required=true)
     private Output<String> scanHostname;
 
     /**
-     * @return (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * @return (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
     public Output<String> scanHostname() {
@@ -48,14 +48,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
     }
 
     /**
-     * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+     * (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
      * 
      */
     @Import(name="scanPort", required=true)
     private Output<Integer> scanPort;
 
     /**
-     * @return (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+     * @return (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
      * 
      */
     public Output<Integer> scanPort() {
@@ -89,7 +89,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param description (Updatable) Description of private source scan host zone.
+         * @param description (Updatable) Description of private source SCAN host zone.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param description (Updatable) Description of private source scan host zone.
+         * @param description (Updatable) Description of private source SCAN host zone.
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param scanHostname (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * @param scanHostname (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param scanHostname (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * @param scanHostname (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param scanPort (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * @param scanPort (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArg
         }
 
         /**
-         * @param scanPort (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * @param scanPort (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          * 
          * @return builder
          * 

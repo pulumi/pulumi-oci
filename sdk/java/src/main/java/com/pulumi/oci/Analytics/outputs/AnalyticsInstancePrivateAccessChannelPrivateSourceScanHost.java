@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
     /**
-     * @return (Updatable) Description of private source scan host zone.
+     * @return (Updatable) Description of private source SCAN host zone.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * @return (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
     private String scanHostname;
     /**
-     * @return (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+     * @return (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
      * 
      */
     private Integer scanPort;
 
     private AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost() {}
     /**
-     * @return (Updatable) Description of private source scan host zone.
+     * @return (Updatable) Description of private source SCAN host zone.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+     * @return (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
      * 
      */
     public String scanHostname() {
         return this.scanHostname;
     }
     /**
-     * @return (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+     * @return (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
      * 
      */
     public Integer scanPort() {

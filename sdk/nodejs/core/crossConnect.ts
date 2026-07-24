@@ -52,7 +52,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     interfaceDownTimerValueInMilliseconds: Number(crossConnectInterfaceDownTimerValueInMilliseconds),
  *     interfaceName: crossConnectInterfaceName,
+ *     isInterfaceHoldTimerEnabled: crossConnectIsInterfaceHoldTimerEnabled === "true",
+ *     isQosEnabled: crossConnectIsQosEnabled === "true",
  *     macsecProperties: {
  *         state: crossConnectMacsecPropertiesState,
  *         encryptionCipher: crossConnectMacsecPropertiesEncryptionCipher,
@@ -64,6 +67,9 @@ import * as utilities from "../utilities";
  *     },
  *     nearCrossConnectOrCrossConnectGroupId: testCrossConnectGroup.id,
  *     ociPhysicalDeviceName: crossConnectOciPhysicalDeviceName,
+ *     loaProperties: {
+ *         authorizedAgent: crossConnectLoaPropertiesAuthorizedAgent,
+ *     },
  * });
  * ```
  *
@@ -132,6 +138,10 @@ export class CrossConnect extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    declare public readonly interfaceDownTimerValueInMilliseconds: pulumi.Output<number>;
+    /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
     declare public readonly interfaceName: pulumi.Output<string>;
@@ -139,6 +149,18 @@ export class CrossConnect extends pulumi.CustomResource {
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     declare public readonly isActive: pulumi.Output<boolean | undefined>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    declare public readonly isInterfaceHoldTimerEnabled: pulumi.Output<boolean>;
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    declare public readonly isQosEnabled: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     */
+    declare public readonly loaProperties: pulumi.Output<outputs.Core.CrossConnectLoaProperties>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
@@ -199,8 +221,12 @@ export class CrossConnect extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["farCrossConnectOrCrossConnectGroupId"] = state?.farCrossConnectOrCrossConnectGroupId;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["interfaceDownTimerValueInMilliseconds"] = state?.interfaceDownTimerValueInMilliseconds;
             resourceInputs["interfaceName"] = state?.interfaceName;
             resourceInputs["isActive"] = state?.isActive;
+            resourceInputs["isInterfaceHoldTimerEnabled"] = state?.isInterfaceHoldTimerEnabled;
+            resourceInputs["isQosEnabled"] = state?.isQosEnabled;
+            resourceInputs["loaProperties"] = state?.loaProperties;
             resourceInputs["locationName"] = state?.locationName;
             resourceInputs["macsecProperties"] = state?.macsecProperties;
             resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = state?.nearCrossConnectOrCrossConnectGroupId;
@@ -228,8 +254,12 @@ export class CrossConnect extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["farCrossConnectOrCrossConnectGroupId"] = args?.farCrossConnectOrCrossConnectGroupId;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["interfaceDownTimerValueInMilliseconds"] = args?.interfaceDownTimerValueInMilliseconds;
             resourceInputs["interfaceName"] = args?.interfaceName;
             resourceInputs["isActive"] = args?.isActive;
+            resourceInputs["isInterfaceHoldTimerEnabled"] = args?.isInterfaceHoldTimerEnabled;
+            resourceInputs["isQosEnabled"] = args?.isQosEnabled;
+            resourceInputs["loaProperties"] = args?.loaProperties;
             resourceInputs["locationName"] = args?.locationName;
             resourceInputs["macsecProperties"] = args?.macsecProperties;
             resourceInputs["nearCrossConnectOrCrossConnectGroupId"] = args?.nearCrossConnectOrCrossConnectGroupId;
@@ -278,6 +308,10 @@ export interface CrossConnectState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    interfaceDownTimerValueInMilliseconds?: pulumi.Input<number | undefined>;
+    /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
     interfaceName?: pulumi.Input<string | undefined>;
@@ -285,6 +319,18 @@ export interface CrossConnectState {
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     isActive?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    isInterfaceHoldTimerEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    isQosEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     */
+    loaProperties?: pulumi.Input<inputs.Core.CrossConnectLoaProperties | undefined>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */
@@ -359,6 +405,10 @@ export interface CrossConnectArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    interfaceDownTimerValueInMilliseconds?: pulumi.Input<number | undefined>;
+    /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      */
     interfaceName?: pulumi.Input<string | undefined>;
@@ -366,6 +416,18 @@ export interface CrossConnectArgs {
      * (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
      */
     isActive?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    isInterfaceHoldTimerEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    isQosEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     */
+    loaProperties?: pulumi.Input<inputs.Core.CrossConnectLoaProperties | undefined>;
     /**
      * The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
      */

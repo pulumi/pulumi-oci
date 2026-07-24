@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Analytics.Inputs
         public Input<string> CapacityType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        /// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         /// </summary>
         [Input("capacityValue", required: true)]
         public Input<int> CapacityValue { get; set; } = null!;

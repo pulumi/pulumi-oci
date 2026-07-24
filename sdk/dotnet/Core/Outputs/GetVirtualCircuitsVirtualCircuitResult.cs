@@ -126,6 +126,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        /// </summary>
+        public readonly string TrafficMode;
+        /// <summary>
         /// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
         public readonly string Type;
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string timeCreated,
 
+            string trafficMode,
+
             string type,
 
             string virtualCircuitId,
@@ -227,6 +233,7 @@ namespace Pulumi.Oci.Core.Outputs
             ServiceType = serviceType;
             State = state;
             TimeCreated = timeCreated;
+            TrafficMode = trafficMode;
             Type = type;
             VirtualCircuitId = virtualCircuitId;
             VirtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;

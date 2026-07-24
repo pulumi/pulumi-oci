@@ -15,6 +15,7 @@ from .agent_provisioned_capacity import *
 from .agent_tool import *
 from .dedicated_ai_cluster import *
 from .endpoint import *
+from .generative_ai_private_endpoint import *
 from .get_agent_agent import *
 from .get_agent_agent_endpoint import *
 from .get_agent_agent_endpoints import *
@@ -36,6 +37,12 @@ from .get_endpoint import *
 from .get_endpoints import *
 from .get_generative_ai_private_endpoint import *
 from .get_generative_ai_private_endpoints import *
+from .get_hosted_application import *
+from .get_hosted_application_storage import *
+from .get_hosted_application_storages import *
+from .get_hosted_applications import *
+from .get_hosted_deployment import *
+from .get_hosted_deployments import *
 from .get_imported_model import *
 from .get_imported_models import *
 from .get_model import *
@@ -44,6 +51,9 @@ from .get_project import *
 from .get_projects import *
 from .get_semantic_store import *
 from .get_semantic_stores import *
+from .hosted_application import *
+from .hosted_application_storage import *
+from .hosted_deployment import *
 from .imported_model import *
 from .model import *
 from .project import *

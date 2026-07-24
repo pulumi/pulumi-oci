@@ -1114,14 +1114,17 @@ func (o GetContainerImagesFilterArrayOutput) Index(i pulumi.IntInput) GetContain
 
 type GetContainerRepositoriesContainerRepositoryCollection struct {
 	// Total number of images.
-	ImageCount int                                                         `pulumi:"imageCount"`
-	Items      []GetContainerRepositoriesContainerRepositoryCollectionItem `pulumi:"items"`
+	ImageCount int `pulumi:"imageCount"`
+	// List of container repositories.
+	Items []GetContainerRepositoriesContainerRepositoryCollectionItem `pulumi:"items"`
 	// Total number of layers.
 	LayerCount int `pulumi:"layerCount"`
-	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes   string `pulumi:"layersSizeInBytes"`
-	RemainingItemsCount int    `pulumi:"remainingItemsCount"`
-	RepositoryCount     int    `pulumi:"repositoryCount"`
+	// Total size of layers.
+	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	// The number of remaining items.
+	RemainingItemsCount int `pulumi:"remainingItemsCount"`
+	// Total number of repositories.
+	RepositoryCount int `pulumi:"repositoryCount"`
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionArgs and GetContainerRepositoriesContainerRepositoryCollectionOutput values.
@@ -1137,14 +1140,17 @@ type GetContainerRepositoriesContainerRepositoryCollectionInput interface {
 
 type GetContainerRepositoriesContainerRepositoryCollectionArgs struct {
 	// Total number of images.
-	ImageCount pulumi.IntInput                                                     `pulumi:"imageCount"`
-	Items      GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput `pulumi:"items"`
+	ImageCount pulumi.IntInput `pulumi:"imageCount"`
+	// List of container repositories.
+	Items GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput `pulumi:"items"`
 	// Total number of layers.
 	LayerCount pulumi.IntInput `pulumi:"layerCount"`
-	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes   pulumi.StringInput `pulumi:"layersSizeInBytes"`
-	RemainingItemsCount pulumi.IntInput    `pulumi:"remainingItemsCount"`
-	RepositoryCount     pulumi.IntInput    `pulumi:"repositoryCount"`
+	// Total size of layers.
+	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
+	// The number of remaining items.
+	RemainingItemsCount pulumi.IntInput `pulumi:"remainingItemsCount"`
+	// Total number of repositories.
+	RepositoryCount pulumi.IntInput `pulumi:"repositoryCount"`
 }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionArgs) ElementType() reflect.Type {
@@ -1203,6 +1209,7 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) ImageCount(
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.ImageCount }).(pulumi.IntOutput)
 }
 
+// List of container repositories.
 func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) Items() GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) []GetContainerRepositoriesContainerRepositoryCollectionItem {
 		return v.Items
@@ -1214,15 +1221,17 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayerCount(
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.LayerCount }).(pulumi.IntOutput)
 }
 
-// Total storage in bytes consumed by layers.
+// Total size of layers.
 func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The number of remaining items.
 func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RemainingItemsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.RemainingItemsCount }).(pulumi.IntOutput)
 }
 
+// Total number of repositories.
 func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RepositoryCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.RepositoryCount }).(pulumi.IntOutput)
 }
@@ -1270,7 +1279,7 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	IsPublic bool `pulumi:"isPublic"`
 	// Total number of layers.
 	LayerCount int `pulumi:"layerCount"`
-	// Total storage in bytes consumed by layers.
+	// Total size of layers.
 	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
 	// The tenancy namespace used in the container repository path.
 	Namespace string `pulumi:"namespace"`
@@ -1320,7 +1329,7 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
 	// Total number of layers.
 	LayerCount pulumi.IntInput `pulumi:"layerCount"`
-	// Total storage in bytes consumed by layers.
+	// Total size of layers.
 	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -1446,7 +1455,7 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayerCo
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) int { return v.LayerCount }).(pulumi.IntOutput)
 }
 
-// Total storage in bytes consumed by layers.
+// Total size of layers.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }

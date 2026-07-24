@@ -15,14 +15,14 @@ public final class GetAnalyticsInstanceArgs extends com.pulumi.resources.InvokeA
     public static final GetAnalyticsInstanceArgs Empty = new GetAnalyticsInstanceArgs();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId", required=true)
     private Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Output<String> analyticsInstanceId() {
@@ -54,7 +54,7 @@ public final class GetAnalyticsInstanceArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetAnalyticsInstanceArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 

@@ -32,6 +32,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///         CompartmentId = compartmentId,
         ///         DisplayName = generativeAiPrivateEndpointDisplayName,
         ///         Id = generativeAiPrivateEndpointId,
+        ///         ResourceType = generativeAiPrivateEndpointResourceType,
         ///         State = generativeAiPrivateEndpointState,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///         CompartmentId = compartmentId,
         ///         DisplayName = generativeAiPrivateEndpointDisplayName,
         ///         Id = generativeAiPrivateEndpointId,
+        ///         ResourceType = generativeAiPrivateEndpointResourceType,
         ///         State = generativeAiPrivateEndpointState,
         ///     });
         /// 
@@ -92,6 +94,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///         CompartmentId = compartmentId,
         ///         DisplayName = generativeAiPrivateEndpointDisplayName,
         ///         Id = generativeAiPrivateEndpointId,
+        ///         ResourceType = generativeAiPrivateEndpointResourceType,
         ///         State = generativeAiPrivateEndpointState,
         ///     });
         /// 
@@ -130,6 +133,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// Query by the resource type of Generative AI private endpoints.
+        /// </summary>
+        [Input("resourceType")]
+        public string? ResourceType { get; set; }
 
         /// <summary>
         /// The lifecycle state of Generative AI private endpoints.
@@ -172,6 +181,12 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// Query by the resource type of Generative AI private endpoints.
+        /// </summary>
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
+
+        /// <summary>
         /// The lifecycle state of Generative AI private endpoints.
         /// </summary>
         [Input("state")]
@@ -205,6 +220,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// The resource type that Generative AI private endpoint can be used for.
+        /// </summary>
+        public readonly string? ResourceType;
+        /// <summary>
         /// The current state of the Generative AI Private Endpoint.
         /// </summary>
         public readonly string? State;
@@ -221,6 +240,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             string? id,
 
+            string? resourceType,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -228,6 +249,7 @@ namespace Pulumi.Oci.GenerativeAi
             Filters = filters;
             GenerativeAiPrivateEndpointCollections = generativeAiPrivateEndpointCollections;
             Id = id;
+            ResourceType = resourceType;
             State = state;
         }
     }

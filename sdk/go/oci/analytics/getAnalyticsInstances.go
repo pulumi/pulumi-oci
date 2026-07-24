@@ -77,14 +77,14 @@ type GetAnalyticsInstancesResult struct {
 	CapacityType *string `pulumi:"capacityType"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Analytics feature set.
+	// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 	FeatureSet *string                       `pulumi:"featureSet"`
 	Filters    []GetAnalyticsInstancesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+	// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
 	Name *string `pulumi:"name"`
-	// The current state of an instance.
+	// The current state of the Analytics instance.
 	State *string `pulumi:"state"`
 }
 
@@ -148,7 +148,7 @@ func (o GetAnalyticsInstancesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Analytics feature set.
+// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
 func (o GetAnalyticsInstancesResultOutput) FeatureSet() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) *string { return v.FeatureSet }).(pulumi.StringPtrOutput)
 }
@@ -162,12 +162,12 @@ func (o GetAnalyticsInstancesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
 func (o GetAnalyticsInstancesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The current state of an instance.
+// The current state of the Analytics instance.
 func (o GetAnalyticsInstancesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

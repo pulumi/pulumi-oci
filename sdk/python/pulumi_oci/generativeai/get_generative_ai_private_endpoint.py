@@ -26,7 +26,7 @@ class GetGenerativeAiPrivateEndpointResult:
     """
     A collection of values returned by getGenerativeAiPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_prefix=None, fqdn=None, freeform_tags=None, generative_ai_private_endpoint_id=None, id=None, lifecycle_details=None, nsg_ids=None, previous_state=None, private_endpoint_ip=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_prefix=None, fqdn=None, freeform_tags=None, generative_ai_private_endpoint_id=None, id=None, lifecycle_details=None, nsg_ids=None, previous_state=None, private_endpoint_ip=None, resource_type=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -66,6 +66,9 @@ class GetGenerativeAiPrivateEndpointResult:
         if private_endpoint_ip and not isinstance(private_endpoint_ip, str):
             raise TypeError("Expected argument 'private_endpoint_ip' to be a str")
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -172,6 +175,14 @@ class GetGenerativeAiPrivateEndpointResult:
         return pulumi.get(self, "private_endpoint_ip")
 
     @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        The resource type that Generative AI private endpoint can be used for.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -231,6 +242,7 @@ class AwaitableGetGenerativeAiPrivateEndpointResult(GetGenerativeAiPrivateEndpoi
             nsg_ids=self.nsg_ids,
             previous_state=self.previous_state,
             private_endpoint_ip=self.private_endpoint_ip,
+            resource_type=self.resource_type,
             state=self.state,
             subnet_id=self.subnet_id,
             system_tags=self.system_tags,
@@ -276,6 +288,7 @@ def get_generative_ai_private_endpoint(generative_ai_private_endpoint_id: Option
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         previous_state=pulumi.get(__ret__, 'previous_state'),
         private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -318,6 +331,7 @@ def get_generative_ai_private_endpoint_output(generative_ai_private_endpoint_id:
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         previous_state=pulumi.get(__response__, 'previous_state'),
         private_endpoint_ip=pulumi.get(__response__, 'private_endpoint_ip'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         system_tags=pulumi.get(__response__, 'system_tags'),

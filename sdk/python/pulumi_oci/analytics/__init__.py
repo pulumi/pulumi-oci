@@ -8,9 +8,12 @@ import typing
 # Export this package's modules as members:
 from .analytics_instance import *
 from .analytics_instance_private_access_channel import *
+from .analytics_instance_resource_group import *
 from .analytics_instance_vanity_url import *
 from .get_analytics_instance import *
 from .get_analytics_instance_private_access_channel import *
+from .get_analytics_instance_resource_group import *
+from .get_analytics_instance_resource_groups import *
 from .get_analytics_instances import *
 from ._inputs import *
 from . import outputs

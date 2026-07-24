@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetGenerativeAiPrivateEndpoint(ctx *pulumi.Context, args *GetGenerativeAiPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*GetGenerativeAiPrivateEndpointResult, error) {
+func LookupGenerativeAiPrivateEndpoint(ctx *pulumi.Context, args *LookupGenerativeAiPrivateEndpointArgs, opts ...pulumi.InvokeOption) (*LookupGenerativeAiPrivateEndpointResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetGenerativeAiPrivateEndpointResult
+	var rv LookupGenerativeAiPrivateEndpointResult
 	err := ctx.Invoke("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetGenerativeAiPrivateEndpoint(ctx *pulumi.Context, args *GetGenerativeAiPr
 }
 
 // A collection of arguments for invoking getGenerativeAiPrivateEndpoint.
-type GetGenerativeAiPrivateEndpointArgs struct {
+type LookupGenerativeAiPrivateEndpointArgs struct {
 	// The unique id for a Generative AI private endpoint.
 	GenerativeAiPrivateEndpointId string `pulumi:"generativeAiPrivateEndpointId"`
 }
 
 // A collection of values returned by getGenerativeAiPrivateEndpoint.
-type GetGenerativeAiPrivateEndpointResult struct {
+type LookupGenerativeAiPrivateEndpointResult struct {
 	// The OCID of the compartment that contains the private endpoint.
 	CompartmentId string            `pulumi:"compartmentId"`
 	DefinedTags   map[string]string `pulumi:"definedTags"`
@@ -79,6 +79,8 @@ type GetGenerativeAiPrivateEndpointResult struct {
 	PreviousState string   `pulumi:"previousState"`
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// The resource type that Generative AI private endpoint can be used for.
+	ResourceType string `pulumi:"resourceType"`
 	// The current state of the Generative AI Private Endpoint.
 	State string `pulumi:"state"`
 	// The OCID of the subnet that the private endpoint belongs to.
@@ -91,125 +93,130 @@ type GetGenerativeAiPrivateEndpointResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
-func GetGenerativeAiPrivateEndpointOutput(ctx *pulumi.Context, args GetGenerativeAiPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) GetGenerativeAiPrivateEndpointResultOutput {
+func LookupGenerativeAiPrivateEndpointOutput(ctx *pulumi.Context, args LookupGenerativeAiPrivateEndpointOutputArgs, opts ...pulumi.InvokeOption) LookupGenerativeAiPrivateEndpointResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetGenerativeAiPrivateEndpointResultOutput, error) {
-			args := v.(GetGenerativeAiPrivateEndpointArgs)
+		ApplyT(func(v interface{}) (LookupGenerativeAiPrivateEndpointResultOutput, error) {
+			args := v.(LookupGenerativeAiPrivateEndpointArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", args, GetGenerativeAiPrivateEndpointResultOutput{}, options).(GetGenerativeAiPrivateEndpointResultOutput), nil
-		}).(GetGenerativeAiPrivateEndpointResultOutput)
+			return ctx.InvokeOutput("oci:GenerativeAi/getGenerativeAiPrivateEndpoint:getGenerativeAiPrivateEndpoint", args, LookupGenerativeAiPrivateEndpointResultOutput{}, options).(LookupGenerativeAiPrivateEndpointResultOutput), nil
+		}).(LookupGenerativeAiPrivateEndpointResultOutput)
 }
 
 // A collection of arguments for invoking getGenerativeAiPrivateEndpoint.
-type GetGenerativeAiPrivateEndpointOutputArgs struct {
+type LookupGenerativeAiPrivateEndpointOutputArgs struct {
 	// The unique id for a Generative AI private endpoint.
 	GenerativeAiPrivateEndpointId pulumi.StringInput `pulumi:"generativeAiPrivateEndpointId"`
 }
 
-func (GetGenerativeAiPrivateEndpointOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointArgs)(nil)).Elem()
+func (LookupGenerativeAiPrivateEndpointOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupGenerativeAiPrivateEndpointArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getGenerativeAiPrivateEndpoint.
-type GetGenerativeAiPrivateEndpointResultOutput struct{ *pulumi.OutputState }
+type LookupGenerativeAiPrivateEndpointResultOutput struct{ *pulumi.OutputState }
 
-func (GetGenerativeAiPrivateEndpointResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetGenerativeAiPrivateEndpointResult)(nil)).Elem()
+func (LookupGenerativeAiPrivateEndpointResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupGenerativeAiPrivateEndpointResult)(nil)).Elem()
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) ToGetGenerativeAiPrivateEndpointResultOutput() GetGenerativeAiPrivateEndpointResultOutput {
+func (o LookupGenerativeAiPrivateEndpointResultOutput) ToLookupGenerativeAiPrivateEndpointResultOutput() LookupGenerativeAiPrivateEndpointResultOutput {
 	return o
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) ToGetGenerativeAiPrivateEndpointResultOutputWithContext(ctx context.Context) GetGenerativeAiPrivateEndpointResultOutput {
+func (o LookupGenerativeAiPrivateEndpointResultOutput) ToLookupGenerativeAiPrivateEndpointResultOutputWithContext(ctx context.Context) LookupGenerativeAiPrivateEndpointResultOutput {
 	return o
 }
 
 // The OCID of the compartment that contains the private endpoint.
-func (o GetGenerativeAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of this private endpoint.
-func (o GetGenerativeAiPrivateEndpointResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
 // A user friendly name. It doesn't have to be unique. Avoid entering confidential information.
-func (o GetGenerativeAiPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) DnsPrefix() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.DnsPrefix }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) DnsPrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.DnsPrefix }).(pulumi.StringOutput)
 }
 
 // Fully qualified domain name the customer will use for access (for eg: xyz.oraclecloud.com)
-func (o GetGenerativeAiPrivateEndpointResultOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.Fqdn }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetGenerativeAiPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) GenerativeAiPrivateEndpointId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.GenerativeAiPrivateEndpointId }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) GenerativeAiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.GenerativeAiPrivateEndpointId }).(pulumi.StringOutput)
 }
 
 // The OCID of a private endpoint.
-func (o GetGenerativeAiPrivateEndpointResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
 // A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
-func (o GetGenerativeAiPrivateEndpointResultOutput) NsgIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-func (o GetGenerativeAiPrivateEndpointResultOutput) PreviousState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.PreviousState }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) PreviousState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.PreviousState }).(pulumi.StringOutput)
 }
 
 // The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
-func (o GetGenerativeAiPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) PrivateEndpointIp() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.PrivateEndpointIp }).(pulumi.StringOutput)
+}
+
+// The resource type that Generative AI private endpoint can be used for.
+func (o LookupGenerativeAiPrivateEndpointResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The current state of the Generative AI Private Endpoint.
-func (o GetGenerativeAiPrivateEndpointResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.State }).(pulumi.StringOutput)
 }
 
 // The OCID of the subnet that the private endpoint belongs to.
-func (o GetGenerativeAiPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetGenerativeAiPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the Generative AI private endpoint was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetGenerativeAiPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
-func (o GetGenerativeAiPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupGenerativeAiPrivateEndpointResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupGenerativeAiPrivateEndpointResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointResultOutput{})
+	pulumi.RegisterOutputType(LookupGenerativeAiPrivateEndpointResultOutput{})
 }

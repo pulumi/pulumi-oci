@@ -85,133 +85,133 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel")
 public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Export(name="analyticsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Output<String> analyticsInstanceId() {
         return this.analyticsInstanceId;
     }
     /**
-     * (Updatable) Display Name of the Private Access Channel.
+     * (Updatable) Display name of the private access channel.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display Name of the Private Access Channel.
+     * @return (Updatable) Display name of the private access channel.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     @Export(name="egressSourceIpAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> egressSourceIpAddresses;
 
     /**
-     * @return The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+     * @return List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
      * 
      */
     public Output<List<String>> egressSourceIpAddresses() {
         return this.egressSourceIpAddresses;
     }
     /**
-     * IP Address of the Private Access channel.
+     * IP address of the private access channel.
      * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
-     * @return IP Address of the Private Access channel.
+     * @return IP address of the private access channel.
      * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
-     * Private Access Channel unique identifier key.
+     * Private access channel unique identifier key.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return Private Access Channel unique identifier key.
+     * @return Private access channel unique identifier key.
      * 
      */
     public Output<String> key() {
         return this.key;
     }
     /**
-     * (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * (Updatable) Network Security Group OCIDs for the Analytics instance.
      * 
      */
     @Export(name="networkSecurityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> networkSecurityGroupIds;
 
     /**
-     * @return (Updatable) Network Security Group OCIDs for an Analytics instance.
+     * @return (Updatable) Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public Output<List<String>> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
     }
     /**
-     * (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     @Export(name="privateSourceDnsZones", refs={List.class,AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone.class}, tree="[0,1]")
     private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>> privateSourceDnsZones;
 
     /**
-     * @return (Updatable) List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+     * @return (Updatable) List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
      * 
      */
     public Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone>> privateSourceDnsZones() {
         return this.privateSourceDnsZones;
     }
     /**
-     * (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     @Export(name="privateSourceScanHosts", refs={List.class,AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost.class}, tree="[0,1]")
     private Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts;
 
     /**
-     * @return (Updatable) List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+     * @return (Updatable) List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
      * 
      */
     public Output<List<AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost>> privateSourceScanHosts() {
         return this.privateSourceScanHosts;
     }
     /**
-     * (Updatable) OCID of the customer subnet connected to private access channel.
+     * (Updatable) OCID of the customer subnet connected to the private access channel.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) OCID of the customer subnet connected to private access channel.
+     * @return (Updatable) OCID of the customer subnet connected to the private access channel.
      * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
-     * (Updatable) OCID of the customer VCN peered with private access channel.
+     * (Updatable) OCID of the customer VCN peered with the private access channel.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -221,7 +221,7 @@ public class AnalyticsInstancePrivateAccessChannel extends com.pulumi.resources.
     private Output<String> vcnId;
 
     /**
-     * @return (Updatable) OCID of the customer VCN peered with private access channel.
+     * @return (Updatable) OCID of the customer VCN peered with the private access channel.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -74,6 +74,7 @@ import * as utilities from "../utilities";
  *     }],
  *     region: virtualCircuitRegion,
  *     routingPolicies: virtualCircuitRoutingPolicy,
+ *     trafficMode: virtualCircuitTrafficMode,
  * });
  * ```
  *
@@ -226,6 +227,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    declare public readonly trafficMode: pulumi.Output<string>;
+    /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
      * ** IMPORTANT **
@@ -277,6 +282,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["serviceType"] = state?.serviceType;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["trafficMode"] = state?.trafficMode;
             resourceInputs["type"] = state?.type;
             resourceInputs["virtualCircuitRedundancyMetadatas"] = state?.virtualCircuitRedundancyMetadatas;
         } else {
@@ -305,6 +311,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["publicPrefixes"] = args?.publicPrefixes;
             resourceInputs["region"] = args?.region;
             resourceInputs["routingPolicies"] = args?.routingPolicies;
+            resourceInputs["trafficMode"] = args?.trafficMode;
             resourceInputs["type"] = args?.type;
             resourceInputs["bgpIpv6sessionState"] = undefined /*out*/;
             resourceInputs["bgpManagement"] = undefined /*out*/;
@@ -439,6 +446,10 @@ export interface VirtualCircuitState {
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    trafficMode?: pulumi.Input<string | undefined>;
+    /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
      * ** IMPORTANT **
@@ -529,6 +540,10 @@ export interface VirtualCircuitArgs {
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
     routingPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    trafficMode?: pulumi.Input<string | undefined>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *

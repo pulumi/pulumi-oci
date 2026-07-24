@@ -30,8 +30,12 @@ class CrossConnectArgs:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
                  interface_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 loa_properties: pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']] = None,
                  macsec_properties: pulumi.Input[Optional['CrossConnectMacsecPropertiesArgs']] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None):
@@ -50,8 +54,12 @@ class CrossConnectArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
         :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        :param pulumi.Input['CrossConnectLoaPropertiesArgs'] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[_builtins.str] oci_physical_device_name: The name of the FastConnect device where this cross-connect is installed. Option will be provided only on request for select tenancies.
@@ -71,10 +79,18 @@ class CrossConnectArgs:
             pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_down_timer_value_in_milliseconds is not None:
+            pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
         if interface_name is not None:
             pulumi.set(__self__, "interface_name", interface_name)
         if is_active is not None:
             pulumi.set(__self__, "is_active", is_active)
+        if is_interface_hold_timer_enabled is not None:
+            pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled is not None:
+            pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
+        if loa_properties is not None:
+            pulumi.set(__self__, "loa_properties", loa_properties)
         if macsec_properties is not None:
             pulumi.set(__self__, "macsec_properties", macsec_properties)
         if near_cross_connect_or_cross_connect_group_id is not None:
@@ -194,6 +210,18 @@ class CrossConnectArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interface_down_timer_value_in_milliseconds", value)
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -216,6 +244,42 @@ class CrossConnectArgs:
     @is_active.setter
     def is_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_interface_hold_timer_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_qos_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']]:
+        """
+        (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        """
+        return pulumi.get(self, "loa_properties")
+
+    @loa_properties.setter
+    def loa_properties(self, value: pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']]):
+        pulumi.set(self, "loa_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="macsecProperties")
@@ -264,8 +328,12 @@ class _CrossConnectState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
                  interface_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 loa_properties: pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']] = None,
                  location_name: pulumi.Input[Optional[_builtins.str]] = None,
                  macsec_properties: pulumi.Input[Optional['CrossConnectMacsecPropertiesArgs']] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -285,8 +353,12 @@ class _CrossConnectState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
         :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        :param pulumi.Input['CrossConnectLoaPropertiesArgs'] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input['CrossConnectMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
@@ -314,10 +386,18 @@ class _CrossConnectState:
             pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_down_timer_value_in_milliseconds is not None:
+            pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
         if interface_name is not None:
             pulumi.set(__self__, "interface_name", interface_name)
         if is_active is not None:
             pulumi.set(__self__, "is_active", is_active)
+        if is_interface_hold_timer_enabled is not None:
+            pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled is not None:
+            pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
+        if loa_properties is not None:
+            pulumi.set(__self__, "loa_properties", loa_properties)
         if location_name is not None:
             pulumi.set(__self__, "location_name", location_name)
         if macsec_properties is not None:
@@ -422,6 +502,18 @@ class _CrossConnectState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interface_down_timer_value_in_milliseconds", value)
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -444,6 +536,42 @@ class _CrossConnectState:
     @is_active.setter
     def is_active(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_interface_hold_timer_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_qos_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']]:
+        """
+        (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        """
+        return pulumi.get(self, "loa_properties")
+
+    @loa_properties.setter
+    def loa_properties(self, value: pulumi.Input[Optional['CrossConnectLoaPropertiesArgs']]):
+        pulumi.set(self, "loa_properties", value)
 
     @_builtins.property
     @pulumi.getter(name="locationName")
@@ -570,8 +698,12 @@ class CrossConnect(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
                  interface_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
                  location_name: pulumi.Input[Optional[_builtins.str]] = None,
                  macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -624,7 +756,10 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_down_timer_value_in_milliseconds=int(cross_connect_interface_down_timer_value_in_milliseconds),
             interface_name=cross_connect_interface_name,
+            is_interface_hold_timer_enabled=cross_connect_is_interface_hold_timer_enabled == "true",
+            is_qos_enabled=cross_connect_is_qos_enabled == "true",
             macsec_properties={
                 "state": cross_connect_macsec_properties_state,
                 "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
@@ -635,7 +770,10 @@ class CrossConnect(pulumi.CustomResource):
                 },
             },
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
-            oci_physical_device_name=cross_connect_oci_physical_device_name)
+            oci_physical_device_name=cross_connect_oci_physical_device_name,
+            loa_properties={
+                "authorized_agent": cross_connect_loa_properties_authorized_agent,
+            })
         ```
 
         ## Import
@@ -656,8 +794,12 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
         :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
@@ -719,7 +861,10 @@ class CrossConnect(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_down_timer_value_in_milliseconds=int(cross_connect_interface_down_timer_value_in_milliseconds),
             interface_name=cross_connect_interface_name,
+            is_interface_hold_timer_enabled=cross_connect_is_interface_hold_timer_enabled == "true",
+            is_qos_enabled=cross_connect_is_qos_enabled == "true",
             macsec_properties={
                 "state": cross_connect_macsec_properties_state,
                 "encryption_cipher": cross_connect_macsec_properties_encryption_cipher,
@@ -730,7 +875,10 @@ class CrossConnect(pulumi.CustomResource):
                 },
             },
             near_cross_connect_or_cross_connect_group_id=test_cross_connect_group["id"],
-            oci_physical_device_name=cross_connect_oci_physical_device_name)
+            oci_physical_device_name=cross_connect_oci_physical_device_name,
+            loa_properties={
+                "authorized_agent": cross_connect_loa_properties_authorized_agent,
+            })
         ```
 
         ## Import
@@ -764,8 +912,12 @@ class CrossConnect(pulumi.CustomResource):
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
                  interface_name: pulumi.Input[Optional[_builtins.str]] = None,
                  is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
                  location_name: pulumi.Input[Optional[_builtins.str]] = None,
                  macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
                  near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -789,8 +941,12 @@ class CrossConnect(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["far_cross_connect_or_cross_connect_group_id"] = far_cross_connect_or_cross_connect_group_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["interface_down_timer_value_in_milliseconds"] = interface_down_timer_value_in_milliseconds
             __props__.__dict__["interface_name"] = interface_name
             __props__.__dict__["is_active"] = is_active
+            __props__.__dict__["is_interface_hold_timer_enabled"] = is_interface_hold_timer_enabled
+            __props__.__dict__["is_qos_enabled"] = is_qos_enabled
+            __props__.__dict__["loa_properties"] = loa_properties
             if location_name is None and not opts.urn:
                 raise TypeError("Missing required property 'location_name'")
             __props__.__dict__["location_name"] = location_name
@@ -821,8 +977,12 @@ class CrossConnect(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
             interface_name: pulumi.Input[Optional[_builtins.str]] = None,
             is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']]] = None,
             location_name: pulumi.Input[Optional[_builtins.str]] = None,
             macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']]] = None,
             near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -846,8 +1006,12 @@ class CrossConnect(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] far_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on a different router (for the purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
         :param pulumi.Input[_builtins.str] interface_name: The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         :param pulumi.Input[_builtins.bool] is_active: (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        :param pulumi.Input[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict']] loa_properties: (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
         :param pulumi.Input[_builtins.str] location_name: The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
         :param pulumi.Input[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[_builtins.str] near_cross_connect_or_cross_connect_group_id: If you already have an existing cross-connect or cross-connect group at this FastConnect location, and you want this new cross-connect to be on the same router, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
@@ -872,8 +1036,12 @@ class CrossConnect(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["far_cross_connect_or_cross_connect_group_id"] = far_cross_connect_or_cross_connect_group_id
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["interface_down_timer_value_in_milliseconds"] = interface_down_timer_value_in_milliseconds
         __props__.__dict__["interface_name"] = interface_name
         __props__.__dict__["is_active"] = is_active
+        __props__.__dict__["is_interface_hold_timer_enabled"] = is_interface_hold_timer_enabled
+        __props__.__dict__["is_qos_enabled"] = is_qos_enabled
+        __props__.__dict__["loa_properties"] = loa_properties
         __props__.__dict__["location_name"] = location_name
         __props__.__dict__["macsec_properties"] = macsec_properties
         __props__.__dict__["near_cross_connect_or_cross_connect_group_id"] = near_cross_connect_or_cross_connect_group_id
@@ -942,6 +1110,14 @@ class CrossConnect(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> pulumi.Output[_builtins.str]:
         """
@@ -956,6 +1132,30 @@ class CrossConnect(pulumi.CustomResource):
         (Updatable) Set to true to activate the cross-connect. You activate it after the physical cabling is complete, and you've confirmed the cross-connect's light levels are good and your side of the interface is up. Activation indicates to Oracle that the physical connection is ready.
         """
         return pulumi.get(self, "is_active")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> pulumi.Output['outputs.CrossConnectLoaProperties']:
+        """
+        (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        """
+        return pulumi.get(self, "loa_properties")
 
     @_builtins.property
     @pulumi.getter(name="locationName")

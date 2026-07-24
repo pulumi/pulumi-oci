@@ -301,6 +301,21 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    @Import(name="trafficMode")
+    private @Nullable Output<String> trafficMode;
+
+    /**
+     * @return (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    public Optional<Output<String>> trafficMode() {
+        return Optional.ofNullable(this.trafficMode);
+    }
+
+    /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      * 
      * ** IMPORTANT **
@@ -342,6 +357,7 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         this.publicPrefixes = $.publicPrefixes;
         this.region = $.region;
         this.routingPolicies = $.routingPolicies;
+        this.trafficMode = $.trafficMode;
         this.type = $.type;
     }
 
@@ -777,6 +793,27 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder routingPolicies(String... routingPolicies) {
             return routingPolicies(List.of(routingPolicies));
+        }
+
+        /**
+         * @param trafficMode (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trafficMode(@Nullable Output<String> trafficMode) {
+            $.trafficMode = trafficMode;
+            return this;
+        }
+
+        /**
+         * @param trafficMode (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trafficMode(String trafficMode) {
+            return trafficMode(Output.of(trafficMode));
         }
 
         /**

@@ -97,6 +97,21 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    @Import(name="compartmentQuotaEnforcementState")
+    private @Nullable Output<String> compartmentQuotaEnforcementState;
+
+    /**
+     * @return Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    public Optional<Output<String>> compartmentQuotaEnforcementState() {
+        return Optional.ofNullable(this.compartmentQuotaEnforcementState);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -421,6 +436,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         this.cloneAttachStatus = $.cloneAttachStatus;
         this.cloneCount = $.cloneCount;
         this.compartmentId = $.compartmentId;
+        this.compartmentQuotaEnforcementState = $.compartmentQuotaEnforcementState;
         this.definedTags = $.definedTags;
         this.detachCloneTrigger = $.detachCloneTrigger;
         this.displayName = $.displayName;
@@ -565,6 +581,27 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compartmentQuotaEnforcementState Displays the compartment-level quota enforcement state affecting this file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentQuotaEnforcementState(@Nullable Output<String> compartmentQuotaEnforcementState) {
+            $.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
+            return this;
+        }
+
+        /**
+         * @param compartmentQuotaEnforcementState Displays the compartment-level quota enforcement state affecting this file system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentQuotaEnforcementState(String compartmentQuotaEnforcementState) {
+            return compartmentQuotaEnforcementState(Output.of(compartmentQuotaEnforcementState));
         }
 
         /**

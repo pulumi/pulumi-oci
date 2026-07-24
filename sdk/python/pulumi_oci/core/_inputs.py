@@ -113,6 +113,8 @@ __all__ = [
     'CrossConnectGroupMacsecPropertiesArgsDict',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgsDict',
+    'CrossConnectLoaPropertiesArgs',
+    'CrossConnectLoaPropertiesArgsDict',
     'CrossConnectMacsecPropertiesArgs',
     'CrossConnectMacsecPropertiesArgsDict',
     'CrossConnectMacsecPropertiesPrimaryKeyArgs',
@@ -4443,9 +4445,6 @@ class CrossConnectGroupMacsecPropertiesArgsDict(TypedDict):
     state: pulumi.Input[_builtins.str]
     """
     (Updatable) Indicates whether or not MACsec is enabled.
-
-    ** IMPORTANT **
-    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
     encryption_cipher: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -4469,9 +4468,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
                  primary_key: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         :param pulumi.Input[_builtins.bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
@@ -4489,9 +4485,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     def state(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -4633,6 +4626,55 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @connectivity_association_name_secret_version.setter
     def connectivity_association_name_secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connectivity_association_name_secret_version", value)
+
+
+class CrossConnectLoaPropertiesArgsDict(TypedDict):
+    authorized_agent: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+    """
+    expiry_extension_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+    """
+
+@pulumi.input_type
+class CrossConnectLoaPropertiesArgs:
+    def __init__(__self__, *,
+                 authorized_agent: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_extension_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] authorized_agent: (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        :param pulumi.Input[_builtins.int] expiry_extension_count: (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        if authorized_agent is not None:
+            pulumi.set(__self__, "authorized_agent", authorized_agent)
+        if expiry_extension_count is not None:
+            pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        """
+        return pulumi.get(self, "authorized_agent")
+
+    @authorized_agent.setter
+    def authorized_agent(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "authorized_agent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        return pulumi.get(self, "expiry_extension_count")
+
+    @expiry_extension_count.setter
+    def expiry_extension_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expiry_extension_count", value)
 
 
 class CrossConnectMacsecPropertiesArgsDict(TypedDict):

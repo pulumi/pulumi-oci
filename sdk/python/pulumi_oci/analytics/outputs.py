@@ -21,15 +21,20 @@ __all__ = [
     'AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn',
     'AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone',
     'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost',
+    'AnalyticsInstanceResourceGroup',
     'GetAnalyticsInstanceCapacityResult',
     'GetAnalyticsInstanceNetworkEndpointDetailResult',
     'GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult',
     'GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult',
     'GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult',
+    'GetAnalyticsInstanceResourceGroupResult',
+    'GetAnalyticsInstanceResourceGroupsFilterResult',
+    'GetAnalyticsInstanceResourceGroupsInstanceResourceGroupResult',
     'GetAnalyticsInstancesAnalyticsInstanceResult',
     'GetAnalyticsInstancesAnalyticsInstanceCapacityResult',
     'GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult',
     'GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult',
+    'GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult',
     'GetAnalyticsInstancesFilterResult',
 ]
 
@@ -59,7 +64,7 @@ class AnalyticsInstanceCapacity(dict):
                  capacity_value: _builtins.int):
         """
         :param _builtins.str capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
-        :param _builtins.int capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        :param _builtins.int capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -76,7 +81,7 @@ class AnalyticsInstanceCapacity(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> _builtins.int:
         """
-        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -122,11 +127,11 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
                  whitelisted_vcns: Optional[Sequence['outputs.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn']] = None):
         """
         :param _builtins.str network_endpoint_type: The type of network endpoint.
-        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for an Analytics instance.
+        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for the Analytics instance.
         :param _builtins.str subnet_id: The subnet OCID for the private endpoint.
         :param _builtins.str vcn_id: The VCN OCID for the private endpoint.
         :param Sequence[_builtins.str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
+        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud services that are allowed to access this Analytics instance.
         :param Sequence['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
@@ -155,7 +160,7 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -187,7 +192,7 @@ class AnalyticsInstanceNetworkEndpointDetails(dict):
     @pulumi.getter(name="whitelistedServices")
     def whitelisted_services(self) -> Optional[Sequence[_builtins.str]]:
         """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
         """
         return pulumi.get(self, "whitelisted_services")
 
@@ -271,8 +276,8 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
                  dns_zone: _builtins.str,
                  description: Optional[_builtins.str] = None):
         """
-        :param _builtins.str dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        :param _builtins.str description: (Updatable) Description of private source dns zone.
+        :param _builtins.str dns_zone: (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
+        :param _builtins.str description: (Updatable) Description of the private source DNS zone.
         """
         pulumi.set(__self__, "dns_zone", dns_zone)
         if description is not None:
@@ -282,7 +287,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
     @pulumi.getter(name="dnsZone")
     def dns_zone(self) -> _builtins.str:
         """
-        (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         """
         return pulumi.get(self, "dns_zone")
 
@@ -290,7 +295,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone(dict):
     @pulumi.getter
     def description(self) -> Optional[_builtins.str]:
         """
-        (Updatable) Description of private source dns zone.
+        (Updatable) Description of the private source DNS zone.
         """
         return pulumi.get(self, "description")
 
@@ -321,9 +326,9 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
                  scan_port: _builtins.int,
                  description: Optional[_builtins.str] = None):
         """
-        :param _builtins.str scan_hostname: (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        :param _builtins.int scan_port: (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-        :param _builtins.str description: (Updatable) Description of private source scan host zone.
+        :param _builtins.str scan_hostname: (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        :param _builtins.int scan_port: (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
+        :param _builtins.str description: (Updatable) Description of private source SCAN host zone.
         """
         pulumi.set(__self__, "scan_hostname", scan_hostname)
         pulumi.set(__self__, "scan_port", scan_port)
@@ -334,7 +339,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
     @pulumi.getter(name="scanHostname")
     def scan_hostname(self) -> _builtins.str:
         """
-        (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         """
         return pulumi.get(self, "scan_hostname")
 
@@ -342,7 +347,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> _builtins.int:
         """
-        (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
         """
         return pulumi.get(self, "scan_port")
 
@@ -350,9 +355,95 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost(dict):
     @pulumi.getter
     def description(self) -> Optional[_builtins.str]:
         """
-        (Updatable) Description of private source scan host zone.
+        (Updatable) Description of private source SCAN host zone.
         """
         return pulumi.get(self, "description")
+
+
+@pulumi.output_type
+class AnalyticsInstanceResourceGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+        elif key == "resourceName":
+            suggest = "resource_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AnalyticsInstanceResourceGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AnalyticsInstanceResourceGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AnalyticsInstanceResourceGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity: Optional[_builtins.int] = None,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 resource_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int capacity: Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+        :param _builtins.str description: (Updatable) Optional description.
+        :param _builtins.str display_name: Meaningful name of resource group for end user
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param _builtins.str resource_name: Meaningful name of resource group for end user
+        """
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> Optional[_builtins.int]:
+        """
+        Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+        """
+        return pulumi.get(self, "capacity")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Optional description.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier and name of resource group.  Must be unique within the instance
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> Optional[_builtins.str]:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "resource_name")
 
 
 @pulumi.output_type
@@ -362,7 +453,7 @@ class GetAnalyticsInstanceCapacityResult(dict):
                  capacity_value: _builtins.int):
         """
         :param _builtins.str capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
-        :param _builtins.int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        :param _builtins.int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -379,7 +470,7 @@ class GetAnalyticsInstanceCapacityResult(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> _builtins.int:
         """
-        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -396,11 +487,11 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
                  whitelisted_vcns: Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult']):
         """
         :param _builtins.str network_endpoint_type: The type of network endpoint.
-        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for an Analytics instance.
-        :param _builtins.str subnet_id: OCID of the customer subnet connected to private access channel.
-        :param _builtins.str vcn_id: OCID of the customer VCN peered with private access channel.
+        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for the Analytics instance.
+        :param _builtins.str subnet_id: OCID of the customer subnet connected to the private access channel.
+        :param _builtins.str vcn_id: OCID of the customer VCN peered with the private access channel.
         :param Sequence[_builtins.str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
+        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
@@ -423,7 +514,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Sequence[_builtins.str]:
         """
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -431,7 +522,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        OCID of the customer subnet connected to private access channel.
+        OCID of the customer subnet connected to the private access channel.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -439,7 +530,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> _builtins.str:
         """
-        OCID of the customer VCN peered with private access channel.
+        OCID of the customer VCN peered with the private access channel.
         """
         return pulumi.get(self, "vcn_id")
 
@@ -455,7 +546,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="whitelistedServices")
     def whitelisted_services(self) -> Sequence[_builtins.str]:
         """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
         """
         return pulumi.get(self, "whitelisted_services")
 
@@ -474,7 +565,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(dict):
                  id: _builtins.str,
                  whitelisted_ips: Sequence[_builtins.str]):
         """
-        :param _builtins.str id: The Virtual Cloud Network OCID.
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
         :param Sequence[_builtins.str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
         pulumi.set(__self__, "id", id)
@@ -484,7 +575,7 @@ class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The Virtual Cloud Network OCID.
+        Unique identifier and name of resource group.  Must be unique within the instance
         """
         return pulumi.get(self, "id")
 
@@ -503,8 +594,8 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
                  description: _builtins.str,
                  dns_zone: _builtins.str):
         """
-        :param _builtins.str description: Description of private source scan host zone.
-        :param _builtins.str dns_zone: Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        :param _builtins.str description: Description of private source SCAN host zone.
+        :param _builtins.str dns_zone: Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "dns_zone", dns_zone)
@@ -513,7 +604,7 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        Description of private source scan host zone.
+        Description of private source SCAN host zone.
         """
         return pulumi.get(self, "description")
 
@@ -521,7 +612,7 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult(dict):
     @pulumi.getter(name="dnsZone")
     def dns_zone(self) -> _builtins.str:
         """
-        Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         """
         return pulumi.get(self, "dns_zone")
 
@@ -533,9 +624,9 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
                  scan_hostname: _builtins.str,
                  scan_port: _builtins.int):
         """
-        :param _builtins.str description: Description of private source scan host zone.
-        :param _builtins.str scan_hostname: Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        :param _builtins.int scan_port: Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        :param _builtins.str description: Description of private source SCAN host zone.
+        :param _builtins.str scan_hostname: Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        :param _builtins.int scan_port: Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
         """
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "scan_hostname", scan_hostname)
@@ -545,7 +636,7 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        Description of private source scan host zone.
+        Description of private source SCAN host zone.
         """
         return pulumi.get(self, "description")
 
@@ -553,7 +644,7 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
     @pulumi.getter(name="scanHostname")
     def scan_hostname(self) -> _builtins.str:
         """
-        Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         """
         return pulumi.get(self, "scan_hostname")
 
@@ -561,9 +652,177 @@ class GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult(dict):
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> _builtins.int:
         """
-        Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
         """
         return pulumi.get(self, "scan_port")
+
+
+@pulumi.output_type
+class GetAnalyticsInstanceResourceGroupResult(dict):
+    def __init__(__self__, *,
+                 capacity: _builtins.int,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 resource_name: _builtins.str):
+        """
+        :param _builtins.int capacity: The capacity (in OCPU's) to be allocated for this resource.
+        :param _builtins.str description: Description of the vanity URL.
+        :param _builtins.str display_name: Meaningful name of resource group for end user
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param _builtins.str resource_name: Meaningful name of resource group for end user
+        """
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "resource_name", resource_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> _builtins.int:
+        """
+        The capacity (in OCPU's) to be allocated for this resource.
+        """
+        return pulumi.get(self, "capacity")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the vanity URL.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier and name of resource group.  Must be unique within the instance
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "resource_name")
+
+
+@pulumi.output_type
+class GetAnalyticsInstanceResourceGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the given name exactly.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAnalyticsInstanceResourceGroupsInstanceResourceGroupResult(dict):
+    def __init__(__self__, *,
+                 analytics_instance_id: _builtins.str,
+                 capacity: _builtins.int,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 resource_name: _builtins.str):
+        """
+        :param _builtins.str analytics_instance_id: The OCID of the Analytics instance.
+        :param _builtins.int capacity: The capacity (in OCPU's) to be allocated for this resource.
+        :param _builtins.str description: Optional description of the resource group
+        :param _builtins.str display_name: Meaningful name of resource group for end user
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param _builtins.str resource_name: Meaningful name of resource group for end user
+        """
+        pulumi.set(__self__, "analytics_instance_id", analytics_instance_id)
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "resource_name", resource_name)
+
+    @_builtins.property
+    @pulumi.getter(name="analyticsInstanceId")
+    def analytics_instance_id(self) -> _builtins.str:
+        """
+        The OCID of the Analytics instance.
+        """
+        return pulumi.get(self, "analytics_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> _builtins.int:
+        """
+        The capacity (in OCPU's) to be allocated for this resource.
+        """
+        return pulumi.get(self, "capacity")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Optional description of the resource group
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier and name of resource group.  Must be unique within the instance
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "resource_name")
 
 
 @pulumi.output_type
@@ -585,6 +844,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
                  license_type: _builtins.str,
                  name: _builtins.str,
                  network_endpoint_details: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult'],
+                 resource_groups: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult'],
                  service_url: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -592,26 +852,27 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
                  time_updated: _builtins.str,
                  update_channel: _builtins.str):
         """
-        :param Sequence['GetAnalyticsInstancesAnalyticsInstanceCapacityArgs'] capacities: Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        :param Sequence['GetAnalyticsInstancesAnalyticsInstanceCapacityArgs'] capacities: The capacity (in OCPU's) to be allocated for this resource.
         :param _builtins.str compartment_id: The OCID of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str description: Description of the vanity url.
+        :param _builtins.str description: Description of the vanity URL.
         :param _builtins.str domain_id: Identity domain OCID.
         :param _builtins.str email_notification: Email address receiving notifications.
         :param _builtins.str feature_bundle: The feature set of an Analytics instance.
         :param _builtins.str feature_set: A filter to only return resources matching the feature set. Values are case-insensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The Virtual Cloud Network OCID.
-        :param _builtins.str kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param _builtins.str kms_key_id: OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         :param _builtins.str license_type: The license used for the service.
         :param _builtins.str name: A filter to return only resources that match the given name exactly.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
-        :param _builtins.str service_url: URL of the Analytics service.
+        :param Sequence['GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs'] resource_groups: List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        :param _builtins.str service_url: URL of the Analytics instance.
         :param _builtins.str state: A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
-        :param _builtins.str time_created: The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        :param _builtins.str time_updated: The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-        :param _builtins.str update_channel: Analytics instance update channel.
+        :param _builtins.str time_created: The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
+        :param _builtins.str update_channel: The Analytics instance update cycle.
         """
         pulumi.set(__self__, "admin_user", admin_user)
         pulumi.set(__self__, "capacities", capacities)
@@ -629,6 +890,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         pulumi.set(__self__, "license_type", license_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "network_endpoint_details", network_endpoint_details)
+        pulumi.set(__self__, "resource_groups", resource_groups)
         pulumi.set(__self__, "service_url", service_url)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -645,7 +907,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceCapacityResult']:
         """
-        Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        The capacity (in OCPU's) to be allocated for this resource.
         """
         return pulumi.get(self, "capacities")
 
@@ -669,7 +931,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        Description of the vanity url.
+        Description of the vanity URL.
         """
         return pulumi.get(self, "description")
 
@@ -717,7 +979,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The Virtual Cloud Network OCID.
+        Unique identifier and name of resource group.  Must be unique within the instance
         """
         return pulumi.get(self, "id")
 
@@ -730,7 +992,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
-        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         """
         return pulumi.get(self, "kms_key_id")
 
@@ -759,10 +1021,18 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
         return pulumi.get(self, "network_endpoint_details")
 
     @_builtins.property
+    @pulumi.getter(name="resourceGroups")
+    def resource_groups(self) -> Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult']:
+        """
+        List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        """
+        return pulumi.get(self, "resource_groups")
+
+    @_builtins.property
     @pulumi.getter(name="serviceUrl")
     def service_url(self) -> _builtins.str:
         """
-        URL of the Analytics service.
+        URL of the Analytics instance.
         """
         return pulumi.get(self, "service_url")
 
@@ -786,7 +1056,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -794,7 +1064,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
         """
         return pulumi.get(self, "time_updated")
 
@@ -802,7 +1072,7 @@ class GetAnalyticsInstancesAnalyticsInstanceResult(dict):
     @pulumi.getter(name="updateChannel")
     def update_channel(self) -> _builtins.str:
         """
-        Analytics instance update channel.
+        The Analytics instance update cycle.
         """
         return pulumi.get(self, "update_channel")
 
@@ -814,7 +1084,7 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
                  capacity_value: _builtins.int):
         """
         :param _builtins.str capacity_type: A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-        :param _builtins.int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        :param _builtins.int capacity_value: The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -831,7 +1101,7 @@ class GetAnalyticsInstancesAnalyticsInstanceCapacityResult(dict):
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> _builtins.int:
         """
-        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -848,11 +1118,11 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
                  whitelisted_vcns: Sequence['outputs.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult']):
         """
         :param _builtins.str network_endpoint_type: The type of network endpoint.
-        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for an Analytics instance.
-        :param _builtins.str subnet_id: OCID of the customer subnet connected to private access channel.
-        :param _builtins.str vcn_id: OCID of the customer VCN peered with private access channel.
+        :param Sequence[_builtins.str] network_security_group_ids: Network Security Group OCIDs for the Analytics instance.
+        :param _builtins.str subnet_id: OCID of the customer subnet connected to the private access channel.
+        :param _builtins.str vcn_id: OCID of the customer VCN peered with the private access channel.
         :param Sequence[_builtins.str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
+        :param Sequence[_builtins.str] whitelisted_services: Oracle Cloud services that are allowed to access this Analytics instance.
         :param Sequence['GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs'] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
@@ -875,7 +1145,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Sequence[_builtins.str]:
         """
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -883,7 +1153,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        OCID of the customer subnet connected to private access channel.
+        OCID of the customer subnet connected to the private access channel.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -891,7 +1161,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> _builtins.str:
         """
-        OCID of the customer VCN peered with private access channel.
+        OCID of the customer VCN peered with the private access channel.
         """
         return pulumi.get(self, "vcn_id")
 
@@ -907,7 +1177,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="whitelistedServices")
     def whitelisted_services(self) -> Sequence[_builtins.str]:
         """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
         """
         return pulumi.get(self, "whitelisted_services")
 
@@ -926,7 +1196,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
                  id: _builtins.str,
                  whitelisted_ips: Sequence[_builtins.str]):
         """
-        :param _builtins.str id: The Virtual Cloud Network OCID.
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
         :param Sequence[_builtins.str] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
         """
         pulumi.set(__self__, "id", id)
@@ -936,7 +1206,7 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The Virtual Cloud Network OCID.
+        Unique identifier and name of resource group.  Must be unique within the instance
         """
         return pulumi.get(self, "id")
 
@@ -947,6 +1217,68 @@ class GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnR
         Source IP addresses or IP address ranges in ingress rules.
         """
         return pulumi.get(self, "whitelisted_ips")
+
+
+@pulumi.output_type
+class GetAnalyticsInstancesAnalyticsInstanceResourceGroupResult(dict):
+    def __init__(__self__, *,
+                 capacity: _builtins.int,
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 resource_name: _builtins.str):
+        """
+        :param _builtins.int capacity: The capacity (in OCPU's) to be allocated for this resource.
+        :param _builtins.str description: Description of the vanity URL.
+        :param _builtins.str display_name: Meaningful name of resource group for end user
+        :param _builtins.str id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param _builtins.str resource_name: Meaningful name of resource group for end user
+        """
+        pulumi.set(__self__, "capacity", capacity)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "resource_name", resource_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> _builtins.int:
+        """
+        The capacity (in OCPU's) to be allocated for this resource.
+        """
+        return pulumi.get(self, "capacity")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the vanity URL.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique identifier and name of resource group.  Must be unique within the instance
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> _builtins.str:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "resource_name")
 
 
 @pulumi.output_type

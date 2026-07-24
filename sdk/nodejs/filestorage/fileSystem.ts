@@ -129,6 +129,10 @@ export class FileSystem extends pulumi.CustomResource {
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     */
+    declare public /*out*/ readonly compartmentQuotaEnforcementState: pulumi.Output<string>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
@@ -233,6 +237,7 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["cloneAttachStatus"] = state?.cloneAttachStatus;
             resourceInputs["cloneCount"] = state?.cloneCount;
             resourceInputs["compartmentId"] = state?.compartmentId;
+            resourceInputs["compartmentQuotaEnforcementState"] = state?.compartmentQuotaEnforcementState;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["detachCloneTrigger"] = state?.detachCloneTrigger;
             resourceInputs["displayName"] = state?.displayName;
@@ -276,6 +281,7 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["locks"] = args?.locks;
             resourceInputs["sourceSnapshotId"] = args?.sourceSnapshotId;
             resourceInputs["cloneCount"] = undefined /*out*/;
+            resourceInputs["compartmentQuotaEnforcementState"] = undefined /*out*/;
             resourceInputs["isCloneParent"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["isTargetable"] = undefined /*out*/;
@@ -318,6 +324,10 @@ export interface FileSystemState {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
     compartmentId?: pulumi.Input<string | undefined>;
+    /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     */
+    compartmentQuotaEnforcementState?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */

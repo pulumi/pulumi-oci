@@ -18,15 +18,15 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly string NetworkEndpointType;
         /// <summary>
-        /// Network Security Group OCIDs for an Analytics instance.
+        /// Network Security Group OCIDs for the Analytics instance.
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
         /// <summary>
-        /// OCID of the customer subnet connected to private access channel.
+        /// OCID of the customer subnet connected to the private access channel.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// OCID of the customer VCN peered with private access channel.
+        /// OCID of the customer VCN peered with the private access channel.
         /// </summary>
         public readonly string VcnId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Analytics.Outputs
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
         /// <summary>
-        /// Oracle Cloud Services that are allowed to access this Analytics instance.
+        /// Oracle Cloud services that are allowed to access this Analytics instance.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedServices;
         /// <summary>

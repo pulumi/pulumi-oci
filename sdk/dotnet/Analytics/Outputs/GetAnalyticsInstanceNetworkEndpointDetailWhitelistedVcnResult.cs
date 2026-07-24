@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Analytics.Outputs
     public sealed class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnResult
     {
         /// <summary>
-        /// The Virtual Cloud Network OCID.
+        /// Unique identifier and name of resource group.  Must be unique within the instance
         /// </summary>
         public readonly string Id;
         /// <summary>

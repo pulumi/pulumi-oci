@@ -15,6 +15,11 @@ export type AnalyticsInstancePrivateAccessChannel = import("./analyticsInstanceP
 export const AnalyticsInstancePrivateAccessChannel: typeof import("./analyticsInstancePrivateAccessChannel").AnalyticsInstancePrivateAccessChannel = null as any;
 utilities.lazyLoad(exports, ["AnalyticsInstancePrivateAccessChannel"], () => require("./analyticsInstancePrivateAccessChannel"));
 
+export { AnalyticsInstanceResourceGroupArgs, AnalyticsInstanceResourceGroupState } from "./analyticsInstanceResourceGroup";
+export type AnalyticsInstanceResourceGroup = import("./analyticsInstanceResourceGroup").AnalyticsInstanceResourceGroup;
+export const AnalyticsInstanceResourceGroup: typeof import("./analyticsInstanceResourceGroup").AnalyticsInstanceResourceGroup = null as any;
+utilities.lazyLoad(exports, ["AnalyticsInstanceResourceGroup"], () => require("./analyticsInstanceResourceGroup"));
+
 export { AnalyticsInstanceVanityUrlArgs, AnalyticsInstanceVanityUrlState } from "./analyticsInstanceVanityUrl";
 export type AnalyticsInstanceVanityUrl = import("./analyticsInstanceVanityUrl").AnalyticsInstanceVanityUrl;
 export const AnalyticsInstanceVanityUrl: typeof import("./analyticsInstanceVanityUrl").AnalyticsInstanceVanityUrl = null as any;
@@ -30,6 +35,16 @@ export const getAnalyticsInstancePrivateAccessChannel: typeof import("./getAnaly
 export const getAnalyticsInstancePrivateAccessChannelOutput: typeof import("./getAnalyticsInstancePrivateAccessChannel").getAnalyticsInstancePrivateAccessChannelOutput = null as any;
 utilities.lazyLoad(exports, ["getAnalyticsInstancePrivateAccessChannel","getAnalyticsInstancePrivateAccessChannelOutput"], () => require("./getAnalyticsInstancePrivateAccessChannel"));
 
+export { GetAnalyticsInstanceResourceGroupArgs, GetAnalyticsInstanceResourceGroupResult, GetAnalyticsInstanceResourceGroupOutputArgs } from "./getAnalyticsInstanceResourceGroup";
+export const getAnalyticsInstanceResourceGroup: typeof import("./getAnalyticsInstanceResourceGroup").getAnalyticsInstanceResourceGroup = null as any;
+export const getAnalyticsInstanceResourceGroupOutput: typeof import("./getAnalyticsInstanceResourceGroup").getAnalyticsInstanceResourceGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsInstanceResourceGroup","getAnalyticsInstanceResourceGroupOutput"], () => require("./getAnalyticsInstanceResourceGroup"));
+
+export { GetAnalyticsInstanceResourceGroupsArgs, GetAnalyticsInstanceResourceGroupsResult, GetAnalyticsInstanceResourceGroupsOutputArgs } from "./getAnalyticsInstanceResourceGroups";
+export const getAnalyticsInstanceResourceGroups: typeof import("./getAnalyticsInstanceResourceGroups").getAnalyticsInstanceResourceGroups = null as any;
+export const getAnalyticsInstanceResourceGroupsOutput: typeof import("./getAnalyticsInstanceResourceGroups").getAnalyticsInstanceResourceGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsInstanceResourceGroups","getAnalyticsInstanceResourceGroupsOutput"], () => require("./getAnalyticsInstanceResourceGroups"));
+
 export { GetAnalyticsInstancesArgs, GetAnalyticsInstancesResult, GetAnalyticsInstancesOutputArgs } from "./getAnalyticsInstances";
 export const getAnalyticsInstances: typeof import("./getAnalyticsInstances").getAnalyticsInstances = null as any;
 export const getAnalyticsInstancesOutput: typeof import("./getAnalyticsInstances").getAnalyticsInstancesOutput = null as any;
@@ -44,6 +59,8 @@ const _module = {
                 return new AnalyticsInstance(name, <any>undefined, { urn })
             case "oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel":
                 return new AnalyticsInstancePrivateAccessChannel(name, <any>undefined, { urn })
+            case "oci:Analytics/analyticsInstanceResourceGroup:AnalyticsInstanceResourceGroup":
+                return new AnalyticsInstanceResourceGroup(name, <any>undefined, { urn })
             case "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl":
                 return new AnalyticsInstanceVanityUrl(name, <any>undefined, { urn })
             default:
@@ -53,4 +70,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Analytics/analyticsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "Analytics/analyticsInstancePrivateAccessChannel", _module)
+pulumi.runtime.registerResourceModule("oci", "Analytics/analyticsInstanceResourceGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Analytics/analyticsInstanceVanityUrl", _module)

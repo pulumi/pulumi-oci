@@ -73,8 +73,24 @@ export interface GetCrossConnectResult {
      * The cross-connect's Oracle ID (OCID).
      */
     readonly id: string;
+    /**
+     * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    readonly interfaceDownTimerValueInMilliseconds: number;
+    /**
+     * The name of the FastConnect interface where this cross-connect is installed.
+     */
     readonly interfaceName: string;
     readonly isActive: boolean;
+    /**
+     * The flag to enable or disable the down timer for the interface.
+     */
+    readonly isInterfaceHoldTimerEnabled: boolean;
+    /**
+     * The flag to enable or disable the Qos for the cross-connect.
+     */
+    readonly isQosEnabled: boolean;
+    readonly loaProperties: outputs.Core.GetCrossConnectLoaProperty[];
     /**
      * The name of the FastConnect location where this cross-connect is installed.
      */

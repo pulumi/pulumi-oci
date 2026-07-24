@@ -92,6 +92,7 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         Region = virtualCircuitRegion,
     ///         RoutingPolicies = virtualCircuitRoutingPolicy,
+    ///         TrafficMode = virtualCircuitTrafficMode,
     ///     });
     /// 
     /// });
@@ -269,6 +270,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Output("trafficMode")]
+        public Output<string> TrafficMode { get; private set; } = null!;
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
@@ -469,6 +476,12 @@ namespace Pulumi.Oci.Core
             get => _routingPolicies ?? (_routingPolicies = new InputList<string>());
             set => _routingPolicies = value;
         }
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Input("trafficMode")]
+        public Input<string>? TrafficMode { get; set; }
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 
@@ -679,6 +692,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        /// </summary>
+        [Input("trafficMode")]
+        public Input<string>? TrafficMode { get; set; }
 
         /// <summary>
         /// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16). 

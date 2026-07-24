@@ -27,7 +27,7 @@ class GetCrossConnectGroupResult:
     """
     A collection of values returned by getCrossConnectGroup.
     """
-    def __init__(__self__, compartment_id=None, cross_connect_group_id=None, customer_reference_name=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, macsec_properties=None, oci_logical_device_name=None, oci_physical_device_name=None, state=None, time_created=None):
+    def __init__(__self__, compartment_id=None, cross_connect_group_id=None, customer_reference_name=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, interface_down_timer_value_in_milliseconds=None, is_interface_hold_timer_enabled=None, is_qos_enabled=None, macsec_properties=None, minimum_links=None, oci_logical_device_name=None, oci_physical_device_name=None, state=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,9 +49,21 @@ class GetCrossConnectGroupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if interface_down_timer_value_in_milliseconds and not isinstance(interface_down_timer_value_in_milliseconds, int):
+            raise TypeError("Expected argument 'interface_down_timer_value_in_milliseconds' to be a int")
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
+        if is_interface_hold_timer_enabled and not isinstance(is_interface_hold_timer_enabled, bool):
+            raise TypeError("Expected argument 'is_interface_hold_timer_enabled' to be a bool")
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled and not isinstance(is_qos_enabled, bool):
+            raise TypeError("Expected argument 'is_qos_enabled' to be a bool")
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
         if macsec_properties and not isinstance(macsec_properties, list):
             raise TypeError("Expected argument 'macsec_properties' to be a list")
         pulumi.set(__self__, "macsec_properties", macsec_properties)
+        if minimum_links and not isinstance(minimum_links, int):
+            raise TypeError("Expected argument 'minimum_links' to be a int")
+        pulumi.set(__self__, "minimum_links", minimum_links)
         if oci_logical_device_name and not isinstance(oci_logical_device_name, str):
             raise TypeError("Expected argument 'oci_logical_device_name' to be a str")
         pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
@@ -119,12 +131,44 @@ class GetCrossConnectGroupResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect-group.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Sequence['outputs.GetCrossConnectGroupMacsecPropertyResult']:
         """
         Properties used for MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> _builtins.int:
+        """
+        Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+        """
+        return pulumi.get(self, "minimum_links")
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")
@@ -172,7 +216,11 @@ class AwaitableGetCrossConnectGroupResult(GetCrossConnectGroupResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            interface_down_timer_value_in_milliseconds=self.interface_down_timer_value_in_milliseconds,
+            is_interface_hold_timer_enabled=self.is_interface_hold_timer_enabled,
+            is_qos_enabled=self.is_qos_enabled,
             macsec_properties=self.macsec_properties,
+            minimum_links=self.minimum_links,
             oci_logical_device_name=self.oci_logical_device_name,
             oci_physical_device_name=self.oci_physical_device_name,
             state=self.state,
@@ -211,7 +259,11 @@ def get_cross_connect_group(cross_connect_group_id: Optional[_builtins.str] = No
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        interface_down_timer_value_in_milliseconds=pulumi.get(__ret__, 'interface_down_timer_value_in_milliseconds'),
+        is_interface_hold_timer_enabled=pulumi.get(__ret__, 'is_interface_hold_timer_enabled'),
+        is_qos_enabled=pulumi.get(__ret__, 'is_qos_enabled'),
         macsec_properties=pulumi.get(__ret__, 'macsec_properties'),
+        minimum_links=pulumi.get(__ret__, 'minimum_links'),
         oci_logical_device_name=pulumi.get(__ret__, 'oci_logical_device_name'),
         oci_physical_device_name=pulumi.get(__ret__, 'oci_physical_device_name'),
         state=pulumi.get(__ret__, 'state'),
@@ -247,7 +299,11 @@ def get_cross_connect_group_output(cross_connect_group_id: pulumi.Input[Optional
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        interface_down_timer_value_in_milliseconds=pulumi.get(__response__, 'interface_down_timer_value_in_milliseconds'),
+        is_interface_hold_timer_enabled=pulumi.get(__response__, 'is_interface_hold_timer_enabled'),
+        is_qos_enabled=pulumi.get(__response__, 'is_qos_enabled'),
         macsec_properties=pulumi.get(__response__, 'macsec_properties'),
+        minimum_links=pulumi.get(__response__, 'minimum_links'),
         oci_logical_device_name=pulumi.get(__response__, 'oci_logical_device_name'),
         oci_physical_device_name=pulumi.get(__response__, 'oci_physical_device_name'),
         state=pulumi.get(__response__, 'state'),

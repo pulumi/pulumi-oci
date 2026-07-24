@@ -5,8 +5,10 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.CrossConnectLoaPropertiesArgs;
 import com.pulumi.oci.Core.inputs.CrossConnectMacsecPropertiesArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -124,6 +126,21 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    @Import(name="interfaceDownTimerValueInMilliseconds")
+    private @Nullable Output<Integer> interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * @return (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Optional<Output<Integer>> interfaceDownTimerValueInMilliseconds() {
+        return Optional.ofNullable(this.interfaceDownTimerValueInMilliseconds);
+    }
+
+    /**
      * The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
      * 
      */
@@ -151,6 +168,51 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isActive() {
         return Optional.ofNullable(this.isActive);
+    }
+
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    @Import(name="isInterfaceHoldTimerEnabled")
+    private @Nullable Output<Boolean> isInterfaceHoldTimerEnabled;
+
+    /**
+     * @return (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Optional<Output<Boolean>> isInterfaceHoldTimerEnabled() {
+        return Optional.ofNullable(this.isInterfaceHoldTimerEnabled);
+    }
+
+    /**
+     * When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    @Import(name="isQosEnabled")
+    private @Nullable Output<Boolean> isQosEnabled;
+
+    /**
+     * @return When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    public Optional<Output<Boolean>> isQosEnabled() {
+        return Optional.ofNullable(this.isQosEnabled);
+    }
+
+    /**
+     * (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     * 
+     */
+    @Import(name="loaProperties")
+    private @Nullable Output<CrossConnectLoaPropertiesArgs> loaProperties;
+
+    /**
+     * @return (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+     * 
+     */
+    public Optional<Output<CrossConnectLoaPropertiesArgs>> loaProperties() {
+        return Optional.ofNullable(this.loaProperties);
     }
 
     /**
@@ -304,8 +366,12 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.farCrossConnectOrCrossConnectGroupId = $.farCrossConnectOrCrossConnectGroupId;
         this.freeformTags = $.freeformTags;
+        this.interfaceDownTimerValueInMilliseconds = $.interfaceDownTimerValueInMilliseconds;
         this.interfaceName = $.interfaceName;
         this.isActive = $.isActive;
+        this.isInterfaceHoldTimerEnabled = $.isInterfaceHoldTimerEnabled;
+        this.isQosEnabled = $.isQosEnabled;
+        this.loaProperties = $.loaProperties;
         this.locationName = $.locationName;
         this.macsecProperties = $.macsecProperties;
         this.nearCrossConnectOrCrossConnectGroupId = $.nearCrossConnectOrCrossConnectGroupId;
@@ -483,6 +549,27 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param interfaceDownTimerValueInMilliseconds (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(@Nullable Output<Integer> interfaceDownTimerValueInMilliseconds) {
+            $.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            return this;
+        }
+
+        /**
+         * @param interfaceDownTimerValueInMilliseconds (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(Integer interfaceDownTimerValueInMilliseconds) {
+            return interfaceDownTimerValueInMilliseconds(Output.of(interfaceDownTimerValueInMilliseconds));
+        }
+
+        /**
          * @param interfaceName The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
          * 
          * @return builder
@@ -522,6 +609,69 @@ public final class CrossConnectState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isActive(Boolean isActive) {
             return isActive(Output.of(isActive));
+        }
+
+        /**
+         * @param isInterfaceHoldTimerEnabled (Updatable) The flag to enable or disable the down timer for the interface.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInterfaceHoldTimerEnabled(@Nullable Output<Boolean> isInterfaceHoldTimerEnabled) {
+            $.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInterfaceHoldTimerEnabled (Updatable) The flag to enable or disable the down timer for the interface.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            return isInterfaceHoldTimerEnabled(Output.of(isInterfaceHoldTimerEnabled));
+        }
+
+        /**
+         * @param isQosEnabled When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQosEnabled(@Nullable Output<Boolean> isQosEnabled) {
+            $.isQosEnabled = isQosEnabled;
+            return this;
+        }
+
+        /**
+         * @param isQosEnabled When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            return isQosEnabled(Output.of(isQosEnabled));
+        }
+
+        /**
+         * @param loaProperties (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loaProperties(@Nullable Output<CrossConnectLoaPropertiesArgs> loaProperties) {
+            $.loaProperties = loaProperties;
+            return this;
+        }
+
+        /**
+         * @param loaProperties (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loaProperties(CrossConnectLoaPropertiesArgs loaProperties) {
+            return loaProperties(Output.of(loaProperties));
         }
 
         /**

@@ -20,14 +20,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     public static final AnalyticsInstanceArgs Empty = new AnalyticsInstanceArgs();
 
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     @Import(name="adminUser")
     private @Nullable Output<String> adminUser;
 
     /**
-     * @return user name of the authorized user.
+     * @return The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     public Optional<Output<String>> adminUser() {
@@ -35,14 +35,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     @Import(name="capacity", required=true)
     private Output<AnalyticsInstanceCapacityArgs> capacity;
 
     /**
-     * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * @return Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     public Output<AnalyticsInstanceCapacityArgs> capacity() {
@@ -95,14 +95,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     @Import(name="domainId")
     private @Nullable Output<String> domainId;
 
     /**
-     * @return domain id for which the user is authorized.
+     * @return The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     public Optional<Output<String>> domainId() {
@@ -140,14 +140,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     @Import(name="featureSet", required=true)
     private Output<String> featureSet;
 
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     public Output<String> featureSet() {
@@ -185,14 +185,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -215,14 +215,14 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     public Optional<Output<String>> name() {
@@ -321,7 +321,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param adminUser user name of the authorized user.
+         * @param adminUser The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param adminUser user name of the authorized user.
+         * @param adminUser The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param capacity Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * @param capacity Service instance capacity metadata (for example, OLPU count, number of users, and so on).
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param capacity Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * @param capacity Service instance capacity metadata (for example, OLPU count, number of users, and so on).
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainId domain id for which the user is authorized.
+         * @param domainId The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param domainId domain id for which the user is authorized.
+         * @param domainId The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param featureSet Analytics feature set.
+         * @param featureSet The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param featureSet Analytics feature set.
+         * @param featureSet The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * @param name The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
          * 
          * @return builder
          * 
@@ -605,7 +605,7 @@ public final class AnalyticsInstanceArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * @param name The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
          * 
          * @return builder
          * 

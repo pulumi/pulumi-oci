@@ -12,8 +12,8 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
  *
- * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
- * and creates a new WorkRequest.
+ * Create a new Analytics instance in the specified compartment. The operation is long-running
+ * and creates a new work request.
  *
  * ## Example Usage
  *
@@ -96,11 +96,11 @@ export class AnalyticsInstance extends pulumi.CustomResource {
     }
 
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
      */
     declare public readonly adminUser: pulumi.Output<string>;
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      */
     declare public readonly capacity: pulumi.Output<outputs.Analytics.AnalyticsInstanceCapacity>;
     /**
@@ -116,7 +116,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      */
     declare public readonly domainId: pulumi.Output<string>;
     /**
@@ -128,7 +128,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public readonly featureBundle: pulumi.Output<string>;
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      */
     declare public readonly featureSet: pulumi.Output<string>;
     /**
@@ -140,7 +140,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public readonly idcsAccessToken: pulumi.Output<string | undefined>;
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      */
     declare public readonly kmsKeyId: pulumi.Output<string | undefined>;
     /**
@@ -148,7 +148,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public readonly licenseType: pulumi.Output<string>;
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -156,7 +156,11 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public readonly networkEndpointDetails: pulumi.Output<outputs.Analytics.AnalyticsInstanceNetworkEndpointDetails>;
     /**
-     * URL of the Analytics service.
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     */
+    declare public /*out*/ readonly resourceGroups: pulumi.Output<outputs.Analytics.AnalyticsInstanceResourceGroup[]>;
+    /**
+     * URL of the Analytics instance.
      */
     declare public /*out*/ readonly serviceUrl: pulumi.Output<string>;
     /**
@@ -171,11 +175,11 @@ export class AnalyticsInstance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
@@ -211,6 +215,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["licenseType"] = state?.licenseType;
             resourceInputs["name"] = state?.name;
             resourceInputs["networkEndpointDetails"] = state?.networkEndpointDetails;
+            resourceInputs["resourceGroups"] = state?.resourceGroups;
             resourceInputs["serviceUrl"] = state?.serviceUrl;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -248,6 +253,7 @@ export class AnalyticsInstance extends pulumi.CustomResource {
             resourceInputs["networkEndpointDetails"] = args?.networkEndpointDetails;
             resourceInputs["state"] = args?.state;
             resourceInputs["updateChannel"] = args?.updateChannel;
+            resourceInputs["resourceGroups"] = undefined /*out*/;
             resourceInputs["serviceUrl"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -265,11 +271,11 @@ export class AnalyticsInstance extends pulumi.CustomResource {
  */
 export interface AnalyticsInstanceState {
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
      */
     adminUser?: pulumi.Input<string | undefined>;
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      */
     capacity?: pulumi.Input<inputs.Analytics.AnalyticsInstanceCapacity | undefined>;
     /**
@@ -285,7 +291,7 @@ export interface AnalyticsInstanceState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      */
     domainId?: pulumi.Input<string | undefined>;
     /**
@@ -297,7 +303,7 @@ export interface AnalyticsInstanceState {
      */
     featureBundle?: pulumi.Input<string | undefined>;
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      */
     featureSet?: pulumi.Input<string | undefined>;
     /**
@@ -309,7 +315,7 @@ export interface AnalyticsInstanceState {
      */
     idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      */
     kmsKeyId?: pulumi.Input<string | undefined>;
     /**
@@ -317,7 +323,7 @@ export interface AnalyticsInstanceState {
      */
     licenseType?: pulumi.Input<string | undefined>;
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -325,7 +331,11 @@ export interface AnalyticsInstanceState {
      */
     networkEndpointDetails?: pulumi.Input<inputs.Analytics.AnalyticsInstanceNetworkEndpointDetails | undefined>;
     /**
-     * URL of the Analytics service.
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     */
+    resourceGroups?: pulumi.Input<pulumi.Input<inputs.Analytics.AnalyticsInstanceResourceGroup>[] | undefined>;
+    /**
+     * URL of the Analytics instance.
      */
     serviceUrl?: pulumi.Input<string | undefined>;
     /**
@@ -340,11 +350,11 @@ export interface AnalyticsInstanceState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
      */
     timeUpdated?: pulumi.Input<string | undefined>;
     /**
@@ -358,11 +368,11 @@ export interface AnalyticsInstanceState {
  */
 export interface AnalyticsInstanceArgs {
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
      */
     adminUser?: pulumi.Input<string | undefined>;
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      */
     capacity: pulumi.Input<inputs.Analytics.AnalyticsInstanceCapacity>;
     /**
@@ -378,7 +388,7 @@ export interface AnalyticsInstanceArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      */
     domainId?: pulumi.Input<string | undefined>;
     /**
@@ -390,7 +400,7 @@ export interface AnalyticsInstanceArgs {
      */
     featureBundle?: pulumi.Input<string | undefined>;
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      */
     featureSet: pulumi.Input<string>;
     /**
@@ -402,7 +412,7 @@ export interface AnalyticsInstanceArgs {
      */
     idcsAccessToken?: pulumi.Input<string | undefined>;
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      */
     kmsKeyId?: pulumi.Input<string | undefined>;
     /**
@@ -410,7 +420,7 @@ export interface AnalyticsInstanceArgs {
      */
     licenseType: pulumi.Input<string>;
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      */
     name?: pulumi.Input<string | undefined>;
     /**

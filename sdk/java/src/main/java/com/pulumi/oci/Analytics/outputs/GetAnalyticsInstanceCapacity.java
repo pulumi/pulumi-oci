@@ -17,7 +17,7 @@ public final class GetAnalyticsInstanceCapacity {
      */
     private String capacityType;
     /**
-     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      * 
      */
     private Integer capacityValue;
@@ -31,7 +31,7 @@ public final class GetAnalyticsInstanceCapacity {
         return this.capacityType;
     }
     /**
-     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * @return The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      * 
      */
     public Integer capacityValue() {

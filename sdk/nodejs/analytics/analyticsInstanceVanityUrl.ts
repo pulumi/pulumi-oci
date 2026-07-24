@@ -10,8 +10,7 @@ import * as utilities from "../utilities";
  *
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
  *
- * Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
- * for this host.
+ * Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
  *
  * ## Example Usage
  *
@@ -67,11 +66,11 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
     }
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      */
     declare public readonly analyticsInstanceId: pulumi.Output<string>;
     /**
-     * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      */
     declare public readonly caCertificate: pulumi.Output<string>;
     /**
@@ -79,15 +78,15 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
      */
     declare public readonly description: pulumi.Output<string | undefined>;
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      */
     declare public readonly hosts: pulumi.Output<string[]>;
     /**
-     * (Updatable) Passphrase for the PEM Private key (if any).
+     * (Updatable) Passphrase for the PEM private key (if any).
      */
     declare public readonly passphrase: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) PEM Private key for HTTPS connections.
+     * (Updatable) PEM private key for HTTPS connections.
      */
     declare public readonly privateKey: pulumi.Output<string>;
     /**
@@ -155,11 +154,11 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
  */
 export interface AnalyticsInstanceVanityUrlState {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      */
     analyticsInstanceId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      */
     caCertificate?: pulumi.Input<string | undefined>;
     /**
@@ -167,15 +166,15 @@ export interface AnalyticsInstanceVanityUrlState {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      */
     hosts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) Passphrase for the PEM Private key (if any).
+     * (Updatable) Passphrase for the PEM private key (if any).
      */
     passphrase?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) PEM Private key for HTTPS connections.
+     * (Updatable) PEM private key for HTTPS connections.
      */
     privateKey?: pulumi.Input<string | undefined>;
     /**
@@ -192,11 +191,11 @@ export interface AnalyticsInstanceVanityUrlState {
  */
 export interface AnalyticsInstanceVanityUrlArgs {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      */
     analyticsInstanceId: pulumi.Input<string>;
     /**
-     * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      */
     caCertificate: pulumi.Input<string>;
     /**
@@ -204,15 +203,15 @@ export interface AnalyticsInstanceVanityUrlArgs {
      */
     description?: pulumi.Input<string | undefined>;
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      */
     hosts: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) Passphrase for the PEM Private key (if any).
+     * (Updatable) Passphrase for the PEM private key (if any).
      */
     passphrase?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) PEM Private key for HTTPS connections.
+     * (Updatable) PEM private key for HTTPS connections.
      */
     privateKey: pulumi.Input<string>;
     /**

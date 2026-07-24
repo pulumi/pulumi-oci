@@ -50,6 +50,11 @@ export type Endpoint = import("./endpoint").Endpoint;
 export const Endpoint: typeof import("./endpoint").Endpoint = null as any;
 utilities.lazyLoad(exports, ["Endpoint"], () => require("./endpoint"));
 
+export { GenerativeAiPrivateEndpointArgs, GenerativeAiPrivateEndpointState } from "./generativeAiPrivateEndpoint";
+export type GenerativeAiPrivateEndpoint = import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint;
+export const GenerativeAiPrivateEndpoint: typeof import("./generativeAiPrivateEndpoint").GenerativeAiPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["GenerativeAiPrivateEndpoint"], () => require("./generativeAiPrivateEndpoint"));
+
 export { GetAgentAgentArgs, GetAgentAgentResult, GetAgentAgentOutputArgs } from "./getAgentAgent";
 export const getAgentAgent: typeof import("./getAgentAgent").getAgentAgent = null as any;
 export const getAgentAgentOutput: typeof import("./getAgentAgent").getAgentAgentOutput = null as any;
@@ -155,6 +160,36 @@ export const getGenerativeAiPrivateEndpoints: typeof import("./getGenerativeAiPr
 export const getGenerativeAiPrivateEndpointsOutput: typeof import("./getGenerativeAiPrivateEndpoints").getGenerativeAiPrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getGenerativeAiPrivateEndpoints","getGenerativeAiPrivateEndpointsOutput"], () => require("./getGenerativeAiPrivateEndpoints"));
 
+export { GetHostedApplicationArgs, GetHostedApplicationResult, GetHostedApplicationOutputArgs } from "./getHostedApplication";
+export const getHostedApplication: typeof import("./getHostedApplication").getHostedApplication = null as any;
+export const getHostedApplicationOutput: typeof import("./getHostedApplication").getHostedApplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedApplication","getHostedApplicationOutput"], () => require("./getHostedApplication"));
+
+export { GetHostedApplicationStorageArgs, GetHostedApplicationStorageResult, GetHostedApplicationStorageOutputArgs } from "./getHostedApplicationStorage";
+export const getHostedApplicationStorage: typeof import("./getHostedApplicationStorage").getHostedApplicationStorage = null as any;
+export const getHostedApplicationStorageOutput: typeof import("./getHostedApplicationStorage").getHostedApplicationStorageOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedApplicationStorage","getHostedApplicationStorageOutput"], () => require("./getHostedApplicationStorage"));
+
+export { GetHostedApplicationStoragesArgs, GetHostedApplicationStoragesResult, GetHostedApplicationStoragesOutputArgs } from "./getHostedApplicationStorages";
+export const getHostedApplicationStorages: typeof import("./getHostedApplicationStorages").getHostedApplicationStorages = null as any;
+export const getHostedApplicationStoragesOutput: typeof import("./getHostedApplicationStorages").getHostedApplicationStoragesOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedApplicationStorages","getHostedApplicationStoragesOutput"], () => require("./getHostedApplicationStorages"));
+
+export { GetHostedApplicationsArgs, GetHostedApplicationsResult, GetHostedApplicationsOutputArgs } from "./getHostedApplications";
+export const getHostedApplications: typeof import("./getHostedApplications").getHostedApplications = null as any;
+export const getHostedApplicationsOutput: typeof import("./getHostedApplications").getHostedApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedApplications","getHostedApplicationsOutput"], () => require("./getHostedApplications"));
+
+export { GetHostedDeploymentArgs, GetHostedDeploymentResult, GetHostedDeploymentOutputArgs } from "./getHostedDeployment";
+export const getHostedDeployment: typeof import("./getHostedDeployment").getHostedDeployment = null as any;
+export const getHostedDeploymentOutput: typeof import("./getHostedDeployment").getHostedDeploymentOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedDeployment","getHostedDeploymentOutput"], () => require("./getHostedDeployment"));
+
+export { GetHostedDeploymentsArgs, GetHostedDeploymentsResult, GetHostedDeploymentsOutputArgs } from "./getHostedDeployments";
+export const getHostedDeployments: typeof import("./getHostedDeployments").getHostedDeployments = null as any;
+export const getHostedDeploymentsOutput: typeof import("./getHostedDeployments").getHostedDeploymentsOutput = null as any;
+utilities.lazyLoad(exports, ["getHostedDeployments","getHostedDeploymentsOutput"], () => require("./getHostedDeployments"));
+
 export { GetImportedModelArgs, GetImportedModelResult, GetImportedModelOutputArgs } from "./getImportedModel";
 export const getImportedModel: typeof import("./getImportedModel").getImportedModel = null as any;
 export const getImportedModelOutput: typeof import("./getImportedModel").getImportedModelOutput = null as any;
@@ -194,6 +229,21 @@ export { GetSemanticStoresArgs, GetSemanticStoresResult, GetSemanticStoresOutput
 export const getSemanticStores: typeof import("./getSemanticStores").getSemanticStores = null as any;
 export const getSemanticStoresOutput: typeof import("./getSemanticStores").getSemanticStoresOutput = null as any;
 utilities.lazyLoad(exports, ["getSemanticStores","getSemanticStoresOutput"], () => require("./getSemanticStores"));
+
+export { HostedApplicationArgs, HostedApplicationState } from "./hostedApplication";
+export type HostedApplication = import("./hostedApplication").HostedApplication;
+export const HostedApplication: typeof import("./hostedApplication").HostedApplication = null as any;
+utilities.lazyLoad(exports, ["HostedApplication"], () => require("./hostedApplication"));
+
+export { HostedApplicationStorageArgs, HostedApplicationStorageState } from "./hostedApplicationStorage";
+export type HostedApplicationStorage = import("./hostedApplicationStorage").HostedApplicationStorage;
+export const HostedApplicationStorage: typeof import("./hostedApplicationStorage").HostedApplicationStorage = null as any;
+utilities.lazyLoad(exports, ["HostedApplicationStorage"], () => require("./hostedApplicationStorage"));
+
+export { HostedDeploymentArgs, HostedDeploymentState } from "./hostedDeployment";
+export type HostedDeployment = import("./hostedDeployment").HostedDeployment;
+export const HostedDeployment: typeof import("./hostedDeployment").HostedDeployment = null as any;
+utilities.lazyLoad(exports, ["HostedDeployment"], () => require("./hostedDeployment"));
 
 export { ImportedModelArgs, ImportedModelState } from "./importedModel";
 export type ImportedModel = import("./importedModel").ImportedModel;
@@ -238,6 +288,14 @@ const _module = {
                 return new DedicatedAiCluster(name, <any>undefined, { urn })
             case "oci:GenerativeAi/endpoint:Endpoint":
                 return new Endpoint(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
+                return new GenerativeAiPrivateEndpoint(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/hostedApplication:HostedApplication":
+                return new HostedApplication(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/hostedApplicationStorage:HostedApplicationStorage":
+                return new HostedApplicationStorage(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/hostedDeployment:HostedDeployment":
+                return new HostedDeployment(name, <any>undefined, { urn })
             case "oci:GenerativeAi/importedModel:ImportedModel":
                 return new ImportedModel(name, <any>undefined, { urn })
             case "oci:GenerativeAi/model:Model":
@@ -260,6 +318,10 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentProvisionedCapac
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/generativeAiPrivateEndpoint", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/hostedApplication", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/hostedApplicationStorage", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/hostedDeployment", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/importedModel", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/project", _module)

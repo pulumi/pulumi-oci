@@ -7,7 +7,9 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceCapacityArgs;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceNetworkEndpointDetailsArgs;
+import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceResourceGroupArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,14 +21,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     public static final AnalyticsInstanceState Empty = new AnalyticsInstanceState();
 
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     @Import(name="adminUser")
     private @Nullable Output<String> adminUser;
 
     /**
-     * @return user name of the authorized user.
+     * @return The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     public Optional<Output<String>> adminUser() {
@@ -34,14 +36,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     @Import(name="capacity")
     private @Nullable Output<AnalyticsInstanceCapacityArgs> capacity;
 
     /**
-     * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * @return Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     public Optional<Output<AnalyticsInstanceCapacityArgs>> capacity() {
@@ -94,14 +96,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     @Import(name="domainId")
     private @Nullable Output<String> domainId;
 
     /**
-     * @return domain id for which the user is authorized.
+     * @return The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     public Optional<Output<String>> domainId() {
@@ -139,14 +141,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     @Import(name="featureSet")
     private @Nullable Output<String> featureSet;
 
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     public Optional<Output<String>> featureSet() {
@@ -184,14 +186,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -214,14 +216,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     public Optional<Output<String>> name() {
@@ -244,14 +246,29 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * URL of the Analytics service.
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    @Import(name="resourceGroups")
+    private @Nullable Output<List<AnalyticsInstanceResourceGroupArgs>> resourceGroups;
+
+    /**
+     * @return List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    public Optional<Output<List<AnalyticsInstanceResourceGroupArgs>>> resourceGroups() {
+        return Optional.ofNullable(this.resourceGroups);
+    }
+
+    /**
+     * URL of the Analytics instance.
      * 
      */
     @Import(name="serviceUrl")
     private @Nullable Output<String> serviceUrl;
 
     /**
-     * @return URL of the Analytics service.
+     * @return URL of the Analytics instance.
      * 
      */
     public Optional<Output<String>> serviceUrl() {
@@ -295,14 +312,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -310,14 +327,14 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * @return The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -357,6 +374,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         this.licenseType = $.licenseType;
         this.name = $.name;
         this.networkEndpointDetails = $.networkEndpointDetails;
+        this.resourceGroups = $.resourceGroups;
         this.serviceUrl = $.serviceUrl;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -384,7 +402,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param adminUser user name of the authorized user.
+         * @param adminUser The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
          * 
          * @return builder
          * 
@@ -395,7 +413,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param adminUser user name of the authorized user.
+         * @param adminUser The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
          * 
          * @return builder
          * 
@@ -405,7 +423,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param capacity Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * @param capacity Service instance capacity metadata (for example, OLPU count, number of users, and so on).
          * 
          * @return builder
          * 
@@ -416,7 +434,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param capacity Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * @param capacity Service instance capacity metadata (for example, OLPU count, number of users, and so on).
          * 
          * @return builder
          * 
@@ -489,7 +507,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param domainId domain id for which the user is authorized.
+         * @param domainId The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          * 
          * @return builder
          * 
@@ -500,7 +518,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param domainId domain id for which the user is authorized.
+         * @param domainId The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
          * 
          * @return builder
          * 
@@ -552,7 +570,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param featureSet Analytics feature set.
+         * @param featureSet The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
          * 
          * @return builder
          * 
@@ -563,7 +581,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param featureSet Analytics feature set.
+         * @param featureSet The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
          * 
          * @return builder
          * 
@@ -615,7 +633,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          * 
          * @return builder
          * 
@@ -626,7 +644,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * @param kmsKeyId OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          * 
          * @return builder
          * 
@@ -657,7 +675,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * @param name The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
          * 
          * @return builder
          * 
@@ -668,7 +686,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         * @param name The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
          * 
          * @return builder
          * 
@@ -699,7 +717,38 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param serviceUrl URL of the Analytics service.
+         * @param resourceGroups List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceGroups(@Nullable Output<List<AnalyticsInstanceResourceGroupArgs>> resourceGroups) {
+            $.resourceGroups = resourceGroups;
+            return this;
+        }
+
+        /**
+         * @param resourceGroups List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceGroups(List<AnalyticsInstanceResourceGroupArgs> resourceGroups) {
+            return resourceGroups(Output.of(resourceGroups));
+        }
+
+        /**
+         * @param resourceGroups List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceGroups(AnalyticsInstanceResourceGroupArgs... resourceGroups) {
+            return resourceGroups(List.of(resourceGroups));
+        }
+
+        /**
+         * @param serviceUrl URL of the Analytics instance.
          * 
          * @return builder
          * 
@@ -710,7 +759,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param serviceUrl URL of the Analytics service.
+         * @param serviceUrl URL of the Analytics instance.
          * 
          * @return builder
          * 
@@ -768,7 +817,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeCreated The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -779,7 +828,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeCreated The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -789,7 +838,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeUpdated The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+         * @param timeUpdated The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
          * 
          * @return builder
          * 
@@ -800,7 +849,7 @@ public final class AnalyticsInstanceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param timeUpdated The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+         * @param timeUpdated The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
          * 
          * @return builder
          * 

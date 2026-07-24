@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: generativeAiPrivateEndpointDisplayName,
  *     id: generativeAiPrivateEndpointId,
+ *     resourceType: generativeAiPrivateEndpointResourceType,
  *     state: generativeAiPrivateEndpointState,
  * });
  * ```
@@ -32,6 +33,7 @@ export function getGenerativeAiPrivateEndpoints(args: GetGenerativeAiPrivateEndp
         "displayName": args.displayName,
         "filters": args.filters,
         "id": args.id,
+        "resourceType": args.resourceType,
         "state": args.state,
     }, opts);
 }
@@ -53,6 +55,10 @@ export interface GetGenerativeAiPrivateEndpointsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
     id?: string;
+    /**
+     * Query by the resource type of Generative AI private endpoints.
+     */
+    resourceType?: string;
     /**
      * The lifecycle state of Generative AI private endpoints.
      */
@@ -81,6 +87,10 @@ export interface GetGenerativeAiPrivateEndpointsResult {
      */
     readonly id?: string;
     /**
+     * The resource type that Generative AI private endpoint can be used for.
+     */
+    readonly resourceType?: string;
+    /**
      * The current state of the Generative AI Private Endpoint.
      */
     readonly state?: string;
@@ -100,6 +110,7 @@ export interface GetGenerativeAiPrivateEndpointsResult {
  *     compartmentId: compartmentId,
  *     displayName: generativeAiPrivateEndpointDisplayName,
  *     id: generativeAiPrivateEndpointId,
+ *     resourceType: generativeAiPrivateEndpointResourceType,
  *     state: generativeAiPrivateEndpointState,
  * });
  * ```
@@ -111,6 +122,7 @@ export function getGenerativeAiPrivateEndpointsOutput(args: GetGenerativeAiPriva
         "displayName": args.displayName,
         "filters": args.filters,
         "id": args.id,
+        "resourceType": args.resourceType,
         "state": args.state,
     }, opts);
 }
@@ -132,6 +144,10 @@ export interface GetGenerativeAiPrivateEndpointsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
      */
     id?: pulumi.Input<string | undefined>;
+    /**
+     * Query by the resource type of Generative AI private endpoints.
+     */
+    resourceType?: pulumi.Input<string | undefined>;
     /**
      * The lifecycle state of Generative AI private endpoints.
      */

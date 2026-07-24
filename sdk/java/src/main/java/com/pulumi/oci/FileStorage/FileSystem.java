@@ -187,6 +187,20 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
+     * Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    @Export(name="compartmentQuotaEnforcementState", refs={String.class}, tree="[0]")
+    private Output<String> compartmentQuotaEnforcementState;
+
+    /**
+     * @return Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    public Output<String> compartmentQuotaEnforcementState() {
+        return this.compartmentQuotaEnforcementState;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */

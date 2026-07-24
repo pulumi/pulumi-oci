@@ -70,6 +70,21 @@ public final class GetGenerativeAiPrivateEndpointsPlainArgs extends com.pulumi.r
     }
 
     /**
+     * Query by the resource type of Generative AI private endpoints.
+     * 
+     */
+    @Import(name="resourceType")
+    private @Nullable String resourceType;
+
+    /**
+     * @return Query by the resource type of Generative AI private endpoints.
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+
+    /**
      * The lifecycle state of Generative AI private endpoints.
      * 
      */
@@ -91,6 +106,7 @@ public final class GetGenerativeAiPrivateEndpointsPlainArgs extends com.pulumi.r
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.id = $.id;
+        this.resourceType = $.resourceType;
         this.state = $.state;
     }
 
@@ -151,6 +167,17 @@ public final class GetGenerativeAiPrivateEndpointsPlainArgs extends com.pulumi.r
          */
         public Builder id(@Nullable String id) {
             $.id = id;
+            return this;
+        }
+
+        /**
+         * @param resourceType Query by the resource type of Generative AI private endpoints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(@Nullable String resourceType) {
+            $.resourceType = resourceType;
             return this;
         }
 

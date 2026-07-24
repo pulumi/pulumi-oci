@@ -57,6 +57,11 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
      */
     private String privateEndpointIp;
     /**
+     * @return Query by the resource type of Generative AI private endpoints.
+     * 
+     */
+    private String resourceType;
+    /**
      * @return The lifecycle state of Generative AI private endpoints.
      * 
      */
@@ -152,6 +157,13 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
         return this.privateEndpointIp;
     }
     /**
+     * @return Query by the resource type of Generative AI private endpoints.
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
+    }
+    /**
      * @return The lifecycle state of Generative AI private endpoints.
      * 
      */
@@ -208,6 +220,7 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
         private List<String> nsgIds;
         private String previousState;
         private String privateEndpointIp;
+        private String resourceType;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -228,6 +241,7 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
     	      this.nsgIds = defaults.nsgIds;
     	      this.previousState = defaults.previousState;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -335,6 +349,14 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
             return this;
         }
         @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem", "state");
@@ -388,6 +410,7 @@ public final class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCol
             _resultValue.nsgIds = nsgIds;
             _resultValue.previousState = previousState;
             _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

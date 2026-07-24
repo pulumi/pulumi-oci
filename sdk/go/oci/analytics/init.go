@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AnalyticsInstance{}
 	case "oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel":
 		r = &AnalyticsInstancePrivateAccessChannel{}
+	case "oci:Analytics/analyticsInstanceResourceGroup:AnalyticsInstanceResourceGroup":
+		r = &AnalyticsInstanceResourceGroup{}
 	case "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl":
 		r = &AnalyticsInstanceVanityUrl{}
 	default:
@@ -48,6 +50,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Analytics/analyticsInstancePrivateAccessChannel",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Analytics/analyticsInstanceResourceGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

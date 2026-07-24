@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetCrossConnectGroupsCrossConnectGroupMacsecProperty;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,10 +46,30 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
      */
     private String id;
     /**
+     * @return The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    private Integer interfaceDownTimerValueInMilliseconds;
+    /**
+     * @return The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    private Boolean isInterfaceHoldTimerEnabled;
+    /**
+     * @return The flag to enable or disable the Qos for the cross-connect-group.
+     * 
+     */
+    private Boolean isQosEnabled;
+    /**
      * @return Properties used for MACsec (if capable).
      * 
      */
     private List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties;
+    /**
+     * @return Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+     * 
+     */
+    private Integer minimumLinks;
     /**
      * @return The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      * 
@@ -113,11 +135,39 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
         return this.id;
     }
     /**
+     * @return The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Integer interfaceDownTimerValueInMilliseconds() {
+        return this.interfaceDownTimerValueInMilliseconds;
+    }
+    /**
+     * @return The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Boolean isInterfaceHoldTimerEnabled() {
+        return this.isInterfaceHoldTimerEnabled;
+    }
+    /**
+     * @return The flag to enable or disable the Qos for the cross-connect-group.
+     * 
+     */
+    public Boolean isQosEnabled() {
+        return this.isQosEnabled;
+    }
+    /**
      * @return Properties used for MACsec (if capable).
      * 
      */
     public List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties() {
         return this.macsecProperties;
+    }
+    /**
+     * @return Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+     * 
+     */
+    public Integer minimumLinks() {
+        return this.minimumLinks;
     }
     /**
      * @return The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -163,7 +213,11 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Integer interfaceDownTimerValueInMilliseconds;
+        private Boolean isInterfaceHoldTimerEnabled;
+        private Boolean isQosEnabled;
         private List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties;
+        private Integer minimumLinks;
         private String ociLogicalDeviceName;
         private String ociPhysicalDeviceName;
         private String state;
@@ -177,7 +231,11 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.interfaceDownTimerValueInMilliseconds = defaults.interfaceDownTimerValueInMilliseconds;
+    	      this.isInterfaceHoldTimerEnabled = defaults.isInterfaceHoldTimerEnabled;
+    	      this.isQosEnabled = defaults.isQosEnabled;
     	      this.macsecProperties = defaults.macsecProperties;
+    	      this.minimumLinks = defaults.minimumLinks;
     	      this.ociLogicalDeviceName = defaults.ociLogicalDeviceName;
     	      this.ociPhysicalDeviceName = defaults.ociPhysicalDeviceName;
     	      this.state = defaults.state;
@@ -233,6 +291,30 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
             return this;
         }
         @CustomType.Setter
+        public Builder interfaceDownTimerValueInMilliseconds(Integer interfaceDownTimerValueInMilliseconds) {
+            if (interfaceDownTimerValueInMilliseconds == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroup", "interfaceDownTimerValueInMilliseconds");
+            }
+            this.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            if (isInterfaceHoldTimerEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroup", "isInterfaceHoldTimerEnabled");
+            }
+            this.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            if (isQosEnabled == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroup", "isQosEnabled");
+            }
+            this.isQosEnabled = isQosEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder macsecProperties(List<GetCrossConnectGroupsCrossConnectGroupMacsecProperty> macsecProperties) {
             if (macsecProperties == null) {
               throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroup", "macsecProperties");
@@ -242,6 +324,14 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
         }
         public Builder macsecProperties(GetCrossConnectGroupsCrossConnectGroupMacsecProperty... macsecProperties) {
             return macsecProperties(List.of(macsecProperties));
+        }
+        @CustomType.Setter
+        public Builder minimumLinks(Integer minimumLinks) {
+            if (minimumLinks == null) {
+              throw new MissingRequiredPropertyException("GetCrossConnectGroupsCrossConnectGroup", "minimumLinks");
+            }
+            this.minimumLinks = minimumLinks;
+            return this;
         }
         @CustomType.Setter
         public Builder ociLogicalDeviceName(String ociLogicalDeviceName) {
@@ -283,7 +373,11 @@ public final class GetCrossConnectGroupsCrossConnectGroup {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            _resultValue.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            _resultValue.isQosEnabled = isQosEnabled;
             _resultValue.macsecProperties = macsecProperties;
+            _resultValue.minimumLinks = minimumLinks;
             _resultValue.ociLogicalDeviceName = ociLogicalDeviceName;
             _resultValue.ociPhysicalDeviceName = ociPhysicalDeviceName;
             _resultValue.state = state;

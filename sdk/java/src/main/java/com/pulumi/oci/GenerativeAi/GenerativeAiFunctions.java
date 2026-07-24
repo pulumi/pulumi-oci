@@ -50,6 +50,18 @@ import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetGenerativeAiPrivateEndpointsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragePlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetImportedModelsArgs;
@@ -87,6 +99,12 @@ import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetGenerativeAiPrivateEndpointsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedApplicationResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedApplicationStorageResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedApplicationStoragesResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedApplicationsResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedDeploymentResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetHostedDeploymentsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetImportedModelsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetModelResult;
@@ -5146,6 +5164,7 @@ public final class GenerativeAiFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(generativeAiPrivateEndpointDisplayName)
      *             .id(generativeAiPrivateEndpointId)
+     *             .resourceType(generativeAiPrivateEndpointResourceType)
      *             .state(generativeAiPrivateEndpointState)
      *             .build());
      * 
@@ -5191,6 +5210,7 @@ public final class GenerativeAiFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(generativeAiPrivateEndpointDisplayName)
      *             .id(generativeAiPrivateEndpointId)
+     *             .resourceType(generativeAiPrivateEndpointResourceType)
      *             .state(generativeAiPrivateEndpointState)
      *             .build());
      * 
@@ -5236,6 +5256,7 @@ public final class GenerativeAiFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(generativeAiPrivateEndpointDisplayName)
      *             .id(generativeAiPrivateEndpointId)
+     *             .resourceType(generativeAiPrivateEndpointResourceType)
      *             .state(generativeAiPrivateEndpointState)
      *             .build());
      * 
@@ -5281,6 +5302,7 @@ public final class GenerativeAiFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(generativeAiPrivateEndpointDisplayName)
      *             .id(generativeAiPrivateEndpointId)
+     *             .resourceType(generativeAiPrivateEndpointResourceType)
      *             .state(generativeAiPrivateEndpointState)
      *             .build());
      * 
@@ -5326,6 +5348,7 @@ public final class GenerativeAiFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(generativeAiPrivateEndpointDisplayName)
      *             .id(generativeAiPrivateEndpointId)
+     *             .resourceType(generativeAiPrivateEndpointResourceType)
      *             .state(generativeAiPrivateEndpointState)
      *             .build());
      * 
@@ -5337,6 +5360,1321 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetGenerativeAiPrivateEndpointsResult> getGenerativeAiPrivateEndpointsPlain(GetGenerativeAiPrivateEndpointsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getGenerativeAiPrivateEndpoints:getGenerativeAiPrivateEndpoints", TypeShape.of(GetGenerativeAiPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationResult> getHostedApplication(GetHostedApplicationArgs args) {
+        return getHostedApplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationResult> getHostedApplicationPlain(GetHostedApplicationPlainArgs args) {
+        return getHostedApplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationResult> getHostedApplication(GetHostedApplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplication:getHostedApplication", TypeShape.of(GetHostedApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationResult> getHostedApplication(GetHostedApplicationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplication:getHostedApplication", TypeShape.of(GetHostedApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplication = GenerativeAiFunctions.getHostedApplication(GetHostedApplicationArgs.builder()
+     *             .hostedApplicationId(testHostedApplicationOciGenerativeAiHostedApplication.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationResult> getHostedApplicationPlain(GetHostedApplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedApplication:getHostedApplication", TypeShape.of(GetHostedApplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application Storage resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application storage.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStorageResult> getHostedApplicationStorage(GetHostedApplicationStorageArgs args) {
+        return getHostedApplicationStorage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Application Storage resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application storage.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationStorageResult> getHostedApplicationStoragePlain(GetHostedApplicationStoragePlainArgs args) {
+        return getHostedApplicationStoragePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Application Storage resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application storage.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStorageResult> getHostedApplicationStorage(GetHostedApplicationStorageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplicationStorage:getHostedApplicationStorage", TypeShape.of(GetHostedApplicationStorageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application Storage resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application storage.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStorageResult> getHostedApplicationStorage(GetHostedApplicationStorageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplicationStorage:getHostedApplicationStorage", TypeShape.of(GetHostedApplicationStorageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Application Storage resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted application storage.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStorageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorage = GenerativeAiFunctions.getHostedApplicationStorage(GetHostedApplicationStorageArgs.builder()
+     *             .hostedApplicationStorageId(testHostedApplicationStorageOciGenerativeAiHostedApplicationStorage.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationStorageResult> getHostedApplicationStoragePlain(GetHostedApplicationStoragePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedApplicationStorage:getHostedApplicationStorage", TypeShape.of(GetHostedApplicationStorageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Application Storages in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted application storage in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorages = GenerativeAiFunctions.getHostedApplicationStorages(GetHostedApplicationStoragesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationStorageDisplayName)
+     *             .hostedApplicationStorageType(hostedApplicationStorageHostedApplicationStorageType)
+     *             .id(hostedApplicationStorageId)
+     *             .state(hostedApplicationStorageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStoragesResult> getHostedApplicationStorages(GetHostedApplicationStoragesArgs args) {
+        return getHostedApplicationStorages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Application Storages in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted application storage in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorages = GenerativeAiFunctions.getHostedApplicationStorages(GetHostedApplicationStoragesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationStorageDisplayName)
+     *             .hostedApplicationStorageType(hostedApplicationStorageHostedApplicationStorageType)
+     *             .id(hostedApplicationStorageId)
+     *             .state(hostedApplicationStorageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationStoragesResult> getHostedApplicationStoragesPlain(GetHostedApplicationStoragesPlainArgs args) {
+        return getHostedApplicationStoragesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Application Storages in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted application storage in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorages = GenerativeAiFunctions.getHostedApplicationStorages(GetHostedApplicationStoragesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationStorageDisplayName)
+     *             .hostedApplicationStorageType(hostedApplicationStorageHostedApplicationStorageType)
+     *             .id(hostedApplicationStorageId)
+     *             .state(hostedApplicationStorageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStoragesResult> getHostedApplicationStorages(GetHostedApplicationStoragesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages", TypeShape.of(GetHostedApplicationStoragesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Application Storages in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted application storage in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorages = GenerativeAiFunctions.getHostedApplicationStorages(GetHostedApplicationStoragesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationStorageDisplayName)
+     *             .hostedApplicationStorageType(hostedApplicationStorageHostedApplicationStorageType)
+     *             .id(hostedApplicationStorageId)
+     *             .state(hostedApplicationStorageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationStoragesResult> getHostedApplicationStorages(GetHostedApplicationStoragesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages", TypeShape.of(GetHostedApplicationStoragesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Application Storages in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted application storage in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationStoragesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplicationStorages = GenerativeAiFunctions.getHostedApplicationStorages(GetHostedApplicationStoragesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationStorageDisplayName)
+     *             .hostedApplicationStorageType(hostedApplicationStorageHostedApplicationStorageType)
+     *             .id(hostedApplicationStorageId)
+     *             .state(hostedApplicationStorageState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationStoragesResult> getHostedApplicationStoragesPlain(GetHostedApplicationStoragesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages", TypeShape.of(GetHostedApplicationStoragesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Applications in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplications = GenerativeAiFunctions.getHostedApplications(GetHostedApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationDisplayName)
+     *             .id(hostedApplicationId)
+     *             .state(hostedApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationsResult> getHostedApplications(GetHostedApplicationsArgs args) {
+        return getHostedApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Applications in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplications = GenerativeAiFunctions.getHostedApplications(GetHostedApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationDisplayName)
+     *             .id(hostedApplicationId)
+     *             .state(hostedApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationsResult> getHostedApplicationsPlain(GetHostedApplicationsPlainArgs args) {
+        return getHostedApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Applications in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplications = GenerativeAiFunctions.getHostedApplications(GetHostedApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationDisplayName)
+     *             .id(hostedApplicationId)
+     *             .state(hostedApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationsResult> getHostedApplications(GetHostedApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplications:getHostedApplications", TypeShape.of(GetHostedApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Applications in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplications = GenerativeAiFunctions.getHostedApplications(GetHostedApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationDisplayName)
+     *             .id(hostedApplicationId)
+     *             .state(hostedApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedApplicationsResult> getHostedApplications(GetHostedApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedApplications:getHostedApplications", TypeShape.of(GetHostedApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Applications in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedApplicationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedApplications = GenerativeAiFunctions.getHostedApplications(GetHostedApplicationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(hostedApplicationDisplayName)
+     *             .id(hostedApplicationId)
+     *             .state(hostedApplicationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedApplicationsResult> getHostedApplicationsPlain(GetHostedApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedApplications:getHostedApplications", TypeShape.of(GetHostedApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Deployment resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted deployment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentResult> getHostedDeployment(GetHostedDeploymentArgs args) {
+        return getHostedDeployment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Deployment resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted deployment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedDeploymentResult> getHostedDeploymentPlain(GetHostedDeploymentPlainArgs args) {
+        return getHostedDeploymentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Hosted Deployment resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted deployment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentResult> getHostedDeployment(GetHostedDeploymentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedDeployment:getHostedDeployment", TypeShape.of(GetHostedDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Deployment resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted deployment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentResult> getHostedDeployment(GetHostedDeploymentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedDeployment:getHostedDeployment", TypeShape.of(GetHostedDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Hosted Deployment resource in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Gets information about a hosted deployment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployment = GenerativeAiFunctions.getHostedDeployment(GetHostedDeploymentArgs.builder()
+     *             .hostedDeploymentId(testHostedDeploymentOciGenerativeAiHostedDeployment.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedDeploymentResult> getHostedDeploymentPlain(GetHostedDeploymentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedDeployment:getHostedDeployment", TypeShape.of(GetHostedDeploymentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Deployments in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .applicationId(testApplication.id())
+     *             .displayName(hostedDeploymentDisplayName)
+     *             .id(hostedDeploymentId)
+     *             .state(hostedDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentsResult> getHostedDeployments(GetHostedDeploymentsArgs args) {
+        return getHostedDeployments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Deployments in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .applicationId(testApplication.id())
+     *             .displayName(hostedDeploymentDisplayName)
+     *             .id(hostedDeploymentId)
+     *             .state(hostedDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedDeploymentsResult> getHostedDeploymentsPlain(GetHostedDeploymentsPlainArgs args) {
+        return getHostedDeploymentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Hosted Deployments in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .applicationId(testApplication.id())
+     *             .displayName(hostedDeploymentDisplayName)
+     *             .id(hostedDeploymentId)
+     *             .state(hostedDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentsResult> getHostedDeployments(GetHostedDeploymentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedDeployments:getHostedDeployments", TypeShape.of(GetHostedDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Deployments in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .applicationId(testApplication.id())
+     *             .displayName(hostedDeploymentDisplayName)
+     *             .id(hostedDeploymentId)
+     *             .state(hostedDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetHostedDeploymentsResult> getHostedDeployments(GetHostedDeploymentsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getHostedDeployments:getHostedDeployments", TypeShape.of(GetHostedDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Hosted Deployments in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the hosted applications in a specific compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetHostedDeploymentsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testHostedDeployments = GenerativeAiFunctions.getHostedDeployments(GetHostedDeploymentsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .applicationId(testApplication.id())
+     *             .displayName(hostedDeploymentDisplayName)
+     *             .id(hostedDeploymentId)
+     *             .state(hostedDeploymentState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetHostedDeploymentsResult> getHostedDeploymentsPlain(GetHostedDeploymentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getHostedDeployments:getHostedDeployments", TypeShape.of(GetHostedDeploymentsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Imported Model resource in Oracle Cloud Infrastructure Generative AI service.

@@ -15,8 +15,8 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
     /// 
-    /// Create a new AnalyticsInstance in the specified compartment. The operation is long-running
-    /// and creates a new WorkRequest.
+    /// Create a new Analytics instance in the specified compartment. The operation is long-running
+    /// and creates a new work request.
     /// 
     /// ## Example Usage
     /// 
@@ -89,13 +89,13 @@ namespace Pulumi.Oci.Analytics
     public partial class AnalyticsInstance : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// user name of the authorized user.
+        /// The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
         /// </summary>
         [Output("adminUser")]
         public Output<string> AdminUser { get; private set; } = null!;
 
         /// <summary>
-        /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        /// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
         /// </summary>
         [Output("capacity")]
         public Output<Outputs.AnalyticsInstanceCapacity> Capacity { get; private set; } = null!;
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// domain id for which the user is authorized.
+        /// The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
         /// </summary>
         [Output("domainId")]
         public Output<string> DomainId { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string> FeatureBundle { get; private set; } = null!;
 
         /// <summary>
-        /// Analytics feature set.
+        /// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         /// </summary>
         [Output("featureSet")]
         public Output<string> FeatureSet { get; private set; } = null!;
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string?> IdcsAccessToken { get; private set; } = null!;
 
         /// <summary>
-        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         /// </summary>
         [Output("kmsKeyId")]
         public Output<string?> KmsKeyId { get; private set; } = null!;
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string> LicenseType { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        /// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -179,7 +179,13 @@ namespace Pulumi.Oci.Analytics
         public Output<Outputs.AnalyticsInstanceNetworkEndpointDetails> NetworkEndpointDetails { get; private set; } = null!;
 
         /// <summary>
-        /// URL of the Analytics service.
+        /// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        /// </summary>
+        [Output("resourceGroups")]
+        public Output<ImmutableArray<Outputs.AnalyticsInstanceResourceGroup>> ResourceGroups { get; private set; } = null!;
+
+        /// <summary>
+        /// URL of the Analytics instance.
         /// </summary>
         [Output("serviceUrl")]
         public Output<string> ServiceUrl { get; private set; } = null!;
@@ -201,13 +207,13 @@ namespace Pulumi.Oci.Analytics
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        /// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -269,13 +275,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// user name of the authorized user.
+        /// The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
         /// </summary>
         [Input("adminUser")]
         public Input<string>? AdminUser { get; set; }
 
         /// <summary>
-        /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        /// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
         /// </summary>
         [Input("capacity", required: true)]
         public Input<Inputs.AnalyticsInstanceCapacityArgs> Capacity { get; set; } = null!;
@@ -305,7 +311,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// domain id for which the user is authorized.
+        /// The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
         /// </summary>
         [Input("domainId")]
         public Input<string>? DomainId { get; set; }
@@ -323,7 +329,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? FeatureBundle { get; set; }
 
         /// <summary>
-        /// Analytics feature set.
+        /// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         /// </summary>
         [Input("featureSet", required: true)]
         public Input<string> FeatureSet { get; set; } = null!;
@@ -357,7 +363,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -369,7 +375,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string> LicenseType { get; set; } = null!;
 
         /// <summary>
-        /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        /// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -405,13 +411,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// user name of the authorized user.
+        /// The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
         /// </summary>
         [Input("adminUser")]
         public Input<string>? AdminUser { get; set; }
 
         /// <summary>
-        /// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+        /// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
         /// </summary>
         [Input("capacity")]
         public Input<Inputs.AnalyticsInstanceCapacityGetArgs>? Capacity { get; set; }
@@ -441,7 +447,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// domain id for which the user is authorized.
+        /// The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
         /// </summary>
         [Input("domainId")]
         public Input<string>? DomainId { get; set; }
@@ -459,7 +465,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? FeatureBundle { get; set; }
 
         /// <summary>
-        /// Analytics feature set.
+        /// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         /// </summary>
         [Input("featureSet")]
         public Input<string>? FeatureSet { get; set; }
@@ -493,7 +499,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+        /// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
@@ -505,7 +511,7 @@ namespace Pulumi.Oci.Analytics
         public Input<string>? LicenseType { get; set; }
 
         /// <summary>
-        /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        /// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -516,8 +522,20 @@ namespace Pulumi.Oci.Analytics
         [Input("networkEndpointDetails")]
         public Input<Inputs.AnalyticsInstanceNetworkEndpointDetailsGetArgs>? NetworkEndpointDetails { get; set; }
 
+        [Input("resourceGroups")]
+        private InputList<Inputs.AnalyticsInstanceResourceGroupGetArgs>? _resourceGroups;
+
         /// <summary>
-        /// URL of the Analytics service.
+        /// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+        /// </summary>
+        public InputList<Inputs.AnalyticsInstanceResourceGroupGetArgs> ResourceGroups
+        {
+            get => _resourceGroups ?? (_resourceGroups = new InputList<Inputs.AnalyticsInstanceResourceGroupGetArgs>());
+            set => _resourceGroups = value;
+        }
+
+        /// <summary>
+        /// URL of the Analytics instance.
         /// </summary>
         [Input("serviceUrl")]
         public Input<string>? ServiceUrl { get; set; }
@@ -545,13 +563,13 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+        /// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -149,9 +149,25 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        public readonly int InterfaceDownTimerValueInMilliseconds;
+        /// <summary>
+        /// The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        public readonly bool IsInterfaceHoldTimerEnabled;
+        /// <summary>
+        /// The flag to enable or disable the Qos for the cross-connect-group.
+        /// </summary>
+        public readonly bool IsQosEnabled;
+        /// <summary>
         /// Properties used for MACsec (if capable).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCrossConnectGroupMacsecPropertyResult> MacsecProperties;
+        /// <summary>
+        /// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+        /// </summary>
+        public readonly int MinimumLinks;
         /// <summary>
         /// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         /// </summary>
@@ -185,7 +201,15 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            int interfaceDownTimerValueInMilliseconds,
+
+            bool isInterfaceHoldTimerEnabled,
+
+            bool isQosEnabled,
+
             ImmutableArray<Outputs.GetCrossConnectGroupMacsecPropertyResult> macsecProperties,
+
+            int minimumLinks,
 
             string ociLogicalDeviceName,
 
@@ -202,7 +226,11 @@ namespace Pulumi.Oci.Core
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InterfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            IsInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            IsQosEnabled = isQosEnabled;
             MacsecProperties = macsecProperties;
+            MinimumLinks = minimumLinks;
             OciLogicalDeviceName = ociLogicalDeviceName;
             OciPhysicalDeviceName = ociPhysicalDeviceName;
             State = state;

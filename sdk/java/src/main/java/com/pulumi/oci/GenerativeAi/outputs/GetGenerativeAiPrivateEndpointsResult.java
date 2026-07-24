@@ -37,6 +37,11 @@ public final class GetGenerativeAiPrivateEndpointsResult {
      */
     private @Nullable String id;
     /**
+     * @return The resource type that Generative AI private endpoint can be used for.
+     * 
+     */
+    private @Nullable String resourceType;
+    /**
      * @return The current state of the Generative AI Private Endpoint.
      * 
      */
@@ -75,6 +80,13 @@ public final class GetGenerativeAiPrivateEndpointsResult {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return The resource type that Generative AI private endpoint can be used for.
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+    /**
      * @return The current state of the Generative AI Private Endpoint.
      * 
      */
@@ -96,6 +108,7 @@ public final class GetGenerativeAiPrivateEndpointsResult {
         private @Nullable List<GetGenerativeAiPrivateEndpointsFilter> filters;
         private List<GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection> generativeAiPrivateEndpointCollections;
         private @Nullable String id;
+        private @Nullable String resourceType;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetGenerativeAiPrivateEndpointsResult defaults) {
@@ -105,6 +118,7 @@ public final class GetGenerativeAiPrivateEndpointsResult {
     	      this.filters = defaults.filters;
     	      this.generativeAiPrivateEndpointCollections = defaults.generativeAiPrivateEndpointCollections;
     	      this.id = defaults.id;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
         }
 
@@ -149,6 +163,12 @@ public final class GetGenerativeAiPrivateEndpointsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceType(@Nullable String resourceType) {
+
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -161,6 +181,7 @@ public final class GetGenerativeAiPrivateEndpointsResult {
             _resultValue.filters = filters;
             _resultValue.generativeAiPrivateEndpointCollections = generativeAiPrivateEndpointCollections;
             _resultValue.id = id;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             return _resultValue;
         }

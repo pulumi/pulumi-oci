@@ -58,12 +58,16 @@ type GetLetterOfAuthorityArgs struct {
 
 // A collection of values returned by getLetterOfAuthority.
 type GetLetterOfAuthorityResult struct {
+	// Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+	AuthorizedAgent string `pulumi:"authorizedAgent"`
 	// The name of the entity authorized by this Letter of Authority.
 	AuthorizedEntityName string `pulumi:"authorizedEntityName"`
 	// The type of cross-connect fiber, termination, and optical specification.
 	CircuitType string `pulumi:"circuitType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
 	CrossConnectId string `pulumi:"crossConnectId"`
+	// Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+	ExtensionDetails []GetLetterOfAuthorityExtensionDetail `pulumi:"extensionDetails"`
 	// The address of the FastConnect location.
 	FacilityLocation string `pulumi:"facilityLocation"`
 	// The provider-assigned unique ID for this managed resource.
@@ -110,6 +114,11 @@ func (o GetLetterOfAuthorityResultOutput) ToGetLetterOfAuthorityResultOutputWith
 	return o
 }
 
+// Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+func (o GetLetterOfAuthorityResultOutput) AuthorizedAgent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLetterOfAuthorityResult) string { return v.AuthorizedAgent }).(pulumi.StringOutput)
+}
+
 // The name of the entity authorized by this Letter of Authority.
 func (o GetLetterOfAuthorityResultOutput) AuthorizedEntityName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLetterOfAuthorityResult) string { return v.AuthorizedEntityName }).(pulumi.StringOutput)
@@ -123,6 +132,11 @@ func (o GetLetterOfAuthorityResultOutput) CircuitType() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
 func (o GetLetterOfAuthorityResultOutput) CrossConnectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLetterOfAuthorityResult) string { return v.CrossConnectId }).(pulumi.StringOutput)
+}
+
+// Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+func (o GetLetterOfAuthorityResultOutput) ExtensionDetails() GetLetterOfAuthorityExtensionDetailArrayOutput {
+	return o.ApplyT(func(v GetLetterOfAuthorityResult) []GetLetterOfAuthorityExtensionDetail { return v.ExtensionDetails }).(GetLetterOfAuthorityExtensionDetailArrayOutput)
 }
 
 // The address of the FastConnect location.

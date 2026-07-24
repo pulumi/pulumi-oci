@@ -58,6 +58,11 @@ public final class GetGenerativeAiPrivateEndpointResult {
      */
     private String privateEndpointIp;
     /**
+     * @return The resource type that Generative AI private endpoint can be used for.
+     * 
+     */
+    private String resourceType;
+    /**
      * @return The current state of the Generative AI Private Endpoint.
      * 
      */
@@ -156,6 +161,13 @@ public final class GetGenerativeAiPrivateEndpointResult {
         return this.privateEndpointIp;
     }
     /**
+     * @return The resource type that Generative AI private endpoint can be used for.
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
+    }
+    /**
      * @return The current state of the Generative AI Private Endpoint.
      * 
      */
@@ -213,6 +225,7 @@ public final class GetGenerativeAiPrivateEndpointResult {
         private List<String> nsgIds;
         private String previousState;
         private String privateEndpointIp;
+        private String resourceType;
         private String state;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -234,6 +247,7 @@ public final class GetGenerativeAiPrivateEndpointResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.previousState = defaults.previousState;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -349,6 +363,14 @@ public final class GetGenerativeAiPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetGenerativeAiPrivateEndpointResult", "resourceType");
+            }
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetGenerativeAiPrivateEndpointResult", "state");
@@ -403,6 +425,7 @@ public final class GetGenerativeAiPrivateEndpointResult {
             _resultValue.nsgIds = nsgIds;
             _resultValue.previousState = previousState;
             _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

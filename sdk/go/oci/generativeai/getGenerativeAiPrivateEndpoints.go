@@ -33,6 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(generativeAiPrivateEndpointDisplayName),
 //				Id:            pulumi.StringRef(generativeAiPrivateEndpointId),
+//				ResourceType:  pulumi.StringRef(generativeAiPrivateEndpointResourceType),
 //				State:         pulumi.StringRef(generativeAiPrivateEndpointState),
 //			}, nil)
 //			if err != nil {
@@ -62,6 +63,8 @@ type GetGenerativeAiPrivateEndpointsArgs struct {
 	Filters     []GetGenerativeAiPrivateEndpointsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	Id *string `pulumi:"id"`
+	// Query by the resource type of Generative AI private endpoints.
+	ResourceType *string `pulumi:"resourceType"`
 	// The lifecycle state of Generative AI private endpoints.
 	State *string `pulumi:"state"`
 }
@@ -77,6 +80,8 @@ type GetGenerativeAiPrivateEndpointsResult struct {
 	GenerativeAiPrivateEndpointCollections []GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollection `pulumi:"generativeAiPrivateEndpointCollections"`
 	// The OCID of a private endpoint.
 	Id *string `pulumi:"id"`
+	// The resource type that Generative AI private endpoint can be used for.
+	ResourceType *string `pulumi:"resourceType"`
 	// The current state of the Generative AI Private Endpoint.
 	State *string `pulumi:"state"`
 }
@@ -99,6 +104,8 @@ type GetGenerativeAiPrivateEndpointsOutputArgs struct {
 	Filters     GetGenerativeAiPrivateEndpointsFilterArrayInput `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
 	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Query by the resource type of Generative AI private endpoints.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The lifecycle state of Generative AI private endpoints.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -148,6 +155,11 @@ func (o GetGenerativeAiPrivateEndpointsResultOutput) GenerativeAiPrivateEndpoint
 // The OCID of a private endpoint.
 func (o GetGenerativeAiPrivateEndpointsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The resource type that Generative AI private endpoint can be used for.
+func (o GetGenerativeAiPrivateEndpointsResultOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the Generative AI Private Endpoint.

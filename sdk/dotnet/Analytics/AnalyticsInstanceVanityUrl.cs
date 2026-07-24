@@ -15,8 +15,7 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
     /// 
-    /// Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-    /// for this host.
+    /// Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
     /// 
     /// ## Example Usage
     /// 
@@ -54,13 +53,13 @@ namespace Pulumi.Oci.Analytics
     public partial class AnalyticsInstanceVanityUrl : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the AnalyticsInstance.
+        /// The OCID of the Analytics instance.
         /// </summary>
         [Output("analyticsInstanceId")]
         public Output<string> AnalyticsInstanceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+        /// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
         /// </summary>
         [Output("caCertificate")]
         public Output<string> CaCertificate { get; private set; } = null!;
@@ -72,19 +71,19 @@ namespace Pulumi.Oci.Analytics
         public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
-        /// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+        /// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
         /// </summary>
         [Output("hosts")]
         public Output<ImmutableArray<string>> Hosts { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Passphrase for the PEM Private key (if any).
+        /// (Updatable) Passphrase for the PEM private key (if any).
         /// </summary>
         [Output("passphrase")]
         public Output<string?> Passphrase { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) PEM Private key for HTTPS connections.
+        /// (Updatable) PEM private key for HTTPS connections.
         /// </summary>
         [Output("privateKey")]
         public Output<string> PrivateKey { get; private set; } = null!;
@@ -151,13 +150,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceVanityUrlArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the AnalyticsInstance.
+        /// The OCID of the Analytics instance.
         /// </summary>
         [Input("analyticsInstanceId", required: true)]
         public Input<string> AnalyticsInstanceId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+        /// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
         /// </summary>
         [Input("caCertificate", required: true)]
         public Input<string> CaCertificate { get; set; } = null!;
@@ -172,7 +171,7 @@ namespace Pulumi.Oci.Analytics
         private InputList<string>? _hosts;
 
         /// <summary>
-        /// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+        /// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
         /// </summary>
         public InputList<string> Hosts
         {
@@ -184,7 +183,7 @@ namespace Pulumi.Oci.Analytics
         private Input<string>? _passphrase;
 
         /// <summary>
-        /// (Updatable) Passphrase for the PEM Private key (if any).
+        /// (Updatable) Passphrase for the PEM private key (if any).
         /// </summary>
         public Input<string>? Passphrase
         {
@@ -200,7 +199,7 @@ namespace Pulumi.Oci.Analytics
         private Input<string>? _privateKey;
 
         /// <summary>
-        /// (Updatable) PEM Private key for HTTPS connections.
+        /// (Updatable) PEM private key for HTTPS connections.
         /// </summary>
         public Input<string>? PrivateKey
         {
@@ -231,13 +230,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class AnalyticsInstanceVanityUrlState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the AnalyticsInstance.
+        /// The OCID of the Analytics instance.
         /// </summary>
         [Input("analyticsInstanceId")]
         public Input<string>? AnalyticsInstanceId { get; set; }
 
         /// <summary>
-        /// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+        /// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
         /// </summary>
         [Input("caCertificate")]
         public Input<string>? CaCertificate { get; set; }
@@ -252,7 +251,7 @@ namespace Pulumi.Oci.Analytics
         private InputList<string>? _hosts;
 
         /// <summary>
-        /// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+        /// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
         /// </summary>
         public InputList<string> Hosts
         {
@@ -264,7 +263,7 @@ namespace Pulumi.Oci.Analytics
         private Input<string>? _passphrase;
 
         /// <summary>
-        /// (Updatable) Passphrase for the PEM Private key (if any).
+        /// (Updatable) Passphrase for the PEM private key (if any).
         /// </summary>
         public Input<string>? Passphrase
         {
@@ -280,7 +279,7 @@ namespace Pulumi.Oci.Analytics
         private Input<string>? _privateKey;
 
         /// <summary>
-        /// (Updatable) PEM Private key for HTTPS connections.
+        /// (Updatable) PEM private key for HTTPS connections.
         /// </summary>
         public Input<string>? PrivateKey
         {

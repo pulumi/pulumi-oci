@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceCapacity;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceNetworkEndpointDetail;
+import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceResourceGroup;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public final class GetAnalyticsInstanceResult {
     private String adminUser;
     private String analyticsInstanceId;
     /**
-     * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * @return The capacity (in OCPU&#39;s) to be allocated for this resource.
      * 
      */
     private List<GetAnalyticsInstanceCapacity> capacities;
@@ -32,7 +33,7 @@ public final class GetAnalyticsInstanceResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return Description of the vanity url.
+     * @return Description of the vanity URL.
      * 
      */
     private String description;
@@ -52,7 +53,7 @@ public final class GetAnalyticsInstanceResult {
      */
     private String featureBundle;
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     private String featureSet;
@@ -62,13 +63,13 @@ public final class GetAnalyticsInstanceResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The Virtual Cloud Network OCID.
+     * @return Unique identifier and name of resource group.  Must be unique within the instance
      * 
      */
     private String id;
     private String idcsAccessToken;
     /**
-     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     private String kmsKeyId;
@@ -78,7 +79,7 @@ public final class GetAnalyticsInstanceResult {
      */
     private String licenseType;
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     private String name;
@@ -88,12 +89,17 @@ public final class GetAnalyticsInstanceResult {
      */
     private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
     /**
-     * @return URL of the Analytics service.
+     * @return List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    private List<GetAnalyticsInstanceResourceGroup> resourceGroups;
+    /**
+     * @return URL of the Analytics instance.
      * 
      */
     private String serviceUrl;
     /**
-     * @return The current state of an instance.
+     * @return The current state of the Analytics instance.
      * 
      */
     private String state;
@@ -103,17 +109,17 @@ public final class GetAnalyticsInstanceResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * @return The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Analytics instance update channel.
+     * @return The Analytics instance update cycle.
      * 
      */
     private String updateChannel;
@@ -126,7 +132,7 @@ public final class GetAnalyticsInstanceResult {
         return this.analyticsInstanceId;
     }
     /**
-     * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * @return The capacity (in OCPU&#39;s) to be allocated for this resource.
      * 
      */
     public List<GetAnalyticsInstanceCapacity> capacities() {
@@ -147,7 +153,7 @@ public final class GetAnalyticsInstanceResult {
         return this.definedTags;
     }
     /**
-     * @return Description of the vanity url.
+     * @return Description of the vanity URL.
      * 
      */
     public String description() {
@@ -175,7 +181,7 @@ public final class GetAnalyticsInstanceResult {
         return this.featureBundle;
     }
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     public String featureSet() {
@@ -189,7 +195,7 @@ public final class GetAnalyticsInstanceResult {
         return this.freeformTags;
     }
     /**
-     * @return The Virtual Cloud Network OCID.
+     * @return Unique identifier and name of resource group.  Must be unique within the instance
      * 
      */
     public String id() {
@@ -199,7 +205,7 @@ public final class GetAnalyticsInstanceResult {
         return this.idcsAccessToken;
     }
     /**
-     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     public String kmsKeyId() {
@@ -213,7 +219,7 @@ public final class GetAnalyticsInstanceResult {
         return this.licenseType;
     }
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     public String name() {
@@ -227,14 +233,21 @@ public final class GetAnalyticsInstanceResult {
         return this.networkEndpointDetails;
     }
     /**
-     * @return URL of the Analytics service.
+     * @return List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    public List<GetAnalyticsInstanceResourceGroup> resourceGroups() {
+        return this.resourceGroups;
+    }
+    /**
+     * @return URL of the Analytics instance.
      * 
      */
     public String serviceUrl() {
         return this.serviceUrl;
     }
     /**
-     * @return The current state of an instance.
+     * @return The current state of the Analytics instance.
      * 
      */
     public String state() {
@@ -248,21 +261,21 @@ public final class GetAnalyticsInstanceResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * @return The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Analytics instance update channel.
+     * @return The Analytics instance update cycle.
      * 
      */
     public String updateChannel() {
@@ -295,6 +308,7 @@ public final class GetAnalyticsInstanceResult {
         private String licenseType;
         private String name;
         private List<GetAnalyticsInstanceNetworkEndpointDetail> networkEndpointDetails;
+        private List<GetAnalyticsInstanceResourceGroup> resourceGroups;
         private String serviceUrl;
         private String state;
         private Map<String,String> systemTags;
@@ -321,6 +335,7 @@ public final class GetAnalyticsInstanceResult {
     	      this.licenseType = defaults.licenseType;
     	      this.name = defaults.name;
     	      this.networkEndpointDetails = defaults.networkEndpointDetails;
+    	      this.resourceGroups = defaults.resourceGroups;
     	      this.serviceUrl = defaults.serviceUrl;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -472,6 +487,17 @@ public final class GetAnalyticsInstanceResult {
             return networkEndpointDetails(List.of(networkEndpointDetails));
         }
         @CustomType.Setter
+        public Builder resourceGroups(List<GetAnalyticsInstanceResourceGroup> resourceGroups) {
+            if (resourceGroups == null) {
+              throw new MissingRequiredPropertyException("GetAnalyticsInstanceResult", "resourceGroups");
+            }
+            this.resourceGroups = resourceGroups;
+            return this;
+        }
+        public Builder resourceGroups(GetAnalyticsInstanceResourceGroup... resourceGroups) {
+            return resourceGroups(List.of(resourceGroups));
+        }
+        @CustomType.Setter
         public Builder serviceUrl(String serviceUrl) {
             if (serviceUrl == null) {
               throw new MissingRequiredPropertyException("GetAnalyticsInstanceResult", "serviceUrl");
@@ -538,6 +564,7 @@ public final class GetAnalyticsInstanceResult {
             _resultValue.licenseType = licenseType;
             _resultValue.name = name;
             _resultValue.networkEndpointDetails = networkEndpointDetails;
+            _resultValue.resourceGroups = resourceGroups;
             _resultValue.serviceUrl = serviceUrl;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

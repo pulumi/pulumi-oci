@@ -166,6 +166,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     private String timeCreated;
     /**
+     * @return The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+     * 
+     */
+    private String trafficMode;
+    /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
@@ -383,6 +388,13 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.timeCreated;
     }
     /**
+     * @return The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+     * 
+     */
+    public String trafficMode() {
+        return this.trafficMode;
+    }
+    /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
@@ -437,6 +449,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
         private String serviceType;
         private String state;
         private String timeCreated;
+        private String trafficMode;
         private String type;
         private String virtualCircuitId;
         private List<GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas;
@@ -471,6 +484,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
     	      this.serviceType = defaults.serviceType;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.trafficMode = defaults.trafficMode;
     	      this.type = defaults.type;
     	      this.virtualCircuitId = defaults.virtualCircuitId;
     	      this.virtualCircuitRedundancyMetadatas = defaults.virtualCircuitRedundancyMetadatas;
@@ -710,6 +724,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
             return this;
         }
         @CustomType.Setter
+        public Builder trafficMode(String trafficMode) {
+            if (trafficMode == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "trafficMode");
+            }
+            this.trafficMode = trafficMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "type");
@@ -766,6 +788,7 @@ public final class GetVirtualCircuitsVirtualCircuit {
             _resultValue.serviceType = serviceType;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.trafficMode = trafficMode;
             _resultValue.type = type;
             _resultValue.virtualCircuitId = virtualCircuitId;
             _resultValue.virtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;

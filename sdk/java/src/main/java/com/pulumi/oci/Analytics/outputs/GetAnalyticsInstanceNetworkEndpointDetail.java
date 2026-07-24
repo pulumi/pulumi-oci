@@ -18,17 +18,17 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
      */
     private String networkEndpointType;
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     private List<String> networkSecurityGroupIds;
     /**
-     * @return OCID of the customer subnet connected to private access channel.
+     * @return OCID of the customer subnet connected to the private access channel.
      * 
      */
     private String subnetId;
     /**
-     * @return OCID of the customer VCN peered with private access channel.
+     * @return OCID of the customer VCN peered with the private access channel.
      * 
      */
     private String vcnId;
@@ -38,7 +38,7 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
      */
     private List<String> whitelistedIps;
     /**
-     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * @return Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     private List<String> whitelistedServices;
@@ -57,21 +57,21 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
         return this.networkEndpointType;
     }
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public List<String> networkSecurityGroupIds() {
         return this.networkSecurityGroupIds;
     }
     /**
-     * @return OCID of the customer subnet connected to private access channel.
+     * @return OCID of the customer subnet connected to the private access channel.
      * 
      */
     public String subnetId() {
         return this.subnetId;
     }
     /**
-     * @return OCID of the customer VCN peered with private access channel.
+     * @return OCID of the customer VCN peered with the private access channel.
      * 
      */
     public String vcnId() {
@@ -85,7 +85,7 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
         return this.whitelistedIps;
     }
     /**
-     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * @return Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     public List<String> whitelistedServices() {

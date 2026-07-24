@@ -31,7 +31,7 @@ public final class GetAnalyticsInstancesResult {
      */
     private String compartmentId;
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     private @Nullable String featureSet;
@@ -42,12 +42,12 @@ public final class GetAnalyticsInstancesResult {
      */
     private String id;
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     private @Nullable String name;
     /**
-     * @return The current state of an instance.
+     * @return The current state of the Analytics instance.
      * 
      */
     private @Nullable String state;
@@ -75,7 +75,7 @@ public final class GetAnalyticsInstancesResult {
         return this.compartmentId;
     }
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     public Optional<String> featureSet() {
@@ -92,14 +92,14 @@ public final class GetAnalyticsInstancesResult {
         return this.id;
     }
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return The current state of an instance.
+     * @return The current state of the Analytics instance.
      * 
      */
     public Optional<String> state() {

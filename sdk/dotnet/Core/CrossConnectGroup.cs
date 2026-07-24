@@ -54,6 +54,9 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         InterfaceDownTimerValueInMilliseconds = crossConnectGroupInterfaceDownTimerValueInMilliseconds,
+    ///         IsInterfaceHoldTimerEnabled = crossConnectGroupIsInterfaceHoldTimerEnabled,
+    ///         IsQosEnabled = crossConnectGroupIsQosEnabled,
     ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectGroupMacsecPropertiesArgs
     ///         {
     ///             State = crossConnectGroupMacsecPropertiesState,
@@ -65,6 +68,7 @@ namespace Pulumi.Oci.Core
     ///                 ConnectivityAssociationNameSecretId = testSecret.Id,
     ///             },
     ///         },
+    ///         MinimumLinks = crossConnectGroupMinimumLinks,
     ///     });
     /// 
     /// });
@@ -112,10 +116,38 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Output("interfaceDownTimerValueInMilliseconds")]
+        public Output<int> InterfaceDownTimerValueInMilliseconds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Output("isInterfaceHoldTimerEnabled")]
+        public Output<bool> IsInterfaceHoldTimerEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Output("isQosEnabled")]
+        public Output<bool> IsQosEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Output("macsecProperties")]
         public Output<Outputs.CrossConnectGroupMacsecProperties> MacsecProperties { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("minimumLinks")]
+        public Output<int> MinimumLinks { get; private set; } = null!;
 
         /// <summary>
         /// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -230,10 +262,38 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Input("interfaceDownTimerValueInMilliseconds")]
+        public Input<int>? InterfaceDownTimerValueInMilliseconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Input("isInterfaceHoldTimerEnabled")]
+        public Input<bool>? IsInterfaceHoldTimerEnabled { get; set; }
+
+        /// <summary>
+        /// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Input("isQosEnabled")]
+        public Input<bool>? IsQosEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectGroupMacsecPropertiesArgs>? MacsecProperties { get; set; }
+
+        /// <summary>
+        /// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("minimumLinks")]
+        public Input<int>? MinimumLinks { get; set; }
 
         public CrossConnectGroupArgs()
         {
@@ -286,10 +346,38 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Input("interfaceDownTimerValueInMilliseconds")]
+        public Input<int>? InterfaceDownTimerValueInMilliseconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Input("isInterfaceHoldTimerEnabled")]
+        public Input<bool>? IsInterfaceHoldTimerEnabled { get; set; }
+
+        /// <summary>
+        /// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Input("isQosEnabled")]
+        public Input<bool>? IsQosEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) Properties used to configure MACsec (if capable).
         /// </summary>
         [Input("macsecProperties")]
         public Input<Inputs.CrossConnectGroupMacsecPropertiesGetArgs>? MacsecProperties { get; set; }
+
+        /// <summary>
+        /// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("minimumLinks")]
+        public Input<int>? MinimumLinks { get; set; }
 
         /// <summary>
         /// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.

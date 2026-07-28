@@ -39,7 +39,8 @@ class VirtualCircuitArgs:
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
-                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VirtualCircuit resource.
 
@@ -65,6 +66,7 @@ class VirtualCircuitArgs:
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "type", type)
@@ -105,6 +107,8 @@ class VirtualCircuitArgs:
             pulumi.set(__self__, "region", region)
         if routing_policies is not None:
             pulumi.set(__self__, "routing_policies", routing_policies)
+        if traffic_mode is not None:
+            pulumi.set(__self__, "traffic_mode", traffic_mode)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -338,6 +342,18 @@ class VirtualCircuitArgs:
     def routing_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "routing_policies", value)
 
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @traffic_mode.setter
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "traffic_mode", value)
+
 
 @pulumi.input_type
 class _VirtualCircuitState:
@@ -369,6 +385,7 @@ class _VirtualCircuitState:
                  service_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
         """
@@ -401,6 +418,7 @@ class _VirtualCircuitState:
         :param pulumi.Input[_builtins.str] service_type: Provider service type.
         :param pulumi.Input[_builtins.str] state: The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -467,6 +485,8 @@ class _VirtualCircuitState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if traffic_mode is not None:
+            pulumi.set(__self__, "traffic_mode", traffic_mode)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if virtual_circuit_redundancy_metadatas is not None:
@@ -799,6 +819,18 @@ class _VirtualCircuitState:
         pulumi.set(self, "time_created", value)
 
     @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @traffic_mode.setter
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "traffic_mode", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -850,6 +882,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -919,7 +952,8 @@ class VirtualCircuit(pulumi.CustomResource):
                 "cidr_block": virtual_circuit_public_prefixes_cidr_block,
             }],
             region=virtual_circuit_region,
-            routing_policies=virtual_circuit_routing_policy)
+            routing_policies=virtual_circuit_routing_policy,
+            traffic_mode=virtual_circuit_traffic_mode)
         ```
 
         ## Import
@@ -951,6 +985,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -1029,7 +1064,8 @@ class VirtualCircuit(pulumi.CustomResource):
                 "cidr_block": virtual_circuit_public_prefixes_cidr_block,
             }],
             region=virtual_circuit_region,
-            routing_policies=virtual_circuit_routing_policy)
+            routing_policies=virtual_circuit_routing_policy,
+            traffic_mode=virtual_circuit_traffic_mode)
         ```
 
         ## Import
@@ -1074,6 +1110,7 @@ class VirtualCircuit(pulumi.CustomResource):
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1104,6 +1141,7 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["public_prefixes"] = public_prefixes
             __props__.__dict__["region"] = region
             __props__.__dict__["routing_policies"] = routing_policies
+            __props__.__dict__["traffic_mode"] = traffic_mode
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
@@ -1154,6 +1192,7 @@ class VirtualCircuit(pulumi.CustomResource):
             service_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
         """
@@ -1190,6 +1229,7 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] service_type: Provider service type.
         :param pulumi.Input[_builtins.str] state: The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -1227,6 +1267,7 @@ class VirtualCircuit(pulumi.CustomResource):
         __props__.__dict__["service_type"] = service_type
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["traffic_mode"] = traffic_mode
         __props__.__dict__["type"] = type
         __props__.__dict__["virtual_circuit_redundancy_metadatas"] = virtual_circuit_redundancy_metadatas
         return VirtualCircuit(resource_name, opts=opts, __props__=__props__)
@@ -1448,6 +1489,14 @@ class VirtualCircuit(pulumi.CustomResource):
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
 
     @_builtins.property
     @pulumi.getter

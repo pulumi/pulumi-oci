@@ -12,9 +12,15 @@ import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePlainArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancePrivateAccessChannelPlainArgs;
+import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupPlainArgs;
+import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsPlainArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesArgs;
 import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstancesPlainArgs;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancePrivateAccessChannelResult;
+import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceResourceGroupResult;
+import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceResourceGroupsResult;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstanceResult;
 import com.pulumi.oci.Analytics.outputs.GetAnalyticsInstancesResult;
 import com.pulumi.oci.Utilities;
@@ -24,7 +30,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      * 
      * ## Example Usage
      * 
@@ -66,7 +72,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      * 
      * ## Example Usage
      * 
@@ -108,7 +114,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      * 
      * ## Example Usage
      * 
@@ -150,7 +156,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      * 
      * ## Example Usage
      * 
@@ -192,7 +198,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Info for a specific Analytics instance.
+     * Information about a specific Analytics instance.
      * 
      * ## Example Usage
      * 
@@ -234,7 +240,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      * 
      * ## Example Usage
      * 
@@ -277,7 +283,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      * 
      * ## Example Usage
      * 
@@ -320,7 +326,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      * 
      * ## Example Usage
      * 
@@ -363,7 +369,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      * 
      * ## Example Usage
      * 
@@ -406,7 +412,7 @@ public final class AnalyticsFunctions {
     /**
      * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
      * 
-     * Retrieve private access channel in the specified Analytics Instance.
+     * Retrieve private access channel for the specified Analytics Instance.
      * 
      * ## Example Usage
      * 
@@ -445,6 +451,436 @@ public final class AnalyticsFunctions {
      */
     public static CompletableFuture<GetAnalyticsInstancePrivateAccessChannelResult> getAnalyticsInstancePrivateAccessChannelPlain(GetAnalyticsInstancePrivateAccessChannelPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", TypeShape.of(GetAnalyticsInstancePrivateAccessChannelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Resource Group resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Get details of a resource group for an instance
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupResult> getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs args) {
+        return getAnalyticsInstanceResourceGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Resource Group resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Get details of a resource group for an instance
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAnalyticsInstanceResourceGroupResult> getAnalyticsInstanceResourceGroupPlain(GetAnalyticsInstanceResourceGroupPlainArgs args) {
+        return getAnalyticsInstanceResourceGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Resource Group resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Get details of a resource group for an instance
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupResult> getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup", TypeShape.of(GetAnalyticsInstanceResourceGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Resource Group resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Get details of a resource group for an instance
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupResult> getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup", TypeShape.of(GetAnalyticsInstanceResourceGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analytics Instance Resource Group resource in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * Get details of a resource group for an instance
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAnalyticsInstanceResourceGroupResult> getAnalyticsInstanceResourceGroupPlain(GetAnalyticsInstanceResourceGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup", TypeShape.of(GetAnalyticsInstanceResourceGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List resource groups associated with an instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .name(analyticsInstanceResourceGroupName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupsResult> getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs args) {
+        return getAnalyticsInstanceResourceGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List resource groups associated with an instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .name(analyticsInstanceResourceGroupName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAnalyticsInstanceResourceGroupsResult> getAnalyticsInstanceResourceGroupsPlain(GetAnalyticsInstanceResourceGroupsPlainArgs args) {
+        return getAnalyticsInstanceResourceGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List resource groups associated with an instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .name(analyticsInstanceResourceGroupName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupsResult> getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups", TypeShape.of(GetAnalyticsInstanceResourceGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List resource groups associated with an instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .name(analyticsInstanceResourceGroupName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAnalyticsInstanceResourceGroupsResult> getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups", TypeShape.of(GetAnalyticsInstanceResourceGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
+     * 
+     * List resource groups associated with an instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Analytics.AnalyticsFunctions;
+     * import com.pulumi.oci.Analytics.inputs.GetAnalyticsInstanceResourceGroupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .name(analyticsInstanceResourceGroupName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAnalyticsInstanceResourceGroupsResult> getAnalyticsInstanceResourceGroupsPlain(GetAnalyticsInstanceResourceGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups", TypeShape.of(GetAnalyticsInstanceResourceGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.

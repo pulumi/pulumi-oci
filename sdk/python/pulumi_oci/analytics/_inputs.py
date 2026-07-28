@@ -25,6 +25,10 @@ __all__ = [
     'AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict',
     'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs',
     'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict',
+    'AnalyticsInstanceResourceGroupArgs',
+    'AnalyticsInstanceResourceGroupArgsDict',
+    'GetAnalyticsInstanceResourceGroupsFilterArgs',
+    'GetAnalyticsInstanceResourceGroupsFilterArgsDict',
     'GetAnalyticsInstancesFilterArgs',
     'GetAnalyticsInstancesFilterArgsDict',
 ]
@@ -36,7 +40,7 @@ class AnalyticsInstanceCapacityArgsDict(TypedDict):
     """
     capacity_value: pulumi.Input[_builtins.int]
     """
-    (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+    (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
     """
 
 @pulumi.input_type
@@ -46,7 +50,7 @@ class AnalyticsInstanceCapacityArgs:
                  capacity_value: pulumi.Input[_builtins.int]):
         """
         :param pulumi.Input[_builtins.str] capacity_type: The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
-        :param pulumi.Input[_builtins.int] capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        :param pulumi.Input[_builtins.int] capacity_value: (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "capacity_value", capacity_value)
@@ -67,7 +71,7 @@ class AnalyticsInstanceCapacityArgs:
     @pulumi.getter(name="capacityValue")
     def capacity_value(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+        (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
         """
         return pulumi.get(self, "capacity_value")
 
@@ -83,7 +87,7 @@ class AnalyticsInstanceNetworkEndpointDetailsArgsDict(TypedDict):
     """
     network_security_group_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    Network Security Group OCIDs for an Analytics instance.
+    Network Security Group OCIDs for the Analytics instance.
     """
     subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -99,7 +103,7 @@ class AnalyticsInstanceNetworkEndpointDetailsArgsDict(TypedDict):
     """
     whitelisted_services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    Oracle Cloud Services that are allowed to access this Analytics instance.
+    Oracle Cloud services that are allowed to access this Analytics instance.
     """
     whitelisted_vcns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgsDict']]]]]
     """
@@ -118,11 +122,11 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
                  whitelisted_vcns: pulumi.Input[Optional[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] network_endpoint_type: The type of network endpoint.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: Network Security Group OCIDs for an Analytics instance.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] network_security_group_ids: Network Security Group OCIDs for the Analytics instance.
         :param pulumi.Input[_builtins.str] subnet_id: The subnet OCID for the private endpoint.
         :param pulumi.Input[_builtins.str] vcn_id: The VCN OCID for the private endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] whitelisted_ips: Source IP addresses or IP address ranges in ingress rules.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] whitelisted_services: Oracle Cloud Services that are allowed to access this Analytics instance.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] whitelisted_services: Oracle Cloud services that are allowed to access this Analytics instance.
         :param pulumi.Input[Sequence[pulumi.Input['AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs']]] whitelisted_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
@@ -155,7 +159,7 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -203,7 +207,7 @@ class AnalyticsInstanceNetworkEndpointDetailsArgs:
     @pulumi.getter(name="whitelistedServices")
     def whitelisted_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        Oracle Cloud Services that are allowed to access this Analytics instance.
+        Oracle Cloud services that are allowed to access this Analytics instance.
         """
         return pulumi.get(self, "whitelisted_services")
 
@@ -276,11 +280,11 @@ class AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs:
 class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict(TypedDict):
     dns_zone: pulumi.Input[_builtins.str]
     """
-    (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+    (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
     """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Description of private source dns zone.
+    (Updatable) Description of the private source DNS zone.
     """
 
 @pulumi.input_type
@@ -289,8 +293,8 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
                  dns_zone: pulumi.Input[_builtins.str],
                  description: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] dns_zone: (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-        :param pulumi.Input[_builtins.str] description: (Updatable) Description of private source dns zone.
+        :param pulumi.Input[_builtins.str] dns_zone: (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
+        :param pulumi.Input[_builtins.str] description: (Updatable) Description of the private source DNS zone.
         """
         pulumi.set(__self__, "dns_zone", dns_zone)
         if description is not None:
@@ -300,7 +304,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @pulumi.getter(name="dnsZone")
     def dns_zone(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+        (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
         """
         return pulumi.get(self, "dns_zone")
 
@@ -312,7 +316,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Description of private source dns zone.
+        (Updatable) Description of the private source DNS zone.
         """
         return pulumi.get(self, "description")
 
@@ -324,15 +328,15 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs:
 class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict(TypedDict):
     scan_hostname: pulumi.Input[_builtins.str]
     """
-    (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+    (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
     """
     scan_port: pulumi.Input[_builtins.int]
     """
-    (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+    (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
     """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Description of private source scan host zone.
+    (Updatable) Description of private source SCAN host zone.
     """
 
 @pulumi.input_type
@@ -342,9 +346,9 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
                  scan_port: pulumi.Input[_builtins.int],
                  description: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] scan_hostname: (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-        :param pulumi.Input[_builtins.int] scan_port: (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-        :param pulumi.Input[_builtins.str] description: (Updatable) Description of private source scan host zone.
+        :param pulumi.Input[_builtins.str] scan_hostname: (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        :param pulumi.Input[_builtins.int] scan_port: (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
+        :param pulumi.Input[_builtins.str] description: (Updatable) Description of private source SCAN host zone.
         """
         pulumi.set(__self__, "scan_hostname", scan_hostname)
         pulumi.set(__self__, "scan_port", scan_port)
@@ -355,7 +359,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @pulumi.getter(name="scanHostname")
     def scan_hostname(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+        (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
         """
         return pulumi.get(self, "scan_hostname")
 
@@ -367,7 +371,7 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @pulumi.getter(name="scanPort")
     def scan_port(self) -> pulumi.Input[_builtins.int]:
         """
-        (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+        (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
         """
         return pulumi.get(self, "scan_port")
 
@@ -379,13 +383,175 @@ class AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Description of private source scan host zone.
+        (Updatable) Description of private source SCAN host zone.
         """
         return pulumi.get(self, "description")
 
     @description.setter
     def description(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "description", value)
+
+
+class AnalyticsInstanceResourceGroupArgsDict(TypedDict):
+    capacity: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Optional description.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Meaningful name of resource group for end user
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique identifier and name of resource group.  Must be unique within the instance
+    """
+    resource_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Meaningful name of resource group for end user
+    """
+
+@pulumi.input_type
+class AnalyticsInstanceResourceGroupArgs:
+    def __init__(__self__, *,
+                 capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] capacity: Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+        :param pulumi.Input[_builtins.str] description: (Updatable) Optional description.
+        :param pulumi.Input[_builtins.str] display_name: Meaningful name of resource group for end user
+        :param pulumi.Input[_builtins.str] id: Unique identifier and name of resource group.  Must be unique within the instance
+        :param pulumi.Input[_builtins.str] resource_name: Meaningful name of resource group for end user
+        """
+        if capacity is not None:
+            pulumi.set(__self__, "capacity", capacity)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if resource_name is not None:
+            pulumi.set(__self__, "resource_name", resource_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+        """
+        return pulumi.get(self, "capacity")
+
+    @capacity.setter
+    def capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "capacity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Optional description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique identifier and name of resource group.  Must be unique within the instance
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceName")
+    def resource_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Meaningful name of resource group for end user
+        """
+        return pulumi.get(self, "resource_name")
+
+    @resource_name.setter
+    def resource_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_name", value)
+
+
+class GetAnalyticsInstanceResourceGroupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the given name exactly.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetAnalyticsInstanceResourceGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the given name exactly.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name exactly.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetAnalyticsInstancesFilterArgsDict(TypedDict):

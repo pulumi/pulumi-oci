@@ -34,14 +34,14 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
     }
 
     /**
-     * Network Security Group OCIDs for an Analytics instance.
+     * Network Security Group OCIDs for the Analytics instance.
      * 
      */
     @Import(name="networkSecurityGroupIds")
     private @Nullable Output<List<String>> networkSecurityGroupIds;
 
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public Optional<Output<List<String>>> networkSecurityGroupIds() {
@@ -94,14 +94,14 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
     }
 
     /**
-     * Oracle Cloud Services that are allowed to access this Analytics instance.
+     * Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     @Import(name="whitelistedServices")
     private @Nullable Output<List<String>> whitelistedServices;
 
     /**
-     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * @return Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     public Optional<Output<List<String>>> whitelistedServices() {
@@ -175,7 +175,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param networkSecurityGroupIds Network Security Group OCIDs for an Analytics instance.
+         * @param networkSecurityGroupIds Network Security Group OCIDs for the Analytics instance.
          * 
          * @return builder
          * 
@@ -279,7 +279,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * @param whitelistedServices Oracle Cloud services that are allowed to access this Analytics instance.
          * 
          * @return builder
          * 
@@ -290,7 +290,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * @param whitelistedServices Oracle Cloud services that are allowed to access this Analytics instance.
          * 
          * @return builder
          * 
@@ -300,7 +300,7 @@ public final class AnalyticsInstanceNetworkEndpointDetailsArgs extends com.pulum
         }
 
         /**
-         * @param whitelistedServices Oracle Cloud Services that are allowed to access this Analytics instance.
+         * @param whitelistedServices Oracle Cloud services that are allowed to access this Analytics instance.
          * 
          * @return builder
          * 

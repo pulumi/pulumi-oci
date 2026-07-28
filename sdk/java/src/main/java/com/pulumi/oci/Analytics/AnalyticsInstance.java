@@ -11,6 +11,7 @@ import com.pulumi.oci.Analytics.AnalyticsInstanceArgs;
 import com.pulumi.oci.Analytics.inputs.AnalyticsInstanceState;
 import com.pulumi.oci.Analytics.outputs.AnalyticsInstanceCapacity;
 import com.pulumi.oci.Analytics.outputs.AnalyticsInstanceNetworkEndpointDetails;
+import com.pulumi.oci.Analytics.outputs.AnalyticsInstanceResourceGroup;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -24,8 +25,8 @@ import javax.annotation.Nullable;
  * 
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
  * 
- * Create a new AnalyticsInstance in the specified compartment. The operation is long-running
- * and creates a new WorkRequest.
+ * Create a new Analytics instance in the specified compartment. The operation is long-running
+ * and creates a new work request.
  * 
  * ## Example Usage
  * 
@@ -104,28 +105,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Analytics/analyticsInstance:AnalyticsInstance")
 public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
     /**
-     * user name of the authorized user.
+     * The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     @Export(name="adminUser", refs={String.class}, tree="[0]")
     private Output<String> adminUser;
 
     /**
-     * @return user name of the authorized user.
+     * @return The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith{@literal @}example.com.
      * 
      */
     public Output<String> adminUser() {
         return this.adminUser;
     }
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     @Export(name="capacity", refs={AnalyticsInstanceCapacity.class}, tree="[0]")
     private Output<AnalyticsInstanceCapacity> capacity;
 
     /**
-     * @return Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * @return Service instance capacity metadata (for example, OLPU count, number of users, and so on).
      * 
      */
     public Output<AnalyticsInstanceCapacity> capacity() {
@@ -174,14 +175,14 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * domain id for which the user is authorized.
+     * The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     @Export(name="domainId", refs={String.class}, tree="[0]")
     private Output<String> domainId;
 
     /**
-     * @return domain id for which the user is authorized.
+     * @return The OCID of the identity domain to use for the new Analytics instance. For example: ocid1.domain.oc1..ocid1.domain.oc1..aaaaaa111111bbbbbb222222cccccc333333dddddd444444eeeeee5555.
      * 
      */
     public Output<String> domainId() {
@@ -216,14 +217,14 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.featureBundle;
     }
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     @Export(name="featureSet", refs={String.class}, tree="[0]")
     private Output<String> featureSet;
 
     /**
-     * @return Analytics feature set.
+     * @return The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      * 
      */
     public Output<String> featureSet() {
@@ -258,14 +259,14 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.idcsAccessToken);
     }
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     @Export(name="kmsKeyId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> kmsKeyId;
 
     /**
-     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * @return OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      * 
      */
     public Output<Optional<String>> kmsKeyId() {
@@ -286,14 +287,14 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.licenseType;
     }
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * @return The name of the Analytics instance. This name must be unique in the tenancy and can&#39;t be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      * 
      */
     public Output<String> name() {
@@ -314,14 +315,28 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.networkEndpointDetails;
     }
     /**
-     * URL of the Analytics service.
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    @Export(name="resourceGroups", refs={List.class,AnalyticsInstanceResourceGroup.class}, tree="[0,1]")
+    private Output<List<AnalyticsInstanceResourceGroup>> resourceGroups;
+
+    /**
+     * @return List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     * 
+     */
+    public Output<List<AnalyticsInstanceResourceGroup>> resourceGroups() {
+        return this.resourceGroups;
+    }
+    /**
+     * URL of the Analytics instance.
      * 
      */
     @Export(name="serviceUrl", refs={String.class}, tree="[0]")
     private Output<String> serviceUrl;
 
     /**
-     * @return URL of the Analytics service.
+     * @return URL of the Analytics instance.
      * 
      */
     public Output<String> serviceUrl() {
@@ -362,28 +377,28 @@ public class AnalyticsInstance extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * @return The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don&#39;t affect it.
      * 
      */
     public Output<String> timeUpdated() {

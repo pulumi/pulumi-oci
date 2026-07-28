@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Analytics.Inputs
         private InputList<string>? _networkSecurityGroupIds;
 
         /// <summary>
-        /// Network Security Group OCIDs for an Analytics instance.
+        /// Network Security Group OCIDs for the Analytics instance.
         /// </summary>
         public InputList<string> NetworkSecurityGroupIds
         {
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Analytics.Inputs
         private InputList<string>? _whitelistedServices;
 
         /// <summary>
-        /// Oracle Cloud Services that are allowed to access this Analytics instance.
+        /// Oracle Cloud services that are allowed to access this Analytics instance.
         /// </summary>
         public InputList<string> WhitelistedServices
         {

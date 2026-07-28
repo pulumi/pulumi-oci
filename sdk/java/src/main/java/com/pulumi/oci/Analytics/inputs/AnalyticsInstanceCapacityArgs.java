@@ -31,14 +31,14 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      * 
      */
     @Import(name="capacityValue", required=true)
     private Output<Integer> capacityValue;
 
     /**
-     * @return (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+     * @return (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
      * 
      */
     public Output<Integer> capacityValue() {
@@ -92,7 +92,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class AnalyticsInstanceCapacityArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * @param capacityValue (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          * 
          * @return builder
          * 

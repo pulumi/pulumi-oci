@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string ApprovalComment;
         /// <summary>
+        /// The group level at which the approver approved.
+        /// </summary>
+        public readonly int ApproverGroupLevel;
+        /// <summary>
         /// The userId of the approver.
         /// </summary>
         public readonly string ApproverId;
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Oci.Outputs
 
             string approvalComment,
 
+            int approverGroupLevel,
+
             string approverId,
 
             string timeApprovedForAccess,
@@ -48,6 +54,7 @@ namespace Pulumi.Oci.Oci.Outputs
         {
             ApprovalAction = approvalAction;
             ApprovalComment = approvalComment;
+            ApproverGroupLevel = approverGroupLevel;
             ApproverId = approverId;
             TimeApprovedForAccess = timeApprovedForAccess;
             TimeOfAuthorization = timeOfAuthorization;

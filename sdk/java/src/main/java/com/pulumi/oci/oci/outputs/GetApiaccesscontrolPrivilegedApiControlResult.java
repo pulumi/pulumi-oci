@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationList;
 import java.lang.Integer;
 import java.lang.String;
@@ -19,6 +20,11 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
      * 
      */
     private List<String> approverGroupIdLists;
+    /**
+     * @return List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    private List<GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList> approverGroupLevelLists;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -96,7 +102,7 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String timeCreated;
@@ -118,6 +124,13 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
      */
     public List<String> approverGroupIdLists() {
         return this.approverGroupIdLists;
+    }
+    /**
+     * @return List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    public List<GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList> approverGroupLevelLists() {
+        return this.approverGroupLevelLists;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -228,7 +241,7 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String timeCreated() {
@@ -259,6 +272,7 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
     @CustomType.Builder
     public static final class Builder {
         private List<String> approverGroupIdLists;
+        private List<GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList> approverGroupLevelLists;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -282,6 +296,7 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
         public Builder(GetApiaccesscontrolPrivilegedApiControlResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approverGroupIdLists = defaults.approverGroupIdLists;
+    	      this.approverGroupLevelLists = defaults.approverGroupLevelLists;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -313,6 +328,17 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
         }
         public Builder approverGroupIdLists(String... approverGroupIdLists) {
             return approverGroupIdLists(List.of(approverGroupIdLists));
+        }
+        @CustomType.Setter
+        public Builder approverGroupLevelLists(List<GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList> approverGroupLevelLists) {
+            if (approverGroupLevelLists == null) {
+              throw new MissingRequiredPropertyException("GetApiaccesscontrolPrivilegedApiControlResult", "approverGroupLevelLists");
+            }
+            this.approverGroupLevelLists = approverGroupLevelLists;
+            return this;
+        }
+        public Builder approverGroupLevelLists(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList... approverGroupLevelLists) {
+            return approverGroupLevelLists(List.of(approverGroupLevelLists));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -475,6 +501,7 @@ public final class GetApiaccesscontrolPrivilegedApiControlResult {
         public GetApiaccesscontrolPrivilegedApiControlResult build() {
             final var _resultValue = new GetApiaccesscontrolPrivilegedApiControlResult();
             _resultValue.approverGroupIdLists = approverGroupIdLists;
+            _resultValue.approverGroupLevelLists = approverGroupLevelLists;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

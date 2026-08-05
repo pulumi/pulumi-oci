@@ -6,6 +6,8 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.CrossConnectGroupMacsecPropertiesArgs;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -93,6 +95,51 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    @Import(name="interfaceDownTimerValueInMilliseconds")
+    private @Nullable Output<Integer> interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * @return (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Optional<Output<Integer>> interfaceDownTimerValueInMilliseconds() {
+        return Optional.ofNullable(this.interfaceDownTimerValueInMilliseconds);
+    }
+
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    @Import(name="isInterfaceHoldTimerEnabled")
+    private @Nullable Output<Boolean> isInterfaceHoldTimerEnabled;
+
+    /**
+     * @return (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Optional<Output<Boolean>> isInterfaceHoldTimerEnabled() {
+        return Optional.ofNullable(this.isInterfaceHoldTimerEnabled);
+    }
+
+    /**
+     * (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    @Import(name="isQosEnabled")
+    private @Nullable Output<Boolean> isQosEnabled;
+
+    /**
+     * @return (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    public Optional<Output<Boolean>> isQosEnabled() {
+        return Optional.ofNullable(this.isQosEnabled);
+    }
+
+    /**
      * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
@@ -105,6 +152,27 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<CrossConnectGroupMacsecPropertiesArgs>> macsecProperties() {
         return Optional.ofNullable(this.macsecProperties);
+    }
+
+    /**
+     * (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="minimumLinks")
+    private @Nullable Output<Integer> minimumLinks;
+
+    /**
+     * @return (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> minimumLinks() {
+        return Optional.ofNullable(this.minimumLinks);
     }
 
     /**
@@ -175,7 +243,11 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.interfaceDownTimerValueInMilliseconds = $.interfaceDownTimerValueInMilliseconds;
+        this.isInterfaceHoldTimerEnabled = $.isInterfaceHoldTimerEnabled;
+        this.isQosEnabled = $.isQosEnabled;
         this.macsecProperties = $.macsecProperties;
+        this.minimumLinks = $.minimumLinks;
         this.ociLogicalDeviceName = $.ociLogicalDeviceName;
         this.ociPhysicalDeviceName = $.ociPhysicalDeviceName;
         this.state = $.state;
@@ -306,6 +378,69 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param interfaceDownTimerValueInMilliseconds (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(@Nullable Output<Integer> interfaceDownTimerValueInMilliseconds) {
+            $.interfaceDownTimerValueInMilliseconds = interfaceDownTimerValueInMilliseconds;
+            return this;
+        }
+
+        /**
+         * @param interfaceDownTimerValueInMilliseconds (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder interfaceDownTimerValueInMilliseconds(Integer interfaceDownTimerValueInMilliseconds) {
+            return interfaceDownTimerValueInMilliseconds(Output.of(interfaceDownTimerValueInMilliseconds));
+        }
+
+        /**
+         * @param isInterfaceHoldTimerEnabled (Updatable) The flag to enable or disable the down timer for the interface.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInterfaceHoldTimerEnabled(@Nullable Output<Boolean> isInterfaceHoldTimerEnabled) {
+            $.isInterfaceHoldTimerEnabled = isInterfaceHoldTimerEnabled;
+            return this;
+        }
+
+        /**
+         * @param isInterfaceHoldTimerEnabled (Updatable) The flag to enable or disable the down timer for the interface.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isInterfaceHoldTimerEnabled(Boolean isInterfaceHoldTimerEnabled) {
+            return isInterfaceHoldTimerEnabled(Output.of(isInterfaceHoldTimerEnabled));
+        }
+
+        /**
+         * @param isQosEnabled (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQosEnabled(@Nullable Output<Boolean> isQosEnabled) {
+            $.isQosEnabled = isQosEnabled;
+            return this;
+        }
+
+        /**
+         * @param isQosEnabled (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isQosEnabled(Boolean isQosEnabled) {
+            return isQosEnabled(Output.of(isQosEnabled));
+        }
+
+        /**
          * @param macsecProperties (Updatable) Properties used to configure MACsec (if capable).
          * 
          * @return builder
@@ -324,6 +459,33 @@ public final class CrossConnectGroupState extends com.pulumi.resources.ResourceA
          */
         public Builder macsecProperties(CrossConnectGroupMacsecPropertiesArgs macsecProperties) {
             return macsecProperties(Output.of(macsecProperties));
+        }
+
+        /**
+         * @param minimumLinks (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minimumLinks(@Nullable Output<Integer> minimumLinks) {
+            $.minimumLinks = minimumLinks;
+            return this;
+        }
+
+        /**
+         * @param minimumLinks (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder minimumLinks(Integer minimumLinks) {
+            return minimumLinks(Output.of(minimumLinks));
         }
 
         /**

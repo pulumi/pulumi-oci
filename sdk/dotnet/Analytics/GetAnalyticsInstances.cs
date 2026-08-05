@@ -215,7 +215,7 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Analytics feature set.
+        /// The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         /// </summary>
         public readonly string? FeatureSet;
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancesFilterResult> Filters;
@@ -224,11 +224,11 @@ namespace Pulumi.Oci.Analytics
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        /// The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The current state of an instance.
+        /// The current state of the Analytics instance.
         /// </summary>
         public readonly string? State;
 

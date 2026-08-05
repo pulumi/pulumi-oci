@@ -17,8 +17,7 @@ import (
 //
 // Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
 //
-// Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
-// for this host.
+// Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
 //
 // ## Example Usage
 //
@@ -62,17 +61,17 @@ import (
 type AnalyticsInstanceVanityUrl struct {
 	pulumi.CustomResourceState
 
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId pulumi.StringOutput `pulumi:"analyticsInstanceId"`
-	// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+	// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 	CaCertificate pulumi.StringOutput `pulumi:"caCertificate"`
 	// Optional description.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
-	// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+	// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 	Hosts pulumi.StringArrayOutput `pulumi:"hosts"`
-	// (Updatable) Passphrase for the PEM Private key (if any).
+	// (Updatable) Passphrase for the PEM private key (if any).
 	Passphrase pulumi.StringPtrOutput `pulumi:"passphrase"`
-	// (Updatable) PEM Private key for HTTPS connections.
+	// (Updatable) PEM private key for HTTPS connections.
 	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
 	//
@@ -137,17 +136,17 @@ func GetAnalyticsInstanceVanityUrl(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering AnalyticsInstanceVanityUrl resources.
 type analyticsInstanceVanityUrlState struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId *string `pulumi:"analyticsInstanceId"`
-	// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+	// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 	CaCertificate *string `pulumi:"caCertificate"`
 	// Optional description.
 	Description *string `pulumi:"description"`
-	// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+	// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 	Hosts []string `pulumi:"hosts"`
-	// (Updatable) Passphrase for the PEM Private key (if any).
+	// (Updatable) Passphrase for the PEM private key (if any).
 	Passphrase *string `pulumi:"passphrase"`
-	// (Updatable) PEM Private key for HTTPS connections.
+	// (Updatable) PEM private key for HTTPS connections.
 	PrivateKey *string `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
 	//
@@ -157,17 +156,17 @@ type analyticsInstanceVanityUrlState struct {
 }
 
 type AnalyticsInstanceVanityUrlState struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId pulumi.StringPtrInput
-	// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+	// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 	CaCertificate pulumi.StringPtrInput
 	// Optional description.
 	Description pulumi.StringPtrInput
-	// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+	// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 	Hosts pulumi.StringArrayInput
-	// (Updatable) Passphrase for the PEM Private key (if any).
+	// (Updatable) Passphrase for the PEM private key (if any).
 	Passphrase pulumi.StringPtrInput
-	// (Updatable) PEM Private key for HTTPS connections.
+	// (Updatable) PEM private key for HTTPS connections.
 	PrivateKey pulumi.StringPtrInput
 	// (Updatable) PEM certificate for HTTPS connections.
 	//
@@ -181,17 +180,17 @@ func (AnalyticsInstanceVanityUrlState) ElementType() reflect.Type {
 }
 
 type analyticsInstanceVanityUrlArgs struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`
-	// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+	// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 	CaCertificate string `pulumi:"caCertificate"`
 	// Optional description.
 	Description *string `pulumi:"description"`
-	// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+	// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 	Hosts []string `pulumi:"hosts"`
-	// (Updatable) Passphrase for the PEM Private key (if any).
+	// (Updatable) Passphrase for the PEM private key (if any).
 	Passphrase *string `pulumi:"passphrase"`
-	// (Updatable) PEM Private key for HTTPS connections.
+	// (Updatable) PEM private key for HTTPS connections.
 	PrivateKey string `pulumi:"privateKey"`
 	// (Updatable) PEM certificate for HTTPS connections.
 	//
@@ -202,17 +201,17 @@ type analyticsInstanceVanityUrlArgs struct {
 
 // The set of arguments for constructing a AnalyticsInstanceVanityUrl resource.
 type AnalyticsInstanceVanityUrlArgs struct {
-	// The OCID of the AnalyticsInstance.
+	// The OCID of the Analytics instance.
 	AnalyticsInstanceId pulumi.StringInput
-	// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+	// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 	CaCertificate pulumi.StringInput
 	// Optional description.
 	Description pulumi.StringPtrInput
-	// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+	// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 	Hosts pulumi.StringArrayInput
-	// (Updatable) Passphrase for the PEM Private key (if any).
+	// (Updatable) Passphrase for the PEM private key (if any).
 	Passphrase pulumi.StringPtrInput
-	// (Updatable) PEM Private key for HTTPS connections.
+	// (Updatable) PEM private key for HTTPS connections.
 	PrivateKey pulumi.StringInput
 	// (Updatable) PEM certificate for HTTPS connections.
 	//
@@ -308,12 +307,12 @@ func (o AnalyticsInstanceVanityUrlOutput) ToAnalyticsInstanceVanityUrlOutputWith
 	return o
 }
 
-// The OCID of the AnalyticsInstance.
+// The OCID of the Analytics instance.
 func (o AnalyticsInstanceVanityUrlOutput) AnalyticsInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringOutput { return v.AnalyticsInstanceId }).(pulumi.StringOutput)
 }
 
-// (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+// (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
 func (o AnalyticsInstanceVanityUrlOutput) CaCertificate() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringOutput { return v.CaCertificate }).(pulumi.StringOutput)
 }
@@ -323,17 +322,17 @@ func (o AnalyticsInstanceVanityUrlOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+// List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
 func (o AnalyticsInstanceVanityUrlOutput) Hosts() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringArrayOutput { return v.Hosts }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Passphrase for the PEM Private key (if any).
+// (Updatable) Passphrase for the PEM private key (if any).
 func (o AnalyticsInstanceVanityUrlOutput) Passphrase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringPtrOutput { return v.Passphrase }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) PEM Private key for HTTPS connections.
+// (Updatable) PEM private key for HTTPS connections.
 func (o AnalyticsInstanceVanityUrlOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceVanityUrl) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }

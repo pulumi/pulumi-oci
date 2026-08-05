@@ -74,6 +74,10 @@ export class ConnectionAssignment extends pulumi.CustomResource {
      */
     declare public readonly connectionId: pulumi.Output<string>;
     /**
+     * The connection type.
+     */
+    declare public /*out*/ readonly connectionType: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
     declare public readonly deploymentId: pulumi.Output<string>;
@@ -113,6 +117,7 @@ export class ConnectionAssignment extends pulumi.CustomResource {
             resourceInputs["aliasName"] = state?.aliasName;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["connectionId"] = state?.connectionId;
+            resourceInputs["connectionType"] = state?.connectionType;
             resourceInputs["deploymentId"] = state?.deploymentId;
             resourceInputs["isLockOverride"] = state?.isLockOverride;
             resourceInputs["state"] = state?.state;
@@ -131,6 +136,7 @@ export class ConnectionAssignment extends pulumi.CustomResource {
             resourceInputs["isLockOverride"] = args?.isLockOverride;
             resourceInputs["aliasName"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
+            resourceInputs["connectionType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -156,6 +162,10 @@ export interface ConnectionAssignmentState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
     connectionId?: pulumi.Input<string | undefined>;
+    /**
+     * The connection type.
+     */
+    connectionType?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */

@@ -417,6 +417,8 @@ __all__ = [
     'ExadbVmClusterIormConfigCacheArgsDict',
     'ExadbVmClusterIormConfigCacheDbPlanArgs',
     'ExadbVmClusterIormConfigCacheDbPlanArgsDict',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfigArgs',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict',
     'ExadbVmClusterNodeConfigArgs',
     'ExadbVmClusterNodeConfigArgsDict',
     'ExadbVmClusterNodeResourceArgs',
@@ -23163,6 +23165,55 @@ class ExadbVmClusterIormConfigCacheDbPlanArgs:
     @share.setter
     def share(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "share", value)
+
+
+class ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
+    cloud_provider: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloud provider
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the identity connector
+    """
+
+@pulumi.input_type
+class ExadbVmClusterMultiCloudIdentityConnectorConfigArgs:
+    def __init__(__self__, *,
+                 cloud_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cloud_provider: Cloud provider
+        :param pulumi.Input[_builtins.str] id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @cloud_provider.setter
+    def cloud_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cloud_provider", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
 
 
 class ExadbVmClusterNodeConfigArgsDict(TypedDict):

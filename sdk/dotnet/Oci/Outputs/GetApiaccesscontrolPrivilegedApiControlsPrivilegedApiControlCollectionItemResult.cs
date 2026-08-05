@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ApproverGroupIdLists;
         /// <summary>
+        /// List of Group containing the levels at which the users belonging to the group can authorize.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult> ApproverGroupLevelLists;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
@@ -78,7 +82,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
@@ -93,6 +97,8 @@ namespace Pulumi.Oci.Oci.Outputs
         [OutputConstructor]
         private GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemResult(
             ImmutableArray<string> approverGroupIdLists,
+
+            ImmutableArray<Outputs.GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult> approverGroupLevelLists,
 
             string compartmentId,
 
@@ -131,6 +137,7 @@ namespace Pulumi.Oci.Oci.Outputs
             string timeUpdated)
         {
             ApproverGroupIdLists = approverGroupIdLists;
+            ApproverGroupLevelLists = approverGroupLevelLists;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
  *
- * Info for a specific Analytics instance.
+ * Information about a specific Analytics instance.
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getAnalyticsInstance(args: GetAnalyticsInstanceArgs, opts?: pulu
  */
 export interface GetAnalyticsInstanceArgs {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      */
     analyticsInstanceId: string;
 }
@@ -46,7 +46,7 @@ export interface GetAnalyticsInstanceResult {
     readonly adminUser: string;
     readonly analyticsInstanceId: string;
     /**
-     * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+     * The capacity (in OCPU's) to be allocated for this resource.
      */
     readonly capacities: outputs.Analytics.GetAnalyticsInstanceCapacity[];
     /**
@@ -58,7 +58,7 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Description of the vanity url.
+     * Description of the vanity URL.
      */
     readonly description: string;
     /**
@@ -74,7 +74,7 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly featureBundle: string;
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      */
     readonly featureSet: string;
     /**
@@ -82,12 +82,12 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The Virtual Cloud Network OCID.
+     * Unique identifier and name of resource group.  Must be unique within the instance
      */
     readonly id: string;
     readonly idcsAccessToken: string;
     /**
-     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
      */
     readonly kmsKeyId: string;
     /**
@@ -95,7 +95,7 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly licenseType: string;
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      */
     readonly name: string;
     /**
@@ -103,11 +103,15 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly networkEndpointDetails: outputs.Analytics.GetAnalyticsInstanceNetworkEndpointDetail[];
     /**
-     * URL of the Analytics service.
+     * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+     */
+    readonly resourceGroups: outputs.Analytics.GetAnalyticsInstanceResourceGroup[];
+    /**
+     * URL of the Analytics instance.
      */
     readonly serviceUrl: string;
     /**
-     * The current state of an instance.
+     * The current state of the Analytics instance.
      */
     readonly state: string;
     /**
@@ -115,22 +119,22 @@ export interface GetAnalyticsInstanceResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**
-     * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+     * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
      */
     readonly timeUpdated: string;
     /**
-     * Analytics instance update channel.
+     * The Analytics instance update cycle.
      */
     readonly updateChannel: string;
 }
 /**
  * This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
  *
- * Info for a specific Analytics instance.
+ * Information about a specific Analytics instance.
  *
  * ## Example Usage
  *
@@ -155,7 +159,7 @@ export function getAnalyticsInstanceOutput(args: GetAnalyticsInstanceOutputArgs,
  */
 export interface GetAnalyticsInstanceOutputArgs {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      */
     analyticsInstanceId: pulumi.Input<string>;
 }

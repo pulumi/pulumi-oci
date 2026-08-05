@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
     /**
-     * @return The Virtual Cloud Network OCID.
+     * @return Unique identifier and name of resource group.  Must be unique within the instance
      * 
      */
     private String id;
@@ -24,7 +24,7 @@ public final class GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
 
     private GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn() {}
     /**
-     * @return The Virtual Cloud Network OCID.
+     * @return Unique identifier and name of resource group.  Must be unique within the instance
      * 
      */
     public String id() {

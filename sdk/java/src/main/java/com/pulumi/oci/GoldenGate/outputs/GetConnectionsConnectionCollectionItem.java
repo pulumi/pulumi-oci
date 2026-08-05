@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemAdditionalAttribute;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemAuthDetail;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemCatalog;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemIngressIp;
@@ -21,7 +22,9 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionsConnectionCollectionItem {
     /**
-     * @return Access key ID to access the Amazon S3 bucket.
+     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     private String accessKeyId;
@@ -47,6 +50,11 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+    /**
+     * @return Represents authentication details for an AI Model connection.
+     * 
+     */
+    private List<GetConnectionsConnectionCollectionItemAuthDetail> authDetails;
     /**
      * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      * 
@@ -85,7 +93,9 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private List<GetConnectionsConnectionCollectionItemCatalog> catalogs;
     /**
-     * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     private String clientId;
@@ -97,7 +107,10 @@ public final class GetConnectionsConnectionCollectionItem {
     @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
     private String clientSecret;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     private String clientSecretSecretId;
@@ -138,6 +151,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
      * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with &#39;jdbc:spark://&#39;
      * 
      */
     private String connectionUrl;
@@ -192,7 +206,10 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Boolean doesUseSecretIds;
     /**
-     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     private String endpoint;
@@ -257,7 +274,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String jndiSecurityPrincipal;
     /**
-     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     * @return References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
      * 
      */
     private String keyId;
@@ -276,7 +293,11 @@ public final class GetConnectionsConnectionCollectionItem {
     @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
     private String keyStorePassword;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
      * 
      */
     private String keyStorePasswordSecretId;
@@ -295,6 +316,16 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private List<GetConnectionsConnectionCollectionItemLock> locks;
+    /**
+     * @return Maximum number of input characters supported by this AI model connection.
+     * 
+     */
+    private Integer maxInputChars;
+    /**
+     * @return AI model identifier.
+     * 
+     */
+    private String modelKey;
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
@@ -352,6 +383,11 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String producerProperties;
     /**
+     * @return AI Provider type used by the AI Model Connection.
+     * 
+     */
+    private String providerType;
+    /**
      * @return The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
@@ -367,7 +403,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String region;
     /**
-     * @return Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * @return Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
      * 
      */
     private String routingMethod;
@@ -391,7 +427,8 @@ public final class GetConnectionsConnectionCollectionItem {
     @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     private String secretAccessKeySecretId;
@@ -401,15 +438,21 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Map<String,String> securityAttributes;
     /**
-     * @return Security Protocol to be provided for the following connection types:
-     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * @return * DB2: Security protocol for the DB2 database.
+     * * ELASTICSEARCH: Security protocol for Elasticsearch.
+     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * * KAFKA: Security Type for Kafka.
+     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+     * * MONGODB: Security Type for MongoDB.
+     * * MYSQL: Security Type for MySQL.
+     * * POSTGRESQL: Security protocol for PostgreSQL.
+     * * REDIS: Security protocol for Redis.
      * 
      */
     private String securityProtocol;
     /**
-     * @return Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
-     * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+     * @return * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
      * 
      */
     private String servers;
@@ -436,7 +479,8 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Boolean shouldUseJndi;
     /**
-     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * @return * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     private Boolean shouldUseResourcePrincipal;
@@ -446,12 +490,15 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Boolean shouldValidateServerCertificate;
     /**
-     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+     * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     private String sslCa;
     /**
-     * @return Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     private String sslCert;
@@ -480,7 +527,8 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String sslClientKeystoredbSecretId;
     /**
-     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     private String sslCrl;
@@ -499,18 +547,22 @@ public final class GetConnectionsConnectionCollectionItem {
     @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
     private String sslKeyPassword;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
      * 
      */
     private String sslKeyPasswordSecretId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * @return * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     private String sslKeySecretId;
     /**
-     * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+     * @return * MYSQL: SSL modes for MySQL.
+     * * POSTGRESQL: SSL modes for PostgreSQL.
      * 
      */
     private String sslMode;
@@ -625,7 +677,11 @@ public final class GetConnectionsConnectionCollectionItem {
     @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
     private String trustStorePassword;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
      * 
      */
     private String trustStorePasswordSecretId;
@@ -640,7 +696,8 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String url;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     private String userId;
@@ -650,7 +707,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String username;
     /**
-     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+     * @return References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
      * 
      */
     private String vaultId;
@@ -669,7 +726,9 @@ public final class GetConnectionsConnectionCollectionItem {
 
     private GetConnectionsConnectionCollectionItem() {}
     /**
-     * @return Access key ID to access the Amazon S3 bucket.
+     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     public String accessKeyId() {
@@ -704,6 +763,13 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes() {
         return this.additionalAttributes;
+    }
+    /**
+     * @return Represents authentication details for an AI Model connection.
+     * 
+     */
+    public List<GetConnectionsConnectionCollectionItemAuthDetail> authDetails() {
+        return this.authDetails;
     }
     /**
      * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -755,7 +821,9 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.catalogs;
     }
     /**
-     * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     public String clientId() {
@@ -771,7 +839,10 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.clientSecret;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public String clientSecretSecretId() {
@@ -826,6 +897,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
      * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with &#39;jdbc:spark://&#39;
      * 
      */
     public String connectionUrl() {
@@ -902,7 +974,10 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.doesUseSecretIds;
     }
     /**
-     * @return A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     public String endpoint() {
@@ -993,7 +1068,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.jndiSecurityPrincipal;
     }
     /**
-     * @return Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     * @return References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
      * 
      */
     public String keyId() {
@@ -1018,7 +1093,11 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.keyStorePassword;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
      * 
      */
     public String keyStorePasswordSecretId() {
@@ -1044,6 +1123,20 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public List<GetConnectionsConnectionCollectionItemLock> locks() {
         return this.locks;
+    }
+    /**
+     * @return Maximum number of input characters supported by this AI model connection.
+     * 
+     */
+    public Integer maxInputChars() {
+        return this.maxInputChars;
+    }
+    /**
+     * @return AI model identifier.
+     * 
+     */
+    public String modelKey() {
+        return this.modelKey;
     }
     /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -1122,6 +1215,13 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.producerProperties;
     }
     /**
+     * @return AI Provider type used by the AI Model Connection.
+     * 
+     */
+    public String providerType() {
+        return this.providerType;
+    }
+    /**
      * @return The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
@@ -1143,7 +1243,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.region;
     }
     /**
-     * @return Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * @return Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
      * 
      */
     public String routingMethod() {
@@ -1175,7 +1275,8 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     public String secretAccessKeySecretId() {
@@ -1189,17 +1290,23 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.securityAttributes;
     }
     /**
-     * @return Security Protocol to be provided for the following connection types:
-     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * @return * DB2: Security protocol for the DB2 database.
+     * * ELASTICSEARCH: Security protocol for Elasticsearch.
+     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * * KAFKA: Security Type for Kafka.
+     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+     * * MONGODB: Security Type for MongoDB.
+     * * MYSQL: Security Type for MySQL.
+     * * POSTGRESQL: Security protocol for PostgreSQL.
+     * * REDIS: Security protocol for Redis.
      * 
      */
     public String securityProtocol() {
         return this.securityProtocol;
     }
     /**
-     * @return Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
-     * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+     * @return * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
      * 
      */
     public String servers() {
@@ -1236,7 +1343,8 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.shouldUseJndi;
     }
     /**
-     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * @return * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     public Boolean shouldUseResourcePrincipal() {
@@ -1250,14 +1358,17 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.shouldValidateServerCertificate;
     }
     /**
-     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+     * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public String sslCa() {
         return this.sslCa;
     }
     /**
-     * @return Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public String sslCert() {
@@ -1296,7 +1407,8 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.sslClientKeystoredbSecretId;
     }
     /**
-     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public String sslCrl() {
@@ -1321,22 +1433,26 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.sslKeyPassword;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
      * 
      */
     public String sslKeyPasswordSecretId() {
         return this.sslKeyPasswordSecretId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * @return * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     public String sslKeySecretId() {
         return this.sslKeySecretId;
     }
     /**
-     * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+     * @return * MYSQL: SSL modes for MySQL.
+     * * POSTGRESQL: SSL modes for PostgreSQL.
      * 
      */
     public String sslMode() {
@@ -1495,7 +1611,11 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.trustStorePassword;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
      * 
      */
     public String trustStorePasswordSecretId() {
@@ -1516,7 +1636,8 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.url;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     public String userId() {
@@ -1530,7 +1651,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.username;
     }
     /**
-     * @return Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+     * @return References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
      * 
      */
     public String vaultId() {
@@ -1567,6 +1688,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String accountKeySecretId;
         private String accountName;
         private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+        private List<GetConnectionsConnectionCollectionItemAuthDetail> authDetails;
         private String authenticationMode;
         private String authenticationType;
         private String azureAuthorityHost;
@@ -1613,6 +1735,8 @@ public final class GetConnectionsConnectionCollectionItem {
         private String keyStoreSecretId;
         private String lifecycleDetails;
         private List<GetConnectionsConnectionCollectionItemLock> locks;
+        private Integer maxInputChars;
+        private String modelKey;
         private List<String> nsgIds;
         private String password;
         private String passwordSecretId;
@@ -1623,6 +1747,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String privateKeyPassphrase;
         private String privateKeyPassphraseSecretId;
         private String producerProperties;
+        private String providerType;
         private String publicKeyFingerprint;
         private String redisClusterId;
         private String region;
@@ -1689,6 +1814,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.accountKeySecretId = defaults.accountKeySecretId;
     	      this.accountName = defaults.accountName;
     	      this.additionalAttributes = defaults.additionalAttributes;
+    	      this.authDetails = defaults.authDetails;
     	      this.authenticationMode = defaults.authenticationMode;
     	      this.authenticationType = defaults.authenticationType;
     	      this.azureAuthorityHost = defaults.azureAuthorityHost;
@@ -1735,6 +1861,8 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.keyStoreSecretId = defaults.keyStoreSecretId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
+    	      this.maxInputChars = defaults.maxInputChars;
+    	      this.modelKey = defaults.modelKey;
     	      this.nsgIds = defaults.nsgIds;
     	      this.password = defaults.password;
     	      this.passwordSecretId = defaults.passwordSecretId;
@@ -1745,6 +1873,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.privateKeyPassphrase = defaults.privateKeyPassphrase;
     	      this.privateKeyPassphraseSecretId = defaults.privateKeyPassphraseSecretId;
     	      this.producerProperties = defaults.producerProperties;
+    	      this.providerType = defaults.providerType;
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
     	      this.redisClusterId = defaults.redisClusterId;
     	      this.region = defaults.region;
@@ -1847,6 +1976,17 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         public Builder additionalAttributes(GetConnectionsConnectionCollectionItemAdditionalAttribute... additionalAttributes) {
             return additionalAttributes(List.of(additionalAttributes));
+        }
+        @CustomType.Setter
+        public Builder authDetails(List<GetConnectionsConnectionCollectionItemAuthDetail> authDetails) {
+            if (authDetails == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "authDetails");
+            }
+            this.authDetails = authDetails;
+            return this;
+        }
+        public Builder authDetails(GetConnectionsConnectionCollectionItemAuthDetail... authDetails) {
+            return authDetails(List.of(authDetails));
         }
         @CustomType.Setter
         public Builder authenticationMode(String authenticationMode) {
@@ -2229,6 +2369,22 @@ public final class GetConnectionsConnectionCollectionItem {
             return locks(List.of(locks));
         }
         @CustomType.Setter
+        public Builder maxInputChars(Integer maxInputChars) {
+            if (maxInputChars == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "maxInputChars");
+            }
+            this.maxInputChars = maxInputChars;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelKey(String modelKey) {
+            if (modelKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "modelKey");
+            }
+            this.modelKey = modelKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "nsgIds");
@@ -2309,6 +2465,14 @@ public final class GetConnectionsConnectionCollectionItem {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "producerProperties");
             }
             this.producerProperties = producerProperties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder providerType(String providerType) {
+            if (providerType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "providerType");
+            }
+            this.providerType = providerType;
             return this;
         }
         @CustomType.Setter
@@ -2785,6 +2949,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.accountKeySecretId = accountKeySecretId;
             _resultValue.accountName = accountName;
             _resultValue.additionalAttributes = additionalAttributes;
+            _resultValue.authDetails = authDetails;
             _resultValue.authenticationMode = authenticationMode;
             _resultValue.authenticationType = authenticationType;
             _resultValue.azureAuthorityHost = azureAuthorityHost;
@@ -2831,6 +2996,8 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.keyStoreSecretId = keyStoreSecretId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
+            _resultValue.maxInputChars = maxInputChars;
+            _resultValue.modelKey = modelKey;
             _resultValue.nsgIds = nsgIds;
             _resultValue.password = password;
             _resultValue.passwordSecretId = passwordSecretId;
@@ -2841,6 +3008,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.privateKeyPassphrase = privateKeyPassphrase;
             _resultValue.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             _resultValue.producerProperties = producerProperties;
+            _resultValue.providerType = providerType;
             _resultValue.publicKeyFingerprint = publicKeyFingerprint;
             _resultValue.redisClusterId = redisClusterId;
             _resultValue.region = region;

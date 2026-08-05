@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs;
 import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -32,6 +33,21 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
      */
     public Optional<Output<List<String>>> approverGroupIdLists() {
         return Optional.ofNullable(this.approverGroupIdLists);
+    }
+
+    /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    @Import(name="approverGroupLevelLists")
+    private @Nullable Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>> approverGroupLevelLists;
+
+    /**
+     * @return (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    public Optional<Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>>> approverGroupLevelLists() {
+        return Optional.ofNullable(this.approverGroupLevelLists);
     }
 
     /**
@@ -125,14 +141,14 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
     }
 
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     @Import(name="notificationTopicId")
     private @Nullable Output<String> notificationTopicId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     public Optional<Output<String>> notificationTopicId() {
@@ -251,14 +267,14 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
     }
 
     /**
-     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -299,6 +315,7 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
 
     private ApiaccesscontrolPrivilegedApiControlState(ApiaccesscontrolPrivilegedApiControlState $) {
         this.approverGroupIdLists = $.approverGroupIdLists;
+        this.approverGroupLevelLists = $.approverGroupLevelLists;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -365,6 +382,37 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
          */
         public Builder approverGroupIdLists(String... approverGroupIdLists) {
             return approverGroupIdLists(List.of(approverGroupIdLists));
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(@Nullable Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>> approverGroupLevelLists) {
+            $.approverGroupLevelLists = approverGroupLevelLists;
+            return this;
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs> approverGroupLevelLists) {
+            return approverGroupLevelLists(Output.of(approverGroupLevelLists));
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs... approverGroupLevelLists) {
+            return approverGroupLevelLists(List.of(approverGroupLevelLists));
         }
 
         /**
@@ -494,7 +542,7 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
         }
 
         /**
-         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
          * 
          * @return builder
          * 
@@ -505,7 +553,7 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
         }
 
         /**
-         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
          * 
          * @return builder
          * 
@@ -691,7 +739,7 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
         }
 
         /**
-         * @param timeCreated The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 
@@ -702,7 +750,7 @@ public final class ApiaccesscontrolPrivilegedApiControlState extends com.pulumi.
         }
 
         /**
-         * @param timeCreated The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         * @param timeCreated The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
          * 
          * @return builder
          * 

@@ -34,6 +34,10 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Displays the compartment-level quota enforcement state affecting this file system.
+        /// </summary>
+        public readonly string CompartmentQuotaEnforcementState;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -128,6 +132,8 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             string compartmentId,
 
+            string compartmentQuotaEnforcementState,
+
             ImmutableDictionary<string, string> definedTags,
 
             int detachCloneTrigger,
@@ -177,6 +183,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
             CloneAttachStatus = cloneAttachStatus;
             CloneCount = cloneCount;
             CompartmentId = compartmentId;
+            CompartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
             DefinedTags = definedTags;
             DetachCloneTrigger = detachCloneTrigger;
             DisplayName = displayName;

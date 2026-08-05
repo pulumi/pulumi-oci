@@ -42,7 +42,14 @@ namespace Pulumi.Oci.Oci
     ///             },
     ///         },
     ///         ResourceType = privilegedApiControlResourceType,
-    ///         Resources = privilegedApiControlResources,
+    ///         ApproverGroupLevelLists = new[]
+    ///         {
+    ///             new Oci.Oci.Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs
+    ///             {
+    ///                 GroupIds = testGroup.Id,
+    ///                 GroupLevel = privilegedApiControlApproverGroupLevelListGroupLevel,
+    ///             },
+    ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -54,6 +61,7 @@ namespace Pulumi.Oci.Oci
     ///             { "Department", "Finance" },
     ///         },
     ///         NumberOfApprovers = privilegedApiControlNumberOfApprovers,
+    ///         Resources = privilegedApiControlResources,
     ///     });
     /// 
     /// });
@@ -75,6 +83,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("approverGroupIdLists")]
         public Output<ImmutableArray<string>> ApproverGroupIdLists { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        /// </summary>
+        [Output("approverGroupLevelLists")]
+        public Output<ImmutableArray<Outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList>> ApproverGroupLevelLists { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
@@ -113,7 +127,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         /// </summary>
         [Output("notificationTopicId")]
         public Output<string> NotificationTopicId { get; private set; } = null!;
@@ -165,7 +179,7 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -240,6 +254,18 @@ namespace Pulumi.Oci.Oci
             set => _approverGroupIdLists = value;
         }
 
+        [Input("approverGroupLevelLists")]
+        private InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>? _approverGroupLevelLists;
+
+        /// <summary>
+        /// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        /// </summary>
+        public InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs> ApproverGroupLevelLists
+        {
+            get => _approverGroupLevelLists ?? (_approverGroupLevelLists = new InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>());
+            set => _approverGroupLevelLists = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         /// </summary>
@@ -283,7 +309,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         /// </summary>
         [Input("notificationTopicId", required: true)]
         public Input<string> NotificationTopicId { get; set; } = null!;
@@ -312,7 +338,7 @@ namespace Pulumi.Oci.Oci
         [Input("resourceType", required: true)]
         public Input<string> ResourceType { get; set; } = null!;
 
-        [Input("resources", required: true)]
+        [Input("resources")]
         private InputList<string>? _resources;
 
         /// <summary>
@@ -346,6 +372,18 @@ namespace Pulumi.Oci.Oci
         {
             get => _approverGroupIdLists ?? (_approverGroupIdLists = new InputList<string>());
             set => _approverGroupIdLists = value;
+        }
+
+        [Input("approverGroupLevelLists")]
+        private InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListGetArgs>? _approverGroupLevelLists;
+
+        /// <summary>
+        /// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        /// </summary>
+        public InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListGetArgs> ApproverGroupLevelLists
+        {
+            get => _approverGroupLevelLists ?? (_approverGroupLevelLists = new InputList<Inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListGetArgs>());
+            set => _approverGroupLevelLists = value;
         }
 
         /// <summary>
@@ -397,7 +435,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        /// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         /// </summary>
         [Input("notificationTopicId")]
         public Input<string>? NotificationTopicId { get; set; }
@@ -467,7 +505,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

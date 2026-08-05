@@ -80,6 +80,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        /// </summary>
+        [Output("exclusiveBytes")]
+        public Output<string> ExclusiveBytes { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The time when this snapshot will be deleted.
         /// </summary>
         [Output("expirationTime")]
@@ -325,6 +331,12 @@ namespace Pulumi.Oci.FileStorage
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        /// </summary>
+        [Input("exclusiveBytes")]
+        public Input<string>? ExclusiveBytes { get; set; }
 
         /// <summary>
         /// (Updatable) The time when this snapshot will be deleted.

@@ -3419,6 +3419,8 @@ type GetFileSystemsFileSystem struct {
 	CloneCount int `pulumi:"cloneCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Displays the compartment-level quota enforcement state affecting this file system.
+	CompartmentQuotaEnforcementState string `pulumi:"compartmentQuotaEnforcementState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags        map[string]string `pulumi:"definedTags"`
 	DetachCloneTrigger int               `pulumi:"detachCloneTrigger"`
@@ -3485,6 +3487,8 @@ type GetFileSystemsFileSystemArgs struct {
 	CloneCount pulumi.IntInput `pulumi:"cloneCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Displays the compartment-level quota enforcement state affecting this file system.
+	CompartmentQuotaEnforcementState pulumi.StringInput `pulumi:"compartmentQuotaEnforcementState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags        pulumi.StringMapInput `pulumi:"definedTags"`
 	DetachCloneTrigger pulumi.IntInput       `pulumi:"detachCloneTrigger"`
@@ -3603,6 +3607,11 @@ func (o GetFileSystemsFileSystemOutput) CloneCount() pulumi.IntOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetFileSystemsFileSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Displays the compartment-level quota enforcement state affecting this file system.
+func (o GetFileSystemsFileSystemOutput) CompartmentQuotaEnforcementState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.CompartmentQuotaEnforcementState }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -8208,6 +8217,8 @@ func (o GetSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetSnapshotsFilt
 type GetSnapshotsSnapshot struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes string `pulumi:"exclusiveBytes"`
 	// The time when this snapshot will be deleted.
 	ExpirationTime string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -8262,6 +8273,8 @@ type GetSnapshotsSnapshotInput interface {
 type GetSnapshotsSnapshotArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+	ExclusiveBytes pulumi.StringInput `pulumi:"exclusiveBytes"`
 	// The time when this snapshot will be deleted.
 	ExpirationTime pulumi.StringInput `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
@@ -8356,6 +8369,11 @@ func (o GetSnapshotsSnapshotOutput) ToGetSnapshotsSnapshotOutputWithContext(ctx 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetSnapshotsSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+func (o GetSnapshotsSnapshotOutput) ExclusiveBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.ExclusiveBytes }).(pulumi.StringOutput)
 }
 
 // The time when this snapshot will be deleted.

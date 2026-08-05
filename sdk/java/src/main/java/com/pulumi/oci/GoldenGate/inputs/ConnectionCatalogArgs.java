@@ -183,14 +183,20 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * (Updatable)
+     * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * @return (Updatable)
+     * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     public Optional<Output<String>> uri() {
@@ -458,7 +464,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param uri (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+         * @param uri (Updatable)
+         * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+         * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
          * 
          * @return builder
          * 
@@ -469,7 +478,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param uri (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+         * @param uri (Updatable)
+         * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+         * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
          * 
          * @return builder
          * 

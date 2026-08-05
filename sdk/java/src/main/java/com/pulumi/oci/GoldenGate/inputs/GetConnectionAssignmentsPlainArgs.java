@@ -48,6 +48,36 @@ public final class GetConnectionAssignmentsPlainArgs extends com.pulumi.resource
     }
 
     /**
+     * The array of connection types to exclude.
+     * 
+     */
+    @Import(name="connectionTypeNotEqualTos")
+    private @Nullable List<String> connectionTypeNotEqualTos;
+
+    /**
+     * @return The array of connection types to exclude.
+     * 
+     */
+    public Optional<List<String>> connectionTypeNotEqualTos() {
+        return Optional.ofNullable(this.connectionTypeNotEqualTos);
+    }
+
+    /**
+     * The array of connection types.
+     * 
+     */
+    @Import(name="connectionTypes")
+    private @Nullable List<String> connectionTypes;
+
+    /**
+     * @return The array of connection types.
+     * 
+     */
+    public Optional<List<String>> connectionTypes() {
+        return Optional.ofNullable(this.connectionTypes);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
@@ -104,6 +134,8 @@ public final class GetConnectionAssignmentsPlainArgs extends com.pulumi.resource
     private GetConnectionAssignmentsPlainArgs(GetConnectionAssignmentsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.connectionId = $.connectionId;
+        this.connectionTypeNotEqualTos = $.connectionTypeNotEqualTos;
+        this.connectionTypes = $.connectionTypes;
         this.deploymentId = $.deploymentId;
         this.filters = $.filters;
         this.name = $.name;
@@ -148,6 +180,48 @@ public final class GetConnectionAssignmentsPlainArgs extends com.pulumi.resource
         public Builder connectionId(@Nullable String connectionId) {
             $.connectionId = connectionId;
             return this;
+        }
+
+        /**
+         * @param connectionTypeNotEqualTos The array of connection types to exclude.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypeNotEqualTos(@Nullable List<String> connectionTypeNotEqualTos) {
+            $.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param connectionTypeNotEqualTos The array of connection types to exclude.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypeNotEqualTos(String... connectionTypeNotEqualTos) {
+            return connectionTypeNotEqualTos(List.of(connectionTypeNotEqualTos));
+        }
+
+        /**
+         * @param connectionTypes The array of connection types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypes(@Nullable List<String> connectionTypes) {
+            $.connectionTypes = connectionTypes;
+            return this;
+        }
+
+        /**
+         * @param connectionTypes The array of connection types.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypes(String... connectionTypes) {
+            return connectionTypes(List.of(connectionTypes));
         }
 
         /**

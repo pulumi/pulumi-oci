@@ -63,6 +63,16 @@ __all__ = [
     'AgentToolToolConfigTableAndColumnDescription',
     'DedicatedAiClusterCapacity',
     'EndpointContentModerationConfig',
+    'HostedApplicationEnvironmentVariable',
+    'HostedApplicationInboundAuthConfig',
+    'HostedApplicationInboundAuthConfigIdcsConfig',
+    'HostedApplicationNetworkingConfig',
+    'HostedApplicationNetworkingConfigInboundNetworkingConfig',
+    'HostedApplicationNetworkingConfigOutboundNetworkingConfig',
+    'HostedApplicationScalingConfig',
+    'HostedApplicationStorageConfig',
+    'HostedDeploymentActiveArtifact',
+    'HostedDeploymentArtifact',
     'ImportedModelDataSource',
     'ModelFineTuneDetails',
     'ModelFineTuneDetailsTrainingConfig',
@@ -206,6 +216,35 @@ __all__ = [
     'GetGenerativeAiPrivateEndpointsFilterResult',
     'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionResult',
     'GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemResult',
+    'GetHostedApplicationEnvironmentVariableResult',
+    'GetHostedApplicationInboundAuthConfigResult',
+    'GetHostedApplicationInboundAuthConfigIdcsConfigResult',
+    'GetHostedApplicationNetworkingConfigResult',
+    'GetHostedApplicationNetworkingConfigInboundNetworkingConfigResult',
+    'GetHostedApplicationNetworkingConfigOutboundNetworkingConfigResult',
+    'GetHostedApplicationScalingConfigResult',
+    'GetHostedApplicationStorageConfigResult',
+    'GetHostedApplicationStoragesFilterResult',
+    'GetHostedApplicationStoragesHostedApplicationStorageCollectionResult',
+    'GetHostedApplicationStoragesHostedApplicationStorageCollectionItemResult',
+    'GetHostedApplicationsFilterResult',
+    'GetHostedApplicationsHostedApplicationCollectionResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemScalingConfigResult',
+    'GetHostedApplicationsHostedApplicationCollectionItemStorageConfigResult',
+    'GetHostedDeploymentActiveArtifactResult',
+    'GetHostedDeploymentArtifactResult',
+    'GetHostedDeploymentsFilterResult',
+    'GetHostedDeploymentsHostedDeploymentCollectionResult',
+    'GetHostedDeploymentsHostedDeploymentCollectionItemResult',
+    'GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactResult',
+    'GetHostedDeploymentsHostedDeploymentCollectionItemArtifactResult',
     'GetImportedModelDataSourceResult',
     'GetImportedModelsFilterResult',
     'GetImportedModelsImportedModelCollectionResult',
@@ -3267,6 +3306,714 @@ class EndpointContentModerationConfig(dict):
         (Updatable) The OCID of the model used for the feature.
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class HostedApplicationEnvironmentVariable(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: (Updatable) Name of the environment variable.
+        :param _builtins.str type: (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        :param _builtins.str value: (Updatable) Value of the environment variable.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) Name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        (Updatable) Value of the environment variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class HostedApplicationInboundAuthConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inboundAuthConfigType":
+            suggest = "inbound_auth_config_type"
+        elif key == "idcsConfig":
+            suggest = "idcs_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationInboundAuthConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationInboundAuthConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationInboundAuthConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 inbound_auth_config_type: _builtins.str,
+                 idcs_config: Optional['outputs.HostedApplicationInboundAuthConfigIdcsConfig'] = None):
+        """
+        :param _builtins.str inbound_auth_config_type: (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        :param 'HostedApplicationInboundAuthConfigIdcsConfigArgs' idcs_config: (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        """
+        pulumi.set(__self__, "inbound_auth_config_type", inbound_auth_config_type)
+        if idcs_config is not None:
+            pulumi.set(__self__, "idcs_config", idcs_config)
+
+    @_builtins.property
+    @pulumi.getter(name="inboundAuthConfigType")
+    def inbound_auth_config_type(self) -> _builtins.str:
+        """
+        (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        """
+        return pulumi.get(self, "inbound_auth_config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsConfig")
+    def idcs_config(self) -> Optional['outputs.HostedApplicationInboundAuthConfigIdcsConfig']:
+        """
+        (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        """
+        return pulumi.get(self, "idcs_config")
+
+
+@pulumi.output_type
+class HostedApplicationInboundAuthConfigIdcsConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainUrl":
+            suggest = "domain_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationInboundAuthConfigIdcsConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationInboundAuthConfigIdcsConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationInboundAuthConfigIdcsConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 domain_url: _builtins.str,
+                 scope: _builtins.str,
+                 audience: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str domain_url: (Updatable) Domain URL for IDCS.
+        :param _builtins.str scope: (Updatable) Scope for IDCS.
+        :param _builtins.str audience: (Updatable) Audience for IDCS.
+        """
+        pulumi.set(__self__, "domain_url", domain_url)
+        pulumi.set(__self__, "scope", scope)
+        if audience is not None:
+            pulumi.set(__self__, "audience", audience)
+
+    @_builtins.property
+    @pulumi.getter(name="domainUrl")
+    def domain_url(self) -> _builtins.str:
+        """
+        (Updatable) Domain URL for IDCS.
+        """
+        return pulumi.get(self, "domain_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        (Updatable) Scope for IDCS.
+        """
+        return pulumi.get(self, "scope")
+
+    @_builtins.property
+    @pulumi.getter
+    def audience(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Audience for IDCS.
+        """
+        return pulumi.get(self, "audience")
+
+
+@pulumi.output_type
+class HostedApplicationNetworkingConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inboundNetworkingConfig":
+            suggest = "inbound_networking_config"
+        elif key == "outboundNetworkingConfig":
+            suggest = "outbound_networking_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationNetworkingConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationNetworkingConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationNetworkingConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 inbound_networking_config: 'outputs.HostedApplicationNetworkingConfigInboundNetworkingConfig',
+                 outbound_networking_config: 'outputs.HostedApplicationNetworkingConfigOutboundNetworkingConfig'):
+        """
+        :param 'HostedApplicationNetworkingConfigInboundNetworkingConfigArgs' inbound_networking_config: Inbound Networking configuration.
+        :param 'HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs' outbound_networking_config: Outbound Networking configuration.
+        """
+        pulumi.set(__self__, "inbound_networking_config", inbound_networking_config)
+        pulumi.set(__self__, "outbound_networking_config", outbound_networking_config)
+
+    @_builtins.property
+    @pulumi.getter(name="inboundNetworkingConfig")
+    def inbound_networking_config(self) -> 'outputs.HostedApplicationNetworkingConfigInboundNetworkingConfig':
+        """
+        Inbound Networking configuration.
+        """
+        return pulumi.get(self, "inbound_networking_config")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundNetworkingConfig")
+    def outbound_networking_config(self) -> 'outputs.HostedApplicationNetworkingConfigOutboundNetworkingConfig':
+        """
+        Outbound Networking configuration.
+        """
+        return pulumi.get(self, "outbound_networking_config")
+
+
+@pulumi.output_type
+class HostedApplicationNetworkingConfigInboundNetworkingConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "endpointMode":
+            suggest = "endpoint_mode"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationNetworkingConfigInboundNetworkingConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationNetworkingConfigInboundNetworkingConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationNetworkingConfigInboundNetworkingConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 endpoint_mode: _builtins.str,
+                 private_endpoint_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str endpoint_mode: inbounding from public or private endpoint.
+        :param _builtins.str private_endpoint_id: The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        pulumi.set(__self__, "endpoint_mode", endpoint_mode)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointMode")
+    def endpoint_mode(self) -> _builtins.str:
+        """
+        inbounding from public or private endpoint.
+        """
+        return pulumi.get(self, "endpoint_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class HostedApplicationNetworkingConfigOutboundNetworkingConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkMode":
+            suggest = "network_mode"
+        elif key == "customSubnetId":
+            suggest = "custom_subnet_id"
+        elif key == "nsgIds":
+            suggest = "nsg_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationNetworkingConfigOutboundNetworkingConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationNetworkingConfigOutboundNetworkingConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationNetworkingConfigOutboundNetworkingConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_mode: _builtins.str,
+                 custom_subnet_id: Optional[_builtins.str] = None,
+                 nsg_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str network_mode: outbounding to managed internet or customer network.
+        :param _builtins.str custom_subnet_id: ocid of customer subnet when networkMode=Custom
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        pulumi.set(__self__, "network_mode", network_mode)
+        if custom_subnet_id is not None:
+            pulumi.set(__self__, "custom_subnet_id", custom_subnet_id)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="networkMode")
+    def network_mode(self) -> _builtins.str:
+        """
+        outbounding to managed internet or customer network.
+        """
+        return pulumi.get(self, "network_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="customSubnetId")
+    def custom_subnet_id(self) -> Optional[_builtins.str]:
+        """
+        ocid of customer subnet when networkMode=Custom
+        """
+        return pulumi.get(self, "custom_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class HostedApplicationScalingConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "scalingType":
+            suggest = "scaling_type"
+        elif key == "maxReplica":
+            suggest = "max_replica"
+        elif key == "minReplica":
+            suggest = "min_replica"
+        elif key == "targetConcurrencyThreshold":
+            suggest = "target_concurrency_threshold"
+        elif key == "targetCpuThreshold":
+            suggest = "target_cpu_threshold"
+        elif key == "targetMemoryThreshold":
+            suggest = "target_memory_threshold"
+        elif key == "targetRpsThreshold":
+            suggest = "target_rps_threshold"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationScalingConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationScalingConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationScalingConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 scaling_type: _builtins.str,
+                 max_replica: Optional[_builtins.int] = None,
+                 min_replica: Optional[_builtins.int] = None,
+                 target_concurrency_threshold: Optional[_builtins.int] = None,
+                 target_cpu_threshold: Optional[_builtins.int] = None,
+                 target_memory_threshold: Optional[_builtins.int] = None,
+                 target_rps_threshold: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str scaling_type: (Updatable) scaling type for application.
+        :param _builtins.int max_replica: (Updatable) Maximum number of replicas allowed.
+        :param _builtins.int min_replica: (Updatable) Minimum number of replicas to keep running.
+        :param _builtins.int target_concurrency_threshold: (Updatable) number of simultaneous requests that can be processed by each replica.
+        :param _builtins.int target_cpu_threshold: (Updatable) Scale up if average CPU utilization exceeds this threshold.
+        :param _builtins.int target_memory_threshold: (Updatable) Scale up if average memory utilization exceeds this threshold.
+        :param _builtins.int target_rps_threshold: (Updatable) requests-per-second per replica of an application.
+        """
+        pulumi.set(__self__, "scaling_type", scaling_type)
+        if max_replica is not None:
+            pulumi.set(__self__, "max_replica", max_replica)
+        if min_replica is not None:
+            pulumi.set(__self__, "min_replica", min_replica)
+        if target_concurrency_threshold is not None:
+            pulumi.set(__self__, "target_concurrency_threshold", target_concurrency_threshold)
+        if target_cpu_threshold is not None:
+            pulumi.set(__self__, "target_cpu_threshold", target_cpu_threshold)
+        if target_memory_threshold is not None:
+            pulumi.set(__self__, "target_memory_threshold", target_memory_threshold)
+        if target_rps_threshold is not None:
+            pulumi.set(__self__, "target_rps_threshold", target_rps_threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="scalingType")
+    def scaling_type(self) -> _builtins.str:
+        """
+        (Updatable) scaling type for application.
+        """
+        return pulumi.get(self, "scaling_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maxReplica")
+    def max_replica(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Maximum number of replicas allowed.
+        """
+        return pulumi.get(self, "max_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="minReplica")
+    def min_replica(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Minimum number of replicas to keep running.
+        """
+        return pulumi.get(self, "min_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConcurrencyThreshold")
+    def target_concurrency_threshold(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) number of simultaneous requests that can be processed by each replica.
+        """
+        return pulumi.get(self, "target_concurrency_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCpuThreshold")
+    def target_cpu_threshold(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Scale up if average CPU utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_cpu_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetMemoryThreshold")
+    def target_memory_threshold(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Scale up if average memory utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_memory_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRpsThreshold")
+    def target_rps_threshold(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) requests-per-second per replica of an application.
+        """
+        return pulumi.get(self, "target_rps_threshold")
+
+
+@pulumi.output_type
+class HostedApplicationStorageConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "environmentVariableKey":
+            suggest = "environment_variable_key"
+        elif key == "storageId":
+            suggest = "storage_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedApplicationStorageConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedApplicationStorageConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedApplicationStorageConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 environment_variable_key: _builtins.str,
+                 storage_id: _builtins.str):
+        """
+        :param _builtins.str environment_variable_key: The key of environment variable to store the database connection.
+        :param _builtins.str storage_id: The [OCID] of ApplicationStorage.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "environment_variable_key", environment_variable_key)
+        pulumi.set(__self__, "storage_id", storage_id)
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariableKey")
+    def environment_variable_key(self) -> _builtins.str:
+        """
+        The key of environment variable to store the database connection.
+        """
+        return pulumi.get(self, "environment_variable_key")
+
+    @_builtins.property
+    @pulumi.getter(name="storageId")
+    def storage_id(self) -> _builtins.str:
+        """
+        The [OCID] of ApplicationStorage.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "storage_id")
+
+
+@pulumi.output_type
+class HostedDeploymentActiveArtifact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "artifactType":
+            suggest = "artifact_type"
+        elif key == "containerUri":
+            suggest = "container_uri"
+        elif key == "hostedDeploymentId":
+            suggest = "hosted_deployment_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedDeploymentActiveArtifact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedDeploymentActiveArtifact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedDeploymentActiveArtifact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 artifact_type: Optional[_builtins.str] = None,
+                 container_uri: Optional[_builtins.str] = None,
+                 hosted_deployment_id: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 tag: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str artifact_type: (Updatable) The type of the artifact.
+        :param _builtins.str container_uri: (Updatable) image url.
+        :param _builtins.str hosted_deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        :param _builtins.str id: (Updatable) if put artifact to a table, the id is needed
+        :param _builtins.str status: (Updatable) The current status of the artifact.
+        :param _builtins.str tag: (Updatable) image tag.
+        :param _builtins.str time_created: (Updatable) The date and time the artifact was created.
+        """
+        if artifact_type is not None:
+            pulumi.set(__self__, "artifact_type", artifact_type)
+        if container_uri is not None:
+            pulumi.set(__self__, "container_uri", container_uri)
+        if hosted_deployment_id is not None:
+            pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) if put artifact to a table, the id is needed
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The date and time the artifact was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class HostedDeploymentArtifact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "artifactType":
+            suggest = "artifact_type"
+        elif key == "containerUri":
+            suggest = "container_uri"
+        elif key == "hostedDeploymentId":
+            suggest = "hosted_deployment_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in HostedDeploymentArtifact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        HostedDeploymentArtifact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        HostedDeploymentArtifact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 artifact_type: Optional[_builtins.str] = None,
+                 container_uri: Optional[_builtins.str] = None,
+                 hosted_deployment_id: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 tag: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str artifact_type: The type of the artifact.
+        :param _builtins.str container_uri: image url.
+        :param _builtins.str hosted_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str status: The current status of the artifact.
+        :param _builtins.str tag: image tag.
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        if artifact_type is not None:
+            pulumi.set(__self__, "artifact_type", artifact_type)
+        if container_uri is not None:
+            pulumi.set(__self__, "container_uri", container_uri)
+        if hosted_deployment_id is not None:
+            pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> Optional[_builtins.str]:
+        """
+        The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> Optional[_builtins.str]:
+        """
+        image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> Optional[_builtins.str]:
+        """
+        image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -10355,6 +11102,7 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
                  nsg_ids: Sequence[_builtins.str],
                  previous_state: _builtins.str,
                  private_endpoint_ip: _builtins.str,
+                 resource_type: _builtins.str,
                  state: _builtins.str,
                  subnet_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -10369,6 +11117,7 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
         :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
         :param _builtins.str private_endpoint_ip: The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
+        :param _builtins.str resource_type: Query by the resource type of Generative AI private endpoints.
         :param _builtins.str state: The lifecycle state of Generative AI private endpoints.
         :param _builtins.str subnet_id: The OCID of the subnet that the private endpoint belongs to.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -10387,6 +11136,7 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "previous_state", previous_state)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -10478,6 +11228,14 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
         return pulumi.get(self, "private_endpoint_ip")
 
     @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Query by the resource type of Generative AI private endpoints.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -10516,6 +11274,1577 @@ class GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemRe
         The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetHostedApplicationEnvironmentVariableResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: Name of the environment variable.
+        :param _builtins.str type: Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        :param _builtins.str value: Value of the environment variable.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the environment variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetHostedApplicationInboundAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 idcs_configs: Sequence['outputs.GetHostedApplicationInboundAuthConfigIdcsConfigResult'],
+                 inbound_auth_config_type: _builtins.str):
+        """
+        :param Sequence['GetHostedApplicationInboundAuthConfigIdcsConfigArgs'] idcs_configs: Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        :param _builtins.str inbound_auth_config_type: Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        """
+        pulumi.set(__self__, "idcs_configs", idcs_configs)
+        pulumi.set(__self__, "inbound_auth_config_type", inbound_auth_config_type)
+
+    @_builtins.property
+    @pulumi.getter(name="idcsConfigs")
+    def idcs_configs(self) -> Sequence['outputs.GetHostedApplicationInboundAuthConfigIdcsConfigResult']:
+        """
+        Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        """
+        return pulumi.get(self, "idcs_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="inboundAuthConfigType")
+    def inbound_auth_config_type(self) -> _builtins.str:
+        """
+        Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        """
+        return pulumi.get(self, "inbound_auth_config_type")
+
+
+@pulumi.output_type
+class GetHostedApplicationInboundAuthConfigIdcsConfigResult(dict):
+    def __init__(__self__, *,
+                 audience: _builtins.str,
+                 domain_url: _builtins.str,
+                 scope: _builtins.str):
+        """
+        :param _builtins.str audience: Audience for IDCS.
+        :param _builtins.str domain_url: Domain URL for IDCS.
+        :param _builtins.str scope: Scope for IDCS.
+        """
+        pulumi.set(__self__, "audience", audience)
+        pulumi.set(__self__, "domain_url", domain_url)
+        pulumi.set(__self__, "scope", scope)
+
+    @_builtins.property
+    @pulumi.getter
+    def audience(self) -> _builtins.str:
+        """
+        Audience for IDCS.
+        """
+        return pulumi.get(self, "audience")
+
+    @_builtins.property
+    @pulumi.getter(name="domainUrl")
+    def domain_url(self) -> _builtins.str:
+        """
+        Domain URL for IDCS.
+        """
+        return pulumi.get(self, "domain_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        Scope for IDCS.
+        """
+        return pulumi.get(self, "scope")
+
+
+@pulumi.output_type
+class GetHostedApplicationNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 inbound_networking_configs: Sequence['outputs.GetHostedApplicationNetworkingConfigInboundNetworkingConfigResult'],
+                 outbound_networking_configs: Sequence['outputs.GetHostedApplicationNetworkingConfigOutboundNetworkingConfigResult']):
+        """
+        :param Sequence['GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs'] inbound_networking_configs: Inbound Networking configuration.
+        :param Sequence['GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs'] outbound_networking_configs: Outbound Networking configuration.
+        """
+        pulumi.set(__self__, "inbound_networking_configs", inbound_networking_configs)
+        pulumi.set(__self__, "outbound_networking_configs", outbound_networking_configs)
+
+    @_builtins.property
+    @pulumi.getter(name="inboundNetworkingConfigs")
+    def inbound_networking_configs(self) -> Sequence['outputs.GetHostedApplicationNetworkingConfigInboundNetworkingConfigResult']:
+        """
+        Inbound Networking configuration.
+        """
+        return pulumi.get(self, "inbound_networking_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundNetworkingConfigs")
+    def outbound_networking_configs(self) -> Sequence['outputs.GetHostedApplicationNetworkingConfigOutboundNetworkingConfigResult']:
+        """
+        Outbound Networking configuration.
+        """
+        return pulumi.get(self, "outbound_networking_configs")
+
+
+@pulumi.output_type
+class GetHostedApplicationNetworkingConfigInboundNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 endpoint_mode: _builtins.str,
+                 private_endpoint_id: _builtins.str):
+        """
+        :param _builtins.str endpoint_mode: inbounding from public or private endpoint.
+        :param _builtins.str private_endpoint_id: The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        pulumi.set(__self__, "endpoint_mode", endpoint_mode)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointMode")
+    def endpoint_mode(self) -> _builtins.str:
+        """
+        inbounding from public or private endpoint.
+        """
+        return pulumi.get(self, "endpoint_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class GetHostedApplicationNetworkingConfigOutboundNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 custom_subnet_id: _builtins.str,
+                 network_mode: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.str custom_subnet_id: ocid of customer subnet when networkMode=Custom
+        :param _builtins.str network_mode: outbounding to managed internet or customer network.
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        pulumi.set(__self__, "custom_subnet_id", custom_subnet_id)
+        pulumi.set(__self__, "network_mode", network_mode)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="customSubnetId")
+    def custom_subnet_id(self) -> _builtins.str:
+        """
+        ocid of customer subnet when networkMode=Custom
+        """
+        return pulumi.get(self, "custom_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="networkMode")
+    def network_mode(self) -> _builtins.str:
+        """
+        outbounding to managed internet or customer network.
+        """
+        return pulumi.get(self, "network_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class GetHostedApplicationScalingConfigResult(dict):
+    def __init__(__self__, *,
+                 max_replica: _builtins.int,
+                 min_replica: _builtins.int,
+                 scaling_type: _builtins.str,
+                 target_concurrency_threshold: _builtins.int,
+                 target_cpu_threshold: _builtins.int,
+                 target_memory_threshold: _builtins.int,
+                 target_rps_threshold: _builtins.int):
+        """
+        :param _builtins.int max_replica: Maximum number of replicas allowed.
+        :param _builtins.int min_replica: Minimum number of replicas to keep running.
+        :param _builtins.str scaling_type: scaling type for application.
+        :param _builtins.int target_concurrency_threshold: number of simultaneous requests that can be processed by each replica.
+        :param _builtins.int target_cpu_threshold: Scale up if average CPU utilization exceeds this threshold.
+        :param _builtins.int target_memory_threshold: Scale up if average memory utilization exceeds this threshold.
+        :param _builtins.int target_rps_threshold: requests-per-second per replica of an application.
+        """
+        pulumi.set(__self__, "max_replica", max_replica)
+        pulumi.set(__self__, "min_replica", min_replica)
+        pulumi.set(__self__, "scaling_type", scaling_type)
+        pulumi.set(__self__, "target_concurrency_threshold", target_concurrency_threshold)
+        pulumi.set(__self__, "target_cpu_threshold", target_cpu_threshold)
+        pulumi.set(__self__, "target_memory_threshold", target_memory_threshold)
+        pulumi.set(__self__, "target_rps_threshold", target_rps_threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="maxReplica")
+    def max_replica(self) -> _builtins.int:
+        """
+        Maximum number of replicas allowed.
+        """
+        return pulumi.get(self, "max_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="minReplica")
+    def min_replica(self) -> _builtins.int:
+        """
+        Minimum number of replicas to keep running.
+        """
+        return pulumi.get(self, "min_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingType")
+    def scaling_type(self) -> _builtins.str:
+        """
+        scaling type for application.
+        """
+        return pulumi.get(self, "scaling_type")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConcurrencyThreshold")
+    def target_concurrency_threshold(self) -> _builtins.int:
+        """
+        number of simultaneous requests that can be processed by each replica.
+        """
+        return pulumi.get(self, "target_concurrency_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCpuThreshold")
+    def target_cpu_threshold(self) -> _builtins.int:
+        """
+        Scale up if average CPU utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_cpu_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetMemoryThreshold")
+    def target_memory_threshold(self) -> _builtins.int:
+        """
+        Scale up if average memory utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_memory_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRpsThreshold")
+    def target_rps_threshold(self) -> _builtins.int:
+        """
+        requests-per-second per replica of an application.
+        """
+        return pulumi.get(self, "target_rps_threshold")
+
+
+@pulumi.output_type
+class GetHostedApplicationStorageConfigResult(dict):
+    def __init__(__self__, *,
+                 environment_variable_key: _builtins.str,
+                 storage_id: _builtins.str):
+        """
+        :param _builtins.str environment_variable_key: The key of environment variable to store the database connection.
+        :param _builtins.str storage_id: The [OCID] of ApplicationStorage.
+        """
+        pulumi.set(__self__, "environment_variable_key", environment_variable_key)
+        pulumi.set(__self__, "storage_id", storage_id)
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariableKey")
+    def environment_variable_key(self) -> _builtins.str:
+        """
+        The key of environment variable to store the database connection.
+        """
+        return pulumi.get(self, "environment_variable_key")
+
+    @_builtins.property
+    @pulumi.getter(name="storageId")
+    def storage_id(self) -> _builtins.str:
+        """
+        The [OCID] of ApplicationStorage.
+        """
+        return pulumi.get(self, "storage_id")
+
+
+@pulumi.output_type
+class GetHostedApplicationStoragesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetHostedApplicationStoragesHostedApplicationStorageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetHostedApplicationStoragesHostedApplicationStorageCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetHostedApplicationStoragesHostedApplicationStorageCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetHostedApplicationStoragesHostedApplicationStorageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_ids: Sequence[_builtins.str],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 storage_type: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence[_builtins.str] application_ids: A list of application OCID.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the hosted application storage.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+        :param _builtins.str lifecycle_details: A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+        :param _builtins.str state: A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+        :param _builtins.str storage_type: type like Cache, Postgresql and ADB.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the hosted application was created, in the format defined by RFC 3339
+        :param _builtins.str time_updated: The date and time the hosted application was updated, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "application_ids", application_ids)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_type", storage_type)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationIds")
+    def application_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of application OCID.
+        """
+        return pulumi.get(self, "application_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the hosted application storage.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.str:
+        """
+        type like Cache, Postgresql and ADB.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted application was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the hosted application was updated, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetHostedApplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the environment variable.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 environment_variables: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 inbound_auth_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigResult'],
+                 lifecycle_details: _builtins.str,
+                 networking_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigResult'],
+                 scaling_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemScalingConfigResult'],
+                 state: _builtins.str,
+                 storage_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemStorageConfigResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: An optional description of the hosted application.
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs'] environment_variables: The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs'] inbound_auth_configs: The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+        :param _builtins.str lifecycle_details: A message describing the current state of the endpoint in more detail that can provide actionable information.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs'] networking_configs: Networking configuration.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs'] scaling_configs: The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+        :param _builtins.str state: A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs'] storage_configs: A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the hosted application was created, in the format defined by RFC 3339
+        :param _builtins.str time_updated: The date and time the hosted application was updated, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inbound_auth_configs", inbound_auth_configs)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "networking_configs", networking_configs)
+        pulumi.set(__self__, "scaling_configs", scaling_configs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_configs", storage_configs)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the hosted application.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableResult']:
+        """
+        The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="inboundAuthConfigs")
+    def inbound_auth_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigResult']:
+        """
+        The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+        """
+        return pulumi.get(self, "inbound_auth_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state of the endpoint in more detail that can provide actionable information.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkingConfigs")
+    def networking_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigResult']:
+        """
+        Networking configuration.
+        """
+        return pulumi.get(self, "networking_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigs")
+    def scaling_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemScalingConfigResult']:
+        """
+        The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+        """
+        return pulumi.get(self, "scaling_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageConfigs")
+    def storage_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemStorageConfigResult']:
+        """
+        A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+        """
+        return pulumi.get(self, "storage_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted application was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the hosted application was updated, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: Name of the environment variable.
+        :param _builtins.str type: Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        :param _builtins.str value: Value of the environment variable.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the environment variable (PLAINTEXT or HASHED, no default value).
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the environment variable.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 idcs_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigResult'],
+                 inbound_auth_config_type: _builtins.str):
+        """
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs'] idcs_configs: Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        :param _builtins.str inbound_auth_config_type: Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        """
+        pulumi.set(__self__, "idcs_configs", idcs_configs)
+        pulumi.set(__self__, "inbound_auth_config_type", inbound_auth_config_type)
+
+    @_builtins.property
+    @pulumi.getter(name="idcsConfigs")
+    def idcs_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigResult']:
+        """
+        Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+        """
+        return pulumi.get(self, "idcs_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="inboundAuthConfigType")
+    def inbound_auth_config_type(self) -> _builtins.str:
+        """
+        Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+        """
+        return pulumi.get(self, "inbound_auth_config_type")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigResult(dict):
+    def __init__(__self__, *,
+                 audience: _builtins.str,
+                 domain_url: _builtins.str,
+                 scope: _builtins.str):
+        """
+        :param _builtins.str audience: Audience for IDCS.
+        :param _builtins.str domain_url: Domain URL for IDCS.
+        :param _builtins.str scope: Scope for IDCS.
+        """
+        pulumi.set(__self__, "audience", audience)
+        pulumi.set(__self__, "domain_url", domain_url)
+        pulumi.set(__self__, "scope", scope)
+
+    @_builtins.property
+    @pulumi.getter
+    def audience(self) -> _builtins.str:
+        """
+        Audience for IDCS.
+        """
+        return pulumi.get(self, "audience")
+
+    @_builtins.property
+    @pulumi.getter(name="domainUrl")
+    def domain_url(self) -> _builtins.str:
+        """
+        Domain URL for IDCS.
+        """
+        return pulumi.get(self, "domain_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> _builtins.str:
+        """
+        Scope for IDCS.
+        """
+        return pulumi.get(self, "scope")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 inbound_networking_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigResult'],
+                 outbound_networking_configs: Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigResult']):
+        """
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs'] inbound_networking_configs: Inbound Networking configuration.
+        :param Sequence['GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs'] outbound_networking_configs: Outbound Networking configuration.
+        """
+        pulumi.set(__self__, "inbound_networking_configs", inbound_networking_configs)
+        pulumi.set(__self__, "outbound_networking_configs", outbound_networking_configs)
+
+    @_builtins.property
+    @pulumi.getter(name="inboundNetworkingConfigs")
+    def inbound_networking_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigResult']:
+        """
+        Inbound Networking configuration.
+        """
+        return pulumi.get(self, "inbound_networking_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="outboundNetworkingConfigs")
+    def outbound_networking_configs(self) -> Sequence['outputs.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigResult']:
+        """
+        Outbound Networking configuration.
+        """
+        return pulumi.get(self, "outbound_networking_configs")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 endpoint_mode: _builtins.str,
+                 private_endpoint_id: _builtins.str):
+        """
+        :param _builtins.str endpoint_mode: inbounding from public or private endpoint.
+        :param _builtins.str private_endpoint_id: The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        pulumi.set(__self__, "endpoint_mode", endpoint_mode)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointMode")
+    def endpoint_mode(self) -> _builtins.str:
+        """
+        inbounding from public or private endpoint.
+        """
+        return pulumi.get(self, "endpoint_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        The [OCID] of Private Endpoint when endpointMode=Private
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigResult(dict):
+    def __init__(__self__, *,
+                 custom_subnet_id: _builtins.str,
+                 network_mode: _builtins.str,
+                 nsg_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.str custom_subnet_id: ocid of customer subnet when networkMode=Custom
+        :param _builtins.str network_mode: outbounding to managed internet or customer network.
+        :param Sequence[_builtins.str] nsg_ids: A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        pulumi.set(__self__, "custom_subnet_id", custom_subnet_id)
+        pulumi.set(__self__, "network_mode", network_mode)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="customSubnetId")
+    def custom_subnet_id(self) -> _builtins.str:
+        """
+        ocid of customer subnet when networkMode=Custom
+        """
+        return pulumi.get(self, "custom_subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="networkMode")
+    def network_mode(self) -> _builtins.str:
+        """
+        outbounding to managed internet or customer network.
+        """
+        return pulumi.get(self, "network_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[_builtins.str]:
+        """
+        A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemScalingConfigResult(dict):
+    def __init__(__self__, *,
+                 max_replica: _builtins.int,
+                 min_replica: _builtins.int,
+                 scaling_type: _builtins.str,
+                 target_concurrency_threshold: _builtins.int,
+                 target_cpu_threshold: _builtins.int,
+                 target_memory_threshold: _builtins.int,
+                 target_rps_threshold: _builtins.int):
+        """
+        :param _builtins.int max_replica: Maximum number of replicas allowed.
+        :param _builtins.int min_replica: Minimum number of replicas to keep running.
+        :param _builtins.str scaling_type: scaling type for application.
+        :param _builtins.int target_concurrency_threshold: number of simultaneous requests that can be processed by each replica.
+        :param _builtins.int target_cpu_threshold: Scale up if average CPU utilization exceeds this threshold.
+        :param _builtins.int target_memory_threshold: Scale up if average memory utilization exceeds this threshold.
+        :param _builtins.int target_rps_threshold: requests-per-second per replica of an application.
+        """
+        pulumi.set(__self__, "max_replica", max_replica)
+        pulumi.set(__self__, "min_replica", min_replica)
+        pulumi.set(__self__, "scaling_type", scaling_type)
+        pulumi.set(__self__, "target_concurrency_threshold", target_concurrency_threshold)
+        pulumi.set(__self__, "target_cpu_threshold", target_cpu_threshold)
+        pulumi.set(__self__, "target_memory_threshold", target_memory_threshold)
+        pulumi.set(__self__, "target_rps_threshold", target_rps_threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="maxReplica")
+    def max_replica(self) -> _builtins.int:
+        """
+        Maximum number of replicas allowed.
+        """
+        return pulumi.get(self, "max_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="minReplica")
+    def min_replica(self) -> _builtins.int:
+        """
+        Minimum number of replicas to keep running.
+        """
+        return pulumi.get(self, "min_replica")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingType")
+    def scaling_type(self) -> _builtins.str:
+        """
+        scaling type for application.
+        """
+        return pulumi.get(self, "scaling_type")
+
+    @_builtins.property
+    @pulumi.getter(name="targetConcurrencyThreshold")
+    def target_concurrency_threshold(self) -> _builtins.int:
+        """
+        number of simultaneous requests that can be processed by each replica.
+        """
+        return pulumi.get(self, "target_concurrency_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetCpuThreshold")
+    def target_cpu_threshold(self) -> _builtins.int:
+        """
+        Scale up if average CPU utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_cpu_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetMemoryThreshold")
+    def target_memory_threshold(self) -> _builtins.int:
+        """
+        Scale up if average memory utilization exceeds this threshold.
+        """
+        return pulumi.get(self, "target_memory_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRpsThreshold")
+    def target_rps_threshold(self) -> _builtins.int:
+        """
+        requests-per-second per replica of an application.
+        """
+        return pulumi.get(self, "target_rps_threshold")
+
+
+@pulumi.output_type
+class GetHostedApplicationsHostedApplicationCollectionItemStorageConfigResult(dict):
+    def __init__(__self__, *,
+                 environment_variable_key: _builtins.str,
+                 storage_id: _builtins.str):
+        """
+        :param _builtins.str environment_variable_key: The key of environment variable to store the database connection.
+        :param _builtins.str storage_id: The [OCID] of ApplicationStorage.
+        """
+        pulumi.set(__self__, "environment_variable_key", environment_variable_key)
+        pulumi.set(__self__, "storage_id", storage_id)
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariableKey")
+    def environment_variable_key(self) -> _builtins.str:
+        """
+        The key of environment variable to store the database connection.
+        """
+        return pulumi.get(self, "environment_variable_key")
+
+    @_builtins.property
+    @pulumi.getter(name="storageId")
+    def storage_id(self) -> _builtins.str:
+        """
+        The [OCID] of ApplicationStorage.
+        """
+        return pulumi.get(self, "storage_id")
+
+
+@pulumi.output_type
+class GetHostedDeploymentActiveArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_type: _builtins.str,
+                 container_uri: _builtins.str,
+                 hosted_deployment_id: _builtins.str,
+                 id: _builtins.str,
+                 status: _builtins.str,
+                 tag: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str artifact_type: The type of the artifact.
+        :param _builtins.str container_uri: image url.
+        :param _builtins.str hosted_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str status: The current status of the artifact.
+        :param _builtins.str tag: image tag.
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "artifact_type", artifact_type)
+        pulumi.set(__self__, "container_uri", container_uri)
+        pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tag", tag)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> _builtins.str:
+        """
+        The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> _builtins.str:
+        """
+        image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> _builtins.str:
+        """
+        image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetHostedDeploymentArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_type: _builtins.str,
+                 container_uri: _builtins.str,
+                 hosted_deployment_id: _builtins.str,
+                 id: _builtins.str,
+                 status: _builtins.str,
+                 tag: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str artifact_type: The type of the artifact.
+        :param _builtins.str container_uri: image url.
+        :param _builtins.str hosted_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str status: The current status of the artifact.
+        :param _builtins.str tag: image tag.
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "artifact_type", artifact_type)
+        pulumi.set(__self__, "container_uri", container_uri)
+        pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tag", tag)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> _builtins.str:
+        """
+        The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> _builtins.str:
+        """
+        image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> _builtins.str:
+        """
+        image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetHostedDeploymentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetHostedDeploymentsHostedDeploymentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetHostedDeploymentsHostedDeploymentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 active_artifacts: Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactResult'],
+                 artifacts: Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemArtifactResult'],
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 hosted_application_id: _builtins.str,
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence['GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs'] active_artifacts: Container/artifact configuration for the deployment.
+        :param Sequence['GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs'] artifacts: array of Artifacts.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str hosted_application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str state: A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        :param _builtins.str time_updated: The date and time the hosted deployment was updated, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "active_artifacts", active_artifacts)
+        pulumi.set(__self__, "artifacts", artifacts)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hosted_application_id", hosted_application_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="activeArtifacts")
+    def active_artifacts(self) -> Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactResult']:
+        """
+        Container/artifact configuration for the deployment.
+        """
+        return pulumi.get(self, "active_artifacts")
+
+    @_builtins.property
+    @pulumi.getter
+    def artifacts(self) -> Sequence['outputs.GetHostedDeploymentsHostedDeploymentCollectionItemArtifactResult']:
+        """
+        array of Artifacts.
+        """
+        return pulumi.get(self, "artifacts")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedApplicationId")
+    def hosted_application_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        """
+        return pulumi.get(self, "hosted_application_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was updated, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_type: _builtins.str,
+                 container_uri: _builtins.str,
+                 hosted_deployment_id: _builtins.str,
+                 id: _builtins.str,
+                 status: _builtins.str,
+                 tag: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str artifact_type: The type of the artifact.
+        :param _builtins.str container_uri: image url.
+        :param _builtins.str hosted_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str status: The current status of the artifact.
+        :param _builtins.str tag: image tag.
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "artifact_type", artifact_type)
+        pulumi.set(__self__, "container_uri", container_uri)
+        pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tag", tag)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> _builtins.str:
+        """
+        The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> _builtins.str:
+        """
+        image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> _builtins.str:
+        """
+        image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetHostedDeploymentsHostedDeploymentCollectionItemArtifactResult(dict):
+    def __init__(__self__, *,
+                 artifact_type: _builtins.str,
+                 container_uri: _builtins.str,
+                 hosted_deployment_id: _builtins.str,
+                 id: _builtins.str,
+                 status: _builtins.str,
+                 tag: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str artifact_type: The type of the artifact.
+        :param _builtins.str container_uri: image url.
+        :param _builtins.str hosted_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        :param _builtins.str status: The current status of the artifact.
+        :param _builtins.str tag: image tag.
+        :param _builtins.str time_created: The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        pulumi.set(__self__, "artifact_type", artifact_type)
+        pulumi.set(__self__, "container_uri", container_uri)
+        pulumi.set(__self__, "hosted_deployment_id", hosted_deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "tag", tag)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactType")
+    def artifact_type(self) -> _builtins.str:
+        """
+        The type of the artifact.
+        """
+        return pulumi.get(self, "artifact_type")
+
+    @_builtins.property
+    @pulumi.getter(name="containerUri")
+    def container_uri(self) -> _builtins.str:
+        """
+        image url.
+        """
+        return pulumi.get(self, "container_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="hostedDeploymentId")
+    def hosted_deployment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+        """
+        return pulumi.get(self, "hosted_deployment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the artifact.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> _builtins.str:
+        """
+        image tag.
+        """
+        return pulumi.get(self, "tag")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the hosted deployment was created, in the format defined by RFC 3339
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type

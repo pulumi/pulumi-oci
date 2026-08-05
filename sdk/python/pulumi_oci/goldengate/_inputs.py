@@ -17,6 +17,8 @@ from .. import _utilities
 __all__ = [
     'ConnectionAdditionalAttributeArgs',
     'ConnectionAdditionalAttributeArgsDict',
+    'ConnectionAuthDetailsArgs',
+    'ConnectionAuthDetailsArgsDict',
     'ConnectionBootstrapServerArgs',
     'ConnectionBootstrapServerArgsDict',
     'ConnectionCatalogArgs',
@@ -65,6 +67,10 @@ __all__ = [
     'PipelineSourceConnectionDetailsArgsDict',
     'PipelineTargetConnectionDetailsArgs',
     'PipelineTargetConnectionDetailsArgsDict',
+    'GetAiModelsFilterArgs',
+    'GetAiModelsFilterArgsDict',
+    'GetAiProvidersFilterArgs',
+    'GetAiProvidersFilterArgsDict',
     'GetConnectionAssignmentsFilterArgs',
     'GetConnectionAssignmentsFilterArgsDict',
     'GetConnectionsFilterArgs',
@@ -152,6 +158,174 @@ class ConnectionAdditionalAttributeArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class ConnectionAuthDetailsArgsDict(TypedDict):
+    auth_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) Authentication type used by the AI model connection.
+    """
+    api_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+    """
+    api_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) API key secret OCID for the AI model connection.
+    """
+    base_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+    """
+    key_fingerprint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+    """
+    tenancy_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+    """
+    user_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+    """
+
+@pulumi.input_type
+class ConnectionAuthDetailsArgs:
+    def __init__(__self__, *,
+                 auth_type: pulumi.Input[_builtins.str],
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 api_key_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 base_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] auth_type: (Updatable) Authentication type used by the AI model connection.
+        :param pulumi.Input[_builtins.str] api_key: (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param pulumi.Input[_builtins.str] api_key_secret_id: (Updatable) API key secret OCID for the AI model connection.
+        :param pulumi.Input[_builtins.str] base_url: (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+        :param pulumi.Input[_builtins.str] key_fingerprint: (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param pulumi.Input[_builtins.str] tenancy_id: (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+        :param pulumi.Input[_builtins.str] user_id: (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+        """
+        pulumi.set(__self__, "auth_type", auth_type)
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if api_key_secret_id is not None:
+            pulumi.set(__self__, "api_key_secret_id", api_key_secret_id)
+        if base_url is not None:
+            pulumi.set(__self__, "base_url", base_url)
+        if key_fingerprint is not None:
+            pulumi.set(__self__, "key_fingerprint", key_fingerprint)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
+
+    @_builtins.property
+    @pulumi.getter(name="authType")
+    def auth_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Authentication type used by the AI model connection.
+        """
+        return pulumi.get(self, "auth_type")
+
+    @auth_type.setter
+    def auth_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "auth_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKeySecretId")
+    def api_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) API key secret OCID for the AI model connection.
+        """
+        return pulumi.get(self, "api_key_secret_id")
+
+    @api_key_secret_id.setter
+    def api_key_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_key_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="baseUrl")
+    def base_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+        """
+        return pulumi.get(self, "base_url")
+
+    @base_url.setter
+    def base_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "base_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyFingerprint")
+    def key_fingerprint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+        """
+        return pulumi.get(self, "key_fingerprint")
+
+    @key_fingerprint.setter
+    def key_fingerprint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_fingerprint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @tenancy_id.setter
+    def tenancy_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenancy_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+        """
+        return pulumi.get(self, "user_id")
+
+    @user_id.setter
+    def user_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "user_id", value)
 
 
 class ConnectionBootstrapServerArgsDict(TypedDict):
@@ -266,7 +440,10 @@ class ConnectionCatalogArgsDict(TypedDict):
     """
     uri: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+    (Updatable)
+    * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+    * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+    * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
     """
 
 @pulumi.input_type
@@ -294,7 +471,10 @@ class ConnectionCatalogArgs:
         :param pulumi.Input[_builtins.str] principal_role: (Updatable) The Snowflake role used to access Polaris.
         :param pulumi.Input[_builtins.str] properties: (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
         :param pulumi.Input[_builtins.str] properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param pulumi.Input[_builtins.str] uri: (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        :param pulumi.Input[_builtins.str] uri: (Updatable)
+               * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+               * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+               * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
         """
         pulumi.set(__self__, "catalog_type", catalog_type)
         if branch is not None:
@@ -450,7 +630,10 @@ class ConnectionCatalogArgs:
     @pulumi.getter
     def uri(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        (Updatable)
+        * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+        * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
         """
         return pulumi.get(self, "uri")
 
@@ -583,11 +766,14 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     access_key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Access key ID to access the Amazon S3 bucket.
+    (Updatable)
+    * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+    * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+      Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
     """
     account_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+    (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
     """
     account_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -599,7 +785,10 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+    (Updatable)
+    * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+    * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+    * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
     """
     container: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -607,7 +796,11 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+    (Updatable)
+    * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+    * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+    * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+    * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
     """
     project_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -623,15 +816,20 @@ class ConnectionStorageArgsDict(TypedDict):
     """
     secret_access_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+    (Updatable)
+    * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+    * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+      Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
     """
     secret_access_key_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+    (Updatable)
+    * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+    * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
     """
     service_account_key_file: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+    (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
     """
     service_account_key_file_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -658,19 +856,34 @@ class ConnectionStorageArgs:
                  service_account_key_file_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] storage_type: (Updatable) The storage type used in the Iceberg connection.
-        :param pulumi.Input[_builtins.str] access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket.
-        :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] access_key_id: (Updatable)
+               * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+               * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+                 Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param pulumi.Input[_builtins.str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param pulumi.Input[_builtins.str] account_name: (Updatable) Sets the Azure storage account name.
-        :param pulumi.Input[_builtins.str] bucket: (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        :param pulumi.Input[_builtins.str] bucket: (Updatable)
+               * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+               * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+               * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         :param pulumi.Input[_builtins.str] container: (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable)
+               * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+               * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+               * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+               * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param pulumi.Input[_builtins.str] project_id: (Updatable) The Google Cloud Project where the bucket exists.
         :param pulumi.Input[_builtins.str] region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param pulumi.Input[_builtins.str] scheme_type: (Updatable) The scheme of the storage.
-        :param pulumi.Input[_builtins.str] secret_access_key: (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] secret_access_key: (Updatable)
+               * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+               * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+                 Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param pulumi.Input[_builtins.str] secret_access_key_secret_id: (Updatable)
+               * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+               * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        :param pulumi.Input[_builtins.str] service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         pulumi.set(__self__, "storage_type", storage_type)
@@ -728,7 +941,10 @@ class ConnectionStorageArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Access key ID to access the Amazon S3 bucket.
+        (Updatable)
+        * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+        * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+          Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -741,7 +957,7 @@ class ConnectionStorageArgs:
     @_utilities.deprecated("""The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.""")
     def account_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+        (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "account_key")
 
@@ -777,7 +993,10 @@ class ConnectionStorageArgs:
     @pulumi.getter
     def bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        (Updatable)
+        * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+        * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         """
         return pulumi.get(self, "bucket")
 
@@ -801,7 +1020,11 @@ class ConnectionStorageArgs:
     @pulumi.getter
     def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        (Updatable)
+        * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+        * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+        * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         """
         return pulumi.get(self, "endpoint")
 
@@ -850,7 +1073,10 @@ class ConnectionStorageArgs:
     @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+        (Updatable)
+        * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+        * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+          Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -862,7 +1088,9 @@ class ConnectionStorageArgs:
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        (Updatable)
+        * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -875,7 +1103,7 @@ class ConnectionStorageArgs:
     @_utilities.deprecated("""The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.""")
     def service_account_key_file(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "service_account_key_file")
 
@@ -2559,6 +2787,94 @@ class PipelineTargetConnectionDetailsArgs:
     @connection_id.setter
     def connection_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "connection_id", value)
+
+
+class GetAiModelsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetAiModelsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetAiProvidersFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetAiProvidersFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 class GetConnectionAssignmentsFilterArgsDict(TypedDict):

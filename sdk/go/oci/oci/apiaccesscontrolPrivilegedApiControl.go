@@ -45,7 +45,12 @@ import (
 //					},
 //				},
 //				ResourceType: pulumi.Any(privilegedApiControlResourceType),
-//				Resources:    pulumi.Any(privilegedApiControlResources),
+//				ApproverGroupLevelLists: oci.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray{
+//					&oci.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{
+//						GroupIds:   pulumi.Any(testGroup.Id),
+//						GroupLevel: pulumi.Any(privilegedApiControlApproverGroupLevelListGroupLevel),
+//					},
+//				},
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -55,6 +60,7 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				NumberOfApprovers: pulumi.Any(privilegedApiControlNumberOfApprovers),
+//				Resources:         pulumi.Any(privilegedApiControlResources),
 //			})
 //			if err != nil {
 //				return err
@@ -77,6 +83,8 @@ type ApiaccesscontrolPrivilegedApiControl struct {
 
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists pulumi.StringArrayOutput `pulumi:"approverGroupIdLists"`
+	// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput `pulumi:"approverGroupLevelLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -89,7 +97,7 @@ type ApiaccesscontrolPrivilegedApiControl struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 	NotificationTopicId pulumi.StringOutput `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an privilegedApi request.
 	NumberOfApprovers pulumi.IntOutput `pulumi:"numberOfApprovers"`
@@ -108,7 +116,7 @@ type ApiaccesscontrolPrivilegedApiControl struct {
 	StateDetails pulumi.StringOutput `pulumi:"stateDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted pulumi.StringOutput `pulumi:"timeDeleted"`
@@ -138,9 +146,6 @@ func NewApiaccesscontrolPrivilegedApiControl(ctx *pulumi.Context,
 	if args.ResourceType == nil {
 		return nil, errors.New("invalid value for required argument 'ResourceType'")
 	}
-	if args.Resources == nil {
-		return nil, errors.New("invalid value for required argument 'Resources'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource ApiaccesscontrolPrivilegedApiControl
 	err := ctx.RegisterResource("oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl", name, args, &resource, opts...)
@@ -166,6 +171,8 @@ func GetApiaccesscontrolPrivilegedApiControl(ctx *pulumi.Context,
 type apiaccesscontrolPrivilegedApiControlState struct {
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists []string `pulumi:"approverGroupIdLists"`
+	// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists []ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList `pulumi:"approverGroupLevelLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -178,7 +185,7 @@ type apiaccesscontrolPrivilegedApiControlState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 	NotificationTopicId *string `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an privilegedApi request.
 	NumberOfApprovers *int `pulumi:"numberOfApprovers"`
@@ -197,7 +204,7 @@ type apiaccesscontrolPrivilegedApiControlState struct {
 	StateDetails *string `pulumi:"stateDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted *string `pulumi:"timeDeleted"`
@@ -208,6 +215,8 @@ type apiaccesscontrolPrivilegedApiControlState struct {
 type ApiaccesscontrolPrivilegedApiControlState struct {
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists pulumi.StringArrayInput
+	// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -220,7 +229,7 @@ type ApiaccesscontrolPrivilegedApiControlState struct {
 	FreeformTags pulumi.StringMapInput
 	// A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 	NotificationTopicId pulumi.StringPtrInput
 	// (Updatable) Number of approvers required to approve an privilegedApi request.
 	NumberOfApprovers pulumi.IntPtrInput
@@ -239,7 +248,7 @@ type ApiaccesscontrolPrivilegedApiControlState struct {
 	StateDetails pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted pulumi.StringPtrInput
@@ -254,6 +263,8 @@ func (ApiaccesscontrolPrivilegedApiControlState) ElementType() reflect.Type {
 type apiaccesscontrolPrivilegedApiControlArgs struct {
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists []string `pulumi:"approverGroupIdLists"`
+	// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists []ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList `pulumi:"approverGroupLevelLists"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -264,7 +275,7 @@ type apiaccesscontrolPrivilegedApiControlArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 	NotificationTopicId string `pulumi:"notificationTopicId"`
 	// (Updatable) Number of approvers required to approve an privilegedApi request.
 	NumberOfApprovers *int `pulumi:"numberOfApprovers"`
@@ -283,6 +294,8 @@ type apiaccesscontrolPrivilegedApiControlArgs struct {
 type ApiaccesscontrolPrivilegedApiControlArgs struct {
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists pulumi.StringArrayInput
+	// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -293,7 +306,7 @@ type ApiaccesscontrolPrivilegedApiControlArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+	// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 	NotificationTopicId pulumi.StringInput
 	// (Updatable) Number of approvers required to approve an privilegedApi request.
 	NumberOfApprovers pulumi.IntPtrInput
@@ -400,6 +413,13 @@ func (o ApiaccesscontrolPrivilegedApiControlOutput) ApproverGroupIdLists() pulum
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringArrayOutput { return v.ApproverGroupIdLists }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+func (o ApiaccesscontrolPrivilegedApiControlOutput) ApproverGroupLevelLists() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+		return v.ApproverGroupLevelLists
+	}).(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
 func (o ApiaccesscontrolPrivilegedApiControlOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -430,7 +450,7 @@ func (o ApiaccesscontrolPrivilegedApiControlOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+// (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
 func (o ApiaccesscontrolPrivilegedApiControlOutput) NotificationTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringOutput { return v.NotificationTopicId }).(pulumi.StringOutput)
 }
@@ -475,7 +495,7 @@ func (o ApiaccesscontrolPrivilegedApiControlOutput) SystemTags() pulumi.StringMa
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o ApiaccesscontrolPrivilegedApiControlOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiControl) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

@@ -217,6 +217,7 @@ __all__ = [
     'ExadbVmClusterDataCollectionOptions',
     'ExadbVmClusterIormConfigCache',
     'ExadbVmClusterIormConfigCacheDbPlan',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfig',
     'ExadbVmClusterNodeConfig',
     'ExadbVmClusterNodeResource',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorage',
@@ -738,6 +739,7 @@ __all__ = [
     'GetExadbVmClusterDataCollectionOptionResult',
     'GetExadbVmClusterIormConfigCacheResult',
     'GetExadbVmClusterIormConfigCacheDbPlanResult',
+    'GetExadbVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetExadbVmClusterNodeConfigResult',
     'GetExadbVmClusterNodeResourceResult',
     'GetExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntryResult',
@@ -748,6 +750,7 @@ __all__ = [
     'GetExadbVmClustersExadbVmClusterDataCollectionOptionResult',
     'GetExadbVmClustersExadbVmClusterIormConfigCacheResult',
     'GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult',
+    'GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetExadbVmClustersExadbVmClusterNodeConfigResult',
     'GetExadbVmClustersExadbVmClusterNodeResourceResult',
     'GetExadbVmClustersFilterResult',
@@ -18728,6 +18731,54 @@ class ExadbVmClusterIormConfigCacheDbPlan(dict):
         The relative priority of this database.
         """
         return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class ExadbVmClusterMultiCloudIdentityConnectorConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cloudProvider":
+            suggest = "cloud_provider"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterMultiCloudIdentityConnectorConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cloud_provider: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> Optional[_builtins.str]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type
@@ -61058,6 +61109,35 @@ class GetExadbVmClusterIormConfigCacheDbPlanResult(dict):
 
 
 @pulumi.output_type
+class GetExadbVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetExadbVmClusterNodeConfigResult(dict):
     def __init__(__self__, *,
                  enabled_ecpu_count_per_node: _builtins.int,
@@ -61468,10 +61548,12 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
                  listener_port: _builtins.str,
+                 multi_cloud_identity_connector_configs: Sequence['outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult'],
                  node_configs: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult'],
                  node_resources: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeResourceResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_zone_id: _builtins.str,
+                 register_pkcs_trigger: _builtins.int,
                  scan_dns_name: _builtins.str,
                  scan_dns_record_id: _builtins.str,
                  scan_ip_ids: Sequence[_builtins.str],
@@ -61486,8 +61568,10 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  system_version: _builtins.str,
+                 tde_key_store_type: _builtins.str,
                  time_created: _builtins.str,
                  time_zone: _builtins.str,
+                 unregister_pkcs_trigger: _builtins.int,
                  vip_ids: Sequence[_builtins.str],
                  zone_id: _builtins.str):
         """
@@ -61507,12 +61591,13 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.str grid_image_id: Grid Setup will be done using this grid image id.
         :param _builtins.str grid_image_type: The type of Grid Image
         :param _builtins.str hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        :param _builtins.str id: The OCID of the identity connector
         :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCacheArgs'] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param _builtins.str license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence['GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs'] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeConfigArgs'] node_configs: The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeResourceArgs'] node_resources: The list of node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -61532,6 +61617,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str system_version: Operating system version of the image.
+        :param _builtins.str tde_key_store_type: TDE keystore type
         :param _builtins.str time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         :param _builtins.str time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param Sequence[_builtins.str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
@@ -61559,10 +61645,12 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         pulumi.set(__self__, "node_configs", node_configs)
         pulumi.set(__self__, "node_resources", node_resources)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_zone_id", private_zone_id)
+        pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
@@ -61577,8 +61665,10 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_version", system_version)
+        pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
         pulumi.set(__self__, "vip_ids", vip_ids)
         pulumi.set(__self__, "zone_id", zone_id)
 
@@ -61714,7 +61804,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        The OCID of the identity connector
         """
         return pulumi.get(self, "id")
 
@@ -61759,6 +61849,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult']:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nodeConfigs")
     def node_configs(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult']:
         """
@@ -61790,6 +61888,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "register_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
@@ -61904,6 +62007,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         return pulumi.get(self, "system_version")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> _builtins.str:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -61918,6 +62029,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "unregister_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
@@ -62065,6 +62181,35 @@ class GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult(dict):
         The relative priority of this database.
         """
         return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type

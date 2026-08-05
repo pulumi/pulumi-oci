@@ -307,6 +307,21 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    @Import(name="registerPkcsTrigger")
+    private @Nullable Output<Integer> registerPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> registerPkcsTrigger() {
+        return Optional.ofNullable(this.registerPkcsTrigger);
+    }
+
+    /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      * 
      */
@@ -442,10 +457,22 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     * TDE keystore type
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="tdeKeyStoreType")
+    private @Nullable Output<String> tdeKeyStoreType;
+
+    /**
+     * @return TDE keystore type
+     * 
+     */
+    public Optional<Output<String>> tdeKeyStoreType() {
+        return Optional.ofNullable(this.tdeKeyStoreType);
+    }
+
+    /**
+     * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
     @Import(name="timeZone")
@@ -454,12 +481,30 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
+     */
+    public Optional<Output<String>> timeZone() {
+        return Optional.ofNullable(this.timeZone);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> timeZone() {
-        return Optional.ofNullable(this.timeZone);
+    @Import(name="unregisterPkcsTrigger")
+    private @Nullable Output<Integer> unregisterPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> unregisterPkcsTrigger() {
+        return Optional.ofNullable(this.unregisterPkcsTrigger);
     }
 
     private ExadbVmClusterArgs() {}
@@ -483,6 +528,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.nodeResources = $.nodeResources;
         this.nsgIds = $.nsgIds;
         this.privateZoneId = $.privateZoneId;
+        this.registerPkcsTrigger = $.registerPkcsTrigger;
         this.scanListenerPortTcp = $.scanListenerPortTcp;
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
         this.securityAttributes = $.securityAttributes;
@@ -492,7 +538,9 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
         this.systemVersion = $.systemVersion;
+        this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeZone = $.timeZone;
+        this.unregisterPkcsTrigger = $.unregisterPkcsTrigger;
     }
 
     public static Builder builder() {
@@ -937,6 +985,27 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param registerPkcsTrigger (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registerPkcsTrigger(@Nullable Output<Integer> registerPkcsTrigger) {
+            $.registerPkcsTrigger = registerPkcsTrigger;
+            return this;
+        }
+
+        /**
+         * @param registerPkcsTrigger (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registerPkcsTrigger(Integer registerPkcsTrigger) {
+            return registerPkcsTrigger(Output.of(registerPkcsTrigger));
+        }
+
+        /**
          * @param scanListenerPortTcp The TCP Single Client Access Name (SCAN) port. The default port is 1521.
          * 
          * @return builder
@@ -1136,10 +1205,28 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param timeZone The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+         * @param tdeKeyStoreType TDE keystore type
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(@Nullable Output<String> tdeKeyStoreType) {
+            $.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+
+        /**
+         * @param tdeKeyStoreType TDE keystore type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            return tdeKeyStoreType(Output.of(tdeKeyStoreType));
+        }
+
+        /**
+         * @param timeZone The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
          * @return builder
          * 
@@ -1152,14 +1239,38 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param timeZone The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
          * 
+         * @return builder
+         * 
+         */
+        public Builder timeZone(String timeZone) {
+            return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param unregisterPkcsTrigger (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder timeZone(String timeZone) {
-            return timeZone(Output.of(timeZone));
+        public Builder unregisterPkcsTrigger(@Nullable Output<Integer> unregisterPkcsTrigger) {
+            $.unregisterPkcsTrigger = unregisterPkcsTrigger;
+            return this;
+        }
+
+        /**
+         * @param unregisterPkcsTrigger (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder unregisterPkcsTrigger(Integer unregisterPkcsTrigger) {
+            return unregisterPkcsTrigger(Output.of(unregisterPkcsTrigger));
         }
 
         public ExadbVmClusterArgs build() {

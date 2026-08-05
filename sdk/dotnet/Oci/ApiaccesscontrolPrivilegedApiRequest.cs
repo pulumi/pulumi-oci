@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Oci
     /// {
     ///     var testPrivilegedApiRequest = new Oci.Oci.ApiaccesscontrolPrivilegedApiRequest("test_privileged_api_request", new()
     ///     {
+    ///         CompartmentId = compartmentId,
     ///         PrivilegedOperationLists = new[]
     ///         {
     ///             new Oci.Oci.Inputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs
@@ -39,7 +40,6 @@ namespace Pulumi.Oci.Oci
     ///         },
     ///         ReasonSummary = privilegedApiRequestReasonSummary,
     ///         ResourceId = testResource.Id,
-    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Oci
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         [Output("compartmentId")]
-        public Output<string> CompartmentId { get; private set; } = null!;
+        public Output<string?> CompartmentId { get; private set; } = null!;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

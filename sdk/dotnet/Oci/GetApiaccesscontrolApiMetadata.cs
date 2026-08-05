@@ -129,6 +129,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string ApiName;
         /// <summary>
+        /// List of the fields that is use while calling post or put for the data.
+        /// </summary>
+        public readonly ImmutableArray<string> Attributes;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -141,7 +145,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string EntityType;
         /// <summary>
-        /// List of the fields that is use while calling post or put for the data.
+        /// deprecated; Use attributes field instead.
         /// </summary>
         public readonly ImmutableArray<string> Fields;
         /// <summary>
@@ -191,6 +195,8 @@ namespace Pulumi.Oci.Oci
 
             string apiName,
 
+            ImmutableArray<string> attributes,
+
             ImmutableDictionary<string, string> definedTags,
 
             string displayName,
@@ -221,6 +227,7 @@ namespace Pulumi.Oci.Oci
         {
             ApiMetadataId = apiMetadataId;
             ApiName = apiName;
+            Attributes = attributes;
             DefinedTags = definedTags;
             DisplayName = displayName;
             EntityType = entityType;

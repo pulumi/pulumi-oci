@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataResult> ApiMetadatas;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        /// </summary>
+        public readonly string CompartmentId;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Oci.Outputs
         private GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemResult(
             ImmutableArray<Outputs.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataResult> apiMetadatas,
 
+            string compartmentId,
+
             ImmutableDictionary<string, string> definedTags,
 
             string entityType,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Oci.Outputs
             ImmutableDictionary<string, string> systemTags)
         {
             ApiMetadatas = apiMetadatas;
+            CompartmentId = compartmentId;
             DefinedTags = definedTags;
             EntityType = entityType;
             FreeformTags = freeformTags;

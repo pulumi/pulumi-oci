@@ -71,8 +71,8 @@ import (
 //				},
 //				CancelEndpoint: []map[string]interface{}{
 //					map[string]interface{}{
-//						"configValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"configValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskCancelEndpointConfigValuesConfigParamValuesIntValue,
@@ -125,8 +125,8 @@ import (
 //				},
 //				ConditionalCompositeFieldMap: []map[string]interface{}{
 //					map[string]interface{}{
-//						"configValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"configValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskConditionalCompositeFieldMapConfigValuesConfigParamValuesIntValue,
@@ -149,8 +149,8 @@ import (
 //						"fieldMapScope": []map[string]interface{}{
 //							map[string]interface{}{
 //								"modelType": workspaceTaskConditionalCompositeFieldMapFieldMapScopeModelType,
-//								"configValues": []map[string]interface{}{
-//									map[string]interface{}{
+//								"configValues": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"configParamValues": []map[string]interface{}{
 //											map[string]interface{}{
 //												"intValue":        workspaceTaskConditionalCompositeFieldMapFieldMapScopeConfigValuesConfigParamValuesIntValue,
@@ -218,8 +218,8 @@ import (
 //				DataFlow: []map[string]interface{}{
 //					map[string]interface{}{
 //						"description": workspaceTaskDataFlowDescription,
-//						"flowConfigValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"flowConfigValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskDataFlowFlowConfigValuesConfigParamValuesIntValue,
@@ -253,8 +253,8 @@ import (
 //									},
 //								},
 //								"aggregatorKey": workspaceTaskDataFlowMetadataAggregatorKey,
-//								"countStatistics": []map[string]interface{}{
-//									map[string]interface{}{
+//								"countStatistics": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"objectTypeCountList": []map[string]interface{}{
 //											map[string]interface{}{
 //												"objectCount": workspaceTaskDataFlowMetadataCountStatisticsObjectTypeCountListObjectCount,
@@ -342,8 +342,8 @@ import (
 //						"objectVersion": workspaceTaskDataFlowObjectVersion,
 //						"parameters": []map[string]interface{}{
 //							map[string]interface{}{
-//								"configValues": []map[string]interface{}{
-//									map[string]interface{}{
+//								"configValues": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"configParamValues": []map[string]interface{}{
 //											map[string]interface{}{
 //												"intValue":        workspaceTaskDataFlowParametersConfigValuesConfigParamValuesIntValue,
@@ -406,8 +406,8 @@ import (
 //					map[string]interface{}{
 //						"applicationId": testApplication.Id,
 //						"compartmentId": compartmentId,
-//						"configValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"configValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskDataflowApplicationConfigValuesConfigParamValuesIntValue,
@@ -431,8 +431,8 @@ import (
 //				Description: pulumi.Any(workspaceTaskDescription),
 //				Endpoint: []map[string]interface{}{
 //					map[string]interface{}{
-//						"configValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"configValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskEndpointConfigValuesConfigParamValuesIntValue,
@@ -608,8 +608,8 @@ import (
 //				Pipeline: []map[string]interface{}{
 //					map[string]interface{}{
 //						"description": workspaceTaskPipelineDescription,
-//						"flowConfigValues": []map[string]interface{}{
-//							map[string]interface{}{
+//						"flowConfigValues": []map[string][]map[string]interface{}{
+//							map[string][]map[string]interface{}{
 //								"configParamValues": []map[string]interface{}{
 //									map[string]interface{}{
 //										"intValue":        workspaceTaskPipelineFlowConfigValuesConfigParamValuesIntValue,
@@ -642,8 +642,8 @@ import (
 //									},
 //								},
 //								"aggregatorKey": workspaceTaskPipelineMetadataAggregatorKey,
-//								"countStatistics": []map[string]interface{}{
-//									map[string]interface{}{
+//								"countStatistics": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"objectTypeCountList": []map[string]interface{}{
 //											map[string]interface{}{
 //												"objectCount": workspaceTaskPipelineMetadataCountStatisticsObjectTypeCountListObjectCount,
@@ -731,8 +731,8 @@ import (
 //						"objectVersion": workspaceTaskPipelineObjectVersion,
 //						"parameters": []map[string]interface{}{
 //							map[string]interface{}{
-//								"configValues": []map[string]interface{}{
-//									map[string]interface{}{
+//								"configValues": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"configParamValues": []map[string]interface{}{
 //											map[string]interface{}{
 //												"intValue":        workspaceTaskPipelineParametersConfigValuesConfigParamValuesIntValue,
@@ -781,8 +781,8 @@ import (
 //						},
 //						"variables": []map[string]interface{}{
 //							map[string]interface{}{
-//								"configValues": []map[string]interface{}{
-//									map[string]interface{}{
+//								"configValues": []map[string][]map[string]interface{}{
+//									map[string][]map[string]interface{}{
 //										"configParamValues": []map[string]interface{}{
 //											map[string]interface{}{
 //												"intValue":        workspaceTaskPipelineVariablesConfigValuesConfigParamValuesIntValue,

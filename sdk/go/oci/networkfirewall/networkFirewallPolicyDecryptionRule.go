@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := networkfirewall.NewNetworkFirewallPolicyDecryptionRule(ctx, "test_network_firewall_policy_decryption_rule", &networkfirewall.NetworkFirewallPolicyDecryptionRuleArgs{
-//				Lifecycle: map[string]interface{}{
+//				Lifecycle: map[string][]interface{}{
 //					"ignoreChanges": []interface{}{
 //						position,
 //					},

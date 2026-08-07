@@ -50,6 +50,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string PrivateEndpointIp;
         /// <summary>
+        /// Query by the resource type of Generative AI private endpoints.
+        /// </summary>
+        public readonly string ResourceType;
+        /// <summary>
         /// The lifecycle state of Generative AI private endpoints.
         /// </summary>
         public readonly string State;
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string privateEndpointIp,
 
+            string resourceType,
+
             string state,
 
             string subnetId,
@@ -118,6 +124,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             NsgIds = nsgIds;
             PreviousState = previousState;
             PrivateEndpointIp = privateEndpointIp;
+            ResourceType = resourceType;
             State = state;
             SubnetId = subnetId;
             SystemTags = systemTags;

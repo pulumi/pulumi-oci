@@ -7353,9 +7353,6 @@ type CrossConnectGroupMacsecProperties struct {
 	// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
 	PrimaryKey *CrossConnectGroupMacsecPropertiesPrimaryKey `pulumi:"primaryKey"`
 	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State string `pulumi:"state"`
 }
 
@@ -7378,9 +7375,6 @@ type CrossConnectGroupMacsecPropertiesArgs struct {
 	// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
 	PrimaryKey CrossConnectGroupMacsecPropertiesPrimaryKeyPtrInput `pulumi:"primaryKey"`
 	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringInput `pulumi:"state"`
 }
 
@@ -7479,9 +7473,6 @@ func (o CrossConnectGroupMacsecPropertiesOutput) PrimaryKey() CrossConnectGroupM
 }
 
 // (Updatable) Indicates whether or not MACsec is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CrossConnectGroupMacsecPropertiesOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v CrossConnectGroupMacsecProperties) string { return v.State }).(pulumi.StringOutput)
 }
@@ -7541,9 +7532,6 @@ func (o CrossConnectGroupMacsecPropertiesPtrOutput) PrimaryKey() CrossConnectGro
 }
 
 // (Updatable) Indicates whether or not MACsec is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CrossConnectGroupMacsecPropertiesPtrOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CrossConnectGroupMacsecProperties) *string {
 		if v == nil {
@@ -7769,6 +7757,162 @@ func (o CrossConnectGroupMacsecPropertiesPrimaryKeyPtrOutput) ConnectivityAssoci
 		}
 		return v.ConnectivityAssociationNameSecretVersion
 	}).(pulumi.StringPtrOutput)
+}
+
+type CrossConnectLoaProperties struct {
+	// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+	AuthorizedAgent *string `pulumi:"authorizedAgent"`
+	// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+	ExpiryExtensionCount *int `pulumi:"expiryExtensionCount"`
+}
+
+// CrossConnectLoaPropertiesInput is an input type that accepts CrossConnectLoaPropertiesArgs and CrossConnectLoaPropertiesOutput values.
+// You can construct a concrete instance of `CrossConnectLoaPropertiesInput` via:
+//
+//	CrossConnectLoaPropertiesArgs{...}
+type CrossConnectLoaPropertiesInput interface {
+	pulumi.Input
+
+	ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput
+	ToCrossConnectLoaPropertiesOutputWithContext(context.Context) CrossConnectLoaPropertiesOutput
+}
+
+type CrossConnectLoaPropertiesArgs struct {
+	// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+	AuthorizedAgent pulumi.StringPtrInput `pulumi:"authorizedAgent"`
+	// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+	ExpiryExtensionCount pulumi.IntPtrInput `pulumi:"expiryExtensionCount"`
+}
+
+func (CrossConnectLoaPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput {
+	return i.ToCrossConnectLoaPropertiesOutputWithContext(context.Background())
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesOutput)
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return i.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesOutput).ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx)
+}
+
+// CrossConnectLoaPropertiesPtrInput is an input type that accepts CrossConnectLoaPropertiesArgs, CrossConnectLoaPropertiesPtr and CrossConnectLoaPropertiesPtrOutput values.
+// You can construct a concrete instance of `CrossConnectLoaPropertiesPtrInput` via:
+//
+//	        CrossConnectLoaPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type CrossConnectLoaPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput
+	ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Context) CrossConnectLoaPropertiesPtrOutput
+}
+
+type crossConnectLoaPropertiesPtrType CrossConnectLoaPropertiesArgs
+
+func CrossConnectLoaPropertiesPtr(v *CrossConnectLoaPropertiesArgs) CrossConnectLoaPropertiesPtrInput {
+	return (*crossConnectLoaPropertiesPtrType)(v)
+}
+
+func (*crossConnectLoaPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (i *crossConnectLoaPropertiesPtrType) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return i.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *crossConnectLoaPropertiesPtrType) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesPtrOutput)
+}
+
+type CrossConnectLoaPropertiesOutput struct{ *pulumi.OutputState }
+
+func (CrossConnectLoaPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return o.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CrossConnectLoaProperties) *CrossConnectLoaProperties {
+		return &v
+	}).(CrossConnectLoaPropertiesPtrOutput)
+}
+
+// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+func (o CrossConnectLoaPropertiesOutput) AuthorizedAgent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CrossConnectLoaProperties) *string { return v.AuthorizedAgent }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+func (o CrossConnectLoaPropertiesOutput) ExpiryExtensionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CrossConnectLoaProperties) *int { return v.ExpiryExtensionCount }).(pulumi.IntPtrOutput)
+}
+
+type CrossConnectLoaPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (CrossConnectLoaPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) Elem() CrossConnectLoaPropertiesOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) CrossConnectLoaProperties {
+		if v != nil {
+			return *v
+		}
+		var ret CrossConnectLoaProperties
+		return ret
+	}).(CrossConnectLoaPropertiesOutput)
+}
+
+// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+func (o CrossConnectLoaPropertiesPtrOutput) AuthorizedAgent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthorizedAgent
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+func (o CrossConnectLoaPropertiesPtrOutput) ExpiryExtensionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExpiryExtensionCount
+	}).(pulumi.IntPtrOutput)
 }
 
 type CrossConnectMacsecProperties struct {
@@ -61422,8 +61566,16 @@ type GetCrossConnectGroupsCrossConnectGroup struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
 	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect-group.
+	IsQosEnabled bool `pulumi:"isQosEnabled"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties []GetCrossConnectGroupsCrossConnectGroupMacsecProperty `pulumi:"macsecProperties"`
+	// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+	MinimumLinks int `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -61458,8 +61610,16 @@ type GetCrossConnectGroupsCrossConnectGroupArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
 	Id pulumi.StringInput `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntInput `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolInput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect-group.
+	IsQosEnabled pulumi.BoolInput `pulumi:"isQosEnabled"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayInput `pulumi:"macsecProperties"`
+	// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+	MinimumLinks pulumi.IntInput `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringInput `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -61551,11 +61711,31 @@ func (o GetCrossConnectGroupsCrossConnectGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect-group.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
 // Properties used for MACsec (if capable).
 func (o GetCrossConnectGroupsCrossConnectGroupOutput) MacsecProperties() GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayOutput {
 	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) []GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
 		return v.MacsecProperties
 	}).(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayOutput)
+}
+
+// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) MinimumLinks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) int { return v.MinimumLinks }).(pulumi.IntOutput)
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -61962,6 +62142,106 @@ func (o GetCrossConnectGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetCros
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectGroupsFilter {
 		return vs[0].([]GetCrossConnectGroupsFilter)[vs[1].(int)]
 	}).(GetCrossConnectGroupsFilterOutput)
+}
+
+type GetCrossConnectLoaProperty struct {
+	AuthorizedAgent      string `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount int    `pulumi:"expiryExtensionCount"`
+}
+
+// GetCrossConnectLoaPropertyInput is an input type that accepts GetCrossConnectLoaPropertyArgs and GetCrossConnectLoaPropertyOutput values.
+// You can construct a concrete instance of `GetCrossConnectLoaPropertyInput` via:
+//
+//	GetCrossConnectLoaPropertyArgs{...}
+type GetCrossConnectLoaPropertyInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput
+	ToGetCrossConnectLoaPropertyOutputWithContext(context.Context) GetCrossConnectLoaPropertyOutput
+}
+
+type GetCrossConnectLoaPropertyArgs struct {
+	AuthorizedAgent      pulumi.StringInput `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount pulumi.IntInput    `pulumi:"expiryExtensionCount"`
+}
+
+func (GetCrossConnectLoaPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectLoaPropertyArgs) ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput {
+	return i.ToGetCrossConnectLoaPropertyOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectLoaPropertyArgs) ToGetCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectLoaPropertyOutput)
+}
+
+// GetCrossConnectLoaPropertyArrayInput is an input type that accepts GetCrossConnectLoaPropertyArray and GetCrossConnectLoaPropertyArrayOutput values.
+// You can construct a concrete instance of `GetCrossConnectLoaPropertyArrayInput` via:
+//
+//	GetCrossConnectLoaPropertyArray{ GetCrossConnectLoaPropertyArgs{...} }
+type GetCrossConnectLoaPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput
+	ToGetCrossConnectLoaPropertyArrayOutputWithContext(context.Context) GetCrossConnectLoaPropertyArrayOutput
+}
+
+type GetCrossConnectLoaPropertyArray []GetCrossConnectLoaPropertyInput
+
+func (GetCrossConnectLoaPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectLoaPropertyArray) ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput {
+	return i.ToGetCrossConnectLoaPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectLoaPropertyArray) ToGetCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectLoaPropertyArrayOutput)
+}
+
+type GetCrossConnectLoaPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectLoaPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ToGetCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyOutput) AuthorizedAgent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCrossConnectLoaProperty) string { return v.AuthorizedAgent }).(pulumi.StringOutput)
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ExpiryExtensionCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectLoaProperty) int { return v.ExpiryExtensionCount }).(pulumi.IntOutput)
+}
+
+type GetCrossConnectLoaPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectLoaPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) Index(i pulumi.IntInput) GetCrossConnectLoaPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectLoaProperty {
+		return vs[0].([]GetCrossConnectLoaProperty)[vs[1].(int)]
+	}).(GetCrossConnectLoaPropertyOutput)
 }
 
 type GetCrossConnectLocationsCrossConnectLocation struct {
@@ -62661,9 +62941,17 @@ type GetCrossConnectsCrossConnect struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id            string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The name of the FastConnect interface where this cross-connect is installed.
 	InterfaceName string `pulumi:"interfaceName"`
 	IsActive      bool   `pulumi:"isActive"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect.
+	IsQosEnabled  bool                                      `pulumi:"isQosEnabled"`
+	LoaProperties []GetCrossConnectsCrossConnectLoaProperty `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName string `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -62709,9 +62997,17 @@ type GetCrossConnectsCrossConnectArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id            pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntInput `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The name of the FastConnect interface where this cross-connect is installed.
 	InterfaceName pulumi.StringInput `pulumi:"interfaceName"`
 	IsActive      pulumi.BoolInput   `pulumi:"isActive"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolInput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect.
+	IsQosEnabled  pulumi.BoolInput                                  `pulumi:"isQosEnabled"`
+	LoaProperties GetCrossConnectsCrossConnectLoaPropertyArrayInput `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName pulumi.StringInput `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -62821,12 +63117,32 @@ func (o GetCrossConnectsCrossConnectOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o GetCrossConnectsCrossConnectOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The name of the FastConnect interface where this cross-connect is installed.
 func (o GetCrossConnectsCrossConnectOutput) InterfaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) string { return v.InterfaceName }).(pulumi.StringOutput)
 }
 
 func (o GetCrossConnectsCrossConnectOutput) IsActive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsActive }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o GetCrossConnectsCrossConnectOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect.
+func (o GetCrossConnectsCrossConnectOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetCrossConnectsCrossConnectOutput) LoaProperties() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) []GetCrossConnectsCrossConnectLoaProperty { return v.LoaProperties }).(GetCrossConnectsCrossConnectLoaPropertyArrayOutput)
 }
 
 // The name of the FastConnect location where this cross-connect is installed.
@@ -62893,6 +63209,106 @@ func (o GetCrossConnectsCrossConnectArrayOutput) Index(i pulumi.IntInput) GetCro
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectsCrossConnect {
 		return vs[0].([]GetCrossConnectsCrossConnect)[vs[1].(int)]
 	}).(GetCrossConnectsCrossConnectOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaProperty struct {
+	AuthorizedAgent      string `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount int    `pulumi:"expiryExtensionCount"`
+}
+
+// GetCrossConnectsCrossConnectLoaPropertyInput is an input type that accepts GetCrossConnectsCrossConnectLoaPropertyArgs and GetCrossConnectsCrossConnectLoaPropertyOutput values.
+// You can construct a concrete instance of `GetCrossConnectsCrossConnectLoaPropertyInput` via:
+//
+//	GetCrossConnectsCrossConnectLoaPropertyArgs{...}
+type GetCrossConnectsCrossConnectLoaPropertyInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput
+	ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArgs struct {
+	AuthorizedAgent      pulumi.StringInput `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount pulumi.IntInput    `pulumi:"expiryExtensionCount"`
+}
+
+func (GetCrossConnectsCrossConnectLoaPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArgs) ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return i.ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArgs) ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectsCrossConnectLoaPropertyOutput)
+}
+
+// GetCrossConnectsCrossConnectLoaPropertyArrayInput is an input type that accepts GetCrossConnectsCrossConnectLoaPropertyArray and GetCrossConnectsCrossConnectLoaPropertyArrayOutput values.
+// You can construct a concrete instance of `GetCrossConnectsCrossConnectLoaPropertyArrayInput` via:
+//
+//	GetCrossConnectsCrossConnectLoaPropertyArray{ GetCrossConnectsCrossConnectLoaPropertyArgs{...} }
+type GetCrossConnectsCrossConnectLoaPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput
+	ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArray []GetCrossConnectsCrossConnectLoaPropertyInput
+
+func (GetCrossConnectsCrossConnectLoaPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArray) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return i.ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArray) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectsCrossConnectLoaPropertyArrayOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectsCrossConnectLoaPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) AuthorizedAgent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnectLoaProperty) string { return v.AuthorizedAgent }).(pulumi.StringOutput)
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ExpiryExtensionCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnectLoaProperty) int { return v.ExpiryExtensionCount }).(pulumi.IntOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) Index(i pulumi.IntInput) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectsCrossConnectLoaProperty {
+		return vs[0].([]GetCrossConnectsCrossConnectLoaProperty)[vs[1].(int)]
+	}).(GetCrossConnectsCrossConnectLoaPropertyOutput)
 }
 
 type GetCrossConnectsCrossConnectMacsecProperty struct {
@@ -78041,374 +78457,6 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigAr
 	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput)
 }
 
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-// The action to run when the preemptible instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) PreemptionActions() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return v.PreemptionActions
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) bool {
-		return v.PreserveBootVolume
-	}).(pulumi.BoolOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes int `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement string `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus int `pulumi:"vcpus"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes pulumi.IntInput `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus pulumi.IntInput `pulumi:"vcpus"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
-		return v.BaselineOcpuUtilization
-	}).(pulumi.StringOutput)
-}
-
-// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int {
-		return v.LocalVolumeSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// The total amount of memory available to the instance, in gigabytes.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Nvmes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
-}
-
-// The total number of OCPUs available to the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
-}
-
-// This field is reserved for internal use.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
-		return v.ResourceManagement
-	}).(pulumi.StringOutput)
-}
-
-// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Vcpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Vcpus }).(pulumi.IntOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyInput)(nil)).Elem(), BootVolumeAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyArrayInput)(nil)).Elem(), BootVolumeAutotunePolicyArray{})
@@ -78508,6 +78556,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPtrInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPrimaryKeyInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPrimaryKeyPtrInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesPrimaryKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectLoaPropertiesInput)(nil)).Elem(), CrossConnectLoaPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectLoaPropertiesPtrInput)(nil)).Elem(), CrossConnectLoaPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesInput)(nil)).Elem(), CrossConnectMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesPtrInput)(nil)).Elem(), CrossConnectMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesPrimaryKeyInput)(nil)).Elem(), CrossConnectMacsecPropertiesPrimaryKeyArgs{})
@@ -79174,6 +79224,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArrayInput)(nil)).Elem(), GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsFilterInput)(nil)).Elem(), GetCrossConnectGroupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsFilterArrayInput)(nil)).Elem(), GetCrossConnectGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLoaPropertyInput)(nil)).Elem(), GetCrossConnectLoaPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLoaPropertyArrayInput)(nil)).Elem(), GetCrossConnectLoaPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsCrossConnectLocationInput)(nil)).Elem(), GetCrossConnectLocationsCrossConnectLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsCrossConnectLocationArrayInput)(nil)).Elem(), GetCrossConnectLocationsCrossConnectLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsFilterInput)(nil)).Elem(), GetCrossConnectLocationsFilterArgs{})
@@ -79188,6 +79240,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectPortSpeedShapeFilterArrayInput)(nil)).Elem(), GetCrossConnectPortSpeedShapeFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectInput)(nil)).Elem(), GetCrossConnectsCrossConnectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectLoaPropertyInput)(nil)).Elem(), GetCrossConnectsCrossConnectLoaPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectLoaPropertyArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectLoaPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyArgs{})
@@ -79404,12 +79458,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyArrayOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupSourceDetailsOutput{})
@@ -79508,6 +79556,8 @@ func init() {
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPrimaryKeyOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPrimaryKeyPtrOutput{})
+	pulumi.RegisterOutputType(CrossConnectLoaPropertiesOutput{})
+	pulumi.RegisterOutputType(CrossConnectLoaPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesPrimaryKeyOutput{})
@@ -80174,6 +80224,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectGroupsFilterOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectLoaPropertyOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectLoaPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsCrossConnectLocationOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsCrossConnectLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsFilterOutput{})
@@ -80188,6 +80240,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCrossConnectPortSpeedShapeFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectArrayOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectLoaPropertyOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectLoaPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyOutput{})
@@ -80404,10 +80458,4 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput{})
 }

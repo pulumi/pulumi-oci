@@ -91,6 +91,7 @@ import (
 //				},
 //				Region:          pulumi.Any(virtualCircuitRegion),
 //				RoutingPolicies: pulumi.Any(virtualCircuitRoutingPolicy),
+//				TrafficMode:     pulumi.Any(virtualCircuitTrafficMode),
 //			})
 //			if err != nil {
 //				return err
@@ -169,6 +170,8 @@ type VirtualCircuit struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringOutput `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -272,6 +275,8 @@ type virtualCircuitState struct {
 	State *string `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode *string `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -340,6 +345,8 @@ type VirtualCircuitState struct {
 	State pulumi.StringPtrInput
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringPtrInput
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -392,6 +399,8 @@ type virtualCircuitArgs struct {
 	Region *string `pulumi:"region"`
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies []string `pulumi:"routingPolicies"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode *string `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -439,6 +448,8 @@ type VirtualCircuitArgs struct {
 	Region pulumi.StringPtrInput
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies pulumi.StringArrayInput
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringPtrInput
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -670,6 +681,11 @@ func (o VirtualCircuitOutput) State() pulumi.StringOutput {
 // The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o VirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+func (o VirtualCircuitOutput) TrafficMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.TrafficMode }).(pulumi.StringOutput)
 }
 
 // The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).

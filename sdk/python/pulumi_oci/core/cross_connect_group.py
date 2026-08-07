@@ -26,7 +26,11 @@ class CrossConnectGroupArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 macsec_properties: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']] = None):
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 macsec_properties: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']] = None,
+                 minimum_links: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a CrossConnectGroup resource.
 
@@ -35,7 +39,14 @@ class CrossConnectGroupArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[_builtins.int] minimum_links: (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if customer_reference_name is not None:
@@ -46,8 +57,16 @@ class CrossConnectGroupArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_down_timer_value_in_milliseconds is not None:
+            pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
+        if is_interface_hold_timer_enabled is not None:
+            pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled is not None:
+            pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
         if macsec_properties is not None:
             pulumi.set(__self__, "macsec_properties", macsec_properties)
+        if minimum_links is not None:
+            pulumi.set(__self__, "minimum_links", minimum_links)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -110,6 +129,42 @@ class CrossConnectGroupArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interface_down_timer_value_in_milliseconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_interface_hold_timer_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_qos_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]:
         """
@@ -121,6 +176,21 @@ class CrossConnectGroupArgs:
     def macsec_properties(self, value: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]):
         pulumi.set(self, "macsec_properties", value)
 
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "minimum_links")
+
+    @minimum_links.setter
+    def minimum_links(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_links", value)
+
 
 @pulumi.input_type
 class _CrossConnectGroupState:
@@ -130,7 +200,11 @@ class _CrossConnectGroupState:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  macsec_properties: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']] = None,
+                 minimum_links: pulumi.Input[Optional[_builtins.int]] = None,
                  oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
                  oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -143,7 +217,14 @@ class _CrossConnectGroupState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[_builtins.int] minimum_links: (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[_builtins.str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param pulumi.Input[_builtins.str] state: The cross-connect group's current state.
@@ -159,8 +240,16 @@ class _CrossConnectGroupState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if interface_down_timer_value_in_milliseconds is not None:
+            pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
+        if is_interface_hold_timer_enabled is not None:
+            pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled is not None:
+            pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
         if macsec_properties is not None:
             pulumi.set(__self__, "macsec_properties", macsec_properties)
+        if minimum_links is not None:
+            pulumi.set(__self__, "minimum_links", minimum_links)
         if oci_logical_device_name is not None:
             pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
         if oci_physical_device_name is not None:
@@ -231,6 +320,42 @@ class _CrossConnectGroupState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @interface_down_timer_value_in_milliseconds.setter
+    def interface_down_timer_value_in_milliseconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interface_down_timer_value_in_milliseconds", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @is_interface_hold_timer_enabled.setter
+    def is_interface_hold_timer_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_interface_hold_timer_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @is_qos_enabled.setter
+    def is_qos_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_qos_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]:
         """
@@ -241,6 +366,21 @@ class _CrossConnectGroupState:
     @macsec_properties.setter
     def macsec_properties(self, value: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesArgs']]):
         pulumi.set(self, "macsec_properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "minimum_links")
+
+    @minimum_links.setter
+    def minimum_links(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_links", value)
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")
@@ -302,7 +442,11 @@ class CrossConnectGroup(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+                 minimum_links: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Cross Connect Group resource in Oracle Cloud Infrastructure Core service.
@@ -342,6 +486,9 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_down_timer_value_in_milliseconds=int(cross_connect_group_interface_down_timer_value_in_milliseconds),
+            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled == "true",
+            is_qos_enabled=cross_connect_group_is_qos_enabled == "true",
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
@@ -350,7 +497,8 @@ class CrossConnectGroup(pulumi.CustomResource):
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
-            })
+            },
+            minimum_links=int(cross_connect_group_minimum_links))
         ```
 
         ## Import
@@ -369,7 +517,14 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
         :param pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[_builtins.int] minimum_links: (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -415,6 +570,9 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            interface_down_timer_value_in_milliseconds=int(cross_connect_group_interface_down_timer_value_in_milliseconds),
+            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled == "true",
+            is_qos_enabled=cross_connect_group_is_qos_enabled == "true",
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
@@ -423,7 +581,8 @@ class CrossConnectGroup(pulumi.CustomResource):
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
-            })
+            },
+            minimum_links=int(cross_connect_group_minimum_links))
         ```
 
         ## Import
@@ -455,7 +614,11 @@ class CrossConnectGroup(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+                 minimum_links: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -472,7 +635,11 @@ class CrossConnectGroup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["interface_down_timer_value_in_milliseconds"] = interface_down_timer_value_in_milliseconds
+            __props__.__dict__["is_interface_hold_timer_enabled"] = is_interface_hold_timer_enabled
+            __props__.__dict__["is_qos_enabled"] = is_qos_enabled
             __props__.__dict__["macsec_properties"] = macsec_properties
+            __props__.__dict__["minimum_links"] = minimum_links
             __props__.__dict__["oci_logical_device_name"] = None
             __props__.__dict__["oci_physical_device_name"] = None
             __props__.__dict__["state"] = None
@@ -492,7 +659,11 @@ class CrossConnectGroup(pulumi.CustomResource):
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+            is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             macsec_properties: pulumi.Input[Optional[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']]] = None,
+            minimum_links: pulumi.Input[Optional[_builtins.int]] = None,
             oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
             oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -509,7 +680,14 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] interface_down_timer_value_in_milliseconds: (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param pulumi.Input[_builtins.bool] is_interface_hold_timer_enabled: (Updatable) The flag to enable or disable the down timer for the interface.
+        :param pulumi.Input[_builtins.bool] is_qos_enabled: (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
         :param pulumi.Input[Union['CrossConnectGroupMacsecPropertiesArgs', 'CrossConnectGroupMacsecPropertiesArgsDict']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
+        :param pulumi.Input[_builtins.int] minimum_links: (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[_builtins.str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param pulumi.Input[_builtins.str] state: The cross-connect group's current state.
@@ -524,7 +702,11 @@ class CrossConnectGroup(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["interface_down_timer_value_in_milliseconds"] = interface_down_timer_value_in_milliseconds
+        __props__.__dict__["is_interface_hold_timer_enabled"] = is_interface_hold_timer_enabled
+        __props__.__dict__["is_qos_enabled"] = is_qos_enabled
         __props__.__dict__["macsec_properties"] = macsec_properties
+        __props__.__dict__["minimum_links"] = minimum_links
         __props__.__dict__["oci_logical_device_name"] = oci_logical_device_name
         __props__.__dict__["oci_physical_device_name"] = oci_physical_device_name
         __props__.__dict__["state"] = state
@@ -572,12 +754,47 @@ class CrossConnectGroup(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> pulumi.Output['outputs.CrossConnectGroupMacsecProperties']:
         """
         (Updatable) Properties used to configure MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "minimum_links")
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")

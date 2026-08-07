@@ -1502,7 +1502,7 @@ export namespace Analytics {
          */
         capacityType: pulumi.Input<string>;
         /**
-         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: pulumi.Input<number>;
     }
@@ -1513,7 +1513,7 @@ export namespace Analytics {
          */
         networkEndpointType: pulumi.Input<string>;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
@@ -1529,7 +1529,7 @@ export namespace Analytics {
          */
         whitelistedIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
@@ -1551,28 +1551,69 @@ export namespace Analytics {
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of the private source DNS zone.
          */
         description?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: pulumi.Input<string>;
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * (Updatable) Description of private source scan host zone.
+         * (Updatable) Description of private source SCAN host zone.
          */
         description?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: pulumi.Input<string>;
         /**
-         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: pulumi.Input<number>;
+    }
+
+    export interface AnalyticsInstanceResourceGroup {
+        /**
+         * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+         */
+        capacity?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Optional description.
+         */
+        description?: pulumi.Input<string | undefined>;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilter {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilterArgs {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAnalyticsInstancesFilter {
@@ -14696,9 +14737,6 @@ export namespace Core {
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey | undefined>;
         /**
          * (Updatable) Indicates whether or not MACsec is enabled.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state: pulumi.Input<string>;
     }
@@ -14724,6 +14762,17 @@ export namespace Core {
          * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretVersion?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CrossConnectLoaProperties {
+        /**
+         * (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+         */
+        authorizedAgent?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+         */
+        expiryExtensionCount?: pulumi.Input<number | undefined>;
     }
 
     export interface CrossConnectMacsecProperties {
@@ -51975,6 +52024,48 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetHostedApplicationStoragesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationStoragesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostedApplicationsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationsFilterArgs {
+        /**
+         * Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostedDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedDeploymentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetImportedModelsFilter {
         name: string;
         regex?: boolean;
@@ -52021,6 +52112,191 @@ export namespace GenerativeAi {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface HostedApplicationEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationInboundAuthConfig {
+        /**
+         * (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfig?: pulumi.Input<inputs.GenerativeAi.HostedApplicationInboundAuthConfigIdcsConfig | undefined>;
+        /**
+         * (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * (Updatable) Audience for IDCS.
+         */
+        audience?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Domain URL for IDCS.
+         */
+        domainUrl: pulumi.Input<string>;
+        /**
+         * (Updatable) Scope for IDCS.
+         */
+        scope: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationNetworkingConfigInboundNetworkingConfig>;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationNetworkingConfigOutboundNetworkingConfig>;
+    }
+
+    export interface HostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: pulumi.Input<string>;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: pulumi.Input<string>;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface HostedApplicationScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: pulumi.Input<string>;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold?: pulumi.Input<number | undefined>;
+    }
+
+    export interface HostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: pulumi.Input<string>;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: pulumi.Input<string>;
+    }
+
+    export interface HostedDeploymentActiveArtifact {
+        /**
+         * (Updatable) The type of the artifact.
+         */
+        artifactType?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) image url.
+         */
+        containerUri?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) if put artifact to a table, the id is needed
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The current status of the artifact.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) image tag.
+         */
+        tag?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The date and time the artifact was created.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface HostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType?: pulumi.Input<string | undefined>;
+        /**
+         * image url.
+         */
+        containerUri?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * The current status of the artifact.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * image tag.
+         */
+        tag?: pulumi.Input<string | undefined>;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
     }
 
     export interface ImportedModelDataSource {

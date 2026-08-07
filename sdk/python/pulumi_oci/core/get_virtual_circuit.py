@@ -27,7 +27,7 @@ class GetVirtualCircuitResult:
     """
     A collection of values returned by getVirtualCircuit.
     """
-    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None, virtual_circuit_redundancy_metadatas=None):
+    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, traffic_mode=None, type=None, virtual_circuit_id=None, virtual_circuit_redundancy_metadatas=None):
         if bandwidth_shape_name and not isinstance(bandwidth_shape_name, str):
             raise TypeError("Expected argument 'bandwidth_shape_name' to be a str")
         pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -112,6 +112,9 @@ class GetVirtualCircuitResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if traffic_mode and not isinstance(traffic_mode, str):
+            raise TypeError("Expected argument 'traffic_mode' to be a str")
+        pulumi.set(__self__, "traffic_mode", traffic_mode)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -349,6 +352,14 @@ class GetVirtualCircuitResult:
         return pulumi.get(self, "time_created")
 
     @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> _builtins.str:
+        """
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -404,6 +415,7 @@ class AwaitableGetVirtualCircuitResult(GetVirtualCircuitResult):
             service_type=self.service_type,
             state=self.state,
             time_created=self.time_created,
+            traffic_mode=self.traffic_mode,
             type=self.type,
             virtual_circuit_id=self.virtual_circuit_id,
             virtual_circuit_redundancy_metadatas=self.virtual_circuit_redundancy_metadatas)
@@ -462,6 +474,7 @@ def get_virtual_circuit(virtual_circuit_id: Optional[_builtins.str] = None,
         service_type=pulumi.get(__ret__, 'service_type'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        traffic_mode=pulumi.get(__ret__, 'traffic_mode'),
         type=pulumi.get(__ret__, 'type'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__ret__, 'virtual_circuit_redundancy_metadatas'))
@@ -517,6 +530,7 @@ def get_virtual_circuit_output(virtual_circuit_id: pulumi.Input[Optional[_builti
         service_type=pulumi.get(__response__, 'service_type'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
+        traffic_mode=pulumi.get(__response__, 'traffic_mode'),
         type=pulumi.get(__response__, 'type'),
         virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__response__, 'virtual_circuit_redundancy_metadatas')))

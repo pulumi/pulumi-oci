@@ -459,6 +459,9 @@
                                 }
                             }
                         }
+                    },
+                    "resource_groups": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -479,6 +482,10 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "oci_analytics_analytics_instance_resource_group": {
+                "current": "oci:Analytics/analyticsInstanceResourceGroup:AnalyticsInstanceResourceGroup",
+                "majorVersion": 4
             },
             "oci_analytics_analytics_instance_vanity_url": {
                 "current": "oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl",
@@ -4186,6 +4193,9 @@
                 "current": "oci:Core/crossConnect:CrossConnect",
                 "majorVersion": 4,
                 "fields": {
+                    "loa_properties": {
+                        "maxItemsOne": true
+                    },
                     "macsec_properties": {
                         "maxItemsOne": true,
                         "elem": {
@@ -14875,6 +14885,81 @@
                     }
                 }
             },
+            "oci_generative_ai_generative_ai_private_endpoint": {
+                "current": "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint",
+                "majorVersion": 4,
+                "fields": {
+                    "nsg_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_application": {
+                "current": "oci:GenerativeAi/hostedApplication:HostedApplication",
+                "majorVersion": 4,
+                "fields": {
+                    "environment_variables": {
+                        "maxItemsOne": false
+                    },
+                    "inbound_auth_config": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "idcs_config": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "networking_config": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "inbound_networking_config": {
+                                    "maxItemsOne": true
+                                },
+                                "outbound_networking_config": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "nsg_ids": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "scaling_config": {
+                        "maxItemsOne": true
+                    },
+                    "storage_configs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_application_storage": {
+                "current": "oci:GenerativeAi/hostedApplicationStorage:HostedApplicationStorage",
+                "majorVersion": 4,
+                "fields": {
+                    "application_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_deployment": {
+                "current": "oci:GenerativeAi/hostedDeployment:HostedDeployment",
+                "majorVersion": 4,
+                "fields": {
+                    "active_artifact": {
+                        "maxItemsOne": true
+                    },
+                    "artifacts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "oci_generative_ai_imported_model": {
                 "current": "oci:GenerativeAi/importedModel:ImportedModel",
                 "majorVersion": 4,
@@ -24981,6 +25066,9 @@
                                 }
                             }
                         }
+                    },
+                    "resource_groups": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -24998,6 +25086,29 @@
                         "maxItemsOne": false
                     },
                     "private_source_scan_hosts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_analytics_analytics_instance_resource_group": {
+                "current": "oci:Analytics/getAnalyticsInstanceResourceGroup:getAnalyticsInstanceResourceGroup",
+                "majorVersion": 4
+            },
+            "oci_analytics_analytics_instance_resource_groups": {
+                "current": "oci:Analytics/getAnalyticsInstanceResourceGroups:getAnalyticsInstanceResourceGroups",
+                "majorVersion": 4,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "instance_resource_groups": {
                         "maxItemsOne": false
                     }
                 }
@@ -25038,6 +25149,9 @@
                                             }
                                         }
                                     }
+                                },
+                                "resource_groups": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
@@ -37349,6 +37463,9 @@
                 "current": "oci:Core/getCrossConnect:getCrossConnect",
                 "majorVersion": 4,
                 "fields": {
+                    "loa_properties": {
+                        "maxItemsOne": false
+                    },
                     "macsec_properties": {
                         "maxItemsOne": false,
                         "elem": {
@@ -37460,6 +37577,9 @@
                         "maxItemsOne": false,
                         "elem": {
                             "fields": {
+                                "loa_properties": {
+                                    "maxItemsOne": false
+                                },
                                 "macsec_properties": {
                                     "maxItemsOne": false,
                                     "elem": {
@@ -39381,7 +39501,19 @@
             },
             "oci_core_letter_of_authority": {
                 "current": "oci:Core/getLetterOfAuthority:getLetterOfAuthority",
-                "majorVersion": 4
+                "majorVersion": 4,
+                "fields": {
+                    "extension_details": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "history": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "oci_core_listing_resource_version": {
                 "current": "oci:Core/getListingResourceVersion:getListingResourceVersion",
@@ -72391,6 +72523,210 @@
                                     "elem": {
                                         "fields": {
                                             "nsg_ids": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_application": {
+                "current": "oci:GenerativeAi/getHostedApplication:getHostedApplication",
+                "majorVersion": 4,
+                "fields": {
+                    "environment_variables": {
+                        "maxItemsOne": false
+                    },
+                    "inbound_auth_config": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "idcs_config": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "networking_config": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "inbound_networking_config": {
+                                    "maxItemsOne": false
+                                },
+                                "outbound_networking_config": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "nsg_ids": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "scaling_config": {
+                        "maxItemsOne": false
+                    },
+                    "storage_configs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_application_storage": {
+                "current": "oci:GenerativeAi/getHostedApplicationStorage:getHostedApplicationStorage",
+                "majorVersion": 4,
+                "fields": {
+                    "application_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_application_storages": {
+                "current": "oci:GenerativeAi/getHostedApplicationStorages:getHostedApplicationStorages",
+                "majorVersion": 4,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "hosted_application_storage_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "application_ids": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_applications": {
+                "current": "oci:GenerativeAi/getHostedApplications:getHostedApplications",
+                "majorVersion": 4,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "hosted_application_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "environment_variables": {
+                                                "maxItemsOne": false
+                                            },
+                                            "inbound_auth_config": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "idcs_config": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "networking_config": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "inbound_networking_config": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "outbound_networking_config": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "nsg_ids": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "scaling_config": {
+                                                "maxItemsOne": false
+                                            },
+                                            "storage_configs": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_deployment": {
+                "current": "oci:GenerativeAi/getHostedDeployment:getHostedDeployment",
+                "majorVersion": 4,
+                "fields": {
+                    "active_artifact": {
+                        "maxItemsOne": false
+                    },
+                    "artifacts": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "oci_generative_ai_hosted_deployments": {
+                "current": "oci:GenerativeAi/getHostedDeployments:getHostedDeployments",
+                "majorVersion": 4,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "hosted_deployment_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "active_artifact": {
+                                                "maxItemsOne": false
+                                            },
+                                            "artifacts": {
                                                 "maxItemsOne": false
                                             }
                                         }

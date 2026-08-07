@@ -5221,7 +5221,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5232,7 +5232,7 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
@@ -5248,7 +5248,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5270,28 +5270,51 @@ export namespace Analytics {
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of the private source DNS zone.
          */
         description: string;
         /**
-         * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * (Updatable) Description of private source scan host zone.
+         * (Updatable) Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: string;
         /**
-         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: number;
+    }
+
+    export interface AnalyticsInstanceResourceGroup {
+        /**
+         * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+         */
+        capacity: number;
+        /**
+         * (Updatable) Optional description.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstanceCapacity {
@@ -5300,7 +5323,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5311,15 +5334,15 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          */
         subnetId: string;
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          */
         vcnId: string;
         /**
@@ -5327,7 +5350,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5338,7 +5361,7 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         /**
@@ -5349,34 +5372,93 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * Description of private source scan host zone.
+         * Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: string;
     }
 
     export interface GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * Description of private source scan host zone.
+         * Description of private source SCAN host zone.
          */
         description: string;
         /**
-         * Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: string;
         /**
-         * Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: number;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroup {
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Description of the vanity URL.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilter {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsInstanceResourceGroup {
+        /**
+         * The OCID of the Analytics instance.
+         */
+        analyticsInstanceId: string;
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Optional description of the resource group
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstancesAnalyticsInstance {
         adminUser: string;
         /**
-         * Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+         * The capacity (in OCPU's) to be allocated for this resource.
          */
         capacities: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceCapacity[];
         /**
@@ -5388,7 +5470,7 @@ export namespace Analytics {
          */
         definedTags: {[key: string]: string};
         /**
-         * Description of the vanity url.
+         * Description of the vanity URL.
          */
         description: string;
         /**
@@ -5412,12 +5494,12 @@ export namespace Analytics {
          */
         freeformTags: {[key: string]: string};
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         idcsAccessToken: string;
         /**
-         * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
          */
         kmsKeyId: string;
         /**
@@ -5433,7 +5515,11 @@ export namespace Analytics {
          */
         networkEndpointDetails: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail[];
         /**
-         * URL of the Analytics service.
+         * List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+         */
+        resourceGroups: outputs.Analytics.GetAnalyticsInstancesAnalyticsInstanceResourceGroup[];
+        /**
+         * URL of the Analytics instance.
          */
         serviceUrl: string;
         /**
@@ -5445,15 +5531,15 @@ export namespace Analytics {
          */
         systemTags: {[key: string]: string};
         /**
-         * The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+         * The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
         /**
-         * The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+         * The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
          */
         timeUpdated: string;
         /**
-         * Analytics instance update channel.
+         * The Analytics instance update cycle.
          */
         updateChannel: string;
     }
@@ -5464,7 +5550,7 @@ export namespace Analytics {
          */
         capacityType: string;
         /**
-         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: number;
     }
@@ -5475,15 +5561,15 @@ export namespace Analytics {
          */
         networkEndpointType: string;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds: string[];
         /**
-         * OCID of the customer subnet connected to private access channel.
+         * OCID of the customer subnet connected to the private access channel.
          */
         subnetId: string;
         /**
-         * OCID of the customer VCN peered with private access channel.
+         * OCID of the customer VCN peered with the private access channel.
          */
         vcnId: string;
         /**
@@ -5491,7 +5577,7 @@ export namespace Analytics {
          */
         whitelistedIps: string[];
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices: string[];
         /**
@@ -5502,13 +5588,36 @@ export namespace Analytics {
 
     export interface GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
         /**
-         * The Virtual Cloud Network OCID.
+         * Unique identifier and name of resource group.  Must be unique within the instance
          */
         id: string;
         /**
          * Source IP addresses or IP address ranges in ingress rules.
          */
         whitelistedIps: string[];
+    }
+
+    export interface GetAnalyticsInstancesAnalyticsInstanceResourceGroup {
+        /**
+         * The capacity (in OCPU's) to be allocated for this resource.
+         */
+        capacity: number;
+        /**
+         * Description of the vanity URL.
+         */
+        description: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName: string;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id: string;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName: string;
     }
 
     export interface GetAnalyticsInstancesFilter {
@@ -17638,16 +17747,25 @@ export namespace Artifacts {
          * Total number of images.
          */
         imageCount: number;
+        /**
+         * List of container repositories.
+         */
         items: outputs.Artifacts.GetContainerRepositoriesContainerRepositoryCollectionItem[];
         /**
          * Total number of layers.
          */
         layerCount: number;
         /**
-         * Total storage in bytes consumed by layers.
+         * Total size of layers.
          */
         layersSizeInBytes: string;
+        /**
+         * The number of remaining items.
+         */
         remainingItemsCount: number;
+        /**
+         * Total number of repositories.
+         */
         repositoryCount: number;
     }
 
@@ -17697,7 +17815,7 @@ export namespace Artifacts {
          */
         layerCount: number;
         /**
-         * Total storage in bytes consumed by layers.
+         * Total size of layers.
          */
         layersSizeInBytes: string;
         /**
@@ -46894,9 +47012,6 @@ export namespace Core {
         primaryKey: outputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey;
         /**
          * (Updatable) Indicates whether or not MACsec is enabled.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state: string;
     }
@@ -46922,6 +47037,17 @@ export namespace Core {
          * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretVersion: string;
+    }
+
+    export interface CrossConnectLoaProperties {
+        /**
+         * (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+         */
+        authorizedAgent: string;
+        /**
+         * (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+         */
+        expiryExtensionCount?: number;
     }
 
     export interface CrossConnectMacsecProperties {
@@ -50669,9 +50795,25 @@ export namespace Core {
          */
         id: string;
         /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         */
+        interfaceDownTimerValueInMilliseconds: number;
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         */
+        isInterfaceHoldTimerEnabled: boolean;
+        /**
+         * The flag to enable or disable the Qos for the cross-connect-group.
+         */
+        isQosEnabled: boolean;
+        /**
          * Properties used for MACsec (if capable).
          */
         macsecProperties: outputs.Core.GetCrossConnectGroupsCrossConnectGroupMacsecProperty[];
+        /**
+         * Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+         */
+        minimumLinks: number;
         /**
          * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
          */
@@ -50732,6 +50874,11 @@ export namespace Core {
         name: string;
         regex?: boolean;
         values: string[];
+    }
+
+    export interface GetCrossConnectLoaProperty {
+        authorizedAgent: string;
+        expiryExtensionCount: number;
     }
 
     export interface GetCrossConnectLocationsCrossConnectLocation {
@@ -50842,8 +50989,24 @@ export namespace Core {
          * The cross-connect's Oracle ID (OCID).
          */
         id: string;
+        /**
+         * The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+         */
+        interfaceDownTimerValueInMilliseconds: number;
+        /**
+         * The name of the FastConnect interface where this cross-connect is installed.
+         */
         interfaceName: string;
         isActive: boolean;
+        /**
+         * The flag to enable or disable the down timer for the interface.
+         */
+        isInterfaceHoldTimerEnabled: boolean;
+        /**
+         * The flag to enable or disable the Qos for the cross-connect.
+         */
+        isQosEnabled: boolean;
+        loaProperties: outputs.Core.GetCrossConnectsCrossConnectLoaProperty[];
         /**
          * The name of the FastConnect location where this cross-connect is installed.
          */
@@ -50877,6 +51040,11 @@ export namespace Core {
          * The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
+    }
+
+    export interface GetCrossConnectsCrossConnectLoaProperty {
+        authorizedAgent: string;
+        expiryExtensionCount: number;
     }
 
     export interface GetCrossConnectsCrossConnectMacsecProperty {
@@ -57608,6 +57776,17 @@ export namespace Core {
         vnicId: string;
     }
 
+    export interface GetLetterOfAuthorityExtensionDetail {
+        /**
+         * Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+         */
+        histories: string[];
+        /**
+         * The number of self-service LOA expiry extensions still available.
+         */
+        remainingExtensions: string;
+    }
+
     export interface GetListingResourceVersionsAppCatalogListingResourceVersion {
         accessiblePorts: number[];
         allowedActions: string[];
@@ -59608,6 +59787,10 @@ export namespace Core {
          * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
          */
         timeCreated: string;
+        /**
+         * The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+         */
+        trafficMode: string;
         /**
          * Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
          */
@@ -161124,6 +161307,10 @@ export namespace FileStorage {
          */
         compartmentId: string;
         /**
+         * Displays the compartment-level quota enforcement state affecting this file system.
+         */
+        compartmentQuotaEnforcementState: string;
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
@@ -162027,6 +162214,10 @@ export namespace FileStorage {
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
         definedTags: {[key: string]: string};
+        /**
+         * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+         */
+        exclusiveBytes: string;
         /**
          * The time when this snapshot will be deleted.
          */
@@ -177916,6 +178107,10 @@ export namespace GenerativeAi {
          */
         privateEndpointIp: string;
         /**
+         * Query by the resource type of Generative AI private endpoints.
+         */
+        resourceType: string;
+        /**
          * The lifecycle state of Generative AI private endpoints.
          */
         state: string;
@@ -177935,6 +178130,576 @@ export namespace GenerativeAi {
          * The date and time that the Generative AI private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
          */
         timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or HASHED, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationInboundAuthConfig {
+        /**
+         * Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfigs: outputs.GenerativeAi.GetHostedApplicationInboundAuthConfigIdcsConfig[];
+        /**
+         * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface GetHostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface GetHostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedApplicationStoragesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationStoragesHostedApplicationStorageCollection {
+        items: outputs.GenerativeAi.GetHostedApplicationStoragesHostedApplicationStorageCollectionItem[];
+    }
+
+    export interface GetHostedApplicationStoragesHostedApplicationStorageCollectionItem {
+        /**
+         * A list of application OCID.
+         */
+        applicationIds: string[];
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the hosted application storage.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+         */
+        id: string;
+        /**
+         * A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * type like Cache, Postgresql and ADB.
+         */
+        storageType: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted application was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted application was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollection {
+        items: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItem[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * An optional description of the hosted application.
+         */
+        description: string;
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+         */
+        environmentVariables: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable[];
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+         */
+        id: string;
+        /**
+         * The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+         */
+        inboundAuthConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig[];
+        /**
+         * A message describing the current state of the endpoint in more detail that can provide actionable information.
+         */
+        lifecycleDetails: string;
+        /**
+         * Networking configuration.
+         */
+        networkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig[];
+        /**
+         * The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+         */
+        scalingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemScalingConfig[];
+        /**
+         * A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+         */
+        storageConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemStorageConfig[];
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted application was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted application was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        /**
+         * Type of the environment variable (PLAINTEXT or HASHED, no default value).
+         */
+        type: string;
+        /**
+         * Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig {
+        /**
+         * Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig[];
+        /**
+         * Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig {
+        /**
+         * Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig[];
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfigs: outputs.GenerativeAi.GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemScalingConfig {
+        /**
+         * Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface GetHostedApplicationsHostedApplicationCollectionItemStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         */
+        storageId: string;
+    }
+
+    export interface GetHostedDeploymentActiveArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollection {
+        items: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItem[];
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItem {
+        /**
+         * Container/artifact configuration for the deployment.
+         */
+        activeArtifacts: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact[];
+        /**
+         * array of Artifacts.
+         */
+        artifacts: outputs.GenerativeAi.GetHostedDeploymentsHostedDeploymentCollectionItemArtifact[];
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedApplicationId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+        /**
+         * The date and time the hosted deployment was updated, in the format defined by RFC 3339
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
+    }
+
+    export interface GetHostedDeploymentsHostedDeploymentCollectionItemArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
     }
 
     export interface GetImportedModelDataSource {
@@ -178554,6 +179319,191 @@ export namespace GenerativeAi {
 
     export interface GetSemanticStoresSemanticStoreCollectionItemSchemaSchema {
         name: string;
+    }
+
+    export interface HostedApplicationEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: string;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+         */
+        type: string;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: string;
+    }
+
+    export interface HostedApplicationInboundAuthConfig {
+        /**
+         * (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfig: outputs.GenerativeAi.HostedApplicationInboundAuthConfigIdcsConfig;
+        /**
+         * (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: string;
+    }
+
+    export interface HostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * (Updatable) Audience for IDCS.
+         */
+        audience: string;
+        /**
+         * (Updatable) Domain URL for IDCS.
+         */
+        domainUrl: string;
+        /**
+         * (Updatable) Scope for IDCS.
+         */
+        scope: string;
+    }
+
+    export interface HostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationNetworkingConfigInboundNetworkingConfig;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: outputs.GenerativeAi.HostedApplicationNetworkingConfigOutboundNetworkingConfig;
+    }
+
+    export interface HostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: string;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId: string;
+    }
+
+    export interface HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId: string;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: string;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds: string[];
+    }
+
+    export interface HostedApplicationScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica: number;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica: number;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: string;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold: number;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold: number;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold: number;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold: number;
+    }
+
+    export interface HostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: string;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: string;
+    }
+
+    export interface HostedDeploymentActiveArtifact {
+        /**
+         * (Updatable) The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * (Updatable) image url.
+         */
+        containerUri: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * (Updatable) if put artifact to a table, the id is needed
+         */
+        id: string;
+        /**
+         * (Updatable) The current status of the artifact.
+         */
+        status: string;
+        /**
+         * (Updatable) image tag.
+         */
+        tag: string;
+        /**
+         * (Updatable) The date and time the artifact was created.
+         */
+        timeCreated: string;
+    }
+
+    export interface HostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType: string;
+        /**
+         * image url.
+         */
+        containerUri: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id: string;
+        /**
+         * The current status of the artifact.
+         */
+        status: string;
+        /**
+         * image tag.
+         */
+        tag: string;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated: string;
     }
 
     export interface ImportedModelDataSource {

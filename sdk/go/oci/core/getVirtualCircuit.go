@@ -118,6 +118,8 @@ type LookupVirtualCircuitResult struct {
 	State string `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
+	// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+	TrafficMode string `pulumi:"trafficMode"`
 	// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	Type             string `pulumi:"type"`
 	VirtualCircuitId string `pulumi:"virtualCircuitId"`
@@ -303,6 +305,11 @@ func (o LookupVirtualCircuitResultOutput) State() pulumi.StringOutput {
 // The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupVirtualCircuitResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+func (o LookupVirtualCircuitResultOutput) TrafficMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVirtualCircuitResult) string { return v.TrafficMode }).(pulumi.StringOutput)
 }
 
 // Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).

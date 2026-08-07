@@ -30,14 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := goldengate.GetConnections(ctx, &goldengate.GetConnectionsArgs{
-//				CompartmentId:            compartmentId,
-//				AssignableDeploymentId:   pulumi.StringRef(testDeployment.Id),
-//				AssignableDeploymentType: pulumi.StringRef(connectionAssignableDeploymentType),
-//				AssignedDeploymentId:     pulumi.StringRef(testDeployment.Id),
-//				ConnectionTypes:          pulumi.ToArray(connectionConnectionType),
-//				DisplayName:              pulumi.StringRef(connectionDisplayName),
-//				State:                    pulumi.StringRef(connectionState),
-//				TechnologyTypes:          pulumi.ToArray(connectionTechnologyType),
+//				CompartmentId:             compartmentId,
+//				AssignableDeploymentId:    pulumi.StringRef(testDeployment.Id),
+//				AssignableDeploymentType:  pulumi.StringRef(connectionAssignableDeploymentType),
+//				AssignedDeploymentId:      pulumi.StringRef(testDeployment.Id),
+//				ConnectionTypes:           pulumi.ToArray(connectionConnectionType),
+//				ConnectionTypeNotEqualTos: pulumi.ToArray(connectionConnectionTypeNotEqualTo),
+//				DisplayName:               pulumi.StringRef(connectionDisplayName),
+//				State:                     pulumi.StringRef(connectionState),
+//				TechnologyTypes:           pulumi.ToArray(connectionTechnologyType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -67,6 +68,8 @@ type GetConnectionsArgs struct {
 	AssignedDeploymentId *string `pulumi:"assignedDeploymentId"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The array of connection types to exclude.
+	ConnectionTypeNotEqualTos []string `pulumi:"connectionTypeNotEqualTos"`
 	// The array of connection types.
 	ConnectionTypes []string `pulumi:"connectionTypes"`
 	// A filter to return only the resources that match the entire 'displayName' given.
@@ -86,7 +89,8 @@ type GetConnectionsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of connection_collection.
-	ConnectionCollections []GetConnectionsConnectionCollection `pulumi:"connectionCollections"`
+	ConnectionCollections     []GetConnectionsConnectionCollection `pulumi:"connectionCollections"`
+	ConnectionTypeNotEqualTos []string                             `pulumi:"connectionTypeNotEqualTos"`
 	// The connection type.
 	ConnectionTypes []string               `pulumi:"connectionTypes"`
 	DisplayName     *string                `pulumi:"displayName"`
@@ -118,6 +122,8 @@ type GetConnectionsOutputArgs struct {
 	AssignedDeploymentId pulumi.StringPtrInput `pulumi:"assignedDeploymentId"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The array of connection types to exclude.
+	ConnectionTypeNotEqualTos pulumi.StringArrayInput `pulumi:"connectionTypeNotEqualTos"`
 	// The array of connection types.
 	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
 	// A filter to return only the resources that match the entire 'displayName' given.
@@ -168,6 +174,10 @@ func (o GetConnectionsResultOutput) CompartmentId() pulumi.StringOutput {
 // The list of connection_collection.
 func (o GetConnectionsResultOutput) ConnectionCollections() GetConnectionsConnectionCollectionArrayOutput {
 	return o.ApplyT(func(v GetConnectionsResult) []GetConnectionsConnectionCollection { return v.ConnectionCollections }).(GetConnectionsConnectionCollectionArrayOutput)
+}
+
+func (o GetConnectionsResultOutput) ConnectionTypeNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsResult) []string { return v.ConnectionTypeNotEqualTos }).(pulumi.StringArrayOutput)
 }
 
 // The connection type.

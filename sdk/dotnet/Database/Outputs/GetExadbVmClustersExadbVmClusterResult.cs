@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        /// The OCID of the identity connector
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -102,6 +102,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ListenerPort;
         /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult> MultiCloudIdentityConnectorConfigs;
+        /// <summary>
         /// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult> NodeConfigs;
@@ -118,6 +122,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The private zone ID in which you want DNS records to be created.
         /// </summary>
         public readonly string PrivateZoneId;
+        public readonly int RegisterPkcsTrigger;
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
@@ -175,6 +180,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SystemVersion;
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        public readonly string TdeKeyStoreType;
+        /// <summary>
         /// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -182,6 +191,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
+        public readonly int UnregisterPkcsTrigger;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
         /// </summary>
@@ -237,6 +247,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string listenerPort,
 
+            ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult> multiCloudIdentityConnectorConfigs,
+
             ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult> nodeConfigs,
 
             ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterNodeResourceResult> nodeResources,
@@ -244,6 +256,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<string> nsgIds,
 
             string privateZoneId,
+
+            int registerPkcsTrigger,
 
             string scanDnsName,
 
@@ -273,9 +287,13 @@ namespace Pulumi.Oci.Database.Outputs
 
             string systemVersion,
 
+            string tdeKeyStoreType,
+
             string timeCreated,
 
             string timeZone,
+
+            int unregisterPkcsTrigger,
 
             ImmutableArray<string> vipIds,
 
@@ -303,10 +321,12 @@ namespace Pulumi.Oci.Database.Outputs
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             ListenerPort = listenerPort;
+            MultiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             NodeConfigs = nodeConfigs;
             NodeResources = nodeResources;
             NsgIds = nsgIds;
             PrivateZoneId = privateZoneId;
+            RegisterPkcsTrigger = registerPkcsTrigger;
             ScanDnsName = scanDnsName;
             ScanDnsRecordId = scanDnsRecordId;
             ScanIpIds = scanIpIds;
@@ -321,8 +341,10 @@ namespace Pulumi.Oci.Database.Outputs
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             SystemVersion = systemVersion;
+            TdeKeyStoreType = tdeKeyStoreType;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
+            UnregisterPkcsTrigger = unregisterPkcsTrigger;
             VipIds = vipIds;
             ZoneId = zoneId;
         }

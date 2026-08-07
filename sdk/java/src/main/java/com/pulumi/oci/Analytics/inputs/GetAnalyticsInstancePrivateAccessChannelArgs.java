@@ -15,14 +15,14 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
     public static final GetAnalyticsInstancePrivateAccessChannelArgs Empty = new GetAnalyticsInstancePrivateAccessChannelArgs();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId", required=true)
     private Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Output<String> analyticsInstanceId() {
@@ -30,14 +30,14 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
     }
 
     /**
-     * The unique identifier key of the Private Access Channel.
+     * The unique identifier key of the private access channel.
      * 
      */
     @Import(name="privateAccessChannelKey", required=true)
     private Output<String> privateAccessChannelKey;
 
     /**
-     * @return The unique identifier key of the Private Access Channel.
+     * @return The unique identifier key of the private access channel.
      * 
      */
     public Output<String> privateAccessChannelKey() {
@@ -70,7 +70,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
         }
 
         /**
-         * @param privateAccessChannelKey The unique identifier key of the Private Access Channel.
+         * @param privateAccessChannelKey The unique identifier key of the private access channel.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelArgs extends com.pulu
         }
 
         /**
-         * @param privateAccessChannelKey The unique identifier key of the Private Access Channel.
+         * @param privateAccessChannelKey The unique identifier key of the private access channel.
          * 
          * @return builder
          * 

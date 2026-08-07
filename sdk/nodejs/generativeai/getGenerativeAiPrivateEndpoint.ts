@@ -79,6 +79,10 @@ export interface GetGenerativeAiPrivateEndpointResult {
      */
     readonly privateEndpointIp: string;
     /**
+     * The resource type that Generative AI private endpoint can be used for.
+     */
+    readonly resourceType: string;
+    /**
      * The current state of the Generative AI Private Endpoint.
      */
     readonly state: string;

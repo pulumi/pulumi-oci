@@ -35,6 +35,16 @@ export type DeploymentCertificate = import("./deploymentCertificate").Deployment
 export const DeploymentCertificate: typeof import("./deploymentCertificate").DeploymentCertificate = null as any;
 utilities.lazyLoad(exports, ["DeploymentCertificate"], () => require("./deploymentCertificate"));
 
+export { GetAiModelsArgs, GetAiModelsResult, GetAiModelsOutputArgs } from "./getAiModels";
+export const getAiModels: typeof import("./getAiModels").getAiModels = null as any;
+export const getAiModelsOutput: typeof import("./getAiModels").getAiModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getAiModels","getAiModelsOutput"], () => require("./getAiModels"));
+
+export { GetAiProvidersArgs, GetAiProvidersResult, GetAiProvidersOutputArgs } from "./getAiProviders";
+export const getAiProviders: typeof import("./getAiProviders").getAiProviders = null as any;
+export const getAiProvidersOutput: typeof import("./getAiProviders").getAiProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getAiProviders","getAiProvidersOutput"], () => require("./getAiProviders"));
+
 export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
 export const getConnection: typeof import("./getConnection").getConnection = null as any;
 export const getConnectionOutput: typeof import("./getConnection").getConnectionOutput = null as any;

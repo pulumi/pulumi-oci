@@ -11,6 +11,8 @@ import com.pulumi.oci.Core.CrossConnectGroupArgs;
 import com.pulumi.oci.Core.inputs.CrossConnectGroupState;
 import com.pulumi.oci.Core.outputs.CrossConnectGroupMacsecProperties;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -69,6 +71,9 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(crossConnectGroupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .interfaceDownTimerValueInMilliseconds(crossConnectGroupInterfaceDownTimerValueInMilliseconds)
+ *             .isInterfaceHoldTimerEnabled(crossConnectGroupIsInterfaceHoldTimerEnabled)
+ *             .isQosEnabled(crossConnectGroupIsQosEnabled)
  *             .macsecProperties(CrossConnectGroupMacsecPropertiesArgs.builder()
  *                 .state(crossConnectGroupMacsecPropertiesState)
  *                 .encryptionCipher(crossConnectGroupMacsecPropertiesEncryptionCipher)
@@ -78,6 +83,7 @@ import javax.annotation.Nullable;
  *                     .connectivityAssociationNameSecretId(testSecret.id())
  *                     .build())
  *                 .build())
+ *             .minimumLinks(crossConnectGroupMinimumLinks)
  *             .build());
  * 
  *     }
@@ -167,6 +173,48 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    @Export(name="interfaceDownTimerValueInMilliseconds", refs={Integer.class}, tree="[0]")
+    private Output<Integer> interfaceDownTimerValueInMilliseconds;
+
+    /**
+     * @return (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     * 
+     */
+    public Output<Integer> interfaceDownTimerValueInMilliseconds() {
+        return this.interfaceDownTimerValueInMilliseconds;
+    }
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    @Export(name="isInterfaceHoldTimerEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isInterfaceHoldTimerEnabled;
+
+    /**
+     * @return (Updatable) The flag to enable or disable the down timer for the interface.
+     * 
+     */
+    public Output<Boolean> isInterfaceHoldTimerEnabled() {
+        return this.isInterfaceHoldTimerEnabled;
+    }
+    /**
+     * (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    @Export(name="isQosEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isQosEnabled;
+
+    /**
+     * @return (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     * 
+     */
+    public Output<Boolean> isQosEnabled() {
+        return this.isQosEnabled;
+    }
+    /**
      * (Updatable) Properties used to configure MACsec (if capable).
      * 
      */
@@ -179,6 +227,26 @@ public class CrossConnectGroup extends com.pulumi.resources.CustomResource {
      */
     public Output<CrossConnectGroupMacsecProperties> macsecProperties() {
         return this.macsecProperties;
+    }
+    /**
+     * (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="minimumLinks", refs={Integer.class}, tree="[0]")
+    private Output<Integer> minimumLinks;
+
+    /**
+     * @return (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Integer> minimumLinks() {
+        return this.minimumLinks;
     }
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.

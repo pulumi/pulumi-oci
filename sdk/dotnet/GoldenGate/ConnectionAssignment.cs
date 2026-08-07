@@ -67,6 +67,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConnectionId { get; private set; } = null!;
 
         /// <summary>
+        /// The connection type.
+        /// </summary>
+        [Output("connectionType")]
+        public Output<string> ConnectionType { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
         [Output("deploymentId")]
@@ -193,6 +199,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }
+
+        /// <summary>
+        /// The connection type.
+        /// </summary>
+        [Input("connectionType")]
+        public Input<string>? ConnectionType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.

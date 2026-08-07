@@ -27,10 +27,13 @@ class GetApiaccesscontrolPrivilegedApiControlResult:
     """
     A collection of values returned by getApiaccesscontrolPrivilegedApiControl.
     """
-    def __init__(__self__, approver_group_id_lists=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, notification_topic_id=None, number_of_approvers=None, privileged_api_control_id=None, privileged_operation_lists=None, resource_type=None, resources=None, state=None, state_details=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None):
+    def __init__(__self__, approver_group_id_lists=None, approver_group_level_lists=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, notification_topic_id=None, number_of_approvers=None, privileged_api_control_id=None, privileged_operation_lists=None, resource_type=None, resources=None, state=None, state_details=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None):
         if approver_group_id_lists and not isinstance(approver_group_id_lists, list):
             raise TypeError("Expected argument 'approver_group_id_lists' to be a list")
         pulumi.set(__self__, "approver_group_id_lists", approver_group_id_lists)
+        if approver_group_level_lists and not isinstance(approver_group_level_lists, list):
+            raise TypeError("Expected argument 'approver_group_level_lists' to be a list")
+        pulumi.set(__self__, "approver_group_level_lists", approver_group_level_lists)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -96,6 +99,14 @@ class GetApiaccesscontrolPrivilegedApiControlResult:
         List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
         """
         return pulumi.get(self, "approver_group_id_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevelLists")
+    def approver_group_level_lists(self) -> Sequence['outputs.GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListResult']:
+        """
+        List of Group containing the levels at which the users belonging to the group can authorize.
+        """
+        return pulumi.get(self, "approver_group_level_lists")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -226,7 +237,7 @@ class GetApiaccesscontrolPrivilegedApiControlResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -254,6 +265,7 @@ class AwaitableGetApiaccesscontrolPrivilegedApiControlResult(GetApiaccesscontrol
             yield self
         return GetApiaccesscontrolPrivilegedApiControlResult(
             approver_group_id_lists=self.approver_group_id_lists,
+            approver_group_level_lists=self.approver_group_level_lists,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -301,6 +313,7 @@ def get_apiaccesscontrol_privileged_api_control(privileged_api_control_id: Optio
 
     return AwaitableGetApiaccesscontrolPrivilegedApiControlResult(
         approver_group_id_lists=pulumi.get(__ret__, 'approver_group_id_lists'),
+        approver_group_level_lists=pulumi.get(__ret__, 'approver_group_level_lists'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -345,6 +358,7 @@ def get_apiaccesscontrol_privileged_api_control_output(privileged_api_control_id
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getApiaccesscontrolPrivilegedApiControl:getApiaccesscontrolPrivilegedApiControl', __args__, opts=opts, typ=GetApiaccesscontrolPrivilegedApiControlResult)
     return __ret__.apply(lambda __response__: GetApiaccesscontrolPrivilegedApiControlResult(
         approver_group_id_lists=pulumi.get(__response__, 'approver_group_id_lists'),
+        approver_group_level_lists=pulumi.get(__response__, 'approver_group_level_lists'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),

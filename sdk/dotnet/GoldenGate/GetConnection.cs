@@ -79,7 +79,9 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetConnectionResult
     {
         /// <summary>
-        /// Access key ID to access the Amazon S3 bucket.
+        /// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+        /// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
         /// </summary>
         public readonly string AccessKeyId;
         public readonly string AccountKey;
@@ -95,6 +97,10 @@ namespace Pulumi.Oci.GoldenGate
         /// An array of name-value pair attribute entries. Used as additional parameters in connection string.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionAdditionalAttributeResult> AdditionalAttributes;
+        /// <summary>
+        /// Represents authentication details for an AI Model connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionAuthDetailResult> AuthDetails;
         /// <summary>
         /// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         /// </summary>
@@ -127,12 +133,17 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionCatalogResult> Catalogs;
         /// <summary>
-        /// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        /// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        /// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+        /// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
         public readonly string ClientId;
         public readonly string ClientSecret;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+        /// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+        /// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+        /// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+        /// Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         public readonly string ClientSecretSecretId;
         /// <summary>
@@ -167,6 +178,7 @@ namespace Pulumi.Oci.GoldenGate
         /// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
         /// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
         /// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+        /// * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
         /// </summary>
         public readonly string ConnectionUrl;
         /// <summary>
@@ -210,7 +222,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly bool DoesUseSecretIds;
         /// <summary>
-        /// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+        /// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+        /// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        /// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+        /// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         /// </summary>
         public readonly string Endpoint;
         /// <summary>
@@ -258,13 +273,17 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string JndiSecurityPrincipal;
         /// <summary>
-        /// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+        /// References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
         /// </summary>
         public readonly string KeyId;
         public readonly string KeyStore;
         public readonly string KeyStorePassword;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+        /// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+        /// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+        /// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+        /// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+        /// Note: When provided, 'keyStorePassword' field must not be provided.
         /// </summary>
         public readonly string KeyStorePasswordSecretId;
         /// <summary>
@@ -279,6 +298,14 @@ namespace Pulumi.Oci.GoldenGate
         /// Locks associated with this resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionLockResult> Locks;
+        /// <summary>
+        /// Maximum number of input characters supported by this AI model connection.
+        /// </summary>
+        public readonly int MaxInputChars;
+        /// <summary>
+        /// AI model identifier.
+        /// </summary>
+        public readonly string ModelKey;
         /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
@@ -311,6 +338,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string ProducerProperties;
         /// <summary>
+        /// AI Provider type used by the AI Model Connection.
+        /// </summary>
+        public readonly string ProviderType;
+        /// <summary>
         /// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         /// </summary>
         public readonly string PublicKeyFingerprint;
@@ -323,7 +354,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        /// Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
         /// </summary>
         public readonly string RoutingMethod;
         public readonly string SasToken;
@@ -333,7 +364,8 @@ namespace Pulumi.Oci.GoldenGate
         public readonly string SasTokenSecretId;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        /// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        /// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         /// <summary>
@@ -341,14 +373,20 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
         /// <summary>
-        /// Security Protocol to be provided for the following connection types:
-        /// * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-        /// * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+        /// * DB2: Security protocol for the DB2 database.
+        /// * ELASTICSEARCH: Security protocol for Elasticsearch.
+        /// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+        /// * KAFKA: Security Type for Kafka.
+        /// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+        /// * MONGODB: Security Type for MongoDB.
+        /// * MYSQL: Security Type for MySQL.
+        /// * POSTGRESQL: Security protocol for PostgreSQL.
+        /// * REDIS: Security protocol for Redis.
         /// </summary>
         public readonly string SecurityProtocol;
         /// <summary>
-        /// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        /// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+        /// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+        /// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
         /// </summary>
         public readonly string Servers;
         public readonly string ServiceAccountKeyFile;
@@ -365,7 +403,8 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly bool ShouldUseJndi;
         /// <summary>
-        /// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+        /// * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+        /// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         /// </summary>
         public readonly bool ShouldUseResourcePrincipal;
         /// <summary>
@@ -373,11 +412,14 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly bool ShouldValidateServerCertificate;
         /// <summary>
-        /// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+        /// * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         public readonly string SslCa;
         /// <summary>
-        /// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         public readonly string SslCert;
         public readonly string SslClientKeystash;
@@ -391,22 +433,27 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string SslClientKeystoredbSecretId;
         /// <summary>
-        /// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         public readonly string SslCrl;
         public readonly string SslKey;
         public readonly string SslKeyPassword;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+        /// * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+        /// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+        /// Note: When provided, 'sslKeyPassword' field must not be provided.
         /// </summary>
         public readonly string SslKeyPasswordSecretId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-        /// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+        /// * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+        /// * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+        /// Note: When provided, 'sslKey' field must not be provided.
         /// </summary>
         public readonly string SslKeySecretId;
         /// <summary>
-        /// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+        /// * MYSQL: SSL modes for MySQL.
+        /// * POSTGRESQL: SSL modes for PostgreSQL.
         /// </summary>
         public readonly string SslMode;
         /// <summary>
@@ -480,7 +527,11 @@ namespace Pulumi.Oci.GoldenGate
         public readonly string TrustStore;
         public readonly string TrustStorePassword;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+        /// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+        /// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+        /// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+        /// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+        /// Note: When provided, 'trustStorePassword' field must not be provided.
         /// </summary>
         public readonly string TrustStorePasswordSecretId;
         /// <summary>
@@ -492,7 +543,8 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Url;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        /// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        /// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
         /// </summary>
         public readonly string UserId;
         /// <summary>
@@ -500,7 +552,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string Username;
         /// <summary>
-        /// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+        /// References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
         /// </summary>
         public readonly string VaultId;
         public readonly string Wallet;
@@ -520,6 +572,8 @@ namespace Pulumi.Oci.GoldenGate
             string accountName,
 
             ImmutableArray<Outputs.GetConnectionAdditionalAttributeResult> additionalAttributes,
+
+            ImmutableArray<Outputs.GetConnectionAuthDetailResult> authDetails,
 
             string authenticationMode,
 
@@ -615,6 +669,10 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetConnectionLockResult> locks,
 
+            int maxInputChars,
+
+            string modelKey,
+
             ImmutableArray<string> nsgIds,
 
             string password,
@@ -634,6 +692,8 @@ namespace Pulumi.Oci.GoldenGate
             string privateKeyPassphraseSecretId,
 
             string producerProperties,
+
+            string providerType,
 
             string publicKeyFingerprint,
 
@@ -756,6 +816,7 @@ namespace Pulumi.Oci.GoldenGate
             AccountKeySecretId = accountKeySecretId;
             AccountName = accountName;
             AdditionalAttributes = additionalAttributes;
+            AuthDetails = authDetails;
             AuthenticationMode = authenticationMode;
             AuthenticationType = authenticationType;
             AzureAuthorityHost = azureAuthorityHost;
@@ -803,6 +864,8 @@ namespace Pulumi.Oci.GoldenGate
             KeyStoreSecretId = keyStoreSecretId;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
+            MaxInputChars = maxInputChars;
+            ModelKey = modelKey;
             NsgIds = nsgIds;
             Password = password;
             PasswordSecretId = passwordSecretId;
@@ -813,6 +876,7 @@ namespace Pulumi.Oci.GoldenGate
             PrivateKeyPassphrase = privateKeyPassphrase;
             PrivateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             ProducerProperties = producerProperties;
+            ProviderType = providerType;
             PublicKeyFingerprint = publicKeyFingerprint;
             RedisClusterId = redisClusterId;
             Region = region;

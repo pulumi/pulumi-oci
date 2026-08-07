@@ -28,7 +28,7 @@ class GetConnectionsResult:
     """
     A collection of values returned by getConnections.
     """
-    def __init__(__self__, assignable_deployment_id=None, assignable_deployment_type=None, assigned_deployment_id=None, compartment_id=None, connection_collections=None, connection_types=None, display_name=None, filters=None, id=None, state=None, technology_types=None):
+    def __init__(__self__, assignable_deployment_id=None, assignable_deployment_type=None, assigned_deployment_id=None, compartment_id=None, connection_collections=None, connection_type_not_equal_tos=None, connection_types=None, display_name=None, filters=None, id=None, state=None, technology_types=None):
         if assignable_deployment_id and not isinstance(assignable_deployment_id, str):
             raise TypeError("Expected argument 'assignable_deployment_id' to be a str")
         pulumi.set(__self__, "assignable_deployment_id", assignable_deployment_id)
@@ -44,6 +44,9 @@ class GetConnectionsResult:
         if connection_collections and not isinstance(connection_collections, list):
             raise TypeError("Expected argument 'connection_collections' to be a list")
         pulumi.set(__self__, "connection_collections", connection_collections)
+        if connection_type_not_equal_tos and not isinstance(connection_type_not_equal_tos, list):
+            raise TypeError("Expected argument 'connection_type_not_equal_tos' to be a list")
+        pulumi.set(__self__, "connection_type_not_equal_tos", connection_type_not_equal_tos)
         if connection_types and not isinstance(connection_types, list):
             raise TypeError("Expected argument 'connection_types' to be a list")
         pulumi.set(__self__, "connection_types", connection_types)
@@ -93,6 +96,11 @@ class GetConnectionsResult:
         The list of connection_collection.
         """
         return pulumi.get(self, "connection_collections")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionTypeNotEqualTos")
+    def connection_type_not_equal_tos(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "connection_type_not_equal_tos")
 
     @_builtins.property
     @pulumi.getter(name="connectionTypes")
@@ -148,6 +156,7 @@ class AwaitableGetConnectionsResult(GetConnectionsResult):
             assigned_deployment_id=self.assigned_deployment_id,
             compartment_id=self.compartment_id,
             connection_collections=self.connection_collections,
+            connection_type_not_equal_tos=self.connection_type_not_equal_tos,
             connection_types=self.connection_types,
             display_name=self.display_name,
             filters=self.filters,
@@ -160,6 +169,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
                     assignable_deployment_type: Optional[_builtins.str] = None,
                     assigned_deployment_id: Optional[_builtins.str] = None,
                     compartment_id: Optional[_builtins.str] = None,
+                    connection_type_not_equal_tos: Optional[Sequence[_builtins.str]] = None,
                     connection_types: Optional[Sequence[_builtins.str]] = None,
                     display_name: Optional[_builtins.str] = None,
                     filters: Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]] = None,
@@ -182,6 +192,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],
         connection_types=connection_connection_type,
+        connection_type_not_equal_tos=connection_connection_type_not_equal_to,
         display_name=connection_display_name,
         state=connection_state,
         technology_types=connection_technology_type)
@@ -192,6 +203,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
     :param _builtins.str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
     :param _builtins.str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+    :param Sequence[_builtins.str] connection_type_not_equal_tos: The array of connection types to exclude.
     :param Sequence[_builtins.str] connection_types: The array of connection types.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str state: A filter to return only connections having the 'lifecycleState' given.
@@ -202,6 +214,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
     __args__['assignableDeploymentType'] = assignable_deployment_type
     __args__['assignedDeploymentId'] = assigned_deployment_id
     __args__['compartmentId'] = compartment_id
+    __args__['connectionTypeNotEqualTos'] = connection_type_not_equal_tos
     __args__['connectionTypes'] = connection_types
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -216,6 +229,7 @@ def get_connections(assignable_deployment_id: Optional[_builtins.str] = None,
         assigned_deployment_id=pulumi.get(__ret__, 'assigned_deployment_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_collections=pulumi.get(__ret__, 'connection_collections'),
+        connection_type_not_equal_tos=pulumi.get(__ret__, 'connection_type_not_equal_tos'),
         connection_types=pulumi.get(__ret__, 'connection_types'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
@@ -226,6 +240,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
                            assignable_deployment_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            assigned_deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+                           connection_type_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionsFilterArgs', 'GetConnectionsFilterArgsDict']]]]] = None,
@@ -248,6 +263,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
         assignable_deployment_type=connection_assignable_deployment_type,
         assigned_deployment_id=test_deployment["id"],
         connection_types=connection_connection_type,
+        connection_type_not_equal_tos=connection_connection_type_not_equal_to,
         display_name=connection_display_name,
         state=connection_state,
         technology_types=connection_technology_type)
@@ -258,6 +274,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
     :param _builtins.str assignable_deployment_type: Filters for connections which can be assigned to the latest version of the specified deployment type.
     :param _builtins.str assigned_deployment_id: The OCID of the deployment which for the connection must be assigned.
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
+    :param Sequence[_builtins.str] connection_type_not_equal_tos: The array of connection types to exclude.
     :param Sequence[_builtins.str] connection_types: The array of connection types.
     :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param _builtins.str state: A filter to return only connections having the 'lifecycleState' given.
@@ -268,6 +285,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
     __args__['assignableDeploymentType'] = assignable_deployment_type
     __args__['assignedDeploymentId'] = assigned_deployment_id
     __args__['compartmentId'] = compartment_id
+    __args__['connectionTypeNotEqualTos'] = connection_type_not_equal_tos
     __args__['connectionTypes'] = connection_types
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -281,6 +299,7 @@ def get_connections_output(assignable_deployment_id: pulumi.Input[Optional[Optio
         assigned_deployment_id=pulumi.get(__response__, 'assigned_deployment_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_collections=pulumi.get(__response__, 'connection_collections'),
+        connection_type_not_equal_tos=pulumi.get(__response__, 'connection_type_not_equal_tos'),
         connection_types=pulumi.get(__response__, 'connection_types'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),

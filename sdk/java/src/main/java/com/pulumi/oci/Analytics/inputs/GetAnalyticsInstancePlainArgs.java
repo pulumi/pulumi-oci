@@ -14,14 +14,14 @@ public final class GetAnalyticsInstancePlainArgs extends com.pulumi.resources.In
     public static final GetAnalyticsInstancePlainArgs Empty = new GetAnalyticsInstancePlainArgs();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId", required=true)
     private String analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public String analyticsInstanceId() {
@@ -53,7 +53,7 @@ public final class GetAnalyticsInstancePlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 

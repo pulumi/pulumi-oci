@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     assignableDeploymentType: connectionAssignableDeploymentType,
  *     assignedDeploymentId: testDeployment.id,
  *     connectionTypes: connectionConnectionType,
+ *     connectionTypeNotEqualTos: connectionConnectionTypeNotEqualTo,
  *     displayName: connectionDisplayName,
  *     state: connectionState,
  *     technologyTypes: connectionTechnologyType,
@@ -36,6 +37,7 @@ export function getConnections(args: GetConnectionsArgs, opts?: pulumi.InvokeOpt
         "assignableDeploymentType": args.assignableDeploymentType,
         "assignedDeploymentId": args.assignedDeploymentId,
         "compartmentId": args.compartmentId,
+        "connectionTypeNotEqualTos": args.connectionTypeNotEqualTos,
         "connectionTypes": args.connectionTypes,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -64,6 +66,10 @@ export interface GetConnectionsArgs {
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
     compartmentId: string;
+    /**
+     * The array of connection types to exclude.
+     */
+    connectionTypeNotEqualTos?: string[];
     /**
      * The array of connection types.
      */
@@ -98,6 +104,7 @@ export interface GetConnectionsResult {
      * The list of connection_collection.
      */
     readonly connectionCollections: outputs.GoldenGate.GetConnectionsConnectionCollection[];
+    readonly connectionTypeNotEqualTos?: string[];
     /**
      * The connection type.
      */
@@ -134,6 +141,7 @@ export interface GetConnectionsResult {
  *     assignableDeploymentType: connectionAssignableDeploymentType,
  *     assignedDeploymentId: testDeployment.id,
  *     connectionTypes: connectionConnectionType,
+ *     connectionTypeNotEqualTos: connectionConnectionTypeNotEqualTo,
  *     displayName: connectionDisplayName,
  *     state: connectionState,
  *     technologyTypes: connectionTechnologyType,
@@ -147,6 +155,7 @@ export function getConnectionsOutput(args: GetConnectionsOutputArgs, opts?: pulu
         "assignableDeploymentType": args.assignableDeploymentType,
         "assignedDeploymentId": args.assignedDeploymentId,
         "compartmentId": args.compartmentId,
+        "connectionTypeNotEqualTos": args.connectionTypeNotEqualTos,
         "connectionTypes": args.connectionTypes,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -175,6 +184,10 @@ export interface GetConnectionsOutputArgs {
      * The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The array of connection types to exclude.
+     */
+    connectionTypeNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The array of connection types.
      */

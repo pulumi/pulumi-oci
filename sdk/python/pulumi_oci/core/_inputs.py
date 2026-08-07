@@ -17,6 +17,8 @@ from .. import _utilities
 __all__ = [
     'BootVolumeAutotunePolicyArgs',
     'BootVolumeAutotunePolicyArgsDict',
+    'BootVolumeBackupRetentionPeriodArgs',
+    'BootVolumeBackupRetentionPeriodArgsDict',
     'BootVolumeBackupSourceDetailsArgs',
     'BootVolumeBackupSourceDetailsArgsDict',
     'BootVolumeBootVolumeReplicaArgs',
@@ -113,6 +115,8 @@ __all__ = [
     'CrossConnectGroupMacsecPropertiesArgsDict',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgsDict',
+    'CrossConnectLoaPropertiesArgs',
+    'CrossConnectLoaPropertiesArgsDict',
     'CrossConnectMacsecPropertiesArgs',
     'CrossConnectMacsecPropertiesArgsDict',
     'CrossConnectMacsecPropertiesPrimaryKeyArgs',
@@ -405,10 +409,16 @@ __all__ = [
     'VolumeAutotunePolicyArgsDict',
     'VolumeBackupPolicyScheduleArgs',
     'VolumeBackupPolicyScheduleArgsDict',
+    'VolumeBackupPolicyScheduleRetentionPeriodArgs',
+    'VolumeBackupPolicyScheduleRetentionPeriodArgsDict',
+    'VolumeBackupRetentionPeriodArgs',
+    'VolumeBackupRetentionPeriodArgsDict',
     'VolumeBackupSourceDetailsArgs',
     'VolumeBackupSourceDetailsArgsDict',
     'VolumeBlockVolumeReplicaArgs',
     'VolumeBlockVolumeReplicaArgsDict',
+    'VolumeGroupBackupRetentionPeriodArgs',
+    'VolumeGroupBackupRetentionPeriodArgsDict',
     'VolumeGroupBackupSourceDetailsArgs',
     'VolumeGroupBackupSourceDetailsArgsDict',
     'VolumeGroupSourceDetailsArgs',
@@ -671,6 +681,53 @@ class BootVolumeAutotunePolicyArgs:
     @max_vpus_per_gb.setter
     def max_vpus_per_gb(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "max_vpus_per_gb", value)
+
+
+class BootVolumeBackupRetentionPeriodArgsDict(TypedDict):
+    retention_time_amount: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+    """
+    retention_time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+    """
+
+@pulumi.input_type
+class BootVolumeBackupRetentionPeriodArgs:
+    def __init__(__self__, *,
+                 retention_time_amount: pulumi.Input[_builtins.int],
+                 retention_time_unit: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.int] retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param pulumi.Input[_builtins.str] retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @retention_time_amount.setter
+    def retention_time_amount(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "retention_time_amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+    @retention_time_unit.setter
+    def retention_time_unit(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "retention_time_unit", value)
 
 
 class BootVolumeBackupSourceDetailsArgsDict(TypedDict):
@@ -4443,9 +4500,6 @@ class CrossConnectGroupMacsecPropertiesArgsDict(TypedDict):
     state: pulumi.Input[_builtins.str]
     """
     (Updatable) Indicates whether or not MACsec is enabled.
-
-    ** IMPORTANT **
-    Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
     """
     encryption_cipher: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -4469,9 +4523,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
                  primary_key: pulumi.Input[Optional['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs']] = None):
         """
         :param pulumi.Input[_builtins.str] state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         :param pulumi.Input[_builtins.bool] is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesPrimaryKeyArgs'] primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
@@ -4489,9 +4540,6 @@ class CrossConnectGroupMacsecPropertiesArgs:
     def state(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -4633,6 +4681,55 @@ class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs:
     @connectivity_association_name_secret_version.setter
     def connectivity_association_name_secret_version(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connectivity_association_name_secret_version", value)
+
+
+class CrossConnectLoaPropertiesArgsDict(TypedDict):
+    authorized_agent: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+    """
+    expiry_extension_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+    """
+
+@pulumi.input_type
+class CrossConnectLoaPropertiesArgs:
+    def __init__(__self__, *,
+                 authorized_agent: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiry_extension_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] authorized_agent: (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        :param pulumi.Input[_builtins.int] expiry_extension_count: (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        if authorized_agent is not None:
+            pulumi.set(__self__, "authorized_agent", authorized_agent)
+        if expiry_extension_count is not None:
+            pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        """
+        return pulumi.get(self, "authorized_agent")
+
+    @authorized_agent.setter
+    def authorized_agent(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "authorized_agent", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        return pulumi.get(self, "expiry_extension_count")
+
+    @expiry_extension_count.setter
+    def expiry_extension_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expiry_extension_count", value)
 
 
 class CrossConnectMacsecPropertiesArgsDict(TypedDict):
@@ -20692,6 +20789,14 @@ class VolumeBackupPolicyScheduleArgsDict(TypedDict):
     """
     (Updatable) The hour of the day to schedule the volume backup.
     """
+    is_prevent_deletion_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+    """
+    is_retention_lock_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+    """
     month: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) The month of the year to schedule the volume backup.
@@ -20718,6 +20823,10 @@ class VolumeBackupPolicyScheduleArgsDict(TypedDict):
 
     For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
     """
+    retention_period: NotRequired[pulumi.Input[Optional['VolumeBackupPolicyScheduleRetentionPeriodArgsDict']]]
+    """
+    (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+    """
     time_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     (Updatable) Specifies what time zone is the schedule in
@@ -20738,9 +20847,12 @@ class VolumeBackupPolicyScheduleArgs:
                  day_of_month: pulumi.Input[Optional[_builtins.int]] = None,
                  day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
                  hour_of_day: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  month: pulumi.Input[Optional[_builtins.str]] = None,
                  offset_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  offset_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period: pulumi.Input[Optional['VolumeBackupPolicyScheduleRetentionPeriodArgs']] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] backup_type: (Updatable) The type of volume backup to create.
@@ -20749,6 +20861,8 @@ class VolumeBackupPolicyScheduleArgs:
         :param pulumi.Input[_builtins.int] day_of_month: (Updatable) The day of the month to schedule the volume backup.
         :param pulumi.Input[_builtins.str] day_of_week: (Updatable) The day of the week to schedule the volume backup.
         :param pulumi.Input[_builtins.int] hour_of_day: (Updatable) The hour of the day to schedule the volume backup.
+        :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] month: (Updatable) The month of the year to schedule the volume backup.
         :param pulumi.Input[_builtins.int] offset_seconds: (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
         :param pulumi.Input[_builtins.str] offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
@@ -20766,6 +20880,7 @@ class VolumeBackupPolicyScheduleArgs:
                If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
                
                For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+        :param pulumi.Input['VolumeBackupPolicyScheduleRetentionPeriodArgs'] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
                - `UTC`
@@ -20783,12 +20898,18 @@ class VolumeBackupPolicyScheduleArgs:
             pulumi.set(__self__, "day_of_week", day_of_week)
         if hour_of_day is not None:
             pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if is_prevent_deletion_enabled is not None:
+            pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if month is not None:
             pulumi.set(__self__, "month", month)
         if offset_seconds is not None:
             pulumi.set(__self__, "offset_seconds", offset_seconds)
         if offset_type is not None:
             pulumi.set(__self__, "offset_type", offset_type)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -20865,6 +20986,30 @@ class VolumeBackupPolicyScheduleArgs:
         pulumi.set(self, "hour_of_day", value)
 
     @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_prevent_deletion_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter
     def month(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -20915,6 +21060,18 @@ class VolumeBackupPolicyScheduleArgs:
         pulumi.set(self, "offset_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> pulumi.Input[Optional['VolumeBackupPolicyScheduleRetentionPeriodArgs']]:
+        """
+        (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_period")
+
+    @retention_period.setter
+    def retention_period(self, value: pulumi.Input[Optional['VolumeBackupPolicyScheduleRetentionPeriodArgs']]):
+        pulumi.set(self, "retention_period", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -20931,6 +21088,100 @@ class VolumeBackupPolicyScheduleArgs:
     @time_zone.setter
     def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
+
+
+class VolumeBackupPolicyScheduleRetentionPeriodArgsDict(TypedDict):
+    retention_time_amount: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+    """
+    retention_time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+    """
+
+@pulumi.input_type
+class VolumeBackupPolicyScheduleRetentionPeriodArgs:
+    def __init__(__self__, *,
+                 retention_time_amount: pulumi.Input[_builtins.int],
+                 retention_time_unit: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.int] retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param pulumi.Input[_builtins.str] retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @retention_time_amount.setter
+    def retention_time_amount(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "retention_time_amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+    @retention_time_unit.setter
+    def retention_time_unit(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "retention_time_unit", value)
+
+
+class VolumeBackupRetentionPeriodArgsDict(TypedDict):
+    retention_time_amount: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+    """
+    retention_time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+    """
+
+@pulumi.input_type
+class VolumeBackupRetentionPeriodArgs:
+    def __init__(__self__, *,
+                 retention_time_amount: pulumi.Input[_builtins.int],
+                 retention_time_unit: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.int] retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param pulumi.Input[_builtins.str] retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @retention_time_amount.setter
+    def retention_time_amount(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "retention_time_amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+    @retention_time_unit.setter
+    def retention_time_unit(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "retention_time_unit", value)
 
 
 class VolumeBackupSourceDetailsArgsDict(TypedDict):
@@ -21115,6 +21366,53 @@ class VolumeBlockVolumeReplicaArgs:
     @xrr_kms_key_id.setter
     def xrr_kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "xrr_kms_key_id", value)
+
+
+class VolumeGroupBackupRetentionPeriodArgsDict(TypedDict):
+    retention_time_amount: pulumi.Input[_builtins.int]
+    """
+    (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+    """
+    retention_time_unit: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+    """
+
+@pulumi.input_type
+class VolumeGroupBackupRetentionPeriodArgs:
+    def __init__(__self__, *,
+                 retention_time_amount: pulumi.Input[_builtins.int],
+                 retention_time_unit: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.int] retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param pulumi.Input[_builtins.str] retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @retention_time_amount.setter
+    def retention_time_amount(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "retention_time_amount", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+    @retention_time_unit.setter
+    def retention_time_unit(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "retention_time_unit", value)
 
 
 class VolumeGroupBackupSourceDetailsArgsDict(TypedDict):

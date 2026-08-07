@@ -21,13 +21,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivilegedApiRequest = new oci.oci.ApiaccesscontrolPrivilegedApiRequest("test_privileged_api_request", {
+ *     compartmentId: compartmentId,
  *     privilegedOperationLists: [{
  *         apiName: testApi.name,
  *         attributeNames: privilegedApiRequestPrivilegedOperationListAttributeNames,
  *     }],
  *     reasonSummary: privilegedApiRequestReasonSummary,
  *     resourceId: testResource.id,
- *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -91,7 +91,7 @@ export class ApiaccesscontrolPrivilegedApiRequest extends pulumi.CustomResource 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    declare public readonly compartmentId: pulumi.Output<string>;
+    declare public readonly compartmentId: pulumi.Output<string | undefined>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */

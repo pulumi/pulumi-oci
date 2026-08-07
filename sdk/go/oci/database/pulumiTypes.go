@@ -32247,6 +32247,112 @@ func (o ExadbVmClusterIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInput)
 	}).(ExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
+type ExadbVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider *string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id *string `pulumi:"id"`
+}
+
+// ExadbVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts ExadbVmClusterMultiCloudIdentityConnectorConfigArgs and ExadbVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `ExadbVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	ExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type ExadbVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToExadbVmClusterMultiCloudIdentityConnectorConfigOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type ExadbVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringPtrInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (ExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i ExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToExadbVmClusterMultiCloudIdentityConnectorConfigOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i ExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// ExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts ExadbVmClusterMultiCloudIdentityConnectorConfigArray and ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `ExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	ExadbVmClusterMultiCloudIdentityConnectorConfigArray{ ExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type ExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type ExadbVmClusterMultiCloudIdentityConnectorConfigArray []ExadbVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (ExadbVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i ExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i ExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type ExadbVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (ExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToExadbVmClusterMultiCloudIdentityConnectorConfigOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadbVmClusterMultiCloudIdentityConnectorConfig) *string { return v.CloudProvider }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the identity connector
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadbVmClusterMultiCloudIdentityConnectorConfig) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) ExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExadbVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]ExadbVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(ExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
 type ExadbVmClusterNodeConfig struct {
 	// (Updatable) The number of ECPUs to enable for each node.
 	EnabledEcpuCountPerNode int `pulumi:"enabledEcpuCountPerNode"`
@@ -78448,105 +78554,6 @@ func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDet
 	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
 }
 
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth struct {
-	// Name of the month of the year.
-	Name string `pulumi:"name"`
-}
-
-// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
-//
-//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
-	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
-}
-
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs struct {
-	// Name of the month of the year.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
-	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
-}
-
-// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
-// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
-//
-//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
-	pulumi.Input
-
-	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
-	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
-}
-
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput
-
-func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
-}
-
-func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
-	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Background())
-}
-
-func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
-}
-
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
-	return o
-}
-
-// Name of the month of the year.
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput struct{ *pulumi.OutputState }
-
-func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
-}
-
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
-	return o
-}
-
-func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth {
-		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)[vs[1].(int)]
-	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AutonomousContainerDatabaseAddStandbyBackupConfigArrayInput)(nil)).Elem(), AutonomousContainerDatabaseAddStandbyBackupConfigArray{})
@@ -78950,6 +78957,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterIormConfigCacheArrayInput)(nil)).Elem(), ExadbVmClusterIormConfigCacheArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), ExadbVmClusterIormConfigCacheDbPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), ExadbVmClusterIormConfigCacheDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), ExadbVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), ExadbVmClusterMultiCloudIdentityConnectorConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterNodeConfigInput)(nil)).Elem(), ExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterNodeConfigPtrInput)(nil)).Elem(), ExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ExadbVmClusterNodeResourceInput)(nil)).Elem(), ExadbVmClusterNodeResourceArgs{})
@@ -79546,8 +79555,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(AutonomousContainerDatabaseAddStandbyBackupConfigBackupDestinationDetailOutput{})
@@ -79950,6 +79957,8 @@ func init() {
 	pulumi.RegisterOutputType(ExadbVmClusterIormConfigCacheArrayOutput{})
 	pulumi.RegisterOutputType(ExadbVmClusterIormConfigCacheDbPlanOutput{})
 	pulumi.RegisterOutputType(ExadbVmClusterIormConfigCacheDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(ExadbVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(ExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
 	pulumi.RegisterOutputType(ExadbVmClusterNodeConfigOutput{})
 	pulumi.RegisterOutputType(ExadbVmClusterNodeConfigPtrOutput{})
 	pulumi.RegisterOutputType(ExadbVmClusterNodeResourceOutput{})
@@ -80546,6 +80555,4 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput{})
-	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput{})
 }

@@ -30,6 +30,14 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int HourOfDay;
         /// <summary>
+        /// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        public readonly bool IsPreventDeletionEnabled;
+        /// <summary>
+        /// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        public readonly bool IsRetentionLockEnabled;
+        /// <summary>
         /// The month of the year to schedule the volume backup.
         /// </summary>
         public readonly string Month;
@@ -45,6 +53,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The volume backup frequency.
         /// </summary>
         public readonly string Period;
+        /// <summary>
+        /// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult> RetentionPeriods;
         /// <summary>
         /// How long, in seconds, to keep the volume backups created by this schedule.
         /// </summary>
@@ -64,6 +76,10 @@ namespace Pulumi.Oci.Core.Outputs
 
             int hourOfDay,
 
+            bool isPreventDeletionEnabled,
+
+            bool isRetentionLockEnabled,
+
             string month,
 
             int offsetSeconds,
@@ -71,6 +87,8 @@ namespace Pulumi.Oci.Core.Outputs
             string offsetType,
 
             string period,
+
+            ImmutableArray<Outputs.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult> retentionPeriods,
 
             int retentionSeconds,
 
@@ -80,10 +98,13 @@ namespace Pulumi.Oci.Core.Outputs
             DayOfMonth = dayOfMonth;
             DayOfWeek = dayOfWeek;
             HourOfDay = hourOfDay;
+            IsPreventDeletionEnabled = isPreventDeletionEnabled;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             Month = month;
             OffsetSeconds = offsetSeconds;
             OffsetType = offsetType;
             Period = period;
+            RetentionPeriods = retentionPeriods;
             RetentionSeconds = retentionSeconds;
             TimeZone = timeZone;
         }

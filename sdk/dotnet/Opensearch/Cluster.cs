@@ -254,10 +254,10 @@ namespace Pulumi.Oci.Opensearch
         public Output<int> MlNodeStorageGb { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `Null` to leave the existing NSG unchanged.
         /// </summary>
         [Output("nsgId")]
-        public Output<string> NsgId { get; private set; } = null!;
+        public Output<string?> NsgId { get; private set; } = null!;
 
         /// <summary>
         /// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
@@ -735,7 +735,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<int>? MlNodeStorageGb { get; set; }
 
         /// <summary>
-        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `Null` to leave the existing NSG unchanged.
         /// </summary>
         [Input("nsgId")]
         public Input<string>? NsgId { get; set; }
@@ -1175,7 +1175,7 @@ namespace Pulumi.Oci.Opensearch
         public Input<int>? MlNodeStorageGb { get; set; }
 
         /// <summary>
-        /// The OCID of the NSG where the private endpoint vnic will be attached.
+        /// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `Null` to leave the existing NSG unchanged.
         /// </summary>
         [Input("nsgId")]
         public Input<string>? NsgId { get; set; }

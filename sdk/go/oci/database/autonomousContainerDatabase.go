@@ -19,133 +19,6 @@ import (
 //
 // Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/database"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := database.NewAutonomousContainerDatabase(ctx, "test_autonomous_container_database", &database.AutonomousContainerDatabaseArgs{
-//				DisplayName:                         pulumi.Any(autonomousContainerDatabaseDisplayName),
-//				PatchModel:                          pulumi.Any(autonomousContainerDatabasePatchModel),
-//				AutonomousContainerDatabaseBackupId: pulumi.Any(testAutonomousContainerDatabaseBackup.Id),
-//				AutonomousExadataInfrastructureId:   pulumi.Any(testAutonomousExadataInfrastructure.Id),
-//				AutonomousVmClusterId:               pulumi.Any(testAutonomousVmCluster.Id),
-//				BackupConfig: &database.AutonomousContainerDatabaseBackupConfigArgs{
-//					BackupDestinationDetails: &database.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs{
-//						Type:                             pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
-//						BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
-//						DbrsPolicyId:                     testPolicy.Id,
-//						Id:                               pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
-//						InternetProxy:                    pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
-//						IsRemote:                         pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
-//						IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
-//						RemoteRegion:                     pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
-//						VpcPassword:                      pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
-//						VpcUser:                          pulumi.Any(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
-//					},
-//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
-//				},
-//				CloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
-//				CompartmentId:              pulumi.Any(compartmentId),
-//				CustomerContacts: database.AutonomousContainerDatabaseCustomerContactArray{
-//					&database.AutonomousContainerDatabaseCustomerContactArgs{
-//						Email: pulumi.Any(autonomousContainerDatabaseCustomerContactsEmail),
-//					},
-//				},
-//				DatabaseSoftwareImageId: pulumi.Any(testDatabaseSoftwareImage.Id),
-//				DbName:                  pulumi.Any(autonomousContainerDatabaseDbName),
-//				DbSplitThreshold:        pulumi.Any(autonomousContainerDatabaseDbSplitThreshold),
-//				DbUniqueName:            pulumi.Any(autonomousContainerDatabaseDbUniqueName),
-//				DbVersion:               pulumi.Any(autonomousContainerDatabaseDbVersion),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				DistributionAffinity: pulumi.Any(autonomousContainerDatabaseDistributionAffinity),
-//				EncryptionKeyLocationDetails: &database.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs{
-//					ProviderType:       pulumi.Any(autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType),
-//					AwsEncryptionKeyId: pulumi.Any(testKey.Id),
-//				},
-//				FastStartFailOverLagLimitInSeconds: pulumi.Any(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				IsAutomaticFailoverEnabled: pulumi.Any(autonomousContainerDatabaseIsAutomaticFailoverEnabled),
-//				IsDstFileUpdateEnabled:     pulumi.Any(autonomousContainerDatabaseIsDstFileUpdateEnabled),
-//				KeyStoreId:                 pulumi.Any(testKeyStore.Id),
-//				KmsKeyId:                   pulumi.Any(testKey.Id),
-//				KmsKeyVersionId:            testKeyVersion.Id,
-//				MaintenanceWindowDetails: &database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{
-//					CustomActionTimeoutInMins: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins),
-//					DaysOfWeeks: database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{
-//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{
-//							Name: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName),
-//						},
-//					},
-//					HoursOfDays:                  pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay),
-//					IsCustomActionTimeoutEnabled: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled),
-//					IsMonthlyPatchingEnabled:     pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled),
-//					LeadTimeInWeeks:              pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks),
-//					Months: database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArray{
-//						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs{
-//							Name: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName),
-//						},
-//					},
-//					PatchingMode:  pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode),
-//					Preference:    pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsPreference),
-//					SkipRus:       pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu),
-//					WeeksOfMonths: pulumi.Any(autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth),
-//				},
-//				NetServicesArchitecture: pulumi.Any(autonomousContainerDatabaseNetServicesArchitecture),
-//				OkvEndPointGroupName:    pulumi.Any(testGroup.Name),
-//				PeerAutonomousContainerDatabaseBackupConfig: &database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs{
-//					BackupDestinationDetails: database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArray{
-//						&database.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs{
-//							Type:                             pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType),
-//							BackupRetentionPolicyOnTerminate: pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate),
-//							DbrsPolicyId:                     testPolicy.Id,
-//							Id:                               pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId),
-//							InternetProxy:                    pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy),
-//							IsRemote:                         pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote),
-//							IsRetentionLockEnabled:           pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled),
-//							RemoteRegion:                     pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion),
-//							VpcPassword:                      pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword),
-//							VpcUser:                          pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser),
-//						},
-//					},
-//					RecoveryWindowInDays: pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
-//				},
-//				PeerAutonomousContainerDatabaseCompartmentId: pulumi.Any(testCompartment.Id),
-//				PeerAutonomousContainerDatabaseDisplayName:   pulumi.Any(autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName),
-//				PeerAutonomousExadataInfrastructureId:        pulumi.Any(testAutonomousExadataInfrastructure.Id),
-//				PeerAutonomousVmClusterId:                    pulumi.Any(testAutonomousVmCluster.Id),
-//				PeerCloudAutonomousVmClusterId:               pulumi.Any(testCloudAutonomousVmCluster.Id),
-//				PeerDbUniqueName:                             pulumi.Any(autonomousContainerDatabasePeerDbUniqueName),
-//				ProtectionMode:                               pulumi.Any(autonomousContainerDatabaseProtectionMode),
-//				ServiceLevelAgreementType:                    pulumi.Any(autonomousContainerDatabaseServiceLevelAgreementType),
-//				Source:                                       pulumi.Any(autonomousContainerDatabaseSource),
-//				StandbyMaintenanceBufferInDays:               pulumi.Any(autonomousContainerDatabaseStandbyMaintenanceBufferInDays),
-//				VaultId:                                      pulumi.Any(testVault.Id),
-//				VersionPreference:                            pulumi.Any(autonomousContainerDatabaseVersionPreference),
-//				VmFailoverReservation:                        pulumi.Any(autonomousContainerDatabaseVmFailoverReservation),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -159,7 +32,9 @@ type AutonomousContainerDatabase struct {
 	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
 	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput `pulumi:"associatedBackupConfigurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
-	AutonomousContainerDatabaseBackupId pulumi.StringOutput `pulumi:"autonomousContainerDatabaseBackupId"`
+	AutonomousContainerDatabaseBackupId pulumi.StringPtrOutput `pulumi:"autonomousContainerDatabaseBackupId"`
+	// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+	AutonomousDatabasesToClones pulumi.StringArrayOutput `pulumi:"autonomousDatabasesToClones"`
 	// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringOutput `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -172,6 +47,10 @@ type AutonomousContainerDatabase struct {
 	BackupConfig AutonomousContainerDatabaseBackupConfigOutput `pulumi:"backupConfig"`
 	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
 	BackupDestinationPropertiesLists AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput `pulumi:"backupDestinationPropertiesLists"`
+	// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+	CloneBandWidth pulumi.StringPtrOutput `pulumi:"cloneBandWidth"`
+	// The Autonomous AI Database clone type.
+	CloneType pulumi.StringPtrOutput `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -290,8 +169,12 @@ type AutonomousContainerDatabase struct {
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringOutput `pulumi:"serviceLevelAgreementType"`
+	// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+	ShouldUseLatestAvailableBackupTimeStamp pulumi.BoolPtrOutput `pulumi:"shouldUseLatestAvailableBackupTimeStamp"`
 	// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
-	Source pulumi.StringOutput `pulumi:"source"`
+	Source pulumi.StringPtrOutput `pulumi:"source"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+	SourceAutonomousContainerDatabaseId pulumi.StringPtrOutput `pulumi:"sourceAutonomousContainerDatabaseId"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntOutput `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -309,6 +192,8 @@ type AutonomousContainerDatabase struct {
 	TimeOfLastBackup pulumi.StringOutput `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringOutput `pulumi:"timeSnapshotStandbyRevert"`
+	// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+	TimeStampToUseForCloning pulumi.StringPtrOutput `pulumi:"timeStampToUseForCloning"`
 	// The number of CPUs allocated to the Autonomous VM cluster.
 	TotalCpus pulumi.IntOutput `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -359,6 +244,8 @@ type autonomousContainerDatabaseState struct {
 	AssociatedBackupConfigurationDetails []AutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
 	AutonomousContainerDatabaseBackupId *string `pulumi:"autonomousContainerDatabaseBackupId"`
+	// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+	AutonomousDatabasesToClones []string `pulumi:"autonomousDatabasesToClones"`
 	// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -371,6 +258,10 @@ type autonomousContainerDatabaseState struct {
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
 	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
 	BackupDestinationPropertiesLists []AutonomousContainerDatabaseBackupDestinationPropertiesList `pulumi:"backupDestinationPropertiesLists"`
+	// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+	CloneBandWidth *string `pulumi:"cloneBandWidth"`
+	// The Autonomous AI Database clone type.
+	CloneType *string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -489,8 +380,12 @@ type autonomousContainerDatabaseState struct {
 	RotateKeyTrigger *bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
+	// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+	ShouldUseLatestAvailableBackupTimeStamp *bool `pulumi:"shouldUseLatestAvailableBackupTimeStamp"`
 	// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 	Source *string `pulumi:"source"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+	SourceAutonomousContainerDatabaseId *string `pulumi:"sourceAutonomousContainerDatabaseId"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -508,6 +403,8 @@ type autonomousContainerDatabaseState struct {
 	TimeOfLastBackup *string `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert *string `pulumi:"timeSnapshotStandbyRevert"`
+	// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+	TimeStampToUseForCloning *string `pulumi:"timeStampToUseForCloning"`
 	// The number of CPUs allocated to the Autonomous VM cluster.
 	TotalCpus *int `pulumi:"totalCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -523,6 +420,8 @@ type AutonomousContainerDatabaseState struct {
 	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
 	AutonomousContainerDatabaseBackupId pulumi.StringPtrInput
+	// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+	AutonomousDatabasesToClones pulumi.StringArrayInput
 	// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
@@ -535,6 +434,10 @@ type AutonomousContainerDatabaseState struct {
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
 	// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
 	BackupDestinationPropertiesLists AutonomousContainerDatabaseBackupDestinationPropertiesListArrayInput
+	// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+	CloneBandWidth pulumi.StringPtrInput
+	// The Autonomous AI Database clone type.
+	CloneType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -653,8 +556,12 @@ type AutonomousContainerDatabaseState struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringPtrInput
+	// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+	ShouldUseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 	Source pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+	SourceAutonomousContainerDatabaseId pulumi.StringPtrInput
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
 	// The current state of the Autonomous Container Database.
@@ -672,6 +579,8 @@ type AutonomousContainerDatabaseState struct {
 	TimeOfLastBackup pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringPtrInput
+	// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+	TimeStampToUseForCloning pulumi.StringPtrInput
 	// The number of CPUs allocated to the Autonomous VM cluster.
 	TotalCpus pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -689,12 +598,18 @@ func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
 type autonomousContainerDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
 	AutonomousContainerDatabaseBackupId *string `pulumi:"autonomousContainerDatabaseBackupId"`
+	// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+	AutonomousDatabasesToClones []string `pulumi:"autonomousDatabasesToClones"`
 	// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
+	// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+	CloneBandWidth *string `pulumi:"cloneBandWidth"`
+	// The Autonomous AI Database clone type.
+	CloneType *string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -763,8 +678,12 @@ type autonomousContainerDatabaseArgs struct {
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
+	// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+	ShouldUseLatestAvailableBackupTimeStamp *bool `pulumi:"shouldUseLatestAvailableBackupTimeStamp"`
 	// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 	Source *string `pulumi:"source"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+	SourceAutonomousContainerDatabaseId *string `pulumi:"sourceAutonomousContainerDatabaseId"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -772,6 +691,8 @@ type autonomousContainerDatabaseArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SwitchoverTrigger *int `pulumi:"switchoverTrigger"`
+	// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+	TimeStampToUseForCloning *string `pulumi:"timeStampToUseForCloning"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId *string `pulumi:"vaultId"`
 	// (Updatable) The next maintenance version preference.
@@ -784,12 +705,18 @@ type autonomousContainerDatabaseArgs struct {
 type AutonomousContainerDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
 	AutonomousContainerDatabaseBackupId pulumi.StringPtrInput
+	// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+	AutonomousDatabasesToClones pulumi.StringArrayInput
 	// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
 	AutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
+	// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+	CloneBandWidth pulumi.StringPtrInput
+	// The Autonomous AI Database clone type.
+	CloneType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
@@ -858,8 +785,12 @@ type AutonomousContainerDatabaseArgs struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringPtrInput
+	// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+	ShouldUseLatestAvailableBackupTimeStamp pulumi.BoolPtrInput
 	// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
 	Source pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+	SourceAutonomousContainerDatabaseId pulumi.StringPtrInput
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -867,6 +798,8 @@ type AutonomousContainerDatabaseArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SwitchoverTrigger pulumi.IntPtrInput
+	// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+	TimeStampToUseForCloning pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
 	VaultId pulumi.StringPtrInput
 	// (Updatable) The next maintenance version preference.
@@ -970,8 +903,15 @@ func (o AutonomousContainerDatabaseOutput) AssociatedBackupConfigurationDetails(
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
-func (o AutonomousContainerDatabaseOutput) AutonomousContainerDatabaseBackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.AutonomousContainerDatabaseBackupId }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseOutput) AutonomousContainerDatabaseBackupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput {
+		return v.AutonomousContainerDatabaseBackupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+func (o AutonomousContainerDatabaseOutput) AutonomousDatabasesToClones() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringArrayOutput { return v.AutonomousDatabasesToClones }).(pulumi.StringArrayOutput)
 }
 
 // **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -1006,6 +946,16 @@ func (o AutonomousContainerDatabaseOutput) BackupDestinationPropertiesLists() Au
 	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput {
 		return v.BackupDestinationPropertiesLists
 	}).(AutonomousContainerDatabaseBackupDestinationPropertiesListArrayOutput)
+}
+
+// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+func (o AutonomousContainerDatabaseOutput) CloneBandWidth() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput { return v.CloneBandWidth }).(pulumi.StringPtrOutput)
+}
+
+// The Autonomous AI Database clone type.
+func (o AutonomousContainerDatabaseOutput) CloneType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput { return v.CloneType }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -1332,9 +1282,23 @@ func (o AutonomousContainerDatabaseOutput) ServiceLevelAgreementType() pulumi.St
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ServiceLevelAgreementType }).(pulumi.StringOutput)
 }
 
+// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+func (o AutonomousContainerDatabaseOutput) ShouldUseLatestAvailableBackupTimeStamp() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.BoolPtrOutput {
+		return v.ShouldUseLatestAvailableBackupTimeStamp
+	}).(pulumi.BoolPtrOutput)
+}
+
 // The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
-func (o AutonomousContainerDatabaseOutput) Source() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
+func (o AutonomousContainerDatabaseOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+func (o AutonomousContainerDatabaseOutput) SourceAutonomousContainerDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput {
+		return v.SourceAutonomousContainerDatabaseId
+	}).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -1373,6 +1337,11 @@ func (o AutonomousContainerDatabaseOutput) TimeOfLastBackup() pulumi.StringOutpu
 // The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 func (o AutonomousContainerDatabaseOutput) TimeSnapshotStandbyRevert() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeSnapshotStandbyRevert }).(pulumi.StringOutput)
+}
+
+// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+func (o AutonomousContainerDatabaseOutput) TimeStampToUseForCloning() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringPtrOutput { return v.TimeStampToUseForCloning }).(pulumi.StringPtrOutput)
 }
 
 // The number of CPUs allocated to the Autonomous VM cluster.

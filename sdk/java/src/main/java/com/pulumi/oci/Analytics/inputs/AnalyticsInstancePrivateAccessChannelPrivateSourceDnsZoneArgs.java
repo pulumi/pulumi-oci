@@ -17,14 +17,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
     public static final AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs Empty = new AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs();
 
     /**
-     * (Updatable) Description of private source dns zone.
+     * (Updatable) Description of the private source DNS zone.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of the private source DNS zone.
      * 
      */
     public Optional<Output<String>> description() {
@@ -32,14 +32,14 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
     }
 
     /**
-     * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     @Import(name="dnsZone", required=true)
     private Output<String> dnsZone;
 
     /**
-     * @return (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * @return (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     public Output<String> dnsZone() {
@@ -72,7 +72,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param description (Updatable) Description of private source dns zone.
+         * @param description (Updatable) Description of the private source DNS zone.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param description (Updatable) Description of private source dns zone.
+         * @param description (Updatable) Description of the private source DNS zone.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param dnsZone (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * @param dnsZone (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
         }
 
         /**
-         * @param dnsZone (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * @param dnsZone (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          * 
          * @return builder
          * 

@@ -66,6 +66,7 @@ import * as utilities from "../utilities";
  *     ipMtu: virtualCircuitIpMtu,
  *     isBfdEnabled: virtualCircuitIsBfdEnabled === "true",
  *     isTransportMode: virtualCircuitIsTransportMode === "true",
+ *     providerRemoteRegion: virtualCircuitProviderRemoteRegion,
  *     gatewayId: testGateway.id,
  *     providerServiceId: testFastConnectProviderServices.fastConnectProviderServices[0].id,
  *     providerServiceKeyName: virtualCircuitProviderServiceKeyName,
@@ -73,7 +74,9 @@ import * as utilities from "../utilities";
  *         cidrBlock: virtualCircuitPublicPrefixesCidrBlock,
  *     }],
  *     region: virtualCircuitRegion,
+ *     remoteAccountId: testRemoteAccount.id,
  *     routingPolicies: virtualCircuitRoutingPolicy,
+ *     trafficMode: virtualCircuitTrafficMode,
  * });
  * ```
  *
@@ -186,6 +189,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly oracleBgpAsn: pulumi.Output<number>;
     /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     */
+    declare public readonly providerRemoteRegion: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */
     declare public readonly providerServiceId: pulumi.Output<string>;
@@ -210,6 +217,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     declare public readonly region: pulumi.Output<string>;
     /**
+     * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+     */
+    declare public readonly remoteAccountId: pulumi.Output<string>;
+    /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
     declare public readonly routingPolicies: pulumi.Output<string[]>;
@@ -218,6 +229,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly serviceType: pulumi.Output<string>;
     /**
+     * The Shared unique identifier for the connection between the multicloud interconnect providers
+     */
+    declare public /*out*/ readonly sharedConnectionUuid: pulumi.Output<string>;
+    /**
      * The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -225,6 +240,10 @@ export class VirtualCircuit extends pulumi.CustomResource {
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    declare public readonly trafficMode: pulumi.Output<string>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
@@ -267,16 +286,20 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["isBfdEnabled"] = state?.isBfdEnabled;
             resourceInputs["isTransportMode"] = state?.isTransportMode;
             resourceInputs["oracleBgpAsn"] = state?.oracleBgpAsn;
+            resourceInputs["providerRemoteRegion"] = state?.providerRemoteRegion;
             resourceInputs["providerServiceId"] = state?.providerServiceId;
             resourceInputs["providerServiceKeyName"] = state?.providerServiceKeyName;
             resourceInputs["providerState"] = state?.providerState;
             resourceInputs["publicPrefixes"] = state?.publicPrefixes;
             resourceInputs["referenceComment"] = state?.referenceComment;
             resourceInputs["region"] = state?.region;
+            resourceInputs["remoteAccountId"] = state?.remoteAccountId;
             resourceInputs["routingPolicies"] = state?.routingPolicies;
             resourceInputs["serviceType"] = state?.serviceType;
+            resourceInputs["sharedConnectionUuid"] = state?.sharedConnectionUuid;
             resourceInputs["state"] = state?.state;
             resourceInputs["timeCreated"] = state?.timeCreated;
+            resourceInputs["trafficMode"] = state?.trafficMode;
             resourceInputs["type"] = state?.type;
             resourceInputs["virtualCircuitRedundancyMetadatas"] = state?.virtualCircuitRedundancyMetadatas;
         } else {
@@ -300,11 +323,14 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["ipMtu"] = args?.ipMtu;
             resourceInputs["isBfdEnabled"] = args?.isBfdEnabled;
             resourceInputs["isTransportMode"] = args?.isTransportMode;
+            resourceInputs["providerRemoteRegion"] = args?.providerRemoteRegion;
             resourceInputs["providerServiceId"] = args?.providerServiceId;
             resourceInputs["providerServiceKeyName"] = args?.providerServiceKeyName;
             resourceInputs["publicPrefixes"] = args?.publicPrefixes;
             resourceInputs["region"] = args?.region;
+            resourceInputs["remoteAccountId"] = args?.remoteAccountId;
             resourceInputs["routingPolicies"] = args?.routingPolicies;
+            resourceInputs["trafficMode"] = args?.trafficMode;
             resourceInputs["type"] = args?.type;
             resourceInputs["bgpIpv6sessionState"] = undefined /*out*/;
             resourceInputs["bgpManagement"] = undefined /*out*/;
@@ -313,6 +339,7 @@ export class VirtualCircuit extends pulumi.CustomResource {
             resourceInputs["providerState"] = undefined /*out*/;
             resourceInputs["referenceComment"] = undefined /*out*/;
             resourceInputs["serviceType"] = undefined /*out*/;
+            resourceInputs["sharedConnectionUuid"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["virtualCircuitRedundancyMetadatas"] = undefined /*out*/;
@@ -399,6 +426,10 @@ export interface VirtualCircuitState {
      */
     oracleBgpAsn?: pulumi.Input<number | undefined>;
     /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     */
+    providerRemoteRegion?: pulumi.Input<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */
     providerServiceId?: pulumi.Input<string | undefined>;
@@ -423,6 +454,10 @@ export interface VirtualCircuitState {
      */
     region?: pulumi.Input<string | undefined>;
     /**
+     * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+     */
+    remoteAccountId?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
     routingPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -431,6 +466,10 @@ export interface VirtualCircuitState {
      */
     serviceType?: pulumi.Input<string | undefined>;
     /**
+     * The Shared unique identifier for the connection between the multicloud interconnect providers
+     */
+    sharedConnectionUuid?: pulumi.Input<string | undefined>;
+    /**
      * The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      */
     state?: pulumi.Input<string | undefined>;
@@ -438,6 +477,10 @@ export interface VirtualCircuitState {
      * The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    trafficMode?: pulumi.Input<string | undefined>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *
@@ -510,6 +553,10 @@ export interface VirtualCircuitArgs {
      */
     isTransportMode?: pulumi.Input<boolean | undefined>;
     /**
+     * The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     */
+    providerRemoteRegion?: pulumi.Input<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      */
     providerServiceId?: pulumi.Input<string | undefined>;
@@ -526,9 +573,17 @@ export interface VirtualCircuitArgs {
      */
     region?: pulumi.Input<string | undefined>;
     /**
+     * Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+     */
+    remoteAccountId?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      */
     routingPolicies?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     */
+    trafficMode?: pulumi.Input<string | undefined>;
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
      *

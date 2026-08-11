@@ -508,8 +508,11 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
                  repository_count: _builtins.int):
         """
         :param _builtins.int image_count: Total number of images.
+        :param Sequence['GetContainerRepositoriesContainerRepositoryCollectionItemArgs'] items: List of container repositories.
         :param _builtins.int layer_count: Total number of layers.
-        :param _builtins.str layers_size_in_bytes: Total storage in bytes consumed by layers.
+        :param _builtins.str layers_size_in_bytes: Total size of layers.
+        :param _builtins.int remaining_items_count: The number of remaining items.
+        :param _builtins.int repository_count: Total number of repositories.
         """
         pulumi.set(__self__, "image_count", image_count)
         pulumi.set(__self__, "items", items)
@@ -529,6 +532,9 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
     @_builtins.property
     @pulumi.getter
     def items(self) -> Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemResult']:
+        """
+        List of container repositories.
+        """
         return pulumi.get(self, "items")
 
     @_builtins.property
@@ -543,18 +549,24 @@ class GetContainerRepositoriesContainerRepositoryCollectionResult(dict):
     @pulumi.getter(name="layersSizeInBytes")
     def layers_size_in_bytes(self) -> _builtins.str:
         """
-        Total storage in bytes consumed by layers.
+        Total size of layers.
         """
         return pulumi.get(self, "layers_size_in_bytes")
 
     @_builtins.property
     @pulumi.getter(name="remainingItemsCount")
     def remaining_items_count(self) -> _builtins.int:
+        """
+        The number of remaining items.
+        """
         return pulumi.get(self, "remaining_items_count")
 
     @_builtins.property
     @pulumi.getter(name="repositoryCount")
     def repository_count(self) -> _builtins.int:
+        """
+        Total number of repositories.
+        """
         return pulumi.get(self, "repository_count")
 
 
@@ -591,7 +603,7 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         :param _builtins.bool is_immutable: Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
         :param _builtins.bool is_public: A filter to return resources that match the isPublic value.
         :param _builtins.int layer_count: Total number of layers.
-        :param _builtins.str layers_size_in_bytes: Total storage in bytes consumed by layers.
+        :param _builtins.str layers_size_in_bytes: Total size of layers.
         :param _builtins.str namespace: The tenancy namespace used in the container repository path.
         :param Sequence['GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs'] readmes: Container repository readme.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state name exactly.
@@ -710,7 +722,7 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
     @pulumi.getter(name="layersSizeInBytes")
     def layers_size_in_bytes(self) -> _builtins.str:
         """
-        Total storage in bytes consumed by layers.
+        Total size of layers.
         """
         return pulumi.get(self, "layers_size_in_bytes")
 

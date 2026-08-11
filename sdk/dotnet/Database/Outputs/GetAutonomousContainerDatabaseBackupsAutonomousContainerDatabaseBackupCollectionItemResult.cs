@@ -26,9 +26,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult> AutonomousDatabases;
         /// <summary>
+        /// Backup destination details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult> BackupDestinationDetails;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+        /// </summary>
+        public readonly string DbVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -94,7 +102,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult> autonomousDatabases,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult> backupDestinationDetails,
+
             string compartmentId,
+
+            string dbVersion,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -127,7 +139,9 @@ namespace Pulumi.Oci.Database.Outputs
             AcdDisplayName = acdDisplayName;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousDatabases = autonomousDatabases;
+            BackupDestinationDetails = backupDestinationDetails;
             CompartmentId = compartmentId;
+            DbVersion = dbVersion;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;

@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -43,6 +44,21 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs extend
      */
     public Optional<Output<String>> approvalComment() {
         return Optional.ofNullable(this.approvalComment);
+    }
+
+    /**
+     * The group level at which the approver approved.
+     * 
+     */
+    @Import(name="approverGroupLevel")
+    private @Nullable Output<Integer> approverGroupLevel;
+
+    /**
+     * @return The group level at which the approver approved.
+     * 
+     */
+    public Optional<Output<Integer>> approverGroupLevel() {
+        return Optional.ofNullable(this.approverGroupLevel);
     }
 
     /**
@@ -95,6 +111,7 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs extend
     private ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs(ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs $) {
         this.approvalAction = $.approvalAction;
         this.approvalComment = $.approvalComment;
+        this.approverGroupLevel = $.approverGroupLevel;
         this.approverId = $.approverId;
         this.timeApprovedForAccess = $.timeApprovedForAccess;
         this.timeOfAuthorization = $.timeOfAuthorization;
@@ -158,6 +175,27 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs extend
          */
         public Builder approvalComment(String approvalComment) {
             return approvalComment(Output.of(approvalComment));
+        }
+
+        /**
+         * @param approverGroupLevel The group level at which the approver approved.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevel(@Nullable Output<Integer> approverGroupLevel) {
+            $.approverGroupLevel = approverGroupLevel;
+            return this;
+        }
+
+        /**
+         * @param approverGroupLevel The group level at which the approver approved.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevel(Integer approverGroupLevel) {
+            return approverGroupLevel(Output.of(approverGroupLevel));
         }
 
         /**

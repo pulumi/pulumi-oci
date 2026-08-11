@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -38,7 +39,7 @@ public final class DatabaseDataGuardGroupMember {
      */
     private @Nullable String dbSystemId;
     /**
-     * @return The failover readiness status of the Data Guard member.
+     * @return The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
      * 
      */
     private @Nullable String failoverReadiness;
@@ -48,10 +49,20 @@ public final class DatabaseDataGuardGroupMember {
      */
     private @Nullable String failoverReadinessMessage;
     /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+     * 
+     */
+    private @Nullable List<String> failoverTargets;
+    /**
      * @return True if active Data Guard is enabled.
      * 
      */
     private @Nullable Boolean isActiveDataGuardEnabled;
+    /**
+     * @return The state of managed auto failover.
+     * 
+     */
+    private @Nullable String managedAutoFailover;
     /**
      * @return The role of the reporting database in this Data Guard association.
      * 
@@ -59,6 +70,7 @@ public final class DatabaseDataGuardGroupMember {
     private @Nullable String role;
     /**
      * @return The switchover readiness status of the Data Guard member.
+     * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
      * 
      */
     private @Nullable String switchoverReadiness;
@@ -128,7 +140,7 @@ public final class DatabaseDataGuardGroupMember {
         return Optional.ofNullable(this.dbSystemId);
     }
     /**
-     * @return The failover readiness status of the Data Guard member.
+     * @return The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
      * 
      */
     public Optional<String> failoverReadiness() {
@@ -142,11 +154,25 @@ public final class DatabaseDataGuardGroupMember {
         return Optional.ofNullable(this.failoverReadinessMessage);
     }
     /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+     * 
+     */
+    public List<String> failoverTargets() {
+        return this.failoverTargets == null ? List.of() : this.failoverTargets;
+    }
+    /**
      * @return True if active Data Guard is enabled.
      * 
      */
     public Optional<Boolean> isActiveDataGuardEnabled() {
         return Optional.ofNullable(this.isActiveDataGuardEnabled);
+    }
+    /**
+     * @return The state of managed auto failover.
+     * 
+     */
+    public Optional<String> managedAutoFailover() {
+        return Optional.ofNullable(this.managedAutoFailover);
     }
     /**
      * @return The role of the reporting database in this Data Guard association.
@@ -157,6 +183,7 @@ public final class DatabaseDataGuardGroupMember {
     }
     /**
      * @return The switchover readiness status of the Data Guard member.
+     * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
      * 
      */
     public Optional<String> switchoverReadiness() {
@@ -217,7 +244,9 @@ public final class DatabaseDataGuardGroupMember {
         private @Nullable String dbSystemId;
         private @Nullable String failoverReadiness;
         private @Nullable String failoverReadinessMessage;
+        private @Nullable List<String> failoverTargets;
         private @Nullable Boolean isActiveDataGuardEnabled;
+        private @Nullable String managedAutoFailover;
         private @Nullable String role;
         private @Nullable String switchoverReadiness;
         private @Nullable String switchoverReadinessMessage;
@@ -235,7 +264,9 @@ public final class DatabaseDataGuardGroupMember {
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.failoverReadiness = defaults.failoverReadiness;
     	      this.failoverReadinessMessage = defaults.failoverReadinessMessage;
+    	      this.failoverTargets = defaults.failoverTargets;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.managedAutoFailover = defaults.managedAutoFailover;
     	      this.role = defaults.role;
     	      this.switchoverReadiness = defaults.switchoverReadiness;
     	      this.switchoverReadinessMessage = defaults.switchoverReadinessMessage;
@@ -288,9 +319,24 @@ public final class DatabaseDataGuardGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder failoverTargets(@Nullable List<String> failoverTargets) {
+
+            this.failoverTargets = failoverTargets;
+            return this;
+        }
+        public Builder failoverTargets(String... failoverTargets) {
+            return failoverTargets(List.of(failoverTargets));
+        }
+        @CustomType.Setter
         public Builder isActiveDataGuardEnabled(@Nullable Boolean isActiveDataGuardEnabled) {
 
             this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managedAutoFailover(@Nullable String managedAutoFailover) {
+
+            this.managedAutoFailover = managedAutoFailover;
             return this;
         }
         @CustomType.Setter
@@ -344,7 +390,9 @@ public final class DatabaseDataGuardGroupMember {
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.failoverReadiness = failoverReadiness;
             _resultValue.failoverReadinessMessage = failoverReadinessMessage;
+            _resultValue.failoverTargets = failoverTargets;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.managedAutoFailover = managedAutoFailover;
             _resultValue.role = role;
             _resultValue.switchoverReadiness = switchoverReadiness;
             _resultValue.switchoverReadinessMessage = switchoverReadinessMessage;

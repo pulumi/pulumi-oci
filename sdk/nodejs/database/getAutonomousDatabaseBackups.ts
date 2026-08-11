@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: autonomousDatabaseBackupDisplayName,
  *     infrastructureType: autonomousDatabaseBackupInfrastructureType,
+ *     isPitrEligible: autonomousDatabaseBackupIsPitrEligible === "true",
  *     keyStoreId: testKeyStore.id,
  *     state: autonomousDatabaseBackupState,
  *     type: autonomousDatabaseBackupType,
@@ -39,6 +40,7 @@ export function getAutonomousDatabaseBackups(args?: GetAutonomousDatabaseBackups
         "displayName": args.displayName,
         "filters": args.filters,
         "infrastructureType": args.infrastructureType,
+        "isPitrEligible": args.isPitrEligible,
         "keyStoreId": args.keyStoreId,
         "state": args.state,
         "type": args.type,
@@ -70,6 +72,10 @@ export interface GetAutonomousDatabaseBackupsArgs {
      * A filter to return only resources that match the given Infrastructure Type.
      */
     infrastructureType?: string;
+    /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     */
+    isPitrEligible?: boolean;
     /**
      * A filter to return only resources that have the given key store id.
      */
@@ -114,6 +120,7 @@ export interface GetAutonomousDatabaseBackupsResult {
      * The infrastructure type this resource belongs to.
      */
     readonly infrastructureType?: string;
+    readonly isPitrEligible?: boolean;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      */
@@ -144,6 +151,7 @@ export interface GetAutonomousDatabaseBackupsResult {
  *     compartmentId: compartmentId,
  *     displayName: autonomousDatabaseBackupDisplayName,
  *     infrastructureType: autonomousDatabaseBackupInfrastructureType,
+ *     isPitrEligible: autonomousDatabaseBackupIsPitrEligible === "true",
  *     keyStoreId: testKeyStore.id,
  *     state: autonomousDatabaseBackupState,
  *     type: autonomousDatabaseBackupType,
@@ -160,6 +168,7 @@ export function getAutonomousDatabaseBackupsOutput(args?: GetAutonomousDatabaseB
         "displayName": args.displayName,
         "filters": args.filters,
         "infrastructureType": args.infrastructureType,
+        "isPitrEligible": args.isPitrEligible,
         "keyStoreId": args.keyStoreId,
         "state": args.state,
         "type": args.type,
@@ -191,6 +200,10 @@ export interface GetAutonomousDatabaseBackupsOutputArgs {
      * A filter to return only resources that match the given Infrastructure Type.
      */
     infrastructureType?: pulumi.Input<string | undefined>;
+    /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     */
+    isPitrEligible?: pulumi.Input<boolean | undefined>;
     /**
      * A filter to return only resources that have the given key store id.
      */

@@ -57,6 +57,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				InterfaceDownTimerValueInMilliseconds: pulumi.Any(crossConnectGroupInterfaceDownTimerValueInMilliseconds),
+//				IsInterfaceHoldTimerEnabled:           pulumi.Any(crossConnectGroupIsInterfaceHoldTimerEnabled),
+//				IsQosEnabled:                          pulumi.Any(crossConnectGroupIsQosEnabled),
 //				MacsecProperties: &core.CrossConnectGroupMacsecPropertiesArgs{
 //					State:                       pulumi.Any(crossConnectGroupMacsecPropertiesState),
 //					EncryptionCipher:            pulumi.Any(crossConnectGroupMacsecPropertiesEncryptionCipher),
@@ -66,6 +69,7 @@ import (
 //						ConnectivityAssociationNameSecretId: pulumi.Any(testSecret.Id),
 //					},
 //				},
+//				MinimumLinks: pulumi.Any(crossConnectGroupMinimumLinks),
 //			})
 //			if err != nil {
 //				return err
@@ -96,8 +100,19 @@ type CrossConnectGroup struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntOutput `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolOutput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolOutput `pulumi:"isQosEnabled"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesOutput `pulumi:"macsecProperties"`
+	// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MinimumLinks pulumi.IntOutput `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringOutput `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -151,8 +166,19 @@ type crossConnectGroupState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds *int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled *bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled *bool `pulumi:"isQosEnabled"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties *CrossConnectGroupMacsecProperties `pulumi:"macsecProperties"`
+	// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MinimumLinks *int `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName *string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -174,8 +200,19 @@ type CrossConnectGroupState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntPtrInput
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolPtrInput
+	// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolPtrInput
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesPtrInput
+	// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MinimumLinks pulumi.IntPtrInput
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringPtrInput
 	// The FastConnect device that terminates the physical connection.
@@ -201,8 +238,19 @@ type crossConnectGroupArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds *int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled *bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled *bool `pulumi:"isQosEnabled"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties *CrossConnectGroupMacsecProperties `pulumi:"macsecProperties"`
+	// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MinimumLinks *int `pulumi:"minimumLinks"`
 }
 
 // The set of arguments for constructing a CrossConnectGroup resource.
@@ -217,8 +265,19 @@ type CrossConnectGroupArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntPtrInput
+	// (Updatable) The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolPtrInput
+	// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+	IsQosEnabled pulumi.BoolPtrInput
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesPtrInput
+	// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	MinimumLinks pulumi.IntPtrInput
 }
 
 func (CrossConnectGroupArgs) ElementType() reflect.Type {
@@ -333,9 +392,32 @@ func (o CrossConnectGroupOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *CrossConnectGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o CrossConnectGroupOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.IntOutput { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// (Updatable) The flag to enable or disable the down timer for the interface.
+func (o CrossConnectGroupOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.BoolOutput { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+func (o CrossConnectGroupOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.BoolOutput { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
 // (Updatable) Properties used to configure MACsec (if capable).
 func (o CrossConnectGroupOutput) MacsecProperties() CrossConnectGroupMacsecPropertiesOutput {
 	return o.ApplyT(func(v *CrossConnectGroup) CrossConnectGroupMacsecPropertiesOutput { return v.MacsecProperties }).(CrossConnectGroupMacsecPropertiesOutput)
+}
+
+// (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o CrossConnectGroupOutput) MinimumLinks() pulumi.IntOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.IntOutput { return v.MinimumLinks }).(pulumi.IntOutput)
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.

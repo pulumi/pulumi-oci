@@ -204,9 +204,9 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly mlNodeStorageGb: pulumi.Output<number>;
     /**
-     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      */
-    declare public readonly nsgId: pulumi.Output<string>;
+    declare public readonly nsgId: pulumi.Output<string | undefined>;
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
      */
@@ -718,7 +718,7 @@ export interface ClusterState {
      */
     mlNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
-     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      */
     nsgId?: pulumi.Input<string | undefined>;
     /**
@@ -999,7 +999,7 @@ export interface ClusterArgs {
      */
     mlNodeStorageGb?: pulumi.Input<number | undefined>;
     /**
-     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      */
     nsgId?: pulumi.Input<string | undefined>;
     /**

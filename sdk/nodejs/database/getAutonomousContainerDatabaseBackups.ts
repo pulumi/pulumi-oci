@@ -101,6 +101,9 @@ export interface GetAutonomousContainerDatabaseBackupsResult {
      * The infrastructure type this resource belongs to.
      */
     readonly infrastructureType?: string;
+    /**
+     * Indicates whether the backup destination is cross-region or local.
+     */
     readonly isRemote?: boolean;
     /**
      * The current state of the backup.

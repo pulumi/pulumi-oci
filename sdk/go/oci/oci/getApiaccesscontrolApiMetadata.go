@@ -61,13 +61,15 @@ type GetApiaccesscontrolApiMetadataResult struct {
 	ApiMetadataId string `pulumi:"apiMetadataId"`
 	// The name of the api to execute the api request.
 	ApiName string `pulumi:"apiName"`
+	// List of the fields that is use while calling post or put for the data.
+	Attributes []string `pulumi:"attributes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The operation Name of the api. The name must be unique.
 	DisplayName string `pulumi:"displayName"`
 	// ResourceType to which the apiMetadata belongs to.
 	EntityType string `pulumi:"entityType"`
-	// List of the fields that is use while calling post or put for the data.
+	// deprecated; Use attributes field instead.
 	Fields []string `pulumi:"fields"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -134,6 +136,11 @@ func (o GetApiaccesscontrolApiMetadataResultOutput) ApiName() pulumi.StringOutpu
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataResult) string { return v.ApiName }).(pulumi.StringOutput)
 }
 
+// List of the fields that is use while calling post or put for the data.
+func (o GetApiaccesscontrolApiMetadataResultOutput) Attributes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataResult) []string { return v.Attributes }).(pulumi.StringArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetApiaccesscontrolApiMetadataResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -149,7 +156,7 @@ func (o GetApiaccesscontrolApiMetadataResultOutput) EntityType() pulumi.StringOu
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataResult) string { return v.EntityType }).(pulumi.StringOutput)
 }
 
-// List of the fields that is use while calling post or put for the data.
+// deprecated; Use attributes field instead.
 func (o GetApiaccesscontrolApiMetadataResultOutput) Fields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
 }

@@ -52,6 +52,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId: string;
+    readonly autonomousDatabasesToClones: string[];
     /**
      * **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
      */
@@ -76,6 +77,8 @@ export interface GetAutonomousContainerDatabaseResult {
      * This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
      */
     readonly backupDestinationPropertiesLists: outputs.Database.GetAutonomousContainerDatabaseBackupDestinationPropertiesList[];
+    readonly cloneBandWidth: string;
+    readonly cloneType: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
@@ -281,7 +284,9 @@ export interface GetAutonomousContainerDatabaseResult {
      * The service level agreement type of the container database. The default is STANDARD.
      */
     readonly serviceLevelAgreementType: string;
+    readonly shouldUseLatestAvailableBackupTimeStamp: boolean;
     readonly source: string;
+    readonly sourceAutonomousContainerDatabaseId: string;
     /**
      * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      */
@@ -307,6 +312,7 @@ export interface GetAutonomousContainerDatabaseResult {
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
     readonly timeSnapshotStandbyRevert: string;
+    readonly timeStampToUseForCloning: string;
     /**
      * The number of CPUs allocated to the Autonomous VM cluster.
      */

@@ -565,14 +565,14 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      * 
      */
     @Import(name="nsgId")
     private @Nullable Output<String> nsgId;
 
     /**
-     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * @return (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      * 
      */
     public Optional<Output<String>> nsgId() {
@@ -1966,7 +1966,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgId The OCID of the NSG where the private endpoint vnic will be attached.
+         * @param nsgId (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
          * 
          * @return builder
          * 
@@ -1977,7 +1977,7 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nsgId The OCID of the NSG where the private endpoint vnic will be attached.
+         * @param nsgId (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
          * 
          * @return builder
          * 

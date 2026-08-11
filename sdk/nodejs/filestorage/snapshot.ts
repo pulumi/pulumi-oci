@@ -86,6 +86,10 @@ export class Snapshot extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     */
+    declare public /*out*/ readonly exclusiveBytes: pulumi.Output<string>;
+    /**
      * (Updatable) The time when this snapshot will be deleted.
      */
     declare public readonly expirationTime: pulumi.Output<string>;
@@ -175,6 +179,7 @@ export class Snapshot extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SnapshotState | undefined;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["exclusiveBytes"] = state?.exclusiveBytes;
             resourceInputs["expirationTime"] = state?.expirationTime;
             resourceInputs["fileSystemId"] = state?.fileSystemId;
             resourceInputs["filesystemSnapshotPolicyId"] = state?.filesystemSnapshotPolicyId;
@@ -205,6 +210,7 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["lockDurationDetails"] = args?.lockDurationDetails;
             resourceInputs["locks"] = args?.locks;
             resourceInputs["name"] = args?.name;
+            resourceInputs["exclusiveBytes"] = undefined /*out*/;
             resourceInputs["filesystemSnapshotPolicyId"] = undefined /*out*/;
             resourceInputs["isCloneSource"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -229,6 +235,10 @@ export interface SnapshotState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+     */
+    exclusiveBytes?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The time when this snapshot will be deleted.
      */

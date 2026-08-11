@@ -71,7 +71,10 @@ public final class ConnectionCatalog {
      */
     private @Nullable String propertiesSecretId;
     /**
-     * @return (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * @return (Updatable)
+     * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     private @Nullable String uri;
@@ -156,7 +159,10 @@ public final class ConnectionCatalog {
         return Optional.ofNullable(this.propertiesSecretId);
     }
     /**
-     * @return (Updatable) The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * @return (Updatable)
+     * * NESSIE: Nessie URI. e.g.: &#39;http://&lt;nessie-server&gt;.com:10001/api/v2&#39;
+     * * POLARIS: The URL endpoint for the Polaris API. e.g.: &#39;https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog&#39;
+     * * REST: The base URL for the REST Catalog API. e.g.: &#39;https://my-rest-catalog.example.com/api/v1&#39;
      * 
      */
     public Optional<String> uri() {

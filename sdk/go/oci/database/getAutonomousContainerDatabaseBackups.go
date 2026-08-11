@@ -87,7 +87,8 @@ type GetAutonomousContainerDatabaseBackupsResult struct {
 	Id string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	IsRemote           *bool   `pulumi:"isRemote"`
+	// Indicates whether the backup destination is cross-region or local.
+	IsRemote *bool `pulumi:"isRemote"`
 	// The current state of the backup.
 	State *string `pulumi:"state"`
 }
@@ -175,6 +176,7 @@ func (o GetAutonomousContainerDatabaseBackupsResultOutput) InfrastructureType() 
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseBackupsResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
 }
 
+// Indicates whether the backup destination is cross-region or local.
 func (o GetAutonomousContainerDatabaseBackupsResultOutput) IsRemote() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseBackupsResult) *bool { return v.IsRemote }).(pulumi.BoolPtrOutput)
 }

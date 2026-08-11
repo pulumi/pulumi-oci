@@ -71,8 +71,16 @@ type LookupCrossConnectGroupResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
 	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect-group.
+	IsQosEnabled bool `pulumi:"isQosEnabled"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties []GetCrossConnectGroupMacsecProperty `pulumi:"macsecProperties"`
+	// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+	MinimumLinks int `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -151,9 +159,29 @@ func (o LookupCrossConnectGroupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCrossConnectGroupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o LookupCrossConnectGroupResultOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o LookupCrossConnectGroupResultOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect-group.
+func (o LookupCrossConnectGroupResultOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
 // Properties used for MACsec (if capable).
 func (o LookupCrossConnectGroupResultOutput) MacsecProperties() GetCrossConnectGroupMacsecPropertyArrayOutput {
 	return o.ApplyT(func(v LookupCrossConnectGroupResult) []GetCrossConnectGroupMacsecProperty { return v.MacsecProperties }).(GetCrossConnectGroupMacsecPropertyArrayOutput)
+}
+
+// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+func (o LookupCrossConnectGroupResultOutput) MinimumLinks() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCrossConnectGroupResult) int { return v.MinimumLinks }).(pulumi.IntOutput)
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.

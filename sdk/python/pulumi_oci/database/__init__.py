@@ -78,6 +78,8 @@ from .get_application_vip import *
 from .get_application_vips import *
 from .get_autonomous_character_sets import *
 from .get_autonomous_container_database import *
+from .get_autonomous_container_database_backup import *
+from .get_autonomous_container_database_backup_list_autonomous_databases_in_backups import *
 from .get_autonomous_container_database_backups import *
 from .get_autonomous_container_database_dataguard_association import *
 from .get_autonomous_container_database_dataguard_associations import *

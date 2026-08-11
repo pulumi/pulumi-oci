@@ -140,6 +140,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string ConnectionId;
         /// <summary>
+        /// The connection type.
+        /// </summary>
+        public readonly string ConnectionType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         /// </summary>
         public readonly string DeploymentId;
@@ -171,6 +175,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string connectionId,
 
+            string connectionType,
+
             string deploymentId,
 
             string id,
@@ -187,6 +193,7 @@ namespace Pulumi.Oci.GoldenGate
             CompartmentId = compartmentId;
             ConnectionAssignmentId = connectionAssignmentId;
             ConnectionId = connectionId;
+            ConnectionType = connectionType;
             DeploymentId = deploymentId;
             Id = id;
             IsLockOverride = isLockOverride;

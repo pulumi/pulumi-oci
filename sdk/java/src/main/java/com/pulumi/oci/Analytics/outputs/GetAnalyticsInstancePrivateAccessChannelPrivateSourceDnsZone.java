@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
     /**
-     * @return Description of private source scan host zone.
+     * @return Description of private source SCAN host zone.
      * 
      */
     private String description;
     /**
-     * @return Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * @return Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     private String dnsZone;
 
     private GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone() {}
     /**
-     * @return Description of private source scan host zone.
+     * @return Description of private source SCAN host zone.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * @return Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     public String dnsZone() {

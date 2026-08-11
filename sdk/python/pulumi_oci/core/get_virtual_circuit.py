@@ -27,7 +27,7 @@ class GetVirtualCircuitResult:
     """
     A collection of values returned by getVirtualCircuit.
     """
-    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, routing_policies=None, service_type=None, state=None, time_created=None, type=None, virtual_circuit_id=None, virtual_circuit_redundancy_metadatas=None):
+    def __init__(__self__, bandwidth_shape_name=None, bgp_admin_state=None, bgp_ipv6session_state=None, bgp_management=None, bgp_session_state=None, compartment_id=None, cross_connect_mappings=None, customer_asn=None, customer_bgp_asn=None, defined_tags=None, display_name=None, freeform_tags=None, gateway_id=None, id=None, ip_mtu=None, is_bfd_enabled=None, is_transport_mode=None, oracle_bgp_asn=None, provider_remote_region=None, provider_service_id=None, provider_service_key_name=None, provider_state=None, public_prefixes=None, reference_comment=None, region=None, remote_account_id=None, routing_policies=None, service_type=None, shared_connection_uuid=None, state=None, time_created=None, traffic_mode=None, type=None, virtual_circuit_id=None, virtual_circuit_redundancy_metadatas=None):
         if bandwidth_shape_name and not isinstance(bandwidth_shape_name, str):
             raise TypeError("Expected argument 'bandwidth_shape_name' to be a str")
         pulumi.set(__self__, "bandwidth_shape_name", bandwidth_shape_name)
@@ -82,6 +82,9 @@ class GetVirtualCircuitResult:
         if oracle_bgp_asn and not isinstance(oracle_bgp_asn, int):
             raise TypeError("Expected argument 'oracle_bgp_asn' to be a int")
         pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
+        if provider_remote_region and not isinstance(provider_remote_region, str):
+            raise TypeError("Expected argument 'provider_remote_region' to be a str")
+        pulumi.set(__self__, "provider_remote_region", provider_remote_region)
         if provider_service_id and not isinstance(provider_service_id, str):
             raise TypeError("Expected argument 'provider_service_id' to be a str")
         pulumi.set(__self__, "provider_service_id", provider_service_id)
@@ -100,18 +103,27 @@ class GetVirtualCircuitResult:
         if region and not isinstance(region, str):
             raise TypeError("Expected argument 'region' to be a str")
         pulumi.set(__self__, "region", region)
+        if remote_account_id and not isinstance(remote_account_id, str):
+            raise TypeError("Expected argument 'remote_account_id' to be a str")
+        pulumi.set(__self__, "remote_account_id", remote_account_id)
         if routing_policies and not isinstance(routing_policies, list):
             raise TypeError("Expected argument 'routing_policies' to be a list")
         pulumi.set(__self__, "routing_policies", routing_policies)
         if service_type and not isinstance(service_type, str):
             raise TypeError("Expected argument 'service_type' to be a str")
         pulumi.set(__self__, "service_type", service_type)
+        if shared_connection_uuid and not isinstance(shared_connection_uuid, str):
+            raise TypeError("Expected argument 'shared_connection_uuid' to be a str")
+        pulumi.set(__self__, "shared_connection_uuid", shared_connection_uuid)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if traffic_mode and not isinstance(traffic_mode, str):
+            raise TypeError("Expected argument 'traffic_mode' to be a str")
+        pulumi.set(__self__, "traffic_mode", traffic_mode)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -269,10 +281,18 @@ class GetVirtualCircuitResult:
         return pulumi.get(self, "oracle_bgp_asn")
 
     @_builtins.property
+    @pulumi.getter(name="providerRemoteRegion")
+    def provider_remote_region(self) -> _builtins.str:
+        """
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        """
+        return pulumi.get(self, "provider_remote_region")
+
+    @_builtins.property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> _builtins.str:
         """
-        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_id")
 
@@ -317,6 +337,14 @@ class GetVirtualCircuitResult:
         return pulumi.get(self, "region")
 
     @_builtins.property
+    @pulumi.getter(name="remoteAccountId")
+    def remote_account_id(self) -> _builtins.str:
+        """
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        """
+        return pulumi.get(self, "remote_account_id")
+
+    @_builtins.property
     @pulumi.getter(name="routingPolicies")
     def routing_policies(self) -> Sequence[_builtins.str]:
         """
@@ -333,6 +361,14 @@ class GetVirtualCircuitResult:
         return pulumi.get(self, "service_type")
 
     @_builtins.property
+    @pulumi.getter(name="sharedConnectionUuid")
+    def shared_connection_uuid(self) -> _builtins.str:
+        """
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+        """
+        return pulumi.get(self, "shared_connection_uuid")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -347,6 +383,14 @@ class GetVirtualCircuitResult:
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> _builtins.str:
+        """
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
 
     @_builtins.property
     @pulumi.getter
@@ -394,16 +438,20 @@ class AwaitableGetVirtualCircuitResult(GetVirtualCircuitResult):
             is_bfd_enabled=self.is_bfd_enabled,
             is_transport_mode=self.is_transport_mode,
             oracle_bgp_asn=self.oracle_bgp_asn,
+            provider_remote_region=self.provider_remote_region,
             provider_service_id=self.provider_service_id,
             provider_service_key_name=self.provider_service_key_name,
             provider_state=self.provider_state,
             public_prefixes=self.public_prefixes,
             reference_comment=self.reference_comment,
             region=self.region,
+            remote_account_id=self.remote_account_id,
             routing_policies=self.routing_policies,
             service_type=self.service_type,
+            shared_connection_uuid=self.shared_connection_uuid,
             state=self.state,
             time_created=self.time_created,
+            traffic_mode=self.traffic_mode,
             type=self.type,
             virtual_circuit_id=self.virtual_circuit_id,
             virtual_circuit_redundancy_metadatas=self.virtual_circuit_redundancy_metadatas)
@@ -452,16 +500,20 @@ def get_virtual_circuit(virtual_circuit_id: Optional[_builtins.str] = None,
         is_bfd_enabled=pulumi.get(__ret__, 'is_bfd_enabled'),
         is_transport_mode=pulumi.get(__ret__, 'is_transport_mode'),
         oracle_bgp_asn=pulumi.get(__ret__, 'oracle_bgp_asn'),
+        provider_remote_region=pulumi.get(__ret__, 'provider_remote_region'),
         provider_service_id=pulumi.get(__ret__, 'provider_service_id'),
         provider_service_key_name=pulumi.get(__ret__, 'provider_service_key_name'),
         provider_state=pulumi.get(__ret__, 'provider_state'),
         public_prefixes=pulumi.get(__ret__, 'public_prefixes'),
         reference_comment=pulumi.get(__ret__, 'reference_comment'),
         region=pulumi.get(__ret__, 'region'),
+        remote_account_id=pulumi.get(__ret__, 'remote_account_id'),
         routing_policies=pulumi.get(__ret__, 'routing_policies'),
         service_type=pulumi.get(__ret__, 'service_type'),
+        shared_connection_uuid=pulumi.get(__ret__, 'shared_connection_uuid'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        traffic_mode=pulumi.get(__ret__, 'traffic_mode'),
         type=pulumi.get(__ret__, 'type'),
         virtual_circuit_id=pulumi.get(__ret__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__ret__, 'virtual_circuit_redundancy_metadatas'))
@@ -507,16 +559,20 @@ def get_virtual_circuit_output(virtual_circuit_id: pulumi.Input[Optional[_builti
         is_bfd_enabled=pulumi.get(__response__, 'is_bfd_enabled'),
         is_transport_mode=pulumi.get(__response__, 'is_transport_mode'),
         oracle_bgp_asn=pulumi.get(__response__, 'oracle_bgp_asn'),
+        provider_remote_region=pulumi.get(__response__, 'provider_remote_region'),
         provider_service_id=pulumi.get(__response__, 'provider_service_id'),
         provider_service_key_name=pulumi.get(__response__, 'provider_service_key_name'),
         provider_state=pulumi.get(__response__, 'provider_state'),
         public_prefixes=pulumi.get(__response__, 'public_prefixes'),
         reference_comment=pulumi.get(__response__, 'reference_comment'),
         region=pulumi.get(__response__, 'region'),
+        remote_account_id=pulumi.get(__response__, 'remote_account_id'),
         routing_policies=pulumi.get(__response__, 'routing_policies'),
         service_type=pulumi.get(__response__, 'service_type'),
+        shared_connection_uuid=pulumi.get(__response__, 'shared_connection_uuid'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
+        traffic_mode=pulumi.get(__response__, 'traffic_mode'),
         type=pulumi.get(__response__, 'type'),
         virtual_circuit_id=pulumi.get(__response__, 'virtual_circuit_id'),
         virtual_circuit_redundancy_metadatas=pulumi.get(__response__, 'virtual_circuit_redundancy_metadatas')))

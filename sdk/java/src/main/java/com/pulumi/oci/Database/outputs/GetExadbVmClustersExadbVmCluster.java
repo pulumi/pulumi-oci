@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterIormConfigCache;
+import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.GetExadbVmClustersExadbVmClusterNodeResource;
 import java.lang.Integer;
@@ -98,7 +99,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String hostname;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+     * @return The OCID of the identity connector
      * 
      */
     private String id;
@@ -128,6 +129,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String listenerPort;
     /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    private List<GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
+    /**
      * @return The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -148,6 +154,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      * 
      */
     private String privateZoneId;
+    private Integer registerPkcsTrigger;
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      * 
@@ -219,6 +226,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String systemVersion;
     /**
+     * @return TDE keystore type
+     * 
+     */
+    private String tdeKeyStoreType;
+    /**
      * @return The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      * 
      */
@@ -228,6 +240,7 @@ public final class GetExadbVmClustersExadbVmCluster {
      * 
      */
     private String timeZone;
+    private Integer unregisterPkcsTrigger;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      * 
@@ -353,7 +366,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.hostname;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+     * @return The OCID of the identity connector
      * 
      */
     public String id() {
@@ -395,6 +408,13 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.listenerPort;
     }
     /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public List<GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
+    }
+    /**
      * @return The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -422,6 +442,9 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     public String privateZoneId() {
         return this.privateZoneId;
+    }
+    public Integer registerPkcsTrigger() {
+        return this.registerPkcsTrigger;
     }
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -522,6 +545,13 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.systemVersion;
     }
     /**
+     * @return TDE keystore type
+     * 
+     */
+    public String tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
+    }
+    /**
      * @return The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      * 
      */
@@ -534,6 +564,9 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     public String timeZone() {
         return this.timeZone;
+    }
+    public Integer unregisterPkcsTrigger() {
+        return this.unregisterPkcsTrigger;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
@@ -581,10 +614,12 @@ public final class GetExadbVmClustersExadbVmCluster {
         private String licenseModel;
         private String lifecycleDetails;
         private String listenerPort;
+        private List<GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
         private List<GetExadbVmClustersExadbVmClusterNodeConfig> nodeConfigs;
         private List<GetExadbVmClustersExadbVmClusterNodeResource> nodeResources;
         private List<String> nsgIds;
         private String privateZoneId;
+        private Integer registerPkcsTrigger;
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
@@ -599,8 +634,10 @@ public final class GetExadbVmClustersExadbVmCluster {
         private String subscriptionId;
         private Map<String,String> systemTags;
         private String systemVersion;
+        private String tdeKeyStoreType;
         private String timeCreated;
         private String timeZone;
+        private Integer unregisterPkcsTrigger;
         private List<String> vipIds;
         private String zoneId;
         public Builder() {}
@@ -628,10 +665,12 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.listenerPort = defaults.listenerPort;
+    	      this.multiCloudIdentityConnectorConfigs = defaults.multiCloudIdentityConnectorConfigs;
     	      this.nodeConfigs = defaults.nodeConfigs;
     	      this.nodeResources = defaults.nodeResources;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateZoneId = defaults.privateZoneId;
+    	      this.registerPkcsTrigger = defaults.registerPkcsTrigger;
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
@@ -646,8 +685,10 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
+    	      this.tdeKeyStoreType = defaults.tdeKeyStoreType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
+    	      this.unregisterPkcsTrigger = defaults.unregisterPkcsTrigger;
     	      this.vipIds = defaults.vipIds;
     	      this.zoneId = defaults.zoneId;
         }
@@ -838,6 +879,17 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder multiCloudIdentityConnectorConfigs(List<GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs) {
+            if (multiCloudIdentityConnectorConfigs == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "multiCloudIdentityConnectorConfigs");
+            }
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            return this;
+        }
+        public Builder multiCloudIdentityConnectorConfigs(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig... multiCloudIdentityConnectorConfigs) {
+            return multiCloudIdentityConnectorConfigs(List.of(multiCloudIdentityConnectorConfigs));
+        }
+        @CustomType.Setter
         public Builder nodeConfigs(List<GetExadbVmClustersExadbVmClusterNodeConfig> nodeConfigs) {
             if (nodeConfigs == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "nodeConfigs");
@@ -876,6 +928,14 @@ public final class GetExadbVmClustersExadbVmCluster {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "privateZoneId");
             }
             this.privateZoneId = privateZoneId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder registerPkcsTrigger(Integer registerPkcsTrigger) {
+            if (registerPkcsTrigger == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "registerPkcsTrigger");
+            }
+            this.registerPkcsTrigger = registerPkcsTrigger;
             return this;
         }
         @CustomType.Setter
@@ -997,6 +1057,14 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            if (tdeKeyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "tdeKeyStoreType");
+            }
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "timeCreated");
@@ -1010,6 +1078,14 @@ public final class GetExadbVmClustersExadbVmCluster {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "timeZone");
             }
             this.timeZone = timeZone;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder unregisterPkcsTrigger(Integer unregisterPkcsTrigger) {
+            if (unregisterPkcsTrigger == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "unregisterPkcsTrigger");
+            }
+            this.unregisterPkcsTrigger = unregisterPkcsTrigger;
             return this;
         }
         @CustomType.Setter
@@ -1055,10 +1131,12 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.listenerPort = listenerPort;
+            _resultValue.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             _resultValue.nodeConfigs = nodeConfigs;
             _resultValue.nodeResources = nodeResources;
             _resultValue.nsgIds = nsgIds;
             _resultValue.privateZoneId = privateZoneId;
+            _resultValue.registerPkcsTrigger = registerPkcsTrigger;
             _resultValue.scanDnsName = scanDnsName;
             _resultValue.scanDnsRecordId = scanDnsRecordId;
             _resultValue.scanIpIds = scanIpIds;
@@ -1073,8 +1151,10 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
+            _resultValue.tdeKeyStoreType = tdeKeyStoreType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
+            _resultValue.unregisterPkcsTrigger = unregisterPkcsTrigger;
             _resultValue.vipIds = vipIds;
             _resultValue.zoneId = zoneId;
             return _resultValue;

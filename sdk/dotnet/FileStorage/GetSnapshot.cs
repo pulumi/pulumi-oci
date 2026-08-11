@@ -128,6 +128,10 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        /// </summary>
+        public readonly string ExclusiveBytes;
+        /// <summary>
         /// The time when this snapshot will be deleted.
         /// </summary>
         public readonly string ExpirationTime;
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.FileStorage
         private GetSnapshotResult(
             ImmutableDictionary<string, string> definedTags,
 
+            string exclusiveBytes,
+
             string expirationTime,
 
             string fileSystemId,
@@ -244,6 +250,7 @@ namespace Pulumi.Oci.FileStorage
             string timeLocked)
         {
             DefinedTags = definedTags;
+            ExclusiveBytes = exclusiveBytes;
             ExpirationTime = expirationTime;
             FileSystemId = fileSystemId;
             FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;

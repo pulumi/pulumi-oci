@@ -82,7 +82,7 @@ class GetAnalyticsInstancesResult:
     @pulumi.getter(name="featureSet")
     def feature_set(self) -> Optional[_builtins.str]:
         """
-        Analytics feature set.
+        The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
         """
         return pulumi.get(self, "feature_set")
 
@@ -103,7 +103,7 @@ class GetAnalyticsInstancesResult:
     @pulumi.getter
     def name(self) -> Optional[_builtins.str]:
         """
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+        The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
         """
         return pulumi.get(self, "name")
 
@@ -111,7 +111,7 @@ class GetAnalyticsInstancesResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of an instance.
+        The current state of the Analytics instance.
         """
         return pulumi.get(self, "state")
 

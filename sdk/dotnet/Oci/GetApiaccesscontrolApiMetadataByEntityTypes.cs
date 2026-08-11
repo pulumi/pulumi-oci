@@ -191,6 +191,9 @@ namespace Pulumi.Oci.Oci
         /// The list of api_metadata_by_entity_type_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionResult> ApiMetadataByEntityTypeCollections;
+        /// <summary>
+        /// The OCID of the compartment that contains the Service Provider Action.
+        /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
         /// Name of the Api.

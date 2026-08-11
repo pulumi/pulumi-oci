@@ -41,6 +41,14 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsIndefiniteRetentionEnabled = volumeGroupBackupIsIndefiniteRetentionEnabled,
+    ///         IsPreventDeletionEnabled = volumeGroupBackupIsPreventDeletionEnabled,
+    ///         IsRetentionLockEnabled = volumeGroupBackupIsRetentionLockEnabled,
+    ///         RetentionPeriod = new Oci.Core.Inputs.VolumeGroupBackupRetentionPeriodArgs
+    ///         {
+    ///             RetentionTimeAmount = volumeGroupBackupRetentionPeriodRetentionTimeAmount,
+    ///             RetentionTimeUnit = volumeGroupBackupRetentionPeriodRetentionTimeUnit,
+    ///         },
     ///         Type = volumeGroupBackupType,
     ///     });
     /// 
@@ -89,6 +97,30 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Output("isIndefiniteRetentionEnabled")]
+        public Output<bool> IsIndefiniteRetentionEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Output("isPreventDeletionEnabled")]
+        public Output<bool> IsPreventDeletionEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Output("isRetentionLockEnabled")]
+        public Output<bool> IsRetentionLockEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Output("retentionPeriod")]
+        public Output<Outputs.VolumeGroupBackupRetentionPeriod> RetentionPeriod { get; private set; } = null!;
+
+        /// <summary>
         /// The aggregate size of the volume group backup, in GBs.
         /// </summary>
         [Output("sizeInGbs")]
@@ -135,6 +167,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("timeRequestReceived")]
         public Output<string> TimeRequestReceived { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Output("timeRetentionExpiresAt")]
+        public Output<string> TimeRetentionExpiresAt { get; private set; } = null!;
 
         /// <summary>
         /// The type of backup to create. If omitted, defaults to incremental.
@@ -252,6 +290,30 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Input("isIndefiniteRetentionEnabled")]
+        public Input<bool>? IsIndefiniteRetentionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Input("isPreventDeletionEnabled")]
+        public Input<bool>? IsPreventDeletionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Input("isRetentionLockEnabled")]
+        public Input<bool>? IsRetentionLockEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("retentionPeriod")]
+        public Input<Inputs.VolumeGroupBackupRetentionPeriodArgs>? RetentionPeriod { get; set; }
+
+        /// <summary>
         /// Details of the volume group backup source in the cloud.
         /// </summary>
         [Input("sourceDetails")]
@@ -323,6 +385,30 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Input("isIndefiniteRetentionEnabled")]
+        public Input<bool>? IsIndefiniteRetentionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Input("isPreventDeletionEnabled")]
+        public Input<bool>? IsPreventDeletionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Input("isRetentionLockEnabled")]
+        public Input<bool>? IsRetentionLockEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("retentionPeriod")]
+        public Input<Inputs.VolumeGroupBackupRetentionPeriodGetArgs>? RetentionPeriod { get; set; }
+
+        /// <summary>
         /// The aggregate size of the volume group backup, in GBs.
         /// </summary>
         [Input("sizeInGbs")]
@@ -369,6 +455,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("timeRequestReceived")]
         public Input<string>? TimeRequestReceived { get; set; }
+
+        /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("timeRetentionExpiresAt")]
+        public Input<string>? TimeRetentionExpiresAt { get; set; }
 
         /// <summary>
         /// The type of backup to create. If omitted, defaults to incremental.

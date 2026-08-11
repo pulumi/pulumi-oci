@@ -365,6 +365,16 @@ export const getAutonomousContainerDatabase: typeof import("./getAutonomousConta
 export const getAutonomousContainerDatabaseOutput: typeof import("./getAutonomousContainerDatabase").getAutonomousContainerDatabaseOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousContainerDatabase","getAutonomousContainerDatabaseOutput"], () => require("./getAutonomousContainerDatabase"));
 
+export { GetAutonomousContainerDatabaseBackupArgs, GetAutonomousContainerDatabaseBackupResult, GetAutonomousContainerDatabaseBackupOutputArgs } from "./getAutonomousContainerDatabaseBackup";
+export const getAutonomousContainerDatabaseBackup: typeof import("./getAutonomousContainerDatabaseBackup").getAutonomousContainerDatabaseBackup = null as any;
+export const getAutonomousContainerDatabaseBackupOutput: typeof import("./getAutonomousContainerDatabaseBackup").getAutonomousContainerDatabaseBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseBackup","getAutonomousContainerDatabaseBackupOutput"], () => require("./getAutonomousContainerDatabaseBackup"));
+
+export { GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs, GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult, GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsOutputArgs } from "./getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups";
+export const getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups: typeof import("./getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups").getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = null as any;
+export const getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsOutput: typeof import("./getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups").getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups","getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsOutput"], () => require("./getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups"));
+
 export { GetAutonomousContainerDatabaseBackupsArgs, GetAutonomousContainerDatabaseBackupsResult, GetAutonomousContainerDatabaseBackupsOutputArgs } from "./getAutonomousContainerDatabaseBackups";
 export const getAutonomousContainerDatabaseBackups: typeof import("./getAutonomousContainerDatabaseBackups").getAutonomousContainerDatabaseBackups = null as any;
 export const getAutonomousContainerDatabaseBackupsOutput: typeof import("./getAutonomousContainerDatabaseBackups").getAutonomousContainerDatabaseBackupsOutput = null as any;

@@ -12,6 +12,12 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DatabaseDataGuardGroupArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specifies readiness of Managed Automatic failover.
+        /// </summary>
+        [Input("managedAutoFailOverReadiness")]
+        public Input<string>? ManagedAutoFailOverReadiness { get; set; }
+
         [Input("members")]
         private InputList<Inputs.DatabaseDataGuardGroupMemberArgs>? _members;
 

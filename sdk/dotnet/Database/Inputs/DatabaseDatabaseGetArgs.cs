@@ -29,6 +29,12 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
+        /// The properties for defining auto failover configuration.
+        /// </summary>
+        [Input("autoFailoverConfiguration")]
+        public Input<Inputs.DatabaseDatabaseAutoFailoverConfigurationGetArgs>? AutoFailoverConfiguration { get; set; }
+
+        /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("backupId")]

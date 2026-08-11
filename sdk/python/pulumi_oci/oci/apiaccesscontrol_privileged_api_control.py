@@ -26,36 +26,39 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
                  notification_topic_id: pulumi.Input[_builtins.str],
                  privileged_operation_lists: pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs']]],
                  resource_type: pulumi.Input[_builtins.str],
-                 resources: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None):
+                 number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a ApiaccesscontrolPrivilegedApiControl resource.
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
-        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs']]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the privilegedApi control It has to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] resources: (Updatable) contains Resource details
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "approver_group_id_lists", approver_group_id_lists)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "notification_topic_id", notification_topic_id)
         pulumi.set(__self__, "privileged_operation_lists", privileged_operation_lists)
         pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "resources", resources)
+        if approver_group_level_lists is not None:
+            pulumi.set(__self__, "approver_group_level_lists", approver_group_level_lists)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -66,6 +69,8 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if number_of_approvers is not None:
             pulumi.set(__self__, "number_of_approvers", number_of_approvers)
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
 
     @_builtins.property
     @pulumi.getter(name="approverGroupIdLists")
@@ -95,7 +100,7 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
     @pulumi.getter(name="notificationTopicId")
     def notification_topic_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         """
         return pulumi.get(self, "notification_topic_id")
 
@@ -128,19 +133,16 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
         pulumi.set(self, "resource_type", value)
 
     @_builtins.property
-    @pulumi.getter
-    def resources(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+    @pulumi.getter(name="approverGroupLevelLists")
+    def approver_group_level_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]]:
         """
-        (Updatable) contains Resource details
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         """
-        return pulumi.get(self, "resources")
+        return pulumi.get(self, "approver_group_level_lists")
 
-    @resources.setter
-    def resources(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "resources", value)
+    @approver_group_level_lists.setter
+    def approver_group_level_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]]):
+        pulumi.set(self, "approver_group_level_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -202,11 +204,27 @@ class ApiaccesscontrolPrivilegedApiControlArgs:
     def number_of_approvers(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "number_of_approvers", value)
 
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) contains Resource details
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "resources", value)
+
 
 @pulumi.input_type
 class _ApiaccesscontrolPrivilegedApiControlState:
     def __init__(__self__, *,
                  approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -228,13 +246,14 @@ class _ApiaccesscontrolPrivilegedApiControlState:
         Input properties used for looking up and filtering ApiaccesscontrolPrivilegedApiControl resources.
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
+        :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the privilegedApi control It has to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
         :param pulumi.Input[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs']]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
@@ -245,12 +264,14 @@ class _ApiaccesscontrolPrivilegedApiControlState:
         :param pulumi.Input[_builtins.str] state: The current state of the PrivilegedApiControl.
         :param pulumi.Input[_builtins.str] state_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_deleted: The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if approver_group_id_lists is not None:
             pulumi.set(__self__, "approver_group_id_lists", approver_group_id_lists)
+        if approver_group_level_lists is not None:
+            pulumi.set(__self__, "approver_group_level_lists", approver_group_level_lists)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -297,6 +318,18 @@ class _ApiaccesscontrolPrivilegedApiControlState:
     @approver_group_id_lists.setter
     def approver_group_id_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "approver_group_id_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevelLists")
+    def approver_group_level_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]]:
+        """
+        (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        """
+        return pulumi.get(self, "approver_group_level_lists")
+
+    @approver_group_level_lists.setter
+    def approver_group_level_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs']]]]):
+        pulumi.set(self, "approver_group_level_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -374,7 +407,7 @@ class _ApiaccesscontrolPrivilegedApiControlState:
     @pulumi.getter(name="notificationTopicId")
     def notification_topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         """
         return pulumi.get(self, "notification_topic_id")
 
@@ -473,7 +506,7 @@ class _ApiaccesscontrolPrivilegedApiControlState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -513,6 +546,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -548,7 +582,10 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                 "entity_type": privileged_api_control_privileged_operation_list_entity_type,
             }],
             resource_type=privileged_api_control_resource_type,
-            resources=privileged_api_control_resources,
+            approver_group_level_lists=[{
+                "group_ids": test_group["id"],
+                "group_level": int(privileged_api_control_approver_group_level_list_group_level),
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -557,7 +594,8 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=int(privileged_api_control_number_of_approvers))
+            number_of_approvers=int(privileged_api_control_number_of_approvers),
+            resources=privileged_api_control_resources)
         ```
 
         ## Import
@@ -572,12 +610,13 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the privilegedApi control It has to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
@@ -616,7 +655,10 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                 "entity_type": privileged_api_control_privileged_operation_list_entity_type,
             }],
             resource_type=privileged_api_control_resource_type,
-            resources=privileged_api_control_resources,
+            approver_group_level_lists=[{
+                "group_ids": test_group["id"],
+                "group_level": int(privileged_api_control_approver_group_level_list_group_level),
+            }],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -625,7 +667,8 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            number_of_approvers=int(privileged_api_control_number_of_approvers))
+            number_of_approvers=int(privileged_api_control_number_of_approvers),
+            resources=privileged_api_control_resources)
         ```
 
         ## Import
@@ -653,6 +696,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -675,6 +719,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             if approver_group_id_lists is None and not opts.urn:
                 raise TypeError("Missing required property 'approver_group_id_lists'")
             __props__.__dict__["approver_group_id_lists"] = approver_group_id_lists
+            __props__.__dict__["approver_group_level_lists"] = approver_group_level_lists
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -692,8 +737,6 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             if resource_type is None and not opts.urn:
                 raise TypeError("Missing required property 'resource_type'")
             __props__.__dict__["resource_type"] = resource_type
-            if resources is None and not opts.urn:
-                raise TypeError("Missing required property 'resources'")
             __props__.__dict__["resources"] = resources
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -713,6 +756,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -738,13 +782,14 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] approver_group_id_lists: (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict']]]] approver_group_level_lists: (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Description of the privilegedApi control.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the privilegedApi control It has to be unique.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        :param pulumi.Input[_builtins.str] notification_topic_id: (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         :param pulumi.Input[_builtins.int] number_of_approvers: (Updatable) Number of approvers required to approve an privilegedApi request.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict']]]] privileged_operation_lists: (Updatable) List of privileged operator operations. If Privileged API Managment is enabled for a resource it will be validated whether the operation done by the operator is a part of privileged operation.
         :param pulumi.Input[_builtins.str] resource_type: (Updatable) resourceType for which the PrivilegedApiControl is applicable
@@ -755,7 +800,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the PrivilegedApiControl.
         :param pulumi.Input[_builtins.str] state_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_deleted: The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -764,6 +809,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         __props__ = _ApiaccesscontrolPrivilegedApiControlState.__new__(_ApiaccesscontrolPrivilegedApiControlState)
 
         __props__.__dict__["approver_group_id_lists"] = approver_group_id_lists
+        __props__.__dict__["approver_group_level_lists"] = approver_group_level_lists
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -790,6 +836,14 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
         """
         return pulumi.get(self, "approver_group_id_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevelLists")
+    def approver_group_level_lists(self) -> pulumi.Output[Sequence['outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]:
+        """
+        (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+        """
+        return pulumi.get(self, "approver_group_level_lists")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -843,7 +897,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
     @pulumi.getter(name="notificationTopicId")
     def notification_topic_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+        (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
         """
         return pulumi.get(self, "notification_topic_id")
 
@@ -910,7 +964,7 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 

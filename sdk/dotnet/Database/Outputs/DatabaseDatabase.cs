@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? AdminPassword;
         /// <summary>
+        /// The properties for defining auto failover configuration.
+        /// </summary>
+        public readonly Outputs.DatabaseDatabaseAutoFailoverConfiguration? AutoFailoverConfiguration;
+        /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? BackupId;
@@ -160,6 +164,8 @@ namespace Pulumi.Oci.Database.Outputs
         private DatabaseDatabase(
             string? adminPassword,
 
+            Outputs.DatabaseDatabaseAutoFailoverConfiguration? autoFailoverConfiguration,
+
             string? backupId,
 
             string? backupTdePassword,
@@ -225,6 +231,7 @@ namespace Pulumi.Oci.Database.Outputs
             string? vmClusterId)
         {
             AdminPassword = adminPassword;
+            AutoFailoverConfiguration = autoFailoverConfiguration;
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;

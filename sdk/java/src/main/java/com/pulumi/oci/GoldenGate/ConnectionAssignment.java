@@ -111,6 +111,20 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
         return this.connectionId;
     }
     /**
+     * The connection type.
+     * 
+     */
+    @Export(name="connectionType", refs={String.class}, tree="[0]")
+    private Output<String> connectionType;
+
+    /**
+     * @return The connection type.
+     * 
+     */
+    public Output<String> connectionType() {
+        return this.connectionType;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */

@@ -30,11 +30,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := goldengate.GetConnectionAssignments(ctx, &goldengate.GetConnectionAssignmentsArgs{
-//				CompartmentId: compartmentId,
-//				ConnectionId:  pulumi.StringRef(testConnection.Id),
-//				DeploymentId:  pulumi.StringRef(testDeployment.Id),
-//				Name:          pulumi.StringRef(connectionAssignmentName),
-//				State:         pulumi.StringRef(connectionAssignmentState),
+//				CompartmentId:             compartmentId,
+//				ConnectionId:              pulumi.StringRef(testConnection.Id),
+//				ConnectionTypes:           pulumi.ToArray(connectionAssignmentConnectionType),
+//				ConnectionTypeNotEqualTos: pulumi.ToArray(connectionAssignmentConnectionTypeNotEqualTo),
+//				DeploymentId:              pulumi.StringRef(testDeployment.Id),
+//				Name:                      pulumi.StringRef(connectionAssignmentName),
+//				State:                     pulumi.StringRef(connectionAssignmentState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +62,10 @@ type GetConnectionAssignmentsArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId *string `pulumi:"connectionId"`
+	// The array of connection types to exclude.
+	ConnectionTypeNotEqualTos []string `pulumi:"connectionTypeNotEqualTos"`
+	// The array of connection types.
+	ConnectionTypes []string `pulumi:"connectionTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId *string                          `pulumi:"deploymentId"`
 	Filters      []GetConnectionAssignmentsFilter `pulumi:"filters"`
@@ -76,7 +82,10 @@ type GetConnectionAssignmentsResult struct {
 	// The list of connection_assignment_collection.
 	ConnectionAssignmentCollections []GetConnectionAssignmentsConnectionAssignmentCollection `pulumi:"connectionAssignmentCollections"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-	ConnectionId *string `pulumi:"connectionId"`
+	ConnectionId              *string  `pulumi:"connectionId"`
+	ConnectionTypeNotEqualTos []string `pulumi:"connectionTypeNotEqualTos"`
+	// The connection type.
+	ConnectionTypes []string `pulumi:"connectionTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string                          `pulumi:"deploymentId"`
 	Filters      []GetConnectionAssignmentsFilter `pulumi:"filters"`
@@ -102,6 +111,10 @@ type GetConnectionAssignmentsOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId pulumi.StringPtrInput `pulumi:"connectionId"`
+	// The array of connection types to exclude.
+	ConnectionTypeNotEqualTos pulumi.StringArrayInput `pulumi:"connectionTypeNotEqualTos"`
+	// The array of connection types.
+	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringPtrInput                    `pulumi:"deploymentId"`
 	Filters      GetConnectionAssignmentsFilterArrayInput `pulumi:"filters"`
@@ -145,6 +158,15 @@ func (o GetConnectionAssignmentsResultOutput) ConnectionAssignmentCollections() 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 func (o GetConnectionAssignmentsResultOutput) ConnectionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionAssignmentsResult) *string { return v.ConnectionId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetConnectionAssignmentsResultOutput) ConnectionTypeNotEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsResult) []string { return v.ConnectionTypeNotEqualTos }).(pulumi.StringArrayOutput)
+}
+
+// The connection type.
+func (o GetConnectionAssignmentsResultOutput) ConnectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsResult) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.

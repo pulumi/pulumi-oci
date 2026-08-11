@@ -8081,6 +8081,1713 @@ func (o EndpointContentModerationConfigPtrOutput) ModelId() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
+type HostedApplicationEnvironmentVariable struct {
+	// (Updatable) Name of the environment variable.
+	Name string `pulumi:"name"`
+	// (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type string `pulumi:"type"`
+	// (Updatable) Value of the environment variable.
+	Value string `pulumi:"value"`
+}
+
+// HostedApplicationEnvironmentVariableInput is an input type that accepts HostedApplicationEnvironmentVariableArgs and HostedApplicationEnvironmentVariableOutput values.
+// You can construct a concrete instance of `HostedApplicationEnvironmentVariableInput` via:
+//
+//	HostedApplicationEnvironmentVariableArgs{...}
+type HostedApplicationEnvironmentVariableInput interface {
+	pulumi.Input
+
+	ToHostedApplicationEnvironmentVariableOutput() HostedApplicationEnvironmentVariableOutput
+	ToHostedApplicationEnvironmentVariableOutputWithContext(context.Context) HostedApplicationEnvironmentVariableOutput
+}
+
+type HostedApplicationEnvironmentVariableArgs struct {
+	// (Updatable) Name of the environment variable.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) Value of the environment variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (HostedApplicationEnvironmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (i HostedApplicationEnvironmentVariableArgs) ToHostedApplicationEnvironmentVariableOutput() HostedApplicationEnvironmentVariableOutput {
+	return i.ToHostedApplicationEnvironmentVariableOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationEnvironmentVariableArgs) ToHostedApplicationEnvironmentVariableOutputWithContext(ctx context.Context) HostedApplicationEnvironmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationEnvironmentVariableOutput)
+}
+
+// HostedApplicationEnvironmentVariableArrayInput is an input type that accepts HostedApplicationEnvironmentVariableArray and HostedApplicationEnvironmentVariableArrayOutput values.
+// You can construct a concrete instance of `HostedApplicationEnvironmentVariableArrayInput` via:
+//
+//	HostedApplicationEnvironmentVariableArray{ HostedApplicationEnvironmentVariableArgs{...} }
+type HostedApplicationEnvironmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToHostedApplicationEnvironmentVariableArrayOutput() HostedApplicationEnvironmentVariableArrayOutput
+	ToHostedApplicationEnvironmentVariableArrayOutputWithContext(context.Context) HostedApplicationEnvironmentVariableArrayOutput
+}
+
+type HostedApplicationEnvironmentVariableArray []HostedApplicationEnvironmentVariableInput
+
+func (HostedApplicationEnvironmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (i HostedApplicationEnvironmentVariableArray) ToHostedApplicationEnvironmentVariableArrayOutput() HostedApplicationEnvironmentVariableArrayOutput {
+	return i.ToHostedApplicationEnvironmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationEnvironmentVariableArray) ToHostedApplicationEnvironmentVariableArrayOutputWithContext(ctx context.Context) HostedApplicationEnvironmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationEnvironmentVariableArrayOutput)
+}
+
+type HostedApplicationEnvironmentVariableOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationEnvironmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (o HostedApplicationEnvironmentVariableOutput) ToHostedApplicationEnvironmentVariableOutput() HostedApplicationEnvironmentVariableOutput {
+	return o
+}
+
+func (o HostedApplicationEnvironmentVariableOutput) ToHostedApplicationEnvironmentVariableOutputWithContext(ctx context.Context) HostedApplicationEnvironmentVariableOutput {
+	return o
+}
+
+// (Updatable) Name of the environment variable.
+func (o HostedApplicationEnvironmentVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationEnvironmentVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of the environment variable (PLAINTEXT or HASHED, no default value).
+func (o HostedApplicationEnvironmentVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationEnvironmentVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of the environment variable.
+func (o HostedApplicationEnvironmentVariableOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationEnvironmentVariable) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type HostedApplicationEnvironmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationEnvironmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (o HostedApplicationEnvironmentVariableArrayOutput) ToHostedApplicationEnvironmentVariableArrayOutput() HostedApplicationEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o HostedApplicationEnvironmentVariableArrayOutput) ToHostedApplicationEnvironmentVariableArrayOutputWithContext(ctx context.Context) HostedApplicationEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o HostedApplicationEnvironmentVariableArrayOutput) Index(i pulumi.IntInput) HostedApplicationEnvironmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostedApplicationEnvironmentVariable {
+		return vs[0].([]HostedApplicationEnvironmentVariable)[vs[1].(int)]
+	}).(HostedApplicationEnvironmentVariableOutput)
+}
+
+type HostedApplicationInboundAuthConfig struct {
+	// (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfig *HostedApplicationInboundAuthConfigIdcsConfig `pulumi:"idcsConfig"`
+	// (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType string `pulumi:"inboundAuthConfigType"`
+}
+
+// HostedApplicationInboundAuthConfigInput is an input type that accepts HostedApplicationInboundAuthConfigArgs and HostedApplicationInboundAuthConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationInboundAuthConfigInput` via:
+//
+//	HostedApplicationInboundAuthConfigArgs{...}
+type HostedApplicationInboundAuthConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationInboundAuthConfigOutput() HostedApplicationInboundAuthConfigOutput
+	ToHostedApplicationInboundAuthConfigOutputWithContext(context.Context) HostedApplicationInboundAuthConfigOutput
+}
+
+type HostedApplicationInboundAuthConfigArgs struct {
+	// (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfig HostedApplicationInboundAuthConfigIdcsConfigPtrInput `pulumi:"idcsConfig"`
+	// (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType pulumi.StringInput `pulumi:"inboundAuthConfigType"`
+}
+
+func (HostedApplicationInboundAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationInboundAuthConfigArgs) ToHostedApplicationInboundAuthConfigOutput() HostedApplicationInboundAuthConfigOutput {
+	return i.ToHostedApplicationInboundAuthConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationInboundAuthConfigArgs) ToHostedApplicationInboundAuthConfigOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigOutput)
+}
+
+func (i HostedApplicationInboundAuthConfigArgs) ToHostedApplicationInboundAuthConfigPtrOutput() HostedApplicationInboundAuthConfigPtrOutput {
+	return i.ToHostedApplicationInboundAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationInboundAuthConfigArgs) ToHostedApplicationInboundAuthConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigOutput).ToHostedApplicationInboundAuthConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationInboundAuthConfigPtrInput is an input type that accepts HostedApplicationInboundAuthConfigArgs, HostedApplicationInboundAuthConfigPtr and HostedApplicationInboundAuthConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationInboundAuthConfigPtrInput` via:
+//
+//	        HostedApplicationInboundAuthConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationInboundAuthConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationInboundAuthConfigPtrOutput() HostedApplicationInboundAuthConfigPtrOutput
+	ToHostedApplicationInboundAuthConfigPtrOutputWithContext(context.Context) HostedApplicationInboundAuthConfigPtrOutput
+}
+
+type hostedApplicationInboundAuthConfigPtrType HostedApplicationInboundAuthConfigArgs
+
+func HostedApplicationInboundAuthConfigPtr(v *HostedApplicationInboundAuthConfigArgs) HostedApplicationInboundAuthConfigPtrInput {
+	return (*hostedApplicationInboundAuthConfigPtrType)(v)
+}
+
+func (*hostedApplicationInboundAuthConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationInboundAuthConfigPtrType) ToHostedApplicationInboundAuthConfigPtrOutput() HostedApplicationInboundAuthConfigPtrOutput {
+	return i.ToHostedApplicationInboundAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationInboundAuthConfigPtrType) ToHostedApplicationInboundAuthConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigPtrOutput)
+}
+
+type HostedApplicationInboundAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationInboundAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationInboundAuthConfigOutput) ToHostedApplicationInboundAuthConfigOutput() HostedApplicationInboundAuthConfigOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigOutput) ToHostedApplicationInboundAuthConfigOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigOutput) ToHostedApplicationInboundAuthConfigPtrOutput() HostedApplicationInboundAuthConfigPtrOutput {
+	return o.ToHostedApplicationInboundAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationInboundAuthConfigOutput) ToHostedApplicationInboundAuthConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationInboundAuthConfig) *HostedApplicationInboundAuthConfig {
+		return &v
+	}).(HostedApplicationInboundAuthConfigPtrOutput)
+}
+
+// (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+func (o HostedApplicationInboundAuthConfigOutput) IdcsConfig() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o.ApplyT(func(v HostedApplicationInboundAuthConfig) *HostedApplicationInboundAuthConfigIdcsConfig {
+		return v.IdcsConfig
+	}).(HostedApplicationInboundAuthConfigIdcsConfigPtrOutput)
+}
+
+// (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+func (o HostedApplicationInboundAuthConfigOutput) InboundAuthConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationInboundAuthConfig) string { return v.InboundAuthConfigType }).(pulumi.StringOutput)
+}
+
+type HostedApplicationInboundAuthConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationInboundAuthConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationInboundAuthConfigPtrOutput) ToHostedApplicationInboundAuthConfigPtrOutput() HostedApplicationInboundAuthConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigPtrOutput) ToHostedApplicationInboundAuthConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigPtrOutput) Elem() HostedApplicationInboundAuthConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfig) HostedApplicationInboundAuthConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationInboundAuthConfig
+		return ret
+	}).(HostedApplicationInboundAuthConfigOutput)
+}
+
+// (Updatable) Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+func (o HostedApplicationInboundAuthConfigPtrOutput) IdcsConfig() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfig) *HostedApplicationInboundAuthConfigIdcsConfig {
+		if v == nil {
+			return nil
+		}
+		return v.IdcsConfig
+	}).(HostedApplicationInboundAuthConfigIdcsConfigPtrOutput)
+}
+
+// (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+func (o HostedApplicationInboundAuthConfigPtrOutput) InboundAuthConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InboundAuthConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostedApplicationInboundAuthConfigIdcsConfig struct {
+	// (Updatable) Audience for IDCS.
+	Audience *string `pulumi:"audience"`
+	// (Updatable) Domain URL for IDCS.
+	DomainUrl string `pulumi:"domainUrl"`
+	// (Updatable) Scope for IDCS.
+	Scope string `pulumi:"scope"`
+}
+
+// HostedApplicationInboundAuthConfigIdcsConfigInput is an input type that accepts HostedApplicationInboundAuthConfigIdcsConfigArgs and HostedApplicationInboundAuthConfigIdcsConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationInboundAuthConfigIdcsConfigInput` via:
+//
+//	HostedApplicationInboundAuthConfigIdcsConfigArgs{...}
+type HostedApplicationInboundAuthConfigIdcsConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationInboundAuthConfigIdcsConfigOutput() HostedApplicationInboundAuthConfigIdcsConfigOutput
+	ToHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(context.Context) HostedApplicationInboundAuthConfigIdcsConfigOutput
+}
+
+type HostedApplicationInboundAuthConfigIdcsConfigArgs struct {
+	// (Updatable) Audience for IDCS.
+	Audience pulumi.StringPtrInput `pulumi:"audience"`
+	// (Updatable) Domain URL for IDCS.
+	DomainUrl pulumi.StringInput `pulumi:"domainUrl"`
+	// (Updatable) Scope for IDCS.
+	Scope pulumi.StringInput `pulumi:"scope"`
+}
+
+func (HostedApplicationInboundAuthConfigIdcsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationInboundAuthConfigIdcsConfigArgs) ToHostedApplicationInboundAuthConfigIdcsConfigOutput() HostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return i.ToHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationInboundAuthConfigIdcsConfigArgs) ToHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigIdcsConfigOutput)
+}
+
+func (i HostedApplicationInboundAuthConfigIdcsConfigArgs) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutput() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return i.ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationInboundAuthConfigIdcsConfigArgs) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigIdcsConfigOutput).ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationInboundAuthConfigIdcsConfigPtrInput is an input type that accepts HostedApplicationInboundAuthConfigIdcsConfigArgs, HostedApplicationInboundAuthConfigIdcsConfigPtr and HostedApplicationInboundAuthConfigIdcsConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationInboundAuthConfigIdcsConfigPtrInput` via:
+//
+//	        HostedApplicationInboundAuthConfigIdcsConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationInboundAuthConfigIdcsConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutput() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput
+	ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(context.Context) HostedApplicationInboundAuthConfigIdcsConfigPtrOutput
+}
+
+type hostedApplicationInboundAuthConfigIdcsConfigPtrType HostedApplicationInboundAuthConfigIdcsConfigArgs
+
+func HostedApplicationInboundAuthConfigIdcsConfigPtr(v *HostedApplicationInboundAuthConfigIdcsConfigArgs) HostedApplicationInboundAuthConfigIdcsConfigPtrInput {
+	return (*hostedApplicationInboundAuthConfigIdcsConfigPtrType)(v)
+}
+
+func (*hostedApplicationInboundAuthConfigIdcsConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationInboundAuthConfigIdcsConfigPtrType) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutput() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return i.ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationInboundAuthConfigIdcsConfigPtrType) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationInboundAuthConfigIdcsConfigPtrOutput)
+}
+
+type HostedApplicationInboundAuthConfigIdcsConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationInboundAuthConfigIdcsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) ToHostedApplicationInboundAuthConfigIdcsConfigOutput() HostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) ToHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutput() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o.ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationInboundAuthConfigIdcsConfig) *HostedApplicationInboundAuthConfigIdcsConfig {
+		return &v
+	}).(HostedApplicationInboundAuthConfigIdcsConfigPtrOutput)
+}
+
+// (Updatable) Audience for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedApplicationInboundAuthConfigIdcsConfig) *string { return v.Audience }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Domain URL for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) DomainUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationInboundAuthConfigIdcsConfig) string { return v.DomainUrl }).(pulumi.StringOutput)
+}
+
+// (Updatable) Scope for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationInboundAuthConfigIdcsConfig) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+type HostedApplicationInboundAuthConfigIdcsConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutput() HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) ToHostedApplicationInboundAuthConfigIdcsConfigPtrOutputWithContext(ctx context.Context) HostedApplicationInboundAuthConfigIdcsConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) Elem() HostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfigIdcsConfig) HostedApplicationInboundAuthConfigIdcsConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationInboundAuthConfigIdcsConfig
+		return ret
+	}).(HostedApplicationInboundAuthConfigIdcsConfigOutput)
+}
+
+// (Updatable) Audience for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) Audience() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfigIdcsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Audience
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Domain URL for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) DomainUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfigIdcsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.DomainUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Scope for IDCS.
+func (o HostedApplicationInboundAuthConfigIdcsConfigPtrOutput) Scope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationInboundAuthConfigIdcsConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Scope
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostedApplicationNetworkingConfig struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfig HostedApplicationNetworkingConfigInboundNetworkingConfig `pulumi:"inboundNetworkingConfig"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfig HostedApplicationNetworkingConfigOutboundNetworkingConfig `pulumi:"outboundNetworkingConfig"`
+}
+
+// HostedApplicationNetworkingConfigInput is an input type that accepts HostedApplicationNetworkingConfigArgs and HostedApplicationNetworkingConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigInput` via:
+//
+//	HostedApplicationNetworkingConfigArgs{...}
+type HostedApplicationNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigOutput() HostedApplicationNetworkingConfigOutput
+	ToHostedApplicationNetworkingConfigOutputWithContext(context.Context) HostedApplicationNetworkingConfigOutput
+}
+
+type HostedApplicationNetworkingConfigArgs struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfig HostedApplicationNetworkingConfigInboundNetworkingConfigInput `pulumi:"inboundNetworkingConfig"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfig HostedApplicationNetworkingConfigOutboundNetworkingConfigInput `pulumi:"outboundNetworkingConfig"`
+}
+
+func (HostedApplicationNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutput() HostedApplicationNetworkingConfigOutput {
+	return i.ToHostedApplicationNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigOutput)
+}
+
+func (i HostedApplicationNetworkingConfigArgs) ToHostedApplicationNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigArgs) ToHostedApplicationNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigOutput).ToHostedApplicationNetworkingConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationNetworkingConfigPtrInput is an input type that accepts HostedApplicationNetworkingConfigArgs, HostedApplicationNetworkingConfigPtr and HostedApplicationNetworkingConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigPtrInput` via:
+//
+//	        HostedApplicationNetworkingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationNetworkingConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigPtrOutput
+	ToHostedApplicationNetworkingConfigPtrOutputWithContext(context.Context) HostedApplicationNetworkingConfigPtrOutput
+}
+
+type hostedApplicationNetworkingConfigPtrType HostedApplicationNetworkingConfigArgs
+
+func HostedApplicationNetworkingConfigPtr(v *HostedApplicationNetworkingConfigArgs) HostedApplicationNetworkingConfigPtrInput {
+	return (*hostedApplicationNetworkingConfigPtrType)(v)
+}
+
+func (*hostedApplicationNetworkingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutput() HostedApplicationNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutput) ToHostedApplicationNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigPtrOutput {
+	return o.ToHostedApplicationNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationNetworkingConfigOutput) ToHostedApplicationNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationNetworkingConfig) *HostedApplicationNetworkingConfig {
+		return &v
+	}).(HostedApplicationNetworkingConfigPtrOutput)
+}
+
+// Inbound Networking configuration.
+func (o HostedApplicationNetworkingConfigOutput) InboundNetworkingConfig() HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfig) HostedApplicationNetworkingConfigInboundNetworkingConfig {
+		return v.InboundNetworkingConfig
+	}).(HostedApplicationNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+// Outbound Networking configuration.
+func (o HostedApplicationNetworkingConfigOutput) OutboundNetworkingConfig() HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfig) HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		return v.OutboundNetworkingConfig
+	}).(HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+type HostedApplicationNetworkingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigPtrOutput) Elem() HostedApplicationNetworkingConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfig) HostedApplicationNetworkingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationNetworkingConfig
+		return ret
+	}).(HostedApplicationNetworkingConfigOutput)
+}
+
+// Inbound Networking configuration.
+func (o HostedApplicationNetworkingConfigPtrOutput) InboundNetworkingConfig() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfig) *HostedApplicationNetworkingConfigInboundNetworkingConfig {
+		if v == nil {
+			return nil
+		}
+		return &v.InboundNetworkingConfig
+	}).(HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput)
+}
+
+// Outbound Networking configuration.
+func (o HostedApplicationNetworkingConfigPtrOutput) OutboundNetworkingConfig() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfig) *HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		if v == nil {
+			return nil
+		}
+		return &v.OutboundNetworkingConfig
+	}).(HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigInboundNetworkingConfig struct {
+	// inbounding from public or private endpoint.
+	EndpointMode string `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+}
+
+// HostedApplicationNetworkingConfigInboundNetworkingConfigInput is an input type that accepts HostedApplicationNetworkingConfigInboundNetworkingConfigArgs and HostedApplicationNetworkingConfigInboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigInboundNetworkingConfigInput` via:
+//
+//	HostedApplicationNetworkingConfigInboundNetworkingConfigArgs{...}
+type HostedApplicationNetworkingConfigInboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigOutput
+	ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigOutput
+}
+
+type HostedApplicationNetworkingConfigInboundNetworkingConfigArgs struct {
+	// inbounding from public or private endpoint.
+	EndpointMode pulumi.StringInput `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
+}
+
+func (HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return i.ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+func (i HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigInboundNetworkingConfigOutput).ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationNetworkingConfigInboundNetworkingConfigPtrInput is an input type that accepts HostedApplicationNetworkingConfigInboundNetworkingConfigArgs, HostedApplicationNetworkingConfigInboundNetworkingConfigPtr and HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigInboundNetworkingConfigPtrInput` via:
+//
+//	        HostedApplicationNetworkingConfigInboundNetworkingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationNetworkingConfigInboundNetworkingConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput
+	ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput
+}
+
+type hostedApplicationNetworkingConfigInboundNetworkingConfigPtrType HostedApplicationNetworkingConfigInboundNetworkingConfigArgs
+
+func HostedApplicationNetworkingConfigInboundNetworkingConfigPtr(v *HostedApplicationNetworkingConfigInboundNetworkingConfigArgs) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrInput {
+	return (*hostedApplicationNetworkingConfigInboundNetworkingConfigPtrType)(v)
+}
+
+func (*hostedApplicationNetworkingConfigInboundNetworkingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationNetworkingConfigInboundNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationNetworkingConfigInboundNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigInboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return o.ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationNetworkingConfigInboundNetworkingConfig) *HostedApplicationNetworkingConfigInboundNetworkingConfig {
+		return &v
+	}).(HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput)
+}
+
+// inbounding from public or private endpoint.
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) EndpointMode() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfigInboundNetworkingConfig) string { return v.EndpointMode }).(pulumi.StringOutput)
+}
+
+// The [OCID] of Private Endpoint when endpointMode=Private
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfigInboundNetworkingConfig) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) Elem() HostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigInboundNetworkingConfig) HostedApplicationNetworkingConfigInboundNetworkingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationNetworkingConfigInboundNetworkingConfig
+		return ret
+	}).(HostedApplicationNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+// inbounding from public or private endpoint.
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) EndpointMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigInboundNetworkingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.EndpointMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// The [OCID] of Private Endpoint when endpointMode=Private
+func (o HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigInboundNetworkingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigOutboundNetworkingConfig struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId *string `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode string `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds []string `pulumi:"nsgIds"`
+}
+
+// HostedApplicationNetworkingConfigOutboundNetworkingConfigInput is an input type that accepts HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs and HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigOutboundNetworkingConfigInput` via:
+//
+//	HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{...}
+type HostedApplicationNetworkingConfigOutboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput
+	ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput
+}
+
+type HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId pulumi.StringPtrInput `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode pulumi.StringInput `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+}
+
+func (HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return i.ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+func (i HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput).ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrInput is an input type that accepts HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs, HostedApplicationNetworkingConfigOutboundNetworkingConfigPtr and HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrInput` via:
+//
+//	        HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput
+	ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput
+}
+
+type hostedApplicationNetworkingConfigOutboundNetworkingConfigPtrType HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs
+
+func HostedApplicationNetworkingConfigOutboundNetworkingConfigPtr(v *HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrInput {
+	return (*hostedApplicationNetworkingConfigOutboundNetworkingConfigPtrType)(v)
+}
+
+func (*hostedApplicationNetworkingConfigOutboundNetworkingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationNetworkingConfigOutboundNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return i.ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationNetworkingConfigOutboundNetworkingConfigPtrType) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput)
+}
+
+type HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return o.ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationNetworkingConfigOutboundNetworkingConfig) *HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		return &v
+	}).(HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput)
+}
+
+// ocid of customer subnet when networkMode=Custom
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) CustomSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfigOutboundNetworkingConfig) *string { return v.CustomSubnetId }).(pulumi.StringPtrOutput)
+}
+
+// outbounding to managed internet or customer network.
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) NetworkMode() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfigOutboundNetworkingConfig) string { return v.NetworkMode }).(pulumi.StringOutput)
+}
+
+// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v HostedApplicationNetworkingConfigOutboundNetworkingConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+type HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput() HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) ToHostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) Elem() HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigOutboundNetworkingConfig) HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationNetworkingConfigOutboundNetworkingConfig
+		return ret
+	}).(HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+// ocid of customer subnet when networkMode=Custom
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) CustomSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigOutboundNetworkingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CustomSubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// outbounding to managed internet or customer network.
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) NetworkMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigOutboundNetworkingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NetworkMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+func (o HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *HostedApplicationNetworkingConfigOutboundNetworkingConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type HostedApplicationScalingConfig struct {
+	// (Updatable) Maximum number of replicas allowed.
+	MaxReplica *int `pulumi:"maxReplica"`
+	// (Updatable) Minimum number of replicas to keep running.
+	MinReplica *int `pulumi:"minReplica"`
+	// (Updatable) scaling type for application.
+	ScalingType string `pulumi:"scalingType"`
+	// (Updatable) number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold *int `pulumi:"targetConcurrencyThreshold"`
+	// (Updatable) Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold *int `pulumi:"targetCpuThreshold"`
+	// (Updatable) Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold *int `pulumi:"targetMemoryThreshold"`
+	// (Updatable) requests-per-second per replica of an application.
+	TargetRpsThreshold *int `pulumi:"targetRpsThreshold"`
+}
+
+// HostedApplicationScalingConfigInput is an input type that accepts HostedApplicationScalingConfigArgs and HostedApplicationScalingConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationScalingConfigInput` via:
+//
+//	HostedApplicationScalingConfigArgs{...}
+type HostedApplicationScalingConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationScalingConfigOutput() HostedApplicationScalingConfigOutput
+	ToHostedApplicationScalingConfigOutputWithContext(context.Context) HostedApplicationScalingConfigOutput
+}
+
+type HostedApplicationScalingConfigArgs struct {
+	// (Updatable) Maximum number of replicas allowed.
+	MaxReplica pulumi.IntPtrInput `pulumi:"maxReplica"`
+	// (Updatable) Minimum number of replicas to keep running.
+	MinReplica pulumi.IntPtrInput `pulumi:"minReplica"`
+	// (Updatable) scaling type for application.
+	ScalingType pulumi.StringInput `pulumi:"scalingType"`
+	// (Updatable) number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold pulumi.IntPtrInput `pulumi:"targetConcurrencyThreshold"`
+	// (Updatable) Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold pulumi.IntPtrInput `pulumi:"targetCpuThreshold"`
+	// (Updatable) Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold pulumi.IntPtrInput `pulumi:"targetMemoryThreshold"`
+	// (Updatable) requests-per-second per replica of an application.
+	TargetRpsThreshold pulumi.IntPtrInput `pulumi:"targetRpsThreshold"`
+}
+
+func (HostedApplicationScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationScalingConfigArgs) ToHostedApplicationScalingConfigOutput() HostedApplicationScalingConfigOutput {
+	return i.ToHostedApplicationScalingConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationScalingConfigArgs) ToHostedApplicationScalingConfigOutputWithContext(ctx context.Context) HostedApplicationScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationScalingConfigOutput)
+}
+
+func (i HostedApplicationScalingConfigArgs) ToHostedApplicationScalingConfigPtrOutput() HostedApplicationScalingConfigPtrOutput {
+	return i.ToHostedApplicationScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationScalingConfigArgs) ToHostedApplicationScalingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationScalingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationScalingConfigOutput).ToHostedApplicationScalingConfigPtrOutputWithContext(ctx)
+}
+
+// HostedApplicationScalingConfigPtrInput is an input type that accepts HostedApplicationScalingConfigArgs, HostedApplicationScalingConfigPtr and HostedApplicationScalingConfigPtrOutput values.
+// You can construct a concrete instance of `HostedApplicationScalingConfigPtrInput` via:
+//
+//	        HostedApplicationScalingConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedApplicationScalingConfigPtrInput interface {
+	pulumi.Input
+
+	ToHostedApplicationScalingConfigPtrOutput() HostedApplicationScalingConfigPtrOutput
+	ToHostedApplicationScalingConfigPtrOutputWithContext(context.Context) HostedApplicationScalingConfigPtrOutput
+}
+
+type hostedApplicationScalingConfigPtrType HostedApplicationScalingConfigArgs
+
+func HostedApplicationScalingConfigPtr(v *HostedApplicationScalingConfigArgs) HostedApplicationScalingConfigPtrInput {
+	return (*hostedApplicationScalingConfigPtrType)(v)
+}
+
+func (*hostedApplicationScalingConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (i *hostedApplicationScalingConfigPtrType) ToHostedApplicationScalingConfigPtrOutput() HostedApplicationScalingConfigPtrOutput {
+	return i.ToHostedApplicationScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedApplicationScalingConfigPtrType) ToHostedApplicationScalingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationScalingConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationScalingConfigPtrOutput)
+}
+
+type HostedApplicationScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationScalingConfigOutput) ToHostedApplicationScalingConfigOutput() HostedApplicationScalingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationScalingConfigOutput) ToHostedApplicationScalingConfigOutputWithContext(ctx context.Context) HostedApplicationScalingConfigOutput {
+	return o
+}
+
+func (o HostedApplicationScalingConfigOutput) ToHostedApplicationScalingConfigPtrOutput() HostedApplicationScalingConfigPtrOutput {
+	return o.ToHostedApplicationScalingConfigPtrOutputWithContext(context.Background())
+}
+
+func (o HostedApplicationScalingConfigOutput) ToHostedApplicationScalingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationScalingConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedApplicationScalingConfig) *HostedApplicationScalingConfig {
+		return &v
+	}).(HostedApplicationScalingConfigPtrOutput)
+}
+
+// (Updatable) Maximum number of replicas allowed.
+func (o HostedApplicationScalingConfigOutput) MaxReplica() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.MaxReplica }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Minimum number of replicas to keep running.
+func (o HostedApplicationScalingConfigOutput) MinReplica() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.MinReplica }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) scaling type for application.
+func (o HostedApplicationScalingConfigOutput) ScalingType() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) string { return v.ScalingType }).(pulumi.StringOutput)
+}
+
+// (Updatable) number of simultaneous requests that can be processed by each replica.
+func (o HostedApplicationScalingConfigOutput) TargetConcurrencyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.TargetConcurrencyThreshold }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Scale up if average CPU utilization exceeds this threshold.
+func (o HostedApplicationScalingConfigOutput) TargetCpuThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.TargetCpuThreshold }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Scale up if average memory utilization exceeds this threshold.
+func (o HostedApplicationScalingConfigOutput) TargetMemoryThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.TargetMemoryThreshold }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) requests-per-second per replica of an application.
+func (o HostedApplicationScalingConfigOutput) TargetRpsThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v HostedApplicationScalingConfig) *int { return v.TargetRpsThreshold }).(pulumi.IntPtrOutput)
+}
+
+type HostedApplicationScalingConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationScalingConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationScalingConfigPtrOutput) ToHostedApplicationScalingConfigPtrOutput() HostedApplicationScalingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationScalingConfigPtrOutput) ToHostedApplicationScalingConfigPtrOutputWithContext(ctx context.Context) HostedApplicationScalingConfigPtrOutput {
+	return o
+}
+
+func (o HostedApplicationScalingConfigPtrOutput) Elem() HostedApplicationScalingConfigOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) HostedApplicationScalingConfig {
+		if v != nil {
+			return *v
+		}
+		var ret HostedApplicationScalingConfig
+		return ret
+	}).(HostedApplicationScalingConfigOutput)
+}
+
+// (Updatable) Maximum number of replicas allowed.
+func (o HostedApplicationScalingConfigPtrOutput) MaxReplica() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MaxReplica
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Minimum number of replicas to keep running.
+func (o HostedApplicationScalingConfigPtrOutput) MinReplica() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MinReplica
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) scaling type for application.
+func (o HostedApplicationScalingConfigPtrOutput) ScalingType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ScalingType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) number of simultaneous requests that can be processed by each replica.
+func (o HostedApplicationScalingConfigPtrOutput) TargetConcurrencyThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TargetConcurrencyThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Scale up if average CPU utilization exceeds this threshold.
+func (o HostedApplicationScalingConfigPtrOutput) TargetCpuThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TargetCpuThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Scale up if average memory utilization exceeds this threshold.
+func (o HostedApplicationScalingConfigPtrOutput) TargetMemoryThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TargetMemoryThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) requests-per-second per replica of an application.
+func (o HostedApplicationScalingConfigPtrOutput) TargetRpsThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HostedApplicationScalingConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TargetRpsThreshold
+	}).(pulumi.IntPtrOutput)
+}
+
+type HostedApplicationStorageConfig struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey string `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StorageId string `pulumi:"storageId"`
+}
+
+// HostedApplicationStorageConfigInput is an input type that accepts HostedApplicationStorageConfigArgs and HostedApplicationStorageConfigOutput values.
+// You can construct a concrete instance of `HostedApplicationStorageConfigInput` via:
+//
+//	HostedApplicationStorageConfigArgs{...}
+type HostedApplicationStorageConfigInput interface {
+	pulumi.Input
+
+	ToHostedApplicationStorageConfigOutput() HostedApplicationStorageConfigOutput
+	ToHostedApplicationStorageConfigOutputWithContext(context.Context) HostedApplicationStorageConfigOutput
+}
+
+type HostedApplicationStorageConfigArgs struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey pulumi.StringInput `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StorageId pulumi.StringInput `pulumi:"storageId"`
+}
+
+func (HostedApplicationStorageConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationStorageConfigArgs) ToHostedApplicationStorageConfigOutput() HostedApplicationStorageConfigOutput {
+	return i.ToHostedApplicationStorageConfigOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationStorageConfigArgs) ToHostedApplicationStorageConfigOutputWithContext(ctx context.Context) HostedApplicationStorageConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationStorageConfigOutput)
+}
+
+// HostedApplicationStorageConfigArrayInput is an input type that accepts HostedApplicationStorageConfigArray and HostedApplicationStorageConfigArrayOutput values.
+// You can construct a concrete instance of `HostedApplicationStorageConfigArrayInput` via:
+//
+//	HostedApplicationStorageConfigArray{ HostedApplicationStorageConfigArgs{...} }
+type HostedApplicationStorageConfigArrayInput interface {
+	pulumi.Input
+
+	ToHostedApplicationStorageConfigArrayOutput() HostedApplicationStorageConfigArrayOutput
+	ToHostedApplicationStorageConfigArrayOutputWithContext(context.Context) HostedApplicationStorageConfigArrayOutput
+}
+
+type HostedApplicationStorageConfigArray []HostedApplicationStorageConfigInput
+
+func (HostedApplicationStorageConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (i HostedApplicationStorageConfigArray) ToHostedApplicationStorageConfigArrayOutput() HostedApplicationStorageConfigArrayOutput {
+	return i.ToHostedApplicationStorageConfigArrayOutputWithContext(context.Background())
+}
+
+func (i HostedApplicationStorageConfigArray) ToHostedApplicationStorageConfigArrayOutputWithContext(ctx context.Context) HostedApplicationStorageConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedApplicationStorageConfigArrayOutput)
+}
+
+type HostedApplicationStorageConfigOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationStorageConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationStorageConfigOutput) ToHostedApplicationStorageConfigOutput() HostedApplicationStorageConfigOutput {
+	return o
+}
+
+func (o HostedApplicationStorageConfigOutput) ToHostedApplicationStorageConfigOutputWithContext(ctx context.Context) HostedApplicationStorageConfigOutput {
+	return o
+}
+
+// The key of environment variable to store the database connection.
+func (o HostedApplicationStorageConfigOutput) EnvironmentVariableKey() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationStorageConfig) string { return v.EnvironmentVariableKey }).(pulumi.StringOutput)
+}
+
+// The [OCID] of ApplicationStorage.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o HostedApplicationStorageConfigOutput) StorageId() pulumi.StringOutput {
+	return o.ApplyT(func(v HostedApplicationStorageConfig) string { return v.StorageId }).(pulumi.StringOutput)
+}
+
+type HostedApplicationStorageConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (HostedApplicationStorageConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (o HostedApplicationStorageConfigArrayOutput) ToHostedApplicationStorageConfigArrayOutput() HostedApplicationStorageConfigArrayOutput {
+	return o
+}
+
+func (o HostedApplicationStorageConfigArrayOutput) ToHostedApplicationStorageConfigArrayOutputWithContext(ctx context.Context) HostedApplicationStorageConfigArrayOutput {
+	return o
+}
+
+func (o HostedApplicationStorageConfigArrayOutput) Index(i pulumi.IntInput) HostedApplicationStorageConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostedApplicationStorageConfig {
+		return vs[0].([]HostedApplicationStorageConfig)[vs[1].(int)]
+	}).(HostedApplicationStorageConfigOutput)
+}
+
+type HostedDeploymentActiveArtifact struct {
+	// (Updatable) The type of the artifact.
+	ArtifactType *string `pulumi:"artifactType"`
+	// (Updatable) image url.
+	ContainerUri *string `pulumi:"containerUri"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId *string `pulumi:"hostedDeploymentId"`
+	// (Updatable) if put artifact to a table, the id is needed
+	Id *string `pulumi:"id"`
+	// (Updatable) The current status of the artifact.
+	Status *string `pulumi:"status"`
+	// (Updatable) image tag.
+	Tag *string `pulumi:"tag"`
+	// (Updatable) The date and time the artifact was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+}
+
+// HostedDeploymentActiveArtifactInput is an input type that accepts HostedDeploymentActiveArtifactArgs and HostedDeploymentActiveArtifactOutput values.
+// You can construct a concrete instance of `HostedDeploymentActiveArtifactInput` via:
+//
+//	HostedDeploymentActiveArtifactArgs{...}
+type HostedDeploymentActiveArtifactInput interface {
+	pulumi.Input
+
+	ToHostedDeploymentActiveArtifactOutput() HostedDeploymentActiveArtifactOutput
+	ToHostedDeploymentActiveArtifactOutputWithContext(context.Context) HostedDeploymentActiveArtifactOutput
+}
+
+type HostedDeploymentActiveArtifactArgs struct {
+	// (Updatable) The type of the artifact.
+	ArtifactType pulumi.StringPtrInput `pulumi:"artifactType"`
+	// (Updatable) image url.
+	ContainerUri pulumi.StringPtrInput `pulumi:"containerUri"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId pulumi.StringPtrInput `pulumi:"hostedDeploymentId"`
+	// (Updatable) if put artifact to a table, the id is needed
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) The current status of the artifact.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// (Updatable) image tag.
+	Tag pulumi.StringPtrInput `pulumi:"tag"`
+	// (Updatable) The date and time the artifact was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+}
+
+func (HostedDeploymentActiveArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (i HostedDeploymentActiveArtifactArgs) ToHostedDeploymentActiveArtifactOutput() HostedDeploymentActiveArtifactOutput {
+	return i.ToHostedDeploymentActiveArtifactOutputWithContext(context.Background())
+}
+
+func (i HostedDeploymentActiveArtifactArgs) ToHostedDeploymentActiveArtifactOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedDeploymentActiveArtifactOutput)
+}
+
+func (i HostedDeploymentActiveArtifactArgs) ToHostedDeploymentActiveArtifactPtrOutput() HostedDeploymentActiveArtifactPtrOutput {
+	return i.ToHostedDeploymentActiveArtifactPtrOutputWithContext(context.Background())
+}
+
+func (i HostedDeploymentActiveArtifactArgs) ToHostedDeploymentActiveArtifactPtrOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedDeploymentActiveArtifactOutput).ToHostedDeploymentActiveArtifactPtrOutputWithContext(ctx)
+}
+
+// HostedDeploymentActiveArtifactPtrInput is an input type that accepts HostedDeploymentActiveArtifactArgs, HostedDeploymentActiveArtifactPtr and HostedDeploymentActiveArtifactPtrOutput values.
+// You can construct a concrete instance of `HostedDeploymentActiveArtifactPtrInput` via:
+//
+//	        HostedDeploymentActiveArtifactArgs{...}
+//
+//	or:
+//
+//	        nil
+type HostedDeploymentActiveArtifactPtrInput interface {
+	pulumi.Input
+
+	ToHostedDeploymentActiveArtifactPtrOutput() HostedDeploymentActiveArtifactPtrOutput
+	ToHostedDeploymentActiveArtifactPtrOutputWithContext(context.Context) HostedDeploymentActiveArtifactPtrOutput
+}
+
+type hostedDeploymentActiveArtifactPtrType HostedDeploymentActiveArtifactArgs
+
+func HostedDeploymentActiveArtifactPtr(v *HostedDeploymentActiveArtifactArgs) HostedDeploymentActiveArtifactPtrInput {
+	return (*hostedDeploymentActiveArtifactPtrType)(v)
+}
+
+func (*hostedDeploymentActiveArtifactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (i *hostedDeploymentActiveArtifactPtrType) ToHostedDeploymentActiveArtifactPtrOutput() HostedDeploymentActiveArtifactPtrOutput {
+	return i.ToHostedDeploymentActiveArtifactPtrOutputWithContext(context.Background())
+}
+
+func (i *hostedDeploymentActiveArtifactPtrType) ToHostedDeploymentActiveArtifactPtrOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedDeploymentActiveArtifactPtrOutput)
+}
+
+type HostedDeploymentActiveArtifactOutput struct{ *pulumi.OutputState }
+
+func (HostedDeploymentActiveArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (o HostedDeploymentActiveArtifactOutput) ToHostedDeploymentActiveArtifactOutput() HostedDeploymentActiveArtifactOutput {
+	return o
+}
+
+func (o HostedDeploymentActiveArtifactOutput) ToHostedDeploymentActiveArtifactOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactOutput {
+	return o
+}
+
+func (o HostedDeploymentActiveArtifactOutput) ToHostedDeploymentActiveArtifactPtrOutput() HostedDeploymentActiveArtifactPtrOutput {
+	return o.ToHostedDeploymentActiveArtifactPtrOutputWithContext(context.Background())
+}
+
+func (o HostedDeploymentActiveArtifactOutput) ToHostedDeploymentActiveArtifactPtrOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v HostedDeploymentActiveArtifact) *HostedDeploymentActiveArtifact {
+		return &v
+	}).(HostedDeploymentActiveArtifactPtrOutput)
+}
+
+// (Updatable) The type of the artifact.
+func (o HostedDeploymentActiveArtifactOutput) ArtifactType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.ArtifactType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) image url.
+func (o HostedDeploymentActiveArtifactOutput) ContainerUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.ContainerUri }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o HostedDeploymentActiveArtifactOutput) HostedDeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.HostedDeploymentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) if put artifact to a table, the id is needed
+func (o HostedDeploymentActiveArtifactOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The current status of the artifact.
+func (o HostedDeploymentActiveArtifactOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) image tag.
+func (o HostedDeploymentActiveArtifactOutput) Tag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.Tag }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The date and time the artifact was created.
+func (o HostedDeploymentActiveArtifactOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentActiveArtifact) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+type HostedDeploymentActiveArtifactPtrOutput struct{ *pulumi.OutputState }
+
+func (HostedDeploymentActiveArtifactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**HostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (o HostedDeploymentActiveArtifactPtrOutput) ToHostedDeploymentActiveArtifactPtrOutput() HostedDeploymentActiveArtifactPtrOutput {
+	return o
+}
+
+func (o HostedDeploymentActiveArtifactPtrOutput) ToHostedDeploymentActiveArtifactPtrOutputWithContext(ctx context.Context) HostedDeploymentActiveArtifactPtrOutput {
+	return o
+}
+
+func (o HostedDeploymentActiveArtifactPtrOutput) Elem() HostedDeploymentActiveArtifactOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) HostedDeploymentActiveArtifact {
+		if v != nil {
+			return *v
+		}
+		var ret HostedDeploymentActiveArtifact
+		return ret
+	}).(HostedDeploymentActiveArtifactOutput)
+}
+
+// (Updatable) The type of the artifact.
+func (o HostedDeploymentActiveArtifactPtrOutput) ArtifactType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ArtifactType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) image url.
+func (o HostedDeploymentActiveArtifactPtrOutput) ContainerUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContainerUri
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o HostedDeploymentActiveArtifactPtrOutput) HostedDeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostedDeploymentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) if put artifact to a table, the id is needed
+func (o HostedDeploymentActiveArtifactPtrOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The current status of the artifact.
+func (o HostedDeploymentActiveArtifactPtrOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Status
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) image tag.
+func (o HostedDeploymentActiveArtifactPtrOutput) Tag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Tag
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The date and time the artifact was created.
+func (o HostedDeploymentActiveArtifactPtrOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HostedDeploymentActiveArtifact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
+}
+
+type HostedDeploymentArtifact struct {
+	// The type of the artifact.
+	ArtifactType *string `pulumi:"artifactType"`
+	// image url.
+	ContainerUri *string `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId *string `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id *string `pulumi:"id"`
+	// The current status of the artifact.
+	Status *string `pulumi:"status"`
+	// image tag.
+	Tag *string `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated *string `pulumi:"timeCreated"`
+}
+
+// HostedDeploymentArtifactInput is an input type that accepts HostedDeploymentArtifactArgs and HostedDeploymentArtifactOutput values.
+// You can construct a concrete instance of `HostedDeploymentArtifactInput` via:
+//
+//	HostedDeploymentArtifactArgs{...}
+type HostedDeploymentArtifactInput interface {
+	pulumi.Input
+
+	ToHostedDeploymentArtifactOutput() HostedDeploymentArtifactOutput
+	ToHostedDeploymentArtifactOutputWithContext(context.Context) HostedDeploymentArtifactOutput
+}
+
+type HostedDeploymentArtifactArgs struct {
+	// The type of the artifact.
+	ArtifactType pulumi.StringPtrInput `pulumi:"artifactType"`
+	// image url.
+	ContainerUri pulumi.StringPtrInput `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId pulumi.StringPtrInput `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// The current status of the artifact.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// image tag.
+	Tag pulumi.StringPtrInput `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+}
+
+func (HostedDeploymentArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (i HostedDeploymentArtifactArgs) ToHostedDeploymentArtifactOutput() HostedDeploymentArtifactOutput {
+	return i.ToHostedDeploymentArtifactOutputWithContext(context.Background())
+}
+
+func (i HostedDeploymentArtifactArgs) ToHostedDeploymentArtifactOutputWithContext(ctx context.Context) HostedDeploymentArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedDeploymentArtifactOutput)
+}
+
+// HostedDeploymentArtifactArrayInput is an input type that accepts HostedDeploymentArtifactArray and HostedDeploymentArtifactArrayOutput values.
+// You can construct a concrete instance of `HostedDeploymentArtifactArrayInput` via:
+//
+//	HostedDeploymentArtifactArray{ HostedDeploymentArtifactArgs{...} }
+type HostedDeploymentArtifactArrayInput interface {
+	pulumi.Input
+
+	ToHostedDeploymentArtifactArrayOutput() HostedDeploymentArtifactArrayOutput
+	ToHostedDeploymentArtifactArrayOutputWithContext(context.Context) HostedDeploymentArtifactArrayOutput
+}
+
+type HostedDeploymentArtifactArray []HostedDeploymentArtifactInput
+
+func (HostedDeploymentArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (i HostedDeploymentArtifactArray) ToHostedDeploymentArtifactArrayOutput() HostedDeploymentArtifactArrayOutput {
+	return i.ToHostedDeploymentArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i HostedDeploymentArtifactArray) ToHostedDeploymentArtifactArrayOutputWithContext(ctx context.Context) HostedDeploymentArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(HostedDeploymentArtifactArrayOutput)
+}
+
+type HostedDeploymentArtifactOutput struct{ *pulumi.OutputState }
+
+func (HostedDeploymentArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*HostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (o HostedDeploymentArtifactOutput) ToHostedDeploymentArtifactOutput() HostedDeploymentArtifactOutput {
+	return o
+}
+
+func (o HostedDeploymentArtifactOutput) ToHostedDeploymentArtifactOutputWithContext(ctx context.Context) HostedDeploymentArtifactOutput {
+	return o
+}
+
+// The type of the artifact.
+func (o HostedDeploymentArtifactOutput) ArtifactType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.ArtifactType }).(pulumi.StringPtrOutput)
+}
+
+// image url.
+func (o HostedDeploymentArtifactOutput) ContainerUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.ContainerUri }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o HostedDeploymentArtifactOutput) HostedDeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.HostedDeploymentId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o HostedDeploymentArtifactOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// The current status of the artifact.
+func (o HostedDeploymentArtifactOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// image tag.
+func (o HostedDeploymentArtifactOutput) Tag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.Tag }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o HostedDeploymentArtifactOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v HostedDeploymentArtifact) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+type HostedDeploymentArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (HostedDeploymentArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]HostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (o HostedDeploymentArtifactArrayOutput) ToHostedDeploymentArtifactArrayOutput() HostedDeploymentArtifactArrayOutput {
+	return o
+}
+
+func (o HostedDeploymentArtifactArrayOutput) ToHostedDeploymentArtifactArrayOutputWithContext(ctx context.Context) HostedDeploymentArtifactArrayOutput {
+	return o
+}
+
+func (o HostedDeploymentArtifactArrayOutput) Index(i pulumi.IntInput) HostedDeploymentArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) HostedDeploymentArtifact {
+		return vs[0].([]HostedDeploymentArtifact)[vs[1].(int)]
+	}).(HostedDeploymentArtifactOutput)
+}
+
 type ImportedModelDataSource struct {
 	// Hugging Face access token to authenticate requests for restricted models.  This token will be securely stored in Oracle Cloud Infrastructure Vault.
 	AccessToken *string `pulumi:"accessToken"`
@@ -26759,6 +28466,8 @@ type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem st
 	PreviousState string   `pulumi:"previousState"`
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
+	// Query by the resource type of Generative AI private endpoints.
+	ResourceType string `pulumi:"resourceType"`
 	// The lifecycle state of Generative AI private endpoints.
 	State string `pulumi:"state"`
 	// The OCID of the subnet that the private endpoint belongs to.
@@ -26803,6 +28512,8 @@ type GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArg
 	PreviousState pulumi.StringInput      `pulumi:"previousState"`
 	// The private IP address (in the customer's VCN) that represents the access point for the associated endpoint service.
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
+	// Query by the resource type of Generative AI private endpoints.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The lifecycle state of Generative AI private endpoints.
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of the subnet that the private endpoint belongs to.
@@ -26942,6 +28653,13 @@ func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem
 	}).(pulumi.StringOutput)
 }
 
+// Query by the resource type of Generative AI private endpoints.
+func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
 // The lifecycle state of Generative AI private endpoints.
 func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem) string {
@@ -26995,6 +28713,3770 @@ func (o GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem {
 		return vs[0].([]GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItem)[vs[1].(int)]
 	}).(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput)
+}
+
+type GetHostedApplicationEnvironmentVariable struct {
+	// Name of the environment variable.
+	Name string `pulumi:"name"`
+	// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type string `pulumi:"type"`
+	// Value of the environment variable.
+	Value string `pulumi:"value"`
+}
+
+// GetHostedApplicationEnvironmentVariableInput is an input type that accepts GetHostedApplicationEnvironmentVariableArgs and GetHostedApplicationEnvironmentVariableOutput values.
+// You can construct a concrete instance of `GetHostedApplicationEnvironmentVariableInput` via:
+//
+//	GetHostedApplicationEnvironmentVariableArgs{...}
+type GetHostedApplicationEnvironmentVariableInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationEnvironmentVariableOutput() GetHostedApplicationEnvironmentVariableOutput
+	ToGetHostedApplicationEnvironmentVariableOutputWithContext(context.Context) GetHostedApplicationEnvironmentVariableOutput
+}
+
+type GetHostedApplicationEnvironmentVariableArgs struct {
+	// Name of the environment variable.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of the environment variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHostedApplicationEnvironmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (i GetHostedApplicationEnvironmentVariableArgs) ToGetHostedApplicationEnvironmentVariableOutput() GetHostedApplicationEnvironmentVariableOutput {
+	return i.ToGetHostedApplicationEnvironmentVariableOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationEnvironmentVariableArgs) ToGetHostedApplicationEnvironmentVariableOutputWithContext(ctx context.Context) GetHostedApplicationEnvironmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationEnvironmentVariableOutput)
+}
+
+// GetHostedApplicationEnvironmentVariableArrayInput is an input type that accepts GetHostedApplicationEnvironmentVariableArray and GetHostedApplicationEnvironmentVariableArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationEnvironmentVariableArrayInput` via:
+//
+//	GetHostedApplicationEnvironmentVariableArray{ GetHostedApplicationEnvironmentVariableArgs{...} }
+type GetHostedApplicationEnvironmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationEnvironmentVariableArrayOutput() GetHostedApplicationEnvironmentVariableArrayOutput
+	ToGetHostedApplicationEnvironmentVariableArrayOutputWithContext(context.Context) GetHostedApplicationEnvironmentVariableArrayOutput
+}
+
+type GetHostedApplicationEnvironmentVariableArray []GetHostedApplicationEnvironmentVariableInput
+
+func (GetHostedApplicationEnvironmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (i GetHostedApplicationEnvironmentVariableArray) ToGetHostedApplicationEnvironmentVariableArrayOutput() GetHostedApplicationEnvironmentVariableArrayOutput {
+	return i.ToGetHostedApplicationEnvironmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationEnvironmentVariableArray) ToGetHostedApplicationEnvironmentVariableArrayOutputWithContext(ctx context.Context) GetHostedApplicationEnvironmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationEnvironmentVariableArrayOutput)
+}
+
+type GetHostedApplicationEnvironmentVariableOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationEnvironmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (o GetHostedApplicationEnvironmentVariableOutput) ToGetHostedApplicationEnvironmentVariableOutput() GetHostedApplicationEnvironmentVariableOutput {
+	return o
+}
+
+func (o GetHostedApplicationEnvironmentVariableOutput) ToGetHostedApplicationEnvironmentVariableOutputWithContext(ctx context.Context) GetHostedApplicationEnvironmentVariableOutput {
+	return o
+}
+
+// Name of the environment variable.
+func (o GetHostedApplicationEnvironmentVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationEnvironmentVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+func (o GetHostedApplicationEnvironmentVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationEnvironmentVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Value of the environment variable.
+func (o GetHostedApplicationEnvironmentVariableOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationEnvironmentVariable) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationEnvironmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationEnvironmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationEnvironmentVariable)(nil)).Elem()
+}
+
+func (o GetHostedApplicationEnvironmentVariableArrayOutput) ToGetHostedApplicationEnvironmentVariableArrayOutput() GetHostedApplicationEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationEnvironmentVariableArrayOutput) ToGetHostedApplicationEnvironmentVariableArrayOutputWithContext(ctx context.Context) GetHostedApplicationEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationEnvironmentVariableArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationEnvironmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationEnvironmentVariable {
+		return vs[0].([]GetHostedApplicationEnvironmentVariable)[vs[1].(int)]
+	}).(GetHostedApplicationEnvironmentVariableOutput)
+}
+
+type GetHostedApplicationInboundAuthConfig struct {
+	// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfigs []GetHostedApplicationInboundAuthConfigIdcsConfig `pulumi:"idcsConfigs"`
+	// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType string `pulumi:"inboundAuthConfigType"`
+}
+
+// GetHostedApplicationInboundAuthConfigInput is an input type that accepts GetHostedApplicationInboundAuthConfigArgs and GetHostedApplicationInboundAuthConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationInboundAuthConfigInput` via:
+//
+//	GetHostedApplicationInboundAuthConfigArgs{...}
+type GetHostedApplicationInboundAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationInboundAuthConfigOutput() GetHostedApplicationInboundAuthConfigOutput
+	ToGetHostedApplicationInboundAuthConfigOutputWithContext(context.Context) GetHostedApplicationInboundAuthConfigOutput
+}
+
+type GetHostedApplicationInboundAuthConfigArgs struct {
+	// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfigs GetHostedApplicationInboundAuthConfigIdcsConfigArrayInput `pulumi:"idcsConfigs"`
+	// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType pulumi.StringInput `pulumi:"inboundAuthConfigType"`
+}
+
+func (GetHostedApplicationInboundAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationInboundAuthConfigArgs) ToGetHostedApplicationInboundAuthConfigOutput() GetHostedApplicationInboundAuthConfigOutput {
+	return i.ToGetHostedApplicationInboundAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationInboundAuthConfigArgs) ToGetHostedApplicationInboundAuthConfigOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationInboundAuthConfigOutput)
+}
+
+// GetHostedApplicationInboundAuthConfigArrayInput is an input type that accepts GetHostedApplicationInboundAuthConfigArray and GetHostedApplicationInboundAuthConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationInboundAuthConfigArrayInput` via:
+//
+//	GetHostedApplicationInboundAuthConfigArray{ GetHostedApplicationInboundAuthConfigArgs{...} }
+type GetHostedApplicationInboundAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationInboundAuthConfigArrayOutput() GetHostedApplicationInboundAuthConfigArrayOutput
+	ToGetHostedApplicationInboundAuthConfigArrayOutputWithContext(context.Context) GetHostedApplicationInboundAuthConfigArrayOutput
+}
+
+type GetHostedApplicationInboundAuthConfigArray []GetHostedApplicationInboundAuthConfigInput
+
+func (GetHostedApplicationInboundAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationInboundAuthConfigArray) ToGetHostedApplicationInboundAuthConfigArrayOutput() GetHostedApplicationInboundAuthConfigArrayOutput {
+	return i.ToGetHostedApplicationInboundAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationInboundAuthConfigArray) ToGetHostedApplicationInboundAuthConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationInboundAuthConfigArrayOutput)
+}
+
+type GetHostedApplicationInboundAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationInboundAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationInboundAuthConfigOutput) ToGetHostedApplicationInboundAuthConfigOutput() GetHostedApplicationInboundAuthConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigOutput) ToGetHostedApplicationInboundAuthConfigOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigOutput {
+	return o
+}
+
+// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+func (o GetHostedApplicationInboundAuthConfigOutput) IdcsConfigs() GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationInboundAuthConfig) []GetHostedApplicationInboundAuthConfigIdcsConfig {
+		return v.IdcsConfigs
+	}).(GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput)
+}
+
+// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+func (o GetHostedApplicationInboundAuthConfigOutput) InboundAuthConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationInboundAuthConfig) string { return v.InboundAuthConfigType }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationInboundAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationInboundAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationInboundAuthConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationInboundAuthConfigArrayOutput) ToGetHostedApplicationInboundAuthConfigArrayOutput() GetHostedApplicationInboundAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigArrayOutput) ToGetHostedApplicationInboundAuthConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationInboundAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationInboundAuthConfig {
+		return vs[0].([]GetHostedApplicationInboundAuthConfig)[vs[1].(int)]
+	}).(GetHostedApplicationInboundAuthConfigOutput)
+}
+
+type GetHostedApplicationInboundAuthConfigIdcsConfig struct {
+	// Audience for IDCS.
+	Audience string `pulumi:"audience"`
+	// Domain URL for IDCS.
+	DomainUrl string `pulumi:"domainUrl"`
+	// Scope for IDCS.
+	Scope string `pulumi:"scope"`
+}
+
+// GetHostedApplicationInboundAuthConfigIdcsConfigInput is an input type that accepts GetHostedApplicationInboundAuthConfigIdcsConfigArgs and GetHostedApplicationInboundAuthConfigIdcsConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationInboundAuthConfigIdcsConfigInput` via:
+//
+//	GetHostedApplicationInboundAuthConfigIdcsConfigArgs{...}
+type GetHostedApplicationInboundAuthConfigIdcsConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationInboundAuthConfigIdcsConfigOutput() GetHostedApplicationInboundAuthConfigIdcsConfigOutput
+	ToGetHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigOutput
+}
+
+type GetHostedApplicationInboundAuthConfigIdcsConfigArgs struct {
+	// Audience for IDCS.
+	Audience pulumi.StringInput `pulumi:"audience"`
+	// Domain URL for IDCS.
+	DomainUrl pulumi.StringInput `pulumi:"domainUrl"`
+	// Scope for IDCS.
+	Scope pulumi.StringInput `pulumi:"scope"`
+}
+
+func (GetHostedApplicationInboundAuthConfigIdcsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationInboundAuthConfigIdcsConfigArgs) ToGetHostedApplicationInboundAuthConfigIdcsConfigOutput() GetHostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return i.ToGetHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationInboundAuthConfigIdcsConfigArgs) ToGetHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationInboundAuthConfigIdcsConfigOutput)
+}
+
+// GetHostedApplicationInboundAuthConfigIdcsConfigArrayInput is an input type that accepts GetHostedApplicationInboundAuthConfigIdcsConfigArray and GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationInboundAuthConfigIdcsConfigArrayInput` via:
+//
+//	GetHostedApplicationInboundAuthConfigIdcsConfigArray{ GetHostedApplicationInboundAuthConfigIdcsConfigArgs{...} }
+type GetHostedApplicationInboundAuthConfigIdcsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput
+	ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutputWithContext(context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput
+}
+
+type GetHostedApplicationInboundAuthConfigIdcsConfigArray []GetHostedApplicationInboundAuthConfigIdcsConfigInput
+
+func (GetHostedApplicationInboundAuthConfigIdcsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationInboundAuthConfigIdcsConfigArray) ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput {
+	return i.ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationInboundAuthConfigIdcsConfigArray) ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput)
+}
+
+type GetHostedApplicationInboundAuthConfigIdcsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationInboundAuthConfigIdcsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigOutput) ToGetHostedApplicationInboundAuthConfigIdcsConfigOutput() GetHostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigOutput) ToGetHostedApplicationInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+// Audience for IDCS.
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigOutput) Audience() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationInboundAuthConfigIdcsConfig) string { return v.Audience }).(pulumi.StringOutput)
+}
+
+// Domain URL for IDCS.
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigOutput) DomainUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationInboundAuthConfigIdcsConfig) string { return v.DomainUrl }).(pulumi.StringOutput)
+}
+
+// Scope for IDCS.
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationInboundAuthConfigIdcsConfig) string { return v.Scope }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput) ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput) ToGetHostedApplicationInboundAuthConfigIdcsConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationInboundAuthConfigIdcsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationInboundAuthConfigIdcsConfig {
+		return vs[0].([]GetHostedApplicationInboundAuthConfigIdcsConfig)[vs[1].(int)]
+	}).(GetHostedApplicationInboundAuthConfigIdcsConfigOutput)
+}
+
+type GetHostedApplicationNetworkingConfig struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfigs []GetHostedApplicationNetworkingConfigInboundNetworkingConfig `pulumi:"inboundNetworkingConfigs"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfigs []GetHostedApplicationNetworkingConfigOutboundNetworkingConfig `pulumi:"outboundNetworkingConfigs"`
+}
+
+// GetHostedApplicationNetworkingConfigInput is an input type that accepts GetHostedApplicationNetworkingConfigArgs and GetHostedApplicationNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigInput` via:
+//
+//	GetHostedApplicationNetworkingConfigArgs{...}
+type GetHostedApplicationNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutput
+	ToGetHostedApplicationNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigOutput
+}
+
+type GetHostedApplicationNetworkingConfigArgs struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfigs GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayInput `pulumi:"inboundNetworkingConfigs"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfigs GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayInput `pulumi:"outboundNetworkingConfigs"`
+}
+
+func (GetHostedApplicationNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutput {
+	return i.ToGetHostedApplicationNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigOutput)
+}
+
+// GetHostedApplicationNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationNetworkingConfigArray and GetHostedApplicationNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationNetworkingConfigArray{ GetHostedApplicationNetworkingConfigArgs{...} }
+type GetHostedApplicationNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigArrayOutput
+	ToGetHostedApplicationNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationNetworkingConfigArray []GetHostedApplicationNetworkingConfigInput
+
+func (GetHostedApplicationNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutput {
+	return o
+}
+
+// Inbound Networking configuration.
+func (o GetHostedApplicationNetworkingConfigOutput) InboundNetworkingConfigs() GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfig) []GetHostedApplicationNetworkingConfigInboundNetworkingConfig {
+		return v.InboundNetworkingConfigs
+	}).(GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput)
+}
+
+// Outbound Networking configuration.
+func (o GetHostedApplicationNetworkingConfigOutput) OutboundNetworkingConfigs() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfig) []GetHostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		return v.OutboundNetworkingConfigs
+	}).(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationNetworkingConfig {
+		return vs[0].([]GetHostedApplicationNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationNetworkingConfigOutput)
+}
+
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfig struct {
+	// inbounding from public or private endpoint.
+	EndpointMode string `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetHostedApplicationNetworkingConfigInboundNetworkingConfigInput is an input type that accepts GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs and GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigInboundNetworkingConfigInput` via:
+//
+//	GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs{...}
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput
+	ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput
+}
+
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs struct {
+	// inbounding from public or private endpoint.
+	EndpointMode pulumi.StringInput `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return i.ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+// GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray and GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray{ GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs{...} }
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput
+	ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray []GetHostedApplicationNetworkingConfigInboundNetworkingConfigInput
+
+func (GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+// inbounding from public or private endpoint.
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput) EndpointMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfigInboundNetworkingConfig) string { return v.EndpointMode }).(pulumi.StringOutput)
+}
+
+// The [OCID] of Private Endpoint when endpointMode=Private
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfigInboundNetworkingConfig) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationNetworkingConfigInboundNetworkingConfig {
+		return vs[0].([]GetHostedApplicationNetworkingConfigInboundNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfig struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId string `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode string `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds []string `pulumi:"nsgIds"`
+}
+
+// GetHostedApplicationNetworkingConfigOutboundNetworkingConfigInput is an input type that accepts GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs and GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigOutboundNetworkingConfigInput` via:
+//
+//	GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{...}
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput
+	ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput
+}
+
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId pulumi.StringInput `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode pulumi.StringInput `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+}
+
+func (GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return i.ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+// GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray and GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray{ GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{...} }
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput
+	ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray []GetHostedApplicationNetworkingConfigOutboundNetworkingConfigInput
+
+func (GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+// ocid of customer subnet when networkMode=Custom
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) CustomSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfigOutboundNetworkingConfig) string { return v.CustomSubnetId }).(pulumi.StringOutput)
+}
+
+// outbounding to managed internet or customer network.
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) NetworkMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfigOutboundNetworkingConfig) string { return v.NetworkMode }).(pulumi.StringOutput)
+}
+
+// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationNetworkingConfigOutboundNetworkingConfig) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+type GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput) ToGetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationNetworkingConfigOutboundNetworkingConfig {
+		return vs[0].([]GetHostedApplicationNetworkingConfigOutboundNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+type GetHostedApplicationScalingConfig struct {
+	// Maximum number of replicas allowed.
+	MaxReplica int `pulumi:"maxReplica"`
+	// Minimum number of replicas to keep running.
+	MinReplica int `pulumi:"minReplica"`
+	// scaling type for application.
+	ScalingType string `pulumi:"scalingType"`
+	// number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold int `pulumi:"targetConcurrencyThreshold"`
+	// Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold int `pulumi:"targetCpuThreshold"`
+	// Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold int `pulumi:"targetMemoryThreshold"`
+	// requests-per-second per replica of an application.
+	TargetRpsThreshold int `pulumi:"targetRpsThreshold"`
+}
+
+// GetHostedApplicationScalingConfigInput is an input type that accepts GetHostedApplicationScalingConfigArgs and GetHostedApplicationScalingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationScalingConfigInput` via:
+//
+//	GetHostedApplicationScalingConfigArgs{...}
+type GetHostedApplicationScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationScalingConfigOutput() GetHostedApplicationScalingConfigOutput
+	ToGetHostedApplicationScalingConfigOutputWithContext(context.Context) GetHostedApplicationScalingConfigOutput
+}
+
+type GetHostedApplicationScalingConfigArgs struct {
+	// Maximum number of replicas allowed.
+	MaxReplica pulumi.IntInput `pulumi:"maxReplica"`
+	// Minimum number of replicas to keep running.
+	MinReplica pulumi.IntInput `pulumi:"minReplica"`
+	// scaling type for application.
+	ScalingType pulumi.StringInput `pulumi:"scalingType"`
+	// number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold pulumi.IntInput `pulumi:"targetConcurrencyThreshold"`
+	// Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold pulumi.IntInput `pulumi:"targetCpuThreshold"`
+	// Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold pulumi.IntInput `pulumi:"targetMemoryThreshold"`
+	// requests-per-second per replica of an application.
+	TargetRpsThreshold pulumi.IntInput `pulumi:"targetRpsThreshold"`
+}
+
+func (GetHostedApplicationScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationScalingConfigArgs) ToGetHostedApplicationScalingConfigOutput() GetHostedApplicationScalingConfigOutput {
+	return i.ToGetHostedApplicationScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationScalingConfigArgs) ToGetHostedApplicationScalingConfigOutputWithContext(ctx context.Context) GetHostedApplicationScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationScalingConfigOutput)
+}
+
+// GetHostedApplicationScalingConfigArrayInput is an input type that accepts GetHostedApplicationScalingConfigArray and GetHostedApplicationScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationScalingConfigArrayInput` via:
+//
+//	GetHostedApplicationScalingConfigArray{ GetHostedApplicationScalingConfigArgs{...} }
+type GetHostedApplicationScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationScalingConfigArrayOutput() GetHostedApplicationScalingConfigArrayOutput
+	ToGetHostedApplicationScalingConfigArrayOutputWithContext(context.Context) GetHostedApplicationScalingConfigArrayOutput
+}
+
+type GetHostedApplicationScalingConfigArray []GetHostedApplicationScalingConfigInput
+
+func (GetHostedApplicationScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationScalingConfigArray) ToGetHostedApplicationScalingConfigArrayOutput() GetHostedApplicationScalingConfigArrayOutput {
+	return i.ToGetHostedApplicationScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationScalingConfigArray) ToGetHostedApplicationScalingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationScalingConfigArrayOutput)
+}
+
+type GetHostedApplicationScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationScalingConfigOutput) ToGetHostedApplicationScalingConfigOutput() GetHostedApplicationScalingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationScalingConfigOutput) ToGetHostedApplicationScalingConfigOutputWithContext(ctx context.Context) GetHostedApplicationScalingConfigOutput {
+	return o
+}
+
+// Maximum number of replicas allowed.
+func (o GetHostedApplicationScalingConfigOutput) MaxReplica() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.MaxReplica }).(pulumi.IntOutput)
+}
+
+// Minimum number of replicas to keep running.
+func (o GetHostedApplicationScalingConfigOutput) MinReplica() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.MinReplica }).(pulumi.IntOutput)
+}
+
+// scaling type for application.
+func (o GetHostedApplicationScalingConfigOutput) ScalingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) string { return v.ScalingType }).(pulumi.StringOutput)
+}
+
+// number of simultaneous requests that can be processed by each replica.
+func (o GetHostedApplicationScalingConfigOutput) TargetConcurrencyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.TargetConcurrencyThreshold }).(pulumi.IntOutput)
+}
+
+// Scale up if average CPU utilization exceeds this threshold.
+func (o GetHostedApplicationScalingConfigOutput) TargetCpuThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.TargetCpuThreshold }).(pulumi.IntOutput)
+}
+
+// Scale up if average memory utilization exceeds this threshold.
+func (o GetHostedApplicationScalingConfigOutput) TargetMemoryThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.TargetMemoryThreshold }).(pulumi.IntOutput)
+}
+
+// requests-per-second per replica of an application.
+func (o GetHostedApplicationScalingConfigOutput) TargetRpsThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationScalingConfig) int { return v.TargetRpsThreshold }).(pulumi.IntOutput)
+}
+
+type GetHostedApplicationScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationScalingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationScalingConfigArrayOutput) ToGetHostedApplicationScalingConfigArrayOutput() GetHostedApplicationScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationScalingConfigArrayOutput) ToGetHostedApplicationScalingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationScalingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationScalingConfig {
+		return vs[0].([]GetHostedApplicationScalingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationScalingConfigOutput)
+}
+
+type GetHostedApplicationStorageConfig struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey string `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	StorageId string `pulumi:"storageId"`
+}
+
+// GetHostedApplicationStorageConfigInput is an input type that accepts GetHostedApplicationStorageConfigArgs and GetHostedApplicationStorageConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStorageConfigInput` via:
+//
+//	GetHostedApplicationStorageConfigArgs{...}
+type GetHostedApplicationStorageConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStorageConfigOutput() GetHostedApplicationStorageConfigOutput
+	ToGetHostedApplicationStorageConfigOutputWithContext(context.Context) GetHostedApplicationStorageConfigOutput
+}
+
+type GetHostedApplicationStorageConfigArgs struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey pulumi.StringInput `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	StorageId pulumi.StringInput `pulumi:"storageId"`
+}
+
+func (GetHostedApplicationStorageConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStorageConfigArgs) ToGetHostedApplicationStorageConfigOutput() GetHostedApplicationStorageConfigOutput {
+	return i.ToGetHostedApplicationStorageConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStorageConfigArgs) ToGetHostedApplicationStorageConfigOutputWithContext(ctx context.Context) GetHostedApplicationStorageConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStorageConfigOutput)
+}
+
+// GetHostedApplicationStorageConfigArrayInput is an input type that accepts GetHostedApplicationStorageConfigArray and GetHostedApplicationStorageConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStorageConfigArrayInput` via:
+//
+//	GetHostedApplicationStorageConfigArray{ GetHostedApplicationStorageConfigArgs{...} }
+type GetHostedApplicationStorageConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStorageConfigArrayOutput() GetHostedApplicationStorageConfigArrayOutput
+	ToGetHostedApplicationStorageConfigArrayOutputWithContext(context.Context) GetHostedApplicationStorageConfigArrayOutput
+}
+
+type GetHostedApplicationStorageConfigArray []GetHostedApplicationStorageConfigInput
+
+func (GetHostedApplicationStorageConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStorageConfigArray) ToGetHostedApplicationStorageConfigArrayOutput() GetHostedApplicationStorageConfigArrayOutput {
+	return i.ToGetHostedApplicationStorageConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStorageConfigArray) ToGetHostedApplicationStorageConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationStorageConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStorageConfigArrayOutput)
+}
+
+type GetHostedApplicationStorageConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStorageConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStorageConfigOutput) ToGetHostedApplicationStorageConfigOutput() GetHostedApplicationStorageConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationStorageConfigOutput) ToGetHostedApplicationStorageConfigOutputWithContext(ctx context.Context) GetHostedApplicationStorageConfigOutput {
+	return o
+}
+
+// The key of environment variable to store the database connection.
+func (o GetHostedApplicationStorageConfigOutput) EnvironmentVariableKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStorageConfig) string { return v.EnvironmentVariableKey }).(pulumi.StringOutput)
+}
+
+// The [OCID] of ApplicationStorage.
+func (o GetHostedApplicationStorageConfigOutput) StorageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStorageConfig) string { return v.StorageId }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationStorageConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStorageConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStorageConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStorageConfigArrayOutput) ToGetHostedApplicationStorageConfigArrayOutput() GetHostedApplicationStorageConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStorageConfigArrayOutput) ToGetHostedApplicationStorageConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationStorageConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStorageConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationStorageConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationStorageConfig {
+		return vs[0].([]GetHostedApplicationStorageConfig)[vs[1].(int)]
+	}).(GetHostedApplicationStorageConfigOutput)
+}
+
+type GetHostedApplicationStoragesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetHostedApplicationStoragesFilterInput is an input type that accepts GetHostedApplicationStoragesFilterArgs and GetHostedApplicationStoragesFilterOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesFilterInput` via:
+//
+//	GetHostedApplicationStoragesFilterArgs{...}
+type GetHostedApplicationStoragesFilterInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesFilterOutput() GetHostedApplicationStoragesFilterOutput
+	ToGetHostedApplicationStoragesFilterOutputWithContext(context.Context) GetHostedApplicationStoragesFilterOutput
+}
+
+type GetHostedApplicationStoragesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetHostedApplicationStoragesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesFilter)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesFilterArgs) ToGetHostedApplicationStoragesFilterOutput() GetHostedApplicationStoragesFilterOutput {
+	return i.ToGetHostedApplicationStoragesFilterOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesFilterArgs) ToGetHostedApplicationStoragesFilterOutputWithContext(ctx context.Context) GetHostedApplicationStoragesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesFilterOutput)
+}
+
+// GetHostedApplicationStoragesFilterArrayInput is an input type that accepts GetHostedApplicationStoragesFilterArray and GetHostedApplicationStoragesFilterArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesFilterArrayInput` via:
+//
+//	GetHostedApplicationStoragesFilterArray{ GetHostedApplicationStoragesFilterArgs{...} }
+type GetHostedApplicationStoragesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesFilterArrayOutput() GetHostedApplicationStoragesFilterArrayOutput
+	ToGetHostedApplicationStoragesFilterArrayOutputWithContext(context.Context) GetHostedApplicationStoragesFilterArrayOutput
+}
+
+type GetHostedApplicationStoragesFilterArray []GetHostedApplicationStoragesFilterInput
+
+func (GetHostedApplicationStoragesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesFilter)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesFilterArray) ToGetHostedApplicationStoragesFilterArrayOutput() GetHostedApplicationStoragesFilterArrayOutput {
+	return i.ToGetHostedApplicationStoragesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesFilterArray) ToGetHostedApplicationStoragesFilterArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesFilterArrayOutput)
+}
+
+type GetHostedApplicationStoragesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesFilter)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesFilterOutput) ToGetHostedApplicationStoragesFilterOutput() GetHostedApplicationStoragesFilterOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesFilterOutput) ToGetHostedApplicationStoragesFilterOutputWithContext(ctx context.Context) GetHostedApplicationStoragesFilterOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetHostedApplicationStoragesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetHostedApplicationStoragesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetHostedApplicationStoragesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesFilter)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesFilterArrayOutput) ToGetHostedApplicationStoragesFilterArrayOutput() GetHostedApplicationStoragesFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesFilterArrayOutput) ToGetHostedApplicationStoragesFilterArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesFilterArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationStoragesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationStoragesFilter {
+		return vs[0].([]GetHostedApplicationStoragesFilter)[vs[1].(int)]
+	}).(GetHostedApplicationStoragesFilterOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollection struct {
+	Items []GetHostedApplicationStoragesHostedApplicationStorageCollectionItem `pulumi:"items"`
+}
+
+// GetHostedApplicationStoragesHostedApplicationStorageCollectionInput is an input type that accepts GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs and GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesHostedApplicationStorageCollectionInput` via:
+//
+//	GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs{...}
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutputWithContext(context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs struct {
+	Items GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollection)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput {
+	return i.ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput)
+}
+
+// GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayInput is an input type that accepts GetHostedApplicationStoragesHostedApplicationStorageCollectionArray and GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayInput` via:
+//
+//	GetHostedApplicationStoragesHostedApplicationStorageCollectionArray{ GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs{...} }
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutputWithContext(context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionArray []GetHostedApplicationStoragesHostedApplicationStorageCollectionInput
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesHostedApplicationStorageCollection)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionArray) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput {
+	return i.ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionArray) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollection)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput) Items() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollection) []GetHostedApplicationStoragesHostedApplicationStorageCollectionItem {
+		return v.Items
+	}).(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesHostedApplicationStorageCollection)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationStoragesHostedApplicationStorageCollection {
+		return vs[0].([]GetHostedApplicationStoragesHostedApplicationStorageCollection)[vs[1].(int)]
+	}).(GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItem struct {
+	// A list of application OCID.
+	ApplicationIds []string `pulumi:"applicationIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the hosted application storage.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+	Id string `pulumi:"id"`
+	// A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+	State string `pulumi:"state"`
+	// type like Cache, Postgresql and ADB.
+	StorageType string `pulumi:"storageType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the hosted application was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the hosted application was updated, in the format defined by RFC 3339
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetHostedApplicationStoragesHostedApplicationStorageCollectionItemInput is an input type that accepts GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs and GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesHostedApplicationStorageCollectionItemInput` via:
+//
+//	GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs{...}
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutputWithContext(context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs struct {
+	// A list of application OCID.
+	ApplicationIds pulumi.StringArrayInput `pulumi:"applicationIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the hosted application storage.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// type like Cache, Postgresql and ADB.
+	StorageType pulumi.StringInput `pulumi:"storageType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the hosted application was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the hosted application was updated, in the format defined by RFC 3339
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput {
+	return i.ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput)
+}
+
+// GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayInput is an input type that accepts GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray and GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayInput` via:
+//
+//	GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray{ GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs{...} }
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput
+	ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutputWithContext(context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray []GetHostedApplicationStoragesHostedApplicationStorageCollectionItemInput
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesHostedApplicationStorageCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput {
+	return i.ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput {
+	return o
+}
+
+// A list of application OCID.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) ApplicationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) []string {
+		return v.ApplicationIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// An optional description of the hosted application storage.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application storage.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state of the hosted application storage in more detail that can provide actionable information.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// type like Cache, Postgresql and ADB.
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) StorageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.StorageType
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the hosted application was created, in the format defined by RFC 3339
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the hosted application was updated, in the format defined by RFC 3339
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationStoragesHostedApplicationStorageCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationStoragesHostedApplicationStorageCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput() GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput) ToGetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationStoragesHostedApplicationStorageCollectionItem {
+		return vs[0].([]GetHostedApplicationStoragesHostedApplicationStorageCollectionItem)[vs[1].(int)]
+	}).(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput)
+}
+
+type GetHostedApplicationsFilter struct {
+	// Name of the environment variable.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetHostedApplicationsFilterInput is an input type that accepts GetHostedApplicationsFilterArgs and GetHostedApplicationsFilterOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsFilterInput` via:
+//
+//	GetHostedApplicationsFilterArgs{...}
+type GetHostedApplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsFilterOutput() GetHostedApplicationsFilterOutput
+	ToGetHostedApplicationsFilterOutputWithContext(context.Context) GetHostedApplicationsFilterOutput
+}
+
+type GetHostedApplicationsFilterArgs struct {
+	// Name of the environment variable.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetHostedApplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsFilterArgs) ToGetHostedApplicationsFilterOutput() GetHostedApplicationsFilterOutput {
+	return i.ToGetHostedApplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsFilterArgs) ToGetHostedApplicationsFilterOutputWithContext(ctx context.Context) GetHostedApplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsFilterOutput)
+}
+
+// GetHostedApplicationsFilterArrayInput is an input type that accepts GetHostedApplicationsFilterArray and GetHostedApplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsFilterArrayInput` via:
+//
+//	GetHostedApplicationsFilterArray{ GetHostedApplicationsFilterArgs{...} }
+type GetHostedApplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsFilterArrayOutput() GetHostedApplicationsFilterArrayOutput
+	ToGetHostedApplicationsFilterArrayOutputWithContext(context.Context) GetHostedApplicationsFilterArrayOutput
+}
+
+type GetHostedApplicationsFilterArray []GetHostedApplicationsFilterInput
+
+func (GetHostedApplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsFilterArray) ToGetHostedApplicationsFilterArrayOutput() GetHostedApplicationsFilterArrayOutput {
+	return i.ToGetHostedApplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsFilterArray) ToGetHostedApplicationsFilterArrayOutputWithContext(ctx context.Context) GetHostedApplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsFilterArrayOutput)
+}
+
+type GetHostedApplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsFilterOutput) ToGetHostedApplicationsFilterOutput() GetHostedApplicationsFilterOutput {
+	return o
+}
+
+func (o GetHostedApplicationsFilterOutput) ToGetHostedApplicationsFilterOutputWithContext(ctx context.Context) GetHostedApplicationsFilterOutput {
+	return o
+}
+
+// Name of the environment variable.
+func (o GetHostedApplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetHostedApplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHostedApplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetHostedApplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetHostedApplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsFilterArrayOutput) ToGetHostedApplicationsFilterArrayOutput() GetHostedApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsFilterArrayOutput) ToGetHostedApplicationsFilterArrayOutputWithContext(ctx context.Context) GetHostedApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsFilter {
+		return vs[0].([]GetHostedApplicationsFilter)[vs[1].(int)]
+	}).(GetHostedApplicationsFilterOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollection struct {
+	Items []GetHostedApplicationsHostedApplicationCollectionItem `pulumi:"items"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionArgs and GetHostedApplicationsHostedApplicationCollectionOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionOutput() GetHostedApplicationsHostedApplicationCollectionOutput
+	ToGetHostedApplicationsHostedApplicationCollectionOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionArgs struct {
+	Items GetHostedApplicationsHostedApplicationCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollection)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionArgs) ToGetHostedApplicationsHostedApplicationCollectionOutput() GetHostedApplicationsHostedApplicationCollectionOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionArgs) ToGetHostedApplicationsHostedApplicationCollectionOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionArray and GetHostedApplicationsHostedApplicationCollectionArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionArray{ GetHostedApplicationsHostedApplicationCollectionArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionArrayOutput() GetHostedApplicationsHostedApplicationCollectionArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionArray []GetHostedApplicationsHostedApplicationCollectionInput
+
+func (GetHostedApplicationsHostedApplicationCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollection)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionArray) ToGetHostedApplicationsHostedApplicationCollectionArrayOutput() GetHostedApplicationsHostedApplicationCollectionArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionArray) ToGetHostedApplicationsHostedApplicationCollectionArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollection)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionOutput) ToGetHostedApplicationsHostedApplicationCollectionOutput() GetHostedApplicationsHostedApplicationCollectionOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionOutput) ToGetHostedApplicationsHostedApplicationCollectionOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionOutput) Items() GetHostedApplicationsHostedApplicationCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollection) []GetHostedApplicationsHostedApplicationCollectionItem {
+		return v.Items
+	}).(GetHostedApplicationsHostedApplicationCollectionItemArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollection)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionArrayOutput() GetHostedApplicationsHostedApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollection {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollection)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the hosted application.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+	EnvironmentVariables []GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable `pulumi:"environmentVariables"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+	Id string `pulumi:"id"`
+	// The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+	InboundAuthConfigs []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig `pulumi:"inboundAuthConfigs"`
+	// A message describing the current state of the endpoint in more detail that can provide actionable information.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Networking configuration.
+	NetworkingConfigs []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig `pulumi:"networkingConfigs"`
+	// The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+	ScalingConfigs []GetHostedApplicationsHostedApplicationCollectionItemScalingConfig `pulumi:"scalingConfigs"`
+	// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+	State string `pulumi:"state"`
+	// A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+	StorageConfigs []GetHostedApplicationsHostedApplicationCollectionItemStorageConfig `pulumi:"storageConfigs"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the hosted application was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the hosted application was updated, in the format defined by RFC 3339
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemArgs and GetHostedApplicationsHostedApplicationCollectionItemOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemOutput() GetHostedApplicationsHostedApplicationCollectionItemOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the hosted application.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+	EnvironmentVariables GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayInput `pulumi:"environmentVariables"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+	InboundAuthConfigs GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayInput `pulumi:"inboundAuthConfigs"`
+	// A message describing the current state of the endpoint in more detail that can provide actionable information.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Networking configuration.
+	NetworkingConfigs GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayInput `pulumi:"networkingConfigs"`
+	// The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+	ScalingConfigs GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayInput `pulumi:"scalingConfigs"`
+	// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+	StorageConfigs GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the hosted application was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the hosted application was updated, in the format defined by RFC 3339
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemArgs) ToGetHostedApplicationsHostedApplicationCollectionItemOutput() GetHostedApplicationsHostedApplicationCollectionItemOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemArgs) ToGetHostedApplicationsHostedApplicationCollectionItemOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemArray and GetHostedApplicationsHostedApplicationCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemArray{ GetHostedApplicationsHostedApplicationCollectionItemArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemArray []GetHostedApplicationsHostedApplicationCollectionItemInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemArray) ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemArray) ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) ToGetHostedApplicationsHostedApplicationCollectionItemOutput() GetHostedApplicationsHostedApplicationCollectionItemOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) ToGetHostedApplicationsHostedApplicationCollectionItemOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// An optional description of the hosted application.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The list of environment variables for the Hosted Application.  Defines a list of environment variables injected at runtime.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) EnvironmentVariables() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) []GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable {
+		return v.EnvironmentVariables
+	}).(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted application.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The client-side inbound authentication configuration for the Hosted Application.  Defines the network access rules. When unspecified, the service applies the default inbound authentication configuration type.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) InboundAuthConfigs() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig {
+		return v.InboundAuthConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput)
+}
+
+// A message describing the current state of the endpoint in more detail that can provide actionable information.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Networking configuration.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) NetworkingConfigs() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig {
+		return v.NetworkingConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput)
+}
+
+// The auto scaling configuration for the Hosted Application.  Defines the minimum and maximum number of replicas. When unspecified, the service applies service-defined default scaling values.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) ScalingConfigs() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) []GetHostedApplicationsHostedApplicationCollectionItemScalingConfig {
+		return v.ScalingConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput)
+}
+
+// A filter to return only the hosted applications that their lifecycle state matches the given lifecycle state.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// A list of storageConfigs managed by the Oracle Cloud Infrastructure GenAI Platform and attached to the application.
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) StorageConfigs() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) []GetHostedApplicationsHostedApplicationCollectionItemStorageConfig {
+		return v.StorageConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the hosted application was created, in the format defined by RFC 3339
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted application was updated, in the format defined by RFC 3339
+func (o GetHostedApplicationsHostedApplicationCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItem {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItem)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable struct {
+	// Name of the environment variable.
+	Name string `pulumi:"name"`
+	// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type string `pulumi:"type"`
+	// Value of the environment variable.
+	Value string `pulumi:"value"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs and GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs struct {
+	// Name of the environment variable.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+	Type pulumi.StringInput `pulumi:"type"`
+	// Value of the environment variable.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray and GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray{ GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray []GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput {
+	return o
+}
+
+// Name of the environment variable.
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Type of the environment variable (PLAINTEXT or HASHED, no default value).
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// Value of the environment variable.
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariable)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig struct {
+	// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfigs []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig `pulumi:"idcsConfigs"`
+	// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType string `pulumi:"inboundAuthConfigType"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs struct {
+	// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+	IdcsConfigs GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayInput `pulumi:"idcsConfigs"`
+	// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+	InboundAuthConfigType pulumi.StringInput `pulumi:"inboundAuthConfigType"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray and GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput {
+	return o
+}
+
+// Oracle Identity Cloud Service (IDCS) configuration used  when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput) IdcsConfigs() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig) []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig {
+		return v.IdcsConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput)
+}
+
+// Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput) InboundAuthConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig) string {
+		return v.InboundAuthConfigType
+	}).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig struct {
+	// Audience for IDCS.
+	Audience string `pulumi:"audience"`
+	// Domain URL for IDCS.
+	DomainUrl string `pulumi:"domainUrl"`
+	// Scope for IDCS.
+	Scope string `pulumi:"scope"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs struct {
+	// Audience for IDCS.
+	Audience pulumi.StringInput `pulumi:"audience"`
+	// Domain URL for IDCS.
+	DomainUrl pulumi.StringInput `pulumi:"domainUrl"`
+	// Scope for IDCS.
+	Scope pulumi.StringInput `pulumi:"scope"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray and GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray []GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput {
+	return o
+}
+
+// Audience for IDCS.
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) Audience() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig) string {
+		return v.Audience
+	}).(pulumi.StringOutput)
+}
+
+// Domain URL for IDCS.
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) DomainUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig) string {
+		return v.DomainUrl
+	}).(pulumi.StringOutput)
+}
+
+// Scope for IDCS.
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig) string {
+		return v.Scope
+	}).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfigs []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig `pulumi:"inboundNetworkingConfigs"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfigs []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig `pulumi:"outboundNetworkingConfigs"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs struct {
+	// Inbound Networking configuration.
+	InboundNetworkingConfigs GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayInput `pulumi:"inboundNetworkingConfigs"`
+	// Outbound Networking configuration.
+	OutboundNetworkingConfigs GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayInput `pulumi:"outboundNetworkingConfigs"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput {
+	return o
+}
+
+// Inbound Networking configuration.
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput) InboundNetworkingConfigs() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig) []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig {
+		return v.InboundNetworkingConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput)
+}
+
+// Outbound Networking configuration.
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput) OutboundNetworkingConfigs() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig) []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig {
+		return v.OutboundNetworkingConfigs
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig struct {
+	// inbounding from public or private endpoint.
+	EndpointMode string `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs struct {
+	// inbounding from public or private endpoint.
+	EndpointMode pulumi.StringInput `pulumi:"endpointMode"`
+	// The [OCID] of Private Endpoint when endpointMode=Private
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput {
+	return o
+}
+
+// inbounding from public or private endpoint.
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput) EndpointMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig) string {
+		return v.EndpointMode
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID] of Private Endpoint when endpointMode=Private
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId string `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode string `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds []string `pulumi:"nsgIds"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs struct {
+	// ocid of customer subnet when networkMode=Custom
+	CustomSubnetId pulumi.StringInput `pulumi:"customSubnetId"`
+	// outbounding to managed internet or customer network.
+	NetworkMode pulumi.StringInput `pulumi:"networkMode"`
+	// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray and GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray []GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput {
+	return o
+}
+
+// ocid of customer subnet when networkMode=Custom
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) CustomSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig) string {
+		return v.CustomSubnetId
+	}).(pulumi.StringOutput)
+}
+
+// outbounding to managed internet or customer network.
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) NetworkMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig) string {
+		return v.NetworkMode
+	}).(pulumi.StringOutput)
+}
+
+// A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfig struct {
+	// Maximum number of replicas allowed.
+	MaxReplica int `pulumi:"maxReplica"`
+	// Minimum number of replicas to keep running.
+	MinReplica int `pulumi:"minReplica"`
+	// scaling type for application.
+	ScalingType string `pulumi:"scalingType"`
+	// number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold int `pulumi:"targetConcurrencyThreshold"`
+	// Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold int `pulumi:"targetCpuThreshold"`
+	// Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold int `pulumi:"targetMemoryThreshold"`
+	// requests-per-second per replica of an application.
+	TargetRpsThreshold int `pulumi:"targetRpsThreshold"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemScalingConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemScalingConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs struct {
+	// Maximum number of replicas allowed.
+	MaxReplica pulumi.IntInput `pulumi:"maxReplica"`
+	// Minimum number of replicas to keep running.
+	MinReplica pulumi.IntInput `pulumi:"minReplica"`
+	// scaling type for application.
+	ScalingType pulumi.StringInput `pulumi:"scalingType"`
+	// number of simultaneous requests that can be processed by each replica.
+	TargetConcurrencyThreshold pulumi.IntInput `pulumi:"targetConcurrencyThreshold"`
+	// Scale up if average CPU utilization exceeds this threshold.
+	TargetCpuThreshold pulumi.IntInput `pulumi:"targetCpuThreshold"`
+	// Scale up if average memory utilization exceeds this threshold.
+	TargetMemoryThreshold pulumi.IntInput `pulumi:"targetMemoryThreshold"`
+	// requests-per-second per replica of an application.
+	TargetRpsThreshold pulumi.IntInput `pulumi:"targetRpsThreshold"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemScalingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray and GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray []GetHostedApplicationsHostedApplicationCollectionItemScalingConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemScalingConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemScalingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput {
+	return o
+}
+
+// Maximum number of replicas allowed.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) MaxReplica() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int { return v.MaxReplica }).(pulumi.IntOutput)
+}
+
+// Minimum number of replicas to keep running.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) MinReplica() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int { return v.MinReplica }).(pulumi.IntOutput)
+}
+
+// scaling type for application.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) ScalingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) string { return v.ScalingType }).(pulumi.StringOutput)
+}
+
+// number of simultaneous requests that can be processed by each replica.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) TargetConcurrencyThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int {
+		return v.TargetConcurrencyThreshold
+	}).(pulumi.IntOutput)
+}
+
+// Scale up if average CPU utilization exceeds this threshold.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) TargetCpuThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int {
+		return v.TargetCpuThreshold
+	}).(pulumi.IntOutput)
+}
+
+// Scale up if average memory utilization exceeds this threshold.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) TargetMemoryThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int {
+		return v.TargetMemoryThreshold
+	}).(pulumi.IntOutput)
+}
+
+// requests-per-second per replica of an application.
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput) TargetRpsThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemScalingConfig) int {
+		return v.TargetRpsThreshold
+	}).(pulumi.IntOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemScalingConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemScalingConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemScalingConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfig struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey string `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	StorageId string `pulumi:"storageId"`
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemStorageConfigInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs and GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemStorageConfigInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs{...}
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs struct {
+	// The key of environment variable to store the database connection.
+	EnvironmentVariableKey pulumi.StringInput `pulumi:"environmentVariableKey"`
+	// The [OCID] of ApplicationStorage.
+	StorageId pulumi.StringInput `pulumi:"storageId"`
+}
+
+func (GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemStorageConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput)
+}
+
+// GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayInput is an input type that accepts GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray and GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput values.
+// You can construct a concrete instance of `GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayInput` via:
+//
+//	GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray{ GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs{...} }
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput
+	ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutputWithContext(context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray []GetHostedApplicationsHostedApplicationCollectionItemStorageConfigInput
+
+func (GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemStorageConfig)(nil)).Elem()
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput {
+	return i.ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemStorageConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput {
+	return o
+}
+
+// The key of environment variable to store the database connection.
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput) EnvironmentVariableKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemStorageConfig) string {
+		return v.EnvironmentVariableKey
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID] of ApplicationStorage.
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput) StorageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedApplicationsHostedApplicationCollectionItemStorageConfig) string { return v.StorageId }).(pulumi.StringOutput)
+}
+
+type GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedApplicationsHostedApplicationCollectionItemStorageConfig)(nil)).Elem()
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput() GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput) ToGetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutputWithContext(ctx context.Context) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput {
+	return o
+}
+
+func (o GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput) Index(i pulumi.IntInput) GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedApplicationsHostedApplicationCollectionItemStorageConfig {
+		return vs[0].([]GetHostedApplicationsHostedApplicationCollectionItemStorageConfig)[vs[1].(int)]
+	}).(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput)
+}
+
+type GetHostedDeploymentActiveArtifact struct {
+	// The type of the artifact.
+	ArtifactType string `pulumi:"artifactType"`
+	// image url.
+	ContainerUri string `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	HostedDeploymentId string `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id string `pulumi:"id"`
+	// The current status of the artifact.
+	Status string `pulumi:"status"`
+	// image tag.
+	Tag string `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetHostedDeploymentActiveArtifactInput is an input type that accepts GetHostedDeploymentActiveArtifactArgs and GetHostedDeploymentActiveArtifactOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentActiveArtifactInput` via:
+//
+//	GetHostedDeploymentActiveArtifactArgs{...}
+type GetHostedDeploymentActiveArtifactInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentActiveArtifactOutput() GetHostedDeploymentActiveArtifactOutput
+	ToGetHostedDeploymentActiveArtifactOutputWithContext(context.Context) GetHostedDeploymentActiveArtifactOutput
+}
+
+type GetHostedDeploymentActiveArtifactArgs struct {
+	// The type of the artifact.
+	ArtifactType pulumi.StringInput `pulumi:"artifactType"`
+	// image url.
+	ContainerUri pulumi.StringInput `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	HostedDeploymentId pulumi.StringInput `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current status of the artifact.
+	Status pulumi.StringInput `pulumi:"status"`
+	// image tag.
+	Tag pulumi.StringInput `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetHostedDeploymentActiveArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentActiveArtifactArgs) ToGetHostedDeploymentActiveArtifactOutput() GetHostedDeploymentActiveArtifactOutput {
+	return i.ToGetHostedDeploymentActiveArtifactOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentActiveArtifactArgs) ToGetHostedDeploymentActiveArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentActiveArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentActiveArtifactOutput)
+}
+
+// GetHostedDeploymentActiveArtifactArrayInput is an input type that accepts GetHostedDeploymentActiveArtifactArray and GetHostedDeploymentActiveArtifactArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentActiveArtifactArrayInput` via:
+//
+//	GetHostedDeploymentActiveArtifactArray{ GetHostedDeploymentActiveArtifactArgs{...} }
+type GetHostedDeploymentActiveArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentActiveArtifactArrayOutput() GetHostedDeploymentActiveArtifactArrayOutput
+	ToGetHostedDeploymentActiveArtifactArrayOutputWithContext(context.Context) GetHostedDeploymentActiveArtifactArrayOutput
+}
+
+type GetHostedDeploymentActiveArtifactArray []GetHostedDeploymentActiveArtifactInput
+
+func (GetHostedDeploymentActiveArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentActiveArtifactArray) ToGetHostedDeploymentActiveArtifactArrayOutput() GetHostedDeploymentActiveArtifactArrayOutput {
+	return i.ToGetHostedDeploymentActiveArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentActiveArtifactArray) ToGetHostedDeploymentActiveArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentActiveArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentActiveArtifactArrayOutput)
+}
+
+type GetHostedDeploymentActiveArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentActiveArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentActiveArtifactOutput) ToGetHostedDeploymentActiveArtifactOutput() GetHostedDeploymentActiveArtifactOutput {
+	return o
+}
+
+func (o GetHostedDeploymentActiveArtifactOutput) ToGetHostedDeploymentActiveArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentActiveArtifactOutput {
+	return o
+}
+
+// The type of the artifact.
+func (o GetHostedDeploymentActiveArtifactOutput) ArtifactType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.ArtifactType }).(pulumi.StringOutput)
+}
+
+// image url.
+func (o GetHostedDeploymentActiveArtifactOutput) ContainerUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.ContainerUri }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentActiveArtifactOutput) HostedDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.HostedDeploymentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentActiveArtifactOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current status of the artifact.
+func (o GetHostedDeploymentActiveArtifactOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// image tag.
+func (o GetHostedDeploymentActiveArtifactOutput) Tag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.Tag }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o GetHostedDeploymentActiveArtifactOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentActiveArtifact) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetHostedDeploymentActiveArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentActiveArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentActiveArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentActiveArtifactArrayOutput) ToGetHostedDeploymentActiveArtifactArrayOutput() GetHostedDeploymentActiveArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentActiveArtifactArrayOutput) ToGetHostedDeploymentActiveArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentActiveArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentActiveArtifactArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentActiveArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentActiveArtifact {
+		return vs[0].([]GetHostedDeploymentActiveArtifact)[vs[1].(int)]
+	}).(GetHostedDeploymentActiveArtifactOutput)
+}
+
+type GetHostedDeploymentArtifact struct {
+	// The type of the artifact.
+	ArtifactType string `pulumi:"artifactType"`
+	// image url.
+	ContainerUri string `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	HostedDeploymentId string `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id string `pulumi:"id"`
+	// The current status of the artifact.
+	Status string `pulumi:"status"`
+	// image tag.
+	Tag string `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetHostedDeploymentArtifactInput is an input type that accepts GetHostedDeploymentArtifactArgs and GetHostedDeploymentArtifactOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentArtifactInput` via:
+//
+//	GetHostedDeploymentArtifactArgs{...}
+type GetHostedDeploymentArtifactInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentArtifactOutput() GetHostedDeploymentArtifactOutput
+	ToGetHostedDeploymentArtifactOutputWithContext(context.Context) GetHostedDeploymentArtifactOutput
+}
+
+type GetHostedDeploymentArtifactArgs struct {
+	// The type of the artifact.
+	ArtifactType pulumi.StringInput `pulumi:"artifactType"`
+	// image url.
+	ContainerUri pulumi.StringInput `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	HostedDeploymentId pulumi.StringInput `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current status of the artifact.
+	Status pulumi.StringInput `pulumi:"status"`
+	// image tag.
+	Tag pulumi.StringInput `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetHostedDeploymentArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentArtifactArgs) ToGetHostedDeploymentArtifactOutput() GetHostedDeploymentArtifactOutput {
+	return i.ToGetHostedDeploymentArtifactOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentArtifactArgs) ToGetHostedDeploymentArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentArtifactOutput)
+}
+
+// GetHostedDeploymentArtifactArrayInput is an input type that accepts GetHostedDeploymentArtifactArray and GetHostedDeploymentArtifactArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentArtifactArrayInput` via:
+//
+//	GetHostedDeploymentArtifactArray{ GetHostedDeploymentArtifactArgs{...} }
+type GetHostedDeploymentArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentArtifactArrayOutput() GetHostedDeploymentArtifactArrayOutput
+	ToGetHostedDeploymentArtifactArrayOutputWithContext(context.Context) GetHostedDeploymentArtifactArrayOutput
+}
+
+type GetHostedDeploymentArtifactArray []GetHostedDeploymentArtifactInput
+
+func (GetHostedDeploymentArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentArtifactArray) ToGetHostedDeploymentArtifactArrayOutput() GetHostedDeploymentArtifactArrayOutput {
+	return i.ToGetHostedDeploymentArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentArtifactArray) ToGetHostedDeploymentArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentArtifactArrayOutput)
+}
+
+type GetHostedDeploymentArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentArtifactOutput) ToGetHostedDeploymentArtifactOutput() GetHostedDeploymentArtifactOutput {
+	return o
+}
+
+func (o GetHostedDeploymentArtifactOutput) ToGetHostedDeploymentArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentArtifactOutput {
+	return o
+}
+
+// The type of the artifact.
+func (o GetHostedDeploymentArtifactOutput) ArtifactType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.ArtifactType }).(pulumi.StringOutput)
+}
+
+// image url.
+func (o GetHostedDeploymentArtifactOutput) ContainerUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.ContainerUri }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentArtifactOutput) HostedDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.HostedDeploymentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentArtifactOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current status of the artifact.
+func (o GetHostedDeploymentArtifactOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// image tag.
+func (o GetHostedDeploymentArtifactOutput) Tag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.Tag }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o GetHostedDeploymentArtifactOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentArtifact) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetHostedDeploymentArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentArtifactArrayOutput) ToGetHostedDeploymentArtifactArrayOutput() GetHostedDeploymentArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentArtifactArrayOutput) ToGetHostedDeploymentArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentArtifactArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentArtifact {
+		return vs[0].([]GetHostedDeploymentArtifact)[vs[1].(int)]
+	}).(GetHostedDeploymentArtifactOutput)
+}
+
+type GetHostedDeploymentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetHostedDeploymentsFilterInput is an input type that accepts GetHostedDeploymentsFilterArgs and GetHostedDeploymentsFilterOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsFilterInput` via:
+//
+//	GetHostedDeploymentsFilterArgs{...}
+type GetHostedDeploymentsFilterInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsFilterOutput() GetHostedDeploymentsFilterOutput
+	ToGetHostedDeploymentsFilterOutputWithContext(context.Context) GetHostedDeploymentsFilterOutput
+}
+
+type GetHostedDeploymentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetHostedDeploymentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsFilterArgs) ToGetHostedDeploymentsFilterOutput() GetHostedDeploymentsFilterOutput {
+	return i.ToGetHostedDeploymentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsFilterArgs) ToGetHostedDeploymentsFilterOutputWithContext(ctx context.Context) GetHostedDeploymentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsFilterOutput)
+}
+
+// GetHostedDeploymentsFilterArrayInput is an input type that accepts GetHostedDeploymentsFilterArray and GetHostedDeploymentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsFilterArrayInput` via:
+//
+//	GetHostedDeploymentsFilterArray{ GetHostedDeploymentsFilterArgs{...} }
+type GetHostedDeploymentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsFilterArrayOutput() GetHostedDeploymentsFilterArrayOutput
+	ToGetHostedDeploymentsFilterArrayOutputWithContext(context.Context) GetHostedDeploymentsFilterArrayOutput
+}
+
+type GetHostedDeploymentsFilterArray []GetHostedDeploymentsFilterInput
+
+func (GetHostedDeploymentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsFilter)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsFilterArray) ToGetHostedDeploymentsFilterArrayOutput() GetHostedDeploymentsFilterArrayOutput {
+	return i.ToGetHostedDeploymentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsFilterArray) ToGetHostedDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsFilterArrayOutput)
+}
+
+type GetHostedDeploymentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsFilterOutput) ToGetHostedDeploymentsFilterOutput() GetHostedDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsFilterOutput) ToGetHostedDeploymentsFilterOutputWithContext(ctx context.Context) GetHostedDeploymentsFilterOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetHostedDeploymentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetHostedDeploymentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetHostedDeploymentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsFilter)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsFilterArrayOutput) ToGetHostedDeploymentsFilterArrayOutput() GetHostedDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsFilterArrayOutput) ToGetHostedDeploymentsFilterArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsFilterArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentsFilter {
+		return vs[0].([]GetHostedDeploymentsFilter)[vs[1].(int)]
+	}).(GetHostedDeploymentsFilterOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollection struct {
+	Items []GetHostedDeploymentsHostedDeploymentCollectionItem `pulumi:"items"`
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionArgs and GetHostedDeploymentsHostedDeploymentCollectionOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionArgs{...}
+type GetHostedDeploymentsHostedDeploymentCollectionInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionOutput() GetHostedDeploymentsHostedDeploymentCollectionOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionArgs struct {
+	Items GetHostedDeploymentsHostedDeploymentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetHostedDeploymentsHostedDeploymentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionArgs) ToGetHostedDeploymentsHostedDeploymentCollectionOutput() GetHostedDeploymentsHostedDeploymentCollectionOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionArgs) ToGetHostedDeploymentsHostedDeploymentCollectionOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionOutput)
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionArrayInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionArray and GetHostedDeploymentsHostedDeploymentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionArrayInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionArray{ GetHostedDeploymentsHostedDeploymentCollectionArgs{...} }
+type GetHostedDeploymentsHostedDeploymentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionArrayOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionArrayOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionArray []GetHostedDeploymentsHostedDeploymentCollectionInput
+
+func (GetHostedDeploymentsHostedDeploymentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollection)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionArray) ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionArrayOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionArray) ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionArrayOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionOutput) ToGetHostedDeploymentsHostedDeploymentCollectionOutput() GetHostedDeploymentsHostedDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionOutput) ToGetHostedDeploymentsHostedDeploymentCollectionOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionOutput) Items() GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollection) []GetHostedDeploymentsHostedDeploymentCollectionItem {
+		return v.Items
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollection)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentsHostedDeploymentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentsHostedDeploymentCollection {
+		return vs[0].([]GetHostedDeploymentsHostedDeploymentCollection)[vs[1].(int)]
+	}).(GetHostedDeploymentsHostedDeploymentCollectionOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItem struct {
+	// Container/artifact configuration for the deployment.
+	ActiveArtifacts []GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact `pulumi:"activeArtifacts"`
+	// array of Artifacts.
+	Artifacts []GetHostedDeploymentsHostedDeploymentCollectionItemArtifact `pulumi:"artifacts"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedApplicationId string `pulumi:"hostedApplicationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id string `pulumi:"id"`
+	// A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the hosted deployment was updated, in the format defined by RFC 3339
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemArgs and GetHostedDeploymentsHostedDeploymentCollectionItemOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemArgs{...}
+type GetHostedDeploymentsHostedDeploymentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemOutput() GetHostedDeploymentsHostedDeploymentCollectionItemOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArgs struct {
+	// Container/artifact configuration for the deployment.
+	ActiveArtifacts GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayInput `pulumi:"activeArtifacts"`
+	// array of Artifacts.
+	Artifacts GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayInput `pulumi:"artifacts"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedApplicationId pulumi.StringInput `pulumi:"hostedApplicationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the hosted deployment was updated, in the format defined by RFC 3339
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemOutput() GetHostedDeploymentsHostedDeploymentCollectionItemOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemOutput)
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemArrayInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemArray and GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemArrayInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemArray{ GetHostedDeploymentsHostedDeploymentCollectionItemArgs{...} }
+type GetHostedDeploymentsHostedDeploymentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArray []GetHostedDeploymentsHostedDeploymentCollectionItemInput
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemOutput() GetHostedDeploymentsHostedDeploymentCollectionItemOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemOutput {
+	return o
+}
+
+// Container/artifact configuration for the deployment.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) ActiveArtifacts() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) []GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact {
+		return v.ActiveArtifacts
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput)
+}
+
+// array of Artifacts.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) Artifacts() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) []GetHostedDeploymentsHostedDeploymentCollectionItemArtifact {
+		return v.Artifacts
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) HostedApplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.HostedApplicationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the hosted deployments that their lifecycle state matches the given lifecycle state.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted deployment was updated, in the format defined by RFC 3339
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItem)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentsHostedDeploymentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentsHostedDeploymentCollectionItem {
+		return vs[0].([]GetHostedDeploymentsHostedDeploymentCollectionItem)[vs[1].(int)]
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact struct {
+	// The type of the artifact.
+	ArtifactType string `pulumi:"artifactType"`
+	// image url.
+	ContainerUri string `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId string `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id string `pulumi:"id"`
+	// The current status of the artifact.
+	Status string `pulumi:"status"`
+	// image tag.
+	Tag string `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs and GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs{...}
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs struct {
+	// The type of the artifact.
+	ArtifactType pulumi.StringInput `pulumi:"artifactType"`
+	// image url.
+	ContainerUri pulumi.StringInput `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId pulumi.StringInput `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current status of the artifact.
+	Status pulumi.StringInput `pulumi:"status"`
+	// image tag.
+	Tag pulumi.StringInput `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput)
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray and GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray{ GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs{...} }
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray []GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactInput
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput {
+	return o
+}
+
+// The type of the artifact.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) ArtifactType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.ArtifactType }).(pulumi.StringOutput)
+}
+
+// image url.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) ContainerUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.ContainerUri }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) HostedDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string {
+		return v.HostedDeploymentId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current status of the artifact.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// image tag.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) Tag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.Tag }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact {
+		return vs[0].([]GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifact)[vs[1].(int)]
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifact struct {
+	// The type of the artifact.
+	ArtifactType string `pulumi:"artifactType"`
+	// image url.
+	ContainerUri string `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId string `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id string `pulumi:"id"`
+	// The current status of the artifact.
+	Status string `pulumi:"status"`
+	// image tag.
+	Tag string `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemArtifactInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs and GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemArtifactInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs{...}
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs struct {
+	// The type of the artifact.
+	ArtifactType pulumi.StringInput `pulumi:"artifactType"`
+	// image url.
+	ContainerUri pulumi.StringInput `pulumi:"containerUri"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+	HostedDeploymentId pulumi.StringInput `pulumi:"hostedDeploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The current status of the artifact.
+	Status pulumi.StringInput `pulumi:"status"`
+	// image tag.
+	Tag pulumi.StringInput `pulumi:"tag"`
+	// The date and time the hosted deployment was created, in the format defined by RFC 3339
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput)
+}
+
+// GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayInput is an input type that accepts GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray and GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput values.
+// You can construct a concrete instance of `GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayInput` via:
+//
+//	GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray{ GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs{...} }
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput
+	ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutputWithContext(context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray []GetHostedDeploymentsHostedDeploymentCollectionItemArtifactInput
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItemArtifact)(nil)).Elem()
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput {
+	return i.ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput {
+	return o
+}
+
+// The type of the artifact.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) ArtifactType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.ArtifactType }).(pulumi.StringOutput)
+}
+
+// image url.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) ContainerUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.ContainerUri }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) HostedDeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.HostedDeploymentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The current status of the artifact.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// image tag.
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) Tag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.Tag }).(pulumi.StringOutput)
+}
+
+// The date and time the hosted deployment was created, in the format defined by RFC 3339
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetHostedDeploymentsHostedDeploymentCollectionItemArtifact) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetHostedDeploymentsHostedDeploymentCollectionItemArtifact)(nil)).Elem()
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput() GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput) ToGetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutputWithContext(ctx context.Context) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput {
+	return o
+}
+
+func (o GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput) Index(i pulumi.IntInput) GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHostedDeploymentsHostedDeploymentCollectionItemArtifact {
+		return vs[0].([]GetHostedDeploymentsHostedDeploymentCollectionItemArtifact)[vs[1].(int)]
+	}).(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput)
 }
 
 type GetImportedModelDataSource struct {
@@ -33003,6 +38485,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedAiClusterCapacityArrayInput)(nil)).Elem(), DedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointContentModerationConfigInput)(nil)).Elem(), EndpointContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointContentModerationConfigPtrInput)(nil)).Elem(), EndpointContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationEnvironmentVariableInput)(nil)).Elem(), HostedApplicationEnvironmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationEnvironmentVariableArrayInput)(nil)).Elem(), HostedApplicationEnvironmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationInboundAuthConfigInput)(nil)).Elem(), HostedApplicationInboundAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationInboundAuthConfigPtrInput)(nil)).Elem(), HostedApplicationInboundAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationInboundAuthConfigIdcsConfigInput)(nil)).Elem(), HostedApplicationInboundAuthConfigIdcsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationInboundAuthConfigIdcsConfigPtrInput)(nil)).Elem(), HostedApplicationInboundAuthConfigIdcsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigInput)(nil)).Elem(), HostedApplicationNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigPtrInput)(nil)).Elem(), HostedApplicationNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigInboundNetworkingConfigInput)(nil)).Elem(), HostedApplicationNetworkingConfigInboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigInboundNetworkingConfigPtrInput)(nil)).Elem(), HostedApplicationNetworkingConfigInboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigOutboundNetworkingConfigInput)(nil)).Elem(), HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrInput)(nil)).Elem(), HostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationScalingConfigInput)(nil)).Elem(), HostedApplicationScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationScalingConfigPtrInput)(nil)).Elem(), HostedApplicationScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationStorageConfigInput)(nil)).Elem(), HostedApplicationStorageConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedApplicationStorageConfigArrayInput)(nil)).Elem(), HostedApplicationStorageConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedDeploymentActiveArtifactInput)(nil)).Elem(), HostedDeploymentActiveArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedDeploymentActiveArtifactPtrInput)(nil)).Elem(), HostedDeploymentActiveArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedDeploymentArtifactInput)(nil)).Elem(), HostedDeploymentArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*HostedDeploymentArtifactArrayInput)(nil)).Elem(), HostedDeploymentArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportedModelDataSourceInput)(nil)).Elem(), ImportedModelDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ImportedModelDataSourcePtrInput)(nil)).Elem(), ImportedModelDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelFineTuneDetailsInput)(nil)).Elem(), ModelFineTuneDetailsArgs{})
@@ -33289,6 +38791,64 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationEnvironmentVariableInput)(nil)).Elem(), GetHostedApplicationEnvironmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationEnvironmentVariableArrayInput)(nil)).Elem(), GetHostedApplicationEnvironmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationInboundAuthConfigInput)(nil)).Elem(), GetHostedApplicationInboundAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationInboundAuthConfigArrayInput)(nil)).Elem(), GetHostedApplicationInboundAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationInboundAuthConfigIdcsConfigInput)(nil)).Elem(), GetHostedApplicationInboundAuthConfigIdcsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationInboundAuthConfigIdcsConfigArrayInput)(nil)).Elem(), GetHostedApplicationInboundAuthConfigIdcsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigInboundNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigInboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigInboundNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigOutboundNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationScalingConfigInput)(nil)).Elem(), GetHostedApplicationScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationScalingConfigArrayInput)(nil)).Elem(), GetHostedApplicationScalingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStorageConfigInput)(nil)).Elem(), GetHostedApplicationStorageConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStorageConfigArrayInput)(nil)).Elem(), GetHostedApplicationStorageConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesFilterInput)(nil)).Elem(), GetHostedApplicationStoragesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesFilterArrayInput)(nil)).Elem(), GetHostedApplicationStoragesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionInput)(nil)).Elem(), GetHostedApplicationStoragesHostedApplicationStorageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayInput)(nil)).Elem(), GetHostedApplicationStoragesHostedApplicationStorageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionItemInput)(nil)).Elem(), GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayInput)(nil)).Elem(), GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsFilterInput)(nil)).Elem(), GetHostedApplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsFilterArrayInput)(nil)).Elem(), GetHostedApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemScalingConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemStorageConfigInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayInput)(nil)).Elem(), GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentActiveArtifactInput)(nil)).Elem(), GetHostedDeploymentActiveArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentActiveArtifactArrayInput)(nil)).Elem(), GetHostedDeploymentActiveArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentArtifactInput)(nil)).Elem(), GetHostedDeploymentArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentArtifactArrayInput)(nil)).Elem(), GetHostedDeploymentArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsFilterInput)(nil)).Elem(), GetHostedDeploymentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsFilterArrayInput)(nil)).Elem(), GetHostedDeploymentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionArrayInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemArrayInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemArtifactInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayInput)(nil)).Elem(), GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelDataSourceInput)(nil)).Elem(), GetImportedModelDataSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelDataSourceArrayInput)(nil)).Elem(), GetImportedModelDataSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImportedModelsFilterInput)(nil)).Elem(), GetImportedModelsFilterArgs{})
@@ -33483,6 +39043,26 @@ func init() {
 	pulumi.RegisterOutputType(DedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(EndpointContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(EndpointContentModerationConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationEnvironmentVariableOutput{})
+	pulumi.RegisterOutputType(HostedApplicationEnvironmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(HostedApplicationInboundAuthConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationInboundAuthConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationInboundAuthConfigIdcsConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationInboundAuthConfigIdcsConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigInboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigInboundNetworkingConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigOutboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationNetworkingConfigOutboundNetworkingConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationScalingConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationScalingConfigPtrOutput{})
+	pulumi.RegisterOutputType(HostedApplicationStorageConfigOutput{})
+	pulumi.RegisterOutputType(HostedApplicationStorageConfigArrayOutput{})
+	pulumi.RegisterOutputType(HostedDeploymentActiveArtifactOutput{})
+	pulumi.RegisterOutputType(HostedDeploymentActiveArtifactPtrOutput{})
+	pulumi.RegisterOutputType(HostedDeploymentArtifactOutput{})
+	pulumi.RegisterOutputType(HostedDeploymentArtifactArrayOutput{})
 	pulumi.RegisterOutputType(ImportedModelDataSourceOutput{})
 	pulumi.RegisterOutputType(ImportedModelDataSourcePtrOutput{})
 	pulumi.RegisterOutputType(ModelFineTuneDetailsOutput{})
@@ -33769,6 +39349,64 @@ func init() {
 	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetGenerativeAiPrivateEndpointsGenerativeAiPrivateEndpointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationEnvironmentVariableOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationEnvironmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationInboundAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationInboundAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationInboundAuthConfigIdcsConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationInboundAuthConfigIdcsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigInboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigInboundNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationNetworkingConfigOutboundNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationScalingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStorageConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStorageConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesFilterOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesHostedApplicationStorageCollectionOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesHostedApplicationStorageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationStoragesHostedApplicationStorageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemEnvironmentVariableArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemInboundAuthConfigIdcsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigInboundNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemNetworkingConfigOutboundNetworkingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemScalingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigOutput{})
+	pulumi.RegisterOutputType(GetHostedApplicationsHostedApplicationCollectionItemStorageConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentActiveArtifactOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentActiveArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentArtifactOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsFilterOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemActiveArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactOutput{})
+	pulumi.RegisterOutputType(GetHostedDeploymentsHostedDeploymentCollectionItemArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetImportedModelDataSourceOutput{})
 	pulumi.RegisterOutputType(GetImportedModelDataSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetImportedModelsFilterOutput{})

@@ -38,9 +38,25 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        public readonly bool IsIndefiniteRetentionEnabled;
+        /// <summary>
+        /// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        public readonly bool IsPreventDeletionEnabled;
+        /// <summary>
+        /// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        public readonly bool IsRetentionLockEnabled;
+        /// <summary>
         /// The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
         public readonly string KmsKeyId;
+        /// <summary>
+        /// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVolumeBackupsVolumeBackupRetentionPeriodResult> RetentionPeriods;
         /// <summary>
         /// The size of the volume, in GBs.
         /// </summary>
@@ -75,6 +91,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string TimeRequestReceived;
         /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        public readonly string TimeRetentionExpiresAt;
+        /// <summary>
         /// The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
         /// </summary>
         public readonly string Type;
@@ -86,6 +106,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         /// </summary>
         public readonly string UniqueSizeInMbs;
+        /// <summary>
+        /// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        /// </summary>
+        public readonly string VolumeGroupBackupId;
         /// <summary>
         /// The OCID of the volume.
         /// </summary>
@@ -105,7 +129,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            bool isIndefiniteRetentionEnabled,
+
+            bool isPreventDeletionEnabled,
+
+            bool isRetentionLockEnabled,
+
             string kmsKeyId,
+
+            ImmutableArray<Outputs.GetVolumeBackupsVolumeBackupRetentionPeriodResult> retentionPeriods,
 
             string sizeInGbs,
 
@@ -125,11 +157,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             string timeRequestReceived,
 
+            string timeRetentionExpiresAt,
+
             string type,
 
             string uniqueSizeInGbs,
 
             string uniqueSizeInMbs,
+
+            string volumeGroupBackupId,
 
             string volumeId)
         {
@@ -139,7 +175,11 @@ namespace Pulumi.Oci.Core.Outputs
             ExpirationTime = expirationTime;
             FreeformTags = freeformTags;
             Id = id;
+            IsIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            IsPreventDeletionEnabled = isPreventDeletionEnabled;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
             KmsKeyId = kmsKeyId;
+            RetentionPeriods = retentionPeriods;
             SizeInGbs = sizeInGbs;
             SizeInMbs = sizeInMbs;
             SourceDetails = sourceDetails;
@@ -149,9 +189,11 @@ namespace Pulumi.Oci.Core.Outputs
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeRequestReceived = timeRequestReceived;
+            TimeRetentionExpiresAt = timeRetentionExpiresAt;
             Type = type;
             UniqueSizeInGbs = uniqueSizeInGbs;
             UniqueSizeInMbs = uniqueSizeInMbs;
+            VolumeGroupBackupId = volumeGroupBackupId;
             VolumeId = volumeId;
         }
     }

@@ -17,14 +17,14 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
     public static final AnalyticsInstanceVanityUrlState Empty = new AnalyticsInstanceVanityUrlState();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId")
     private @Nullable Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Optional<Output<String>> analyticsInstanceId() {
@@ -32,14 +32,14 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      * 
      */
     @Import(name="caCertificate")
     private @Nullable Output<String> caCertificate;
 
     /**
-     * @return (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * @return (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      * 
      */
     public Optional<Output<String>> caCertificate() {
@@ -62,14 +62,14 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
     }
 
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      * 
      */
     @Import(name="hosts")
     private @Nullable Output<List<String>> hosts;
 
     /**
-     * @return List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * @return List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      * 
      */
     public Optional<Output<List<String>>> hosts() {
@@ -77,14 +77,14 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Passphrase for the PEM Private key (if any).
+     * (Updatable) Passphrase for the PEM private key (if any).
      * 
      */
     @Import(name="passphrase")
     private @Nullable Output<String> passphrase;
 
     /**
-     * @return (Updatable) Passphrase for the PEM Private key (if any).
+     * @return (Updatable) Passphrase for the PEM private key (if any).
      * 
      */
     public Optional<Output<String>> passphrase() {
@@ -92,14 +92,14 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) PEM Private key for HTTPS connections.
+     * (Updatable) PEM private key for HTTPS connections.
      * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
-     * @return (Updatable) PEM Private key for HTTPS connections.
+     * @return (Updatable) PEM private key for HTTPS connections.
      * 
      */
     public Optional<Output<String>> privateKey() {
@@ -158,7 +158,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param caCertificate (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * @param caCertificate (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param caCertificate (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+         * @param caCertificate (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param hosts List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * @param hosts List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param hosts List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * @param hosts List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param hosts List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+         * @param hosts List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param passphrase (Updatable) Passphrase for the PEM Private key (if any).
+         * @param passphrase (Updatable) Passphrase for the PEM private key (if any).
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param passphrase (Updatable) Passphrase for the PEM Private key (if any).
+         * @param passphrase (Updatable) Passphrase for the PEM private key (if any).
          * 
          * @return builder
          * 
@@ -273,7 +273,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param privateKey (Updatable) PEM Private key for HTTPS connections.
+         * @param privateKey (Updatable) PEM private key for HTTPS connections.
          * 
          * @return builder
          * 
@@ -284,7 +284,7 @@ public final class AnalyticsInstanceVanityUrlState extends com.pulumi.resources.
         }
 
         /**
-         * @param privateKey (Updatable) PEM Private key for HTTPS connections.
+         * @param privateKey (Updatable) PEM private key for HTTPS connections.
          * 
          * @return builder
          * 

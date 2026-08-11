@@ -60,6 +60,8 @@ type LookupApiaccesscontrolPrivilegedApiControlArgs struct {
 type LookupApiaccesscontrolPrivilegedApiControlResult struct {
 	// List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
 	ApproverGroupIdLists []string `pulumi:"approverGroupIdLists"`
+	// List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists []GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList `pulumi:"approverGroupLevelLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -91,7 +93,7 @@ type LookupApiaccesscontrolPrivilegedApiControlResult struct {
 	StateDetails string `pulumi:"stateDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted string `pulumi:"timeDeleted"`
@@ -136,6 +138,13 @@ func (o LookupApiaccesscontrolPrivilegedApiControlResultOutput) ToLookupApiacces
 // List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
 func (o LookupApiaccesscontrolPrivilegedApiControlResultOutput) ApproverGroupIdLists() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupApiaccesscontrolPrivilegedApiControlResult) []string { return v.ApproverGroupIdLists }).(pulumi.StringArrayOutput)
+}
+
+// List of Group containing the levels at which the users belonging to the group can authorize.
+func (o LookupApiaccesscontrolPrivilegedApiControlResultOutput) ApproverGroupLevelLists() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o.ApplyT(func(v LookupApiaccesscontrolPrivilegedApiControlResult) []GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+		return v.ApproverGroupLevelLists
+	}).(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -219,7 +228,7 @@ func (o LookupApiaccesscontrolPrivilegedApiControlResultOutput) SystemTags() pul
 	return o.ApplyT(func(v LookupApiaccesscontrolPrivilegedApiControlResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o LookupApiaccesscontrolPrivilegedApiControlResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiaccesscontrolPrivilegedApiControlResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }

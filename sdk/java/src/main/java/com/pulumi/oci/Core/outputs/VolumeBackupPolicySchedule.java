@@ -5,6 +5,8 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.VolumeBackupPolicyScheduleRetentionPeriod;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
@@ -33,6 +35,16 @@ public final class VolumeBackupPolicySchedule {
      * 
      */
     private @Nullable Integer hourOfDay;
+    /**
+     * @return (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    private @Nullable Boolean isPreventDeletionEnabled;
+    /**
+     * @return (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    private @Nullable Boolean isRetentionLockEnabled;
     /**
      * @return (Updatable) The month of the year to schedule the volume backup.
      * 
@@ -67,6 +79,11 @@ public final class VolumeBackupPolicySchedule {
      * 
      */
     private String period;
+    /**
+     * @return (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    private @Nullable VolumeBackupPolicyScheduleRetentionPeriod retentionPeriod;
     /**
      * @return (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
      * 
@@ -114,6 +131,20 @@ public final class VolumeBackupPolicySchedule {
         return Optional.ofNullable(this.hourOfDay);
     }
     /**
+     * @return (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Optional<Boolean> isPreventDeletionEnabled() {
+        return Optional.ofNullable(this.isPreventDeletionEnabled);
+    }
+    /**
+     * @return (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Optional<Boolean> isRetentionLockEnabled() {
+        return Optional.ofNullable(this.isRetentionLockEnabled);
+    }
+    /**
      * @return (Updatable) The month of the year to schedule the volume backup.
      * 
      */
@@ -156,6 +187,13 @@ public final class VolumeBackupPolicySchedule {
         return this.period;
     }
     /**
+     * @return (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Optional<VolumeBackupPolicyScheduleRetentionPeriod> retentionPeriod() {
+        return Optional.ofNullable(this.retentionPeriod);
+    }
+    /**
      * @return (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
      * 
      */
@@ -189,10 +227,13 @@ public final class VolumeBackupPolicySchedule {
         private @Nullable Integer dayOfMonth;
         private @Nullable String dayOfWeek;
         private @Nullable Integer hourOfDay;
+        private @Nullable Boolean isPreventDeletionEnabled;
+        private @Nullable Boolean isRetentionLockEnabled;
         private @Nullable String month;
         private @Nullable Integer offsetSeconds;
         private @Nullable String offsetType;
         private String period;
+        private @Nullable VolumeBackupPolicyScheduleRetentionPeriod retentionPeriod;
         private Integer retentionSeconds;
         private @Nullable String timeZone;
         public Builder() {}
@@ -202,10 +243,13 @@ public final class VolumeBackupPolicySchedule {
     	      this.dayOfMonth = defaults.dayOfMonth;
     	      this.dayOfWeek = defaults.dayOfWeek;
     	      this.hourOfDay = defaults.hourOfDay;
+    	      this.isPreventDeletionEnabled = defaults.isPreventDeletionEnabled;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.month = defaults.month;
     	      this.offsetSeconds = defaults.offsetSeconds;
     	      this.offsetType = defaults.offsetType;
     	      this.period = defaults.period;
+    	      this.retentionPeriod = defaults.retentionPeriod;
     	      this.retentionSeconds = defaults.retentionSeconds;
     	      this.timeZone = defaults.timeZone;
         }
@@ -237,6 +281,18 @@ public final class VolumeBackupPolicySchedule {
             return this;
         }
         @CustomType.Setter
+        public Builder isPreventDeletionEnabled(@Nullable Boolean isPreventDeletionEnabled) {
+
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(@Nullable Boolean isRetentionLockEnabled) {
+
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder month(@Nullable String month) {
 
             this.month = month;
@@ -263,6 +319,12 @@ public final class VolumeBackupPolicySchedule {
             return this;
         }
         @CustomType.Setter
+        public Builder retentionPeriod(@Nullable VolumeBackupPolicyScheduleRetentionPeriod retentionPeriod) {
+
+            this.retentionPeriod = retentionPeriod;
+            return this;
+        }
+        @CustomType.Setter
         public Builder retentionSeconds(Integer retentionSeconds) {
             if (retentionSeconds == null) {
               throw new MissingRequiredPropertyException("VolumeBackupPolicySchedule", "retentionSeconds");
@@ -282,10 +344,13 @@ public final class VolumeBackupPolicySchedule {
             _resultValue.dayOfMonth = dayOfMonth;
             _resultValue.dayOfWeek = dayOfWeek;
             _resultValue.hourOfDay = hourOfDay;
+            _resultValue.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.month = month;
             _resultValue.offsetSeconds = offsetSeconds;
             _resultValue.offsetType = offsetType;
             _resultValue.period = period;
+            _resultValue.retentionPeriod = retentionPeriod;
             _resultValue.retentionSeconds = retentionSeconds;
             _resultValue.timeZone = timeZone;
             return _resultValue;

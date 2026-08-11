@@ -196,6 +196,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly listenerPort: pulumi.Output<string>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    declare public /*out*/ readonly multiCloudIdentityConnectorConfigs: pulumi.Output<outputs.Database.ExadbVmClusterMultiCloudIdentityConnectorConfig[]>;
+    /**
      * (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      */
     declare public readonly nodeConfig: pulumi.Output<outputs.Database.ExadbVmClusterNodeConfig>;
@@ -212,6 +216,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      * The private zone ID in which you want DNS records to be created.
      */
     declare public readonly privateZoneId: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    declare public readonly registerPkcsTrigger: pulumi.Output<number | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      */
@@ -269,16 +277,24 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     declare public readonly systemVersion: pulumi.Output<string>;
     /**
+     * TDE keystore type
+     */
+    declare public readonly tdeKeyStoreType: pulumi.Output<string>;
+    /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    declare public readonly timeZone: pulumi.Output<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly timeZone: pulumi.Output<string>;
+    declare public readonly unregisterPkcsTrigger: pulumi.Output<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      */
@@ -322,10 +338,12 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state?.licenseModel;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["listenerPort"] = state?.listenerPort;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = state?.multiCloudIdentityConnectorConfigs;
             resourceInputs["nodeConfig"] = state?.nodeConfig;
             resourceInputs["nodeResources"] = state?.nodeResources;
             resourceInputs["nsgIds"] = state?.nsgIds;
             resourceInputs["privateZoneId"] = state?.privateZoneId;
+            resourceInputs["registerPkcsTrigger"] = state?.registerPkcsTrigger;
             resourceInputs["scanDnsName"] = state?.scanDnsName;
             resourceInputs["scanDnsRecordId"] = state?.scanDnsRecordId;
             resourceInputs["scanIpIds"] = state?.scanIpIds;
@@ -340,8 +358,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["systemVersion"] = state?.systemVersion;
+            resourceInputs["tdeKeyStoreType"] = state?.tdeKeyStoreType;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
+            resourceInputs["unregisterPkcsTrigger"] = state?.unregisterPkcsTrigger;
             resourceInputs["vipIds"] = state?.vipIds;
             resourceInputs["zoneId"] = state?.zoneId;
         } else {
@@ -397,6 +417,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["nodeResources"] = args?.nodeResources;
             resourceInputs["nsgIds"] = args?.nsgIds;
             resourceInputs["privateZoneId"] = args?.privateZoneId;
+            resourceInputs["registerPkcsTrigger"] = args?.registerPkcsTrigger;
             resourceInputs["scanListenerPortTcp"] = args?.scanListenerPortTcp;
             resourceInputs["scanListenerPortTcpSsl"] = args?.scanListenerPortTcpSsl;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
@@ -406,7 +427,9 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["systemVersion"] = args?.systemVersion;
+            resourceInputs["tdeKeyStoreType"] = args?.tdeKeyStoreType;
             resourceInputs["timeZone"] = args?.timeZone;
+            resourceInputs["unregisterPkcsTrigger"] = args?.unregisterPkcsTrigger;
             resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
             resourceInputs["giVersion"] = undefined /*out*/;
             resourceInputs["gridImageType"] = undefined /*out*/;
@@ -414,6 +437,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["lastUpdateHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listenerPort"] = undefined /*out*/;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
             resourceInputs["scanIpIds"] = undefined /*out*/;
@@ -523,6 +547,10 @@ export interface ExadbVmClusterState {
      */
     listenerPort?: pulumi.Input<string | undefined>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    multiCloudIdentityConnectorConfigs?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterMultiCloudIdentityConnectorConfig>[] | undefined>;
+    /**
      * (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      */
     nodeConfig?: pulumi.Input<inputs.Database.ExadbVmClusterNodeConfig | undefined>;
@@ -539,6 +567,10 @@ export interface ExadbVmClusterState {
      * The private zone ID in which you want DNS records to be created.
      */
     privateZoneId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    registerPkcsTrigger?: pulumi.Input<number | undefined>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      */
@@ -596,16 +628,24 @@ export interface ExadbVmClusterState {
      */
     systemVersion?: pulumi.Input<string | undefined>;
     /**
+     * TDE keystore type
+     */
+    tdeKeyStoreType?: pulumi.Input<string | undefined>;
+    /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string | undefined>;
+    unregisterPkcsTrigger?: pulumi.Input<number | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      */
@@ -700,6 +740,10 @@ export interface ExadbVmClusterArgs {
      */
     privateZoneId?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     */
+    registerPkcsTrigger?: pulumi.Input<number | undefined>;
+    /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */
     scanListenerPortTcp?: pulumi.Input<number | undefined>;
@@ -736,10 +780,18 @@ export interface ExadbVmClusterArgs {
      */
     systemVersion?: pulumi.Input<string | undefined>;
     /**
+     * TDE keystore type
+     */
+    tdeKeyStoreType?: pulumi.Input<string | undefined>;
+    /**
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+     */
+    timeZone?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    timeZone?: pulumi.Input<string | undefined>;
+    unregisterPkcsTrigger?: pulumi.Input<number | undefined>;
 }

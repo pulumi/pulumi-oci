@@ -91,7 +91,7 @@ type LookupExadbVmClusterResult struct {
 	GridImageType string `pulumi:"gridImageType"`
 	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 	Hostname string `pulumi:"hostname"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []GetExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
@@ -103,6 +103,8 @@ type LookupExadbVmClusterResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort string `pulumi:"listenerPort"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []GetExadbVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfigs []GetExadbVmClusterNodeConfig `pulumi:"nodeConfigs"`
 	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
@@ -111,7 +113,8 @@ type LookupExadbVmClusterResult struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
-	PrivateZoneId string `pulumi:"privateZoneId"`
+	PrivateZoneId       string `pulumi:"privateZoneId"`
+	RegisterPkcsTrigger int    `pulumi:"registerPkcsTrigger"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -140,10 +143,13 @@ type LookupExadbVmClusterResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion string `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone              string `pulumi:"timeZone"`
+	UnregisterPkcsTrigger int    `pulumi:"unregisterPkcsTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -270,7 +276,7 @@ func (o LookupExadbVmClusterResultOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+// The OCID of the identity connector
 func (o LookupExadbVmClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -300,6 +306,13 @@ func (o LookupExadbVmClusterResultOutput) ListenerPort() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o LookupExadbVmClusterResultOutput) MultiCloudIdentityConnectorConfigs() GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) []GetExadbVmClusterMultiCloudIdentityConnectorConfig {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 func (o LookupExadbVmClusterResultOutput) NodeConfigs() GetExadbVmClusterNodeConfigArrayOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) []GetExadbVmClusterNodeConfig { return v.NodeConfigs }).(GetExadbVmClusterNodeConfigArrayOutput)
@@ -319,6 +332,10 @@ func (o LookupExadbVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 // The private zone ID in which you want DNS records to be created.
 func (o LookupExadbVmClusterResultOutput) PrivateZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.PrivateZoneId }).(pulumi.StringOutput)
+}
+
+func (o LookupExadbVmClusterResultOutput) RegisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) int { return v.RegisterPkcsTrigger }).(pulumi.IntOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -391,6 +408,11 @@ func (o LookupExadbVmClusterResultOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.SystemVersion }).(pulumi.StringOutput)
 }
 
+// TDE keystore type
+func (o LookupExadbVmClusterResultOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
 // The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 func (o LookupExadbVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -399,6 +421,10 @@ func (o LookupExadbVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 // The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o LookupExadbVmClusterResultOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o LookupExadbVmClusterResultOutput) UnregisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) int { return v.UnregisterPkcsTrigger }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.

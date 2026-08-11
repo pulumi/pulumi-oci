@@ -33,6 +33,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
     private String autonomousContainerDatabaseBackupId;
+    private List<String> autonomousDatabasesToClones;
     /**
      * @return The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -63,6 +64,8 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists;
+    private String cloneBandWidth;
+    private String cloneType;
     /**
      * @return The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -316,7 +319,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String serviceLevelAgreementType;
+    private Boolean shouldUseLatestAvailableBackupTimeStamp;
     private String source;
+    private String sourceAutonomousContainerDatabaseId;
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
      * 
@@ -348,6 +353,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String timeSnapshotStandbyRevert;
+    private String timeStampToUseForCloning;
     /**
      * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
@@ -379,6 +385,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     public String autonomousContainerDatabaseBackupId() {
         return this.autonomousContainerDatabaseBackupId;
+    }
+    public List<String> autonomousDatabasesToClones() {
+        return this.autonomousDatabasesToClones;
     }
     /**
      * @return The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -421,6 +430,12 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists() {
         return this.backupDestinationPropertiesLists;
+    }
+    public String cloneBandWidth() {
+        return this.cloneBandWidth;
+    }
+    public String cloneType() {
+        return this.cloneType;
     }
     /**
      * @return The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -797,8 +812,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String serviceLevelAgreementType() {
         return this.serviceLevelAgreementType;
     }
+    public Boolean shouldUseLatestAvailableBackupTimeStamp() {
+        return this.shouldUseLatestAvailableBackupTimeStamp;
+    }
     public String source() {
         return this.source;
+    }
+    public String sourceAutonomousContainerDatabaseId() {
+        return this.sourceAutonomousContainerDatabaseId;
     }
     /**
      * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -845,6 +866,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String timeSnapshotStandbyRevert() {
         return this.timeSnapshotStandbyRevert;
     }
+    public String timeStampToUseForCloning() {
+        return this.timeStampToUseForCloning;
+    }
     /**
      * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
@@ -885,12 +909,15 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public static final class Builder {
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetail> associatedBackupConfigurationDetails;
         private String autonomousContainerDatabaseBackupId;
+        private List<String> autonomousDatabasesToClones;
         private String autonomousExadataInfrastructureId;
         private String autonomousVmClusterId;
         private String availabilityDomain;
         private Double availableCpus;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfig> backupConfigs;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesList> backupDestinationPropertiesLists;
+        private String cloneBandWidth;
+        private String cloneType;
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
         private String computeModel;
@@ -952,7 +979,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String role;
         private Boolean rotateKeyTrigger;
         private String serviceLevelAgreementType;
+        private Boolean shouldUseLatestAvailableBackupTimeStamp;
         private String source;
+        private String sourceAutonomousContainerDatabaseId;
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private Integer switchoverTrigger;
@@ -960,6 +989,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String timeCreated;
         private String timeOfLastBackup;
         private String timeSnapshotStandbyRevert;
+        private String timeStampToUseForCloning;
         private Integer totalCpus;
         private String vaultId;
         private String versionPreference;
@@ -969,12 +999,15 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      Objects.requireNonNull(defaults);
     	      this.associatedBackupConfigurationDetails = defaults.associatedBackupConfigurationDetails;
     	      this.autonomousContainerDatabaseBackupId = defaults.autonomousContainerDatabaseBackupId;
+    	      this.autonomousDatabasesToClones = defaults.autonomousDatabasesToClones;
     	      this.autonomousExadataInfrastructureId = defaults.autonomousExadataInfrastructureId;
     	      this.autonomousVmClusterId = defaults.autonomousVmClusterId;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.availableCpus = defaults.availableCpus;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.backupDestinationPropertiesLists = defaults.backupDestinationPropertiesLists;
+    	      this.cloneBandWidth = defaults.cloneBandWidth;
+    	      this.cloneType = defaults.cloneType;
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
@@ -1036,7 +1069,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.role = defaults.role;
     	      this.rotateKeyTrigger = defaults.rotateKeyTrigger;
     	      this.serviceLevelAgreementType = defaults.serviceLevelAgreementType;
+    	      this.shouldUseLatestAvailableBackupTimeStamp = defaults.shouldUseLatestAvailableBackupTimeStamp;
     	      this.source = defaults.source;
+    	      this.sourceAutonomousContainerDatabaseId = defaults.sourceAutonomousContainerDatabaseId;
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.switchoverTrigger = defaults.switchoverTrigger;
@@ -1044,6 +1079,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeOfLastBackup = defaults.timeOfLastBackup;
     	      this.timeSnapshotStandbyRevert = defaults.timeSnapshotStandbyRevert;
+    	      this.timeStampToUseForCloning = defaults.timeStampToUseForCloning;
     	      this.totalCpus = defaults.totalCpus;
     	      this.vaultId = defaults.vaultId;
     	      this.versionPreference = defaults.versionPreference;
@@ -1068,6 +1104,17 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             }
             this.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder autonomousDatabasesToClones(List<String> autonomousDatabasesToClones) {
+            if (autonomousDatabasesToClones == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "autonomousDatabasesToClones");
+            }
+            this.autonomousDatabasesToClones = autonomousDatabasesToClones;
+            return this;
+        }
+        public Builder autonomousDatabasesToClones(String... autonomousDatabasesToClones) {
+            return autonomousDatabasesToClones(List.of(autonomousDatabasesToClones));
         }
         @CustomType.Setter
         public Builder autonomousExadataInfrastructureId(String autonomousExadataInfrastructureId) {
@@ -1122,6 +1169,22 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         }
         public Builder backupDestinationPropertiesLists(GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesList... backupDestinationPropertiesLists) {
             return backupDestinationPropertiesLists(List.of(backupDestinationPropertiesLists));
+        }
+        @CustomType.Setter
+        public Builder cloneBandWidth(String cloneBandWidth) {
+            if (cloneBandWidth == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "cloneBandWidth");
+            }
+            this.cloneBandWidth = cloneBandWidth;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cloneType(String cloneType) {
+            if (cloneType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "cloneType");
+            }
+            this.cloneType = cloneType;
+            return this;
         }
         @CustomType.Setter
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
@@ -1645,11 +1708,27 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder shouldUseLatestAvailableBackupTimeStamp(Boolean shouldUseLatestAvailableBackupTimeStamp) {
+            if (shouldUseLatestAvailableBackupTimeStamp == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "shouldUseLatestAvailableBackupTimeStamp");
+            }
+            this.shouldUseLatestAvailableBackupTimeStamp = shouldUseLatestAvailableBackupTimeStamp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder source(String source) {
             if (source == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "source");
             }
             this.source = source;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceAutonomousContainerDatabaseId(String sourceAutonomousContainerDatabaseId) {
+            if (sourceAutonomousContainerDatabaseId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "sourceAutonomousContainerDatabaseId");
+            }
+            this.sourceAutonomousContainerDatabaseId = sourceAutonomousContainerDatabaseId;
             return this;
         }
         @CustomType.Setter
@@ -1709,6 +1788,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeStampToUseForCloning(String timeStampToUseForCloning) {
+            if (timeStampToUseForCloning == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "timeStampToUseForCloning");
+            }
+            this.timeStampToUseForCloning = timeStampToUseForCloning;
+            return this;
+        }
+        @CustomType.Setter
         public Builder totalCpus(Integer totalCpus) {
             if (totalCpus == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "totalCpus");
@@ -1744,12 +1831,15 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             final var _resultValue = new GetAutonomousContainerDatabasesAutonomousContainerDatabase();
             _resultValue.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
             _resultValue.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
+            _resultValue.autonomousDatabasesToClones = autonomousDatabasesToClones;
             _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             _resultValue.autonomousVmClusterId = autonomousVmClusterId;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.availableCpus = availableCpus;
             _resultValue.backupConfigs = backupConfigs;
             _resultValue.backupDestinationPropertiesLists = backupDestinationPropertiesLists;
+            _resultValue.cloneBandWidth = cloneBandWidth;
+            _resultValue.cloneType = cloneType;
             _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
@@ -1811,7 +1901,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.role = role;
             _resultValue.rotateKeyTrigger = rotateKeyTrigger;
             _resultValue.serviceLevelAgreementType = serviceLevelAgreementType;
+            _resultValue.shouldUseLatestAvailableBackupTimeStamp = shouldUseLatestAvailableBackupTimeStamp;
             _resultValue.source = source;
+            _resultValue.sourceAutonomousContainerDatabaseId = sourceAutonomousContainerDatabaseId;
             _resultValue.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             _resultValue.state = state;
             _resultValue.switchoverTrigger = switchoverTrigger;
@@ -1819,6 +1911,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeOfLastBackup = timeOfLastBackup;
             _resultValue.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
+            _resultValue.timeStampToUseForCloning = timeStampToUseForCloning;
             _resultValue.totalCpus = totalCpus;
             _resultValue.vaultId = vaultId;
             _resultValue.versionPreference = versionPreference;

@@ -20,6 +20,8 @@ import * as utilities from "../utilities";
  * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
+ *     connectionTypes: connectionAssignmentConnectionType,
+ *     connectionTypeNotEqualTos: connectionAssignmentConnectionTypeNotEqualTo,
  *     deploymentId: testDeployment.id,
  *     name: connectionAssignmentName,
  *     state: connectionAssignmentState,
@@ -31,6 +33,8 @@ export function getConnectionAssignments(args: GetConnectionAssignmentsArgs, opt
     return pulumi.runtime.invoke("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", {
         "compartmentId": args.compartmentId,
         "connectionId": args.connectionId,
+        "connectionTypeNotEqualTos": args.connectionTypeNotEqualTos,
+        "connectionTypes": args.connectionTypes,
         "deploymentId": args.deploymentId,
         "filters": args.filters,
         "name": args.name,
@@ -50,6 +54,14 @@ export interface GetConnectionAssignmentsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
      */
     connectionId?: string;
+    /**
+     * The array of connection types to exclude.
+     */
+    connectionTypeNotEqualTos?: string[];
+    /**
+     * The array of connection types.
+     */
+    connectionTypes?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */
@@ -81,6 +93,11 @@ export interface GetConnectionAssignmentsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
      */
     readonly connectionId?: string;
+    readonly connectionTypeNotEqualTos?: string[];
+    /**
+     * The connection type.
+     */
+    readonly connectionTypes?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
@@ -110,6 +127,8 @@ export interface GetConnectionAssignmentsResult {
  * const testConnectionAssignments = oci.goldengate.getConnectionAssignments({
  *     compartmentId: compartmentId,
  *     connectionId: testConnection.id,
+ *     connectionTypes: connectionAssignmentConnectionType,
+ *     connectionTypeNotEqualTos: connectionAssignmentConnectionTypeNotEqualTo,
  *     deploymentId: testDeployment.id,
  *     name: connectionAssignmentName,
  *     state: connectionAssignmentState,
@@ -121,6 +140,8 @@ export function getConnectionAssignmentsOutput(args: GetConnectionAssignmentsOut
     return pulumi.runtime.invokeOutput("oci:GoldenGate/getConnectionAssignments:getConnectionAssignments", {
         "compartmentId": args.compartmentId,
         "connectionId": args.connectionId,
+        "connectionTypeNotEqualTos": args.connectionTypeNotEqualTos,
+        "connectionTypes": args.connectionTypes,
         "deploymentId": args.deploymentId,
         "filters": args.filters,
         "name": args.name,
@@ -140,6 +161,14 @@ export interface GetConnectionAssignmentsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
      */
     connectionId?: pulumi.Input<string | undefined>;
+    /**
+     * The array of connection types to exclude.
+     */
+    connectionTypeNotEqualTos?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The array of connection types.
+     */
+    connectionTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      */

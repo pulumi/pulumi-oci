@@ -41,6 +41,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     * 
+     */
+    @Import(name="autonomousDatabasesToClones")
+    private @Nullable Output<List<String>> autonomousDatabasesToClones;
+
+    /**
+     * @return A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<List<String>>> autonomousDatabasesToClones() {
+        return Optional.ofNullable(this.autonomousDatabasesToClones);
+    }
+
+    /**
      * **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
      */
@@ -83,6 +98,36 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Optional<Output<AutonomousContainerDatabaseBackupConfigArgs>> backupConfig() {
         return Optional.ofNullable(this.backupConfig);
+    }
+
+    /**
+     * The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     * 
+     */
+    @Import(name="cloneBandWidth")
+    private @Nullable Output<String> cloneBandWidth;
+
+    /**
+     * @return The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+     * 
+     */
+    public Optional<Output<String>> cloneBandWidth() {
+        return Optional.ofNullable(this.cloneBandWidth);
+    }
+
+    /**
+     * The Autonomous AI Database clone type.
+     * 
+     */
+    @Import(name="cloneType")
+    private @Nullable Output<String> cloneType;
+
+    /**
+     * @return The Autonomous AI Database clone type.
+     * 
+     */
+    public Optional<Output<String>> cloneType() {
+        return Optional.ofNullable(this.cloneType);
     }
 
     /**
@@ -595,6 +640,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+     * 
+     */
+    @Import(name="shouldUseLatestAvailableBackupTimeStamp")
+    private @Nullable Output<Boolean> shouldUseLatestAvailableBackupTimeStamp;
+
+    /**
+     * @return If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<Boolean>> shouldUseLatestAvailableBackupTimeStamp() {
+        return Optional.ofNullable(this.shouldUseLatestAvailableBackupTimeStamp);
+    }
+
+    /**
      * The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
      * 
      */
@@ -607,6 +667,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+     * 
+     */
+    @Import(name="sourceAutonomousContainerDatabaseId")
+    private @Nullable Output<String> sourceAutonomousContainerDatabaseId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+     * 
+     */
+    public Optional<Output<String>> sourceAutonomousContainerDatabaseId() {
+        return Optional.ofNullable(this.sourceAutonomousContainerDatabaseId);
     }
 
     /**
@@ -643,6 +718,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
      */
     public Optional<Output<Integer>> switchoverTrigger() {
         return Optional.ofNullable(this.switchoverTrigger);
+    }
+
+    /**
+     * The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+     * 
+     */
+    @Import(name="timeStampToUseForCloning")
+    private @Nullable Output<String> timeStampToUseForCloning;
+
+    /**
+     * @return The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+     * 
+     */
+    public Optional<Output<String>> timeStampToUseForCloning() {
+        return Optional.ofNullable(this.timeStampToUseForCloning);
     }
 
     /**
@@ -694,9 +784,12 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
 
     private AutonomousContainerDatabaseArgs(AutonomousContainerDatabaseArgs $) {
         this.autonomousContainerDatabaseBackupId = $.autonomousContainerDatabaseBackupId;
+        this.autonomousDatabasesToClones = $.autonomousDatabasesToClones;
         this.autonomousExadataInfrastructureId = $.autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = $.autonomousVmClusterId;
         this.backupConfig = $.backupConfig;
+        this.cloneBandWidth = $.cloneBandWidth;
+        this.cloneType = $.cloneType;
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.customerContacts = $.customerContacts;
@@ -732,9 +825,12 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.reinstateTrigger = $.reinstateTrigger;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.serviceLevelAgreementType = $.serviceLevelAgreementType;
+        this.shouldUseLatestAvailableBackupTimeStamp = $.shouldUseLatestAvailableBackupTimeStamp;
         this.source = $.source;
+        this.sourceAutonomousContainerDatabaseId = $.sourceAutonomousContainerDatabaseId;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.switchoverTrigger = $.switchoverTrigger;
+        this.timeStampToUseForCloning = $.timeStampToUseForCloning;
         this.vaultId = $.vaultId;
         this.versionPreference = $.versionPreference;
         this.vmFailoverReservation = $.vmFailoverReservation;
@@ -777,6 +873,37 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder autonomousContainerDatabaseBackupId(String autonomousContainerDatabaseBackupId) {
             return autonomousContainerDatabaseBackupId(Output.of(autonomousContainerDatabaseBackupId));
+        }
+
+        /**
+         * @param autonomousDatabasesToClones A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabasesToClones(@Nullable Output<List<String>> autonomousDatabasesToClones) {
+            $.autonomousDatabasesToClones = autonomousDatabasesToClones;
+            return this;
+        }
+
+        /**
+         * @param autonomousDatabasesToClones A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabasesToClones(List<String> autonomousDatabasesToClones) {
+            return autonomousDatabasesToClones(Output.of(autonomousDatabasesToClones));
+        }
+
+        /**
+         * @param autonomousDatabasesToClones A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDatabasesToClones(String... autonomousDatabasesToClones) {
+            return autonomousDatabasesToClones(List.of(autonomousDatabasesToClones));
         }
 
         /**
@@ -840,6 +967,48 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder backupConfig(AutonomousContainerDatabaseBackupConfigArgs backupConfig) {
             return backupConfig(Output.of(backupConfig));
+        }
+
+        /**
+         * @param cloneBandWidth The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneBandWidth(@Nullable Output<String> cloneBandWidth) {
+            $.cloneBandWidth = cloneBandWidth;
+            return this;
+        }
+
+        /**
+         * @param cloneBandWidth The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneBandWidth(String cloneBandWidth) {
+            return cloneBandWidth(Output.of(cloneBandWidth));
+        }
+
+        /**
+         * @param cloneType The Autonomous AI Database clone type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneType(@Nullable Output<String> cloneType) {
+            $.cloneType = cloneType;
+            return this;
+        }
+
+        /**
+         * @param cloneType The Autonomous AI Database clone type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneType(String cloneType) {
+            return cloneType(Output.of(cloneType));
         }
 
         /**
@@ -1564,6 +1733,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param shouldUseLatestAvailableBackupTimeStamp If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseLatestAvailableBackupTimeStamp(@Nullable Output<Boolean> shouldUseLatestAvailableBackupTimeStamp) {
+            $.shouldUseLatestAvailableBackupTimeStamp = shouldUseLatestAvailableBackupTimeStamp;
+            return this;
+        }
+
+        /**
+         * @param shouldUseLatestAvailableBackupTimeStamp If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shouldUseLatestAvailableBackupTimeStamp(Boolean shouldUseLatestAvailableBackupTimeStamp) {
+            return shouldUseLatestAvailableBackupTimeStamp(Output.of(shouldUseLatestAvailableBackupTimeStamp));
+        }
+
+        /**
          * @param source The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
          * 
          * @return builder
@@ -1582,6 +1772,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder source(String source) {
             return source(Output.of(source));
+        }
+
+        /**
+         * @param sourceAutonomousContainerDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAutonomousContainerDatabaseId(@Nullable Output<String> sourceAutonomousContainerDatabaseId) {
+            $.sourceAutonomousContainerDatabaseId = sourceAutonomousContainerDatabaseId;
+            return this;
+        }
+
+        /**
+         * @param sourceAutonomousContainerDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAutonomousContainerDatabaseId(String sourceAutonomousContainerDatabaseId) {
+            return sourceAutonomousContainerDatabaseId(Output.of(sourceAutonomousContainerDatabaseId));
         }
 
         /**
@@ -1630,6 +1841,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder switchoverTrigger(Integer switchoverTrigger) {
             return switchoverTrigger(Output.of(switchoverTrigger));
+        }
+
+        /**
+         * @param timeStampToUseForCloning The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeStampToUseForCloning(@Nullable Output<String> timeStampToUseForCloning) {
+            $.timeStampToUseForCloning = timeStampToUseForCloning;
+            return this;
+        }
+
+        /**
+         * @param timeStampToUseForCloning The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeStampToUseForCloning(String timeStampToUseForCloning) {
+            return timeStampToUseForCloning(Output.of(timeStampToUseForCloning));
         }
 
         /**

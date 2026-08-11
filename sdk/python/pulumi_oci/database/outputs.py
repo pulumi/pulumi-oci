@@ -128,6 +128,7 @@ __all__ = [
     'DatabaseDataGuardGroup',
     'DatabaseDataGuardGroupMember',
     'DatabaseDatabase',
+    'DatabaseDatabaseAutoFailoverConfiguration',
     'DatabaseDatabaseDbBackupConfig',
     'DatabaseDatabaseDbBackupConfigBackupDestinationDetail',
     'DatabaseDatabaseEncryptionKeyLocationDetails',
@@ -217,6 +218,7 @@ __all__ = [
     'ExadbVmClusterDataCollectionOptions',
     'ExadbVmClusterIormConfigCache',
     'ExadbVmClusterIormConfigCacheDbPlan',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfig',
     'ExadbVmClusterNodeConfig',
     'ExadbVmClusterNodeResource',
     'ExascaleDbStorageVaultHighCapacityDatabaseStorage',
@@ -287,12 +289,18 @@ __all__ = [
     'GetAutonomousCharacterSetsAutonomousDatabaseCharacterSetResult',
     'GetAutonomousCharacterSetsFilterResult',
     'GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult',
+    'GetAutonomousContainerDatabaseBackupAutonomousDatabaseResult',
+    'GetAutonomousContainerDatabaseBackupBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseBackupConfigResult',
     'GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult',
+    'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionResult',
+    'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItemResult',
+    'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterResult',
     'GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionResult',
     'GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemResult',
     'GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult',
+    'GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult',
     'GetAutonomousContainerDatabaseBackupsFilterResult',
     'GetAutonomousContainerDatabaseCustomerContactResult',
     'GetAutonomousContainerDatabaseDataguardResult',
@@ -563,6 +571,7 @@ __all__ = [
     'GetDatabaseDataGuardGroupResult',
     'GetDatabaseDataGuardGroupMemberResult',
     'GetDatabaseDatabaseResult',
+    'GetDatabaseDatabaseAutoFailoverConfigurationResult',
     'GetDatabaseDatabaseDbBackupConfigResult',
     'GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDatabaseDatabaseEncryptionKeyLocationDetailResult',
@@ -612,6 +621,7 @@ __all__ = [
     'GetDatabasesDatabaseDataGuardGroupResult',
     'GetDatabasesDatabaseDataGuardGroupMemberResult',
     'GetDatabasesDatabaseDatabaseResult',
+    'GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult',
     'GetDatabasesDatabaseDatabaseDbBackupConfigResult',
     'GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult',
@@ -738,6 +748,7 @@ __all__ = [
     'GetExadbVmClusterDataCollectionOptionResult',
     'GetExadbVmClusterIormConfigCacheResult',
     'GetExadbVmClusterIormConfigCacheDbPlanResult',
+    'GetExadbVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetExadbVmClusterNodeConfigResult',
     'GetExadbVmClusterNodeResourceResult',
     'GetExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntryResult',
@@ -748,6 +759,7 @@ __all__ = [
     'GetExadbVmClustersExadbVmClusterDataCollectionOptionResult',
     'GetExadbVmClustersExadbVmClusterIormConfigCacheResult',
     'GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult',
+    'GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult',
     'GetExadbVmClustersExadbVmClusterNodeConfigResult',
     'GetExadbVmClustersExadbVmClusterNodeResourceResult',
     'GetExadbVmClustersFilterResult',
@@ -10028,7 +10040,9 @@ class DatabaseDataGuardGroup(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "protectionMode":
+        if key == "managedAutoFailOverReadiness":
+            suggest = "managed_auto_fail_over_readiness"
+        elif key == "protectionMode":
             suggest = "protection_mode"
 
         if suggest:
@@ -10043,16 +10057,28 @@ class DatabaseDataGuardGroup(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: Optional[_builtins.str] = None,
                  members: Optional[Sequence['outputs.DatabaseDataGuardGroupMember']] = None,
                  protection_mode: Optional[_builtins.str] = None):
         """
+        :param _builtins.str managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param Sequence['DatabaseDataGuardGroupMemberArgs'] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        if managed_auto_fail_over_readiness is not None:
+            pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> Optional[_builtins.str]:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
 
     @_builtins.property
     @pulumi.getter
@@ -10090,8 +10116,12 @@ class DatabaseDataGuardGroupMember(dict):
             suggest = "failover_readiness"
         elif key == "failoverReadinessMessage":
             suggest = "failover_readiness_message"
+        elif key == "failoverTargets":
+            suggest = "failover_targets"
         elif key == "isActiveDataGuardEnabled":
             suggest = "is_active_data_guard_enabled"
+        elif key == "managedAutoFailover":
+            suggest = "managed_auto_failover"
         elif key == "switchoverReadiness":
             suggest = "switchover_readiness"
         elif key == "switchoverReadinessMessage":
@@ -10124,7 +10154,9 @@ class DatabaseDataGuardGroupMember(dict):
                  db_system_id: Optional[_builtins.str] = None,
                  failover_readiness: Optional[_builtins.str] = None,
                  failover_readiness_message: Optional[_builtins.str] = None,
+                 failover_targets: Optional[Sequence[_builtins.str]] = None,
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
+                 managed_auto_failover: Optional[_builtins.str] = None,
                  role: Optional[_builtins.str] = None,
                  switchover_readiness: Optional[_builtins.str] = None,
                  switchover_readiness_message: Optional[_builtins.str] = None,
@@ -10138,11 +10170,14 @@ class DatabaseDataGuardGroupMember(dict):
         :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param Sequence[_builtins.str] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str managed_auto_failover: The state of managed auto failover.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
         :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -10166,8 +10201,12 @@ class DatabaseDataGuardGroupMember(dict):
             pulumi.set(__self__, "failover_readiness", failover_readiness)
         if failover_readiness_message is not None:
             pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         if role is not None:
             pulumi.set(__self__, "role", role)
         if switchover_readiness is not None:
@@ -10227,7 +10266,7 @@ class DatabaseDataGuardGroupMember(dict):
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> Optional[_builtins.str]:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -10240,12 +10279,28 @@ class DatabaseDataGuardGroupMember(dict):
         return pulumi.get(self, "failover_readiness_message")
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
         """
         True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> Optional[_builtins.str]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
     @_builtins.property
     @pulumi.getter
@@ -10260,6 +10315,7 @@ class DatabaseDataGuardGroupMember(dict):
     def switchover_readiness(self) -> Optional[_builtins.str]:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -10314,6 +10370,8 @@ class DatabaseDatabase(dict):
         suggest = None
         if key == "adminPassword":
             suggest = "admin_password"
+        elif key == "autoFailoverConfiguration":
+            suggest = "auto_failover_configuration"
         elif key == "backupId":
             suggest = "backup_id"
         elif key == "backupTdePassword":
@@ -10392,6 +10450,7 @@ class DatabaseDatabase(dict):
 
     def __init__(__self__, *,
                  admin_password: Optional[_builtins.str] = None,
+                 auto_failover_configuration: Optional['outputs.DatabaseDatabaseAutoFailoverConfiguration'] = None,
                  backup_id: Optional[_builtins.str] = None,
                  backup_tde_password: Optional[_builtins.str] = None,
                  character_set: Optional[_builtins.str] = None,
@@ -10426,6 +10485,7 @@ class DatabaseDatabase(dict):
                  vm_cluster_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+        :param 'DatabaseDatabaseAutoFailoverConfigurationArgs' auto_failover_configuration: The properties for defining auto failover configuration.
         :param _builtins.str backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str backup_tde_password: The password to open the TDE wallet.
         :param _builtins.str character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -10473,6 +10533,8 @@ class DatabaseDatabase(dict):
         """
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
+        if auto_failover_configuration is not None:
+            pulumi.set(__self__, "auto_failover_configuration", auto_failover_configuration)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
         if backup_tde_password is not None:
@@ -10545,6 +10607,14 @@ class DatabaseDatabase(dict):
         A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
         """
         return pulumi.get(self, "admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="autoFailoverConfiguration")
+    def auto_failover_configuration(self) -> Optional['outputs.DatabaseDatabaseAutoFailoverConfiguration']:
+        """
+        The properties for defining auto failover configuration.
+        """
+        return pulumi.get(self, "auto_failover_configuration")
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -10811,6 +10881,56 @@ class DatabaseDatabase(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class DatabaseDatabaseAutoFailoverConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "failoverTargets":
+            suggest = "failover_targets"
+        elif key == "managedAutoFailover":
+            suggest = "managed_auto_failover"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseAutoFailoverConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseAutoFailoverConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseAutoFailoverConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 failover_targets: Optional[Sequence[_builtins.str]] = None,
+                 managed_auto_failover: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        :param _builtins.str managed_auto_failover: The state of managed auto failover.
+        """
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
+
+    @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> Optional[_builtins.str]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
 
 @pulumi.output_type
@@ -13018,7 +13138,9 @@ class DatabaseUpgradeDataGuardGroup(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "protectionMode":
+        if key == "managedAutoFailOverReadiness":
+            suggest = "managed_auto_fail_over_readiness"
+        elif key == "protectionMode":
             suggest = "protection_mode"
 
         if suggest:
@@ -13033,16 +13155,28 @@ class DatabaseUpgradeDataGuardGroup(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: Optional[_builtins.str] = None,
                  members: Optional[Sequence['outputs.DatabaseUpgradeDataGuardGroupMember']] = None,
                  protection_mode: Optional[_builtins.str] = None):
         """
+        :param _builtins.str managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param Sequence['DatabaseUpgradeDataGuardGroupMemberArgs'] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        if managed_auto_fail_over_readiness is not None:
+            pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> Optional[_builtins.str]:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
 
     @_builtins.property
     @pulumi.getter
@@ -13080,8 +13214,12 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
             suggest = "failover_readiness"
         elif key == "failoverReadinessMessage":
             suggest = "failover_readiness_message"
+        elif key == "failoverTargets":
+            suggest = "failover_targets"
         elif key == "isActiveDataGuardEnabled":
             suggest = "is_active_data_guard_enabled"
+        elif key == "managedAutoFailover":
+            suggest = "managed_auto_failover"
         elif key == "switchoverReadiness":
             suggest = "switchover_readiness"
         elif key == "switchoverReadinessMessage":
@@ -13114,7 +13252,9 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
                  db_system_id: Optional[_builtins.str] = None,
                  failover_readiness: Optional[_builtins.str] = None,
                  failover_readiness_message: Optional[_builtins.str] = None,
+                 failover_targets: Optional[Sequence[_builtins.str]] = None,
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
+                 managed_auto_failover: Optional[_builtins.str] = None,
                  role: Optional[_builtins.str] = None,
                  switchover_readiness: Optional[_builtins.str] = None,
                  switchover_readiness_message: Optional[_builtins.str] = None,
@@ -13128,11 +13268,14 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
         :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param Sequence[_builtins.str] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str managed_auto_failover: The state of managed auto failover.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
         :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -13156,8 +13299,12 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
             pulumi.set(__self__, "failover_readiness", failover_readiness)
         if failover_readiness_message is not None:
             pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         if role is not None:
             pulumi.set(__self__, "role", role)
         if switchover_readiness is not None:
@@ -13217,7 +13364,7 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> Optional[_builtins.str]:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -13230,12 +13377,28 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
         return pulumi.get(self, "failover_readiness_message")
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> Optional[_builtins.bool]:
         """
         True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> Optional[_builtins.str]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
     @_builtins.property
     @pulumi.getter
@@ -13250,6 +13413,7 @@ class DatabaseUpgradeDataGuardGroupMember(dict):
     def switchover_readiness(self) -> Optional[_builtins.str]:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -18731,6 +18895,54 @@ class ExadbVmClusterIormConfigCacheDbPlan(dict):
 
 
 @pulumi.output_type
+class ExadbVmClusterMultiCloudIdentityConnectorConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cloudProvider":
+            suggest = "cloud_provider"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterMultiCloudIdentityConnectorConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterMultiCloudIdentityConnectorConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cloud_provider: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> Optional[_builtins.str]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class ExadbVmClusterNodeConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -23006,6 +23218,174 @@ class GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult(di
 
 
 @pulumi.output_type
+class GetAutonomousContainerDatabaseBackupAutonomousDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str display_name: A user-friendly name for the backup. This name need not be unique.
+        :param _builtins.str state: The current state of the backup.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly name for the backup. This name need not be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the backup.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseBackupBackupDestinationDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
+                 dbrs_policy_id: _builtins.str,
+                 id: _builtins.str,
+                 internet_proxy: _builtins.str,
+                 is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
+                 is_zero_data_loss_enabled: _builtins.bool,
+                 remote_region: _builtins.str,
+                 type: _builtins.str,
+                 vpc_password: _builtins.str,
+                 vpc_user: _builtins.str):
+        """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+        :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.bool is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.str type: The type of backup.
+        :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
+        pulumi.set(__self__, "remote_region", remote_region)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vpc_password", vpc_password)
+        pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> _builtins.str:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> _builtins.bool:
+        """
+        Indicates whether the backup destination is cross-region or local.
+        """
+        return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> _builtins.str:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> _builtins.str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> _builtins.str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
 class GetAutonomousContainerDatabaseBackupConfigResult(dict):
     def __init__(__self__, *,
                  backup_destination_details: Sequence['outputs.GetAutonomousContainerDatabaseBackupConfigBackupDestinationDetailResult'],
@@ -23181,20 +23561,99 @@ class GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult(dict):
 
 
 @pulumi.output_type
-class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionResult(dict):
+class GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemResult']):
+                 items: Sequence['outputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItemResult']):
         """
-        :param Sequence['GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemArgs'] items: List of Autonomous container database backups.
+        :param Sequence['GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItemArgs'] items: The list of Autonomous Databases that are part of the Autonomous Container Database Backup.
         """
         pulumi.set(__self__, "items", items)
 
     @_builtins.property
     @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItemResult']:
+        """
+        The list of Autonomous Databases that are part of the Autonomous Container Database Backup.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsAutonomousDatabaseInBackupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If not provided, uses the Autonomous Container Database's compartment.
+        :param _builtins.str display_name: The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+        :param _builtins.str state: The current state of the Autonomous AI Database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If not provided, uses the Autonomous Container Database's compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the Autonomous AI Database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the Autonomous AI Database.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
     def items(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemResult']:
-        """
-        List of Autonomous container database backups.
-        """
         return pulumi.get(self, "items")
 
 
@@ -23204,7 +23663,9 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
                  acd_display_name: _builtins.str,
                  autonomous_container_database_id: _builtins.str,
                  autonomous_databases: Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult'],
+                 backup_destination_details: Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult'],
                  compartment_id: _builtins.str,
+                 db_version: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
@@ -23223,7 +23684,9 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
         :param _builtins.str acd_display_name: The user-friendly name for the Autonomous Container Database when the Backup was initiated. This name need not be unique. This field captures the name at the time of backup creation, accounting for possible later updates to the display name.
         :param _builtins.str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseArgs'] autonomous_databases: List of Autonomous AI Databases that is part of this Autonomous Container Database Backup
+        :param Sequence['GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailArgs'] backup_destination_details: Backup destination details
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str db_version: A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -23242,7 +23705,9 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
         pulumi.set(__self__, "acd_display_name", acd_display_name)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
         pulumi.set(__self__, "autonomous_databases", autonomous_databases)
+        pulumi.set(__self__, "backup_destination_details", backup_destination_details)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -23283,12 +23748,28 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
         return pulumi.get(self, "autonomous_databases")
 
     @_builtins.property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Sequence['outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult']:
+        """
+        Backup destination details
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+        """
+        return pulumi.get(self, "db_version")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -23407,13 +23888,16 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
 class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
-                 display_name: _builtins.str):
+                 display_name: _builtins.str,
+                 state: _builtins.str):
         """
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "state", state)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -23430,6 +23914,142 @@ class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupColl
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_retention_policy_on_terminate: _builtins.str,
+                 dbrs_policy_id: _builtins.str,
+                 id: _builtins.str,
+                 internet_proxy: _builtins.str,
+                 is_remote: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
+                 is_zero_data_loss_enabled: _builtins.bool,
+                 remote_region: _builtins.str,
+                 type: _builtins.str,
+                 vpc_password: _builtins.str,
+                 vpc_user: _builtins.str):
+        """
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+        :param _builtins.str internet_proxy: Proxy URL to connect to object store.
+        :param _builtins.bool is_remote: call for all remote backups
+        :param _builtins.bool is_retention_lock_enabled: Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        :param _builtins.bool is_zero_data_loss_enabled: Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.str type: The type of backup.
+        :param _builtins.str vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param _builtins.str vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "backup_retention_policy_on_terminate", backup_retention_policy_on_terminate)
+        pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "internet_proxy", internet_proxy)
+        pulumi.set(__self__, "is_remote", is_remote)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "is_zero_data_loss_enabled", is_zero_data_loss_enabled)
+        pulumi.set(__self__, "remote_region", remote_region)
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "vpc_password", vpc_password)
+        pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @_builtins.property
+    @pulumi.getter(name="backupRetentionPolicyOnTerminate")
+    def backup_retention_policy_on_terminate(self) -> _builtins.str:
+        """
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        """
+        return pulumi.get(self, "backup_retention_policy_on_terminate")
+
+    @_builtins.property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> _builtins.str:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @_builtins.property
+    @pulumi.getter(name="isRemote")
+    def is_remote(self) -> _builtins.bool:
+        """
+        call for all remote backups
+        """
+        return pulumi.get(self, "is_remote")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isZeroDataLossEnabled")
+    def is_zero_data_loss_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
+        """
+        return pulumi.get(self, "is_zero_data_loss_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="remoteRegion")
+    def remote_region(self) -> _builtins.str:
+        """
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "remote_region")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of backup.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> _builtins.str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @_builtins.property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> _builtins.str:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
 
 
 @pulumi.output_type
@@ -25153,12 +25773,15 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     def __init__(__self__, *,
                  associated_backup_configuration_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult'],
                  autonomous_container_database_backup_id: _builtins.str,
+                 autonomous_databases_to_clones: Sequence[_builtins.str],
                  autonomous_exadata_infrastructure_id: _builtins.str,
                  autonomous_vm_cluster_id: _builtins.str,
                  availability_domain: _builtins.str,
                  available_cpus: _builtins.float,
                  backup_configs: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigResult'],
                  backup_destination_properties_lists: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupDestinationPropertiesListResult'],
+                 clone_band_width: _builtins.str,
+                 clone_type: _builtins.str,
                  cloud_autonomous_vm_cluster_id: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_model: _builtins.str,
@@ -25220,7 +25843,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  role: _builtins.str,
                  rotate_key_trigger: _builtins.bool,
                  service_level_agreement_type: _builtins.str,
+                 should_use_latest_available_backup_time_stamp: _builtins.bool,
                  source: _builtins.str,
+                 source_autonomous_container_database_id: _builtins.str,
                  standby_maintenance_buffer_in_days: _builtins.int,
                  state: _builtins.str,
                  switchover_trigger: _builtins.int,
@@ -25228,6 +25853,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  time_created: _builtins.str,
                  time_of_last_backup: _builtins.str,
                  time_snapshot_standby_revert: _builtins.str,
+                 time_stamp_to_use_for_cloning: _builtins.str,
                  total_cpus: _builtins.int,
                  vault_id: _builtins.str,
                  version_preference: _builtins.str,
@@ -25301,12 +25927,15 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         """
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
         pulumi.set(__self__, "autonomous_container_database_backup_id", autonomous_container_database_backup_id)
+        pulumi.set(__self__, "autonomous_databases_to_clones", autonomous_databases_to_clones)
         pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_cpus", available_cpus)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_destination_properties_lists", backup_destination_properties_lists)
+        pulumi.set(__self__, "clone_band_width", clone_band_width)
+        pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_model", compute_model)
@@ -25368,7 +25997,9 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
+        pulumi.set(__self__, "should_use_latest_available_backup_time_stamp", should_use_latest_available_backup_time_stamp)
         pulumi.set(__self__, "source", source)
+        pulumi.set(__self__, "source_autonomous_container_database_id", source_autonomous_container_database_id)
         pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "switchover_trigger", switchover_trigger)
@@ -25376,6 +26007,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_last_backup", time_of_last_backup)
         pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
+        pulumi.set(__self__, "time_stamp_to_use_for_cloning", time_stamp_to_use_for_cloning)
         pulumi.set(__self__, "total_cpus", total_cpus)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "version_preference", version_preference)
@@ -25393,6 +26025,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="autonomousContainerDatabaseBackupId")
     def autonomous_container_database_backup_id(self) -> _builtins.str:
         return pulumi.get(self, "autonomous_container_database_backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabasesToClones")
+    def autonomous_databases_to_clones(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "autonomous_databases_to_clones")
 
     @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -25441,6 +26078,16 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         """
         return pulumi.get(self, "backup_destination_properties_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="cloneBandWidth")
+    def clone_band_width(self) -> _builtins.str:
+        return pulumi.get(self, "clone_band_width")
+
+    @_builtins.property
+    @pulumi.getter(name="cloneType")
+    def clone_type(self) -> _builtins.str:
+        return pulumi.get(self, "clone_type")
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -25892,9 +26539,19 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "service_level_agreement_type")
 
     @_builtins.property
+    @pulumi.getter(name="shouldUseLatestAvailableBackupTimeStamp")
+    def should_use_latest_available_backup_time_stamp(self) -> _builtins.bool:
+        return pulumi.get(self, "should_use_latest_available_backup_time_stamp")
+
+    @_builtins.property
     @pulumi.getter
     def source(self) -> _builtins.str:
         return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceAutonomousContainerDatabaseId")
+    def source_autonomous_container_database_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_autonomous_container_database_id")
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
@@ -25948,6 +26605,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         """
         return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStampToUseForCloning")
+    def time_stamp_to_use_for_cloning(self) -> _builtins.str:
+        return pulumi.get(self, "time_stamp_to_use_for_cloning")
 
     @_builtins.property
     @pulumi.getter(name="totalCpus")
@@ -46441,14 +47103,25 @@ class GetDatabaseConnectionStringResult(dict):
 @pulumi.output_type
 class GetDatabaseDataGuardGroupResult(dict):
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: _builtins.str,
                  members: Sequence['outputs.GetDatabaseDataGuardGroupMemberResult'],
                  protection_mode: _builtins.str):
         """
+        :param _builtins.str managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param Sequence['GetDatabaseDataGuardGroupMemberArgs'] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         pulumi.set(__self__, "members", members)
         pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> _builtins.str:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
 
     @_builtins.property
     @pulumi.getter
@@ -46477,7 +47150,9 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
                  db_system_id: _builtins.str,
                  failover_readiness: _builtins.str,
                  failover_readiness_message: _builtins.str,
+                 failover_targets: Sequence[_builtins.str],
                  is_active_data_guard_enabled: _builtins.bool,
+                 managed_auto_failover: _builtins.str,
                  role: _builtins.str,
                  switchover_readiness: _builtins.str,
                  switchover_readiness_message: _builtins.str,
@@ -46491,11 +47166,14 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param Sequence[_builtins.str] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str managed_auto_failover: The state of managed auto failover.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
         :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -46512,7 +47190,9 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "failover_readiness", failover_readiness)
         pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        pulumi.set(__self__, "failover_targets", failover_targets)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "switchover_readiness", switchover_readiness)
         pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
@@ -46565,7 +47245,7 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> _builtins.str:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -46578,12 +47258,28 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "failover_readiness_message")
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Sequence[_builtins.str]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> _builtins.bool:
         """
         True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> _builtins.str:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
     @_builtins.property
     @pulumi.getter
@@ -46598,6 +47294,7 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
     def switchover_readiness(self) -> _builtins.str:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -46649,6 +47346,7 @@ class GetDatabaseDataGuardGroupMemberResult(dict):
 class GetDatabaseDatabaseResult(dict):
     def __init__(__self__, *,
                  admin_password: _builtins.str,
+                 auto_failover_configurations: Sequence['outputs.GetDatabaseDatabaseAutoFailoverConfigurationResult'],
                  backup_id: _builtins.str,
                  backup_tde_password: _builtins.str,
                  character_set: _builtins.str,
@@ -46710,6 +47408,7 @@ class GetDatabaseDatabaseResult(dict):
         :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "auto_failover_configurations", auto_failover_configurations)
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         pulumi.set(__self__, "character_set", character_set)
@@ -46747,6 +47446,11 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> _builtins.str:
         return pulumi.get(self, "admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="autoFailoverConfigurations")
+    def auto_failover_configurations(self) -> Sequence['outputs.GetDatabaseDatabaseAutoFailoverConfigurationResult']:
+        return pulumi.get(self, "auto_failover_configurations")
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -46979,6 +47683,35 @@ class GetDatabaseDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseAutoFailoverConfigurationResult(dict):
+    def __init__(__self__, *,
+                 failover_targets: Sequence[_builtins.str],
+                 managed_auto_failover: _builtins.str):
+        """
+        :param Sequence[_builtins.str] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        :param _builtins.str managed_auto_failover: The state of managed auto failover.
+        """
+        pulumi.set(__self__, "failover_targets", failover_targets)
+        pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
+
+    @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Sequence[_builtins.str]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> _builtins.str:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
 
 @pulumi.output_type
@@ -51484,14 +52217,25 @@ class GetDatabasesDatabaseConnectionStringResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDataGuardGroupResult(dict):
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: _builtins.str,
                  members: Sequence['outputs.GetDatabasesDatabaseDataGuardGroupMemberResult'],
                  protection_mode: _builtins.str):
         """
+        :param _builtins.str managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param Sequence['GetDatabasesDatabaseDataGuardGroupMemberArgs'] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         pulumi.set(__self__, "members", members)
         pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> _builtins.str:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
 
     @_builtins.property
     @pulumi.getter
@@ -51520,7 +52264,9 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
                  db_system_id: _builtins.str,
                  failover_readiness: _builtins.str,
                  failover_readiness_message: _builtins.str,
+                 failover_targets: Sequence[_builtins.str],
                  is_active_data_guard_enabled: _builtins.bool,
+                 managed_auto_failover: _builtins.str,
                  role: _builtins.str,
                  switchover_readiness: _builtins.str,
                  switchover_readiness_message: _builtins.str,
@@ -51534,11 +52280,14 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         :param _builtins.str data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member.
+        :param _builtins.str failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param _builtins.str failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param Sequence[_builtins.str] failover_targets: Filter the databases by failoverTargets param.
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str managed_auto_failover: Filter the databases by managed auto failover param.
         :param _builtins.str role: The role of the reporting database in this Data Guard association.
         :param _builtins.str switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param _builtins.str switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param _builtins.str time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param _builtins.str transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -51555,7 +52304,9 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "failover_readiness", failover_readiness)
         pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        pulumi.set(__self__, "failover_targets", failover_targets)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         pulumi.set(__self__, "role", role)
         pulumi.set(__self__, "switchover_readiness", switchover_readiness)
         pulumi.set(__self__, "switchover_readiness_message", switchover_readiness_message)
@@ -51608,7 +52359,7 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> _builtins.str:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -51621,12 +52372,28 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
         return pulumi.get(self, "failover_readiness_message")
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Sequence[_builtins.str]:
+        """
+        Filter the databases by failoverTargets param.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> _builtins.bool:
         """
         True if active Data Guard is enabled.
         """
         return pulumi.get(self, "is_active_data_guard_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> _builtins.str:
+        """
+        Filter the databases by managed auto failover param.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
     @_builtins.property
     @pulumi.getter
@@ -51641,6 +52408,7 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
     def switchover_readiness(self) -> _builtins.str:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -51692,6 +52460,7 @@ class GetDatabasesDatabaseDataGuardGroupMemberResult(dict):
 class GetDatabasesDatabaseDatabaseResult(dict):
     def __init__(__self__, *,
                  admin_password: _builtins.str,
+                 auto_failover_configurations: Sequence['outputs.GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult'],
                  backup_id: _builtins.str,
                  backup_tde_password: _builtins.str,
                  character_set: _builtins.str,
@@ -51752,6 +52521,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param _builtins.str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         pulumi.set(__self__, "admin_password", admin_password)
+        pulumi.set(__self__, "auto_failover_configurations", auto_failover_configurations)
         pulumi.set(__self__, "backup_id", backup_id)
         pulumi.set(__self__, "backup_tde_password", backup_tde_password)
         pulumi.set(__self__, "character_set", character_set)
@@ -51789,6 +52559,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> _builtins.str:
         return pulumi.get(self, "admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="autoFailoverConfigurations")
+    def auto_failover_configurations(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult']:
+        return pulumi.get(self, "auto_failover_configurations")
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -52018,6 +52793,35 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         """
         return pulumi.get(self, "vm_cluster_id")
+
+
+@pulumi.output_type
+class GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult(dict):
+    def __init__(__self__, *,
+                 failover_targets: Sequence[_builtins.str],
+                 managed_auto_failover: _builtins.str):
+        """
+        :param Sequence[_builtins.str] failover_targets: Filter the databases by failoverTargets param.
+        :param _builtins.str managed_auto_failover: Filter the databases by managed auto failover param.
+        """
+        pulumi.set(__self__, "failover_targets", failover_targets)
+        pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
+
+    @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Sequence[_builtins.str]:
+        """
+        Filter the databases by failoverTargets param.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> _builtins.str:
+        """
+        Filter the databases by managed auto failover param.
+        """
+        return pulumi.get(self, "managed_auto_failover")
 
 
 @pulumi.output_type
@@ -61058,6 +61862,35 @@ class GetExadbVmClusterIormConfigCacheDbPlanResult(dict):
 
 
 @pulumi.output_type
+class GetExadbVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetExadbVmClusterNodeConfigResult(dict):
     def __init__(__self__, *,
                  enabled_ecpu_count_per_node: _builtins.int,
@@ -61468,10 +62301,12 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  license_model: _builtins.str,
                  lifecycle_details: _builtins.str,
                  listener_port: _builtins.str,
+                 multi_cloud_identity_connector_configs: Sequence['outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult'],
                  node_configs: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult'],
                  node_resources: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeResourceResult'],
                  nsg_ids: Sequence[_builtins.str],
                  private_zone_id: _builtins.str,
+                 register_pkcs_trigger: _builtins.int,
                  scan_dns_name: _builtins.str,
                  scan_dns_record_id: _builtins.str,
                  scan_ip_ids: Sequence[_builtins.str],
@@ -61486,8 +62321,10 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  system_version: _builtins.str,
+                 tde_key_store_type: _builtins.str,
                  time_created: _builtins.str,
                  time_zone: _builtins.str,
+                 unregister_pkcs_trigger: _builtins.int,
                  vip_ids: Sequence[_builtins.str],
                  zone_id: _builtins.str):
         """
@@ -61507,12 +62344,13 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.str grid_image_id: Grid Setup will be done using this grid image id.
         :param _builtins.str grid_image_type: The type of Grid Image
         :param _builtins.str hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        :param _builtins.str id: The OCID of the identity connector
         :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCacheArgs'] iorm_config_caches: The IORM settings of the Exadata DB system.
         :param _builtins.str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
         :param _builtins.str license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence['GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs'] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeConfigArgs'] node_configs: The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence['GetExadbVmClustersExadbVmClusterNodeResourceArgs'] node_resources: The list of node in the Exadata VM cluster on Exascale Infrastructure.
         :param Sequence[_builtins.str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -61532,6 +62370,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str system_version: Operating system version of the image.
+        :param _builtins.str tde_key_store_type: TDE keystore type
         :param _builtins.str time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         :param _builtins.str time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param Sequence[_builtins.str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
@@ -61559,10 +62398,12 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         pulumi.set(__self__, "node_configs", node_configs)
         pulumi.set(__self__, "node_resources", node_resources)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_zone_id", private_zone_id)
+        pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
@@ -61577,8 +62418,10 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_version", system_version)
+        pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
         pulumi.set(__self__, "vip_ids", vip_ids)
         pulumi.set(__self__, "zone_id", zone_id)
 
@@ -61714,7 +62557,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        The OCID of the identity connector
         """
         return pulumi.get(self, "id")
 
@@ -61759,6 +62602,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult']:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nodeConfigs")
     def node_configs(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult']:
         """
@@ -61790,6 +62641,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "register_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
@@ -61904,6 +62760,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         return pulumi.get(self, "system_version")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> _builtins.str:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -61918,6 +62782,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "unregister_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
@@ -62065,6 +62934,35 @@ class GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanResult(dict):
         The relative priority of this database.
         """
         return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigResult(dict):
+    def __init__(__self__, *,
+                 cloud_provider: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str cloud_provider: Cloud provider
+        :param _builtins.str id: The OCID of the identity connector
+        """
+        pulumi.set(__self__, "cloud_provider", cloud_provider)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> _builtins.str:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
 
 
 @pulumi.output_type

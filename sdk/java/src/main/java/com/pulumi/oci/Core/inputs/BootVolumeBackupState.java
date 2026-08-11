@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.BootVolumeBackupRetentionPeriodArgs;
 import com.pulumi.oci.Core.inputs.BootVolumeBackupSourceDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -123,6 +125,51 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    @Import(name="isIndefiniteRetentionEnabled")
+    private @Nullable Output<Boolean> isIndefiniteRetentionEnabled;
+
+    /**
+     * @return (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    public Optional<Output<Boolean>> isIndefiniteRetentionEnabled() {
+        return Optional.ofNullable(this.isIndefiniteRetentionEnabled);
+    }
+
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    @Import(name="isPreventDeletionEnabled")
+    private @Nullable Output<Boolean> isPreventDeletionEnabled;
+
+    /**
+     * @return (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Optional<Output<Boolean>> isPreventDeletionEnabled() {
+        return Optional.ofNullable(this.isPreventDeletionEnabled);
+    }
+
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    @Import(name="isRetentionLockEnabled")
+    private @Nullable Output<Boolean> isRetentionLockEnabled;
+
+    /**
+     * @return (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Optional<Output<Boolean>> isRetentionLockEnabled() {
+        return Optional.ofNullable(this.isRetentionLockEnabled);
+    }
+
+    /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
@@ -135,6 +182,21 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
+    }
+
+    /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    @Import(name="retentionPeriod")
+    private @Nullable Output<BootVolumeBackupRetentionPeriodArgs> retentionPeriod;
+
+    /**
+     * @return (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Optional<Output<BootVolumeBackupRetentionPeriodArgs>> retentionPeriod() {
+        return Optional.ofNullable(this.retentionPeriod);
     }
 
     /**
@@ -258,6 +320,21 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    @Import(name="timeRetentionExpiresAt")
+    private @Nullable Output<String> timeRetentionExpiresAt;
+
+    /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public Optional<Output<String>> timeRetentionExpiresAt() {
+        return Optional.ofNullable(this.timeRetentionExpiresAt);
+    }
+
+    /**
      * The type of backup to create. If omitted, defaults to incremental. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
@@ -287,6 +364,21 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.uniqueSizeInGbs);
     }
 
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    @Import(name="volumeGroupBackupId")
+    private @Nullable Output<String> volumeGroupBackupId;
+
+    /**
+     * @return The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    public Optional<Output<String>> volumeGroupBackupId() {
+        return Optional.ofNullable(this.volumeGroupBackupId);
+    }
+
     private BootVolumeBackupState() {}
 
     private BootVolumeBackupState(BootVolumeBackupState $) {
@@ -297,7 +389,11 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
         this.expirationTime = $.expirationTime;
         this.freeformTags = $.freeformTags;
         this.imageId = $.imageId;
+        this.isIndefiniteRetentionEnabled = $.isIndefiniteRetentionEnabled;
+        this.isPreventDeletionEnabled = $.isPreventDeletionEnabled;
+        this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.kmsKeyId = $.kmsKeyId;
+        this.retentionPeriod = $.retentionPeriod;
         this.sizeInGbs = $.sizeInGbs;
         this.sourceBootVolumeBackupId = $.sourceBootVolumeBackupId;
         this.sourceDetails = $.sourceDetails;
@@ -306,8 +402,10 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeRequestReceived = $.timeRequestReceived;
+        this.timeRetentionExpiresAt = $.timeRetentionExpiresAt;
         this.type = $.type;
         this.uniqueSizeInGbs = $.uniqueSizeInGbs;
+        this.volumeGroupBackupId = $.volumeGroupBackupId;
     }
 
     public static Builder builder() {
@@ -476,6 +574,69 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param isIndefiniteRetentionEnabled (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIndefiniteRetentionEnabled(@Nullable Output<Boolean> isIndefiniteRetentionEnabled) {
+            $.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isIndefiniteRetentionEnabled (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIndefiniteRetentionEnabled(Boolean isIndefiniteRetentionEnabled) {
+            return isIndefiniteRetentionEnabled(Output.of(isIndefiniteRetentionEnabled));
+        }
+
+        /**
+         * @param isPreventDeletionEnabled (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPreventDeletionEnabled(@Nullable Output<Boolean> isPreventDeletionEnabled) {
+            $.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            return this;
+        }
+
+        /**
+         * @param isPreventDeletionEnabled (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            return isPreventDeletionEnabled(Output.of(isPreventDeletionEnabled));
+        }
+
+        /**
+         * @param isRetentionLockEnabled (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(@Nullable Output<Boolean> isRetentionLockEnabled) {
+            $.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+
+        /**
+         * @param isRetentionLockEnabled (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            return isRetentionLockEnabled(Output.of(isRetentionLockEnabled));
+        }
+
+        /**
          * @param kmsKeyId (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          * 
          * @return builder
@@ -494,6 +655,27 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
          */
         public Builder kmsKeyId(String kmsKeyId) {
             return kmsKeyId(Output.of(kmsKeyId));
+        }
+
+        /**
+         * @param retentionPeriod (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriod(@Nullable Output<BootVolumeBackupRetentionPeriodArgs> retentionPeriod) {
+            $.retentionPeriod = retentionPeriod;
+            return this;
+        }
+
+        /**
+         * @param retentionPeriod (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder retentionPeriod(BootVolumeBackupRetentionPeriodArgs retentionPeriod) {
+            return retentionPeriod(Output.of(retentionPeriod));
         }
 
         /**
@@ -665,6 +847,27 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param timeRetentionExpiresAt The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeRetentionExpiresAt(@Nullable Output<String> timeRetentionExpiresAt) {
+            $.timeRetentionExpiresAt = timeRetentionExpiresAt;
+            return this;
+        }
+
+        /**
+         * @param timeRetentionExpiresAt The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeRetentionExpiresAt(String timeRetentionExpiresAt) {
+            return timeRetentionExpiresAt(Output.of(timeRetentionExpiresAt));
+        }
+
+        /**
          * @param type The type of backup to create. If omitted, defaults to incremental. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
          * 
          * @return builder
@@ -704,6 +907,27 @@ public final class BootVolumeBackupState extends com.pulumi.resources.ResourceAr
          */
         public Builder uniqueSizeInGbs(String uniqueSizeInGbs) {
             return uniqueSizeInGbs(Output.of(uniqueSizeInGbs));
+        }
+
+        /**
+         * @param volumeGroupBackupId The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeGroupBackupId(@Nullable Output<String> volumeGroupBackupId) {
+            $.volumeGroupBackupId = volumeGroupBackupId;
+            return this;
+        }
+
+        /**
+         * @param volumeGroupBackupId The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder volumeGroupBackupId(String volumeGroupBackupId) {
+            return volumeGroupBackupId(Output.of(volumeGroupBackupId));
         }
 
         public BootVolumeBackupState build() {

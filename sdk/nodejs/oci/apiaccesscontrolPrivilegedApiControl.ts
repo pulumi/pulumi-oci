@@ -30,7 +30,10 @@ import * as utilities from "../utilities";
  *         entityType: privilegedApiControlPrivilegedOperationListEntityType,
  *     }],
  *     resourceType: privilegedApiControlResourceType,
- *     resources: privilegedApiControlResources,
+ *     approverGroupLevelLists: [{
+ *         groupIds: testGroup.id,
+ *         groupLevel: Number(privilegedApiControlApproverGroupLevelListGroupLevel),
+ *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -40,6 +43,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     numberOfApprovers: Number(privilegedApiControlNumberOfApprovers),
+ *     resources: privilegedApiControlResources,
  * });
  * ```
  *
@@ -84,6 +88,10 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
      */
     declare public readonly approverGroupIdLists: pulumi.Output<string[]>;
     /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     */
+    declare public readonly approverGroupLevelLists: pulumi.Output<outputs.oci.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -108,7 +116,7 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      */
     declare public readonly notificationTopicId: pulumi.Output<string>;
     /**
@@ -143,7 +151,7 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
@@ -169,6 +177,7 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
         if (opts.id) {
             const state = argsOrState as ApiaccesscontrolPrivilegedApiControlState | undefined;
             resourceInputs["approverGroupIdLists"] = state?.approverGroupIdLists;
+            resourceInputs["approverGroupLevelLists"] = state?.approverGroupLevelLists;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
@@ -203,10 +212,8 @@ export class ApiaccesscontrolPrivilegedApiControl extends pulumi.CustomResource 
             if (args?.resourceType === undefined && !opts.urn) {
                 throw new Error("Missing required property 'resourceType'");
             }
-            if (args?.resources === undefined && !opts.urn) {
-                throw new Error("Missing required property 'resources'");
-            }
             resourceInputs["approverGroupIdLists"] = args?.approverGroupIdLists;
+            resourceInputs["approverGroupLevelLists"] = args?.approverGroupLevelLists;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
@@ -239,6 +246,10 @@ export interface ApiaccesscontrolPrivilegedApiControlState {
      */
     approverGroupIdLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     */
+    approverGroupLevelLists?: pulumi.Input<pulumi.Input<inputs.oci.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList>[] | undefined>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
      */
     compartmentId?: pulumi.Input<string | undefined>;
@@ -263,7 +274,7 @@ export interface ApiaccesscontrolPrivilegedApiControlState {
      */
     lifecycleDetails?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      */
     notificationTopicId?: pulumi.Input<string | undefined>;
     /**
@@ -298,7 +309,7 @@ export interface ApiaccesscontrolPrivilegedApiControlState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     timeCreated?: pulumi.Input<string | undefined>;
     /**
@@ -320,6 +331,10 @@ export interface ApiaccesscontrolPrivilegedApiControlArgs {
      */
     approverGroupIdLists: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     */
+    approverGroupLevelLists?: pulumi.Input<pulumi.Input<inputs.oci.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList>[] | undefined>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
      */
     compartmentId: pulumi.Input<string>;
@@ -340,7 +355,7 @@ export interface ApiaccesscontrolPrivilegedApiControlArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      */
     notificationTopicId: pulumi.Input<string>;
     /**
@@ -361,5 +376,5 @@ export interface ApiaccesscontrolPrivilegedApiControlArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resources: pulumi.Input<pulumi.Input<string>[]>;
+    resources?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

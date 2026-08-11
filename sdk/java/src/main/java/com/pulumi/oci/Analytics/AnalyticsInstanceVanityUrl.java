@@ -21,8 +21,7 @@ import javax.annotation.Nullable;
  * 
  * Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/analytics
  * 
- * Allows specifying a custom host name to be used to access the analytics instance.  This requires prior setup of DNS entry and certificate
- * for this host.
+ * Allows you to specify a custom host name to be used to access the Analytics instance.  You must set up a DNS entry and certificate for this host in advance.
  * 
  * ## Example Usage
  * 
@@ -75,28 +74,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl")
 public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Export(name="analyticsInstanceId", refs={String.class}, tree="[0]")
     private Output<String> analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public Output<String> analyticsInstanceId() {
         return this.analyticsInstanceId;
     }
     /**
-     * (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      * 
      */
     @Export(name="caCertificate", refs={String.class}, tree="[0]")
     private Output<String> caCertificate;
 
     /**
-     * @return (Updatable) PEM CA certificate(s) for HTTPS connections. This may include multiple PEM certificates.
+     * @return (Updatable) PEM CA certificates for HTTPS connections. This may include multiple PEM certificates.
      * 
      */
     public Output<String> caCertificate() {
@@ -117,42 +116,42 @@ public class AnalyticsInstanceVanityUrl extends com.pulumi.resources.CustomResou
         return Codegen.optional(this.description);
     }
     /**
-     * List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      * 
      */
     @Export(name="hosts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hosts;
 
     /**
-     * @return List of fully qualified hostnames supported by this vanity URL definition (max of 3).
+     * @return List of fully-qualified hostnames supported by this vanity URL definition (maximum of 3).
      * 
      */
     public Output<List<String>> hosts() {
         return this.hosts;
     }
     /**
-     * (Updatable) Passphrase for the PEM Private key (if any).
+     * (Updatable) Passphrase for the PEM private key (if any).
      * 
      */
     @Export(name="passphrase", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> passphrase;
 
     /**
-     * @return (Updatable) Passphrase for the PEM Private key (if any).
+     * @return (Updatable) Passphrase for the PEM private key (if any).
      * 
      */
     public Output<Optional<String>> passphrase() {
         return Codegen.optional(this.passphrase);
     }
     /**
-     * (Updatable) PEM Private key for HTTPS connections.
+     * (Updatable) PEM private key for HTTPS connections.
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
-     * @return (Updatable) PEM Private key for HTTPS connections.
+     * @return (Updatable) PEM private key for HTTPS connections.
      * 
      */
     public Output<String> privateKey() {

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -92,14 +93,14 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
     }
 
     /**
-     * The failover readiness status of the Data Guard member.
+     * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
      * 
      */
     @Import(name="failoverReadiness")
     private @Nullable Output<String> failoverReadiness;
 
     /**
-     * @return The failover readiness status of the Data Guard member.
+     * @return The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
      * 
      */
     public Optional<Output<String>> failoverReadiness() {
@@ -122,6 +123,21 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
     }
 
     /**
+     * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+     * 
+     */
+    @Import(name="failoverTargets")
+    private @Nullable Output<List<String>> failoverTargets;
+
+    /**
+     * @return Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+     * 
+     */
+    public Optional<Output<List<String>>> failoverTargets() {
+        return Optional.ofNullable(this.failoverTargets);
+    }
+
+    /**
      * True if active Data Guard is enabled.
      * 
      */
@@ -134,6 +150,21 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
      */
     public Optional<Output<Boolean>> isActiveDataGuardEnabled() {
         return Optional.ofNullable(this.isActiveDataGuardEnabled);
+    }
+
+    /**
+     * The state of managed auto failover.
+     * 
+     */
+    @Import(name="managedAutoFailover")
+    private @Nullable Output<String> managedAutoFailover;
+
+    /**
+     * @return The state of managed auto failover.
+     * 
+     */
+    public Optional<Output<String>> managedAutoFailover() {
+        return Optional.ofNullable(this.managedAutoFailover);
     }
 
     /**
@@ -153,6 +184,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
 
     /**
      * The switchover readiness status of the Data Guard member.
+     * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
      * 
      */
     @Import(name="switchoverReadiness")
@@ -160,6 +192,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
 
     /**
      * @return The switchover readiness status of the Data Guard member.
+     * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
      * 
      */
     public Optional<Output<String>> switchoverReadiness() {
@@ -257,7 +290,9 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         this.dbSystemId = $.dbSystemId;
         this.failoverReadiness = $.failoverReadiness;
         this.failoverReadinessMessage = $.failoverReadinessMessage;
+        this.failoverTargets = $.failoverTargets;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.managedAutoFailover = $.managedAutoFailover;
         this.role = $.role;
         this.switchoverReadiness = $.switchoverReadiness;
         this.switchoverReadinessMessage = $.switchoverReadinessMessage;
@@ -391,7 +426,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         }
 
         /**
-         * @param failoverReadiness The failover readiness status of the Data Guard member.
+         * @param failoverReadiness The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          * 
          * @return builder
          * 
@@ -402,7 +437,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         }
 
         /**
-         * @param failoverReadiness The failover readiness status of the Data Guard member.
+         * @param failoverReadiness The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          * 
          * @return builder
          * 
@@ -433,6 +468,37 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
         }
 
         /**
+         * @param failoverTargets Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTargets(@Nullable Output<List<String>> failoverTargets) {
+            $.failoverTargets = failoverTargets;
+            return this;
+        }
+
+        /**
+         * @param failoverTargets Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTargets(List<String> failoverTargets) {
+            return failoverTargets(Output.of(failoverTargets));
+        }
+
+        /**
+         * @param failoverTargets Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTargets(String... failoverTargets) {
+            return failoverTargets(List.of(failoverTargets));
+        }
+
+        /**
          * @param isActiveDataGuardEnabled True if active Data Guard is enabled.
          * 
          * @return builder
@@ -451,6 +517,27 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
          */
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             return isActiveDataGuardEnabled(Output.of(isActiveDataGuardEnabled));
+        }
+
+        /**
+         * @param managedAutoFailover The state of managed auto failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailover(@Nullable Output<String> managedAutoFailover) {
+            $.managedAutoFailover = managedAutoFailover;
+            return this;
+        }
+
+        /**
+         * @param managedAutoFailover The state of managed auto failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailover(String managedAutoFailover) {
+            return managedAutoFailover(Output.of(managedAutoFailover));
         }
 
         /**
@@ -476,6 +563,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
 
         /**
          * @param switchoverReadiness The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          * 
          * @return builder
          * 
@@ -487,6 +575,7 @@ public final class DatabaseUpgradeDataGuardGroupMemberArgs extends com.pulumi.re
 
         /**
          * @param switchoverReadiness The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          * 
          * @return builder
          * 

@@ -32,6 +32,8 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DbHomeId = testDbHome.Id,
         ///         DbName = databaseDbName,
+        ///         FailoverTargets = databaseFailoverTargets,
+        ///         ManagedAutoFailover = databaseManagedAutoFailover,
         ///         State = databaseState,
         ///         SystemId = testSystem.Id,
         ///     });
@@ -63,6 +65,8 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DbHomeId = testDbHome.Id,
         ///         DbName = databaseDbName,
+        ///         FailoverTargets = databaseFailoverTargets,
+        ///         ManagedAutoFailover = databaseManagedAutoFailover,
         ///         State = databaseState,
         ///         SystemId = testSystem.Id,
         ///     });
@@ -94,6 +98,8 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DbHomeId = testDbHome.Id,
         ///         DbName = databaseDbName,
+        ///         FailoverTargets = databaseFailoverTargets,
+        ///         ManagedAutoFailover = databaseManagedAutoFailover,
         ///         State = databaseState,
         ///         SystemId = testSystem.Id,
         ///     });
@@ -126,6 +132,12 @@ namespace Pulumi.Oci.Database
         [Input("dbName")]
         public string? DbName { get; set; }
 
+        /// <summary>
+        /// Filter the databases by failoverTargets param.
+        /// </summary>
+        [Input("failoverTargets")]
+        public string? FailoverTargets { get; set; }
+
         [Input("filters")]
         private List<Inputs.GetDatabasesFilterArgs>? _filters;
         public List<Inputs.GetDatabasesFilterArgs> Filters
@@ -133,6 +145,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new List<Inputs.GetDatabasesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Filter the databases by managed auto failover param.
+        /// </summary>
+        [Input("managedAutoFailover")]
+        public string? ManagedAutoFailover { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -172,6 +190,12 @@ namespace Pulumi.Oci.Database
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
+        /// <summary>
+        /// Filter the databases by failoverTargets param.
+        /// </summary>
+        [Input("failoverTargets")]
+        public Input<string>? FailoverTargets { get; set; }
+
         [Input("filters")]
         private InputList<Inputs.GetDatabasesFilterInputArgs>? _filters;
         public InputList<Inputs.GetDatabasesFilterInputArgs> Filters
@@ -179,6 +203,12 @@ namespace Pulumi.Oci.Database
             get => _filters ?? (_filters = new InputList<Inputs.GetDatabasesFilterInputArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Filter the databases by managed auto failover param.
+        /// </summary>
+        [Input("managedAutoFailover")]
+        public Input<string>? ManagedAutoFailover { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -218,11 +248,13 @@ namespace Pulumi.Oci.Database
         /// The database name.
         /// </summary>
         public readonly string? DbName;
+        public readonly string? FailoverTargets;
         public readonly ImmutableArray<Outputs.GetDatabasesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ManagedAutoFailover;
         /// <summary>
         /// The current state of the database.
         /// </summary>
@@ -239,9 +271,13 @@ namespace Pulumi.Oci.Database
 
             string? dbName,
 
+            string? failoverTargets,
+
             ImmutableArray<Outputs.GetDatabasesFilterResult> filters,
 
             string id,
+
+            string? managedAutoFailover,
 
             string? state,
 
@@ -251,8 +287,10 @@ namespace Pulumi.Oci.Database
             Databases = databases;
             DbHomeId = dbHomeId;
             DbName = dbName;
+            FailoverTargets = failoverTargets;
             Filters = filters;
             Id = id;
+            ManagedAutoFailover = managedAutoFailover;
             State = state;
             SystemId = systemId;
         }

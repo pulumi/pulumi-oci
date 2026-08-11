@@ -28,7 +28,7 @@ class GetAutonomousDatabaseBackupsResult:
     """
     A collection of values returned by getAutonomousDatabaseBackups.
     """
-    def __init__(__self__, autonomous_database_backups=None, autonomous_database_id=None, backup_destination_id=None, compartment_id=None, display_name=None, filters=None, id=None, infrastructure_type=None, key_store_id=None, state=None, type=None):
+    def __init__(__self__, autonomous_database_backups=None, autonomous_database_id=None, backup_destination_id=None, compartment_id=None, display_name=None, filters=None, id=None, infrastructure_type=None, is_pitr_eligible=None, key_store_id=None, state=None, type=None):
         if autonomous_database_backups and not isinstance(autonomous_database_backups, list):
             raise TypeError("Expected argument 'autonomous_database_backups' to be a list")
         pulumi.set(__self__, "autonomous_database_backups", autonomous_database_backups)
@@ -53,6 +53,9 @@ class GetAutonomousDatabaseBackupsResult:
         if infrastructure_type and not isinstance(infrastructure_type, str):
             raise TypeError("Expected argument 'infrastructure_type' to be a str")
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        if is_pitr_eligible and not isinstance(is_pitr_eligible, bool):
+            raise TypeError("Expected argument 'is_pitr_eligible' to be a bool")
+        pulumi.set(__self__, "is_pitr_eligible", is_pitr_eligible)
         if key_store_id and not isinstance(key_store_id, str):
             raise TypeError("Expected argument 'key_store_id' to be a str")
         pulumi.set(__self__, "key_store_id", key_store_id)
@@ -122,6 +125,11 @@ class GetAutonomousDatabaseBackupsResult:
         return pulumi.get(self, "infrastructure_type")
 
     @_builtins.property
+    @pulumi.getter(name="isPitrEligible")
+    def is_pitr_eligible(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_pitr_eligible")
+
+    @_builtins.property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[_builtins.str]:
         """
@@ -160,6 +168,7 @@ class AwaitableGetAutonomousDatabaseBackupsResult(GetAutonomousDatabaseBackupsRe
             filters=self.filters,
             id=self.id,
             infrastructure_type=self.infrastructure_type,
+            is_pitr_eligible=self.is_pitr_eligible,
             key_store_id=self.key_store_id,
             state=self.state,
             type=self.type)
@@ -171,6 +180,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
                                     display_name: Optional[_builtins.str] = None,
                                     filters: Optional[Sequence[Union['GetAutonomousDatabaseBackupsFilterArgs', 'GetAutonomousDatabaseBackupsFilterArgsDict']]] = None,
                                     infrastructure_type: Optional[_builtins.str] = None,
+                                    is_pitr_eligible: Optional[_builtins.bool] = None,
                                     key_store_id: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
                                     type: Optional[_builtins.str] = None,
@@ -191,6 +201,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,
         infrastructure_type=autonomous_database_backup_infrastructure_type,
+        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible == "true",
         key_store_id=test_key_store["id"],
         state=autonomous_database_backup_state,
         type=autonomous_database_backup_type)
@@ -202,6 +213,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+    :param _builtins.bool is_pitr_eligible: Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
     :param _builtins.str key_store_id: A filter to return only resources that have the given key store id.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     :param _builtins.str type: A filter to return only backups that matches with the given type of Backup.
@@ -213,6 +225,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['infrastructureType'] = infrastructure_type
+    __args__['isPitrEligible'] = is_pitr_eligible
     __args__['keyStoreId'] = key_store_id
     __args__['state'] = state
     __args__['type'] = type
@@ -228,6 +241,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         infrastructure_type=pulumi.get(__ret__, 'infrastructure_type'),
+        is_pitr_eligible=pulumi.get(__ret__, 'is_pitr_eligible'),
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
         state=pulumi.get(__ret__, 'state'),
         type=pulumi.get(__ret__, 'type'))
@@ -237,6 +251,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
                                            display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            filters: pulumi.Input[Optional[Optional[Sequence[Union['GetAutonomousDatabaseBackupsFilterArgs', 'GetAutonomousDatabaseBackupsFilterArgsDict']]]]] = None,
                                            infrastructure_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                           is_pitr_eligible: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                            key_store_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                            type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -257,6 +272,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,
         infrastructure_type=autonomous_database_backup_infrastructure_type,
+        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible == "true",
         key_store_id=test_key_store["id"],
         state=autonomous_database_backup_state,
         type=autonomous_database_backup_type)
@@ -268,6 +284,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
     :param _builtins.str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
+    :param _builtins.bool is_pitr_eligible: Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
     :param _builtins.str key_store_id: A filter to return only resources that have the given key store id.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     :param _builtins.str type: A filter to return only backups that matches with the given type of Backup.
@@ -279,6 +296,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['infrastructureType'] = infrastructure_type
+    __args__['isPitrEligible'] = is_pitr_eligible
     __args__['keyStoreId'] = key_store_id
     __args__['state'] = state
     __args__['type'] = type
@@ -293,6 +311,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         infrastructure_type=pulumi.get(__response__, 'infrastructure_type'),
+        is_pitr_eligible=pulumi.get(__response__, 'is_pitr_eligible'),
         key_store_id=pulumi.get(__response__, 'key_store_id'),
         state=pulumi.get(__response__, 'state'),
         type=pulumi.get(__response__, 'type')))

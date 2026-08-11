@@ -16,6 +16,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -52,13 +53,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPrivilegedApiRequest = new ApiaccesscontrolPrivilegedApiRequest("testPrivilegedApiRequest", ApiaccesscontrolPrivilegedApiRequestArgs.builder()
+ *             .compartmentId(compartmentId)
  *             .privilegedOperationLists(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs.builder()
  *                 .apiName(testApi.name())
  *                 .attributeNames(privilegedApiRequestPrivilegedOperationListAttributeNames)
  *                 .build())
  *             .reasonSummary(privilegedApiRequestReasonSummary)
  *             .resourceId(testResource.id())
- *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .durationInHrs(privilegedApiRequestDurationInHrs)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -119,14 +120,14 @@ public class ApiaccesscontrolPrivilegedApiRequest extends com.pulumi.resources.C
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
-    private Output<String> compartmentId;
+    private Output</* @Nullable */ String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Output<Optional<String>> compartmentId() {
+        return Codegen.optional(this.compartmentId);
     }
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`

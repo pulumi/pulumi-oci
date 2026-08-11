@@ -16,7 +16,7 @@ var _ = internal.GetEnvOrDefault
 type AnalyticsInstanceCapacity struct {
 	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType string `pulumi:"capacityType"`
-	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -34,7 +34,7 @@ type AnalyticsInstanceCapacityInput interface {
 type AnalyticsInstanceCapacityArgs struct {
 	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -120,7 +120,7 @@ func (o AnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v AnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 func (o AnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v AnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }
@@ -159,7 +159,7 @@ func (o AnalyticsInstanceCapacityPtrOutput) CapacityType() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+// (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 func (o AnalyticsInstanceCapacityPtrOutput) CapacityValue() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceCapacity) *int {
 		if v == nil {
@@ -172,7 +172,7 @@ func (o AnalyticsInstanceCapacityPtrOutput) CapacityValue() pulumi.IntPtrOutput 
 type AnalyticsInstanceNetworkEndpointDetails struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// The subnet OCID for the private endpoint.
 	SubnetId *string `pulumi:"subnetId"`
@@ -180,7 +180,7 @@ type AnalyticsInstanceNetworkEndpointDetails struct {
 	VcnId *string `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn `pulumi:"whitelistedVcns"`
@@ -200,7 +200,7 @@ type AnalyticsInstanceNetworkEndpointDetailsInput interface {
 type AnalyticsInstanceNetworkEndpointDetailsArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// The subnet OCID for the private endpoint.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -208,7 +208,7 @@ type AnalyticsInstanceNetworkEndpointDetailsArgs struct {
 	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
@@ -296,7 +296,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsOutput) NetworkEndpointType() pul
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
-// Network Security Group OCIDs for an Analytics instance.
+// Network Security Group OCIDs for the Analytics instance.
 func (o AnalyticsInstanceNetworkEndpointDetailsOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
 }
@@ -316,7 +316,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsOutput) WhitelistedIps() pulumi.S
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }
 
-// Oracle Cloud Services that are allowed to access this Analytics instance.
+// Oracle Cloud services that are allowed to access this Analytics instance.
 func (o AnalyticsInstanceNetworkEndpointDetailsOutput) WhitelistedServices() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v AnalyticsInstanceNetworkEndpointDetails) []string { return v.WhitelistedServices }).(pulumi.StringArrayOutput)
 }
@@ -362,7 +362,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) NetworkEndpointType() 
 	}).(pulumi.StringPtrOutput)
 }
 
-// Network Security Group OCIDs for an Analytics instance.
+// Network Security Group OCIDs for the Analytics instance.
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) []string {
 		if v == nil {
@@ -402,7 +402,7 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) WhitelistedIps() pulum
 	}).(pulumi.StringArrayOutput)
 }
 
-// Oracle Cloud Services that are allowed to access this Analytics instance.
+// Oracle Cloud services that are allowed to access this Analytics instance.
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) WhitelistedServices() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AnalyticsInstanceNetworkEndpointDetails) []string {
 		if v == nil {
@@ -529,9 +529,9 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) Index(
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
-	// (Updatable) Description of private source dns zone.
+	// (Updatable) Description of the private source DNS zone.
 	Description *string `pulumi:"description"`
-	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+	// (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone string `pulumi:"dnsZone"`
 }
 
@@ -547,9 +547,9 @@ type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface {
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
-	// (Updatable) Description of private source dns zone.
+	// (Updatable) Description of the private source DNS zone.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+	// (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
 }
 
@@ -604,12 +604,12 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToAnaly
 	return o
 }
 
-// (Updatable) Description of private source dns zone.
+// (Updatable) Description of the private source DNS zone.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+// (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) DnsZone() pulumi.StringOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.DnsZone }).(pulumi.StringOutput)
 }
@@ -635,11 +635,11 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) In
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost struct {
-	// (Updatable) Description of private source scan host zone.
+	// (Updatable) Description of private source SCAN host zone.
 	Description *string `pulumi:"description"`
-	// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	// (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 	ScanHostname string `pulumi:"scanHostname"`
-	// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	// (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 	ScanPort int `pulumi:"scanPort"`
 }
 
@@ -655,11 +655,11 @@ type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput interface {
 }
 
 type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs struct {
-	// (Updatable) Description of private source scan host zone.
+	// (Updatable) Description of private source SCAN host zone.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	// (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 	ScanHostname pulumi.StringInput `pulumi:"scanHostname"`
-	// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	// (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 	ScanPort pulumi.IntInput `pulumi:"scanPort"`
 }
 
@@ -714,17 +714,17 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToAnal
 	return o
 }
 
-// (Updatable) Description of private source scan host zone.
+// (Updatable) Description of private source SCAN host zone.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+// (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.ScanHostname }).(pulumi.StringOutput)
 }
 
-// (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+// (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntOutput {
 	return o.ApplyT(func(v AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) int { return v.ScanPort }).(pulumi.IntOutput)
 }
@@ -749,10 +749,143 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) I
 	}).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
 }
 
+type AnalyticsInstanceResourceGroupType struct {
+	// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+	Capacity *int `pulumi:"capacity"`
+	// (Updatable) Optional description.
+	Description *string `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName *string `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id *string `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName *string `pulumi:"resourceName"`
+}
+
+// AnalyticsInstanceResourceGroupTypeInput is an input type that accepts AnalyticsInstanceResourceGroupTypeArgs and AnalyticsInstanceResourceGroupTypeOutput values.
+// You can construct a concrete instance of `AnalyticsInstanceResourceGroupTypeInput` via:
+//
+//	AnalyticsInstanceResourceGroupTypeArgs{...}
+type AnalyticsInstanceResourceGroupTypeInput interface {
+	pulumi.Input
+
+	ToAnalyticsInstanceResourceGroupTypeOutput() AnalyticsInstanceResourceGroupTypeOutput
+	ToAnalyticsInstanceResourceGroupTypeOutputWithContext(context.Context) AnalyticsInstanceResourceGroupTypeOutput
+}
+
+type AnalyticsInstanceResourceGroupTypeArgs struct {
+	// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+	Capacity pulumi.IntPtrInput `pulumi:"capacity"`
+	// (Updatable) Optional description.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName pulumi.StringPtrInput `pulumi:"resourceName"`
+}
+
+func (AnalyticsInstanceResourceGroupTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (i AnalyticsInstanceResourceGroupTypeArgs) ToAnalyticsInstanceResourceGroupTypeOutput() AnalyticsInstanceResourceGroupTypeOutput {
+	return i.ToAnalyticsInstanceResourceGroupTypeOutputWithContext(context.Background())
+}
+
+func (i AnalyticsInstanceResourceGroupTypeArgs) ToAnalyticsInstanceResourceGroupTypeOutputWithContext(ctx context.Context) AnalyticsInstanceResourceGroupTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceResourceGroupTypeOutput)
+}
+
+// AnalyticsInstanceResourceGroupTypeArrayInput is an input type that accepts AnalyticsInstanceResourceGroupTypeArray and AnalyticsInstanceResourceGroupTypeArrayOutput values.
+// You can construct a concrete instance of `AnalyticsInstanceResourceGroupTypeArrayInput` via:
+//
+//	AnalyticsInstanceResourceGroupTypeArray{ AnalyticsInstanceResourceGroupTypeArgs{...} }
+type AnalyticsInstanceResourceGroupTypeArrayInput interface {
+	pulumi.Input
+
+	ToAnalyticsInstanceResourceGroupTypeArrayOutput() AnalyticsInstanceResourceGroupTypeArrayOutput
+	ToAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(context.Context) AnalyticsInstanceResourceGroupTypeArrayOutput
+}
+
+type AnalyticsInstanceResourceGroupTypeArray []AnalyticsInstanceResourceGroupTypeInput
+
+func (AnalyticsInstanceResourceGroupTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (i AnalyticsInstanceResourceGroupTypeArray) ToAnalyticsInstanceResourceGroupTypeArrayOutput() AnalyticsInstanceResourceGroupTypeArrayOutput {
+	return i.ToAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(context.Background())
+}
+
+func (i AnalyticsInstanceResourceGroupTypeArray) ToAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(ctx context.Context) AnalyticsInstanceResourceGroupTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceResourceGroupTypeArrayOutput)
+}
+
+type AnalyticsInstanceResourceGroupTypeOutput struct{ *pulumi.OutputState }
+
+func (AnalyticsInstanceResourceGroupTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (o AnalyticsInstanceResourceGroupTypeOutput) ToAnalyticsInstanceResourceGroupTypeOutput() AnalyticsInstanceResourceGroupTypeOutput {
+	return o
+}
+
+func (o AnalyticsInstanceResourceGroupTypeOutput) ToAnalyticsInstanceResourceGroupTypeOutputWithContext(ctx context.Context) AnalyticsInstanceResourceGroupTypeOutput {
+	return o
+}
+
+// Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+func (o AnalyticsInstanceResourceGroupTypeOutput) Capacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstanceResourceGroupType) *int { return v.Capacity }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Optional description.
+func (o AnalyticsInstanceResourceGroupTypeOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstanceResourceGroupType) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o AnalyticsInstanceResourceGroupTypeOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstanceResourceGroupType) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Unique identifier and name of resource group.  Must be unique within the instance
+func (o AnalyticsInstanceResourceGroupTypeOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstanceResourceGroupType) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o AnalyticsInstanceResourceGroupTypeOutput) ResourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AnalyticsInstanceResourceGroupType) *string { return v.ResourceName }).(pulumi.StringPtrOutput)
+}
+
+type AnalyticsInstanceResourceGroupTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (AnalyticsInstanceResourceGroupTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (o AnalyticsInstanceResourceGroupTypeArrayOutput) ToAnalyticsInstanceResourceGroupTypeArrayOutput() AnalyticsInstanceResourceGroupTypeArrayOutput {
+	return o
+}
+
+func (o AnalyticsInstanceResourceGroupTypeArrayOutput) ToAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(ctx context.Context) AnalyticsInstanceResourceGroupTypeArrayOutput {
+	return o
+}
+
+func (o AnalyticsInstanceResourceGroupTypeArrayOutput) Index(i pulumi.IntInput) AnalyticsInstanceResourceGroupTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnalyticsInstanceResourceGroupType {
+		return vs[0].([]AnalyticsInstanceResourceGroupType)[vs[1].(int)]
+	}).(AnalyticsInstanceResourceGroupTypeOutput)
+}
+
 type GetAnalyticsInstanceCapacity struct {
 	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType string `pulumi:"capacityType"`
-	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -770,7 +903,7 @@ type GetAnalyticsInstanceCapacityInput interface {
 type GetAnalyticsInstanceCapacityArgs struct {
 	// The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -830,7 +963,7 @@ func (o GetAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 func (o GetAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }
@@ -858,15 +991,15 @@ func (o GetAnalyticsInstanceCapacityArrayOutput) Index(i pulumi.IntInput) GetAna
 type GetAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
-	// OCID of the customer subnet connected to private access channel.
+	// OCID of the customer subnet connected to the private access channel.
 	SubnetId string `pulumi:"subnetId"`
-	// OCID of the customer VCN peered with private access channel.
+	// OCID of the customer VCN peered with the private access channel.
 	VcnId string `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn `pulumi:"whitelistedVcns"`
@@ -886,15 +1019,15 @@ type GetAnalyticsInstanceNetworkEndpointDetailInput interface {
 type GetAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
-	// OCID of the customer subnet connected to private access channel.
+	// OCID of the customer subnet connected to the private access channel.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// OCID of the customer VCN peered with private access channel.
+	// OCID of the customer VCN peered with the private access channel.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
@@ -956,17 +1089,17 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() p
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
 
-// Network Security Group OCIDs for an Analytics instance.
+// Network Security Group OCIDs for the Analytics instance.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.NetworkSecurityGroupIds }).(pulumi.StringArrayOutput)
 }
 
-// OCID of the customer subnet connected to private access channel.
+// OCID of the customer subnet connected to the private access channel.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// OCID of the customer VCN peered with private access channel.
+// OCID of the customer VCN peered with the private access channel.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
 }
@@ -976,7 +1109,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedIps() pulumi
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }
 
-// Oracle Cloud Services that are allowed to access this Analytics instance.
+// Oracle Cloud services that are allowed to access this Analytics instance.
 func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedServices() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedServices }).(pulumi.StringArrayOutput)
 }
@@ -1009,7 +1142,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.Int
 }
 
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id string `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
@@ -1027,7 +1160,7 @@ type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput interface {
 }
 
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id pulumi.StringInput `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
@@ -1084,7 +1217,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ToGetAnal
 	return o
 }
 
-// The Virtual Cloud Network OCID.
+// Unique identifier and name of resource group.  Must be unique within the instance
 func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1115,9 +1248,9 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) Inde
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
-	// Description of private source scan host zone.
+	// Description of private source SCAN host zone.
 	Description string `pulumi:"description"`
-	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+	// Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone string `pulumi:"dnsZone"`
 }
 
@@ -1133,9 +1266,9 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
-	// Description of private source scan host zone.
+	// Description of private source SCAN host zone.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+	// Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
 }
 
@@ -1190,12 +1323,12 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToGe
 	return o
 }
 
-// Description of private source scan host zone.
+// Description of private source SCAN host zone.
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+// Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) DnsZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.DnsZone }).(pulumi.StringOutput)
 }
@@ -1221,11 +1354,11 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost struct {
-	// Description of private source scan host zone.
+	// Description of private source SCAN host zone.
 	Description string `pulumi:"description"`
-	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	// Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 	ScanHostname string `pulumi:"scanHostname"`
-	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	// Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 	ScanPort int `pulumi:"scanPort"`
 }
 
@@ -1241,11 +1374,11 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput interfac
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs struct {
-	// Description of private source scan host zone.
+	// Description of private source SCAN host zone.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+	// Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 	ScanHostname pulumi.StringInput `pulumi:"scanHostname"`
-	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+	// Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 	ScanPort pulumi.IntInput `pulumi:"scanPort"`
 }
 
@@ -1300,17 +1433,17 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToG
 	return o
 }
 
-// Description of private source scan host zone.
+// Description of private source SCAN host zone.
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+// Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.ScanHostname }).(pulumi.StringOutput)
 }
 
-// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+// Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) int { return v.ScanPort }).(pulumi.IntOutput)
 }
@@ -1335,15 +1468,399 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
 	}).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
 }
 
+type GetAnalyticsInstanceResourceGroupType struct {
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity int `pulumi:"capacity"`
+	// Description of the vanity URL.
+	Description string `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName string `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id string `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName string `pulumi:"resourceName"`
+}
+
+// GetAnalyticsInstanceResourceGroupTypeInput is an input type that accepts GetAnalyticsInstanceResourceGroupTypeArgs and GetAnalyticsInstanceResourceGroupTypeOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupTypeInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupTypeArgs{...}
+type GetAnalyticsInstanceResourceGroupTypeInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupTypeOutput() GetAnalyticsInstanceResourceGroupTypeOutput
+	ToGetAnalyticsInstanceResourceGroupTypeOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupTypeOutput
+}
+
+type GetAnalyticsInstanceResourceGroupTypeArgs struct {
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity pulumi.IntInput `pulumi:"capacity"`
+	// Description of the vanity URL.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id pulumi.StringInput `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+}
+
+func (GetAnalyticsInstanceResourceGroupTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupTypeArgs) ToGetAnalyticsInstanceResourceGroupTypeOutput() GetAnalyticsInstanceResourceGroupTypeOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupTypeOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupTypeArgs) ToGetAnalyticsInstanceResourceGroupTypeOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupTypeOutput)
+}
+
+// GetAnalyticsInstanceResourceGroupTypeArrayInput is an input type that accepts GetAnalyticsInstanceResourceGroupTypeArray and GetAnalyticsInstanceResourceGroupTypeArrayOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupTypeArrayInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupTypeArray{ GetAnalyticsInstanceResourceGroupTypeArgs{...} }
+type GetAnalyticsInstanceResourceGroupTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupTypeArrayOutput() GetAnalyticsInstanceResourceGroupTypeArrayOutput
+	ToGetAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupTypeArrayOutput
+}
+
+type GetAnalyticsInstanceResourceGroupTypeArray []GetAnalyticsInstanceResourceGroupTypeInput
+
+func (GetAnalyticsInstanceResourceGroupTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupTypeArray) ToGetAnalyticsInstanceResourceGroupTypeArrayOutput() GetAnalyticsInstanceResourceGroupTypeArrayOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupTypeArray) ToGetAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupTypeArrayOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupTypeOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) ToGetAnalyticsInstanceResourceGroupTypeOutput() GetAnalyticsInstanceResourceGroupTypeOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) ToGetAnalyticsInstanceResourceGroupTypeOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupTypeOutput {
+	return o
+}
+
+// The capacity (in OCPU's) to be allocated for this resource.
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) Capacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupType) int { return v.Capacity }).(pulumi.IntOutput)
+}
+
+// Description of the vanity URL.
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupType) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupType) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unique identifier and name of resource group.  Must be unique within the instance
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupType) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstanceResourceGroupTypeOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupType) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupType)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupTypeArrayOutput) ToGetAnalyticsInstanceResourceGroupTypeArrayOutput() GetAnalyticsInstanceResourceGroupTypeArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupTypeArrayOutput) ToGetAnalyticsInstanceResourceGroupTypeArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupTypeArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupTypeArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceResourceGroupTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceResourceGroupType {
+		return vs[0].([]GetAnalyticsInstanceResourceGroupType)[vs[1].(int)]
+	}).(GetAnalyticsInstanceResourceGroupTypeOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsFilter struct {
+	// A filter to return only resources that match the given name exactly.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAnalyticsInstanceResourceGroupsFilterInput is an input type that accepts GetAnalyticsInstanceResourceGroupsFilterArgs and GetAnalyticsInstanceResourceGroupsFilterOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupsFilterInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupsFilterArgs{...}
+type GetAnalyticsInstanceResourceGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupsFilterOutput() GetAnalyticsInstanceResourceGroupsFilterOutput
+	ToGetAnalyticsInstanceResourceGroupsFilterOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupsFilterOutput
+}
+
+type GetAnalyticsInstanceResourceGroupsFilterArgs struct {
+	// A filter to return only resources that match the given name exactly.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAnalyticsInstanceResourceGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsFilter)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupsFilterArgs) ToGetAnalyticsInstanceResourceGroupsFilterOutput() GetAnalyticsInstanceResourceGroupsFilterOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupsFilterArgs) ToGetAnalyticsInstanceResourceGroupsFilterOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupsFilterOutput)
+}
+
+// GetAnalyticsInstanceResourceGroupsFilterArrayInput is an input type that accepts GetAnalyticsInstanceResourceGroupsFilterArray and GetAnalyticsInstanceResourceGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupsFilterArrayInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupsFilterArray{ GetAnalyticsInstanceResourceGroupsFilterArgs{...} }
+type GetAnalyticsInstanceResourceGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupsFilterArrayOutput() GetAnalyticsInstanceResourceGroupsFilterArrayOutput
+	ToGetAnalyticsInstanceResourceGroupsFilterArrayOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupsFilterArrayOutput
+}
+
+type GetAnalyticsInstanceResourceGroupsFilterArray []GetAnalyticsInstanceResourceGroupsFilterInput
+
+func (GetAnalyticsInstanceResourceGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupsFilter)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupsFilterArray) ToGetAnalyticsInstanceResourceGroupsFilterArrayOutput() GetAnalyticsInstanceResourceGroupsFilterArrayOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupsFilterArray) ToGetAnalyticsInstanceResourceGroupsFilterArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupsFilterArrayOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsFilter)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterOutput) ToGetAnalyticsInstanceResourceGroupsFilterOutput() GetAnalyticsInstanceResourceGroupsFilterOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterOutput) ToGetAnalyticsInstanceResourceGroupsFilterOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the given name exactly.
+func (o GetAnalyticsInstanceResourceGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupsFilter)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterArrayOutput) ToGetAnalyticsInstanceResourceGroupsFilterArrayOutput() GetAnalyticsInstanceResourceGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterArrayOutput) ToGetAnalyticsInstanceResourceGroupsFilterArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceResourceGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceResourceGroupsFilter {
+		return vs[0].([]GetAnalyticsInstanceResourceGroupsFilter)[vs[1].(int)]
+	}).(GetAnalyticsInstanceResourceGroupsFilterOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroup struct {
+	// The OCID of the Analytics instance.
+	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity int `pulumi:"capacity"`
+	// Optional description of the resource group
+	Description string `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName string `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id string `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName string `pulumi:"resourceName"`
+}
+
+// GetAnalyticsInstanceResourceGroupsInstanceResourceGroupInput is an input type that accepts GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs and GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupsInstanceResourceGroupInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs{...}
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput
+	ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput
+}
+
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs struct {
+	// The OCID of the Analytics instance.
+	AnalyticsInstanceId pulumi.StringInput `pulumi:"analyticsInstanceId"`
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity pulumi.IntInput `pulumi:"capacity"`
+	// Optional description of the resource group
+	Description pulumi.StringInput `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id pulumi.StringInput `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+}
+
+func (GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput)
+}
+
+// GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayInput is an input type that accepts GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray and GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayInput` via:
+//
+//	GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray{ GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs{...} }
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput
+	ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutputWithContext(context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput
+}
+
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray []GetAnalyticsInstanceResourceGroupsInstanceResourceGroupInput
+
+func (GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput {
+	return i.ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput {
+	return o
+}
+
+// The OCID of the Analytics instance.
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) AnalyticsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) string { return v.AnalyticsInstanceId }).(pulumi.StringOutput)
+}
+
+// The capacity (in OCPU's) to be allocated for this resource.
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) Capacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) int { return v.Capacity }).(pulumi.IntOutput)
+}
+
+// Optional description of the resource group
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unique identifier and name of resource group.  Must be unique within the instance
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceResourceGroupsInstanceResourceGroup) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+type GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstanceResourceGroupsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput() GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput) ToGetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutputWithContext(ctx context.Context) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceResourceGroupsInstanceResourceGroup {
+		return vs[0].([]GetAnalyticsInstanceResourceGroupsInstanceResourceGroup)[vs[1].(int)]
+	}).(GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput)
+}
+
 type GetAnalyticsInstancesAnalyticsInstance struct {
 	AdminUser string `pulumi:"adminUser"`
-	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+	// The capacity (in OCPU's) to be allocated for this resource.
 	Capacities []GetAnalyticsInstancesAnalyticsInstanceCapacity `pulumi:"capacities"`
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Description of the vanity url.
+	// Description of the vanity URL.
 	Description string `pulumi:"description"`
 	// Identity domain OCID.
 	DomainId string `pulumi:"domainId"`
@@ -1355,10 +1872,10 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	FeatureSet string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
-	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType string `pulumi:"licenseType"`
@@ -1366,17 +1883,19 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	Name string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
-	// URL of the Analytics service.
+	// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+	ResourceGroups []GetAnalyticsInstancesAnalyticsInstanceResourceGroup `pulumi:"resourceGroups"`
+	// URL of the Analytics instance.
 	ServiceUrl string `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+	// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Analytics instance update channel.
+	// The Analytics instance update cycle.
 	UpdateChannel string `pulumi:"updateChannel"`
 }
 
@@ -1393,13 +1912,13 @@ type GetAnalyticsInstancesAnalyticsInstanceInput interface {
 
 type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	AdminUser pulumi.StringInput `pulumi:"adminUser"`
-	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+	// The capacity (in OCPU's) to be allocated for this resource.
 	Capacities GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput `pulumi:"capacities"`
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// Description of the vanity url.
+	// Description of the vanity URL.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Identity domain OCID.
 	DomainId pulumi.StringInput `pulumi:"domainId"`
@@ -1411,10 +1930,10 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	FeatureSet pulumi.StringInput `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id              pulumi.StringInput `pulumi:"id"`
 	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
-	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+	// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The license used for the service.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
@@ -1422,17 +1941,19 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	Name pulumi.StringInput `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
-	// URL of the Analytics service.
+	// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+	ResourceGroups GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayInput `pulumi:"resourceGroups"`
+	// URL of the Analytics instance.
 	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.key": "value"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+	// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Analytics instance update channel.
+	// The Analytics instance update cycle.
 	UpdateChannel pulumi.StringInput `pulumi:"updateChannel"`
 }
 
@@ -1491,7 +2012,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) AdminUser() pulumi.StringO
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.AdminUser }).(pulumi.StringOutput)
 }
 
-// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
+// The capacity (in OCPU's) to be allocated for this resource.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Capacities() GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) []GetAnalyticsInstancesAnalyticsInstanceCapacity {
 		return v.Capacities
@@ -1508,7 +2029,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) DefinedTags() pulumi.Strin
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the vanity url.
+// Description of the vanity URL.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -1538,7 +2059,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FreeformTags() pulumi.Stri
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The Virtual Cloud Network OCID.
+// Unique identifier and name of resource group.  Must be unique within the instance
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1547,7 +2068,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) IdcsAccessToken() pulumi.S
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
 }
 
-// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+// OCID of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates that the default Oracle-managed encryption is used.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
@@ -1569,7 +2090,14 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) NetworkEndpointDetails() G
 	}).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput)
 }
 
-// URL of the Analytics service.
+// List of resource groups for this Analytics instance. The resource group id must be unique within the instance.
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ResourceGroups() GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) []GetAnalyticsInstancesAnalyticsInstanceResourceGroup {
+		return v.ResourceGroups
+	}).(GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput)
+}
+
+// URL of the Analytics instance.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ServiceUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.ServiceUrl }).(pulumi.StringOutput)
 }
@@ -1584,17 +2112,17 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) SystemTags() pulumi.String
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the Analytics instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
+// The date and time the Analytics instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events don't affect it.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Analytics instance update channel.
+// The Analytics instance update cycle.
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) UpdateChannel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.UpdateChannel }).(pulumi.StringOutput)
 }
@@ -1622,7 +2150,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) Index(i pulumi.IntInp
 type GetAnalyticsInstancesAnalyticsInstanceCapacity struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
 	CapacityType string `pulumi:"capacityType"`
-	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue int `pulumi:"capacityValue"`
 }
 
@@ -1640,7 +2168,7 @@ type GetAnalyticsInstancesAnalyticsInstanceCapacityInput interface {
 type GetAnalyticsInstancesAnalyticsInstanceCapacityArgs struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
 	CapacityType pulumi.StringInput `pulumi:"capacityType"`
-	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+	// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
 }
 
@@ -1700,7 +2228,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityType() pul
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
-// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+// The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
 func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
 }
@@ -1728,15 +2256,15 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) Index(i pulum
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
-	// OCID of the customer subnet connected to private access channel.
+	// OCID of the customer subnet connected to the private access channel.
 	SubnetId string `pulumi:"subnetId"`
-	// OCID of the customer VCN peered with private access channel.
+	// OCID of the customer VCN peered with the private access channel.
 	VcnId string `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices []string `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn `pulumi:"whitelistedVcns"`
@@ -1756,15 +2284,15 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput interface 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
-	// Network Security Group OCIDs for an Analytics instance.
+	// Network Security Group OCIDs for the Analytics instance.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
-	// OCID of the customer subnet connected to private access channel.
+	// OCID of the customer subnet connected to the private access channel.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// OCID of the customer VCN peered with private access channel.
+	// OCID of the customer VCN peered with the private access channel.
 	VcnId pulumi.StringInput `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
-	// Oracle Cloud Services that are allowed to access this Analytics instance.
+	// Oracle Cloud services that are allowed to access this Analytics instance.
 	WhitelistedServices pulumi.StringArrayInput `pulumi:"whitelistedServices"`
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	WhitelistedVcns GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput `pulumi:"whitelistedVcns"`
@@ -1828,19 +2356,19 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) Netwo
 	}).(pulumi.StringOutput)
 }
 
-// Network Security Group OCIDs for an Analytics instance.
+// Network Security Group OCIDs for the Analytics instance.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string {
 		return v.NetworkSecurityGroupIds
 	}).(pulumi.StringArrayOutput)
 }
 
-// OCID of the customer subnet connected to private access channel.
+// OCID of the customer subnet connected to the private access channel.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// OCID of the customer VCN peered with private access channel.
+// OCID of the customer VCN peered with the private access channel.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
 }
@@ -1850,7 +2378,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) White
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string { return v.WhitelistedIps }).(pulumi.StringArrayOutput)
 }
 
-// Oracle Cloud Services that are allowed to access this Analytics instance.
+// Oracle Cloud services that are allowed to access this Analytics instance.
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) WhitelistedServices() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) []string {
 		return v.WhitelistedServices
@@ -1885,7 +2413,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) 
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id string `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
@@ -1903,7 +2431,7 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnIn
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
-	// The Virtual Cloud Network OCID.
+	// Unique identifier and name of resource group.  Must be unique within the instance
 	Id pulumi.StringInput `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
@@ -1960,7 +2488,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 	return o
 }
 
-// The Virtual Cloud Network OCID.
+// Unique identifier and name of resource group.  Must be unique within the instance
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -1990,6 +2518,139 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
 		return vs[0].([]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn)[vs[1].(int)]
 	}).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput)
+}
+
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroup struct {
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity int `pulumi:"capacity"`
+	// Description of the vanity URL.
+	Description string `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName string `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id string `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName string `pulumi:"resourceName"`
+}
+
+// GetAnalyticsInstancesAnalyticsInstanceResourceGroupInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs and GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceResourceGroupInput` via:
+//
+//	GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs{...}
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput
+	ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutputWithContext(context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput
+}
+
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs struct {
+	// The capacity (in OCPU's) to be allocated for this resource.
+	Capacity pulumi.IntInput `pulumi:"capacity"`
+	// Description of the vanity URL.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Meaningful name of resource group for end user
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unique identifier and name of resource group.  Must be unique within the instance
+	Id pulumi.StringInput `pulumi:"id"`
+	// Meaningful name of resource group for end user
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+}
+
+func (GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput {
+	return i.ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput)
+}
+
+// GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray and GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput values.
+// You can construct a concrete instance of `GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayInput` via:
+//
+//	GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray{ GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs{...} }
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput
+	ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutputWithContext(context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput
+}
+
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray []GetAnalyticsInstancesAnalyticsInstanceResourceGroupInput
+
+func (GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstancesAnalyticsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (i GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput {
+	return i.ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput)
+}
+
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput {
+	return o
+}
+
+// The capacity (in OCPU's) to be allocated for this resource.
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) Capacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceResourceGroup) int { return v.Capacity }).(pulumi.IntOutput)
+}
+
+// Description of the vanity URL.
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceResourceGroup) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceResourceGroup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unique identifier and name of resource group.  Must be unique within the instance
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceResourceGroup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Meaningful name of resource group for end user
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceResourceGroup) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+type GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAnalyticsInstancesAnalyticsInstanceResourceGroup)(nil)).Elem()
+}
+
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput() GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput) ToGetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput {
+	return o
+}
+
+func (o GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancesAnalyticsInstanceResourceGroup {
+		return vs[0].([]GetAnalyticsInstancesAnalyticsInstanceResourceGroup)[vs[1].(int)]
+	}).(GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput)
 }
 
 type GetAnalyticsInstancesFilter struct {
@@ -2112,6 +2773,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput)(nil)).Elem(), AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstanceResourceGroupTypeInput)(nil)).Elem(), AnalyticsInstanceResourceGroupTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsInstanceResourceGroupTypeArrayInput)(nil)).Elem(), AnalyticsInstanceResourceGroupTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceCapacityInput)(nil)).Elem(), GetAnalyticsInstanceCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceCapacityArrayInput)(nil)).Elem(), GetAnalyticsInstanceCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceNetworkEndpointDetailInput)(nil)).Elem(), GetAnalyticsInstanceNetworkEndpointDetailArgs{})
@@ -2122,6 +2785,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput)(nil)).Elem(), GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupTypeInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupTypeArrayInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsFilterInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsFilterArrayInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsInstanceResourceGroupInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayInput)(nil)).Elem(), GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceArrayInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceCapacityInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceCapacityArgs{})
@@ -2130,6 +2799,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceResourceGroupInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceResourceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayInput)(nil)).Elem(), GetAnalyticsInstancesAnalyticsInstanceResourceGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesFilterInput)(nil)).Elem(), GetAnalyticsInstancesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsInstancesFilterArrayInput)(nil)).Elem(), GetAnalyticsInstancesFilterArray{})
 	pulumi.RegisterOutputType(AnalyticsInstanceCapacityOutput{})
@@ -2142,6 +2813,8 @@ func init() {
 	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput{})
 	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput{})
 	pulumi.RegisterOutputType(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput{})
+	pulumi.RegisterOutputType(AnalyticsInstanceResourceGroupTypeOutput{})
+	pulumi.RegisterOutputType(AnalyticsInstanceResourceGroupTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceCapacityOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstanceNetworkEndpointDetailOutput{})
@@ -2152,6 +2825,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupTypeOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupsInstanceResourceGroupOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstanceResourceGroupsInstanceResourceGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceCapacityOutput{})
@@ -2160,6 +2839,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceResourceGroupOutput{})
+	pulumi.RegisterOutputType(GetAnalyticsInstancesAnalyticsInstanceResourceGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesFilterOutput{})
 	pulumi.RegisterOutputType(GetAnalyticsInstancesFilterArrayOutput{})
 }

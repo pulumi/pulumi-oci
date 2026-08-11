@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -100,6 +101,21 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
     }
 
     /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     * 
+     */
+    @Import(name="isPitrEligible")
+    private @Nullable Output<Boolean> isPitrEligible;
+
+    /**
+     * @return Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     * 
+     */
+    public Optional<Output<Boolean>> isPitrEligible() {
+        return Optional.ofNullable(this.isPitrEligible);
+    }
+
+    /**
      * A filter to return only resources that have the given key store id.
      * 
      */
@@ -153,6 +169,7 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.infrastructureType = $.infrastructureType;
+        this.isPitrEligible = $.isPitrEligible;
         this.keyStoreId = $.keyStoreId;
         this.state = $.state;
         this.type = $.type;
@@ -292,6 +309,27 @@ public final class GetAutonomousDatabaseBackupsArgs extends com.pulumi.resources
          */
         public Builder infrastructureType(String infrastructureType) {
             return infrastructureType(Output.of(infrastructureType));
+        }
+
+        /**
+         * @param isPitrEligible Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPitrEligible(@Nullable Output<Boolean> isPitrEligible) {
+            $.isPitrEligible = isPitrEligible;
+            return this;
+        }
+
+        /**
+         * @param isPitrEligible Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPitrEligible(Boolean isPitrEligible) {
+            return isPitrEligible(Output.of(isPitrEligible));
         }
 
         /**

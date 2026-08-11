@@ -110,8 +110,8 @@ type Cluster struct {
 	MlNodeHostType pulumi.StringOutput `pulumi:"mlNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
 	MlNodeStorageGb pulumi.IntOutput `pulumi:"mlNodeStorageGb"`
-	// The OCID of the NSG where the private endpoint vnic will be attached.
-	NsgId pulumi.StringOutput `pulumi:"nsgId"`
+	// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
+	NsgId pulumi.StringPtrOutput `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringOutput `pulumi:"opendashboardFqdn"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -355,7 +355,7 @@ type clusterState struct {
 	MlNodeHostType *string `pulumi:"mlNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
 	MlNodeStorageGb *int `pulumi:"mlNodeStorageGb"`
-	// The OCID of the NSG where the private endpoint vnic will be attached.
+	// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
 	NsgId *string `pulumi:"nsgId"`
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn *string `pulumi:"opendashboardFqdn"`
@@ -503,7 +503,7 @@ type ClusterState struct {
 	MlNodeHostType pulumi.StringPtrInput
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
 	MlNodeStorageGb pulumi.IntPtrInput
-	// The OCID of the NSG where the private endpoint vnic will be attached.
+	// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
 	NsgId pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
 	OpendashboardFqdn pulumi.StringPtrInput
@@ -649,7 +649,7 @@ type clusterArgs struct {
 	MlNodeHostType *string `pulumi:"mlNodeHostType"`
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
 	MlNodeStorageGb *int `pulumi:"mlNodeStorageGb"`
-	// The OCID of the NSG where the private endpoint vnic will be attached.
+	// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
 	NsgId *string `pulumi:"nsgId"`
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount int `pulumi:"opendashboardNodeCount"`
@@ -772,7 +772,7 @@ type ClusterArgs struct {
 	MlNodeHostType pulumi.StringPtrInput
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's ML nodes.
 	MlNodeStorageGb pulumi.IntPtrInput
-	// The OCID of the NSG where the private endpoint vnic will be attached.
+	// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
 	NsgId pulumi.StringPtrInput
 	// (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
 	OpendashboardNodeCount pulumi.IntInput
@@ -1094,9 +1094,9 @@ func (o ClusterOutput) MlNodeStorageGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.IntOutput { return v.MlNodeStorageGb }).(pulumi.IntOutput)
 }
 
-// The OCID of the NSG where the private endpoint vnic will be attached.
-func (o ClusterOutput) NsgId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.NsgId }).(pulumi.StringOutput)
+// (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
+func (o ClusterOutput) NsgId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringPtrOutput { return v.NsgId }).(pulumi.StringPtrOutput)
 }
 
 // The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.

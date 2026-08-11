@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.DatabaseDatabaseAutoFailoverConfigurationArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseDbBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseEncryptionKeyLocationDetailsArgs;
 import com.pulumi.oci.Database.inputs.DatabaseDatabaseManagedSoftwareUpdateDetailArgs;
@@ -37,6 +38,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
+    }
+
+    /**
+     * The properties for defining auto failover configuration.
+     * 
+     */
+    @Import(name="autoFailoverConfiguration")
+    private @Nullable Output<DatabaseDatabaseAutoFailoverConfigurationArgs> autoFailoverConfiguration;
+
+    /**
+     * @return The properties for defining auto failover configuration.
+     * 
+     */
+    public Optional<Output<DatabaseDatabaseAutoFailoverConfigurationArgs>> autoFailoverConfiguration() {
+        return Optional.ofNullable(this.autoFailoverConfiguration);
     }
 
     /**
@@ -541,6 +557,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
 
     private DatabaseDatabaseArgs(DatabaseDatabaseArgs $) {
         this.adminPassword = $.adminPassword;
+        this.autoFailoverConfiguration = $.autoFailoverConfiguration;
         this.backupId = $.backupId;
         this.backupTdePassword = $.backupTdePassword;
         this.characterSet = $.characterSet;
@@ -612,6 +629,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder adminPassword(String adminPassword) {
             return adminPassword(Output.of(adminPassword));
+        }
+
+        /**
+         * @param autoFailoverConfiguration The properties for defining auto failover configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFailoverConfiguration(@Nullable Output<DatabaseDatabaseAutoFailoverConfigurationArgs> autoFailoverConfiguration) {
+            $.autoFailoverConfiguration = autoFailoverConfiguration;
+            return this;
+        }
+
+        /**
+         * @param autoFailoverConfiguration The properties for defining auto failover configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoFailoverConfiguration(DatabaseDatabaseAutoFailoverConfigurationArgs autoFailoverConfiguration) {
+            return autoFailoverConfiguration(Output.of(autoFailoverConfiguration));
         }
 
         /**

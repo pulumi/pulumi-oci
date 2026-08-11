@@ -97,6 +97,7 @@ import javax.annotation.Nullable;
  *             .ipMtu(virtualCircuitIpMtu)
  *             .isBfdEnabled(virtualCircuitIsBfdEnabled)
  *             .isTransportMode(virtualCircuitIsTransportMode)
+ *             .providerRemoteRegion(virtualCircuitProviderRemoteRegion)
  *             .gatewayId(testGateway.id())
  *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
  *             .providerServiceKeyName(virtualCircuitProviderServiceKeyName)
@@ -104,7 +105,9 @@ import javax.annotation.Nullable;
  *                 .cidrBlock(virtualCircuitPublicPrefixesCidrBlock)
  *                 .build())
  *             .region(virtualCircuitRegion)
+ *             .remoteAccountId(testRemoteAccount.id())
  *             .routingPolicies(virtualCircuitRoutingPolicy)
+ *             .trafficMode(virtualCircuitTrafficMode)
  *             .build());
  * 
  *     }
@@ -370,6 +373,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
         return this.oracleBgpAsn;
     }
     /**
+     * The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    @Export(name="providerRemoteRegion", refs={String.class}, tree="[0]")
+    private Output<String> providerRemoteRegion;
+
+    /**
+     * @return The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    public Output<String> providerRemoteRegion() {
+        return this.providerRemoteRegion;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
@@ -454,6 +471,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
         return this.region;
     }
     /**
+     * Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    @Export(name="remoteAccountId", refs={String.class}, tree="[0]")
+    private Output<String> remoteAccountId;
+
+    /**
+     * @return Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    public Output<String> remoteAccountId() {
+        return this.remoteAccountId;
+    }
+    /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
@@ -482,6 +513,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
         return this.serviceType;
     }
     /**
+     * The Shared unique identifier for the connection between the multicloud interconnect providers
+     * 
+     */
+    @Export(name="sharedConnectionUuid", refs={String.class}, tree="[0]")
+    private Output<String> sharedConnectionUuid;
+
+    /**
+     * @return The Shared unique identifier for the connection between the multicloud interconnect providers
+     * 
+     */
+    public Output<String> sharedConnectionUuid() {
+        return this.sharedConnectionUuid;
+    }
+    /**
      * The virtual circuit&#39;s current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
      */
@@ -508,6 +553,20 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    @Export(name="trafficMode", refs={String.class}, tree="[0]")
+    private Output<String> trafficMode;
+
+    /**
+     * @return (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    public Output<String> trafficMode() {
+        return this.trafficMode;
     }
     /**
      * The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).

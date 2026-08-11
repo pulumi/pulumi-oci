@@ -116,7 +116,12 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     private Integer oracleBgpAsn;
     /**
-     * @return The OCID of the service offered by the provider (if the customer is connecting via a provider).
+     * @return The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    private String providerRemoteRegion;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
      * 
      */
     private String providerServiceId;
@@ -146,6 +151,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     private String region;
     /**
+     * @return Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    private String remoteAccountId;
+    /**
      * @return The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
@@ -156,6 +166,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     private String serviceType;
     /**
+     * @return The Shared unique identifier for the connection between the multicloud interconnect providers
+     * 
+     */
+    private String sharedConnectionUuid;
+    /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
@@ -165,6 +180,11 @@ public final class GetVirtualCircuitsVirtualCircuit {
      * 
      */
     private String timeCreated;
+    /**
+     * @return The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+     * 
+     */
+    private String trafficMode;
     /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
      * 
@@ -313,7 +333,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.oracleBgpAsn;
     }
     /**
-     * @return The OCID of the service offered by the provider (if the customer is connecting via a provider).
+     * @return The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    public String providerRemoteRegion() {
+        return this.providerRemoteRegion;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
      * 
      */
     public String providerServiceId() {
@@ -355,6 +382,13 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.region;
     }
     /**
+     * @return Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    public String remoteAccountId() {
+        return this.remoteAccountId;
+    }
+    /**
      * @return The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
@@ -369,6 +403,13 @@ public final class GetVirtualCircuitsVirtualCircuit {
         return this.serviceType;
     }
     /**
+     * @return The Shared unique identifier for the connection between the multicloud interconnect providers
+     * 
+     */
+    public String sharedConnectionUuid() {
+        return this.sharedConnectionUuid;
+    }
+    /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
      */
@@ -381,6 +422,13 @@ public final class GetVirtualCircuitsVirtualCircuit {
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+     * 
+     */
+    public String trafficMode() {
+        return this.trafficMode;
     }
     /**
      * @return Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
@@ -427,16 +475,20 @@ public final class GetVirtualCircuitsVirtualCircuit {
         private Boolean isBfdEnabled;
         private Boolean isTransportMode;
         private Integer oracleBgpAsn;
+        private String providerRemoteRegion;
         private String providerServiceId;
         private String providerServiceKeyName;
         private String providerState;
         private List<GetVirtualCircuitsVirtualCircuitPublicPrefix> publicPrefixes;
         private String referenceComment;
         private String region;
+        private String remoteAccountId;
         private List<String> routingPolicies;
         private String serviceType;
+        private String sharedConnectionUuid;
         private String state;
         private String timeCreated;
+        private String trafficMode;
         private String type;
         private String virtualCircuitId;
         private List<GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadata> virtualCircuitRedundancyMetadatas;
@@ -461,16 +513,20 @@ public final class GetVirtualCircuitsVirtualCircuit {
     	      this.isBfdEnabled = defaults.isBfdEnabled;
     	      this.isTransportMode = defaults.isTransportMode;
     	      this.oracleBgpAsn = defaults.oracleBgpAsn;
+    	      this.providerRemoteRegion = defaults.providerRemoteRegion;
     	      this.providerServiceId = defaults.providerServiceId;
     	      this.providerServiceKeyName = defaults.providerServiceKeyName;
     	      this.providerState = defaults.providerState;
     	      this.publicPrefixes = defaults.publicPrefixes;
     	      this.referenceComment = defaults.referenceComment;
     	      this.region = defaults.region;
+    	      this.remoteAccountId = defaults.remoteAccountId;
     	      this.routingPolicies = defaults.routingPolicies;
     	      this.serviceType = defaults.serviceType;
+    	      this.sharedConnectionUuid = defaults.sharedConnectionUuid;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.trafficMode = defaults.trafficMode;
     	      this.type = defaults.type;
     	      this.virtualCircuitId = defaults.virtualCircuitId;
     	      this.virtualCircuitRedundancyMetadatas = defaults.virtualCircuitRedundancyMetadatas;
@@ -624,6 +680,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
             return this;
         }
         @CustomType.Setter
+        public Builder providerRemoteRegion(String providerRemoteRegion) {
+            if (providerRemoteRegion == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "providerRemoteRegion");
+            }
+            this.providerRemoteRegion = providerRemoteRegion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder providerServiceId(String providerServiceId) {
             if (providerServiceId == null) {
               throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "providerServiceId");
@@ -675,6 +739,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
             return this;
         }
         @CustomType.Setter
+        public Builder remoteAccountId(String remoteAccountId) {
+            if (remoteAccountId == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "remoteAccountId");
+            }
+            this.remoteAccountId = remoteAccountId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder routingPolicies(List<String> routingPolicies) {
             if (routingPolicies == null) {
               throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "routingPolicies");
@@ -694,6 +766,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
             return this;
         }
         @CustomType.Setter
+        public Builder sharedConnectionUuid(String sharedConnectionUuid) {
+            if (sharedConnectionUuid == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "sharedConnectionUuid");
+            }
+            this.sharedConnectionUuid = sharedConnectionUuid;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "state");
@@ -707,6 +787,14 @@ public final class GetVirtualCircuitsVirtualCircuit {
               throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trafficMode(String trafficMode) {
+            if (trafficMode == null) {
+              throw new MissingRequiredPropertyException("GetVirtualCircuitsVirtualCircuit", "trafficMode");
+            }
+            this.trafficMode = trafficMode;
             return this;
         }
         @CustomType.Setter
@@ -756,16 +844,20 @@ public final class GetVirtualCircuitsVirtualCircuit {
             _resultValue.isBfdEnabled = isBfdEnabled;
             _resultValue.isTransportMode = isTransportMode;
             _resultValue.oracleBgpAsn = oracleBgpAsn;
+            _resultValue.providerRemoteRegion = providerRemoteRegion;
             _resultValue.providerServiceId = providerServiceId;
             _resultValue.providerServiceKeyName = providerServiceKeyName;
             _resultValue.providerState = providerState;
             _resultValue.publicPrefixes = publicPrefixes;
             _resultValue.referenceComment = referenceComment;
             _resultValue.region = region;
+            _resultValue.remoteAccountId = remoteAccountId;
             _resultValue.routingPolicies = routingPolicies;
             _resultValue.serviceType = serviceType;
+            _resultValue.sharedConnectionUuid = sharedConnectionUuid;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.trafficMode = trafficMode;
             _resultValue.type = type;
             _resultValue.virtualCircuitId = virtualCircuitId;
             _resultValue.virtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;

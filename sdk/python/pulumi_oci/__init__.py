@@ -535,6 +535,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Analytics/analyticsInstanceResourceGroup",
+  "fqn": "pulumi_oci.analytics",
+  "classes": {
+   "oci:Analytics/analyticsInstanceResourceGroup:AnalyticsInstanceResourceGroup": "AnalyticsInstanceResourceGroup"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Analytics/analyticsInstanceVanityUrl",
   "fqn": "pulumi_oci.analytics",
   "classes": {
@@ -4811,6 +4819,38 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/endpoint:Endpoint": "Endpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/generativeAiPrivateEndpoint",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint": "GenerativeAiPrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/hostedApplication",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/hostedApplication:HostedApplication": "HostedApplication"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/hostedApplicationStorage",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/hostedApplicationStorage:HostedApplicationStorage": "HostedApplicationStorage"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/hostedDeployment",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/hostedDeployment:HostedDeployment": "HostedDeployment"
   }
  },
  {

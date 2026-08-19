@@ -130,6 +130,11 @@ export type DbmulticloudOracleDbGcpKeyRing = import("./dbmulticloudOracleDbGcpKe
 export const DbmulticloudOracleDbGcpKeyRing: typeof import("./dbmulticloudOracleDbGcpKeyRing").DbmulticloudOracleDbGcpKeyRing = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudOracleDbGcpKeyRing"], () => require("./dbmulticloudOracleDbGcpKeyRing"));
 
+export { DdfsInstanceArgs, DdfsInstanceState } from "./ddfsInstance";
+export type DdfsInstance = import("./ddfsInstance").DdfsInstance;
+export const DdfsInstance: typeof import("./ddfsInstance").DdfsInstance = null as any;
+utilities.lazyLoad(exports, ["DdfsInstance"], () => require("./ddfsInstance"));
+
 export { DifStackArgs, DifStackState } from "./difStack";
 export type DifStack = import("./difStack").DifStack;
 export const DifStack: typeof import("./difStack").DifStack = null as any;
@@ -454,6 +459,16 @@ export { GetDbmulticloudOracleDbGcpKeysArgs, GetDbmulticloudOracleDbGcpKeysResul
 export const getDbmulticloudOracleDbGcpKeys: typeof import("./getDbmulticloudOracleDbGcpKeys").getDbmulticloudOracleDbGcpKeys = null as any;
 export const getDbmulticloudOracleDbGcpKeysOutput: typeof import("./getDbmulticloudOracleDbGcpKeys").getDbmulticloudOracleDbGcpKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKeys","getDbmulticloudOracleDbGcpKeysOutput"], () => require("./getDbmulticloudOracleDbGcpKeys"));
+
+export { GetDdfsInstanceArgs, GetDdfsInstanceResult, GetDdfsInstanceOutputArgs } from "./getDdfsInstance";
+export const getDdfsInstance: typeof import("./getDdfsInstance").getDdfsInstance = null as any;
+export const getDdfsInstanceOutput: typeof import("./getDdfsInstance").getDdfsInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getDdfsInstance","getDdfsInstanceOutput"], () => require("./getDdfsInstance"));
+
+export { GetDdfsInstancesArgs, GetDdfsInstancesResult, GetDdfsInstancesOutputArgs } from "./getDdfsInstances";
+export const getDdfsInstances: typeof import("./getDdfsInstances").getDdfsInstances = null as any;
+export const getDdfsInstancesOutput: typeof import("./getDdfsInstances").getDdfsInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDdfsInstances","getDdfsInstancesOutput"], () => require("./getDdfsInstances"));
 
 export { GetDifStackArgs, GetDifStackResult, GetDifStackOutputArgs } from "./getDifStack";
 export const getDifStack: typeof import("./getDifStack").getDifStack = null as any;
@@ -1030,6 +1045,8 @@ const _module = {
                 return new DbmulticloudOracleDbGcpIdentityConnector(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
                 return new DbmulticloudOracleDbGcpKeyRing(name, <any>undefined, { urn })
+            case "oci:oci/ddfsInstance:DdfsInstance":
+                return new DdfsInstance(name, <any>undefined, { urn })
             case "oci:oci/difStack:DifStack":
                 return new DifStack(name, <any>undefined, { urn })
             case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
@@ -1110,6 +1127,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVaultAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/ddfsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/difStack", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedAutonomousDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/distributedDatabaseDistributedDatabase", _module)

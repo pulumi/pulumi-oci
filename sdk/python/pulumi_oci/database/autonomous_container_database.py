@@ -24,9 +24,12 @@ class AutonomousContainerDatabaseArgs:
                  display_name: pulumi.Input[_builtins.str],
                  patch_model: pulumi.Input[_builtins.str],
                  autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_databases_to_clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_config: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']] = None,
+                 clone_band_width: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
@@ -60,9 +63,12 @@ class AutonomousContainerDatabaseArgs:
                  reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_stamp_to_use_for_cloning: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None):
@@ -72,9 +78,12 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_databases_to_clones: A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] clone_band_width: The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        :param pulumi.Input[_builtins.str] clone_type: The Autonomous AI Database clone type.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
@@ -106,12 +115,15 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.int] reinstate_trigger: (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        :param pulumi.Input[_builtins.bool] should_use_latest_available_backup_time_stamp: If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] source: The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
+        :param pulumi.Input[_builtins.str] source_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] time_stamp_to_use_for_cloning: The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: (Updatable) The next maintenance version preference.
         :param pulumi.Input[_builtins.int] vm_failover_reservation: (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
@@ -120,12 +132,18 @@ class AutonomousContainerDatabaseArgs:
         pulumi.set(__self__, "patch_model", patch_model)
         if autonomous_container_database_backup_id is not None:
             pulumi.set(__self__, "autonomous_container_database_backup_id", autonomous_container_database_backup_id)
+        if autonomous_databases_to_clones is not None:
+            pulumi.set(__self__, "autonomous_databases_to_clones", autonomous_databases_to_clones)
         if autonomous_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "autonomous_vm_cluster_id", autonomous_vm_cluster_id)
         if backup_config is not None:
             pulumi.set(__self__, "backup_config", backup_config)
+        if clone_band_width is not None:
+            pulumi.set(__self__, "clone_band_width", clone_band_width)
+        if clone_type is not None:
+            pulumi.set(__self__, "clone_type", clone_type)
         if cloud_autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
@@ -192,12 +210,18 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if service_level_agreement_type is not None:
             pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
+        if should_use_latest_available_backup_time_stamp is not None:
+            pulumi.set(__self__, "should_use_latest_available_backup_time_stamp", should_use_latest_available_backup_time_stamp)
         if source is not None:
             pulumi.set(__self__, "source", source)
+        if source_autonomous_container_database_id is not None:
+            pulumi.set(__self__, "source_autonomous_container_database_id", source_autonomous_container_database_id)
         if standby_maintenance_buffer_in_days is not None:
             pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if switchover_trigger is not None:
             pulumi.set(__self__, "switchover_trigger", switchover_trigger)
+        if time_stamp_to_use_for_cloning is not None:
+            pulumi.set(__self__, "time_stamp_to_use_for_cloning", time_stamp_to_use_for_cloning)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
         if version_preference is not None:
@@ -242,6 +266,18 @@ class AutonomousContainerDatabaseArgs:
         pulumi.set(self, "autonomous_container_database_backup_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="autonomousDatabasesToClones")
+    def autonomous_databases_to_clones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_databases_to_clones")
+
+    @autonomous_databases_to_clones.setter
+    def autonomous_databases_to_clones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "autonomous_databases_to_clones", value)
+
+    @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -276,6 +312,30 @@ class AutonomousContainerDatabaseArgs:
     @backup_config.setter
     def backup_config(self, value: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']]):
         pulumi.set(self, "backup_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloneBandWidth")
+    def clone_band_width(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        """
+        return pulumi.get(self, "clone_band_width")
+
+    @clone_band_width.setter
+    def clone_band_width(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "clone_band_width", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloneType")
+    def clone_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Autonomous AI Database clone type.
+        """
+        return pulumi.get(self, "clone_type")
+
+    @clone_type.setter
+    def clone_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "clone_type", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -668,6 +728,18 @@ class AutonomousContainerDatabaseArgs:
         pulumi.set(self, "service_level_agreement_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="shouldUseLatestAvailableBackupTimeStamp")
+    def should_use_latest_available_backup_time_stamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "should_use_latest_available_backup_time_stamp")
+
+    @should_use_latest_available_backup_time_stamp.setter
+    def should_use_latest_available_backup_time_stamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_use_latest_available_backup_time_stamp", value)
+
+    @_builtins.property
     @pulumi.getter
     def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -678,6 +750,18 @@ class AutonomousContainerDatabaseArgs:
     @source.setter
     def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceAutonomousContainerDatabaseId")
+    def source_autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        """
+        return pulumi.get(self, "source_autonomous_container_database_id")
+
+    @source_autonomous_container_database_id.setter
+    def source_autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
@@ -705,6 +789,18 @@ class AutonomousContainerDatabaseArgs:
     @switchover_trigger.setter
     def switchover_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "switchover_trigger", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeStampToUseForCloning")
+    def time_stamp_to_use_for_cloning(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        """
+        return pulumi.get(self, "time_stamp_to_use_for_cloning")
+
+    @time_stamp_to_use_for_cloning.setter
+    def time_stamp_to_use_for_cloning(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_stamp_to_use_for_cloning", value)
 
     @_builtins.property
     @pulumi.getter(name="vaultId")
@@ -748,12 +844,15 @@ class _AutonomousContainerDatabaseState:
     def __init__(__self__, *,
                  associated_backup_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]]] = None,
                  autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_databases_to_clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
                  available_cpus: pulumi.Input[Optional[_builtins.float]] = None,
                  backup_config: pulumi.Input[Optional['AutonomousContainerDatabaseBackupConfigArgs']] = None,
                  backup_destination_properties_lists: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]] = None,
+                 clone_band_width: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compute_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -814,7 +913,9 @@ class _AutonomousContainerDatabaseState:
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -822,6 +923,7 @@ class _AutonomousContainerDatabaseState:
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_last_backup: pulumi.Input[Optional[_builtins.str]] = None,
                  time_snapshot_standby_revert: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_stamp_to_use_for_cloning: pulumi.Input[Optional[_builtins.str]] = None,
                  total_cpus: pulumi.Input[Optional[_builtins.int]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -831,12 +933,15 @@ class _AutonomousContainerDatabaseState:
 
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs']]] associated_backup_configuration_details: A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_databases_to_clones: A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]] backup_destination_properties_lists: This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        :param pulumi.Input[_builtins.str] clone_band_width: The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        :param pulumi.Input[_builtins.str] clone_type: The Autonomous AI Database clone type.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -895,7 +1000,9 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        :param pulumi.Input[_builtins.bool] should_use_latest_available_backup_time_stamp: If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] source: The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
+        :param pulumi.Input[_builtins.str] source_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -906,6 +1013,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        :param pulumi.Input[_builtins.str] time_stamp_to_use_for_cloning: The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
         :param pulumi.Input[_builtins.int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: (Updatable) The next maintenance version preference.
@@ -915,6 +1023,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
         if autonomous_container_database_backup_id is not None:
             pulumi.set(__self__, "autonomous_container_database_backup_id", autonomous_container_database_backup_id)
+        if autonomous_databases_to_clones is not None:
+            pulumi.set(__self__, "autonomous_databases_to_clones", autonomous_databases_to_clones)
         if autonomous_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
         if autonomous_vm_cluster_id is not None:
@@ -927,6 +1037,10 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "backup_config", backup_config)
         if backup_destination_properties_lists is not None:
             pulumi.set(__self__, "backup_destination_properties_lists", backup_destination_properties_lists)
+        if clone_band_width is not None:
+            pulumi.set(__self__, "clone_band_width", clone_band_width)
+        if clone_type is not None:
+            pulumi.set(__self__, "clone_type", clone_type)
         if cloud_autonomous_vm_cluster_id is not None:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
@@ -1047,8 +1161,12 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "rotate_key_trigger", rotate_key_trigger)
         if service_level_agreement_type is not None:
             pulumi.set(__self__, "service_level_agreement_type", service_level_agreement_type)
+        if should_use_latest_available_backup_time_stamp is not None:
+            pulumi.set(__self__, "should_use_latest_available_backup_time_stamp", should_use_latest_available_backup_time_stamp)
         if source is not None:
             pulumi.set(__self__, "source", source)
+        if source_autonomous_container_database_id is not None:
+            pulumi.set(__self__, "source_autonomous_container_database_id", source_autonomous_container_database_id)
         if standby_maintenance_buffer_in_days is not None:
             pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if state is not None:
@@ -1063,6 +1181,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "time_of_last_backup", time_of_last_backup)
         if time_snapshot_standby_revert is not None:
             pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
+        if time_stamp_to_use_for_cloning is not None:
+            pulumi.set(__self__, "time_stamp_to_use_for_cloning", time_stamp_to_use_for_cloning)
         if total_cpus is not None:
             pulumi.set(__self__, "total_cpus", total_cpus)
         if vault_id is not None:
@@ -1095,6 +1215,18 @@ class _AutonomousContainerDatabaseState:
     @autonomous_container_database_backup_id.setter
     def autonomous_container_database_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "autonomous_container_database_backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabasesToClones")
+    def autonomous_databases_to_clones(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_databases_to_clones")
+
+    @autonomous_databases_to_clones.setter
+    def autonomous_databases_to_clones(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "autonomous_databases_to_clones", value)
 
     @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -1167,6 +1299,30 @@ class _AutonomousContainerDatabaseState:
     @backup_destination_properties_lists.setter
     def backup_destination_properties_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs']]]]):
         pulumi.set(self, "backup_destination_properties_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloneBandWidth")
+    def clone_band_width(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        """
+        return pulumi.get(self, "clone_band_width")
+
+    @clone_band_width.setter
+    def clone_band_width(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "clone_band_width", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cloneType")
+    def clone_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Autonomous AI Database clone type.
+        """
+        return pulumi.get(self, "clone_type")
+
+    @clone_type.setter
+    def clone_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "clone_type", value)
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -1883,6 +2039,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "service_level_agreement_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="shouldUseLatestAvailableBackupTimeStamp")
+    def should_use_latest_available_backup_time_stamp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "should_use_latest_available_backup_time_stamp")
+
+    @should_use_latest_available_backup_time_stamp.setter
+    def should_use_latest_available_backup_time_stamp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_use_latest_available_backup_time_stamp", value)
+
+    @_builtins.property
     @pulumi.getter
     def source(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1893,6 +2061,18 @@ class _AutonomousContainerDatabaseState:
     @source.setter
     def source(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceAutonomousContainerDatabaseId")
+    def source_autonomous_container_database_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        """
+        return pulumi.get(self, "source_autonomous_container_database_id")
+
+    @source_autonomous_container_database_id.setter
+    def source_autonomous_container_database_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_autonomous_container_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
@@ -1982,6 +2162,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "time_snapshot_standby_revert", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeStampToUseForCloning")
+    def time_stamp_to_use_for_cloning(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        """
+        return pulumi.get(self, "time_stamp_to_use_for_cloning")
+
+    @time_stamp_to_use_for_cloning.setter
+    def time_stamp_to_use_for_cloning(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_stamp_to_use_for_cloning", value)
+
+    @_builtins.property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -2037,9 +2229,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_databases_to_clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 clone_band_width: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
@@ -2075,9 +2270,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_stamp_to_use_for_cloning: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2089,109 +2287,6 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_container_database = oci.database.AutonomousContainerDatabase("test_autonomous_container_database",
-            display_name=autonomous_container_database_display_name,
-            patch_model=autonomous_container_database_patch_model,
-            autonomous_container_database_backup_id=test_autonomous_container_database_backup["id"],
-            autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
-            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            backup_config={
-                "backup_destination_details": {
-                    "type": autonomous_container_database_backup_config_backup_destination_details_type,
-                    "backup_retention_policy_on_terminate": autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
-                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
-                    "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
-                    "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                },
-                "recovery_window_in_days": int(autonomous_container_database_backup_config_recovery_window_in_days),
-            },
-            cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            compartment_id=compartment_id,
-            customer_contacts=[{
-                "email": autonomous_container_database_customer_contacts_email,
-            }],
-            database_software_image_id=test_database_software_image["id"],
-            db_name=autonomous_container_database_db_name,
-            db_split_threshold=int(autonomous_container_database_db_split_threshold),
-            db_unique_name=autonomous_container_database_db_unique_name,
-            db_version=autonomous_container_database_db_version,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            distribution_affinity=autonomous_container_database_distribution_affinity,
-            encryption_key_location_details={
-                "provider_type": autonomous_container_database_encryption_key_location_details_provider_type,
-                "aws_encryption_key_id": test_key["id"],
-            },
-            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds),
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled == "true",
-            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled == "true",
-            key_store_id=test_key_store["id"],
-            kms_key_id=test_key["id"],
-            kms_key_version_id=test_key_version["id"],
-            maintenance_window_details={
-                "custom_action_timeout_in_mins": int(autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
-                "days_of_weeks": [{
-                    "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
-                }],
-                "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled == "true",
-                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled == "true",
-                "lead_time_in_weeks": int(autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
-                "months": [{
-                    "name": autonomous_container_database_maintenance_window_details_months_name,
-                }],
-                "patching_mode": autonomous_container_database_maintenance_window_details_patching_mode,
-                "preference": autonomous_container_database_maintenance_window_details_preference,
-                "skip_rus": autonomous_container_database_maintenance_window_details_skip_ru,
-                "weeks_of_months": autonomous_container_database_maintenance_window_details_weeks_of_month,
-            },
-            net_services_architecture=autonomous_container_database_net_services_architecture,
-            okv_end_point_group_name=test_group["name"],
-            peer_autonomous_container_database_backup_config={
-                "backup_destination_details": [{
-                    "type": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    "backup_retention_policy_on_terminate": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
-                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
-                    "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
-                    "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                }],
-                "recovery_window_in_days": int(autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
-            },
-            peer_autonomous_container_database_compartment_id=test_compartment["id"],
-            peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
-            peer_autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
-            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            peer_db_unique_name=autonomous_container_database_peer_db_unique_name,
-            protection_mode=autonomous_container_database_protection_mode,
-            service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
-            source=autonomous_container_database_source,
-            standby_maintenance_buffer_in_days=int(autonomous_container_database_standby_maintenance_buffer_in_days),
-            vault_id=test_vault["id"],
-            version_preference=autonomous_container_database_version_preference,
-            vm_failover_reservation=int(autonomous_container_database_vm_failover_reservation))
-        ```
 
         ## Import
 
@@ -2205,9 +2300,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_databases_to_clones: A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
+        :param pulumi.Input[_builtins.str] clone_band_width: The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        :param pulumi.Input[_builtins.str] clone_type: The Autonomous AI Database clone type.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
@@ -2241,12 +2339,15 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] protection_mode: (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param pulumi.Input[_builtins.int] reinstate_trigger: (Updatable) An optional property when incremented triggers Reinstate. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        :param pulumi.Input[_builtins.bool] should_use_latest_available_backup_time_stamp: If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] source: The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
+        :param pulumi.Input[_builtins.str] source_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] time_stamp_to_use_for_cloning: The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: (Updatable) The next maintenance version preference.
         :param pulumi.Input[_builtins.int] vm_failover_reservation: (Updatable) The percentage of CPUs reserved across nodes to support node failover. Allowed values are 0%, 25%, 50%, 75%, and 100%, with 50% being the default option.
@@ -2264,109 +2365,6 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/database
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_container_database = oci.database.AutonomousContainerDatabase("test_autonomous_container_database",
-            display_name=autonomous_container_database_display_name,
-            patch_model=autonomous_container_database_patch_model,
-            autonomous_container_database_backup_id=test_autonomous_container_database_backup["id"],
-            autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
-            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            backup_config={
-                "backup_destination_details": {
-                    "type": autonomous_container_database_backup_config_backup_destination_details_type,
-                    "backup_retention_policy_on_terminate": autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
-                    "is_retention_lock_enabled": autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
-                    "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
-                    "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                },
-                "recovery_window_in_days": int(autonomous_container_database_backup_config_recovery_window_in_days),
-            },
-            cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            compartment_id=compartment_id,
-            customer_contacts=[{
-                "email": autonomous_container_database_customer_contacts_email,
-            }],
-            database_software_image_id=test_database_software_image["id"],
-            db_name=autonomous_container_database_db_name,
-            db_split_threshold=int(autonomous_container_database_db_split_threshold),
-            db_unique_name=autonomous_container_database_db_unique_name,
-            db_version=autonomous_container_database_db_version,
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            distribution_affinity=autonomous_container_database_distribution_affinity,
-            encryption_key_location_details={
-                "provider_type": autonomous_container_database_encryption_key_location_details_provider_type,
-                "aws_encryption_key_id": test_key["id"],
-            },
-            fast_start_fail_over_lag_limit_in_seconds=int(autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds),
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled == "true",
-            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled == "true",
-            key_store_id=test_key_store["id"],
-            kms_key_id=test_key["id"],
-            kms_key_version_id=test_key_version["id"],
-            maintenance_window_details={
-                "custom_action_timeout_in_mins": int(autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
-                "days_of_weeks": [{
-                    "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
-                }],
-                "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
-                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled == "true",
-                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled == "true",
-                "lead_time_in_weeks": int(autonomous_container_database_maintenance_window_details_lead_time_in_weeks),
-                "months": [{
-                    "name": autonomous_container_database_maintenance_window_details_months_name,
-                }],
-                "patching_mode": autonomous_container_database_maintenance_window_details_patching_mode,
-                "preference": autonomous_container_database_maintenance_window_details_preference,
-                "skip_rus": autonomous_container_database_maintenance_window_details_skip_ru,
-                "weeks_of_months": autonomous_container_database_maintenance_window_details_weeks_of_month,
-            },
-            net_services_architecture=autonomous_container_database_net_services_architecture,
-            okv_end_point_group_name=test_group["name"],
-            peer_autonomous_container_database_backup_config={
-                "backup_destination_details": [{
-                    "type": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-                    "backup_retention_policy_on_terminate": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_backup_retention_policy_on_terminate,
-                    "dbrs_policy_id": test_policy["id"],
-                    "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-                    "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote == "true",
-                    "is_retention_lock_enabled": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_retention_lock_enabled == "true",
-                    "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
-                    "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-                    "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
-                }],
-                "recovery_window_in_days": int(autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days),
-            },
-            peer_autonomous_container_database_compartment_id=test_compartment["id"],
-            peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
-            peer_autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
-            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
-            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
-            peer_db_unique_name=autonomous_container_database_peer_db_unique_name,
-            protection_mode=autonomous_container_database_protection_mode,
-            service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
-            source=autonomous_container_database_source,
-            standby_maintenance_buffer_in_days=int(autonomous_container_database_standby_maintenance_buffer_in_days),
-            vault_id=test_vault["id"],
-            version_preference=autonomous_container_database_version_preference,
-            vm_failover_reservation=int(autonomous_container_database_vm_failover_reservation))
-        ```
 
         ## Import
 
@@ -2393,9 +2391,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 autonomous_databases_to_clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
                  autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
+                 clone_band_width: pulumi.Input[Optional[_builtins.str]] = None,
+                 clone_type: pulumi.Input[Optional[_builtins.str]] = None,
                  cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  customer_contacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
@@ -2431,9 +2432,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  reinstate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
                  service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 should_use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
                  source: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
                  standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+                 time_stamp_to_use_for_cloning: pulumi.Input[Optional[_builtins.str]] = None,
                  vault_id: pulumi.Input[Optional[_builtins.str]] = None,
                  version_preference: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_failover_reservation: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2447,9 +2451,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__ = AutonomousContainerDatabaseArgs.__new__(AutonomousContainerDatabaseArgs)
 
             __props__.__dict__["autonomous_container_database_backup_id"] = autonomous_container_database_backup_id
+            __props__.__dict__["autonomous_databases_to_clones"] = autonomous_databases_to_clones
             __props__.__dict__["autonomous_exadata_infrastructure_id"] = autonomous_exadata_infrastructure_id
             __props__.__dict__["autonomous_vm_cluster_id"] = autonomous_vm_cluster_id
             __props__.__dict__["backup_config"] = backup_config
+            __props__.__dict__["clone_band_width"] = clone_band_width
+            __props__.__dict__["clone_type"] = clone_type
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["customer_contacts"] = customer_contacts
@@ -2489,9 +2496,12 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["reinstate_trigger"] = reinstate_trigger
             __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
             __props__.__dict__["service_level_agreement_type"] = service_level_agreement_type
+            __props__.__dict__["should_use_latest_available_backup_time_stamp"] = should_use_latest_available_backup_time_stamp
             __props__.__dict__["source"] = source
+            __props__.__dict__["source_autonomous_container_database_id"] = source_autonomous_container_database_id
             __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
             __props__.__dict__["switchover_trigger"] = switchover_trigger
+            __props__.__dict__["time_stamp_to_use_for_cloning"] = time_stamp_to_use_for_cloning
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["version_preference"] = version_preference
             __props__.__dict__["vm_failover_reservation"] = vm_failover_reservation
@@ -2542,12 +2552,15 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_backup_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]]] = None,
             autonomous_container_database_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_databases_to_clones: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             autonomous_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
             autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
             available_cpus: pulumi.Input[Optional[_builtins.float]] = None,
             backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
             backup_destination_properties_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]]] = None,
+            clone_band_width: pulumi.Input[Optional[_builtins.str]] = None,
+            clone_type: pulumi.Input[Optional[_builtins.str]] = None,
             cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             compute_model: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2608,7 +2621,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             role: pulumi.Input[Optional[_builtins.str]] = None,
             rotate_key_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
             service_level_agreement_type: pulumi.Input[Optional[_builtins.str]] = None,
+            should_use_latest_available_backup_time_stamp: pulumi.Input[Optional[_builtins.bool]] = None,
             source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
             standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2616,6 +2631,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_of_last_backup: pulumi.Input[Optional[_builtins.str]] = None,
             time_snapshot_standby_revert: pulumi.Input[Optional[_builtins.str]] = None,
+            time_stamp_to_use_for_cloning: pulumi.Input[Optional[_builtins.str]] = None,
             total_cpus: pulumi.Input[Optional[_builtins.int]] = None,
             vault_id: pulumi.Input[Optional[_builtins.str]] = None,
             version_preference: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2629,12 +2645,15 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs', 'AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgsDict']]]] associated_backup_configuration_details: A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         :param pulumi.Input[_builtins.str] autonomous_container_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] autonomous_databases_to_clones: A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[_builtins.str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] availability_domain: The domain of the Autonomous Container Database
         :param pulumi.Input[_builtins.float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.
         :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseBackupDestinationPropertiesListArgs', 'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict']]]] backup_destination_properties_lists: This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
+        :param pulumi.Input[_builtins.str] clone_band_width: The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        :param pulumi.Input[_builtins.str] clone_type: The Autonomous AI Database clone type.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous AI Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
@@ -2693,7 +2712,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
         :param pulumi.Input[_builtins.str] role: The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         :param pulumi.Input[_builtins.str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        :param pulumi.Input[_builtins.bool] should_use_latest_available_backup_time_stamp: If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
         :param pulumi.Input[_builtins.str] source: The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
+        :param pulumi.Input[_builtins.str] source_autonomous_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
         :param pulumi.Input[_builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[_builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[_builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -2704,6 +2725,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[_builtins.str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[_builtins.str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
+        :param pulumi.Input[_builtins.str] time_stamp_to_use_for_cloning: The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
         :param pulumi.Input[_builtins.int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.
         :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         :param pulumi.Input[_builtins.str] version_preference: (Updatable) The next maintenance version preference.
@@ -2715,12 +2737,15 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
         __props__.__dict__["associated_backup_configuration_details"] = associated_backup_configuration_details
         __props__.__dict__["autonomous_container_database_backup_id"] = autonomous_container_database_backup_id
+        __props__.__dict__["autonomous_databases_to_clones"] = autonomous_databases_to_clones
         __props__.__dict__["autonomous_exadata_infrastructure_id"] = autonomous_exadata_infrastructure_id
         __props__.__dict__["autonomous_vm_cluster_id"] = autonomous_vm_cluster_id
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_cpus"] = available_cpus
         __props__.__dict__["backup_config"] = backup_config
         __props__.__dict__["backup_destination_properties_lists"] = backup_destination_properties_lists
+        __props__.__dict__["clone_band_width"] = clone_band_width
+        __props__.__dict__["clone_type"] = clone_type
         __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_model"] = compute_model
@@ -2781,7 +2806,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["role"] = role
         __props__.__dict__["rotate_key_trigger"] = rotate_key_trigger
         __props__.__dict__["service_level_agreement_type"] = service_level_agreement_type
+        __props__.__dict__["should_use_latest_available_backup_time_stamp"] = should_use_latest_available_backup_time_stamp
         __props__.__dict__["source"] = source
+        __props__.__dict__["source_autonomous_container_database_id"] = source_autonomous_container_database_id
         __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
         __props__.__dict__["state"] = state
         __props__.__dict__["switchover_trigger"] = switchover_trigger
@@ -2789,6 +2816,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_of_last_backup"] = time_of_last_backup
         __props__.__dict__["time_snapshot_standby_revert"] = time_snapshot_standby_revert
+        __props__.__dict__["time_stamp_to_use_for_cloning"] = time_stamp_to_use_for_cloning
         __props__.__dict__["total_cpus"] = total_cpus
         __props__.__dict__["vault_id"] = vault_id
         __props__.__dict__["version_preference"] = version_preference
@@ -2805,11 +2833,19 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseBackupId")
-    def autonomous_container_database_backup_id(self) -> pulumi.Output[_builtins.str]:
+    def autonomous_container_database_backup_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
         """
         return pulumi.get(self, "autonomous_container_database_backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autonomousDatabasesToClones")
+    def autonomous_databases_to_clones(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "autonomous_databases_to_clones")
 
     @_builtins.property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
@@ -2858,6 +2894,22 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         """
         return pulumi.get(self, "backup_destination_properties_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="cloneBandWidth")
+    def clone_band_width(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        """
+        return pulumi.get(self, "clone_band_width")
+
+    @_builtins.property
+    @pulumi.getter(name="cloneType")
+    def clone_type(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The Autonomous AI Database clone type.
+        """
+        return pulumi.get(self, "clone_type")
 
     @_builtins.property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
@@ -3334,12 +3386,28 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         return pulumi.get(self, "service_level_agreement_type")
 
     @_builtins.property
+    @pulumi.getter(name="shouldUseLatestAvailableBackupTimeStamp")
+    def should_use_latest_available_backup_time_stamp(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        """
+        return pulumi.get(self, "should_use_latest_available_backup_time_stamp")
+
+    @_builtins.property
     @pulumi.getter
-    def source(self) -> pulumi.Output[_builtins.str]:
+    def source(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         """
         return pulumi.get(self, "source")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceAutonomousContainerDatabaseId")
+    def source_autonomous_container_database_id(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        """
+        return pulumi.get(self, "source_autonomous_container_database_id")
 
     @_builtins.property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
@@ -3399,6 +3467,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         """
         return pulumi.get(self, "time_snapshot_standby_revert")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStampToUseForCloning")
+    def time_stamp_to_use_for_cloning(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        """
+        return pulumi.get(self, "time_stamp_to_use_for_cloning")
 
     @_builtins.property
     @pulumi.getter(name="totalCpus")

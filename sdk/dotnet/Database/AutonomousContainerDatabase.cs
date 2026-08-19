@@ -17,140 +17,6 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testAutonomousContainerDatabase = new Oci.Database.AutonomousContainerDatabase("test_autonomous_container_database", new()
-    ///     {
-    ///         DisplayName = autonomousContainerDatabaseDisplayName,
-    ///         PatchModel = autonomousContainerDatabasePatchModel,
-    ///         AutonomousContainerDatabaseBackupId = testAutonomousContainerDatabaseBackup.Id,
-    ///         AutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
-    ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
-    ///         BackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigArgs
-    ///         {
-    ///             BackupDestinationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs
-    ///             {
-    ///                 Type = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
-    ///                 BackupRetentionPolicyOnTerminate = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
-    ///                 DbrsPolicyId = testPolicy.Id,
-    ///                 Id = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
-    ///                 InternetProxy = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
-    ///                 IsRemote = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
-    ///                 IsRetentionLockEnabled = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
-    ///                 RemoteRegion = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
-    ///                 VpcPassword = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
-    ///                 VpcUser = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
-    ///             },
-    ///             RecoveryWindowInDays = autonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
-    ///         },
-    ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
-    ///         CompartmentId = compartmentId,
-    ///         CustomerContacts = new[]
-    ///         {
-    ///             new Oci.Database.Inputs.AutonomousContainerDatabaseCustomerContactArgs
-    ///             {
-    ///                 Email = autonomousContainerDatabaseCustomerContactsEmail,
-    ///             },
-    ///         },
-    ///         DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
-    ///         DbName = autonomousContainerDatabaseDbName,
-    ///         DbSplitThreshold = autonomousContainerDatabaseDbSplitThreshold,
-    ///         DbUniqueName = autonomousContainerDatabaseDbUniqueName,
-    ///         DbVersion = autonomousContainerDatabaseDbVersion,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DistributionAffinity = autonomousContainerDatabaseDistributionAffinity,
-    ///         EncryptionKeyLocationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseEncryptionKeyLocationDetailsArgs
-    ///         {
-    ///             ProviderType = autonomousContainerDatabaseEncryptionKeyLocationDetailsProviderType,
-    ///             AwsEncryptionKeyId = testKey.Id,
-    ///         },
-    ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         IsAutomaticFailoverEnabled = autonomousContainerDatabaseIsAutomaticFailoverEnabled,
-    ///         IsDstFileUpdateEnabled = autonomousContainerDatabaseIsDstFileUpdateEnabled,
-    ///         KeyStoreId = testKeyStore.Id,
-    ///         KmsKeyId = testKey.Id,
-    ///         KmsKeyVersionId = testKeyVersion.Id,
-    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
-    ///         {
-    ///             CustomActionTimeoutInMins = autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins,
-    ///             DaysOfWeeks = new[]
-    ///             {
-    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs
-    ///                 {
-    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName,
-    ///                 },
-    ///             },
-    ///             HoursOfDays = autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay,
-    ///             IsCustomActionTimeoutEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
-    ///             IsMonthlyPatchingEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
-    ///             LeadTimeInWeeks = autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks,
-    ///             Months = new[]
-    ///             {
-    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs
-    ///                 {
-    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName,
-    ///                 },
-    ///             },
-    ///             PatchingMode = autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode,
-    ///             Preference = autonomousContainerDatabaseMaintenanceWindowDetailsPreference,
-    ///             SkipRus = autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu,
-    ///             WeeksOfMonths = autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth,
-    ///         },
-    ///         NetServicesArchitecture = autonomousContainerDatabaseNetServicesArchitecture,
-    ///         OkvEndPointGroupName = testGroup.Name,
-    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
-    ///         {
-    ///             BackupDestinationDetails = new[]
-    ///             {
-    ///                 new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
-    ///                 {
-    ///                     Type = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
-    ///                     BackupRetentionPolicyOnTerminate = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate,
-    ///                     DbrsPolicyId = testPolicy.Id,
-    ///                     Id = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
-    ///                     InternetProxy = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
-    ///                     IsRemote = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
-    ///                     IsRetentionLockEnabled = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
-    ///                     RemoteRegion = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
-    ///                     VpcPassword = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
-    ///                     VpcUser = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
-    ///                 },
-    ///             },
-    ///             RecoveryWindowInDays = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
-    ///         },
-    ///         PeerAutonomousContainerDatabaseCompartmentId = testCompartment.Id,
-    ///         PeerAutonomousContainerDatabaseDisplayName = autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName,
-    ///         PeerAutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
-    ///         PeerAutonomousVmClusterId = testAutonomousVmCluster.Id,
-    ///         PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
-    ///         PeerDbUniqueName = autonomousContainerDatabasePeerDbUniqueName,
-    ///         ProtectionMode = autonomousContainerDatabaseProtectionMode,
-    ///         ServiceLevelAgreementType = autonomousContainerDatabaseServiceLevelAgreementType,
-    ///         Source = autonomousContainerDatabaseSource,
-    ///         StandbyMaintenanceBufferInDays = autonomousContainerDatabaseStandbyMaintenanceBufferInDays,
-    ///         VaultId = testVault.Id,
-    ///         VersionPreference = autonomousContainerDatabaseVersionPreference,
-    ///         VmFailoverReservation = autonomousContainerDatabaseVmFailoverReservation,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// AutonomousContainerDatabases can be imported using the `Id`, e.g.
@@ -172,7 +38,13 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
         /// </summary>
         [Output("autonomousContainerDatabaseBackupId")]
-        public Output<string> AutonomousContainerDatabaseBackupId { get; private set; } = null!;
+        public Output<string?> AutonomousContainerDatabaseBackupId { get; private set; } = null!;
+
+        /// <summary>
+        /// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        /// </summary>
+        [Output("autonomousDatabasesToClones")]
+        public Output<ImmutableArray<string>> AutonomousDatabasesToClones { get; private set; } = null!;
 
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -209,6 +81,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("backupDestinationPropertiesLists")]
         public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseBackupDestinationPropertiesList>> BackupDestinationPropertiesLists { get; private set; } = null!;
+
+        /// <summary>
+        /// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        /// </summary>
+        [Output("cloneBandWidth")]
+        public Output<string?> CloneBandWidth { get; private set; } = null!;
+
+        /// <summary>
+        /// The Autonomous AI Database clone type.
+        /// </summary>
+        [Output("cloneType")]
+        public Output<string?> CloneType { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -565,10 +449,22 @@ namespace Pulumi.Oci.Database
         public Output<string> ServiceLevelAgreementType { get; private set; } = null!;
 
         /// <summary>
+        /// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        /// </summary>
+        [Output("shouldUseLatestAvailableBackupTimeStamp")]
+        public Output<bool?> ShouldUseLatestAvailableBackupTimeStamp { get; private set; } = null!;
+
+        /// <summary>
         /// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         /// </summary>
         [Output("source")]
-        public Output<string> Source { get; private set; } = null!;
+        public Output<string?> Source { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        /// </summary>
+        [Output("sourceAutonomousContainerDatabaseId")]
+        public Output<string?> SourceAutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -615,6 +511,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeSnapshotStandbyRevert")]
         public Output<string> TimeSnapshotStandbyRevert { get; private set; } = null!;
+
+        /// <summary>
+        /// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        /// </summary>
+        [Output("timeStampToUseForCloning")]
+        public Output<string?> TimeStampToUseForCloning { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPUs allocated to the Autonomous VM cluster.
@@ -692,6 +594,18 @@ namespace Pulumi.Oci.Database
         [Input("autonomousContainerDatabaseBackupId")]
         public Input<string>? AutonomousContainerDatabaseBackupId { get; set; }
 
+        [Input("autonomousDatabasesToClones")]
+        private InputList<string>? _autonomousDatabasesToClones;
+
+        /// <summary>
+        /// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        /// </summary>
+        public InputList<string> AutonomousDatabasesToClones
+        {
+            get => _autonomousDatabasesToClones ?? (_autonomousDatabasesToClones = new InputList<string>());
+            set => _autonomousDatabasesToClones = value;
+        }
+
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
@@ -709,6 +623,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("backupConfig")]
         public Input<Inputs.AutonomousContainerDatabaseBackupConfigArgs>? BackupConfig { get; set; }
+
+        /// <summary>
+        /// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        /// </summary>
+        [Input("cloneBandWidth")]
+        public Input<string>? CloneBandWidth { get; set; }
+
+        /// <summary>
+        /// The Autonomous AI Database clone type.
+        /// </summary>
+        [Input("cloneType")]
+        public Input<string>? CloneType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -933,10 +859,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? ServiceLevelAgreementType { get; set; }
 
         /// <summary>
+        /// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        /// </summary>
+        [Input("shouldUseLatestAvailableBackupTimeStamp")]
+        public Input<bool>? ShouldUseLatestAvailableBackupTimeStamp { get; set; }
+
+        /// <summary>
         /// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        /// </summary>
+        [Input("sourceAutonomousContainerDatabaseId")]
+        public Input<string>? SourceAutonomousContainerDatabaseId { get; set; }
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -953,6 +891,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("switchoverTrigger")]
         public Input<int>? SwitchoverTrigger { get; set; }
+
+        /// <summary>
+        /// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        /// </summary>
+        [Input("timeStampToUseForCloning")]
+        public Input<string>? TimeStampToUseForCloning { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -998,6 +942,18 @@ namespace Pulumi.Oci.Database
         [Input("autonomousContainerDatabaseBackupId")]
         public Input<string>? AutonomousContainerDatabaseBackupId { get; set; }
 
+        [Input("autonomousDatabasesToClones")]
+        private InputList<string>? _autonomousDatabasesToClones;
+
+        /// <summary>
+        /// A list of Autonomous Databases ( display name of the ADB in specific ) to be cloned from backup of the source Autonomous Container Database.
+        /// </summary>
+        public InputList<string> AutonomousDatabasesToClones
+        {
+            get => _autonomousDatabasesToClones ?? (_autonomousDatabasesToClones = new InputList<string>());
+            set => _autonomousDatabasesToClones = value;
+        }
+
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous AI Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
@@ -1039,6 +995,18 @@ namespace Pulumi.Oci.Database
             get => _backupDestinationPropertiesLists ?? (_backupDestinationPropertiesLists = new InputList<Inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListGetArgs>());
             set => _backupDestinationPropertiesLists = value;
         }
+
+        /// <summary>
+        /// The speed at which the Autonomous Container Database Clone from backup operation to be performed by OCI.
+        /// </summary>
+        [Input("cloneBandWidth")]
+        public Input<string>? CloneBandWidth { get; set; }
+
+        /// <summary>
+        /// The Autonomous AI Database clone type.
+        /// </summary>
+        [Input("cloneType")]
+        public Input<string>? CloneType { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
@@ -1455,10 +1423,22 @@ namespace Pulumi.Oci.Database
         public Input<string>? ServiceLevelAgreementType { get; set; }
 
         /// <summary>
+        /// If set to true, Oracle Cloud Infrastructure shall attempt to create a point in time to the latest available backup of the source Autonomous Container Database.
+        /// </summary>
+        [Input("shouldUseLatestAvailableBackupTimeStamp")]
+        public Input<bool>? ShouldUseLatestAvailableBackupTimeStamp { get; set; }
+
+        /// <summary>
         /// The source of the database. Use `NONE` to create a new Autonomous Container Database (ACD). Use `BACKUP_FROM_ID` to create a new ACD from a specified backup.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD that you will clone to create a new ACD.
+        /// </summary>
+        [Input("sourceAutonomousContainerDatabaseId")]
+        public Input<string>? SourceAutonomousContainerDatabaseId { get; set; }
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -1511,6 +1491,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeSnapshotStandbyRevert")]
         public Input<string>? TimeSnapshotStandbyRevert { get; set; }
+
+        /// <summary>
+        /// The time stamp representing the point in time to which the Autonomous Container Database should be cloned from backup. And the requested timeStamp should be in the past.
+        /// </summary>
+        [Input("timeStampToUseForCloning")]
+        public Input<string>? TimeStampToUseForCloning { get; set; }
 
         /// <summary>
         /// The number of CPUs allocated to the Autonomous VM cluster.

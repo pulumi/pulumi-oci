@@ -86,7 +86,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int OracleBgpAsn;
         /// <summary>
-        /// The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        /// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        /// </summary>
+        public readonly string ProviderRemoteRegion;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
         /// </summary>
         public readonly string ProviderServiceId;
         /// <summary>
@@ -110,6 +114,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Region;
         /// <summary>
+        /// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        /// </summary>
+        public readonly string RemoteAccountId;
+        /// <summary>
         /// The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         /// </summary>
         public readonly ImmutableArray<string> RoutingPolicies;
@@ -118,6 +126,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string ServiceType;
         /// <summary>
+        /// The Shared unique identifier for the connection between the multicloud interconnect providers
+        /// </summary>
+        public readonly string SharedConnectionUuid;
+        /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
         public readonly string State;
@@ -125,6 +137,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        /// </summary>
+        public readonly string TrafficMode;
         /// <summary>
         /// Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         /// </summary>
@@ -173,6 +189,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             int oracleBgpAsn,
 
+            string providerRemoteRegion,
+
             string providerServiceId,
 
             string providerServiceKeyName,
@@ -185,13 +203,19 @@ namespace Pulumi.Oci.Core.Outputs
 
             string region,
 
+            string remoteAccountId,
+
             ImmutableArray<string> routingPolicies,
 
             string serviceType,
 
+            string sharedConnectionUuid,
+
             string state,
 
             string timeCreated,
+
+            string trafficMode,
 
             string type,
 
@@ -217,16 +241,20 @@ namespace Pulumi.Oci.Core.Outputs
             IsBfdEnabled = isBfdEnabled;
             IsTransportMode = isTransportMode;
             OracleBgpAsn = oracleBgpAsn;
+            ProviderRemoteRegion = providerRemoteRegion;
             ProviderServiceId = providerServiceId;
             ProviderServiceKeyName = providerServiceKeyName;
             ProviderState = providerState;
             PublicPrefixes = publicPrefixes;
             ReferenceComment = referenceComment;
             Region = region;
+            RemoteAccountId = remoteAccountId;
             RoutingPolicies = routingPolicies;
             ServiceType = serviceType;
+            SharedConnectionUuid = sharedConnectionUuid;
             State = state;
             TimeCreated = timeCreated;
+            TrafficMode = trafficMode;
             Type = type;
             VirtualCircuitId = virtualCircuitId;
             VirtualCircuitRedundancyMetadatas = virtualCircuitRedundancyMetadatas;

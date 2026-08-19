@@ -13,6 +13,839 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetIotDigitalTwinInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinInstancesFilterInput is an input type that accepts GetIotDigitalTwinInstancesFilterArgs and GetIotDigitalTwinInstancesFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterInput` via:
+//
+//	GetIotDigitalTwinInstancesFilterArgs{...}
+type GetIotDigitalTwinInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput
+	ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterOutput
+}
+
+type GetIotDigitalTwinInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
+	return i.ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterOutput)
+}
+
+// GetIotDigitalTwinInstancesFilterArrayInput is an input type that accepts GetIotDigitalTwinInstancesFilterArray and GetIotDigitalTwinInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterArrayInput` via:
+//
+//	GetIotDigitalTwinInstancesFilterArray{ GetIotDigitalTwinInstancesFilterArgs{...} }
+type GetIotDigitalTwinInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput
+	ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterArrayOutput
+}
+
+type GetIotDigitalTwinInstancesFilterArray []GetIotDigitalTwinInstancesFilterInput
+
+func (GetIotDigitalTwinInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
+	return i.ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinInstancesFilter {
+		return vs[0].([]GetIotDigitalTwinInstancesFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinInstancesFilterOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollection struct {
+	Items []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...}
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs struct {
+	Items GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...} }
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionInput
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) Items() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollection) []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollection {
+		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource. If left blank, the description will be derived from the spec.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	Spec        string `pulumi:"spec"`
+	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+	SpecUri string `pulumi:"specUri"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...}
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource. If left blank, the description will be derived from the spec.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	Spec        pulumi.StringInput `pulumi:"spec"`
+	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+	SpecUri pulumi.StringInput `pulumi:"specUri"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
+}
+
+// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...} }
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
+	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource. If left blank, the description will be derived from the spec.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.IotDomainId }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Spec() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Spec }).(pulumi.StringOutput)
+}
+
+// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SpecUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.SpecUri }).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
+		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
+}
+
+type GetIotDigitalTwinModelsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetIotDigitalTwinModelsFilterInput is an input type that accepts GetIotDigitalTwinModelsFilterArgs and GetIotDigitalTwinModelsFilterOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterInput` via:
+//
+//	GetIotDigitalTwinModelsFilterArgs{...}
+type GetIotDigitalTwinModelsFilterInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput
+	ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterOutput
+}
+
+type GetIotDigitalTwinModelsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetIotDigitalTwinModelsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
+	return i.ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterOutput)
+}
+
+// GetIotDigitalTwinModelsFilterArrayInput is an input type that accepts GetIotDigitalTwinModelsFilterArray and GetIotDigitalTwinModelsFilterArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterArrayInput` via:
+//
+//	GetIotDigitalTwinModelsFilterArray{ GetIotDigitalTwinModelsFilterArgs{...} }
+type GetIotDigitalTwinModelsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput
+	ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterArrayOutput
+}
+
+type GetIotDigitalTwinModelsFilterArray []GetIotDigitalTwinModelsFilterInput
+
+func (GetIotDigitalTwinModelsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
+	return i.ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterArrayOutput)
+}
+
+type GetIotDigitalTwinModelsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetIotDigitalTwinModelsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetIotDigitalTwinModelsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinModelsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinModelsFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsFilter {
+		return vs[0].([]GetIotDigitalTwinModelsFilter)[vs[1].(int)]
+	}).(GetIotDigitalTwinModelsFilterOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection struct {
+	Items []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem `pulumi:"items"`
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...}
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs struct {
+	Items GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...} }
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) Items() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection) []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
+		return v.Items
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection {
+		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem struct {
+	// The value(s) of the relationship properties defined in the source digital twin model.
+	Content string `pulumi:"content"`
+	// Filters resources that match the content path of the digital twin relationship.
+	ContentPath string `pulumi:"contentPath"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description string `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId string `pulumi:"iotDomainId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+	SourceDigitalTwinInstanceId string `pulumi:"sourceDigitalTwinInstanceId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+	TargetDigitalTwinInstanceId string `pulumi:"targetDigitalTwinInstanceId"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...}
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs struct {
+	// The value(s) of the relationship properties defined in the source digital twin model.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Filters resources that match the content path of the digital twin relationship.
+	ContentPath pulumi.StringInput `pulumi:"contentPath"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description of the resource.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Filter resources whose display name matches the specified value.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+	SourceDigitalTwinInstanceId pulumi.StringInput `pulumi:"sourceDigitalTwinInstanceId"`
+	// Filter resources whose lifecycleState matches the specified value.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+	TargetDigitalTwinInstanceId pulumi.StringInput `pulumi:"targetDigitalTwinInstanceId"`
+	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
+}
+
+// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput` via:
+//
+//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...} }
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
+	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return o
+}
+
+// The value(s) of the relationship properties defined in the source digital twin model.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Filters resources that match the content path of the digital twin relationship.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ContentPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.ContentPath
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A short description of the resource.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose display name matches the specified value.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) IotDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.IotDomainId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SourceDigitalTwinInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.SourceDigitalTwinInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// Filter resources whose lifecycleState matches the specified value.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TargetDigitalTwinInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TargetDigitalTwinInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
+		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)[vs[1].(int)]
+	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
+}
+
 type GetIotDigitalTwinRelationshipsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -21736,6 +22569,18 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotIotDomainDataRetentionPeriodsInDayInput)(nil)).Elem(), GetIotIotDomainDataRetentionPeriodsInDayArgs{})
@@ -22066,6 +22911,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetIotIotDomainDataRetentionPeriodsInDayOutput{})

@@ -42,6 +42,11 @@ public final class GetFileSystemsFileSystem {
      */
     private String compartmentId;
     /**
+     * @return Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    private String compartmentQuotaEnforcementState;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
@@ -179,6 +184,13 @@ public final class GetFileSystemsFileSystem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return Displays the compartment-level quota enforcement state affecting this file system.
+     * 
+     */
+    public String compartmentQuotaEnforcementState() {
+        return this.compartmentQuotaEnforcementState;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -341,6 +353,7 @@ public final class GetFileSystemsFileSystem {
         private String cloneAttachStatus;
         private Integer cloneCount;
         private String compartmentId;
+        private String compartmentQuotaEnforcementState;
         private Map<String,String> definedTags;
         private Integer detachCloneTrigger;
         private String displayName;
@@ -371,6 +384,7 @@ public final class GetFileSystemsFileSystem {
     	      this.cloneAttachStatus = defaults.cloneAttachStatus;
     	      this.cloneCount = defaults.cloneCount;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentQuotaEnforcementState = defaults.compartmentQuotaEnforcementState;
     	      this.definedTags = defaults.definedTags;
     	      this.detachCloneTrigger = defaults.detachCloneTrigger;
     	      this.displayName = defaults.displayName;
@@ -433,6 +447,14 @@ public final class GetFileSystemsFileSystem {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentQuotaEnforcementState(String compartmentQuotaEnforcementState) {
+            if (compartmentQuotaEnforcementState == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "compartmentQuotaEnforcementState");
+            }
+            this.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
             return this;
         }
         @CustomType.Setter
@@ -624,6 +646,7 @@ public final class GetFileSystemsFileSystem {
             _resultValue.cloneAttachStatus = cloneAttachStatus;
             _resultValue.cloneCount = cloneCount;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentQuotaEnforcementState = compartmentQuotaEnforcementState;
             _resultValue.definedTags = definedTags;
             _resultValue.detachCloneTrigger = detachCloneTrigger;
             _resultValue.displayName = displayName;

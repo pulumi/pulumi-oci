@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
         /// 
-        /// Retrieve private access channel in the specified Analytics Instance.
+        /// Retrieve private access channel for the specified Analytics Instance.
         /// 
         /// 
         /// ## Example Usage
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
         /// 
-        /// Retrieve private access channel in the specified Analytics Instance.
+        /// Retrieve private access channel for the specified Analytics Instance.
         /// 
         /// 
         /// ## Example Usage
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Analytics
         /// <summary>
         /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
         /// 
-        /// Retrieve private access channel in the specified Analytics Instance.
+        /// Retrieve private access channel for the specified Analytics Instance.
         /// 
         /// 
         /// ## Example Usage
@@ -100,13 +100,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class GetAnalyticsInstancePrivateAccessChannelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the AnalyticsInstance.
+        /// The OCID of the Analytics instance.
         /// </summary>
         [Input("analyticsInstanceId", required: true)]
         public string AnalyticsInstanceId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier key of the Private Access Channel.
+        /// The unique identifier key of the private access channel.
         /// </summary>
         [Input("privateAccessChannelKey", required: true)]
         public string PrivateAccessChannelKey { get; set; } = null!;
@@ -120,13 +120,13 @@ namespace Pulumi.Oci.Analytics
     public sealed class GetAnalyticsInstancePrivateAccessChannelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The OCID of the AnalyticsInstance.
+        /// The OCID of the Analytics instance.
         /// </summary>
         [Input("analyticsInstanceId", required: true)]
         public Input<string> AnalyticsInstanceId { get; set; } = null!;
 
         /// <summary>
-        /// The unique identifier key of the Private Access Channel.
+        /// The unique identifier key of the private access channel.
         /// </summary>
         [Input("privateAccessChannelKey", required: true)]
         public Input<string> PrivateAccessChannelKey { get; set; } = null!;
@@ -143,41 +143,41 @@ namespace Pulumi.Oci.Analytics
     {
         public readonly string AnalyticsInstanceId;
         /// <summary>
-        /// Display Name of the Private Access Channel.
+        /// Display name of the private access channel.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+        /// List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
         /// </summary>
         public readonly ImmutableArray<string> EgressSourceIpAddresses;
         public readonly string Id;
         /// <summary>
-        /// IP Address of the Private Access channel.
+        /// IP address of the private access channel.
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// Private Access Channel unique identifier key.
+        /// Private access channel unique identifier key.
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// Network Security Group OCIDs for an Analytics instance.
+        /// Network Security Group OCIDs for the Analytics instance.
         /// </summary>
         public readonly ImmutableArray<string> NetworkSecurityGroupIds;
         public readonly string PrivateAccessChannelKey;
         /// <summary>
-        /// List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        /// List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult> PrivateSourceDnsZones;
         /// <summary>
-        /// List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        /// List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult> PrivateSourceScanHosts;
         /// <summary>
-        /// OCID of the customer subnet connected to private access channel.
+        /// OCID of the customer subnet connected to the private access channel.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
-        /// OCID of the customer VCN peered with private access channel.
+        /// OCID of the customer VCN peered with the private access channel.
         /// </summary>
         public readonly string VcnId;
 

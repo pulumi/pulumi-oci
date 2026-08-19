@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
+import com.pulumi.oci.Database.inputs.VmClusterLiveImageVersionDetailArgs;
+import com.pulumi.oci.Database.inputs.VmClusterUpdateDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -384,6 +386,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    @Import(name="liveImageVersionDetails")
+    private @Nullable Output<List<VmClusterLiveImageVersionDetailArgs>> liveImageVersionDetails;
+
+    /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public Optional<Output<List<VmClusterLiveImageVersionDetailArgs>>> liveImageVersionDetails() {
+        return Optional.ofNullable(this.liveImageVersionDetails);
+    }
+
+    /**
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
@@ -410,6 +427,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<Double>> ocpusEnabled() {
         return Optional.ofNullable(this.ocpusEnabled);
+    }
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    @Import(name="oracleLinuxVersion")
+    private @Nullable Output<String> oracleLinuxVersion;
+
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public Optional<Output<String>> oracleLinuxVersion() {
+        return Optional.ofNullable(this.oracleLinuxVersion);
     }
 
     /**
@@ -563,6 +595,21 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Import(name="updateDetails")
+    private @Nullable Output<VmClusterUpdateDetailsArgs> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Optional<Output<VmClusterUpdateDetailsArgs>> updateDetails() {
+        return Optional.ofNullable(this.updateDetails);
+    }
+
+    /**
      * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      * 
      */
@@ -655,9 +702,11 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
         this.lastPatchHistoryEntryId = $.lastPatchHistoryEntryId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.liveImageVersionDetails = $.liveImageVersionDetails;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.ocpuCount = $.ocpuCount;
         this.ocpusEnabled = $.ocpusEnabled;
+        this.oracleLinuxVersion = $.oracleLinuxVersion;
         this.recoStoragePercentage = $.recoStoragePercentage;
         this.shape = $.shape;
         this.sparseStoragePercentage = $.sparseStoragePercentage;
@@ -668,6 +717,7 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
         this.systemVersion = $.systemVersion;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
+        this.updateDetails = $.updateDetails;
         this.vmBackupStorageType = $.vmBackupStorageType;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
         this.vmClusterType = $.vmClusterType;
@@ -1217,6 +1267,37 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(@Nullable Output<List<VmClusterLiveImageVersionDetailArgs>> liveImageVersionDetails) {
+            $.liveImageVersionDetails = liveImageVersionDetails;
+            return this;
+        }
+
+        /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(List<VmClusterLiveImageVersionDetailArgs> liveImageVersionDetails) {
+            return liveImageVersionDetails(Output.of(liveImageVersionDetails));
+        }
+
+        /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(VmClusterLiveImageVersionDetailArgs... liveImageVersionDetails) {
+            return liveImageVersionDetails(List.of(liveImageVersionDetails));
+        }
+
+        /**
          * @param memorySizeInGbs (Updatable) The memory to be allocated in GBs.
          * 
          * @return builder
@@ -1253,6 +1334,27 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
 
         public Builder ocpusEnabled(Double ocpusEnabled) {
             return ocpusEnabled(Output.of(ocpusEnabled));
+        }
+
+        /**
+         * @param oracleLinuxVersion Oracle Linux version for the respective Exadata Image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleLinuxVersion(@Nullable Output<String> oracleLinuxVersion) {
+            $.oracleLinuxVersion = oracleLinuxVersion;
+            return this;
+        }
+
+        /**
+         * @param oracleLinuxVersion Oracle Linux version for the respective Exadata Image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            return oracleLinuxVersion(Output.of(oracleLinuxVersion));
         }
 
         /**
@@ -1473,6 +1575,27 @@ public final class VmClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(@Nullable Output<VmClusterUpdateDetailsArgs> updateDetails) {
+            $.updateDetails = updateDetails;
+            return this;
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(VmClusterUpdateDetailsArgs updateDetails) {
+            return updateDetails(Output.of(updateDetails));
         }
 
         /**

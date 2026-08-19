@@ -38,6 +38,22 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        public readonly bool IsIndefiniteRetentionEnabled;
+        /// <summary>
+        /// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        public readonly bool IsPreventDeletionEnabled;
+        /// <summary>
+        /// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        public readonly bool IsRetentionLockEnabled;
+        /// <summary>
+        /// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult> RetentionPeriods;
+        /// <summary>
         /// The aggregate size of the volume group backup, in GBs.
         /// </summary>
         public readonly string SizeInGbs;
@@ -66,6 +82,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         public readonly string TimeRequestReceived;
+        /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        public readonly string TimeRetentionExpiresAt;
         /// <summary>
         /// The type of backup.
         /// </summary>
@@ -101,6 +121,14 @@ namespace Pulumi.Oci.Core.Outputs
 
             string id,
 
+            bool isIndefiniteRetentionEnabled,
+
+            bool isPreventDeletionEnabled,
+
+            bool isRetentionLockEnabled,
+
+            ImmutableArray<Outputs.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult> retentionPeriods,
+
             string sizeInGbs,
 
             string sizeInMbs,
@@ -116,6 +144,8 @@ namespace Pulumi.Oci.Core.Outputs
             string timeCreated,
 
             string timeRequestReceived,
+
+            string timeRetentionExpiresAt,
 
             string type,
 
@@ -133,6 +163,10 @@ namespace Pulumi.Oci.Core.Outputs
             ExpirationTime = expirationTime;
             FreeformTags = freeformTags;
             Id = id;
+            IsIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            IsPreventDeletionEnabled = isPreventDeletionEnabled;
+            IsRetentionLockEnabled = isRetentionLockEnabled;
+            RetentionPeriods = retentionPeriods;
             SizeInGbs = sizeInGbs;
             SizeInMbs = sizeInMbs;
             SourceDetails = sourceDetails;
@@ -141,6 +175,7 @@ namespace Pulumi.Oci.Core.Outputs
             State = state;
             TimeCreated = timeCreated;
             TimeRequestReceived = timeRequestReceived;
+            TimeRetentionExpiresAt = timeRetentionExpiresAt;
             Type = type;
             UniqueSizeInGbs = uniqueSizeInGbs;
             UniqueSizeInMbs = uniqueSizeInMbs;

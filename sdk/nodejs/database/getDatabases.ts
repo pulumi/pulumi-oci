@@ -21,6 +21,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dbHomeId: testDbHome.id,
  *     dbName: databaseDbName,
+ *     failoverTargets: databaseFailoverTargets,
+ *     managedAutoFailover: databaseManagedAutoFailover,
  *     state: databaseState,
  *     systemId: testSystem.id,
  * });
@@ -32,7 +34,9 @@ export function getDatabases(args: GetDatabasesArgs, opts?: pulumi.InvokeOptions
         "compartmentId": args.compartmentId,
         "dbHomeId": args.dbHomeId,
         "dbName": args.dbName,
+        "failoverTargets": args.failoverTargets,
         "filters": args.filters,
+        "managedAutoFailover": args.managedAutoFailover,
         "state": args.state,
         "systemId": args.systemId,
     }, opts);
@@ -54,7 +58,15 @@ export interface GetDatabasesArgs {
      * A filter to return only resources that match the entire database name given. The match is not case sensitive.
      */
     dbName?: string;
+    /**
+     * Filter the databases by failoverTargets param.
+     */
+    failoverTargets?: string;
     filters?: inputs.Database.GetDatabasesFilter[];
+    /**
+     * Filter the databases by managed auto failover param.
+     */
+    managedAutoFailover?: string;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */
@@ -85,11 +97,13 @@ export interface GetDatabasesResult {
      * The database name.
      */
     readonly dbName?: string;
+    readonly failoverTargets?: string;
     readonly filters?: outputs.Database.GetDatabasesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly managedAutoFailover?: string;
     /**
      * The current state of the database.
      */
@@ -111,6 +125,8 @@ export interface GetDatabasesResult {
  *     compartmentId: compartmentId,
  *     dbHomeId: testDbHome.id,
  *     dbName: databaseDbName,
+ *     failoverTargets: databaseFailoverTargets,
+ *     managedAutoFailover: databaseManagedAutoFailover,
  *     state: databaseState,
  *     systemId: testSystem.id,
  * });
@@ -122,7 +138,9 @@ export function getDatabasesOutput(args: GetDatabasesOutputArgs, opts?: pulumi.I
         "compartmentId": args.compartmentId,
         "dbHomeId": args.dbHomeId,
         "dbName": args.dbName,
+        "failoverTargets": args.failoverTargets,
         "filters": args.filters,
+        "managedAutoFailover": args.managedAutoFailover,
         "state": args.state,
         "systemId": args.systemId,
     }, opts);
@@ -144,7 +162,15 @@ export interface GetDatabasesOutputArgs {
      * A filter to return only resources that match the entire database name given. The match is not case sensitive.
      */
     dbName?: pulumi.Input<string | undefined>;
+    /**
+     * Filter the databases by failoverTargets param.
+     */
+    failoverTargets?: pulumi.Input<string | undefined>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDatabasesFilterArgs>[] | undefined>;
+    /**
+     * Filter the databases by managed auto failover param.
+     */
+    managedAutoFailover?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state exactly.
      */

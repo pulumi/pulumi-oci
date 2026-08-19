@@ -70,7 +70,8 @@ type GetApiaccesscontrolApiMetadataByEntityTypesArgs struct {
 type GetApiaccesscontrolApiMetadataByEntityTypesResult struct {
 	// The list of api_metadata_by_entity_type_collection.
 	ApiMetadataByEntityTypeCollections []GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection `pulumi:"apiMetadataByEntityTypeCollections"`
-	CompartmentId                      *string                                                                        `pulumi:"compartmentId"`
+	// The OCID of the compartment that contains the Service Provider Action.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Name of the Api.
 	DisplayName *string                                             `pulumi:"displayName"`
 	Filters     []GetApiaccesscontrolApiMetadataByEntityTypesFilter `pulumi:"filters"`
@@ -129,6 +130,7 @@ func (o GetApiaccesscontrolApiMetadataByEntityTypesResultOutput) ApiMetadataByEn
 	}).(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArrayOutput)
 }
 
+// The OCID of the compartment that contains the Service Provider Action.
 func (o GetApiaccesscontrolApiMetadataByEntityTypesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataByEntityTypesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

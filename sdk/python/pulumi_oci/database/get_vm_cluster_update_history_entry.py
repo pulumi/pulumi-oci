@@ -26,7 +26,7 @@ class GetVmClusterUpdateHistoryEntryResult:
     """
     A collection of values returned by getVmClusterUpdateHistoryEntry.
     """
-    def __init__(__self__, id=None, lifecycle_details=None, state=None, time_completed=None, time_started=None, update_action=None, update_history_entry_id=None, update_id=None, update_type=None, vm_cluster_id=None):
+    def __init__(__self__, id=None, lifecycle_details=None, state=None, time_completed=None, time_started=None, update_action=None, update_history_entry_id=None, update_id=None, update_mode=None, update_type=None, vm_cluster_id=None):
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -51,6 +51,9 @@ class GetVmClusterUpdateHistoryEntryResult:
         if update_id and not isinstance(update_id, str):
             raise TypeError("Expected argument 'update_id' to be a str")
         pulumi.set(__self__, "update_id", update_id)
+        if update_mode and not isinstance(update_mode, str):
+            raise TypeError("Expected argument 'update_mode' to be a str")
+        pulumi.set(__self__, "update_mode", update_mode)
         if update_type and not isinstance(update_type, str):
             raise TypeError("Expected argument 'update_type' to be a str")
         pulumi.set(__self__, "update_type", update_type)
@@ -120,6 +123,14 @@ class GetVmClusterUpdateHistoryEntryResult:
         return pulumi.get(self, "update_id")
 
     @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> _builtins.str:
+        """
+        The OS update mode performed using this maintenance update.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @_builtins.property
     @pulumi.getter(name="updateType")
     def update_type(self) -> _builtins.str:
         """
@@ -147,6 +158,7 @@ class AwaitableGetVmClusterUpdateHistoryEntryResult(GetVmClusterUpdateHistoryEnt
             update_action=self.update_action,
             update_history_entry_id=self.update_history_entry_id,
             update_id=self.update_id,
+            update_mode=self.update_mode,
             update_type=self.update_type,
             vm_cluster_id=self.vm_cluster_id)
 
@@ -188,6 +200,7 @@ def get_vm_cluster_update_history_entry(update_history_entry_id: Optional[_built
         update_action=pulumi.get(__ret__, 'update_action'),
         update_history_entry_id=pulumi.get(__ret__, 'update_history_entry_id'),
         update_id=pulumi.get(__ret__, 'update_id'),
+        update_mode=pulumi.get(__ret__, 'update_mode'),
         update_type=pulumi.get(__ret__, 'update_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_vm_cluster_update_history_entry_output(update_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -226,5 +239,6 @@ def get_vm_cluster_update_history_entry_output(update_history_entry_id: pulumi.I
         update_action=pulumi.get(__response__, 'update_action'),
         update_history_entry_id=pulumi.get(__response__, 'update_history_entry_id'),
         update_id=pulumi.get(__response__, 'update_id'),
+        update_mode=pulumi.get(__response__, 'update_mode'),
         update_type=pulumi.get(__response__, 'update_type'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

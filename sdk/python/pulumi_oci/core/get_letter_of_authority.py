@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetLetterOfAuthorityResult',
@@ -26,7 +27,10 @@ class GetLetterOfAuthorityResult:
     """
     A collection of values returned by getLetterOfAuthority.
     """
-    def __init__(__self__, authorized_entity_name=None, circuit_type=None, cross_connect_id=None, facility_location=None, id=None, port_name=None, time_expires=None, time_issued=None):
+    def __init__(__self__, authorized_agent=None, authorized_entity_name=None, circuit_type=None, cross_connect_id=None, extension_details=None, facility_location=None, id=None, port_name=None, time_expires=None, time_issued=None):
+        if authorized_agent and not isinstance(authorized_agent, str):
+            raise TypeError("Expected argument 'authorized_agent' to be a str")
+        pulumi.set(__self__, "authorized_agent", authorized_agent)
         if authorized_entity_name and not isinstance(authorized_entity_name, str):
             raise TypeError("Expected argument 'authorized_entity_name' to be a str")
         pulumi.set(__self__, "authorized_entity_name", authorized_entity_name)
@@ -36,6 +40,9 @@ class GetLetterOfAuthorityResult:
         if cross_connect_id and not isinstance(cross_connect_id, str):
             raise TypeError("Expected argument 'cross_connect_id' to be a str")
         pulumi.set(__self__, "cross_connect_id", cross_connect_id)
+        if extension_details and not isinstance(extension_details, list):
+            raise TypeError("Expected argument 'extension_details' to be a list")
+        pulumi.set(__self__, "extension_details", extension_details)
         if facility_location and not isinstance(facility_location, str):
             raise TypeError("Expected argument 'facility_location' to be a str")
         pulumi.set(__self__, "facility_location", facility_location)
@@ -51,6 +58,14 @@ class GetLetterOfAuthorityResult:
         if time_issued and not isinstance(time_issued, str):
             raise TypeError("Expected argument 'time_issued' to be a str")
         pulumi.set(__self__, "time_issued", time_issued)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> _builtins.str:
+        """
+        Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+        """
+        return pulumi.get(self, "authorized_agent")
 
     @_builtins.property
     @pulumi.getter(name="authorizedEntityName")
@@ -75,6 +90,14 @@ class GetLetterOfAuthorityResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
         """
         return pulumi.get(self, "cross_connect_id")
+
+    @_builtins.property
+    @pulumi.getter(name="extensionDetails")
+    def extension_details(self) -> Sequence['outputs.GetLetterOfAuthorityExtensionDetailResult']:
+        """
+        Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+        """
+        return pulumi.get(self, "extension_details")
 
     @_builtins.property
     @pulumi.getter(name="facilityLocation")
@@ -123,9 +146,11 @@ class AwaitableGetLetterOfAuthorityResult(GetLetterOfAuthorityResult):
         if False:
             yield self
         return GetLetterOfAuthorityResult(
+            authorized_agent=self.authorized_agent,
             authorized_entity_name=self.authorized_entity_name,
             circuit_type=self.circuit_type,
             cross_connect_id=self.cross_connect_id,
+            extension_details=self.extension_details,
             facility_location=self.facility_location,
             id=self.id,
             port_name=self.port_name,
@@ -158,9 +183,11 @@ def get_letter_of_authority(cross_connect_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getLetterOfAuthority:getLetterOfAuthority', __args__, opts=opts, typ=GetLetterOfAuthorityResult).value
 
     return AwaitableGetLetterOfAuthorityResult(
+        authorized_agent=pulumi.get(__ret__, 'authorized_agent'),
         authorized_entity_name=pulumi.get(__ret__, 'authorized_entity_name'),
         circuit_type=pulumi.get(__ret__, 'circuit_type'),
         cross_connect_id=pulumi.get(__ret__, 'cross_connect_id'),
+        extension_details=pulumi.get(__ret__, 'extension_details'),
         facility_location=pulumi.get(__ret__, 'facility_location'),
         id=pulumi.get(__ret__, 'id'),
         port_name=pulumi.get(__ret__, 'port_name'),
@@ -190,9 +217,11 @@ def get_letter_of_authority_output(cross_connect_id: pulumi.Input[Optional[_buil
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getLetterOfAuthority:getLetterOfAuthority', __args__, opts=opts, typ=GetLetterOfAuthorityResult)
     return __ret__.apply(lambda __response__: GetLetterOfAuthorityResult(
+        authorized_agent=pulumi.get(__response__, 'authorized_agent'),
         authorized_entity_name=pulumi.get(__response__, 'authorized_entity_name'),
         circuit_type=pulumi.get(__response__, 'circuit_type'),
         cross_connect_id=pulumi.get(__response__, 'cross_connect_id'),
+        extension_details=pulumi.get(__response__, 'extension_details'),
         facility_location=pulumi.get(__response__, 'facility_location'),
         id=pulumi.get(__response__, 'id'),
         port_name=pulumi.get(__response__, 'port_name'),

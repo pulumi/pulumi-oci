@@ -30,11 +30,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := database.GetDatabases(ctx, &database.GetDatabasesArgs{
-//				CompartmentId: compartmentId,
-//				DbHomeId:      pulumi.StringRef(testDbHome.Id),
-//				DbName:        pulumi.StringRef(databaseDbName),
-//				State:         pulumi.StringRef(databaseState),
-//				SystemId:      pulumi.StringRef(testSystem.Id),
+//				CompartmentId:       compartmentId,
+//				DbHomeId:            pulumi.StringRef(testDbHome.Id),
+//				DbName:              pulumi.StringRef(databaseDbName),
+//				FailoverTargets:     pulumi.StringRef(databaseFailoverTargets),
+//				ManagedAutoFailover: pulumi.StringRef(databaseManagedAutoFailover),
+//				State:               pulumi.StringRef(databaseState),
+//				SystemId:            pulumi.StringRef(testSystem.Id),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -61,8 +63,12 @@ type GetDatabasesArgs struct {
 	// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
 	DbHomeId *string `pulumi:"dbHomeId"`
 	// A filter to return only resources that match the entire database name given. The match is not case sensitive.
-	DbName  *string              `pulumi:"dbName"`
-	Filters []GetDatabasesFilter `pulumi:"filters"`
+	DbName *string `pulumi:"dbName"`
+	// Filter the databases by failoverTargets param.
+	FailoverTargets *string              `pulumi:"failoverTargets"`
+	Filters         []GetDatabasesFilter `pulumi:"filters"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover *string `pulumi:"managedAutoFailover"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
@@ -78,10 +84,12 @@ type GetDatabasesResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	DbHomeId *string `pulumi:"dbHomeId"`
 	// The database name.
-	DbName  *string              `pulumi:"dbName"`
-	Filters []GetDatabasesFilter `pulumi:"filters"`
+	DbName          *string              `pulumi:"dbName"`
+	FailoverTargets *string              `pulumi:"failoverTargets"`
+	Filters         []GetDatabasesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string  `pulumi:"id"`
+	ManagedAutoFailover *string `pulumi:"managedAutoFailover"`
 	// The current state of the database.
 	State    *string `pulumi:"state"`
 	SystemId *string `pulumi:"systemId"`
@@ -103,8 +111,12 @@ type GetDatabasesOutputArgs struct {
 	// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
 	DbHomeId pulumi.StringPtrInput `pulumi:"dbHomeId"`
 	// A filter to return only resources that match the entire database name given. The match is not case sensitive.
-	DbName  pulumi.StringPtrInput        `pulumi:"dbName"`
-	Filters GetDatabasesFilterArrayInput `pulumi:"filters"`
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+	// Filter the databases by failoverTargets param.
+	FailoverTargets pulumi.StringPtrInput        `pulumi:"failoverTargets"`
+	Filters         GetDatabasesFilterArrayInput `pulumi:"filters"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover pulumi.StringPtrInput `pulumi:"managedAutoFailover"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
@@ -150,6 +162,10 @@ func (o GetDatabasesResultOutput) DbName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabasesResult) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
 
+func (o GetDatabasesResultOutput) FailoverTargets() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasesResult) *string { return v.FailoverTargets }).(pulumi.StringPtrOutput)
+}
+
 func (o GetDatabasesResultOutput) Filters() GetDatabasesFilterArrayOutput {
 	return o.ApplyT(func(v GetDatabasesResult) []GetDatabasesFilter { return v.Filters }).(GetDatabasesFilterArrayOutput)
 }
@@ -157,6 +173,10 @@ func (o GetDatabasesResultOutput) Filters() GetDatabasesFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetDatabasesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasesResultOutput) ManagedAutoFailover() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabasesResult) *string { return v.ManagedAutoFailover }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the database.

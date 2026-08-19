@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseBackupsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -99,6 +100,21 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
     }
 
     /**
+     * Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     * 
+     */
+    @Import(name="isPitrEligible")
+    private @Nullable Boolean isPitrEligible;
+
+    /**
+     * @return Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+     * 
+     */
+    public Optional<Boolean> isPitrEligible() {
+        return Optional.ofNullable(this.isPitrEligible);
+    }
+
+    /**
      * A filter to return only resources that have the given key store id.
      * 
      */
@@ -152,6 +168,7 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.infrastructureType = $.infrastructureType;
+        this.isPitrEligible = $.isPitrEligible;
         this.keyStoreId = $.keyStoreId;
         this.state = $.state;
         this.type = $.type;
@@ -236,6 +253,17 @@ public final class GetAutonomousDatabaseBackupsPlainArgs extends com.pulumi.reso
          */
         public Builder infrastructureType(@Nullable String infrastructureType) {
             $.infrastructureType = infrastructureType;
+            return this;
+        }
+
+        /**
+         * @param isPitrEligible Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPitrEligible(@Nullable Boolean isPitrEligible) {
+            $.isPitrEligible = isPitrEligible;
             return this;
         }
 

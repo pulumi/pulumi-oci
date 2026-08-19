@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExadbVmClusterArgs;
 import com.pulumi.oci.Database.inputs.ExadbVmClusterState;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterIormConfigCache;
+import com.pulumi.oci.Database.outputs.ExadbVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeConfig;
 import com.pulumi.oci.Database.outputs.ExadbVmClusterNodeResource;
 import com.pulumi.oci.Utilities;
@@ -18,6 +19,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -423,6 +425,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
         return this.listenerPort;
     }
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    @Export(name="multiCloudIdentityConnectorConfigs", refs={List.class,ExadbVmClusterMultiCloudIdentityConnectorConfig.class}, tree="[0,1]")
+    private Output<List<ExadbVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public Output<List<ExadbVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
+    }
+    /**
      * (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -479,6 +495,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> privateZoneId() {
         return this.privateZoneId;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    @Export(name="registerPkcsTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> registerPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> registerPkcsTrigger() {
+        return Codegen.optional(this.registerPkcsTrigger);
     }
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -677,6 +707,20 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
         return this.systemVersion;
     }
     /**
+     * TDE keystore type
+     * 
+     */
+    @Export(name="tdeKeyStoreType", refs={String.class}, tree="[0]")
+    private Output<String> tdeKeyStoreType;
+
+    /**
+     * @return TDE keystore type
+     * 
+     */
+    public Output<String> tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
+    }
+    /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      * 
      */
@@ -693,9 +737,6 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
@@ -703,12 +744,29 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
+     */
+    public Output<String> timeZone() {
+        return this.timeZone;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> timeZone() {
-        return this.timeZone;
+    @Export(name="unregisterPkcsTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> unregisterPkcsTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> unregisterPkcsTrigger() {
+        return Codegen.optional(this.unregisterPkcsTrigger);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.

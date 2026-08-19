@@ -253,6 +253,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ListenerPort;
         /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudVmClusterLiveImageVersionDetailResult> LiveImageVersionDetails;
+        /// <summary>
         /// The memory to be allocated in GBs.
         /// </summary>
         public readonly int MemorySizeInGbs;
@@ -273,6 +277,10 @@ namespace Pulumi.Oci.Database
         /// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         public readonly double OcpuCount;
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        public readonly string OracleLinuxVersion;
         public readonly string PrivateZoneId;
         /// <summary>
         /// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -358,6 +366,7 @@ namespace Pulumi.Oci.Database
         /// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         public readonly string TimeZone;
+        public readonly ImmutableArray<Outputs.GetCloudVmClusterUpdateDetailResult> UpdateDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         /// </summary>
@@ -451,6 +460,8 @@ namespace Pulumi.Oci.Database
 
             string listenerPort,
 
+            ImmutableArray<Outputs.GetCloudVmClusterLiveImageVersionDetailResult> liveImageVersionDetails,
+
             int memorySizeInGbs,
 
             ImmutableArray<Outputs.GetCloudVmClusterMultiCloudIdentityConnectorConfigResult> multiCloudIdentityConnectorConfigs,
@@ -460,6 +471,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> nsgIds,
 
             double ocpuCount,
+
+            string oracleLinuxVersion,
 
             string privateZoneId,
 
@@ -504,6 +517,8 @@ namespace Pulumi.Oci.Database
             string timeCreated,
 
             string timeZone,
+
+            ImmutableArray<Outputs.GetCloudVmClusterUpdateDetailResult> updateDetails,
 
             ImmutableArray<string> vipIds,
 
@@ -550,11 +565,13 @@ namespace Pulumi.Oci.Database
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
             ListenerPort = listenerPort;
+            LiveImageVersionDetails = liveImageVersionDetails;
             MemorySizeInGbs = memorySizeInGbs;
             MultiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
+            OracleLinuxVersion = oracleLinuxVersion;
             PrivateZoneId = privateZoneId;
             RecoStoragePercentage = recoStoragePercentage;
             ScanDnsName = scanDnsName;
@@ -577,6 +594,7 @@ namespace Pulumi.Oci.Database
             TdeKeyStoreType = tdeKeyStoreType;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
+            UpdateDetails = updateDetails;
             VipIds = vipIds;
             Vipv6ids = vipv6ids;
             VmBackupStorageType = vmBackupStorageType;

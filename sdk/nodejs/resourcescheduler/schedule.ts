@@ -14,6 +14,49 @@ import * as utilities from "../utilities";
  *
  * This API creates a schedule. You must provide either resources or resourceFilters.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSchedule = new oci.resourcescheduler.Schedule("test_schedule", {
+ *     action: scheduleAction,
+ *     compartmentId: compartmentId,
+ *     recurrenceDetails: scheduleRecurrenceDetails,
+ *     recurrenceType: scheduleRecurrenceType,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: scheduleDescription,
+ *     displayName: scheduleDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     localTimeZone: scheduleLocalTimeZone,
+ *     resourceFilters: [{
+ *         attribute: scheduleResourceFiltersAttribute,
+ *         condition: scheduleResourceFiltersCondition,
+ *         shouldIncludeChildCompartments: scheduleResourceFiltersShouldIncludeChildCompartments === "true",
+ *         values: [{
+ *             namespace: scheduleResourceFiltersValueNamespace,
+ *             tagKey: scheduleResourceFiltersValueTagKey,
+ *             value: scheduleResourceFiltersValueValue,
+ *         }],
+ *     }],
+ *     resources: [{
+ *         id: scheduleResourcesId,
+ *         metadata: scheduleResourcesMetadata,
+ *         parameters: [{
+ *             parameterType: scheduleResourcesParametersParameterType,
+ *             value: scheduleResourcesParametersValue[0],
+ *         }],
+ *     }],
+ *     timeEnds: scheduleTimeEnds,
+ *     timeStarts: scheduleTimeStarts,
+ * });
+ * ```
+ *
  * ## Import
  *
  * Schedules can be imported using the `id`, e.g.
@@ -78,6 +121,10 @@ export class Schedule extends pulumi.CustomResource {
      * This is the status of the last work request.
      */
     declare public /*out*/ readonly lastRunStatus: pulumi.Output<string>;
+    /**
+     * (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+     */
+    declare public readonly localTimeZone: pulumi.Output<string>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
@@ -150,6 +197,7 @@ export class Schedule extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lastRunStatus"] = state?.lastRunStatus;
+            resourceInputs["localTimeZone"] = state?.localTimeZone;
             resourceInputs["recurrenceDetails"] = state?.recurrenceDetails;
             resourceInputs["recurrenceType"] = state?.recurrenceType;
             resourceInputs["resourceFilters"] = state?.resourceFilters;
@@ -182,6 +230,7 @@ export class Schedule extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["localTimeZone"] = args?.localTimeZone;
             resourceInputs["recurrenceDetails"] = args?.recurrenceDetails;
             resourceInputs["recurrenceType"] = args?.recurrenceType;
             resourceInputs["resourceFilters"] = args?.resourceFilters;
@@ -233,6 +282,10 @@ export interface ScheduleState {
      * This is the status of the last work request.
      */
     lastRunStatus?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+     */
+    localTimeZone?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
@@ -314,6 +367,10 @@ export interface ScheduleArgs {
      * (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+     */
+    localTimeZone?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */

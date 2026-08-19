@@ -71,6 +71,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbGcpIdentityConnector{}
 	case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
 		r = &DbmulticloudOracleDbGcpKeyRing{}
+	case "oci:oci/ddfsInstance:DdfsInstance":
+		r = &DdfsInstance{}
 	case "oci:oci/difStack:DifStack":
 		r = &DifStack{}
 	case "oci:oci/distributedDatabaseDistributedAutonomousDatabase:DistributedDatabaseDistributedAutonomousDatabase":
@@ -257,6 +259,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/dbmulticloudOracleDbGcpKeyRing",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/ddfsInstance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

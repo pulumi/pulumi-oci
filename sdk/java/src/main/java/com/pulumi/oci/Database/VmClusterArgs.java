@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
+import com.pulumi.oci.Database.inputs.VmClusterUpdateDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -407,6 +408,21 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Import(name="updateDetails")
+    private @Nullable Output<VmClusterUpdateDetailsArgs> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Optional<Output<VmClusterUpdateDetailsArgs>> updateDetails() {
+        return Optional.ofNullable(this.updateDetails);
+    }
+
+    /**
      * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
      * 
      */
@@ -501,6 +517,7 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.sshPublicKeys = $.sshPublicKeys;
         this.systemVersion = $.systemVersion;
         this.timeZone = $.timeZone;
+        this.updateDetails = $.updateDetails;
         this.vmBackupStorageType = $.vmBackupStorageType;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
         this.vmClusterType = $.vmClusterType;
@@ -1087,6 +1104,27 @@ public final class VmClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(@Nullable Output<VmClusterUpdateDetailsArgs> updateDetails) {
+            $.updateDetails = updateDetails;
+            return this;
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(VmClusterUpdateDetailsArgs updateDetails) {
+            return updateDetails(Output.of(updateDetails));
         }
 
         /**

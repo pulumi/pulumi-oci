@@ -26,13 +26,16 @@ class GetApiaccesscontrolApiMetadataResult:
     """
     A collection of values returned by getApiaccesscontrolApiMetadata.
     """
-    def __init__(__self__, api_metadata_id=None, api_name=None, defined_tags=None, display_name=None, entity_type=None, fields=None, freeform_tags=None, id=None, lifecycle_details=None, path=None, service_name=None, state=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None):
+    def __init__(__self__, api_metadata_id=None, api_name=None, attributes=None, defined_tags=None, display_name=None, entity_type=None, fields=None, freeform_tags=None, id=None, lifecycle_details=None, path=None, service_name=None, state=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None):
         if api_metadata_id and not isinstance(api_metadata_id, str):
             raise TypeError("Expected argument 'api_metadata_id' to be a str")
         pulumi.set(__self__, "api_metadata_id", api_metadata_id)
         if api_name and not isinstance(api_name, str):
             raise TypeError("Expected argument 'api_name' to be a str")
         pulumi.set(__self__, "api_name", api_name)
+        if attributes and not isinstance(attributes, list):
+            raise TypeError("Expected argument 'attributes' to be a list")
+        pulumi.set(__self__, "attributes", attributes)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -90,6 +93,14 @@ class GetApiaccesscontrolApiMetadataResult:
         return pulumi.get(self, "api_name")
 
     @_builtins.property
+    @pulumi.getter
+    def attributes(self) -> Sequence[_builtins.str]:
+        """
+        List of the fields that is use while calling post or put for the data.
+        """
+        return pulumi.get(self, "attributes")
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -117,7 +128,7 @@ class GetApiaccesscontrolApiMetadataResult:
     @pulumi.getter
     def fields(self) -> Sequence[_builtins.str]:
         """
-        List of the fields that is use while calling post or put for the data.
+        deprecated; Use attributes field instead.
         """
         return pulumi.get(self, "fields")
 
@@ -210,6 +221,7 @@ class AwaitableGetApiaccesscontrolApiMetadataResult(GetApiaccesscontrolApiMetada
         return GetApiaccesscontrolApiMetadataResult(
             api_metadata_id=self.api_metadata_id,
             api_name=self.api_name,
+            attributes=self.attributes,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             entity_type=self.entity_type,
@@ -253,6 +265,7 @@ def get_apiaccesscontrol_api_metadata(api_metadata_id: Optional[_builtins.str] =
     return AwaitableGetApiaccesscontrolApiMetadataResult(
         api_metadata_id=pulumi.get(__ret__, 'api_metadata_id'),
         api_name=pulumi.get(__ret__, 'api_name'),
+        attributes=pulumi.get(__ret__, 'attributes'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         entity_type=pulumi.get(__ret__, 'entity_type'),
@@ -293,6 +306,7 @@ def get_apiaccesscontrol_api_metadata_output(api_metadata_id: pulumi.Input[Optio
     return __ret__.apply(lambda __response__: GetApiaccesscontrolApiMetadataResult(
         api_metadata_id=pulumi.get(__response__, 'api_metadata_id'),
         api_name=pulumi.get(__response__, 'api_name'),
+        attributes=pulumi.get(__response__, 'attributes'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
         entity_type=pulumi.get(__response__, 'entity_type'),

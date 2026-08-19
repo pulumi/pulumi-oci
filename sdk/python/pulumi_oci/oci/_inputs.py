@@ -19,6 +19,8 @@ __all__ = [
     'ApiPlatformApiPlatformInstanceIdcsAppArgsDict',
     'ApiPlatformApiPlatformInstanceUriArgs',
     'ApiPlatformApiPlatformInstanceUriArgsDict',
+    'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs',
+    'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs',
@@ -351,6 +353,8 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict',
     'GetDbmulticloudOracleDbGcpKeysFilterArgs',
     'GetDbmulticloudOracleDbGcpKeysFilterArgsDict',
+    'GetDdfsInstancesFilterArgs',
+    'GetDdfsInstancesFilterArgsDict',
     'GetDifStacksFilterArgs',
     'GetDifStacksFilterArgsDict',
     'GetDistributedDatabaseDistributedAutonomousDatabasesFilterArgs',
@@ -523,6 +527,53 @@ class ApiPlatformApiPlatformInstanceUriArgs:
         pulumi.set(self, "management_portal_uri", value)
 
 
+class ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict(TypedDict):
+    group_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    (Updatable) id of the group.
+    """
+    group_level: pulumi.Input[_builtins.int]
+    """
+    (Updatable) level of the group.
+    """
+
+@pulumi.input_type
+class ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs:
+    def __init__(__self__, *,
+                 group_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 group_level: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] group_ids: (Updatable) id of the group.
+        :param pulumi.Input[_builtins.int] group_level: (Updatable) level of the group.
+        """
+        pulumi.set(__self__, "group_ids", group_ids)
+        pulumi.set(__self__, "group_level", group_level)
+
+    @_builtins.property
+    @pulumi.getter(name="groupIds")
+    def group_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) id of the group.
+        """
+        return pulumi.get(self, "group_ids")
+
+    @group_ids.setter
+    def group_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "group_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupLevel")
+    def group_level(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) level of the group.
+        """
+        return pulumi.get(self, "group_level")
+
+    @group_level.setter
+    def group_level(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "group_level", value)
+
+
 class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict(TypedDict):
     api_name: pulumi.Input[_builtins.str]
     """
@@ -600,6 +651,10 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict(TypedDict):
     """
     Comment specified by the approver of the request.
     """
+    approver_group_level: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The group level at which the approver approved.
+    """
     approver_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The userId of the approver.
@@ -618,12 +673,14 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs:
     def __init__(__self__, *,
                  approval_action: pulumi.Input[Optional[_builtins.str]] = None,
                  approval_comment: pulumi.Input[Optional[_builtins.str]] = None,
+                 approver_group_level: pulumi.Input[Optional[_builtins.int]] = None,
                  approver_id: pulumi.Input[Optional[_builtins.str]] = None,
                  time_approved_for_access: pulumi.Input[Optional[_builtins.str]] = None,
                  time_of_authorization: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] approval_action: The action done by the approver.
         :param pulumi.Input[_builtins.str] approval_comment: Comment specified by the approver of the request.
+        :param pulumi.Input[_builtins.int] approver_group_level: The group level at which the approver approved.
         :param pulumi.Input[_builtins.str] approver_id: The userId of the approver.
         :param pulumi.Input[_builtins.str] time_approved_for_access: Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_of_authorization: Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -632,6 +689,8 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs:
             pulumi.set(__self__, "approval_action", approval_action)
         if approval_comment is not None:
             pulumi.set(__self__, "approval_comment", approval_comment)
+        if approver_group_level is not None:
+            pulumi.set(__self__, "approver_group_level", approver_group_level)
         if approver_id is not None:
             pulumi.set(__self__, "approver_id", approver_id)
         if time_approved_for_access is not None:
@@ -662,6 +721,18 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs:
     @approval_comment.setter
     def approval_comment(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "approval_comment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevel")
+    def approver_group_level(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The group level at which the approver approved.
+        """
+        return pulumi.get(self, "approver_group_level")
+
+    @approver_group_level.setter
+    def approver_group_level(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "approver_group_level", value)
 
     @_builtins.property
     @pulumi.getter(name="approverId")
@@ -16351,6 +16422,50 @@ class GetDbmulticloudOracleDbGcpKeysFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbGcpKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDdfsInstancesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDdfsInstancesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

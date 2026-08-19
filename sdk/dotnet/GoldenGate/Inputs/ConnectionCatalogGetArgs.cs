@@ -73,7 +73,10 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? PropertiesSecretId { get; set; }
 
         /// <summary>
-        /// (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog'
+        /// (Updatable)
+        /// * NESSIE: Nessie URI. e.g.: 'http://&lt;nessie-server&gt;.com:10001/api/v2'
+        /// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog'
+        /// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
         /// </summary>
         [Input("uri")]
         public Input<string>? Uri { get; set; }

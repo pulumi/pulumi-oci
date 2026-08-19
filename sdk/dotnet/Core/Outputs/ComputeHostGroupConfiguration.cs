@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? FirmwareBundleId;
         /// <summary>
+        /// (Updatable) Additional quick recycle settings.
+        /// </summary>
+        public readonly Outputs.ComputeHostGroupConfigurationQuickRecycleSettings? QuickRecycleSettings;
+        /// <summary>
         /// (Updatable) Preferred recycle level for hosts associated with the reservation config.
         /// * `SKIP_RECYCLE` - Skips host wipe.
         /// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -36,6 +40,8 @@ namespace Pulumi.Oci.Core.Outputs
         private ComputeHostGroupConfiguration(
             string? firmwareBundleId,
 
+            Outputs.ComputeHostGroupConfigurationQuickRecycleSettings? quickRecycleSettings,
+
             string? recycleLevel,
 
             string? state,
@@ -43,6 +49,7 @@ namespace Pulumi.Oci.Core.Outputs
             string? target)
         {
             FirmwareBundleId = firmwareBundleId;
+            QuickRecycleSettings = quickRecycleSettings;
             RecycleLevel = recycleLevel;
             State = state;
             Target = target;

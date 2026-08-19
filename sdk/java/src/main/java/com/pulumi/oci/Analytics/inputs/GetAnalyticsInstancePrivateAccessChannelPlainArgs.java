@@ -14,14 +14,14 @@ public final class GetAnalyticsInstancePrivateAccessChannelPlainArgs extends com
     public static final GetAnalyticsInstancePrivateAccessChannelPlainArgs Empty = new GetAnalyticsInstancePrivateAccessChannelPlainArgs();
 
     /**
-     * The OCID of the AnalyticsInstance.
+     * The OCID of the Analytics instance.
      * 
      */
     @Import(name="analyticsInstanceId", required=true)
     private String analyticsInstanceId;
 
     /**
-     * @return The OCID of the AnalyticsInstance.
+     * @return The OCID of the Analytics instance.
      * 
      */
     public String analyticsInstanceId() {
@@ -29,14 +29,14 @@ public final class GetAnalyticsInstancePrivateAccessChannelPlainArgs extends com
     }
 
     /**
-     * The unique identifier key of the Private Access Channel.
+     * The unique identifier key of the private access channel.
      * 
      */
     @Import(name="privateAccessChannelKey", required=true)
     private String privateAccessChannelKey;
 
     /**
-     * @return The unique identifier key of the Private Access Channel.
+     * @return The unique identifier key of the private access channel.
      * 
      */
     public String privateAccessChannelKey() {
@@ -69,7 +69,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelPlainArgs extends com
         }
 
         /**
-         * @param analyticsInstanceId The OCID of the AnalyticsInstance.
+         * @param analyticsInstanceId The OCID of the Analytics instance.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetAnalyticsInstancePrivateAccessChannelPlainArgs extends com
         }
 
         /**
-         * @param privateAccessChannelKey The unique identifier key of the Private Access Channel.
+         * @param privateAccessChannelKey The unique identifier key of the private access channel.
          * 
          * @return builder
          * 

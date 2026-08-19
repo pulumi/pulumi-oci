@@ -13,12 +13,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectionStorage {
     /**
-     * @return (Updatable) Access key ID to access the Amazon S3 bucket.
+     * @return (Updatable)
+     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     private @Nullable String accessKeyId;
     /**
-     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
@@ -37,7 +40,10 @@ public final class ConnectionStorage {
      */
     private @Nullable String accountName;
     /**
-     * @return (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * @return (Updatable)
+     * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     private @Nullable String bucket;
@@ -47,7 +53,11 @@ public final class ConnectionStorage {
      */
     private @Nullable String container;
     /**
-     * @return (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return (Updatable)
+     * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     private @Nullable String endpoint;
@@ -67,7 +77,10 @@ public final class ConnectionStorage {
      */
     private @Nullable String schemeType;
     /**
-     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
@@ -76,12 +89,14 @@ public final class ConnectionStorage {
     @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private @Nullable String secretAccessKey;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return (Updatable)
+     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     private @Nullable String secretAccessKeySecretId;
     /**
-     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
@@ -102,14 +117,17 @@ public final class ConnectionStorage {
 
     private ConnectionStorage() {}
     /**
-     * @return (Updatable) Access key ID to access the Amazon S3 bucket.
+     * @return (Updatable)
+     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     public Optional<String> accessKeyId() {
         return Optional.ofNullable(this.accessKeyId);
     }
     /**
-     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
@@ -134,7 +152,10 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.accountName);
     }
     /**
-     * @return (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * @return (Updatable)
+     * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     public Optional<String> bucket() {
@@ -148,7 +169,11 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.container);
     }
     /**
-     * @return (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * @return (Updatable)
+     * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
+     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     public Optional<String> endpoint() {
@@ -176,7 +201,10 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.schemeType);
     }
     /**
-     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+     * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
@@ -187,14 +215,16 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.secretAccessKey);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * @return (Updatable)
+     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
      * 
      */
     public Optional<String> secretAccessKeySecretId() {
         return Optional.ofNullable(this.secretAccessKeySecretId);
     }
     /**
-     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.

@@ -27,7 +27,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, reco_storage_percentage=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_backup_storage_type=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None, vm_file_system_storage_type=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, live_image_version_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, oracle_linux_version=None, reco_storage_percentage=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, update_details=None, vm_backup_storage_type=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None, vm_file_system_storage_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -103,6 +103,9 @@ class GetVmClusterResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if live_image_version_details and not isinstance(live_image_version_details, list):
+            raise TypeError("Expected argument 'live_image_version_details' to be a list")
+        pulumi.set(__self__, "live_image_version_details", live_image_version_details)
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
@@ -112,6 +115,9 @@ class GetVmClusterResult:
         if ocpus_enabled and not isinstance(ocpus_enabled, float):
             raise TypeError("Expected argument 'ocpus_enabled' to be a float")
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if oracle_linux_version and not isinstance(oracle_linux_version, str):
+            raise TypeError("Expected argument 'oracle_linux_version' to be a str")
+        pulumi.set(__self__, "oracle_linux_version", oracle_linux_version)
         if reco_storage_percentage and not isinstance(reco_storage_percentage, int):
             raise TypeError("Expected argument 'reco_storage_percentage' to be a int")
         pulumi.set(__self__, "reco_storage_percentage", reco_storage_percentage)
@@ -142,6 +148,9 @@ class GetVmClusterResult:
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
+        if update_details and not isinstance(update_details, list):
+            raise TypeError("Expected argument 'update_details' to be a list")
+        pulumi.set(__self__, "update_details", update_details)
         if vm_backup_storage_type and not isinstance(vm_backup_storage_type, str):
             raise TypeError("Expected argument 'vm_backup_storage_type' to be a str")
         pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
@@ -356,6 +365,14 @@ class GetVmClusterResult:
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> Sequence['outputs.GetVmClusterLiveImageVersionDetailResult']:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> _builtins.int:
         """
@@ -372,6 +389,14 @@ class GetVmClusterResult:
     @pulumi.getter(name="ocpusEnabled")
     def ocpus_enabled(self) -> _builtins.float:
         return pulumi.get(self, "ocpus_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> _builtins.str:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
 
     @_builtins.property
     @pulumi.getter(name="recoStoragePercentage")
@@ -454,6 +479,11 @@ class GetVmClusterResult:
         return pulumi.get(self, "time_zone")
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> Sequence['outputs.GetVmClusterUpdateDetailResult']:
+        return pulumi.get(self, "update_details")
+
+    @_builtins.property
     @pulumi.getter(name="vmBackupStorageType")
     def vm_backup_storage_type(self) -> _builtins.str:
         """
@@ -522,9 +552,11 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             last_patch_history_entry_id=self.last_patch_history_entry_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
+            live_image_version_details=self.live_image_version_details,
             memory_size_in_gbs=self.memory_size_in_gbs,
             ocpu_count=self.ocpu_count,
             ocpus_enabled=self.ocpus_enabled,
+            oracle_linux_version=self.oracle_linux_version,
             reco_storage_percentage=self.reco_storage_percentage,
             shape=self.shape,
             sparse_storage_percentage=self.sparse_storage_percentage,
@@ -535,6 +567,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             system_version=self.system_version,
             time_created=self.time_created,
             time_zone=self.time_zone,
+            update_details=self.update_details,
             vm_backup_storage_type=self.vm_backup_storage_type,
             vm_cluster_id=self.vm_cluster_id,
             vm_cluster_network_id=self.vm_cluster_network_id,
@@ -592,9 +625,11 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         last_patch_history_entry_id=pulumi.get(__ret__, 'last_patch_history_entry_id'),
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        live_image_version_details=pulumi.get(__ret__, 'live_image_version_details'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
         ocpus_enabled=pulumi.get(__ret__, 'ocpus_enabled'),
+        oracle_linux_version=pulumi.get(__ret__, 'oracle_linux_version'),
         reco_storage_percentage=pulumi.get(__ret__, 'reco_storage_percentage'),
         shape=pulumi.get(__ret__, 'shape'),
         sparse_storage_percentage=pulumi.get(__ret__, 'sparse_storage_percentage'),
@@ -605,6 +640,7 @@ def get_vm_cluster(vm_cluster_id: Optional[_builtins.str] = None,
         system_version=pulumi.get(__ret__, 'system_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
+        update_details=pulumi.get(__ret__, 'update_details'),
         vm_backup_storage_type=pulumi.get(__ret__, 'vm_backup_storage_type'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
         vm_cluster_network_id=pulumi.get(__ret__, 'vm_cluster_network_id'),
@@ -659,9 +695,11 @@ def get_vm_cluster_output(vm_cluster_id: pulumi.Input[Optional[_builtins.str]] =
         last_patch_history_entry_id=pulumi.get(__response__, 'last_patch_history_entry_id'),
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        live_image_version_details=pulumi.get(__response__, 'live_image_version_details'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
         ocpus_enabled=pulumi.get(__response__, 'ocpus_enabled'),
+        oracle_linux_version=pulumi.get(__response__, 'oracle_linux_version'),
         reco_storage_percentage=pulumi.get(__response__, 'reco_storage_percentage'),
         shape=pulumi.get(__response__, 'shape'),
         sparse_storage_percentage=pulumi.get(__response__, 'sparse_storage_percentage'),
@@ -672,6 +710,7 @@ def get_vm_cluster_output(vm_cluster_id: pulumi.Input[Optional[_builtins.str]] =
         system_version=pulumi.get(__response__, 'system_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
+        update_details=pulumi.get(__response__, 'update_details'),
         vm_backup_storage_type=pulumi.get(__response__, 'vm_backup_storage_type'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),
         vm_cluster_network_id=pulumi.get(__response__, 'vm_cluster_network_id'),

@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of the private source DNS zone.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * @return (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     private String dnsZone;
 
     private AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone() {}
     /**
-     * @return (Updatable) Description of private source dns zone.
+     * @return (Updatable) Description of the private source DNS zone.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+     * @return (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
      * 
      */
     public String dnsZone() {

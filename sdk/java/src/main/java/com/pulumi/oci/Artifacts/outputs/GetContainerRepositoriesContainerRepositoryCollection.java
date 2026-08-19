@@ -18,6 +18,10 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
      * 
      */
     private Integer imageCount;
+    /**
+     * @return List of container repositories.
+     * 
+     */
     private List<GetContainerRepositoriesContainerRepositoryCollectionItem> items;
     /**
      * @return Total number of layers.
@@ -25,11 +29,19 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
      */
     private Integer layerCount;
     /**
-     * @return Total storage in bytes consumed by layers.
+     * @return Total size of layers.
      * 
      */
     private String layersSizeInBytes;
+    /**
+     * @return The number of remaining items.
+     * 
+     */
     private Integer remainingItemsCount;
+    /**
+     * @return Total number of repositories.
+     * 
+     */
     private Integer repositoryCount;
 
     private GetContainerRepositoriesContainerRepositoryCollection() {}
@@ -40,6 +52,10 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
     public Integer imageCount() {
         return this.imageCount;
     }
+    /**
+     * @return List of container repositories.
+     * 
+     */
     public List<GetContainerRepositoriesContainerRepositoryCollectionItem> items() {
         return this.items;
     }
@@ -51,15 +67,23 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
         return this.layerCount;
     }
     /**
-     * @return Total storage in bytes consumed by layers.
+     * @return Total size of layers.
      * 
      */
     public String layersSizeInBytes() {
         return this.layersSizeInBytes;
     }
+    /**
+     * @return The number of remaining items.
+     * 
+     */
     public Integer remainingItemsCount() {
         return this.remainingItemsCount;
     }
+    /**
+     * @return Total number of repositories.
+     * 
+     */
     public Integer repositoryCount() {
         return this.repositoryCount;
     }

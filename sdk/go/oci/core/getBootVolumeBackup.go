@@ -75,8 +75,16 @@ type LookupBootVolumeBackupResult struct {
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId string `pulumi:"imageId"`
+	// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled bool `pulumi:"isIndefiniteRetentionEnabled"`
+	// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled bool `pulumi:"isPreventDeletionEnabled"`
+	// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
 	// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId string `pulumi:"kmsKeyId"`
+	// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriods []GetBootVolumeBackupRetentionPeriod `pulumi:"retentionPeriods"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
 	// The OCID of the source boot volume backup.
@@ -92,10 +100,14 @@ type LookupBootVolumeBackupResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived string `pulumi:"timeRequestReceived"`
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt string `pulumi:"timeRetentionExpiresAt"`
 	// The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
 	Type string `pulumi:"type"`
 	// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
 	UniqueSizeInGbs string `pulumi:"uniqueSizeInGbs"`
+	// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+	VolumeGroupBackupId string `pulumi:"volumeGroupBackupId"`
 }
 
 func LookupBootVolumeBackupOutput(ctx *pulumi.Context, args LookupBootVolumeBackupOutputArgs, opts ...pulumi.InvokeOption) LookupBootVolumeBackupResultOutput {
@@ -176,9 +188,29 @@ func (o LookupBootVolumeBackupResultOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
+// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+func (o LookupBootVolumeBackupResultOutput) IsIndefiniteRetentionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) bool { return v.IsIndefiniteRetentionEnabled }).(pulumi.BoolOutput)
+}
+
+// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+func (o LookupBootVolumeBackupResultOutput) IsPreventDeletionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) bool { return v.IsPreventDeletionEnabled }).(pulumi.BoolOutput)
+}
+
+// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+func (o LookupBootVolumeBackupResultOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
 // The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o LookupBootVolumeBackupResultOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o LookupBootVolumeBackupResultOutput) RetentionPeriods() GetBootVolumeBackupRetentionPeriodArrayOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) []GetBootVolumeBackupRetentionPeriod { return v.RetentionPeriods }).(GetBootVolumeBackupRetentionPeriodArrayOutput)
 }
 
 // The size of the boot volume, in GBs.
@@ -220,6 +252,11 @@ func (o LookupBootVolumeBackupResultOutput) TimeRequestReceived() pulumi.StringO
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.TimeRequestReceived }).(pulumi.StringOutput)
 }
 
+// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o LookupBootVolumeBackupResultOutput) TimeRetentionExpiresAt() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.TimeRetentionExpiresAt }).(pulumi.StringOutput)
+}
+
 // The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
 func (o LookupBootVolumeBackupResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.Type }).(pulumi.StringOutput)
@@ -228,6 +265,11 @@ func (o LookupBootVolumeBackupResultOutput) Type() pulumi.StringOutput {
 // The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
 func (o LookupBootVolumeBackupResultOutput) UniqueSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.UniqueSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+func (o LookupBootVolumeBackupResultOutput) VolumeGroupBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) string { return v.VolumeGroupBackupId }).(pulumi.StringOutput)
 }
 
 func init() {

@@ -81,6 +81,7 @@ import (
 //				IpMtu:                  pulumi.Any(virtualCircuitIpMtu),
 //				IsBfdEnabled:           pulumi.Any(virtualCircuitIsBfdEnabled),
 //				IsTransportMode:        pulumi.Any(virtualCircuitIsTransportMode),
+//				ProviderRemoteRegion:   pulumi.Any(virtualCircuitProviderRemoteRegion),
 //				GatewayId:              pulumi.Any(testGateway.Id),
 //				ProviderServiceId:      pulumi.Any(testFastConnectProviderServices.FastConnectProviderServices[0].Id),
 //				ProviderServiceKeyName: pulumi.Any(virtualCircuitProviderServiceKeyName),
@@ -90,7 +91,9 @@ import (
 //					},
 //				},
 //				Region:          pulumi.Any(virtualCircuitRegion),
+//				RemoteAccountId: pulumi.Any(testRemoteAccount.Id),
 //				RoutingPolicies: pulumi.Any(virtualCircuitRoutingPolicy),
+//				TrafficMode:     pulumi.Any(virtualCircuitTrafficMode),
 //			})
 //			if err != nil {
 //				return err
@@ -149,6 +152,8 @@ type VirtualCircuit struct {
 	IsTransportMode pulumi.BoolOutput `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn pulumi.IntOutput `pulumi:"oracleBgpAsn"`
+	// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+	ProviderRemoteRegion pulumi.StringOutput `pulumi:"providerRemoteRegion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringOutput `pulumi:"providerServiceId"`
 	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
@@ -161,14 +166,20 @@ type VirtualCircuit struct {
 	ReferenceComment pulumi.StringOutput `pulumi:"referenceComment"`
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
 	Region pulumi.StringOutput `pulumi:"region"`
+	// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+	RemoteAccountId pulumi.StringOutput `pulumi:"remoteAccountId"`
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies pulumi.StringArrayOutput `pulumi:"routingPolicies"`
 	// Provider service type.
 	ServiceType pulumi.StringOutput `pulumi:"serviceType"`
+	// The Shared unique identifier for the connection between the multicloud interconnect providers
+	SharedConnectionUuid pulumi.StringOutput `pulumi:"sharedConnectionUuid"`
 	// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringOutput `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -252,6 +263,8 @@ type virtualCircuitState struct {
 	IsTransportMode *bool `pulumi:"isTransportMode"`
 	// The Oracle BGP ASN.
 	OracleBgpAsn *int `pulumi:"oracleBgpAsn"`
+	// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+	ProviderRemoteRegion *string `pulumi:"providerRemoteRegion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId *string `pulumi:"providerServiceId"`
 	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
@@ -264,14 +277,20 @@ type virtualCircuitState struct {
 	ReferenceComment *string `pulumi:"referenceComment"`
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
 	Region *string `pulumi:"region"`
+	// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+	RemoteAccountId *string `pulumi:"remoteAccountId"`
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies []string `pulumi:"routingPolicies"`
 	// Provider service type.
 	ServiceType *string `pulumi:"serviceType"`
+	// The Shared unique identifier for the connection between the multicloud interconnect providers
+	SharedConnectionUuid *string `pulumi:"sharedConnectionUuid"`
 	// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	State *string `pulumi:"state"`
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode *string `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -320,6 +339,8 @@ type VirtualCircuitState struct {
 	IsTransportMode pulumi.BoolPtrInput
 	// The Oracle BGP ASN.
 	OracleBgpAsn pulumi.IntPtrInput
+	// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+	ProviderRemoteRegion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringPtrInput
 	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
@@ -332,14 +353,20 @@ type VirtualCircuitState struct {
 	ReferenceComment pulumi.StringPtrInput
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
 	Region pulumi.StringPtrInput
+	// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+	RemoteAccountId pulumi.StringPtrInput
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies pulumi.StringArrayInput
 	// Provider service type.
 	ServiceType pulumi.StringPtrInput
+	// The Shared unique identifier for the connection between the multicloud interconnect providers
+	SharedConnectionUuid pulumi.StringPtrInput
 	// The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 	State pulumi.StringPtrInput
 	// The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringPtrInput
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -382,6 +409,8 @@ type virtualCircuitArgs struct {
 	IsBfdEnabled *bool `pulumi:"isBfdEnabled"`
 	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
 	IsTransportMode *bool `pulumi:"isTransportMode"`
+	// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+	ProviderRemoteRegion *string `pulumi:"providerRemoteRegion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId *string `pulumi:"providerServiceId"`
 	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
@@ -390,8 +419,12 @@ type virtualCircuitArgs struct {
 	PublicPrefixes []VirtualCircuitPublicPrefix `pulumi:"publicPrefixes"`
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
 	Region *string `pulumi:"region"`
+	// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+	RemoteAccountId *string `pulumi:"remoteAccountId"`
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies []string `pulumi:"routingPolicies"`
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode *string `pulumi:"trafficMode"`
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -429,6 +462,8 @@ type VirtualCircuitArgs struct {
 	IsBfdEnabled pulumi.BoolPtrInput
 	// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
 	IsTransportMode pulumi.BoolPtrInput
+	// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+	ProviderRemoteRegion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 	ProviderServiceId pulumi.StringPtrInput
 	// (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
@@ -437,8 +472,12 @@ type VirtualCircuitArgs struct {
 	PublicPrefixes VirtualCircuitPublicPrefixArrayInput
 	// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
 	Region pulumi.StringPtrInput
+	// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+	RemoteAccountId pulumi.StringPtrInput
 	// (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 	RoutingPolicies pulumi.StringArrayInput
+	// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+	TrafficMode pulumi.StringPtrInput
 	// The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
 	//
 	// ** IMPORTANT **
@@ -622,6 +661,11 @@ func (o VirtualCircuitOutput) OracleBgpAsn() pulumi.IntOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.IntOutput { return v.OracleBgpAsn }).(pulumi.IntOutput)
 }
 
+// The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+func (o VirtualCircuitOutput) ProviderRemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderRemoteRegion }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
 func (o VirtualCircuitOutput) ProviderServiceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ProviderServiceId }).(pulumi.StringOutput)
@@ -652,6 +696,11 @@ func (o VirtualCircuitOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.Region }).(pulumi.StringOutput)
 }
 
+// Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+func (o VirtualCircuitOutput) RemoteAccountId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.RemoteAccountId }).(pulumi.StringOutput)
+}
+
 // (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
 func (o VirtualCircuitOutput) RoutingPolicies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringArrayOutput { return v.RoutingPolicies }).(pulumi.StringArrayOutput)
@@ -662,6 +711,11 @@ func (o VirtualCircuitOutput) ServiceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.ServiceType }).(pulumi.StringOutput)
 }
 
+// The Shared unique identifier for the connection between the multicloud interconnect providers
+func (o VirtualCircuitOutput) SharedConnectionUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.SharedConnectionUuid }).(pulumi.StringOutput)
+}
+
 // The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
 func (o VirtualCircuitOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -670,6 +724,11 @@ func (o VirtualCircuitOutput) State() pulumi.StringOutput {
 // The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o VirtualCircuitOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+func (o VirtualCircuitOutput) TrafficMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *VirtualCircuit) pulumi.StringOutput { return v.TrafficMode }).(pulumi.StringOutput)
 }
 
 // The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).

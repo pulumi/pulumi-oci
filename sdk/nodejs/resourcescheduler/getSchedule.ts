@@ -76,6 +76,10 @@ export interface GetScheduleResult {
      */
     readonly lastRunStatus: string;
     /**
+     * IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+     */
+    readonly localTimeZone: string;
+    /**
      * This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      */
     readonly recurrenceDetails: string;

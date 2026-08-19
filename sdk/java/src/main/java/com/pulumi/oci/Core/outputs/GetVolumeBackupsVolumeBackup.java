@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetVolumeBackupsVolumeBackupRetentionPeriod;
 import com.pulumi.oci.Core.outputs.GetVolumeBackupsVolumeBackupSourceDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,10 +46,30 @@ public final class GetVolumeBackupsVolumeBackup {
      */
     private String id;
     /**
+     * @return feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    private Boolean isIndefiniteRetentionEnabled;
+    /**
+     * @return Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    private Boolean isPreventDeletionEnabled;
+    /**
+     * @return feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    private Boolean isRetentionLockEnabled;
+    /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
     private String kmsKeyId;
+    /**
+     * @return This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    private List<GetVolumeBackupsVolumeBackupRetentionPeriod> retentionPeriods;
     /**
      * @return The size of the volume, in GBs.
      * 
@@ -94,6 +116,11 @@ public final class GetVolumeBackupsVolumeBackup {
      */
     private String timeRequestReceived;
     /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    private String timeRetentionExpiresAt;
+    /**
      * @return The type of a volume backup. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
@@ -112,6 +139,11 @@ public final class GetVolumeBackupsVolumeBackup {
      */
     @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
     private String uniqueSizeInMbs;
+    /**
+     * @return The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    private String volumeGroupBackupId;
     /**
      * @return The OCID of the volume.
      * 
@@ -162,11 +194,39 @@ public final class GetVolumeBackupsVolumeBackup {
         return this.id;
     }
     /**
+     * @return feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    public Boolean isIndefiniteRetentionEnabled() {
+        return this.isIndefiniteRetentionEnabled;
+    }
+    /**
+     * @return Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Boolean isPreventDeletionEnabled() {
+        return this.isPreventDeletionEnabled;
+    }
+    /**
+     * @return feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
+    }
+    /**
      * @return The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      * 
      */
     public String kmsKeyId() {
         return this.kmsKeyId;
+    }
+    /**
+     * @return This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public List<GetVolumeBackupsVolumeBackupRetentionPeriod> retentionPeriods() {
+        return this.retentionPeriods;
     }
     /**
      * @return The size of the volume, in GBs.
@@ -232,6 +292,13 @@ public final class GetVolumeBackupsVolumeBackup {
         return this.timeRequestReceived;
     }
     /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public String timeRetentionExpiresAt() {
+        return this.timeRetentionExpiresAt;
+    }
+    /**
      * @return The type of a volume backup. Supported values are &#39;FULL&#39; or &#39;INCREMENTAL&#39;.
      * 
      */
@@ -257,6 +324,13 @@ public final class GetVolumeBackupsVolumeBackup {
         return this.uniqueSizeInMbs;
     }
     /**
+     * @return The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     * 
+     */
+    public String volumeGroupBackupId() {
+        return this.volumeGroupBackupId;
+    }
+    /**
      * @return The OCID of the volume.
      * 
      */
@@ -279,7 +353,11 @@ public final class GetVolumeBackupsVolumeBackup {
         private String expirationTime;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isIndefiniteRetentionEnabled;
+        private Boolean isPreventDeletionEnabled;
+        private Boolean isRetentionLockEnabled;
         private String kmsKeyId;
+        private List<GetVolumeBackupsVolumeBackupRetentionPeriod> retentionPeriods;
         private String sizeInGbs;
         private String sizeInMbs;
         private List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails;
@@ -289,9 +367,11 @@ public final class GetVolumeBackupsVolumeBackup {
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeRequestReceived;
+        private String timeRetentionExpiresAt;
         private String type;
         private String uniqueSizeInGbs;
         private String uniqueSizeInMbs;
+        private String volumeGroupBackupId;
         private String volumeId;
         public Builder() {}
         public Builder(GetVolumeBackupsVolumeBackup defaults) {
@@ -302,7 +382,11 @@ public final class GetVolumeBackupsVolumeBackup {
     	      this.expirationTime = defaults.expirationTime;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isIndefiniteRetentionEnabled = defaults.isIndefiniteRetentionEnabled;
+    	      this.isPreventDeletionEnabled = defaults.isPreventDeletionEnabled;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.retentionPeriods = defaults.retentionPeriods;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sizeInMbs = defaults.sizeInMbs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -312,9 +396,11 @@ public final class GetVolumeBackupsVolumeBackup {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeRequestReceived = defaults.timeRequestReceived;
+    	      this.timeRetentionExpiresAt = defaults.timeRetentionExpiresAt;
     	      this.type = defaults.type;
     	      this.uniqueSizeInGbs = defaults.uniqueSizeInGbs;
     	      this.uniqueSizeInMbs = defaults.uniqueSizeInMbs;
+    	      this.volumeGroupBackupId = defaults.volumeGroupBackupId;
     	      this.volumeId = defaults.volumeId;
         }
 
@@ -367,12 +453,47 @@ public final class GetVolumeBackupsVolumeBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder isIndefiniteRetentionEnabled(Boolean isIndefiniteRetentionEnabled) {
+            if (isIndefiniteRetentionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "isIndefiniteRetentionEnabled");
+            }
+            this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            if (isPreventDeletionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "isPreventDeletionEnabled");
+            }
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "kmsKeyId");
             }
             this.kmsKeyId = kmsKeyId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder retentionPeriods(List<GetVolumeBackupsVolumeBackupRetentionPeriod> retentionPeriods) {
+            if (retentionPeriods == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "retentionPeriods");
+            }
+            this.retentionPeriods = retentionPeriods;
+            return this;
+        }
+        public Builder retentionPeriods(GetVolumeBackupsVolumeBackupRetentionPeriod... retentionPeriods) {
+            return retentionPeriods(List.of(retentionPeriods));
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
@@ -450,6 +571,14 @@ public final class GetVolumeBackupsVolumeBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder timeRetentionExpiresAt(String timeRetentionExpiresAt) {
+            if (timeRetentionExpiresAt == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "timeRetentionExpiresAt");
+            }
+            this.timeRetentionExpiresAt = timeRetentionExpiresAt;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "type");
@@ -474,6 +603,14 @@ public final class GetVolumeBackupsVolumeBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder volumeGroupBackupId(String volumeGroupBackupId) {
+            if (volumeGroupBackupId == null) {
+              throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "volumeGroupBackupId");
+            }
+            this.volumeGroupBackupId = volumeGroupBackupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder volumeId(String volumeId) {
             if (volumeId == null) {
               throw new MissingRequiredPropertyException("GetVolumeBackupsVolumeBackup", "volumeId");
@@ -489,7 +626,11 @@ public final class GetVolumeBackupsVolumeBackup {
             _resultValue.expirationTime = expirationTime;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            _resultValue.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.retentionPeriods = retentionPeriods;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sizeInMbs = sizeInMbs;
             _resultValue.sourceDetails = sourceDetails;
@@ -499,9 +640,11 @@ public final class GetVolumeBackupsVolumeBackup {
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeRequestReceived = timeRequestReceived;
+            _resultValue.timeRetentionExpiresAt = timeRetentionExpiresAt;
             _resultValue.type = type;
             _resultValue.uniqueSizeInGbs = uniqueSizeInGbs;
             _resultValue.uniqueSizeInMbs = uniqueSizeInMbs;
+            _resultValue.volumeGroupBackupId = volumeGroupBackupId;
             _resultValue.volumeId = volumeId;
             return _resultValue;
         }

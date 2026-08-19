@@ -132,6 +132,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous AI Database on Dedicated Exadata Infrastructure.
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
+        public readonly ImmutableArray<string> AutonomousDatabasesToClones;
         /// <summary>
         /// **No longer used.** For Autonomous AI Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
         /// </summary>
@@ -156,6 +157,8 @@ namespace Pulumi.Oci.Database
         /// This list describes the backup destination properties associated with the Autonomous Container Database (ACD) 's preferred backup destination. The object at a given index is associated with the destination present at the same index in the backup destination details list of the ACD Backup Configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult> BackupDestinationPropertiesLists;
+        public readonly string CloneBandWidth;
+        public readonly string CloneType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
@@ -361,7 +364,9 @@ namespace Pulumi.Oci.Database
         /// The service level agreement type of the container database. The default is STANDARD.
         /// </summary>
         public readonly string ServiceLevelAgreementType;
+        public readonly bool ShouldUseLatestAvailableBackupTimeStamp;
         public readonly string Source;
+        public readonly string SourceAutonomousContainerDatabaseId;
         /// <summary>
         /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
@@ -387,6 +392,7 @@ namespace Pulumi.Oci.Database
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         /// </summary>
         public readonly string TimeSnapshotStandbyRevert;
+        public readonly string TimeStampToUseForCloning;
         /// <summary>
         /// The number of CPUs allocated to the Autonomous VM cluster.
         /// </summary>
@@ -412,6 +418,8 @@ namespace Pulumi.Oci.Database
 
             string autonomousContainerDatabaseId,
 
+            ImmutableArray<string> autonomousDatabasesToClones,
+
             string autonomousExadataInfrastructureId,
 
             string autonomousVmClusterId,
@@ -423,6 +431,10 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupConfigResult> backupConfigs,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesListResult> backupDestinationPropertiesLists,
+
+            string cloneBandWidth,
+
+            string cloneType,
 
             string cloudAutonomousVmClusterId,
 
@@ -546,7 +558,11 @@ namespace Pulumi.Oci.Database
 
             string serviceLevelAgreementType,
 
+            bool shouldUseLatestAvailableBackupTimeStamp,
+
             string source,
+
+            string sourceAutonomousContainerDatabaseId,
 
             int standbyMaintenanceBufferInDays,
 
@@ -562,6 +578,8 @@ namespace Pulumi.Oci.Database
 
             string timeSnapshotStandbyRevert,
 
+            string timeStampToUseForCloning,
+
             int totalCpus,
 
             string vaultId,
@@ -573,12 +591,15 @@ namespace Pulumi.Oci.Database
             AssociatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
             AutonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            AutonomousDatabasesToClones = autonomousDatabasesToClones;
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AutonomousVmClusterId = autonomousVmClusterId;
             AvailabilityDomain = availabilityDomain;
             AvailableCpus = availableCpus;
             BackupConfigs = backupConfigs;
             BackupDestinationPropertiesLists = backupDestinationPropertiesLists;
+            CloneBandWidth = cloneBandWidth;
+            CloneType = cloneType;
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
@@ -640,7 +661,9 @@ namespace Pulumi.Oci.Database
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ServiceLevelAgreementType = serviceLevelAgreementType;
+            ShouldUseLatestAvailableBackupTimeStamp = shouldUseLatestAvailableBackupTimeStamp;
             Source = source;
+            SourceAutonomousContainerDatabaseId = sourceAutonomousContainerDatabaseId;
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             SwitchoverTrigger = switchoverTrigger;
@@ -648,6 +671,7 @@ namespace Pulumi.Oci.Database
             TimeCreated = timeCreated;
             TimeOfLastBackup = timeOfLastBackup;
             TimeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
+            TimeStampToUseForCloning = timeStampToUseForCloning;
             TotalCpus = totalCpus;
             VaultId = vaultId;
             VersionPreference = versionPreference;

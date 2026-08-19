@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core
     ///             new Oci.Core.Inputs.ComputeHostGroupConfigurationArgs
     ///             {
     ///                 FirmwareBundleId = testFirmwareBundle.Id,
+    ///                 QuickRecycleSettings = new Oci.Core.Inputs.ComputeHostGroupConfigurationQuickRecycleSettingsArgs
+    ///                 {
+    ///                     NvmeWipe = computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe,
+    ///                 },
     ///                 RecycleLevel = computeHostGroupConfigurationsRecycleLevel,
     ///                 State = computeHostGroupConfigurationsState,
     ///                 Target = computeHostGroupConfigurationsTarget,

@@ -44,7 +44,15 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsIndefiniteRetentionEnabled = volumeBackupIsIndefiniteRetentionEnabled,
+    ///         IsPreventDeletionEnabled = volumeBackupIsPreventDeletionEnabled,
+    ///         IsRetentionLockEnabled = volumeBackupIsRetentionLockEnabled,
     ///         KmsKeyId = testKey.Id,
+    ///         RetentionPeriod = new Oci.Core.Inputs.VolumeBackupRetentionPeriodArgs
+    ///         {
+    ///             RetentionTimeAmount = volumeBackupRetentionPeriodRetentionTimeAmount,
+    ///             RetentionTimeUnit = volumeBackupRetentionPeriodRetentionTimeUnit,
+    ///         },
     ///         Type = volumeBackupType,
     ///     });
     /// 
@@ -93,10 +101,34 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Output("isIndefiniteRetentionEnabled")]
+        public Output<bool> IsIndefiniteRetentionEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Output("isPreventDeletionEnabled")]
+        public Output<bool> IsPreventDeletionEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Output("isRetentionLockEnabled")]
+        public Output<bool> IsRetentionLockEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
         [Output("kmsKeyId")]
         public Output<string> KmsKeyId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Output("retentionPeriod")]
+        public Output<Outputs.VolumeBackupRetentionPeriod> RetentionPeriod { get; private set; } = null!;
 
         /// <summary>
         /// The size of the volume, in GBs.
@@ -153,6 +185,12 @@ namespace Pulumi.Oci.Core
         public Output<string> TimeRequestReceived { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Output("timeRetentionExpiresAt")]
+        public Output<string> TimeRetentionExpiresAt { get; private set; } = null!;
+
+        /// <summary>
         /// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         /// </summary>
         [Output("type")]
@@ -169,6 +207,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("uniqueSizeInMbs")]
         public Output<string> UniqueSizeInMbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        /// </summary>
+        [Output("volumeGroupBackupId")]
+        public Output<string> VolumeGroupBackupId { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `VolumeId` or `SourceDetails` is required to be set.
@@ -259,10 +303,34 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Input("isIndefiniteRetentionEnabled")]
+        public Input<bool>? IsIndefiniteRetentionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Input("isPreventDeletionEnabled")]
+        public Input<bool>? IsPreventDeletionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Input("isRetentionLockEnabled")]
+        public Input<bool>? IsRetentionLockEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("retentionPeriod")]
+        public Input<Inputs.VolumeBackupRetentionPeriodArgs>? RetentionPeriod { get; set; }
 
         /// <summary>
         /// Details of the volume backup source in the cloud.
@@ -333,10 +401,34 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        /// </summary>
+        [Input("isIndefiniteRetentionEnabled")]
+        public Input<bool>? IsIndefiniteRetentionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Input("isPreventDeletionEnabled")]
+        public Input<bool>? IsPreventDeletionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Input("isRetentionLockEnabled")]
+        public Input<bool>? IsRetentionLockEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("retentionPeriod")]
+        public Input<Inputs.VolumeBackupRetentionPeriodGetArgs>? RetentionPeriod { get; set; }
 
         /// <summary>
         /// The size of the volume, in GBs.
@@ -399,6 +491,12 @@ namespace Pulumi.Oci.Core
         public Input<string>? TimeRequestReceived { get; set; }
 
         /// <summary>
+        /// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("timeRetentionExpiresAt")]
+        public Input<string>? TimeRetentionExpiresAt { get; set; }
+
+        /// <summary>
         /// The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         /// </summary>
         [Input("type")]
@@ -415,6 +513,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("uniqueSizeInMbs")]
         public Input<string>? UniqueSizeInMbs { get; set; }
+
+        /// <summary>
+        /// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        /// </summary>
+        [Input("volumeGroupBackupId")]
+        public Input<string>? VolumeGroupBackupId { get; set; }
 
         /// <summary>
         /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `VolumeId` or `SourceDetails` is required to be set.

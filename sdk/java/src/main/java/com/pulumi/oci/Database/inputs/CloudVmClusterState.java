@@ -9,7 +9,9 @@ import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetails
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCacheArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterLiveImageVersionDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterMultiCloudIdentityConnectorConfigArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterUpdateDetailsArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -521,6 +523,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    @Import(name="liveImageVersionDetails")
+    private @Nullable Output<List<CloudVmClusterLiveImageVersionDetailArgs>> liveImageVersionDetails;
+
+    /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public Optional<Output<List<CloudVmClusterLiveImageVersionDetailArgs>>> liveImageVersionDetails() {
+        return Optional.ofNullable(this.liveImageVersionDetails);
+    }
+
+    /**
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
@@ -595,6 +612,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<Double>> ocpuCount() {
         return Optional.ofNullable(this.ocpuCount);
+    }
+
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    @Import(name="oracleLinuxVersion")
+    private @Nullable Output<String> oracleLinuxVersion;
+
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public Optional<Output<String>> oracleLinuxVersion() {
+        return Optional.ofNullable(this.oracleLinuxVersion);
     }
 
     /**
@@ -928,6 +960,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Import(name="updateDetails")
+    private @Nullable Output<CloudVmClusterUpdateDetailsArgs> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Optional<Output<CloudVmClusterUpdateDetailsArgs>> updateDetails() {
+        return Optional.ofNullable(this.updateDetails);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      * 
      */
@@ -1057,11 +1104,13 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
         this.listenerPort = $.listenerPort;
+        this.liveImageVersionDetails = $.liveImageVersionDetails;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.multiCloudIdentityConnectorConfigs = $.multiCloudIdentityConnectorConfigs;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
+        this.oracleLinuxVersion = $.oracleLinuxVersion;
         this.privateZoneId = $.privateZoneId;
         this.recoStoragePercentage = $.recoStoragePercentage;
         this.scanDnsName = $.scanDnsName;
@@ -1084,6 +1133,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
+        this.updateDetails = $.updateDetails;
         this.vipIds = $.vipIds;
         this.vipv6ids = $.vipv6ids;
         this.vmBackupStorageType = $.vmBackupStorageType;
@@ -1828,6 +1878,37 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(@Nullable Output<List<CloudVmClusterLiveImageVersionDetailArgs>> liveImageVersionDetails) {
+            $.liveImageVersionDetails = liveImageVersionDetails;
+            return this;
+        }
+
+        /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(List<CloudVmClusterLiveImageVersionDetailArgs> liveImageVersionDetails) {
+            return liveImageVersionDetails(Output.of(liveImageVersionDetails));
+        }
+
+        /**
+         * @param liveImageVersionDetails Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder liveImageVersionDetails(CloudVmClusterLiveImageVersionDetailArgs... liveImageVersionDetails) {
+            return liveImageVersionDetails(List.of(liveImageVersionDetails));
+        }
+
+        /**
          * @param memorySizeInGbs (Updatable) The memory to be allocated in GBs.
          * 
          * @return builder
@@ -1953,6 +2034,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder ocpuCount(Double ocpuCount) {
             return ocpuCount(Output.of(ocpuCount));
+        }
+
+        /**
+         * @param oracleLinuxVersion Oracle Linux version for the respective Exadata Image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleLinuxVersion(@Nullable Output<String> oracleLinuxVersion) {
+            $.oracleLinuxVersion = oracleLinuxVersion;
+            return this;
+        }
+
+        /**
+         * @param oracleLinuxVersion Oracle Linux version for the respective Exadata Image.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            return oracleLinuxVersion(Output.of(oracleLinuxVersion));
         }
 
         /**
@@ -2445,6 +2547,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(@Nullable Output<CloudVmClusterUpdateDetailsArgs> updateDetails) {
+            $.updateDetails = updateDetails;
+            return this;
+        }
+
+        /**
+         * @param updateDetails (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder updateDetails(CloudVmClusterUpdateDetailsArgs updateDetails) {
+            return updateDetails(Output.of(updateDetails));
         }
 
         /**

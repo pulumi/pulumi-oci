@@ -8,6 +8,10 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetAiModelsPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetConnectionAssignmentPlainArgs;
@@ -72,6 +76,8 @@ import com.pulumi.oci.GoldenGate.inputs.GetTrailSequenceArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencePlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetTrailSequencesPlainArgs;
+import com.pulumi.oci.GoldenGate.outputs.GetAiModelsResult;
+import com.pulumi.oci.GoldenGate.outputs.GetAiProvidersResult;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAssignmentResult;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAssignmentsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionResult;
@@ -108,6 +114,451 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class GoldenGateFunctions {
+    /**
+     * This data source provides the list of Ai Models in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI models for the specified provider. If the
+     * provider requires additional context to resolve its supported models,
+     * that context must be supplied in the request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiModels = GoldenGateFunctions.getAiModels(GetAiModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .providerType(aiModelProviderType)
+     *             .region(aiModelRegion)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiModelsResult> getAiModels(GetAiModelsArgs args) {
+        return getAiModels(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Models in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI models for the specified provider. If the
+     * provider requires additional context to resolve its supported models,
+     * that context must be supplied in the request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiModels = GoldenGateFunctions.getAiModels(GetAiModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .providerType(aiModelProviderType)
+     *             .region(aiModelRegion)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiModelsResult> getAiModelsPlain(GetAiModelsPlainArgs args) {
+        return getAiModelsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Models in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI models for the specified provider. If the
+     * provider requires additional context to resolve its supported models,
+     * that context must be supplied in the request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiModels = GoldenGateFunctions.getAiModels(GetAiModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .providerType(aiModelProviderType)
+     *             .region(aiModelRegion)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiModelsResult> getAiModels(GetAiModelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getAiModels:getAiModels", TypeShape.of(GetAiModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Models in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI models for the specified provider. If the
+     * provider requires additional context to resolve its supported models,
+     * that context must be supplied in the request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiModels = GoldenGateFunctions.getAiModels(GetAiModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .providerType(aiModelProviderType)
+     *             .region(aiModelRegion)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiModelsResult> getAiModels(GetAiModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getAiModels:getAiModels", TypeShape.of(GetAiModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Models in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI models for the specified provider. If the
+     * provider requires additional context to resolve its supported models,
+     * that context must be supplied in the request.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiModelsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiModels = GoldenGateFunctions.getAiModels(GetAiModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .providerType(aiModelProviderType)
+     *             .region(aiModelRegion)
+     *             .tenancyId(testTenancy.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiModelsResult> getAiModelsPlain(GetAiModelsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getAiModels:getAiModels", TypeShape.of(GetAiModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI providers along with their supported models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiProviders = GoldenGateFunctions.getAiProviders(GetAiProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiProvidersResult> getAiProviders(GetAiProvidersArgs args) {
+        return getAiProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI providers along with their supported models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiProviders = GoldenGateFunctions.getAiProviders(GetAiProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiProvidersResult> getAiProvidersPlain(GetAiProvidersPlainArgs args) {
+        return getAiProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI providers along with their supported models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiProviders = GoldenGateFunctions.getAiProviders(GetAiProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiProvidersResult> getAiProviders(GetAiProvidersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getAiProviders:getAiProviders", TypeShape.of(GetAiProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI providers along with their supported models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiProviders = GoldenGateFunctions.getAiProviders(GetAiProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAiProvidersResult> getAiProviders(GetAiProvidersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getAiProviders:getAiProviders", TypeShape.of(GetAiProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns the list of AI providers along with their supported models.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetAiProvidersArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAiProviders = GoldenGateFunctions.getAiProviders(GetAiProvidersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAiProvidersResult> getAiProvidersPlain(GetAiProvidersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getAiProviders:getAiProviders", TypeShape.of(GetAiProvidersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
@@ -405,6 +856,8 @@ public final class GoldenGateFunctions {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionId(testConnection.id())
+     *             .connectionTypes(connectionAssignmentConnectionType)
+     *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
      *             .deploymentId(testDeployment.id())
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
@@ -451,6 +904,8 @@ public final class GoldenGateFunctions {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionId(testConnection.id())
+     *             .connectionTypes(connectionAssignmentConnectionType)
+     *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
      *             .deploymentId(testDeployment.id())
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
@@ -497,6 +952,8 @@ public final class GoldenGateFunctions {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionId(testConnection.id())
+     *             .connectionTypes(connectionAssignmentConnectionType)
+     *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
      *             .deploymentId(testDeployment.id())
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
@@ -543,6 +1000,8 @@ public final class GoldenGateFunctions {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionId(testConnection.id())
+     *             .connectionTypes(connectionAssignmentConnectionType)
+     *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
      *             .deploymentId(testDeployment.id())
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
@@ -589,6 +1048,8 @@ public final class GoldenGateFunctions {
      *         final var testConnectionAssignments = GoldenGateFunctions.getConnectionAssignments(GetConnectionAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionId(testConnection.id())
+     *             .connectionTypes(connectionAssignmentConnectionType)
+     *             .connectionTypeNotEqualTos(connectionAssignmentConnectionTypeNotEqualTo)
      *             .deploymentId(testDeployment.id())
      *             .name(connectionAssignmentName)
      *             .state(connectionAssignmentState)
@@ -638,6 +1099,7 @@ public final class GoldenGateFunctions {
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
      *             .assignedDeploymentId(testDeployment.id())
      *             .connectionTypes(connectionConnectionType)
+     *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
      *             .state(connectionState)
      *             .technologyTypes(connectionTechnologyType)
@@ -687,6 +1149,7 @@ public final class GoldenGateFunctions {
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
      *             .assignedDeploymentId(testDeployment.id())
      *             .connectionTypes(connectionConnectionType)
+     *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
      *             .state(connectionState)
      *             .technologyTypes(connectionTechnologyType)
@@ -736,6 +1199,7 @@ public final class GoldenGateFunctions {
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
      *             .assignedDeploymentId(testDeployment.id())
      *             .connectionTypes(connectionConnectionType)
+     *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
      *             .state(connectionState)
      *             .technologyTypes(connectionTechnologyType)
@@ -785,6 +1249,7 @@ public final class GoldenGateFunctions {
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
      *             .assignedDeploymentId(testDeployment.id())
      *             .connectionTypes(connectionConnectionType)
+     *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
      *             .state(connectionState)
      *             .technologyTypes(connectionTechnologyType)
@@ -834,6 +1299,7 @@ public final class GoldenGateFunctions {
      *             .assignableDeploymentType(connectionAssignableDeploymentType)
      *             .assignedDeploymentId(testDeployment.id())
      *             .connectionTypes(connectionConnectionType)
+     *             .connectionTypeNotEqualTos(connectionConnectionTypeNotEqualTo)
      *             .displayName(connectionDisplayName)
      *             .state(connectionState)
      *             .technologyTypes(connectionTechnologyType)

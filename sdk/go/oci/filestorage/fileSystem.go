@@ -114,6 +114,8 @@ type FileSystem struct {
 	CloneCount pulumi.IntOutput `pulumi:"cloneCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Displays the compartment-level quota enforcement state affecting this file system.
+	CompartmentQuotaEnforcementState pulumi.StringOutput `pulumi:"compartmentQuotaEnforcementState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
@@ -208,6 +210,8 @@ type fileSystemState struct {
 	CloneCount *int `pulumi:"cloneCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Displays the compartment-level quota enforcement state affecting this file system.
+	CompartmentQuotaEnforcementState *string `pulumi:"compartmentQuotaEnforcementState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
@@ -267,6 +271,8 @@ type FileSystemState struct {
 	CloneCount pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId pulumi.StringPtrInput
+	// Displays the compartment-level quota enforcement state affecting this file system.
+	CompartmentQuotaEnforcementState pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
@@ -496,6 +502,11 @@ func (o FileSystemOutput) CloneCount() pulumi.IntOutput {
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 func (o FileSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Displays the compartment-level quota enforcement state affecting this file system.
+func (o FileSystemOutput) CompartmentQuotaEnforcementState() pulumi.StringOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.CompartmentQuotaEnforcementState }).(pulumi.StringOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -31,10 +32,20 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
      */
     private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase> autonomousDatabases;
     /**
+     * @return Backup destination details
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail> backupDestinationDetails;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
+    /**
+     * @return A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+     * 
+     */
+    private String dbVersion;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -129,11 +140,25 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
         return this.autonomousDatabases;
     }
     /**
+     * @return Backup destination details
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail> backupDestinationDetails() {
+        return this.backupDestinationDetails;
+    }
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return A valid Oracle AI Database version for Autonomous AI Database. When you specify 23ai for dbversion, the system will provision a 23ai database, but the UI will display it as 26ai. When you specify 26ai for dbversion, the system will provision and display a 26ai database as expected. For new databases, it is recommended to use either 19c or 26ai.
+     * 
+     */
+    public String dbVersion() {
+        return this.dbVersion;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -246,7 +271,9 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
         private String acdDisplayName;
         private String autonomousContainerDatabaseId;
         private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase> autonomousDatabases;
+        private List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail> backupDestinationDetails;
         private String compartmentId;
+        private String dbVersion;
         private Map<String,String> definedTags;
         private String displayName;
         private Map<String,String> freeformTags;
@@ -267,7 +294,9 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
     	      this.acdDisplayName = defaults.acdDisplayName;
     	      this.autonomousContainerDatabaseId = defaults.autonomousContainerDatabaseId;
     	      this.autonomousDatabases = defaults.autonomousDatabases;
+    	      this.backupDestinationDetails = defaults.backupDestinationDetails;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dbVersion = defaults.dbVersion;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -312,11 +341,30 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
             return autonomousDatabases(List.of(autonomousDatabases));
         }
         @CustomType.Setter
+        public Builder backupDestinationDetails(List<GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail> backupDestinationDetails) {
+            if (backupDestinationDetails == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem", "backupDestinationDetails");
+            }
+            this.backupDestinationDetails = backupDestinationDetails;
+            return this;
+        }
+        public Builder backupDestinationDetails(GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemBackupDestinationDetail... backupDestinationDetails) {
+            return backupDestinationDetails(List.of(backupDestinationDetails));
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbVersion(String dbVersion) {
+            if (dbVersion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItem", "dbVersion");
+            }
+            this.dbVersion = dbVersion;
             return this;
         }
         @CustomType.Setter
@@ -436,7 +484,9 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
             _resultValue.acdDisplayName = acdDisplayName;
             _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             _resultValue.autonomousDatabases = autonomousDatabases;
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.dbVersion = dbVersion;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

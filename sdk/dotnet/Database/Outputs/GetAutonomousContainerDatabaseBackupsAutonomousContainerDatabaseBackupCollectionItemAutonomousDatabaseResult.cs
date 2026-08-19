@@ -21,15 +21,22 @@ namespace Pulumi.Oci.Database.Outputs
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// A filter to return only resources that match the given lifecycle state exactly.
+        /// </summary>
+        public readonly string State;
 
         [OutputConstructor]
         private GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabaseResult(
             string compartmentId,
 
-            string displayName)
+            string displayName,
+
+            string state)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;
+            State = state;
         }
     }
 }

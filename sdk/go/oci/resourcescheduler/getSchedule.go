@@ -74,6 +74,8 @@ type LookupScheduleResult struct {
 	Id string `pulumi:"id"`
 	// This is the status of the last work request.
 	LastRunStatus string `pulumi:"lastRunStatus"`
+	// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone string `pulumi:"localTimeZone"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -173,6 +175,11 @@ func (o LookupScheduleResultOutput) Id() pulumi.StringOutput {
 // This is the status of the last work request.
 func (o LookupScheduleResultOutput) LastRunStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.LastRunStatus }).(pulumi.StringOutput)
+}
+
+// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+func (o LookupScheduleResultOutput) LocalTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.LocalTimeZone }).(pulumi.StringOutput)
 }
 
 // This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

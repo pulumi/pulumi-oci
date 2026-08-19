@@ -18,6 +18,21 @@ public final class DatabaseDataGuardGroupArgs extends com.pulumi.resources.Resou
     public static final DatabaseDataGuardGroupArgs Empty = new DatabaseDataGuardGroupArgs();
 
     /**
+     * Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    @Import(name="managedAutoFailOverReadiness")
+    private @Nullable Output<String> managedAutoFailOverReadiness;
+
+    /**
+     * @return Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    public Optional<Output<String>> managedAutoFailOverReadiness() {
+        return Optional.ofNullable(this.managedAutoFailOverReadiness);
+    }
+
+    /**
      * List of Data Guard members, representing each database that is part of Data Guard.
      * 
      */
@@ -50,6 +65,7 @@ public final class DatabaseDataGuardGroupArgs extends com.pulumi.resources.Resou
     private DatabaseDataGuardGroupArgs() {}
 
     private DatabaseDataGuardGroupArgs(DatabaseDataGuardGroupArgs $) {
+        this.managedAutoFailOverReadiness = $.managedAutoFailOverReadiness;
         this.members = $.members;
         this.protectionMode = $.protectionMode;
     }
@@ -70,6 +86,27 @@ public final class DatabaseDataGuardGroupArgs extends com.pulumi.resources.Resou
 
         public Builder(DatabaseDataGuardGroupArgs defaults) {
             $ = new DatabaseDataGuardGroupArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param managedAutoFailOverReadiness Specifies readiness of Managed Automatic failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailOverReadiness(@Nullable Output<String> managedAutoFailOverReadiness) {
+            $.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
+            return this;
+        }
+
+        /**
+         * @param managedAutoFailOverReadiness Specifies readiness of Managed Automatic failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailOverReadiness(String managedAutoFailOverReadiness) {
+            return managedAutoFailOverReadiness(Output.of(managedAutoFailOverReadiness));
         }
 
         /**

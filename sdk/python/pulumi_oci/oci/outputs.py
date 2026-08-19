@@ -18,6 +18,7 @@ from . import outputs
 __all__ = [
     'ApiPlatformApiPlatformInstanceIdcsApp',
     'ApiPlatformApiPlatformInstanceUri',
+    'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetail',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
@@ -170,10 +171,12 @@ __all__ = [
     'GetApiaccesscontrolApiMetadatasApiMetadataCollectionResult',
     'GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult',
     'GetApiaccesscontrolApiMetadatasFilterResult',
+    'GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListResult',
     'GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListResult',
     'GetApiaccesscontrolPrivilegedApiControlsFilterResult',
     'GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionResult',
     'GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemResult',
+    'GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult',
     'GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListResult',
     'GetApiaccesscontrolPrivilegedApiRequestApproverDetailResult',
     'GetApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListResult',
@@ -326,6 +329,9 @@ __all__ = [
     'GetDbmulticloudOracleDbGcpKeysFilterResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionResult',
     'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult',
+    'GetDdfsInstancesFilterResult',
+    'GetDdfsInstancesInstanceCollectionResult',
+    'GetDdfsInstancesInstanceCollectionItemResult',
     'GetDifStackAdbResult',
     'GetDifStackAdbDbCredentialResult',
     'GetDifStackAidataplatformResult',
@@ -753,6 +759,54 @@ class ApiPlatformApiPlatformInstanceUri(dict):
 
 
 @pulumi.output_type
+class ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "groupIds":
+            suggest = "group_ids"
+        elif key == "groupLevel":
+            suggest = "group_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 group_ids: Sequence[_builtins.str],
+                 group_level: _builtins.int):
+        """
+        :param Sequence[_builtins.str] group_ids: (Updatable) id of the group.
+        :param _builtins.int group_level: (Updatable) level of the group.
+        """
+        pulumi.set(__self__, "group_ids", group_ids)
+        pulumi.set(__self__, "group_level", group_level)
+
+    @_builtins.property
+    @pulumi.getter(name="groupIds")
+    def group_ids(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) id of the group.
+        """
+        return pulumi.get(self, "group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="groupLevel")
+    def group_level(self) -> _builtins.int:
+        """
+        (Updatable) level of the group.
+        """
+        return pulumi.get(self, "group_level")
+
+
+@pulumi.output_type
 class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -824,6 +878,8 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetail(dict):
             suggest = "approval_action"
         elif key == "approvalComment":
             suggest = "approval_comment"
+        elif key == "approverGroupLevel":
+            suggest = "approver_group_level"
         elif key == "approverId":
             suggest = "approver_id"
         elif key == "timeApprovedForAccess":
@@ -845,12 +901,14 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetail(dict):
     def __init__(__self__, *,
                  approval_action: Optional[_builtins.str] = None,
                  approval_comment: Optional[_builtins.str] = None,
+                 approver_group_level: Optional[_builtins.int] = None,
                  approver_id: Optional[_builtins.str] = None,
                  time_approved_for_access: Optional[_builtins.str] = None,
                  time_of_authorization: Optional[_builtins.str] = None):
         """
         :param _builtins.str approval_action: The action done by the approver.
         :param _builtins.str approval_comment: Comment specified by the approver of the request.
+        :param _builtins.int approver_group_level: The group level at which the approver approved.
         :param _builtins.str approver_id: The userId of the approver.
         :param _builtins.str time_approved_for_access: Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param _builtins.str time_of_authorization: Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -859,6 +917,8 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetail(dict):
             pulumi.set(__self__, "approval_action", approval_action)
         if approval_comment is not None:
             pulumi.set(__self__, "approval_comment", approval_comment)
+        if approver_group_level is not None:
+            pulumi.set(__self__, "approver_group_level", approver_group_level)
         if approver_id is not None:
             pulumi.set(__self__, "approver_id", approver_id)
         if time_approved_for_access is not None:
@@ -881,6 +941,14 @@ class ApiaccesscontrolPrivilegedApiRequestApproverDetail(dict):
         Comment specified by the approver of the request.
         """
         return pulumi.get(self, "approval_comment")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevel")
+    def approver_group_level(self) -> Optional[_builtins.int]:
+        """
+        The group level at which the approver approved.
+        """
+        return pulumi.get(self, "approver_group_level")
 
     @_builtins.property
     @pulumi.getter(name="approverId")
@@ -12869,18 +12937,21 @@ class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollecti
 class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemResult(dict):
     def __init__(__self__, *,
                  api_metadatas: Sequence['outputs.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataResult'],
+                 compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  entity_type: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  system_tags: Mapping[str, _builtins.str]):
         """
         :param Sequence['GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataArgs'] api_metadatas: List of apiMetadataSummary.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str entity_type: The entity Type to which the Api belongs to.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "api_metadatas", api_metadatas)
+        pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "entity_type", entity_type)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -12893,6 +12964,14 @@ class GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollecti
         List of apiMetadataSummary.
         """
         return pulumi.get(self, "api_metadatas")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -13120,6 +13199,7 @@ class GetApiaccesscontrolApiMetadatasApiMetadataCollectionResult(dict):
 class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult(dict):
     def __init__(__self__, *,
                  api_name: _builtins.str,
+                 attributes: Sequence[_builtins.str],
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
                  entity_type: _builtins.str,
@@ -13136,10 +13216,11 @@ class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str api_name: The name of the api to execute the api request.
+        :param Sequence[_builtins.str] attributes: List of the fields that is use while calling post or put for the data.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param _builtins.str entity_type: ResourceType to which the apiMetadata belongs to.
-        :param Sequence[_builtins.str] fields: List of the fields that is use while calling post or put for the data.
+        :param Sequence[_builtins.str] fields: deprecated; Use attributes field instead.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ApiDetail.
         :param _builtins.str lifecycle_details: A message that describes the current state of the ApiMetadata in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -13152,6 +13233,7 @@ class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult(dict):
         :param _builtins.str time_updated: The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "api_name", api_name)
+        pulumi.set(__self__, "attributes", attributes)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entity_type", entity_type)
@@ -13174,6 +13256,14 @@ class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult(dict):
         The name of the api to execute the api request.
         """
         return pulumi.get(self, "api_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def attributes(self) -> Sequence[_builtins.str]:
+        """
+        List of the fields that is use while calling post or put for the data.
+        """
+        return pulumi.get(self, "attributes")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -13203,7 +13293,7 @@ class GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemResult(dict):
     @pulumi.getter
     def fields(self) -> Sequence[_builtins.str]:
         """
-        List of the fields that is use while calling post or put for the data.
+        deprecated; Use attributes field instead.
         """
         return pulumi.get(self, "fields")
 
@@ -13316,6 +13406,35 @@ class GetApiaccesscontrolApiMetadatasFilterResult(dict):
 
 
 @pulumi.output_type
+class GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListResult(dict):
+    def __init__(__self__, *,
+                 group_ids: Sequence[_builtins.str],
+                 group_level: _builtins.int):
+        """
+        :param Sequence[_builtins.str] group_ids: id of the group.
+        :param _builtins.int group_level: level of the group.
+        """
+        pulumi.set(__self__, "group_ids", group_ids)
+        pulumi.set(__self__, "group_level", group_level)
+
+    @_builtins.property
+    @pulumi.getter(name="groupIds")
+    def group_ids(self) -> Sequence[_builtins.str]:
+        """
+        id of the group.
+        """
+        return pulumi.get(self, "group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="groupLevel")
+    def group_level(self) -> _builtins.int:
+        """
+        level of the group.
+        """
+        return pulumi.get(self, "group_level")
+
+
+@pulumi.output_type
 class GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListResult(dict):
     def __init__(__self__, *,
                  api_name: _builtins.str,
@@ -13398,6 +13517,7 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionResu
 class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemResult(dict):
     def __init__(__self__, *,
                  approver_group_id_lists: Sequence[_builtins.str],
+                 approver_group_level_lists: Sequence['outputs.GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult'],
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -13418,6 +13538,7 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem
                  time_updated: _builtins.str):
         """
         :param Sequence[_builtins.str] approver_group_id_lists: List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
+        :param Sequence['GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs'] approver_group_level_lists: List of Group containing the levels at which the users belonging to the group can authorize.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: Description of privilegedApi control.
@@ -13433,11 +13554,12 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param _builtins.str state_details: A message that describes the current state of the PrivilegedApiControl in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_created: The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_deleted: The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "approver_group_id_lists", approver_group_id_lists)
+        pulumi.set(__self__, "approver_group_level_lists", approver_group_level_lists)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -13464,6 +13586,14 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem
         List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
         """
         return pulumi.get(self, "approver_group_id_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevelLists")
+    def approver_group_level_lists(self) -> Sequence['outputs.GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult']:
+        """
+        List of Group containing the levels at which the users belonging to the group can authorize.
+        """
+        return pulumi.get(self, "approver_group_level_lists")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -13589,7 +13719,7 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
 
@@ -13608,6 +13738,35 @@ class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem
         The date and time the PrivilegedApiControl was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListResult(dict):
+    def __init__(__self__, *,
+                 group_ids: Sequence[_builtins.str],
+                 group_level: _builtins.int):
+        """
+        :param Sequence[_builtins.str] group_ids: id of the group.
+        :param _builtins.int group_level: level of the group.
+        """
+        pulumi.set(__self__, "group_ids", group_ids)
+        pulumi.set(__self__, "group_level", group_level)
+
+    @_builtins.property
+    @pulumi.getter(name="groupIds")
+    def group_ids(self) -> Sequence[_builtins.str]:
+        """
+        id of the group.
+        """
+        return pulumi.get(self, "group_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="groupLevel")
+    def group_level(self) -> _builtins.int:
+        """
+        level of the group.
+        """
+        return pulumi.get(self, "group_level")
 
 
 @pulumi.output_type
@@ -13655,18 +13814,21 @@ class GetApiaccesscontrolPrivilegedApiRequestApproverDetailResult(dict):
     def __init__(__self__, *,
                  approval_action: _builtins.str,
                  approval_comment: _builtins.str,
+                 approver_group_level: _builtins.int,
                  approver_id: _builtins.str,
                  time_approved_for_access: _builtins.str,
                  time_of_authorization: _builtins.str):
         """
         :param _builtins.str approval_action: The action done by the approver.
         :param _builtins.str approval_comment: Comment specified by the approver of the request.
+        :param _builtins.int approver_group_level: The group level at which the approver approved.
         :param _builtins.str approver_id: The userId of the approver.
         :param _builtins.str time_approved_for_access: Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param _builtins.str time_of_authorization: Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "approval_action", approval_action)
         pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_group_level", approver_group_level)
         pulumi.set(__self__, "approver_id", approver_id)
         pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
         pulumi.set(__self__, "time_of_authorization", time_of_authorization)
@@ -13686,6 +13848,14 @@ class GetApiaccesscontrolPrivilegedApiRequestApproverDetailResult(dict):
         Comment specified by the approver of the request.
         """
         return pulumi.get(self, "approval_comment")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevel")
+    def approver_group_level(self) -> _builtins.int:
+        """
+        The group level at which the approver approved.
+        """
+        return pulumi.get(self, "approver_group_level")
 
     @_builtins.property
     @pulumi.getter(name="approverId")
@@ -14133,18 +14303,21 @@ class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItem
     def __init__(__self__, *,
                  approval_action: _builtins.str,
                  approval_comment: _builtins.str,
+                 approver_group_level: _builtins.int,
                  approver_id: _builtins.str,
                  time_approved_for_access: _builtins.str,
                  time_of_authorization: _builtins.str):
         """
         :param _builtins.str approval_action: The action done by the approver.
         :param _builtins.str approval_comment: Comment specified by the approver of the request.
+        :param _builtins.int approver_group_level: The group level at which the approver approved.
         :param _builtins.str approver_id: The userId of the approver.
         :param _builtins.str time_approved_for_access: Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         :param _builtins.str time_of_authorization: Time when the privilegedApi request was authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "approval_action", approval_action)
         pulumi.set(__self__, "approval_comment", approval_comment)
+        pulumi.set(__self__, "approver_group_level", approver_group_level)
         pulumi.set(__self__, "approver_id", approver_id)
         pulumi.set(__self__, "time_approved_for_access", time_approved_for_access)
         pulumi.set(__self__, "time_of_authorization", time_of_authorization)
@@ -14164,6 +14337,14 @@ class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItem
         Comment specified by the approver of the request.
         """
         return pulumi.get(self, "approval_comment")
+
+    @_builtins.property
+    @pulumi.getter(name="approverGroupLevel")
+    def approver_group_level(self) -> _builtins.int:
+        """
+        The group level at which the approver approved.
+        """
+        return pulumi.get(self, "approver_group_level")
 
     @_builtins.property
     @pulumi.getter(name="approverId")
@@ -23910,6 +24091,195 @@ class GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult(di
     def time_updated(self) -> _builtins.str:
         """
         Time when the Oracle DB Google Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDdfsInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDdfsInstancesInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDdfsInstancesInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDdfsInstancesInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDdfsInstancesInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 fhir_service_endpoint: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 idcs_url: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 public_ip: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param _builtins.str fhir_service_endpoint: The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+        :param _builtins.str idcs_url: The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str public_ip: The public IP address for the instance's FHIR service endpoint.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+        :param _builtins.str time_created: The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fhir_service_endpoint", fhir_service_endpoint)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_url", idcs_url)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "public_ip", public_ip)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="fhirServiceEndpoint")
+    def fhir_service_endpoint(self) -> _builtins.str:
+        """
+        The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+        """
+        return pulumi.get(self, "fhir_service_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> _builtins.str:
+        """
+        The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        """
+        The public IP address for the instance's FHIR service endpoint.
+        """
+        return pulumi.get(self, "public_ip")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
 

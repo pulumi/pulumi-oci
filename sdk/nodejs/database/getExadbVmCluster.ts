@@ -109,7 +109,7 @@ export interface GetExadbVmClusterResult {
      */
     readonly hostname: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+     * The OCID of the identity connector
      */
     readonly id: string;
     /**
@@ -133,6 +133,10 @@ export interface GetExadbVmClusterResult {
      */
     readonly listenerPort: string;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    readonly multiCloudIdentityConnectorConfigs: outputs.Database.GetExadbVmClusterMultiCloudIdentityConnectorConfig[];
+    /**
      * The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
      */
     readonly nodeConfigs: outputs.Database.GetExadbVmClusterNodeConfig[];
@@ -149,6 +153,7 @@ export interface GetExadbVmClusterResult {
      * The private zone ID in which you want DNS records to be created.
      */
     readonly privateZoneId: string;
+    readonly registerPkcsTrigger: number;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
      */
@@ -206,6 +211,10 @@ export interface GetExadbVmClusterResult {
      */
     readonly systemVersion: string;
     /**
+     * TDE keystore type
+     */
+    readonly tdeKeyStoreType: string;
+    /**
      * The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
      */
     readonly timeCreated: string;
@@ -213,6 +222,7 @@ export interface GetExadbVmClusterResult {
      * The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;
+    readonly unregisterPkcsTrigger: number;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
      */

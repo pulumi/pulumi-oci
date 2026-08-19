@@ -13,6 +13,2191 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray []GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
+		return vs[0].([]GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray []GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth {
+		return vs[0].([]GetCloudAutonomousVmClusterMaintenanceWindowDetailMonth)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowMonthInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs and GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowMonthInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs{...}
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+// GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput is an input type that accepts GetCloudAutonomousVmClusterMaintenanceWindowMonthArray and GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterMaintenanceWindowMonthArray{ GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs{...} }
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+	ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthArray []GetCloudAutonomousVmClusterMaintenanceWindowMonthInput
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowMonthArray) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMaintenanceWindowMonthArray) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterMaintenanceWindowMonth) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMaintenanceWindowMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput() GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) ToGetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterMaintenanceWindowMonth {
+		return vs[0].([]GetCloudAutonomousVmClusterMaintenanceWindowMonth)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput)
+}
+
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+}
+
+// GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs and GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray and GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray{ GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray []GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig) string { return v.CloudProvider }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage struct {
+	// Associated Autonomous Container Database Usages.
+	AutonomousContainerDatabaseUsages []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage `pulumi:"autonomousContainerDatabaseUsages"`
+	// The number of CPU cores available.
+	AvailableCpus float64 `pulumi:"availableCpus"`
+	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+	Id string `pulumi:"id"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus float64 `pulumi:"reservedCpus"`
+	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+	UsedCpus float64 `pulumi:"usedCpus"`
+}
+
+// GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageInput is an input type that accepts GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs and GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageInput` via:
+//
+//	GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs{...}
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs struct {
+	// Associated Autonomous Container Database Usages.
+	AutonomousContainerDatabaseUsages GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput `pulumi:"autonomousContainerDatabaseUsages"`
+	// The number of CPU cores available.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
+	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
+	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
+}
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput {
+	return i.ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput)
+}
+
+// GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray and GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray{ GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs{...} }
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageInput
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput {
+	return o
+}
+
+// Associated Autonomous Container Database Usages.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) AutonomousContainerDatabaseUsages() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage {
+		return v.AutonomousContainerDatabaseUsages
+	}).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput)
+}
+
+// The number of CPU cores available.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) float64 {
+		return v.AvailableCpus
+	}).(pulumi.Float64Output)
+}
+
+// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The number of CPUs provisioned in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) float64 {
+		return v.ProvisionedCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) float64 {
+		return v.ReclaimableCpus
+	}).(pulumi.Float64Output)
+}
+
+// The number of CPUs reserved in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) float64 {
+		return v.ReservedCpus
+	}).(pulumi.Float64Output)
+}
+
+// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput) UsedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage) float64 { return v.UsedCpus }).(pulumi.Float64Output)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage {
+		return vs[0].([]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsage)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage struct {
+	// The number of CPU cores available.
+	AvailableCpus float64 `pulumi:"availableCpus"`
+	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+	Id string `pulumi:"id"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus float64 `pulumi:"reservedCpus"`
+	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+	UsedCpus float64 `pulumi:"usedCpus"`
+}
+
+// GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageInput is an input type that accepts GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs and GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageInput` via:
+//
+//	GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs{...}
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutputWithContext(context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs struct {
+	// The number of CPU cores available.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
+	// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
+	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+	ReclaimableCpus pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
+	// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+	UsedCpus pulumi.Float64Input `pulumi:"usedCpus"`
+}
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput {
+	return i.ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput)
+}
+
+// GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput is an input type that accepts GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray and GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput` via:
+//
+//	GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray{ GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs{...} }
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput
+	ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutputWithContext(context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray []GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageInput
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput {
+	return i.ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput {
+	return o
+}
+
+// The number of CPU cores available.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) float64 {
+		return v.AvailableCpus
+	}).(pulumi.Float64Output)
+}
+
+// The user-friendly name for the Autonomous VM cluster. The name does not need to be unique.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The number of CPUs provisioned in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) float64 {
+		return v.ProvisionedCpus
+	}).(pulumi.Float64Output)
+}
+
+// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) float64 {
+		return v.ReclaimableCpus
+	}).(pulumi.Float64Output)
+}
+
+// The number of CPUs reserved in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) float64 {
+		return v.ReservedCpus
+	}).(pulumi.Float64Output)
+}
+
+// The number of CPU cores alloted to the Autonomous Container Databases in an Cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput) UsedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage) float64 {
+		return v.UsedCpus
+	}).(pulumi.Float64Output)
+}
+
+type GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput() GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput) ToGetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage {
+		return vs[0].([]GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsage)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmCluster struct {
+	// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
+	AutonomousDataStoragePercentage float64 `pulumi:"autonomousDataStoragePercentage"`
+	// The data disk group size allocated for Autonomous AI Databases, in TBs.
+	AutonomousDataStorageSizeInTbs float64 `pulumi:"autonomousDataStorageSizeInTbs"`
+	// A filter to return only resources that match the given availability domain exactly.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The data disk group size available for Autonomous AI Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases int `pulumi:"availableContainerDatabases"`
+	// CPU cores available for allocation to Autonomous AI Databases.
+	AvailableCpus float64 `pulumi:"availableCpus"`
+	// If provided, filters the results for the specified cloud Exadata infrastructure.
+	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
+	// The time zone of the Cloud Autonomous VM Cluster.
+	ClusterTimeZone string `pulumi:"clusterTimeZone"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	ComputeModel string `pulumi:"computeModel"`
+	// The number of CPU cores on the cloud Autonomous VM cluster.
+	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// The number of CPU cores enabled per VM cluster node.
+	CpuCoreCountPerNode int `pulumi:"cpuCoreCountPerNode"`
+	// The percentage of total number of CPUs used in an Autonomous VM Cluster.
+	CpuPercentage float64 `pulumi:"cpuPercentage"`
+	// The total data storage allocated, in gigabytes (GB).
+	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
+	// The total data storage allocated, in terabytes (TB).
+	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers []string `pulumi:"dbServers"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// User defined description of the cloud Autonomous VM cluster.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm string `pulumi:"distributionAlgorithm"`
+	// The domain name for the cloud Autonomous VM cluster.
+	Domain string `pulumi:"domain"`
+	// The lowest value to which exadataStorage (in TBs) can be scaled down.
+	ExadataStorageInTbsLowestScaledValue float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hostname for the cloud Autonomous VM cluster.
+	Hostname string `pulumi:"hostname"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	IsMtlsEnabledVmCluster bool `pulumi:"isMtlsEnabledVmCluster"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
+	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
+	// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+	LicenseModel string `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails         string                                                                        `pulumi:"lifecycleDetails"`
+	MaintenanceWindowDetails []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The lowest value to which maximum number of ACDs can be scaled down.
+	MaxAcdsLowestScaledValue int `pulumi:"maxAcdsLowestScaledValue"`
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	MemoryPerComputeUnitInGbs float64 `pulumi:"memoryPerComputeUnitInGbs"`
+	// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	// The number of database servers in the cloud VM cluster.
+	NodeCount int `pulumi:"nodeCount"`
+	// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+	NonProvisionableAutonomousContainerDatabases int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+	OcpuCount float64 `pulumi:"ocpuCount"`
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue int  `pulumi:"ocpusLowestScaledValue"`
+	OpcDryRun              bool `pulumi:"opcDryRun"`
+	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+	ProvisionableAutonomousContainerDatabases int `pulumi:"provisionableAutonomousContainerDatabases"`
+	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+	ProvisionedAutonomousContainerDatabases int `pulumi:"provisionedAutonomousContainerDatabases"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
+	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	ReclaimableCpus     float64 `pulumi:"reclaimableCpus"`
+	RegisterPkcsTrigger int     `pulumi:"registerPkcsTrigger"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus float64 `pulumi:"reservedCpus"`
+	// The SCAN Listener Non TLS port. Default is 1521.
+	ScanListenerPortNonTls int `pulumi:"scanListenerPortNonTls"`
+	// The SCAN Listenenr TLS port. Default is 2484.
+	ScanListenerPortTls int `pulumi:"scanListenerPortTls"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage float64 `pulumi:"sgaPercentage"`
+	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
+	Shape string `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// TDE keystore type
+	TdeKeyStoreType string `pulumi:"tdeKeyStoreType"`
+	// The date and time that the cloud Autonomous VM cluster was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires string `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires string `pulumi:"timeOrdsCertificateExpires"`
+	// The last date and time that the cloud Autonomous VM cluster was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The total data disk group size for Autonomous AI Databases, in TBs.
+	TotalAutonomousDataStorageInTbs float64 `pulumi:"totalAutonomousDataStorageInTbs"`
+	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+	TotalContainerDatabases int `pulumi:"totalContainerDatabases"`
+	// The total number of CPUs in an Autonomous VM Cluster.
+	TotalCpus             float64 `pulumi:"totalCpus"`
+	UnregisterPkcsTrigger int     `pulumi:"unregisterPkcsTrigger"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs struct {
+	// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
+	AutonomousDataStoragePercentage pulumi.Float64Input `pulumi:"autonomousDataStoragePercentage"`
+	// The data disk group size allocated for Autonomous AI Databases, in TBs.
+	AutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"autonomousDataStorageSizeInTbs"`
+	// A filter to return only resources that match the given availability domain exactly.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The data disk group size available for Autonomous AI Databases, in TBs.
+	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Input `pulumi:"availableAutonomousDataStorageSizeInTbs"`
+	// The number of Autonomous Container Databases that can be created with the currently available local storage.
+	AvailableContainerDatabases pulumi.IntInput `pulumi:"availableContainerDatabases"`
+	// CPU cores available for allocation to Autonomous AI Databases.
+	AvailableCpus pulumi.Float64Input `pulumi:"availableCpus"`
+	// If provided, filters the results for the specified cloud Exadata infrastructure.
+	CloudExadataInfrastructureId pulumi.StringInput `pulumi:"cloudExadataInfrastructureId"`
+	// The time zone of the Cloud Autonomous VM Cluster.
+	ClusterTimeZone pulumi.StringInput `pulumi:"clusterTimeZone"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+	ComputeModel pulumi.StringInput `pulumi:"computeModel"`
+	// The number of CPU cores on the cloud Autonomous VM cluster.
+	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
+	// The number of CPU cores enabled per VM cluster node.
+	CpuCoreCountPerNode pulumi.IntInput `pulumi:"cpuCoreCountPerNode"`
+	// The percentage of total number of CPUs used in an Autonomous VM Cluster.
+	CpuPercentage pulumi.Float64Input `pulumi:"cpuPercentage"`
+	// The total data storage allocated, in gigabytes (GB).
+	DataStorageSizeInGb pulumi.Float64Input `pulumi:"dataStorageSizeInGb"`
+	// The total data storage allocated, in terabytes (TB).
+	DataStorageSizeInTbs pulumi.Float64Input `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntInput `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// User defined description of the cloud Autonomous VM cluster.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The distribution algorithm used for the Autonomous VM cluster.
+	DistributionAlgorithm pulumi.StringInput `pulumi:"distributionAlgorithm"`
+	// The domain name for the cloud Autonomous VM cluster.
+	Domain pulumi.StringInput `pulumi:"domain"`
+	// The lowest value to which exadataStorage (in TBs) can be scaled down.
+	ExadataStorageInTbsLowestScaledValue pulumi.Float64Input `pulumi:"exadataStorageInTbsLowestScaledValue"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The hostname for the cloud Autonomous VM cluster.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+	IsMtlsEnabledVmCluster pulumi.BoolInput `pulumi:"isMtlsEnabledVmCluster"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+	LastMaintenanceRunId pulumi.StringInput `pulumi:"lastMaintenanceRunId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
+	LastUpdateHistoryEntryId pulumi.StringInput `pulumi:"lastUpdateHistoryEntryId"`
+	// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails         pulumi.StringInput                                                                    `pulumi:"lifecycleDetails"`
+	MaintenanceWindowDetails GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput `pulumi:"maintenanceWindowDetails"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput `pulumi:"maintenanceWindows"`
+	// The lowest value to which maximum number of ACDs can be scaled down.
+	MaxAcdsLowestScaledValue pulumi.IntInput `pulumi:"maxAcdsLowestScaledValue"`
+	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+	MemoryPerComputeUnitInGbs pulumi.Float64Input `pulumi:"memoryPerComputeUnitInGbs"`
+	// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+	MemoryPerOracleComputeUnitInGbs pulumi.IntInput `pulumi:"memoryPerOracleComputeUnitInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput `pulumi:"multiCloudIdentityConnectorConfigs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+	NextMaintenanceRunId pulumi.StringInput `pulumi:"nextMaintenanceRunId"`
+	// The number of database servers in the cloud VM cluster.
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+	NonProvisionableAutonomousContainerDatabases pulumi.IntInput `pulumi:"nonProvisionableAutonomousContainerDatabases"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue pulumi.IntInput  `pulumi:"ocpusLowestScaledValue"`
+	OpcDryRun              pulumi.BoolInput `pulumi:"opcDryRun"`
+	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+	ProvisionableAutonomousContainerDatabases pulumi.IntInput `pulumi:"provisionableAutonomousContainerDatabases"`
+	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+	ProvisionedAutonomousContainerDatabases pulumi.IntInput `pulumi:"provisionedAutonomousContainerDatabases"`
+	// The number of CPUs provisioned in an Autonomous VM Cluster.
+	ProvisionedCpus pulumi.Float64Input `pulumi:"provisionedCpus"`
+	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	ReclaimableCpus     pulumi.Float64Input `pulumi:"reclaimableCpus"`
+	RegisterPkcsTrigger pulumi.IntInput     `pulumi:"registerPkcsTrigger"`
+	// The number of CPUs reserved in an Autonomous VM Cluster.
+	ReservedCpus pulumi.Float64Input `pulumi:"reservedCpus"`
+	// The SCAN Listener Non TLS port. Default is 1521.
+	ScanListenerPortNonTls pulumi.IntInput `pulumi:"scanListenerPortNonTls"`
+	// The SCAN Listenenr TLS port. Default is 2484.
+	ScanListenerPortTls pulumi.IntInput `pulumi:"scanListenerPortTls"`
+	// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// Percentage of ECPU memory allocated for SGA(System Global Area).
+	SgaPercentage pulumi.Float64Input `pulumi:"sgaPercentage"`
+	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringInput `pulumi:"tdeKeyStoreType"`
+	// The date and time that the cloud Autonomous VM cluster was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time of Database SSL certificate expiration.
+	TimeDatabaseSslCertificateExpires pulumi.StringInput `pulumi:"timeDatabaseSslCertificateExpires"`
+	// The date and time of ORDS certificate expiration.
+	TimeOrdsCertificateExpires pulumi.StringInput `pulumi:"timeOrdsCertificateExpires"`
+	// The last date and time that the cloud Autonomous VM cluster was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The total data disk group size for Autonomous AI Databases, in TBs.
+	TotalAutonomousDataStorageInTbs pulumi.Float64Input `pulumi:"totalAutonomousDataStorageInTbs"`
+	// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+	TotalContainerDatabases pulumi.IntInput `pulumi:"totalContainerDatabases"`
+	// The total number of CPUs in an Autonomous VM Cluster.
+	TotalCpus             pulumi.Float64Input `pulumi:"totalCpus"`
+	UnregisterPkcsTrigger pulumi.IntInput     `pulumi:"unregisterPkcsTrigger"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput {
+	return o
+}
+
+// The percentage of the data storage used for the Autonomous AI Databases in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AutonomousDataStoragePercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.AutonomousDataStoragePercentage
+	}).(pulumi.Float64Output)
+}
+
+// The data disk group size allocated for Autonomous AI Databases, in TBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.AutonomousDataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
+// A filter to return only resources that match the given availability domain exactly.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The data disk group size available for Autonomous AI Databases, in TBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableAutonomousDataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.AvailableAutonomousDataStorageSizeInTbs
+	}).(pulumi.Float64Output)
+}
+
+// The number of Autonomous Container Databases that can be created with the currently available local storage.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.AvailableContainerDatabases }).(pulumi.IntOutput)
+}
+
+// CPU cores available for allocation to Autonomous AI Databases.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) AvailableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
+}
+
+// If provided, filters the results for the specified cloud Exadata infrastructure.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CloudExadataInfrastructureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string {
+		return v.CloudExadataInfrastructureId
+	}).(pulumi.StringOutput)
+}
+
+// The time zone of the Cloud Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ClusterTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.ClusterTimeZone }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The compute model of the Cloud Autonomous VM Cluster. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous AI Database on Dedicated Exadata #Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// The number of CPU cores on the cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The number of CPU cores enabled per VM cluster node.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
+}
+
+// The percentage of total number of CPUs used in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) CpuPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.CpuPercentage }).(pulumi.Float64Output)
+}
+
+// The total data storage allocated, in gigabytes (GB).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
+}
+
+// The total data storage allocated, in terabytes (TB).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []string { return v.DbServers }).(pulumi.StringArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// User defined description of the cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The distribution algorithm used for the Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) DistributionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.DistributionAlgorithm }).(pulumi.StringOutput)
+}
+
+// The domain name for the cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) Domain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.Domain }).(pulumi.StringOutput)
+}
+
+// The lowest value to which exadataStorage (in TBs) can be scaled down.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.ExadataStorageInTbsLowestScaledValue
+	}).(pulumi.Float64Output)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The hostname for the cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) IsMtlsEnabledVmCluster() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) bool { return v.IsMtlsEnabledVmCluster }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LastMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LastMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LastUpdateHistoryEntryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the Oracle Autonomous AI Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle AI Database software licenses and the Oracle AI Database service. Note that when provisioning an [Autonomous AI Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous AI Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MaintenanceWindowDetails() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail {
+		return v.MaintenanceWindowDetails
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MaintenanceWindows() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow {
+		return v.MaintenanceWindows
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
+}
+
+// The lowest value to which maximum number of ACDs can be scaled down.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
+}
+
+// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MemoryPerComputeUnitInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.MemoryPerComputeUnitInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The amount of memory (in GBs, rounded off to nearest integer value) enabled per ECPU or OCPU. This is deprecated. Please refer to memoryPerComputeUnitInGBs for accurate value.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int {
+		return v.MemoryPerOracleComputeUnitInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The memory allocated in GBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) MultiCloudIdentityConnectorConfigs() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfig {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NextMaintenanceRunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The number of database servers in the cloud VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// The number of non-provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NonProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int {
+		return v.NonProvisionableAutonomousContainerDatabases
+	}).(pulumi.IntOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) OcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// The lowest value to which ocpus can be scaled down.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) OcpusLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.OcpusLowestScaledValue }).(pulumi.IntOutput)
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) OpcDryRun() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) bool { return v.OpcDryRun }).(pulumi.BoolOutput)
+}
+
+// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int {
+		return v.ProvisionableAutonomousContainerDatabases
+	}).(pulumi.IntOutput)
+}
+
+// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int {
+		return v.ProvisionedAutonomousContainerDatabases
+	}).(pulumi.IntOutput)
+}
+
+// The number of CPUs provisioned in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ProvisionedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
+}
+
+// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous AI Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ReclaimableCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) RegisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.RegisterPkcsTrigger }).(pulumi.IntOutput)
+}
+
+// The number of CPUs reserved in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ReservedCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.ReservedCpus }).(pulumi.Float64Output)
+}
+
+// The SCAN Listener Non TLS port. Default is 1521.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ScanListenerPortNonTls() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.ScanListenerPortNonTls }).(pulumi.IntOutput)
+}
+
+// The SCAN Listenenr TLS port. Default is 2484.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.ScanListenerPortTls }).(pulumi.IntOutput)
+}
+
+// Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// Percentage of ECPU memory allocated for SGA(System Global Area).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) SgaPercentage() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.SgaPercentage }).(pulumi.Float64Output)
+}
+
+// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// TDE keystore type
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
+// The date and time that the cloud Autonomous VM cluster was created.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time of Database SSL certificate expiration.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeDatabaseSslCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string {
+		return v.TimeDatabaseSslCertificateExpires
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of ORDS certificate expiration.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeOrdsCertificateExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string {
+		return v.TimeOrdsCertificateExpires
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time that the cloud Autonomous VM cluster was updated.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The total data disk group size for Autonomous AI Databases, in TBs.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 {
+		return v.TotalAutonomousDataStorageInTbs
+	}).(pulumi.Float64Output)
+}
+
+// The total number of Autonomous Container Databases that can be created with the allocated local storage.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.TotalContainerDatabases }).(pulumi.IntOutput)
+}
+
+// The total number of CPUs in an Autonomous VM Cluster.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) TotalCpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) float64 { return v.TotalCpus }).(pulumi.Float64Output)
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput) UnregisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmCluster) int { return v.UnregisterPkcsTrigger }).(pulumi.IntOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmCluster)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmCluster {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmCluster)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+	SkipRus []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput `pulumi:"preference"`
+	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+	SkipRus pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) DaysOfWeeks() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) []int {
+		return v.HoursOfDays
+	}).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) bool {
+		return v.IsMonthlyPatchingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) int {
+		return v.LeadTimeInWeeks
+	}).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) Months() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth {
+		return v.Months
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) string {
+		return v.Preference
+	}).(pulumi.StringOutput)
+}
+
+// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) []bool { return v.SkipRus }).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow) []int {
+		return v.WeeksOfMonths
+	}).(pulumi.IntArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins int `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays []int `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled bool `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled bool `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks int `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode string `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference string `pulumi:"preference"`
+	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+	SkipRus []bool `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths []int `pulumi:"weeksOfMonths"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs struct {
+	// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+	CustomActionTimeoutInMins pulumi.IntInput `pulumi:"customActionTimeoutInMins"`
+	// Days during the week when maintenance should be performed.
+	DaysOfWeeks GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput `pulumi:"daysOfWeeks"`
+	// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+	// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+	HoursOfDays pulumi.IntArrayInput `pulumi:"hoursOfDays"`
+	// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+	IsCustomActionTimeoutEnabled pulumi.BoolInput `pulumi:"isCustomActionTimeoutEnabled"`
+	// If true, enables the monthly patching option.
+	IsMonthlyPatchingEnabled pulumi.BoolInput `pulumi:"isMonthlyPatchingEnabled"`
+	// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+	LeadTimeInWeeks pulumi.IntInput `pulumi:"leadTimeInWeeks"`
+	// Months during the year when maintenance should be performed.
+	Months GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput `pulumi:"months"`
+	// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+	PatchingMode pulumi.StringInput `pulumi:"patchingMode"`
+	// The maintenance window scheduling preference.
+	Preference pulumi.StringInput `pulumi:"preference"`
+	// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+	SkipRus pulumi.BoolArrayInput `pulumi:"skipRus"`
+	// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+	WeeksOfMonths pulumi.IntArrayInput `pulumi:"weeksOfMonths"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return o
+}
+
+// Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) CustomActionTimeoutInMins() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) int {
+		return v.CustomActionTimeoutInMins
+	}).(pulumi.IntOutput)
+}
+
+// Days during the week when maintenance should be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) DaysOfWeeks() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
+		return v.DaysOfWeeks
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+// The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+// * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) HoursOfDays() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) []int {
+		return v.HoursOfDays
+	}).(pulumi.IntArrayOutput)
+}
+
+// If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) IsCustomActionTimeoutEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) bool {
+		return v.IsCustomActionTimeoutEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// If true, enables the monthly patching option.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) IsMonthlyPatchingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) bool {
+		return v.IsMonthlyPatchingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) LeadTimeInWeeks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) int {
+		return v.LeadTimeInWeeks
+	}).(pulumi.IntOutput)
+}
+
+// Months during the year when maintenance should be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) Months() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth {
+		return v.Months
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+// Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) PatchingMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) string {
+		return v.PatchingMode
+	}).(pulumi.StringOutput)
+}
+
+// The maintenance window scheduling preference.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) Preference() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) string {
+		return v.Preference
+	}).(pulumi.StringOutput)
+}
+
+// If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) SkipRus() pulumi.BoolArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) []bool {
+		return v.SkipRus
+	}).(pulumi.BoolArrayOutput)
+}
+
+// Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput) WeeksOfMonths() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail) []int {
+		return v.WeeksOfMonths
+	}).(pulumi.IntArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetail)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeek)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth struct {
+	// Name of the month of the year.
+	Name string `pulumi:"name"`
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...}
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs struct {
+	// Name of the month of the year.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
+// GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput is an input type that accepts GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray and GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput values.
+// You can construct a concrete instance of `GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput` via:
+//
+//	GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{ GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{...} }
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+	ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray []GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return i.ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return o
+}
+
+// Name of the month of the year.
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)(nil)).Elem()
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput() GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) ToGetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutputWithContext(ctx context.Context) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput {
+	return o
+}
+
+func (o GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput) Index(i pulumi.IntInput) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth {
+		return vs[0].([]GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonth)[vs[1].(int)]
+	}).(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput)
+}
+
 type GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonth struct {
 	// Name of the month of the year.
 	Name string `pulumi:"name"`
@@ -3679,6 +5864,130 @@ func (o GetCloudVmClusterIormConfigDbPlanArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetCloudVmClusterIormConfigDbPlanOutput)
 }
 
+type GetCloudVmClusterLiveImageVersionDetail struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates bool `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version string `pulumi:"version"`
+}
+
+// GetCloudVmClusterLiveImageVersionDetailInput is an input type that accepts GetCloudVmClusterLiveImageVersionDetailArgs and GetCloudVmClusterLiveImageVersionDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterLiveImageVersionDetailInput` via:
+//
+//	GetCloudVmClusterLiveImageVersionDetailArgs{...}
+type GetCloudVmClusterLiveImageVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClusterLiveImageVersionDetailOutput
+	ToGetCloudVmClusterLiveImageVersionDetailOutputWithContext(context.Context) GetCloudVmClusterLiveImageVersionDetailOutput
+}
+
+type GetCloudVmClusterLiveImageVersionDetailArgs struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates pulumi.BoolInput `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetCloudVmClusterLiveImageVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterLiveImageVersionDetailArgs) ToGetCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClusterLiveImageVersionDetailOutput {
+	return i.ToGetCloudVmClusterLiveImageVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterLiveImageVersionDetailArgs) ToGetCloudVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetCloudVmClusterLiveImageVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterLiveImageVersionDetailOutput)
+}
+
+// GetCloudVmClusterLiveImageVersionDetailArrayInput is an input type that accepts GetCloudVmClusterLiveImageVersionDetailArray and GetCloudVmClusterLiveImageVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterLiveImageVersionDetailArrayInput` via:
+//
+//	GetCloudVmClusterLiveImageVersionDetailArray{ GetCloudVmClusterLiveImageVersionDetailArgs{...} }
+type GetCloudVmClusterLiveImageVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClusterLiveImageVersionDetailArrayOutput
+	ToGetCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Context) GetCloudVmClusterLiveImageVersionDetailArrayOutput
+}
+
+type GetCloudVmClusterLiveImageVersionDetailArray []GetCloudVmClusterLiveImageVersionDetailInput
+
+func (GetCloudVmClusterLiveImageVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterLiveImageVersionDetailArray) ToGetCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return i.ToGetCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterLiveImageVersionDetailArray) ToGetCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterLiveImageVersionDetailArrayOutput)
+}
+
+type GetCloudVmClusterLiveImageVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterLiveImageVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) ToGetCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) ToGetCloudVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetCloudVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) HasPendingUpdates() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClusterLiveImageVersionDetail) bool { return v.HasPendingUpdates }).(pulumi.BoolOutput)
+}
+
+// The release date and time for the applied Live Exadata Image OS version.
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterLiveImageVersionDetail) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterLiveImageVersionDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// Live Exadata Image Version of the Guest OS Update applied.
+func (o GetCloudVmClusterLiveImageVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterLiveImageVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClusterLiveImageVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterLiveImageVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterLiveImageVersionDetailArrayOutput) ToGetCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterLiveImageVersionDetailArrayOutput) ToGetCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterLiveImageVersionDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterLiveImageVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterLiveImageVersionDetail {
+		return vs[0].([]GetCloudVmClusterLiveImageVersionDetail)[vs[1].(int)]
+	}).(GetCloudVmClusterLiveImageVersionDetailOutput)
+}
+
 type GetCloudVmClusterMultiCloudIdentityConnectorConfig struct {
 	// Cloud provider
 	CloudProvider string `pulumi:"cloudProvider"`
@@ -3785,6 +6094,115 @@ func (o GetCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i p
 	}).(GetCloudVmClusterMultiCloudIdentityConnectorConfigOutput)
 }
 
+type GetCloudVmClusterUpdateDetail struct {
+	UpdateAction string `pulumi:"updateAction"`
+	UpdateId     string `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+}
+
+// GetCloudVmClusterUpdateDetailInput is an input type that accepts GetCloudVmClusterUpdateDetailArgs and GetCloudVmClusterUpdateDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterUpdateDetailInput` via:
+//
+//	GetCloudVmClusterUpdateDetailArgs{...}
+type GetCloudVmClusterUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterUpdateDetailOutput() GetCloudVmClusterUpdateDetailOutput
+	ToGetCloudVmClusterUpdateDetailOutputWithContext(context.Context) GetCloudVmClusterUpdateDetailOutput
+}
+
+type GetCloudVmClusterUpdateDetailArgs struct {
+	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	UpdateId     pulumi.StringInput `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+}
+
+func (GetCloudVmClusterUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterUpdateDetailArgs) ToGetCloudVmClusterUpdateDetailOutput() GetCloudVmClusterUpdateDetailOutput {
+	return i.ToGetCloudVmClusterUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterUpdateDetailArgs) ToGetCloudVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClusterUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterUpdateDetailOutput)
+}
+
+// GetCloudVmClusterUpdateDetailArrayInput is an input type that accepts GetCloudVmClusterUpdateDetailArray and GetCloudVmClusterUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClusterUpdateDetailArrayInput` via:
+//
+//	GetCloudVmClusterUpdateDetailArray{ GetCloudVmClusterUpdateDetailArgs{...} }
+type GetCloudVmClusterUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClusterUpdateDetailArrayOutput
+	ToGetCloudVmClusterUpdateDetailArrayOutputWithContext(context.Context) GetCloudVmClusterUpdateDetailArrayOutput
+}
+
+type GetCloudVmClusterUpdateDetailArray []GetCloudVmClusterUpdateDetailInput
+
+func (GetCloudVmClusterUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClusterUpdateDetailArray) ToGetCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClusterUpdateDetailArrayOutput {
+	return i.ToGetCloudVmClusterUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClusterUpdateDetailArray) ToGetCloudVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClusterUpdateDetailArrayOutput)
+}
+
+type GetCloudVmClusterUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterUpdateDetailOutput) ToGetCloudVmClusterUpdateDetailOutput() GetCloudVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClusterUpdateDetailOutput) ToGetCloudVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClusterUpdateDetailOutput) UpdateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterUpdateDetail) string { return v.UpdateAction }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClusterUpdateDetailOutput) UpdateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterUpdateDetail) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetCloudVmClusterUpdateDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClusterUpdateDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClusterUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClusterUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClusterUpdateDetailArrayOutput) ToGetCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterUpdateDetailArrayOutput) ToGetCloudVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClusterUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClusterUpdateDetail {
+		return vs[0].([]GetCloudVmClusterUpdateDetail)[vs[1].(int)]
+	}).(GetCloudVmClusterUpdateDetailOutput)
+}
+
 type GetCloudVmClustersCloudVmCluster struct {
 	// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
@@ -3848,6 +6266,8 @@ type GetCloudVmClustersCloudVmCluster struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort string `pulumi:"listenerPort"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails []GetCloudVmClustersCloudVmClusterLiveImageVersionDetail `pulumi:"liveImageVersionDetails"`
 	// The memory to be allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -3858,8 +6278,10 @@ type GetCloudVmClustersCloudVmCluster struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount     float64 `pulumi:"ocpuCount"`
-	PrivateZoneId string  `pulumi:"privateZoneId"`
+	OcpuCount float64 `pulumi:"ocpuCount"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
+	PrivateZoneId      string `pulumi:"privateZoneId"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage int `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -3901,7 +6323,8 @@ type GetCloudVmClustersCloudVmCluster struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone      string                                         `pulumi:"timeZone"`
+	UpdateDetails []GetCloudVmClustersCloudVmClusterUpdateDetail `pulumi:"updateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -3990,6 +6413,8 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort pulumi.StringInput `pulumi:"listenerPort"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayInput `pulumi:"liveImageVersionDetails"`
 	// The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntInput `pulumi:"memorySizeInGbs"`
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -4000,8 +6425,10 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount     pulumi.Float64Input `pulumi:"ocpuCount"`
-	PrivateZoneId pulumi.StringInput  `pulumi:"privateZoneId"`
+	OcpuCount pulumi.Float64Input `pulumi:"ocpuCount"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion pulumi.StringInput `pulumi:"oracleLinuxVersion"`
+	PrivateZoneId      pulumi.StringInput `pulumi:"privateZoneId"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage pulumi.IntInput `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -4043,7 +6470,8 @@ type GetCloudVmClustersCloudVmClusterArgs struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone      pulumi.StringInput                                     `pulumi:"timeZone"`
+	UpdateDetails GetCloudVmClustersCloudVmClusterUpdateDetailArrayInput `pulumi:"updateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -4275,6 +6703,13 @@ func (o GetCloudVmClustersCloudVmClusterOutput) ListenerPort() pulumi.StringOutp
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+func (o GetCloudVmClustersCloudVmClusterOutput) LiveImageVersionDetails() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) []GetCloudVmClustersCloudVmClusterLiveImageVersionDetail {
+		return v.LiveImageVersionDetails
+	}).(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput)
+}
+
 // The memory to be allocated in GBs.
 func (o GetCloudVmClustersCloudVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -4301,6 +6736,11 @@ func (o GetCloudVmClustersCloudVmClusterOutput) NsgIds() pulumi.StringArrayOutpu
 // The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o GetCloudVmClustersCloudVmClusterOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o GetCloudVmClustersCloudVmClusterOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 func (o GetCloudVmClustersCloudVmClusterOutput) PrivateZoneId() pulumi.StringOutput {
@@ -4410,6 +6850,12 @@ func (o GetCloudVmClustersCloudVmClusterOutput) TimeCreated() pulumi.StringOutpu
 // The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o GetCloudVmClustersCloudVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterOutput) UpdateDetails() GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmCluster) []GetCloudVmClustersCloudVmClusterUpdateDetail {
+		return v.UpdateDetails
+	}).(GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -5261,6 +7707,130 @@ func (o GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput) Index(
 	}).(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput)
 }
 
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetail struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates bool `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version string `pulumi:"version"`
+}
+
+// GetCloudVmClustersCloudVmClusterLiveImageVersionDetailInput is an input type that accepts GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs and GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterLiveImageVersionDetailInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs{...}
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput
+	ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput
+}
+
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates pulumi.BoolInput `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray and GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray{ GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs{...} }
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput
+	ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray []GetCloudVmClustersCloudVmClusterLiveImageVersionDetailInput
+
+func (GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) HasPendingUpdates() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterLiveImageVersionDetail) bool { return v.HasPendingUpdates }).(pulumi.BoolOutput)
+}
+
+// The release date and time for the applied Live Exadata Image OS version.
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterLiveImageVersionDetail) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterLiveImageVersionDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// Live Exadata Image Version of the Guest OS Update applied.
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterLiveImageVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput() GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterLiveImageVersionDetail {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterLiveImageVersionDetail)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput)
+}
+
 type GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig struct {
 	// Cloud provider
 	CloudProvider string `pulumi:"cloudProvider"`
@@ -5367,6 +7937,115 @@ func (o GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig {
 		return vs[0].([]GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
 	}).(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterUpdateDetail struct {
+	UpdateAction string `pulumi:"updateAction"`
+	UpdateId     string `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+}
+
+// GetCloudVmClustersCloudVmClusterUpdateDetailInput is an input type that accepts GetCloudVmClustersCloudVmClusterUpdateDetailArgs and GetCloudVmClustersCloudVmClusterUpdateDetailOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterUpdateDetailInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterUpdateDetailArgs{...}
+type GetCloudVmClustersCloudVmClusterUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterUpdateDetailOutput() GetCloudVmClustersCloudVmClusterUpdateDetailOutput
+	ToGetCloudVmClustersCloudVmClusterUpdateDetailOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailOutput
+}
+
+type GetCloudVmClustersCloudVmClusterUpdateDetailArgs struct {
+	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	UpdateId     pulumi.StringInput `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+}
+
+func (GetCloudVmClustersCloudVmClusterUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterUpdateDetailArgs) ToGetCloudVmClustersCloudVmClusterUpdateDetailOutput() GetCloudVmClustersCloudVmClusterUpdateDetailOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterUpdateDetailArgs) ToGetCloudVmClustersCloudVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterUpdateDetailOutput)
+}
+
+// GetCloudVmClustersCloudVmClusterUpdateDetailArrayInput is an input type that accepts GetCloudVmClustersCloudVmClusterUpdateDetailArray and GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetCloudVmClustersCloudVmClusterUpdateDetailArrayInput` via:
+//
+//	GetCloudVmClustersCloudVmClusterUpdateDetailArray{ GetCloudVmClustersCloudVmClusterUpdateDetailArgs{...} }
+type GetCloudVmClustersCloudVmClusterUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput
+	ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutputWithContext(context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput
+}
+
+type GetCloudVmClustersCloudVmClusterUpdateDetailArray []GetCloudVmClustersCloudVmClusterUpdateDetailInput
+
+func (GetCloudVmClustersCloudVmClusterUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetCloudVmClustersCloudVmClusterUpdateDetailArray) ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput {
+	return i.ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetCloudVmClustersCloudVmClusterUpdateDetailArray) ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCloudVmClustersCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailOutput) ToGetCloudVmClustersCloudVmClusterUpdateDetailOutput() GetCloudVmClustersCloudVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailOutput) ToGetCloudVmClustersCloudVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailOutput) UpdateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterUpdateDetail) string { return v.UpdateAction }).(pulumi.StringOutput)
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailOutput) UpdateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterUpdateDetail) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCloudVmClustersCloudVmClusterUpdateDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+type GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCloudVmClustersCloudVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput() GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput) ToGetCloudVmClustersCloudVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetCloudVmClustersCloudVmClusterUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCloudVmClustersCloudVmClusterUpdateDetail {
+		return vs[0].([]GetCloudVmClustersCloudVmClusterUpdateDetail)[vs[1].(int)]
+	}).(GetCloudVmClustersCloudVmClusterUpdateDetailOutput)
 }
 
 type GetCloudVmClustersFilter struct {
@@ -6361,6 +9040,8 @@ func (o GetDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetData
 }
 
 type GetDatabaseDataGuardGroup struct {
+	// Specifies readiness of Managed Automatic failover.
+	ManagedAutoFailOverReadiness string `pulumi:"managedAutoFailOverReadiness"`
 	// List of Data Guard members, representing each database that is part of Data Guard.
 	Members []GetDatabaseDataGuardGroupMember `pulumi:"members"`
 	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -6379,6 +9060,8 @@ type GetDatabaseDataGuardGroupInput interface {
 }
 
 type GetDatabaseDataGuardGroupArgs struct {
+	// Specifies readiness of Managed Automatic failover.
+	ManagedAutoFailOverReadiness pulumi.StringInput `pulumi:"managedAutoFailOverReadiness"`
 	// List of Data Guard members, representing each database that is part of Data Guard.
 	Members GetDatabaseDataGuardGroupMemberArrayInput `pulumi:"members"`
 	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -6436,6 +9119,11 @@ func (o GetDatabaseDataGuardGroupOutput) ToGetDatabaseDataGuardGroupOutputWithCo
 	return o
 }
 
+// Specifies readiness of Managed Automatic failover.
+func (o GetDatabaseDataGuardGroupOutput) ManagedAutoFailOverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroup) string { return v.ManagedAutoFailOverReadiness }).(pulumi.StringOutput)
+}
+
 // List of Data Guard members, representing each database that is part of Data Guard.
 func (o GetDatabaseDataGuardGroupOutput) Members() GetDatabaseDataGuardGroupMemberArrayOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroup) []GetDatabaseDataGuardGroupMember { return v.Members }).(GetDatabaseDataGuardGroupMemberArrayOutput)
@@ -6477,15 +9165,20 @@ type GetDatabaseDataGuardGroupMember struct {
 	DatabaseId string `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId string `pulumi:"dbSystemId"`
-	// The failover readiness status of the Data Guard member.
+	// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 	FailoverReadiness string `pulumi:"failoverReadiness"`
 	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
 	FailoverReadinessMessage string `pulumi:"failoverReadinessMessage"`
+	// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+	FailoverTargets []string `pulumi:"failoverTargets"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	// The state of managed auto failover.
+	ManagedAutoFailover string `pulumi:"managedAutoFailover"`
 	// The role of the reporting database in this Data Guard association.
 	Role string `pulumi:"role"`
 	// The switchover readiness status of the Data Guard member.
+	// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 	SwitchoverReadiness string `pulumi:"switchoverReadiness"`
 	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
 	SwitchoverReadinessMessage string `pulumi:"switchoverReadinessMessage"`
@@ -6524,15 +9217,20 @@ type GetDatabaseDataGuardGroupMemberArgs struct {
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
-	// The failover readiness status of the Data Guard member.
+	// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 	FailoverReadiness pulumi.StringInput `pulumi:"failoverReadiness"`
 	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
 	FailoverReadinessMessage pulumi.StringInput `pulumi:"failoverReadinessMessage"`
+	// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+	FailoverTargets pulumi.StringArrayInput `pulumi:"failoverTargets"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	// The state of managed auto failover.
+	ManagedAutoFailover pulumi.StringInput `pulumi:"managedAutoFailover"`
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The switchover readiness status of the Data Guard member.
+	// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 	SwitchoverReadiness pulumi.StringInput `pulumi:"switchoverReadiness"`
 	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
 	SwitchoverReadinessMessage pulumi.StringInput `pulumi:"switchoverReadinessMessage"`
@@ -6625,7 +9323,7 @@ func (o GetDatabaseDataGuardGroupMemberOutput) DbSystemId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-// The failover readiness status of the Data Guard member.
+// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 func (o GetDatabaseDataGuardGroupMemberOutput) FailoverReadiness() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.FailoverReadiness }).(pulumi.StringOutput)
 }
@@ -6635,9 +9333,19 @@ func (o GetDatabaseDataGuardGroupMemberOutput) FailoverReadinessMessage() pulumi
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.FailoverReadinessMessage }).(pulumi.StringOutput)
 }
 
+// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+func (o GetDatabaseDataGuardGroupMemberOutput) FailoverTargets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) []string { return v.FailoverTargets }).(pulumi.StringArrayOutput)
+}
+
 // True if active Data Guard is enabled.
 func (o GetDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+// The state of managed auto failover.
+func (o GetDatabaseDataGuardGroupMemberOutput) ManagedAutoFailover() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.ManagedAutoFailover }).(pulumi.StringOutput)
 }
 
 // The role of the reporting database in this Data Guard association.
@@ -6646,6 +9354,7 @@ func (o GetDatabaseDataGuardGroupMemberOutput) Role() pulumi.StringOutput {
 }
 
 // The switchover readiness status of the Data Guard member.
+// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 func (o GetDatabaseDataGuardGroupMemberOutput) SwitchoverReadiness() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDataGuardGroupMember) string { return v.SwitchoverReadiness }).(pulumi.StringOutput)
 }
@@ -6699,9 +9408,10 @@ func (o GetDatabaseDataGuardGroupMemberArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetDatabaseDatabase struct {
-	AdminPassword     string `pulumi:"adminPassword"`
-	BackupId          string `pulumi:"backupId"`
-	BackupTdePassword string `pulumi:"backupTdePassword"`
+	AdminPassword              string                                         `pulumi:"adminPassword"`
+	AutoFailoverConfigurations []GetDatabaseDatabaseAutoFailoverConfiguration `pulumi:"autoFailoverConfigurations"`
+	BackupId                   string                                         `pulumi:"backupId"`
+	BackupTdePassword          string                                         `pulumi:"backupTdePassword"`
 	// The character set for the database.
 	CharacterSet          string `pulumi:"characterSet"`
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
@@ -6772,9 +9482,10 @@ type GetDatabaseDatabaseInput interface {
 }
 
 type GetDatabaseDatabaseArgs struct {
-	AdminPassword     pulumi.StringInput `pulumi:"adminPassword"`
-	BackupId          pulumi.StringInput `pulumi:"backupId"`
-	BackupTdePassword pulumi.StringInput `pulumi:"backupTdePassword"`
+	AdminPassword              pulumi.StringInput                                     `pulumi:"adminPassword"`
+	AutoFailoverConfigurations GetDatabaseDatabaseAutoFailoverConfigurationArrayInput `pulumi:"autoFailoverConfigurations"`
+	BackupId                   pulumi.StringInput                                     `pulumi:"backupId"`
+	BackupTdePassword          pulumi.StringInput                                     `pulumi:"backupTdePassword"`
 	// The character set for the database.
 	CharacterSet          pulumi.StringInput `pulumi:"characterSet"`
 	DatabaseAdminPassword pulumi.StringInput `pulumi:"databaseAdminPassword"`
@@ -6886,6 +9597,12 @@ func (o GetDatabaseDatabaseOutput) ToGetDatabaseDatabaseOutputWithContext(ctx co
 
 func (o GetDatabaseDatabaseOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.AdminPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) AutoFailoverConfigurations() GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseAutoFailoverConfiguration {
+		return v.AutoFailoverConfigurations
+	}).(GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput)
 }
 
 func (o GetDatabaseDatabaseOutput) BackupId() pulumi.StringOutput {
@@ -7066,6 +9783,112 @@ func (o GetDatabaseDatabaseArrayOutput) Index(i pulumi.IntInput) GetDatabaseData
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabase {
 		return vs[0].([]GetDatabaseDatabase)[vs[1].(int)]
 	}).(GetDatabaseDatabaseOutput)
+}
+
+type GetDatabaseDatabaseAutoFailoverConfiguration struct {
+	// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+	FailoverTargets []string `pulumi:"failoverTargets"`
+	// The state of managed auto failover.
+	ManagedAutoFailover string `pulumi:"managedAutoFailover"`
+}
+
+// GetDatabaseDatabaseAutoFailoverConfigurationInput is an input type that accepts GetDatabaseDatabaseAutoFailoverConfigurationArgs and GetDatabaseDatabaseAutoFailoverConfigurationOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseAutoFailoverConfigurationInput` via:
+//
+//	GetDatabaseDatabaseAutoFailoverConfigurationArgs{...}
+type GetDatabaseDatabaseAutoFailoverConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabaseDatabaseAutoFailoverConfigurationOutput
+	ToGetDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(context.Context) GetDatabaseDatabaseAutoFailoverConfigurationOutput
+}
+
+type GetDatabaseDatabaseAutoFailoverConfigurationArgs struct {
+	// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+	FailoverTargets pulumi.StringArrayInput `pulumi:"failoverTargets"`
+	// The state of managed auto failover.
+	ManagedAutoFailover pulumi.StringInput `pulumi:"managedAutoFailover"`
+}
+
+func (GetDatabaseDatabaseAutoFailoverConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseAutoFailoverConfigurationArgs) ToGetDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return i.ToGetDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseAutoFailoverConfigurationArgs) ToGetDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(ctx context.Context) GetDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseAutoFailoverConfigurationOutput)
+}
+
+// GetDatabaseDatabaseAutoFailoverConfigurationArrayInput is an input type that accepts GetDatabaseDatabaseAutoFailoverConfigurationArray and GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseDatabaseAutoFailoverConfigurationArrayInput` via:
+//
+//	GetDatabaseDatabaseAutoFailoverConfigurationArray{ GetDatabaseDatabaseAutoFailoverConfigurationArgs{...} }
+type GetDatabaseDatabaseAutoFailoverConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput
+	ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(context.Context) GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput
+}
+
+type GetDatabaseDatabaseAutoFailoverConfigurationArray []GetDatabaseDatabaseAutoFailoverConfigurationInput
+
+func (GetDatabaseDatabaseAutoFailoverConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (i GetDatabaseDatabaseAutoFailoverConfigurationArray) ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return i.ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseDatabaseAutoFailoverConfigurationArray) ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput)
+}
+
+type GetDatabaseDatabaseAutoFailoverConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseAutoFailoverConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseAutoFailoverConfigurationOutput) ToGetDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseAutoFailoverConfigurationOutput) ToGetDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(ctx context.Context) GetDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return o
+}
+
+// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+func (o GetDatabaseDatabaseAutoFailoverConfigurationOutput) FailoverTargets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseAutoFailoverConfiguration) []string { return v.FailoverTargets }).(pulumi.StringArrayOutput)
+}
+
+// The state of managed auto failover.
+func (o GetDatabaseDatabaseAutoFailoverConfigurationOutput) ManagedAutoFailover() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseAutoFailoverConfiguration) string { return v.ManagedAutoFailover }).(pulumi.StringOutput)
+}
+
+type GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (o GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ToGetDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(ctx context.Context) GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseDatabaseAutoFailoverConfiguration {
+		return vs[0].([]GetDatabaseDatabaseAutoFailoverConfiguration)[vs[1].(int)]
+	}).(GetDatabaseDatabaseAutoFailoverConfigurationOutput)
 }
 
 type GetDatabaseDatabaseDbBackupConfig struct {
@@ -14963,6 +17786,8 @@ func (o GetDatabasesDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetDatabasesDatabaseDataGuardGroup struct {
+	// Specifies readiness of Managed Automatic failover.
+	ManagedAutoFailOverReadiness string `pulumi:"managedAutoFailOverReadiness"`
 	// List of Data Guard members, representing each database that is part of Data Guard.
 	Members []GetDatabasesDatabaseDataGuardGroupMember `pulumi:"members"`
 	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -14981,6 +17806,8 @@ type GetDatabasesDatabaseDataGuardGroupInput interface {
 }
 
 type GetDatabasesDatabaseDataGuardGroupArgs struct {
+	// Specifies readiness of Managed Automatic failover.
+	ManagedAutoFailOverReadiness pulumi.StringInput `pulumi:"managedAutoFailOverReadiness"`
 	// List of Data Guard members, representing each database that is part of Data Guard.
 	Members GetDatabasesDatabaseDataGuardGroupMemberArrayInput `pulumi:"members"`
 	// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
@@ -15038,6 +17865,11 @@ func (o GetDatabasesDatabaseDataGuardGroupOutput) ToGetDatabasesDatabaseDataGuar
 	return o
 }
 
+// Specifies readiness of Managed Automatic failover.
+func (o GetDatabasesDatabaseDataGuardGroupOutput) ManagedAutoFailOverReadiness() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroup) string { return v.ManagedAutoFailOverReadiness }).(pulumi.StringOutput)
+}
+
 // List of Data Guard members, representing each database that is part of Data Guard.
 func (o GetDatabasesDatabaseDataGuardGroupOutput) Members() GetDatabasesDatabaseDataGuardGroupMemberArrayOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroup) []GetDatabasesDatabaseDataGuardGroupMember {
@@ -15081,15 +17913,20 @@ type GetDatabasesDatabaseDataGuardGroupMember struct {
 	DatabaseId string `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId string `pulumi:"dbSystemId"`
-	// The failover readiness status of the Data Guard member.
+	// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 	FailoverReadiness string `pulumi:"failoverReadiness"`
 	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
 	FailoverReadinessMessage string `pulumi:"failoverReadinessMessage"`
+	// Filter the databases by failoverTargets param.
+	FailoverTargets []string `pulumi:"failoverTargets"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover string `pulumi:"managedAutoFailover"`
 	// The role of the reporting database in this Data Guard association.
 	Role string `pulumi:"role"`
 	// The switchover readiness status of the Data Guard member.
+	// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 	SwitchoverReadiness string `pulumi:"switchoverReadiness"`
 	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
 	SwitchoverReadinessMessage string `pulumi:"switchoverReadinessMessage"`
@@ -15128,15 +17965,20 @@ type GetDatabasesDatabaseDataGuardGroupMemberArgs struct {
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
-	// The failover readiness status of the Data Guard member.
+	// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 	FailoverReadiness pulumi.StringInput `pulumi:"failoverReadiness"`
 	// The message explaining failover readiness status. Example: `This standby database is not failover ready.`
 	FailoverReadinessMessage pulumi.StringInput `pulumi:"failoverReadinessMessage"`
+	// Filter the databases by failoverTargets param.
+	FailoverTargets pulumi.StringArrayInput `pulumi:"failoverTargets"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover pulumi.StringInput `pulumi:"managedAutoFailover"`
 	// The role of the reporting database in this Data Guard association.
 	Role pulumi.StringInput `pulumi:"role"`
 	// The switchover readiness status of the Data Guard member.
+	// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 	SwitchoverReadiness pulumi.StringInput `pulumi:"switchoverReadiness"`
 	// The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
 	SwitchoverReadinessMessage pulumi.StringInput `pulumi:"switchoverReadinessMessage"`
@@ -15229,7 +18071,7 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) DbSystemId() pulumi.Stri
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
-// The failover readiness status of the Data Guard member.
+// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) FailoverReadiness() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.FailoverReadiness }).(pulumi.StringOutput)
 }
@@ -15239,9 +18081,19 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) FailoverReadinessMessage
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.FailoverReadinessMessage }).(pulumi.StringOutput)
 }
 
+// Filter the databases by failoverTargets param.
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) FailoverTargets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) []string { return v.FailoverTargets }).(pulumi.StringArrayOutput)
+}
+
 // True if active Data Guard is enabled.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
+}
+
+// Filter the databases by managed auto failover param.
+func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) ManagedAutoFailover() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.ManagedAutoFailover }).(pulumi.StringOutput)
 }
 
 // The role of the reporting database in this Data Guard association.
@@ -15250,6 +18102,7 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) Role() pulumi.StringOutp
 }
 
 // The switchover readiness status of the Data Guard member.
+// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
 func (o GetDatabasesDatabaseDataGuardGroupMemberOutput) SwitchoverReadiness() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDataGuardGroupMember) string { return v.SwitchoverReadiness }).(pulumi.StringOutput)
 }
@@ -15303,9 +18156,10 @@ func (o GetDatabasesDatabaseDataGuardGroupMemberArrayOutput) Index(i pulumi.IntI
 }
 
 type GetDatabasesDatabaseDatabase struct {
-	AdminPassword     string `pulumi:"adminPassword"`
-	BackupId          string `pulumi:"backupId"`
-	BackupTdePassword string `pulumi:"backupTdePassword"`
+	AdminPassword              string                                                  `pulumi:"adminPassword"`
+	AutoFailoverConfigurations []GetDatabasesDatabaseDatabaseAutoFailoverConfiguration `pulumi:"autoFailoverConfigurations"`
+	BackupId                   string                                                  `pulumi:"backupId"`
+	BackupTdePassword          string                                                  `pulumi:"backupTdePassword"`
 	// The character set for the database.
 	CharacterSet          string `pulumi:"characterSet"`
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
@@ -15375,9 +18229,10 @@ type GetDatabasesDatabaseDatabaseInput interface {
 }
 
 type GetDatabasesDatabaseDatabaseArgs struct {
-	AdminPassword     pulumi.StringInput `pulumi:"adminPassword"`
-	BackupId          pulumi.StringInput `pulumi:"backupId"`
-	BackupTdePassword pulumi.StringInput `pulumi:"backupTdePassword"`
+	AdminPassword              pulumi.StringInput                                              `pulumi:"adminPassword"`
+	AutoFailoverConfigurations GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayInput `pulumi:"autoFailoverConfigurations"`
+	BackupId                   pulumi.StringInput                                              `pulumi:"backupId"`
+	BackupTdePassword          pulumi.StringInput                                              `pulumi:"backupTdePassword"`
 	// The character set for the database.
 	CharacterSet          pulumi.StringInput `pulumi:"characterSet"`
 	DatabaseAdminPassword pulumi.StringInput `pulumi:"databaseAdminPassword"`
@@ -15488,6 +18343,12 @@ func (o GetDatabasesDatabaseDatabaseOutput) ToGetDatabasesDatabaseDatabaseOutput
 
 func (o GetDatabasesDatabaseDatabaseOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.AdminPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasesDatabaseDatabaseOutput) AutoFailoverConfigurations() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) []GetDatabasesDatabaseDatabaseAutoFailoverConfiguration {
+		return v.AutoFailoverConfigurations
+	}).(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput)
 }
 
 func (o GetDatabasesDatabaseDatabaseOutput) BackupId() pulumi.StringOutput {
@@ -15671,6 +18532,112 @@ func (o GetDatabasesDatabaseDatabaseArrayOutput) Index(i pulumi.IntInput) GetDat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabase {
 		return vs[0].([]GetDatabasesDatabaseDatabase)[vs[1].(int)]
 	}).(GetDatabasesDatabaseDatabaseOutput)
+}
+
+type GetDatabasesDatabaseDatabaseAutoFailoverConfiguration struct {
+	// Filter the databases by failoverTargets param.
+	FailoverTargets []string `pulumi:"failoverTargets"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover string `pulumi:"managedAutoFailover"`
+}
+
+// GetDatabasesDatabaseDatabaseAutoFailoverConfigurationInput is an input type that accepts GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs and GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseAutoFailoverConfigurationInput` via:
+//
+//	GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs{...}
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput
+	ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput
+}
+
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs struct {
+	// Filter the databases by failoverTargets param.
+	FailoverTargets pulumi.StringArrayInput `pulumi:"failoverTargets"`
+	// Filter the databases by managed auto failover param.
+	ManagedAutoFailover pulumi.StringInput `pulumi:"managedAutoFailover"`
+}
+
+func (GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return i.ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput)
+}
+
+// GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray and GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray{ GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs{...} }
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput
+	ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray []GetDatabasesDatabaseDatabaseAutoFailoverConfigurationInput
+
+func (GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return o
+}
+
+// Filter the databases by failoverTargets param.
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput) FailoverTargets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseAutoFailoverConfiguration) []string { return v.FailoverTargets }).(pulumi.StringArrayOutput)
+}
+
+// Filter the databases by managed auto failover param.
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput) ManagedAutoFailover() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseAutoFailoverConfiguration) string { return v.ManagedAutoFailover }).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseAutoFailoverConfiguration)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput() GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput) ToGetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseAutoFailoverConfiguration {
+		return vs[0].([]GetDatabasesDatabaseDatabaseAutoFailoverConfiguration)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput)
 }
 
 type GetDatabasesDatabaseDatabaseDbBackupConfig struct {
@@ -33810,6 +36777,112 @@ func (o GetExadbVmClusterIormConfigCacheDbPlanArrayOutput) Index(i pulumi.IntInp
 	}).(GetExadbVmClusterIormConfigCacheDbPlanOutput)
 }
 
+type GetExadbVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+}
+
+// GetExadbVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs and GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts GetExadbVmClusterMultiCloudIdentityConnectorConfigArray and GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	GetExadbVmClusterMultiCloudIdentityConnectorConfigArray{ GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigArray []GetExadbVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (GetExadbVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterMultiCloudIdentityConnectorConfig) string { return v.CloudProvider }).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClusterMultiCloudIdentityConnectorConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]GetExadbVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
 type GetExadbVmClusterNodeConfig struct {
 	// The number of ECPUs to enable for each node.
 	EnabledEcpuCountPerNode int `pulumi:"enabledEcpuCountPerNode"`
@@ -34668,7 +37741,7 @@ type GetExadbVmClustersExadbVmCluster struct {
 	GridImageType string `pulumi:"gridImageType"`
 	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 	Hostname string `pulumi:"hostname"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []GetExadbVmClustersExadbVmClusterIormConfigCache `pulumi:"iormConfigCaches"`
@@ -34680,6 +37753,8 @@ type GetExadbVmClustersExadbVmCluster struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort string `pulumi:"listenerPort"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfigs []GetExadbVmClustersExadbVmClusterNodeConfig `pulumi:"nodeConfigs"`
 	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
@@ -34688,7 +37763,8 @@ type GetExadbVmClustersExadbVmCluster struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
-	PrivateZoneId string `pulumi:"privateZoneId"`
+	PrivateZoneId       string `pulumi:"privateZoneId"`
+	RegisterPkcsTrigger int    `pulumi:"registerPkcsTrigger"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -34717,10 +37793,13 @@ type GetExadbVmClustersExadbVmCluster struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion string `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone              string `pulumi:"timeZone"`
+	UnregisterPkcsTrigger int    `pulumi:"unregisterPkcsTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -34771,7 +37850,7 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	GridImageType pulumi.StringInput `pulumi:"gridImageType"`
 	// The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+	// The OCID of the identity connector
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput `pulumi:"iormConfigCaches"`
@@ -34783,6 +37862,8 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
 	ListenerPort pulumi.StringInput `pulumi:"listenerPort"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 	NodeConfigs GetExadbVmClustersExadbVmClusterNodeConfigArrayInput `pulumi:"nodeConfigs"`
 	// The list of node in the Exadata VM cluster on Exascale Infrastructure.
@@ -34791,7 +37872,8 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private zone ID in which you want DNS records to be created.
-	PrivateZoneId pulumi.StringInput `pulumi:"privateZoneId"`
+	PrivateZoneId       pulumi.StringInput `pulumi:"privateZoneId"`
+	RegisterPkcsTrigger pulumi.IntInput    `pulumi:"registerPkcsTrigger"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
 	ScanDnsName pulumi.StringInput `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -34820,10 +37902,13 @@ type GetExadbVmClustersExadbVmClusterArgs struct {
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringInput `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType pulumi.StringInput `pulumi:"tdeKeyStoreType"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone              pulumi.StringInput `pulumi:"timeZone"`
+	UnregisterPkcsTrigger pulumi.IntInput    `pulumi:"unregisterPkcsTrigger"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
 	VipIds pulumi.StringArrayInput `pulumi:"vipIds"`
 	// The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
@@ -34963,7 +38048,7 @@ func (o GetExadbVmClustersExadbVmClusterOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+// The OCID of the identity connector
 func (o GetExadbVmClustersExadbVmClusterOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -34995,6 +38080,13 @@ func (o GetExadbVmClustersExadbVmClusterOutput) ListenerPort() pulumi.StringOutp
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o GetExadbVmClustersExadbVmClusterOutput) MultiCloudIdentityConnectorConfigs() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
 func (o GetExadbVmClustersExadbVmClusterOutput) NodeConfigs() GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) []GetExadbVmClustersExadbVmClusterNodeConfig {
@@ -35018,6 +38110,10 @@ func (o GetExadbVmClustersExadbVmClusterOutput) NsgIds() pulumi.StringArrayOutpu
 // The private zone ID in which you want DNS records to be created.
 func (o GetExadbVmClustersExadbVmClusterOutput) PrivateZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.PrivateZoneId }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClustersExadbVmClusterOutput) RegisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) int { return v.RegisterPkcsTrigger }).(pulumi.IntOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -35090,6 +38186,11 @@ func (o GetExadbVmClustersExadbVmClusterOutput) SystemVersion() pulumi.StringOut
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.SystemVersion }).(pulumi.StringOutput)
 }
 
+// TDE keystore type
+func (o GetExadbVmClustersExadbVmClusterOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.TdeKeyStoreType }).(pulumi.StringOutput)
+}
+
 // The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
 func (o GetExadbVmClustersExadbVmClusterOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.TimeCreated }).(pulumi.StringOutput)
@@ -35098,6 +38199,10 @@ func (o GetExadbVmClustersExadbVmClusterOutput) TimeCreated() pulumi.StringOutpu
 // The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o GetExadbVmClustersExadbVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o GetExadbVmClustersExadbVmClusterOutput) UnregisterPkcsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmCluster) int { return v.UnregisterPkcsTrigger }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
@@ -35484,6 +38589,114 @@ func (o GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan {
 		return vs[0].([]GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlan)[vs[1].(int)]
 	}).(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig struct {
+	// Cloud provider
+	CloudProvider string `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id string `pulumi:"id"`
+}
+
+// GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigInput is an input type that accepts GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs and GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...}
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+	ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput
+}
+
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs struct {
+	// Cloud provider
+	CloudProvider pulumi.StringInput `pulumi:"cloudProvider"`
+	// The OCID of the identity connector
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
+}
+
+// GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput is an input type that accepts GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray and GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput values.
+// You can construct a concrete instance of `GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput` via:
+//
+//	GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray{ GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs{...} }
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+	ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput
+}
+
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray []GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigInput
+
+func (GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (i GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return i.ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return o
+}
+
+// Cloud provider
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput) CloudProvider() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig) string {
+		return v.CloudProvider
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the identity connector
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig)(nil)).Elem()
+}
+
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput() GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) ToGetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutputWithContext(ctx context.Context) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o
+}
+
+func (o GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput) Index(i pulumi.IntInput) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig {
+		return vs[0].([]GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfig)[vs[1].(int)]
+	}).(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput)
 }
 
 type GetExadbVmClustersExadbVmClusterNodeConfig struct {
@@ -51583,6 +54796,130 @@ func (o GetVmClusterFileSystemConfigurationDetailArrayOutput) Index(i pulumi.Int
 	}).(GetVmClusterFileSystemConfigurationDetailOutput)
 }
 
+type GetVmClusterLiveImageVersionDetail struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates bool `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version string `pulumi:"version"`
+}
+
+// GetVmClusterLiveImageVersionDetailInput is an input type that accepts GetVmClusterLiveImageVersionDetailArgs and GetVmClusterLiveImageVersionDetailOutput values.
+// You can construct a concrete instance of `GetVmClusterLiveImageVersionDetailInput` via:
+//
+//	GetVmClusterLiveImageVersionDetailArgs{...}
+type GetVmClusterLiveImageVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClusterLiveImageVersionDetailOutput() GetVmClusterLiveImageVersionDetailOutput
+	ToGetVmClusterLiveImageVersionDetailOutputWithContext(context.Context) GetVmClusterLiveImageVersionDetailOutput
+}
+
+type GetVmClusterLiveImageVersionDetailArgs struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates pulumi.BoolInput `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVmClusterLiveImageVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterLiveImageVersionDetailArgs) ToGetVmClusterLiveImageVersionDetailOutput() GetVmClusterLiveImageVersionDetailOutput {
+	return i.ToGetVmClusterLiveImageVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterLiveImageVersionDetailArgs) ToGetVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetVmClusterLiveImageVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterLiveImageVersionDetailOutput)
+}
+
+// GetVmClusterLiveImageVersionDetailArrayInput is an input type that accepts GetVmClusterLiveImageVersionDetailArray and GetVmClusterLiveImageVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterLiveImageVersionDetailArrayInput` via:
+//
+//	GetVmClusterLiveImageVersionDetailArray{ GetVmClusterLiveImageVersionDetailArgs{...} }
+type GetVmClusterLiveImageVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterLiveImageVersionDetailArrayOutput() GetVmClusterLiveImageVersionDetailArrayOutput
+	ToGetVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Context) GetVmClusterLiveImageVersionDetailArrayOutput
+}
+
+type GetVmClusterLiveImageVersionDetailArray []GetVmClusterLiveImageVersionDetailInput
+
+func (GetVmClusterLiveImageVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterLiveImageVersionDetailArray) ToGetVmClusterLiveImageVersionDetailArrayOutput() GetVmClusterLiveImageVersionDetailArrayOutput {
+	return i.ToGetVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterLiveImageVersionDetailArray) ToGetVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetVmClusterLiveImageVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterLiveImageVersionDetailArrayOutput)
+}
+
+type GetVmClusterLiveImageVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterLiveImageVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterLiveImageVersionDetailOutput) ToGetVmClusterLiveImageVersionDetailOutput() GetVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+func (o GetVmClusterLiveImageVersionDetailOutput) ToGetVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+func (o GetVmClusterLiveImageVersionDetailOutput) HasPendingUpdates() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterLiveImageVersionDetail) bool { return v.HasPendingUpdates }).(pulumi.BoolOutput)
+}
+
+// The release date and time for the applied Live Exadata Image OS version.
+func (o GetVmClusterLiveImageVersionDetailOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterLiveImageVersionDetail) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetVmClusterLiveImageVersionDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterLiveImageVersionDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// Live Exadata Image Version of the Guest OS Update applied.
+func (o GetVmClusterLiveImageVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterLiveImageVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVmClusterLiveImageVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterLiveImageVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterLiveImageVersionDetailArrayOutput) ToGetVmClusterLiveImageVersionDetailArrayOutput() GetVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterLiveImageVersionDetailArrayOutput) ToGetVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterLiveImageVersionDetailArrayOutput) Index(i pulumi.IntInput) GetVmClusterLiveImageVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterLiveImageVersionDetail {
+		return vs[0].([]GetVmClusterLiveImageVersionDetail)[vs[1].(int)]
+	}).(GetVmClusterLiveImageVersionDetailOutput)
+}
+
 type GetVmClusterNetworkDrScan struct {
 	// The node host name.
 	Hostname string `pulumi:"hostname"`
@@ -54240,6 +57577,115 @@ func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) Index(i pulumi.I
 	}).(GetVmClusterRecommendedNetworkVmNetworkNodeOutput)
 }
 
+type GetVmClusterUpdateDetail struct {
+	UpdateAction string `pulumi:"updateAction"`
+	UpdateId     string `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+}
+
+// GetVmClusterUpdateDetailInput is an input type that accepts GetVmClusterUpdateDetailArgs and GetVmClusterUpdateDetailOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateDetailInput` via:
+//
+//	GetVmClusterUpdateDetailArgs{...}
+type GetVmClusterUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateDetailOutput() GetVmClusterUpdateDetailOutput
+	ToGetVmClusterUpdateDetailOutputWithContext(context.Context) GetVmClusterUpdateDetailOutput
+}
+
+type GetVmClusterUpdateDetailArgs struct {
+	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	UpdateId     pulumi.StringInput `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+}
+
+func (GetVmClusterUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateDetailArgs) ToGetVmClusterUpdateDetailOutput() GetVmClusterUpdateDetailOutput {
+	return i.ToGetVmClusterUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateDetailArgs) ToGetVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetVmClusterUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateDetailOutput)
+}
+
+// GetVmClusterUpdateDetailArrayInput is an input type that accepts GetVmClusterUpdateDetailArray and GetVmClusterUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterUpdateDetailArrayInput` via:
+//
+//	GetVmClusterUpdateDetailArray{ GetVmClusterUpdateDetailArgs{...} }
+type GetVmClusterUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterUpdateDetailArrayOutput() GetVmClusterUpdateDetailArrayOutput
+	ToGetVmClusterUpdateDetailArrayOutputWithContext(context.Context) GetVmClusterUpdateDetailArrayOutput
+}
+
+type GetVmClusterUpdateDetailArray []GetVmClusterUpdateDetailInput
+
+func (GetVmClusterUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClusterUpdateDetailArray) ToGetVmClusterUpdateDetailArrayOutput() GetVmClusterUpdateDetailArrayOutput {
+	return i.ToGetVmClusterUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterUpdateDetailArray) ToGetVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateDetailArrayOutput)
+}
+
+type GetVmClusterUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateDetailOutput) ToGetVmClusterUpdateDetailOutput() GetVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateDetailOutput) ToGetVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateDetailOutput) UpdateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateDetail) string { return v.UpdateAction }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterUpdateDetailOutput) UpdateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateDetail) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetVmClusterUpdateDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+type GetVmClusterUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClusterUpdateDetailArrayOutput) ToGetVmClusterUpdateDetailArrayOutput() GetVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateDetailArrayOutput) ToGetVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdateDetail {
+		return vs[0].([]GetVmClusterUpdateDetail)[vs[1].(int)]
+	}).(GetVmClusterUpdateDetailOutput)
+}
+
 type GetVmClusterUpdateHistoryEntriesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -54361,6 +57807,8 @@ type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry struct {
 	UpdateAction string `pulumi:"updateAction"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 	UpdateId string `pulumi:"updateId"`
+	// The OS update mode performed using this maintenance update.
+	UpdateMode string `pulumi:"updateMode"`
 	// A filter to return only resources that match the given update type exactly.
 	UpdateType string `pulumi:"updateType"`
 }
@@ -54391,6 +57839,8 @@ type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs struct {
 	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 	UpdateId pulumi.StringInput `pulumi:"updateId"`
+	// The OS update mode performed using this maintenance update.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
 	// A filter to return only resources that match the given update type exactly.
 	UpdateType pulumi.StringInput `pulumi:"updateType"`
 }
@@ -54479,6 +57929,11 @@ func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) Updat
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS update mode performed using this maintenance update.
+func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry) string { return v.UpdateMode }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given update type exactly.
@@ -54615,14 +58070,20 @@ func (o GetVmClusterUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClus
 type GetVmClusterUpdatesVmClusterUpdate struct {
 	// The possible actions that can be performed using this maintenance update.
 	AvailableActions []string `pulumi:"availableActions"`
+	// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+	AvailableUpdateModes []string `pulumi:"availableUpdateModes"`
 	// Details of the maintenance update package.
 	Description string `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 	Id string `pulumi:"id"`
 	// The update action performed most recently using this maintenance update.
 	LastAction string `pulumi:"lastAction"`
+	// The update mode performed most recently using this maintenance update (only valid for OS Update).
+	LastUpdateMode string `pulumi:"lastUpdateMode"`
 	// Descriptive text providing additional details about the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State string `pulumi:"state"`
 	// The date and time the maintenance update was released.
@@ -54647,14 +58108,20 @@ type GetVmClusterUpdatesVmClusterUpdateInput interface {
 type GetVmClusterUpdatesVmClusterUpdateArgs struct {
 	// The possible actions that can be performed using this maintenance update.
 	AvailableActions pulumi.StringArrayInput `pulumi:"availableActions"`
+	// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+	AvailableUpdateModes pulumi.StringArrayInput `pulumi:"availableUpdateModes"`
 	// Details of the maintenance update package.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The update action performed most recently using this maintenance update.
 	LastAction pulumi.StringInput `pulumi:"lastAction"`
+	// The update mode performed most recently using this maintenance update (only valid for OS Update).
+	LastUpdateMode pulumi.StringInput `pulumi:"lastUpdateMode"`
 	// Descriptive text providing additional details about the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion pulumi.StringInput `pulumi:"oracleLinuxVersion"`
 	// A filter to return only resources that match the given lifecycle state exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the maintenance update was released.
@@ -54721,6 +58188,11 @@ func (o GetVmClusterUpdatesVmClusterUpdateOutput) AvailableActions() pulumi.Stri
 	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
 }
 
+// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) AvailableUpdateModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) []string { return v.AvailableUpdateModes }).(pulumi.StringArrayOutput)
+}
+
 // Details of the maintenance update package.
 func (o GetVmClusterUpdatesVmClusterUpdateOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.Description }).(pulumi.StringOutput)
@@ -54736,9 +58208,19 @@ func (o GetVmClusterUpdatesVmClusterUpdateOutput) LastAction() pulumi.StringOutp
 	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LastAction }).(pulumi.StringOutput)
 }
 
+// The update mode performed most recently using this maintenance update (only valid for OS Update).
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) LastUpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LastUpdateMode }).(pulumi.StringOutput)
+}
+
 // Descriptive text providing additional details about the lifecycle state.
 func (o GetVmClusterUpdatesVmClusterUpdateOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o GetVmClusterUpdatesVmClusterUpdateOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdatesVmClusterUpdate) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state exactly.
@@ -54937,10 +58419,14 @@ type GetVmClustersVmCluster struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails []GetVmClustersVmClusterLiveImageVersionDetail `pulumi:"liveImageVersionDetails"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int     `pulumi:"memorySizeInGbs"`
 	OcpuCount       float64 `pulumi:"ocpuCount"`
 	OcpusEnabled    float64 `pulumi:"ocpusEnabled"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage int `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -54960,7 +58446,8 @@ type GetVmClustersVmCluster struct {
 	// The date and time that the VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone      string                               `pulumi:"timeZone"`
+	UpdateDetails []GetVmClustersVmClusterUpdateDetail `pulumi:"updateDetails"`
 	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
 	VmBackupStorageType string `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -55032,10 +58519,14 @@ type GetVmClustersVmClusterArgs struct {
 	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails GetVmClustersVmClusterLiveImageVersionDetailArrayInput `pulumi:"liveImageVersionDetails"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs pulumi.IntInput     `pulumi:"memorySizeInGbs"`
 	OcpuCount       pulumi.Float64Input `pulumi:"ocpuCount"`
 	OcpusEnabled    pulumi.Float64Input `pulumi:"ocpusEnabled"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion pulumi.StringInput `pulumi:"oracleLinuxVersion"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage pulumi.IntInput `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -55055,7 +58546,8 @@ type GetVmClustersVmClusterArgs struct {
 	// The date and time that the VM cluster was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+	TimeZone      pulumi.StringInput                           `pulumi:"timeZone"`
+	UpdateDetails GetVmClustersVmClusterUpdateDetailArrayInput `pulumi:"updateDetails"`
 	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
 	VmBackupStorageType pulumi.StringInput `pulumi:"vmBackupStorageType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -55247,6 +58739,13 @@ func (o GetVmClustersVmClusterOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+func (o GetVmClustersVmClusterOutput) LiveImageVersionDetails() GetVmClustersVmClusterLiveImageVersionDetailArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) []GetVmClustersVmClusterLiveImageVersionDetail {
+		return v.LiveImageVersionDetails
+	}).(GetVmClustersVmClusterLiveImageVersionDetailArrayOutput)
+}
+
 // The memory allocated in GBs.
 func (o GetVmClustersVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -55258,6 +58757,11 @@ func (o GetVmClustersVmClusterOutput) OcpuCount() pulumi.Float64Output {
 
 func (o GetVmClustersVmClusterOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVmClustersVmCluster) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o GetVmClustersVmClusterOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 // The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -55308,6 +58812,10 @@ func (o GetVmClustersVmClusterOutput) TimeCreated() pulumi.StringOutput {
 // The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o GetVmClustersVmClusterOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClustersVmCluster) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o GetVmClustersVmClusterOutput) UpdateDetails() GetVmClustersVmClusterUpdateDetailArrayOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) []GetVmClustersVmClusterUpdateDetail { return v.UpdateDetails }).(GetVmClustersVmClusterUpdateDetailArrayOutput)
 }
 
 // Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
@@ -55919,7 +59427,264 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 	}).(GetVmClustersVmClusterFileSystemConfigurationDetailOutput)
 }
 
+type GetVmClustersVmClusterLiveImageVersionDetail struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates bool `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased string `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version string `pulumi:"version"`
+}
+
+// GetVmClustersVmClusterLiveImageVersionDetailInput is an input type that accepts GetVmClustersVmClusterLiveImageVersionDetailArgs and GetVmClustersVmClusterLiveImageVersionDetailOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterLiveImageVersionDetailInput` via:
+//
+//	GetVmClustersVmClusterLiveImageVersionDetailArgs{...}
+type GetVmClustersVmClusterLiveImageVersionDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterLiveImageVersionDetailOutput() GetVmClustersVmClusterLiveImageVersionDetailOutput
+	ToGetVmClustersVmClusterLiveImageVersionDetailOutputWithContext(context.Context) GetVmClustersVmClusterLiveImageVersionDetailOutput
+}
+
+type GetVmClustersVmClusterLiveImageVersionDetailArgs struct {
+	// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+	HasPendingUpdates pulumi.BoolInput `pulumi:"hasPendingUpdates"`
+	// The release date and time for the applied Live Exadata Image OS version.
+	TimeReleased pulumi.StringInput `pulumi:"timeReleased"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+	// Live Exadata Image Version of the Guest OS Update applied.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetVmClustersVmClusterLiveImageVersionDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterLiveImageVersionDetailArgs) ToGetVmClustersVmClusterLiveImageVersionDetailOutput() GetVmClustersVmClusterLiveImageVersionDetailOutput {
+	return i.ToGetVmClustersVmClusterLiveImageVersionDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterLiveImageVersionDetailArgs) ToGetVmClustersVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterLiveImageVersionDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterLiveImageVersionDetailOutput)
+}
+
+// GetVmClustersVmClusterLiveImageVersionDetailArrayInput is an input type that accepts GetVmClustersVmClusterLiveImageVersionDetailArray and GetVmClustersVmClusterLiveImageVersionDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterLiveImageVersionDetailArrayInput` via:
+//
+//	GetVmClustersVmClusterLiveImageVersionDetailArray{ GetVmClustersVmClusterLiveImageVersionDetailArgs{...} }
+type GetVmClustersVmClusterLiveImageVersionDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutput() GetVmClustersVmClusterLiveImageVersionDetailArrayOutput
+	ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Context) GetVmClustersVmClusterLiveImageVersionDetailArrayOutput
+}
+
+type GetVmClustersVmClusterLiveImageVersionDetailArray []GetVmClustersVmClusterLiveImageVersionDetailInput
+
+func (GetVmClustersVmClusterLiveImageVersionDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterLiveImageVersionDetailArray) ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutput() GetVmClustersVmClusterLiveImageVersionDetailArrayOutput {
+	return i.ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterLiveImageVersionDetailArray) ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterLiveImageVersionDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterLiveImageVersionDetailArrayOutput)
+}
+
+type GetVmClustersVmClusterLiveImageVersionDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterLiveImageVersionDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) ToGetVmClustersVmClusterLiveImageVersionDetailOutput() GetVmClustersVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) ToGetVmClustersVmClusterLiveImageVersionDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterLiveImageVersionDetailOutput {
+	return o
+}
+
+// Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) HasPendingUpdates() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterLiveImageVersionDetail) bool { return v.HasPendingUpdates }).(pulumi.BoolOutput)
+}
+
+// The release date and time for the applied Live Exadata Image OS version.
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) TimeReleased() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterLiveImageVersionDetail) string { return v.TimeReleased }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterLiveImageVersionDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+// Live Exadata Image Version of the Guest OS Update applied.
+func (o GetVmClustersVmClusterLiveImageVersionDetailOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterLiveImageVersionDetail) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetVmClustersVmClusterLiveImageVersionDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterLiveImageVersionDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterLiveImageVersionDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterLiveImageVersionDetailArrayOutput) ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutput() GetVmClustersVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterLiveImageVersionDetailArrayOutput) ToGetVmClustersVmClusterLiveImageVersionDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterLiveImageVersionDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterLiveImageVersionDetailArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterLiveImageVersionDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterLiveImageVersionDetail {
+		return vs[0].([]GetVmClustersVmClusterLiveImageVersionDetail)[vs[1].(int)]
+	}).(GetVmClustersVmClusterLiveImageVersionDetailOutput)
+}
+
+type GetVmClustersVmClusterUpdateDetail struct {
+	UpdateAction string `pulumi:"updateAction"`
+	UpdateId     string `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode string `pulumi:"updateMode"`
+}
+
+// GetVmClustersVmClusterUpdateDetailInput is an input type that accepts GetVmClustersVmClusterUpdateDetailArgs and GetVmClustersVmClusterUpdateDetailOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterUpdateDetailInput` via:
+//
+//	GetVmClustersVmClusterUpdateDetailArgs{...}
+type GetVmClustersVmClusterUpdateDetailInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterUpdateDetailOutput() GetVmClustersVmClusterUpdateDetailOutput
+	ToGetVmClustersVmClusterUpdateDetailOutputWithContext(context.Context) GetVmClustersVmClusterUpdateDetailOutput
+}
+
+type GetVmClustersVmClusterUpdateDetailArgs struct {
+	UpdateAction pulumi.StringInput `pulumi:"updateAction"`
+	UpdateId     pulumi.StringInput `pulumi:"updateId"`
+	// The OS live update mode performed most recently on the VM Cluster.
+	UpdateMode pulumi.StringInput `pulumi:"updateMode"`
+}
+
+func (GetVmClustersVmClusterUpdateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterUpdateDetailArgs) ToGetVmClustersVmClusterUpdateDetailOutput() GetVmClustersVmClusterUpdateDetailOutput {
+	return i.ToGetVmClustersVmClusterUpdateDetailOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterUpdateDetailArgs) ToGetVmClustersVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterUpdateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterUpdateDetailOutput)
+}
+
+// GetVmClustersVmClusterUpdateDetailArrayInput is an input type that accepts GetVmClustersVmClusterUpdateDetailArray and GetVmClustersVmClusterUpdateDetailArrayOutput values.
+// You can construct a concrete instance of `GetVmClustersVmClusterUpdateDetailArrayInput` via:
+//
+//	GetVmClustersVmClusterUpdateDetailArray{ GetVmClustersVmClusterUpdateDetailArgs{...} }
+type GetVmClustersVmClusterUpdateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClustersVmClusterUpdateDetailArrayOutput() GetVmClustersVmClusterUpdateDetailArrayOutput
+	ToGetVmClustersVmClusterUpdateDetailArrayOutputWithContext(context.Context) GetVmClustersVmClusterUpdateDetailArrayOutput
+}
+
+type GetVmClustersVmClusterUpdateDetailArray []GetVmClustersVmClusterUpdateDetailInput
+
+func (GetVmClustersVmClusterUpdateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (i GetVmClustersVmClusterUpdateDetailArray) ToGetVmClustersVmClusterUpdateDetailArrayOutput() GetVmClustersVmClusterUpdateDetailArrayOutput {
+	return i.ToGetVmClustersVmClusterUpdateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClustersVmClusterUpdateDetailArray) ToGetVmClustersVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterUpdateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterUpdateDetailArrayOutput)
+}
+
+type GetVmClustersVmClusterUpdateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterUpdateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClustersVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterUpdateDetailOutput) ToGetVmClustersVmClusterUpdateDetailOutput() GetVmClustersVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterUpdateDetailOutput) ToGetVmClustersVmClusterUpdateDetailOutputWithContext(ctx context.Context) GetVmClustersVmClusterUpdateDetailOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterUpdateDetailOutput) UpdateAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterUpdateDetail) string { return v.UpdateAction }).(pulumi.StringOutput)
+}
+
+func (o GetVmClustersVmClusterUpdateDetailOutput) UpdateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterUpdateDetail) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS live update mode performed most recently on the VM Cluster.
+func (o GetVmClustersVmClusterUpdateDetailOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClustersVmClusterUpdateDetail) string { return v.UpdateMode }).(pulumi.StringOutput)
+}
+
+type GetVmClustersVmClusterUpdateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClustersVmClusterUpdateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClustersVmClusterUpdateDetail)(nil)).Elem()
+}
+
+func (o GetVmClustersVmClusterUpdateDetailArrayOutput) ToGetVmClustersVmClusterUpdateDetailArrayOutput() GetVmClustersVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterUpdateDetailArrayOutput) ToGetVmClustersVmClusterUpdateDetailArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterUpdateDetailArrayOutput {
+	return o
+}
+
+func (o GetVmClustersVmClusterUpdateDetailArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterUpdateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmClusterUpdateDetail {
+		return vs[0].([]GetVmClustersVmClusterUpdateDetail)[vs[1].(int)]
+	}).(GetVmClustersVmClusterUpdateDetailOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMaintenanceWindowMonthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageInput)(nil)).Elem(), GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayInput)(nil)).Elem(), GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArgs{})
@@ -55976,8 +59741,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetCloudVmClusterIormConfigCacheDbPlanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigDbPlanInput)(nil)).Elem(), GetCloudVmClusterIormConfigDbPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterIormConfigDbPlanArrayInput)(nil)).Elem(), GetCloudVmClusterIormConfigDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterLiveImageVersionDetailInput)(nil)).Elem(), GetCloudVmClusterLiveImageVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetCloudVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudVmClusterMultiCloudIdentityConnectorConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetCloudVmClusterMultiCloudIdentityConnectorConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterUpdateDetailInput)(nil)).Elem(), GetCloudVmClusterUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetCloudVmClusterUpdateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailArgs{})
@@ -55994,8 +59763,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterLiveImageVersionDetailInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterUpdateDetailInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersCloudVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetCloudVmClustersCloudVmClusterUpdateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersFilterInput)(nil)).Elem(), GetCloudVmClustersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCloudVmClustersFilterArrayInput)(nil)).Elem(), GetCloudVmClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataGuardAssociationDataCollectionOptionInput)(nil)).Elem(), GetDataGuardAssociationDataCollectionOptionArgs{})
@@ -56014,6 +59787,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDataGuardGroupMemberArrayInput)(nil)).Elem(), GetDatabaseDataGuardGroupMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseInput)(nil)).Elem(), GetDatabaseDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseArrayInput)(nil)).Elem(), GetDatabaseDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseAutoFailoverConfigurationInput)(nil)).Elem(), GetDatabaseDatabaseAutoFailoverConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseAutoFailoverConfigurationArrayInput)(nil)).Elem(), GetDatabaseDatabaseAutoFailoverConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{})
@@ -56112,6 +59887,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDataGuardGroupMemberArrayInput)(nil)).Elem(), GetDatabasesDatabaseDataGuardGroupMemberArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseAutoFailoverConfigurationInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseDbBackupConfigInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseDbBackupConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseDbBackupConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs{})
@@ -56364,6 +60141,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheDbPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetExadbVmClusterIormConfigCacheDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetExadbVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetExadbVmClusterMultiCloudIdentityConnectorConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeConfigInput)(nil)).Elem(), GetExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeConfigArrayInput)(nil)).Elem(), GetExadbVmClusterNodeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClusterNodeResourceInput)(nil)).Elem(), GetExadbVmClusterNodeResourceArgs{})
@@ -56384,6 +60163,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeConfigArrayInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadbVmClustersExadbVmClusterNodeResourceInput)(nil)).Elem(), GetExadbVmClustersExadbVmClusterNodeResourceArgs{})
@@ -56626,6 +60407,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterLiveImageVersionDetailInput)(nil)).Elem(), GetVmClusterLiveImageVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetVmClusterLiveImageVersionDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanInput)(nil)).Elem(), GetVmClusterNetworkDrScanArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanArrayInput)(nil)).Elem(), GetVmClusterNetworkDrScanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanInput)(nil)).Elem(), GetVmClusterNetworkScanArgs{})
@@ -56664,6 +60447,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNodeInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput)(nil)).Elem(), GetVmClusterRecommendedNetworkVmNetworkNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateDetailInput)(nil)).Elem(), GetVmClusterUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetVmClusterUpdateDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilterInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesFilterArrayInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryInput)(nil)).Elem(), GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs{})
@@ -56686,6 +60471,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetailInput)(nil)).Elem(), GetVmClustersVmClusterLiveImageVersionDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterLiveImageVersionDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterLiveImageVersionDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterUpdateDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterUpdateDetailArray{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClusterResourceUsageAutonomousVmResourceUsageAutonomousContainerDatabaseUsageArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthOutput{})
+	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudAutonomousVmClustersCloudAutonomousVmClusterMultiCloudIdentityConnectorConfigOutput{})
@@ -56742,8 +60555,12 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigCacheDbPlanArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigDbPlanOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterIormConfigDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterLiveImageVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterLiveImageVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterMultiCloudIdentityConnectorConfigOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClusterUpdateDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterCloudAutomationUpdateDetailOutput{})
@@ -56760,8 +60577,12 @@ func init() {
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterIormConfigCacheDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterLiveImageVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetCloudVmClustersCloudVmClusterUpdateDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersFilterOutput{})
 	pulumi.RegisterOutputType(GetCloudVmClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDataGuardAssociationDataCollectionOptionOutput{})
@@ -56780,6 +60601,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseDataGuardGroupMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseAutoFailoverConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDatabaseDatabaseAutoFailoverConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput{})
@@ -56878,6 +60701,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDataGuardGroupMemberArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseAutoFailoverConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseDbBackupConfigOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseDbBackupConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput{})
@@ -57130,6 +60955,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheDbPlanOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterIormConfigCacheDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeConfigOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClusterNodeResourceOutput{})
@@ -57150,6 +60977,8 @@ func init() {
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterIormConfigCacheDbPlanArrayOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigOutput{})
+	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterMultiCloudIdentityConnectorConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetExadbVmClustersExadbVmClusterNodeResourceOutput{})
@@ -57392,6 +61221,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterFileSystemConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetVmClusterFileSystemConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterLiveImageVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClusterLiveImageVersionDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkScanOutput{})
@@ -57430,6 +61261,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkNodeOutput{})
 	pulumi.RegisterOutputType(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClusterUpdateDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesFilterOutput{})
 	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput{})
@@ -57452,4 +61285,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVmClustersVmClusterDataCollectionOptionArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterFileSystemConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterLiveImageVersionDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterLiveImageVersionDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterUpdateDetailOutput{})
+	pulumi.RegisterOutputType(GetVmClustersVmClusterUpdateDetailArrayOutput{})
 }

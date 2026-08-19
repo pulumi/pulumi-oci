@@ -42,6 +42,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private Double actualUsedDataStorageSizeInTbs;
     /**
+     * @return The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    private String adScheduledForUpdate;
+    /**
      * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
      * 
      */
@@ -330,6 +335,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private Boolean isDevTier;
+    private Boolean isDisableAdUpdateSchedule;
     private Boolean isDisableDbVersionUpgradeSchedule;
     private Boolean isDisconnectPeer;
     /**
@@ -373,6 +379,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private Boolean isReplicateAutomaticBackups;
+    private Boolean isScheduleAdUpdateToEarliest;
     private Boolean isScheduleDbVersionUpgradeToEarliest;
     /**
      * @deprecated
@@ -654,10 +661,20 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeDisasterRecoveryRoleChanged;
     /**
+     * @return The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    private String timeEarliestAvailableAdUpdate;
+    /**
      * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     private String timeEarliestAvailableDbVersionUpgrade;
+    /**
+     * @return The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    private String timeLatestAvailableAdUpdate;
     /**
      * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
@@ -724,6 +741,11 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeReclamationOfFreeAutonomousDatabase;
     /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    private String timeScheduledAdUpdate;
+    /**
      * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
@@ -784,6 +806,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public Double actualUsedDataStorageSizeInTbs() {
         return this.actualUsedDataStorageSizeInTbs;
+    }
+    /**
+     * @return The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    public String adScheduledForUpdate() {
+        return this.adScheduledForUpdate;
     }
     /**
      * @return Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
@@ -1194,6 +1223,9 @@ public final class GetAutonomousDatabaseResult {
     public Boolean isDevTier() {
         return this.isDevTier;
     }
+    public Boolean isDisableAdUpdateSchedule() {
+        return this.isDisableAdUpdateSchedule;
+    }
     public Boolean isDisableDbVersionUpgradeSchedule() {
         return this.isDisableDbVersionUpgradeSchedule;
     }
@@ -1258,6 +1290,9 @@ public final class GetAutonomousDatabaseResult {
      */
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
+    }
+    public Boolean isScheduleAdUpdateToEarliest() {
+        return this.isScheduleAdUpdateToEarliest;
     }
     public Boolean isScheduleDbVersionUpgradeToEarliest() {
         return this.isScheduleDbVersionUpgradeToEarliest;
@@ -1670,11 +1705,25 @@ public final class GetAutonomousDatabaseResult {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
+     * @return The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public String timeEarliestAvailableAdUpdate() {
+        return this.timeEarliestAvailableAdUpdate;
+    }
+    /**
      * @return The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
     public String timeEarliestAvailableDbVersionUpgrade() {
         return this.timeEarliestAvailableDbVersionUpgrade;
+    }
+    /**
+     * @return The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public String timeLatestAvailableAdUpdate() {
+        return this.timeLatestAvailableAdUpdate;
     }
     /**
      * @return The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -1768,6 +1817,13 @@ public final class GetAutonomousDatabaseResult {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    public String timeScheduledAdUpdate() {
+        return this.timeScheduledAdUpdate;
+    }
+    /**
      * @return The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
@@ -1857,6 +1913,7 @@ public final class GetAutonomousDatabaseResult {
     @CustomType.Builder
     public static final class Builder {
         private Double actualUsedDataStorageSizeInTbs;
+        private String adScheduledForUpdate;
         private Map<String,String> additionalAttributes;
         private String adminPassword;
         private Double allocatedStorageSizeInTbs;
@@ -1917,6 +1974,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
+        private Boolean isDisableAdUpdateSchedule;
         private Boolean isDisableDbVersionUpgradeSchedule;
         private Boolean isDisconnectPeer;
         private Boolean isFreeTier;
@@ -1928,6 +1986,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isRefreshableClone;
         private Boolean isRemoteDataGuardEnabled;
         private Boolean isReplicateAutomaticBackups;
+        private Boolean isScheduleAdUpdateToEarliest;
         private Boolean isScheduleDbVersionUpgradeToEarliest;
         private Boolean isShrinkOnly;
         private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
@@ -1993,7 +2052,9 @@ public final class GetAutonomousDatabaseResult {
         private String timeDataGuardRoleChanged;
         private String timeDeletionOfFreeAutonomousDatabase;
         private String timeDisasterRecoveryRoleChanged;
+        private String timeEarliestAvailableAdUpdate;
         private String timeEarliestAvailableDbVersionUpgrade;
+        private String timeLatestAvailableAdUpdate;
         private String timeLatestAvailableDbVersionUpgrade;
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
@@ -2007,6 +2068,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeOfLastSwitchover;
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
+        private String timeScheduledAdUpdate;
         private String timeScheduledDbVersionUpgrade;
         private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
@@ -2024,6 +2086,7 @@ public final class GetAutonomousDatabaseResult {
         public Builder(GetAutonomousDatabaseResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actualUsedDataStorageSizeInTbs = defaults.actualUsedDataStorageSizeInTbs;
+    	      this.adScheduledForUpdate = defaults.adScheduledForUpdate;
     	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.adminPassword = defaults.adminPassword;
     	      this.allocatedStorageSizeInTbs = defaults.allocatedStorageSizeInTbs;
@@ -2084,6 +2147,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
+    	      this.isDisableAdUpdateSchedule = defaults.isDisableAdUpdateSchedule;
     	      this.isDisableDbVersionUpgradeSchedule = defaults.isDisableDbVersionUpgradeSchedule;
     	      this.isDisconnectPeer = defaults.isDisconnectPeer;
     	      this.isFreeTier = defaults.isFreeTier;
@@ -2095,6 +2159,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isRefreshableClone = defaults.isRefreshableClone;
     	      this.isRemoteDataGuardEnabled = defaults.isRemoteDataGuardEnabled;
     	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
+    	      this.isScheduleAdUpdateToEarliest = defaults.isScheduleAdUpdateToEarliest;
     	      this.isScheduleDbVersionUpgradeToEarliest = defaults.isScheduleDbVersionUpgradeToEarliest;
     	      this.isShrinkOnly = defaults.isShrinkOnly;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
@@ -2160,7 +2225,9 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDeletionOfFreeAutonomousDatabase = defaults.timeDeletionOfFreeAutonomousDatabase;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeEarliestAvailableAdUpdate = defaults.timeEarliestAvailableAdUpdate;
     	      this.timeEarliestAvailableDbVersionUpgrade = defaults.timeEarliestAvailableDbVersionUpgrade;
+    	      this.timeLatestAvailableAdUpdate = defaults.timeLatestAvailableAdUpdate;
     	      this.timeLatestAvailableDbVersionUpgrade = defaults.timeLatestAvailableDbVersionUpgrade;
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
@@ -2174,6 +2241,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeOfLastSwitchover = defaults.timeOfLastSwitchover;
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
+    	      this.timeScheduledAdUpdate = defaults.timeScheduledAdUpdate;
     	      this.timeScheduledDbVersionUpgrade = defaults.timeScheduledDbVersionUpgrade;
     	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
@@ -2195,6 +2263,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "actualUsedDataStorageSizeInTbs");
             }
             this.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder adScheduledForUpdate(String adScheduledForUpdate) {
+            if (adScheduledForUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "adScheduledForUpdate");
+            }
+            this.adScheduledForUpdate = adScheduledForUpdate;
             return this;
         }
         @CustomType.Setter
@@ -2714,6 +2790,14 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDisableAdUpdateSchedule(Boolean isDisableAdUpdateSchedule) {
+            if (isDisableAdUpdateSchedule == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isDisableAdUpdateSchedule");
+            }
+            this.isDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isDisableDbVersionUpgradeSchedule(Boolean isDisableDbVersionUpgradeSchedule) {
             if (isDisableDbVersionUpgradeSchedule == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isDisableDbVersionUpgradeSchedule");
@@ -2799,6 +2883,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isReplicateAutomaticBackups");
             }
             this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isScheduleAdUpdateToEarliest(Boolean isScheduleAdUpdateToEarliest) {
+            if (isScheduleAdUpdateToEarliest == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isScheduleAdUpdateToEarliest");
+            }
+            this.isScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
             return this;
         }
         @CustomType.Setter
@@ -3361,11 +3453,27 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeEarliestAvailableAdUpdate(String timeEarliestAvailableAdUpdate) {
+            if (timeEarliestAvailableAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeEarliestAvailableAdUpdate");
+            }
+            this.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeEarliestAvailableDbVersionUpgrade(String timeEarliestAvailableDbVersionUpgrade) {
             if (timeEarliestAvailableDbVersionUpgrade == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeEarliestAvailableDbVersionUpgrade");
             }
             this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLatestAvailableAdUpdate(String timeLatestAvailableAdUpdate) {
+            if (timeLatestAvailableAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeLatestAvailableAdUpdate");
+            }
+            this.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             return this;
         }
         @CustomType.Setter
@@ -3470,6 +3578,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeReclamationOfFreeAutonomousDatabase");
             }
             this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduledAdUpdate(String timeScheduledAdUpdate) {
+            if (timeScheduledAdUpdate == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeScheduledAdUpdate");
+            }
+            this.timeScheduledAdUpdate = timeScheduledAdUpdate;
             return this;
         }
         @CustomType.Setter
@@ -3591,6 +3707,7 @@ public final class GetAutonomousDatabaseResult {
         public GetAutonomousDatabaseResult build() {
             final var _resultValue = new GetAutonomousDatabaseResult();
             _resultValue.actualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            _resultValue.adScheduledForUpdate = adScheduledForUpdate;
             _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.adminPassword = adminPassword;
             _resultValue.allocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
@@ -3651,6 +3768,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;
+            _resultValue.isDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
             _resultValue.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             _resultValue.isDisconnectPeer = isDisconnectPeer;
             _resultValue.isFreeTier = isFreeTier;
@@ -3662,6 +3780,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isRefreshableClone = isRefreshableClone;
             _resultValue.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            _resultValue.isScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
             _resultValue.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             _resultValue.isShrinkOnly = isShrinkOnly;
             _resultValue.keyHistoryEntries = keyHistoryEntries;
@@ -3727,7 +3846,9 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
             _resultValue.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            _resultValue.timeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             _resultValue.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
@@ -3741,6 +3862,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeOfLastSwitchover = timeOfLastSwitchover;
             _resultValue.timeOfNextRefresh = timeOfNextRefresh;
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            _resultValue.timeScheduledAdUpdate = timeScheduledAdUpdate;
             _resultValue.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;

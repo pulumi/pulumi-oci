@@ -61,6 +61,7 @@ class CloudVmClusterArgs:
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_file_system_storage_type: pulumi.Input[Optional[_builtins.str]] = None):
@@ -126,6 +127,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input['CloudVmClusterUpdateDetailsArgs'] update_details: (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
         :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -204,6 +206,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if update_details is not None:
+            pulumi.set(__self__, "update_details", update_details)
         if vm_backup_storage_type is not None:
             pulumi.set(__self__, "vm_backup_storage_type", vm_backup_storage_type)
         if vm_cluster_type is not None:
@@ -709,6 +713,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
+
+    @update_details.setter
+    def update_details(self, value: pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']]):
+        pulumi.set(self, "update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vmBackupStorageType")
     def vm_backup_storage_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -782,11 +798,13 @@ class _CloudVmClusterState:
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+                 live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterLiveImageVersionDetailArgs']]]] = None,
                  memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
                  multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]]] = None,
                  node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+                 oracle_linux_version: pulumi.Input[Optional[_builtins.str]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -809,6 +827,7 @@ class _CloudVmClusterState:
                  tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']] = None,
                  vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  vipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -867,12 +886,14 @@ class _CloudVmClusterState:
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] listener_port: The port number configured for the listener on the cloud VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterLiveImageVersionDetailArgs']]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[_builtins.str] oracle_linux_version: Oracle Linux version for the respective Exadata Image.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[_builtins.int] reco_storage_percentage: (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -895,6 +916,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the cloud VM cluster was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input['CloudVmClusterUpdateDetailsArgs'] update_details: (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -967,6 +989,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if live_image_version_details is not None:
+            pulumi.set(__self__, "live_image_version_details", live_image_version_details)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if multi_cloud_identity_connector_configs is not None:
@@ -977,6 +1001,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if oracle_linux_version is not None:
+            pulumi.set(__self__, "oracle_linux_version", oracle_linux_version)
         if private_zone_id is not None:
             pulumi.set(__self__, "private_zone_id", private_zone_id)
         if reco_storage_percentage is not None:
@@ -1021,6 +1047,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if update_details is not None:
+            pulumi.set(__self__, "update_details", update_details)
         if vip_ids is not None:
             pulumi.set(__self__, "vip_ids", vip_ids)
         if vipv6ids is not None:
@@ -1423,6 +1451,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterLiveImageVersionDetailArgs']]]]:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @live_image_version_details.setter
+    def live_image_version_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CloudVmClusterLiveImageVersionDetailArgs']]]]):
+        pulumi.set(self, "live_image_version_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -1482,6 +1522,18 @@ class _CloudVmClusterState:
     @ocpu_count.setter
     def ocpu_count(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "ocpu_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
+
+    @oracle_linux_version.setter
+    def oracle_linux_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oracle_linux_version", value)
 
     @_builtins.property
     @pulumi.getter(name="privateZoneId")
@@ -1748,6 +1800,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "time_zone", value)
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
+
+    @update_details.setter
+    def update_details(self, value: pulumi.Input[Optional['CloudVmClusterUpdateDetailsArgs']]):
+        pulumi.set(self, "update_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -1869,6 +1933,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional[Union['CloudVmClusterUpdateDetailsArgs', 'CloudVmClusterUpdateDetailsArgsDict']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_file_system_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1945,6 +2010,11 @@ class CloudVmCluster(pulumi.CustomResource):
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone,
+            update_details={
+                "update_action": cloud_vm_cluster_update_details_update_action,
+                "update_id": cloud_vm_cluster_update_details_update_id,
+                "update_mode": cloud_vm_cluster_update_details_update_mode,
+            },
             vm_backup_storage_type=cloud_vm_cluster_vm_backup_storage_type,
             vm_cluster_type=cloud_vm_cluster_vm_cluster_type,
             vm_file_system_storage_type=cloud_vm_cluster_vm_file_system_storage_type)
@@ -2020,6 +2090,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Union['CloudVmClusterUpdateDetailsArgs', 'CloudVmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         :param pulumi.Input[_builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
         :param pulumi.Input[_builtins.str] vm_file_system_storage_type: Specifies the type of file system storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then file system storage will be on DB Servers. - EXASCALE if selected then file system storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -2105,6 +2176,11 @@ class CloudVmCluster(pulumi.CustomResource):
             subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone,
+            update_details={
+                "update_action": cloud_vm_cluster_update_details_update_action,
+                "update_id": cloud_vm_cluster_update_details_update_id,
+                "update_mode": cloud_vm_cluster_update_details_update_mode,
+            },
             vm_backup_storage_type=cloud_vm_cluster_vm_backup_storage_type,
             vm_cluster_type=cloud_vm_cluster_vm_cluster_type,
             vm_file_system_storage_type=cloud_vm_cluster_vm_file_system_storage_type)
@@ -2174,6 +2250,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
                  tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_details: pulumi.Input[Optional[Union['CloudVmClusterUpdateDetailsArgs', 'CloudVmClusterUpdateDetailsArgsDict']]] = None,
                  vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_file_system_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2244,6 +2321,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["tde_key_store_type"] = tde_key_store_type
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["update_details"] = update_details
             __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
             __props__.__dict__["vm_cluster_type"] = vm_cluster_type
             __props__.__dict__["vm_file_system_storage_type"] = vm_file_system_storage_type
@@ -2254,7 +2332,9 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["last_update_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["listener_port"] = None
+            __props__.__dict__["live_image_version_details"] = None
             __props__.__dict__["multi_cloud_identity_connector_configs"] = None
+            __props__.__dict__["oracle_linux_version"] = None
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
             __props__.__dict__["scan_ip_ids"] = None
@@ -2309,11 +2389,13 @@ class CloudVmCluster(pulumi.CustomResource):
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+            live_image_version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterLiveImageVersionDetailArgs', 'CloudVmClusterLiveImageVersionDetailArgsDict']]]]] = None,
             memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
             multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]]] = None,
             node_count: pulumi.Input[Optional[_builtins.int]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            oracle_linux_version: pulumi.Input[Optional[_builtins.str]] = None,
             private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
             reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
             scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2336,6 +2418,7 @@ class CloudVmCluster(pulumi.CustomResource):
             tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            update_details: pulumi.Input[Optional[Union['CloudVmClusterUpdateDetailsArgs', 'CloudVmClusterUpdateDetailsArgsDict']]] = None,
             vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             vipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             vm_backup_storage_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2398,12 +2481,14 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] listener_port: The port number configured for the listener on the cloud VM cluster.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterLiveImageVersionDetailArgs', 'CloudVmClusterLiveImageVersionDetailArgsDict']]]] live_image_version_details: Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
         :param pulumi.Input[_builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[_builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[_builtins.str] oracle_linux_version: Oracle Linux version for the respective Exadata Image.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[_builtins.int] reco_storage_percentage: (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -2426,6 +2511,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the cloud VM cluster was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[Union['CloudVmClusterUpdateDetailsArgs', 'CloudVmClusterUpdateDetailsArgsDict']] update_details: (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] vipv6ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
         :param pulumi.Input[_builtins.str] vm_backup_storage_type: (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -2471,11 +2557,13 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["listener_port"] = listener_port
+        __props__.__dict__["live_image_version_details"] = live_image_version_details
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["multi_cloud_identity_connector_configs"] = multi_cloud_identity_connector_configs
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
+        __props__.__dict__["oracle_linux_version"] = oracle_linux_version
         __props__.__dict__["private_zone_id"] = private_zone_id
         __props__.__dict__["reco_storage_percentage"] = reco_storage_percentage
         __props__.__dict__["scan_dns_name"] = scan_dns_name
@@ -2498,6 +2586,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["tde_key_store_type"] = tde_key_store_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
+        __props__.__dict__["update_details"] = update_details
         __props__.__dict__["vip_ids"] = vip_ids
         __props__.__dict__["vipv6ids"] = vipv6ids
         __props__.__dict__["vm_backup_storage_type"] = vm_backup_storage_type
@@ -2771,6 +2860,14 @@ class CloudVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> pulumi.Output[Sequence['outputs.CloudVmClusterLiveImageVersionDetail']]:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> pulumi.Output[_builtins.int]:
         """
@@ -2810,6 +2907,14 @@ class CloudVmCluster(pulumi.CustomResource):
         (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> pulumi.Output[_builtins.str]:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
 
     @_builtins.property
     @pulumi.getter(name="privateZoneId")
@@ -2986,6 +3091,14 @@ class CloudVmCluster(pulumi.CustomResource):
         The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
         return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> pulumi.Output[Optional['outputs.CloudVmClusterUpdateDetails']]:
+        """
+        (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `update_mode` for DomU live update modes or regular full OS update mode.
+        """
+        return pulumi.get(self, "update_details")
 
     @_builtins.property
     @pulumi.getter(name="vipIds")

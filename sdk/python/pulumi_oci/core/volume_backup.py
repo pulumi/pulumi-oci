@@ -25,7 +25,11 @@ class VolumeBackupArgs:
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period: pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']] = None,
                  source_details: pulumi.Input[Optional['VolumeBackupSourceDetailsArgs']] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None):
@@ -36,7 +40,11 @@ class VolumeBackupArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param pulumi.Input['VolumeBackupRetentionPeriodArgs'] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input['VolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
@@ -49,8 +57,16 @@ class VolumeBackupArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_indefinite_retention_enabled is not None:
+            pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        if is_prevent_deletion_enabled is not None:
+            pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
         if type is not None:
@@ -107,6 +123,42 @@ class VolumeBackupArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @is_indefinite_retention_enabled.setter
+    def is_indefinite_retention_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_indefinite_retention_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_prevent_deletion_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -117,6 +169,18 @@ class VolumeBackupArgs:
     @kms_key_id.setter
     def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']]:
+        """
+        (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_period")
+
+    @retention_period.setter
+    def retention_period(self, value: pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']]):
+        pulumi.set(self, "retention_period", value)
 
     @_builtins.property
     @pulumi.getter(name="sourceDetails")
@@ -163,7 +227,11 @@ class _VolumeBackupState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period: pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']] = None,
                  size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
                  source_details: pulumi.Input[Optional['VolumeBackupSourceDetailsArgs']] = None,
@@ -173,9 +241,11 @@ class _VolumeBackupState:
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_request_received: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_retention_expires_at: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  unique_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
                  unique_size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_group_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeBackup resources.
@@ -185,7 +255,11 @@ class _VolumeBackupState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param pulumi.Input['VolumeBackupRetentionPeriodArgs'] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the volume, in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param pulumi.Input['VolumeBackupSourceDetailsArgs'] source_details: Details of the volume backup source in the cloud.
@@ -195,9 +269,11 @@ class _VolumeBackupState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
+        :param pulumi.Input[_builtins.str] time_retention_expires_at: The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[_builtins.str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
         :param pulumi.Input[_builtins.str] unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
+        :param pulumi.Input[_builtins.str] volume_group_backup_id: The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         if compartment_id is not None:
@@ -210,8 +286,16 @@ class _VolumeBackupState:
             pulumi.set(__self__, "expiration_time", expiration_time)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_indefinite_retention_enabled is not None:
+            pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        if is_prevent_deletion_enabled is not None:
+            pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
         if size_in_gbs is not None:
             pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         if size_in_mbs is not None:
@@ -233,6 +317,8 @@ class _VolumeBackupState:
             pulumi.set(__self__, "time_created", time_created)
         if time_request_received is not None:
             pulumi.set(__self__, "time_request_received", time_request_received)
+        if time_retention_expires_at is not None:
+            pulumi.set(__self__, "time_retention_expires_at", time_retention_expires_at)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if unique_size_in_gbs is not None:
@@ -242,6 +328,8 @@ class _VolumeBackupState:
             pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
         if unique_size_in_mbs is not None:
             pulumi.set(__self__, "unique_size_in_mbs", unique_size_in_mbs)
+        if volume_group_backup_id is not None:
+            pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
         if volume_id is not None:
             pulumi.set(__self__, "volume_id", volume_id)
 
@@ -306,6 +394,42 @@ class _VolumeBackupState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @is_indefinite_retention_enabled.setter
+    def is_indefinite_retention_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_indefinite_retention_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @is_prevent_deletion_enabled.setter
+    def is_prevent_deletion_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_prevent_deletion_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @is_retention_lock_enabled.setter
+    def is_retention_lock_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_retention_lock_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -316,6 +440,18 @@ class _VolumeBackupState:
     @kms_key_id.setter
     def kms_key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "kms_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']]:
+        """
+        (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_period")
+
+    @retention_period.setter
+    def retention_period(self, value: pulumi.Input[Optional['VolumeBackupRetentionPeriodArgs']]):
+        pulumi.set(self, "retention_period", value)
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -427,6 +563,18 @@ class _VolumeBackupState:
         pulumi.set(self, "time_request_received", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @time_retention_expires_at.setter
+    def time_retention_expires_at(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_retention_expires_at", value)
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -464,6 +612,18 @@ class _VolumeBackupState:
         pulumi.set(self, "unique_size_in_mbs", value)
 
     @_builtins.property
+    @pulumi.getter(name="volumeGroupBackupId")
+    def volume_group_backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        """
+        return pulumi.get(self, "volume_group_backup_id")
+
+    @volume_group_backup_id.setter
+    def volume_group_backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_group_backup_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -486,7 +646,11 @@ class VolumeBackup(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
                  source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -519,7 +683,14 @@ class VolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled == "true",
+            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled == "true",
+            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled == "true",
             kms_key_id=test_key["id"],
+            retention_period={
+                "retention_time_amount": int(volume_backup_retention_period_retention_time_amount),
+                "retention_time_unit": volume_backup_retention_period_retention_time_unit,
+            },
             type=volume_backup_type)
         ```
 
@@ -538,7 +709,11 @@ class VolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
@@ -577,7 +752,14 @@ class VolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled == "true",
+            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled == "true",
+            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled == "true",
             kms_key_id=test_key["id"],
+            retention_period={
+                "retention_time_amount": int(volume_backup_retention_period_retention_time_amount),
+                "retention_time_unit": volume_backup_retention_period_retention_time_unit,
+            },
             type=volume_backup_type)
         ```
 
@@ -609,7 +791,11 @@ class VolumeBackup(pulumi.CustomResource):
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
                  source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -626,7 +812,11 @@ class VolumeBackup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_indefinite_retention_enabled"] = is_indefinite_retention_enabled
+            __props__.__dict__["is_prevent_deletion_enabled"] = is_prevent_deletion_enabled
+            __props__.__dict__["is_retention_lock_enabled"] = is_retention_lock_enabled
             __props__.__dict__["kms_key_id"] = kms_key_id
+            __props__.__dict__["retention_period"] = retention_period
             __props__.__dict__["source_details"] = source_details
             __props__.__dict__["type"] = type
             __props__.__dict__["volume_id"] = volume_id
@@ -639,8 +829,10 @@ class VolumeBackup(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_request_received"] = None
+            __props__.__dict__["time_retention_expires_at"] = None
             __props__.__dict__["unique_size_in_gbs"] = None
             __props__.__dict__["unique_size_in_mbs"] = None
+            __props__.__dict__["volume_group_backup_id"] = None
         super(VolumeBackup, __self__).__init__(
             'oci:Core/volumeBackup:VolumeBackup',
             resource_name,
@@ -656,7 +848,11 @@ class VolumeBackup(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period: pulumi.Input[Optional[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']]] = None,
             size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
             source_details: pulumi.Input[Optional[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']]] = None,
@@ -666,9 +862,11 @@ class VolumeBackup(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_request_received: pulumi.Input[Optional[_builtins.str]] = None,
+            time_retention_expires_at: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             unique_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
             unique_size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
             volume_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeBackup':
         """
         Get an existing VolumeBackup resource's state with the given name, id, and optional extra
@@ -682,7 +880,11 @@ class VolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[_builtins.str] expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.bool] is_indefinite_retention_enabled: (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param pulumi.Input[_builtins.bool] is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param pulumi.Input[_builtins.str] kms_key_id: (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param pulumi.Input[Union['VolumeBackupRetentionPeriodArgs', 'VolumeBackupRetentionPeriodArgsDict']] retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] size_in_gbs: The size of the volume, in GBs.
         :param pulumi.Input[_builtins.str] size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param pulumi.Input[Union['VolumeBackupSourceDetailsArgs', 'VolumeBackupSourceDetailsArgsDict']] source_details: Details of the volume backup source in the cloud.
@@ -692,9 +894,11 @@ class VolumeBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
+        :param pulumi.Input[_builtins.str] time_retention_expires_at: The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param pulumi.Input[_builtins.str] type: The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
         :param pulumi.Input[_builtins.str] unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
         :param pulumi.Input[_builtins.str] unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
+        :param pulumi.Input[_builtins.str] volume_group_backup_id: The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
         :param pulumi.Input[_builtins.str] volume_id: The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -706,7 +910,11 @@ class VolumeBackup(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["expiration_time"] = expiration_time
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_indefinite_retention_enabled"] = is_indefinite_retention_enabled
+        __props__.__dict__["is_prevent_deletion_enabled"] = is_prevent_deletion_enabled
+        __props__.__dict__["is_retention_lock_enabled"] = is_retention_lock_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
+        __props__.__dict__["retention_period"] = retention_period
         __props__.__dict__["size_in_gbs"] = size_in_gbs
         __props__.__dict__["size_in_mbs"] = size_in_mbs
         __props__.__dict__["source_details"] = source_details
@@ -716,9 +924,11 @@ class VolumeBackup(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_request_received"] = time_request_received
+        __props__.__dict__["time_retention_expires_at"] = time_retention_expires_at
         __props__.__dict__["type"] = type
         __props__.__dict__["unique_size_in_gbs"] = unique_size_in_gbs
         __props__.__dict__["unique_size_in_mbs"] = unique_size_in_mbs
+        __props__.__dict__["volume_group_backup_id"] = volume_group_backup_id
         __props__.__dict__["volume_id"] = volume_id
         return VolumeBackup(resource_name, opts=opts, __props__=__props__)
 
@@ -763,12 +973,44 @@ class VolumeBackup(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> pulumi.Output['outputs.VolumeBackupRetentionPeriod']:
+        """
+        (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_period")
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -844,6 +1086,14 @@ class VolumeBackup(pulumi.CustomResource):
         return pulumi.get(self, "time_request_received")
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
@@ -867,6 +1117,14 @@ class VolumeBackup(pulumi.CustomResource):
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         """
         return pulumi.get(self, "unique_size_in_mbs")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeGroupBackupId")
+    def volume_group_backup_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        """
+        return pulumi.get(self, "volume_group_backup_id")
 
     @_builtins.property
     @pulumi.getter(name="volumeId")

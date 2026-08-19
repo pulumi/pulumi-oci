@@ -26,7 +26,7 @@ class GetConnectionAssignmentResult:
     """
     A collection of values returned by getConnectionAssignment.
     """
-    def __init__(__self__, alias_name=None, compartment_id=None, connection_assignment_id=None, connection_id=None, deployment_id=None, id=None, is_lock_override=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, alias_name=None, compartment_id=None, connection_assignment_id=None, connection_id=None, connection_type=None, deployment_id=None, id=None, is_lock_override=None, state=None, time_created=None, time_updated=None):
         if alias_name and not isinstance(alias_name, str):
             raise TypeError("Expected argument 'alias_name' to be a str")
         pulumi.set(__self__, "alias_name", alias_name)
@@ -39,6 +39,9 @@ class GetConnectionAssignmentResult:
         if connection_id and not isinstance(connection_id, str):
             raise TypeError("Expected argument 'connection_id' to be a str")
         pulumi.set(__self__, "connection_id", connection_id)
+        if connection_type and not isinstance(connection_type, str):
+            raise TypeError("Expected argument 'connection_type' to be a str")
+        pulumi.set(__self__, "connection_type", connection_type)
         if deployment_id and not isinstance(deployment_id, str):
             raise TypeError("Expected argument 'deployment_id' to be a str")
         pulumi.set(__self__, "deployment_id", deployment_id)
@@ -86,6 +89,14 @@ class GetConnectionAssignmentResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         """
         return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        The connection type.
+        """
+        return pulumi.get(self, "connection_type")
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
@@ -143,6 +154,7 @@ class AwaitableGetConnectionAssignmentResult(GetConnectionAssignmentResult):
             compartment_id=self.compartment_id,
             connection_assignment_id=self.connection_assignment_id,
             connection_id=self.connection_id,
+            connection_type=self.connection_type,
             deployment_id=self.deployment_id,
             id=self.id,
             is_lock_override=self.is_lock_override,
@@ -180,6 +192,7 @@ def get_connection_assignment(connection_assignment_id: Optional[_builtins.str] 
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_assignment_id=pulumi.get(__ret__, 'connection_assignment_id'),
         connection_id=pulumi.get(__ret__, 'connection_id'),
+        connection_type=pulumi.get(__ret__, 'connection_type'),
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         id=pulumi.get(__ret__, 'id'),
         is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
@@ -214,6 +227,7 @@ def get_connection_assignment_output(connection_assignment_id: pulumi.Input[Opti
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_assignment_id=pulumi.get(__response__, 'connection_assignment_id'),
         connection_id=pulumi.get(__response__, 'connection_id'),
+        connection_type=pulumi.get(__response__, 'connection_type'),
         deployment_id=pulumi.get(__response__, 'deployment_id'),
         id=pulumi.get(__response__, 'id'),
         is_lock_override=pulumi.get(__response__, 'is_lock_override'),

@@ -20,6 +20,10 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesResult {
      * 
      */
     private List<GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection> apiMetadataByEntityTypeCollections;
+    /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
     private @Nullable String compartmentId;
     /**
      * @return Name of the Api.
@@ -47,6 +51,10 @@ public final class GetApiaccesscontrolApiMetadataByEntityTypesResult {
     public List<GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection> apiMetadataByEntityTypeCollections() {
         return this.apiMetadataByEntityTypeCollections;
     }
+    /**
+     * @return The OCID of the compartment that contains the Service Provider Action.
+     * 
+     */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }

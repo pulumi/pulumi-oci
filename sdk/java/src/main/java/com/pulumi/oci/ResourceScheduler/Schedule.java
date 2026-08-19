@@ -25,6 +25,71 @@ import javax.annotation.Nullable;
  * 
  * This API creates a schedule. You must provide either resources or resourceFilters.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.ResourceScheduler.Schedule;
+ * import com.pulumi.oci.ResourceScheduler.ScheduleArgs;
+ * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceFilterArgs;
+ * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceFilterValueArgs;
+ * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceArgs;
+ * import com.pulumi.oci.ResourceScheduler.inputs.ScheduleResourceParameterArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSchedule = new Schedule("testSchedule", ScheduleArgs.builder()
+ *             .action(scheduleAction)
+ *             .compartmentId(compartmentId)
+ *             .recurrenceDetails(scheduleRecurrenceDetails)
+ *             .recurrenceType(scheduleRecurrenceType)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(scheduleDescription)
+ *             .displayName(scheduleDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .localTimeZone(scheduleLocalTimeZone)
+ *             .resourceFilters(ScheduleResourceFilterArgs.builder()
+ *                 .attribute(scheduleResourceFiltersAttribute)
+ *                 .condition(scheduleResourceFiltersCondition)
+ *                 .shouldIncludeChildCompartments(scheduleResourceFiltersShouldIncludeChildCompartments)
+ *                 .values(ScheduleResourceFilterValueArgs.builder()
+ *                     .namespace(scheduleResourceFiltersValueNamespace)
+ *                     .tagKey(scheduleResourceFiltersValueTagKey)
+ *                     .value(scheduleResourceFiltersValueValue)
+ *                     .build())
+ *                 .build())
+ *             .resources(ScheduleResourceArgs.builder()
+ *                 .id(scheduleResourcesId)
+ *                 .metadata(scheduleResourcesMetadata)
+ *                 .parameters(ScheduleResourceParameterArgs.builder()
+ *                     .parameterType(scheduleResourcesParametersParameterType)
+ *                     .value(scheduleResourcesParametersValue[0])
+ *                     .build())
+ *                 .build())
+ *             .timeEnds(scheduleTimeEnds)
+ *             .timeStarts(scheduleTimeStarts)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Schedules can be imported using the `id`, e.g.
@@ -133,6 +198,20 @@ public class Schedule extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lastRunStatus() {
         return this.lastRunStatus;
+    }
+    /**
+     * (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    @Export(name="localTimeZone", refs={String.class}, tree="[0]")
+    private Output<String> localTimeZone;
+
+    /**
+     * @return (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    public Output<String> localTimeZone() {
+        return this.localTimeZone;
     }
     /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

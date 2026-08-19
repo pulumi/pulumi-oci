@@ -130,6 +130,12 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// Displays the compartment-level quota enforcement state affecting this file system.
+        /// </summary>
+        [Output("compartmentQuotaEnforcementState")]
+        public Output<string> CompartmentQuotaEnforcementState { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
@@ -440,6 +446,12 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// Displays the compartment-level quota enforcement state affecting this file system.
+        /// </summary>
+        [Input("compartmentQuotaEnforcementState")]
+        public Input<string>? CompartmentQuotaEnforcementState { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;

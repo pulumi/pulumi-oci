@@ -171,6 +171,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string UpdateId;
         /// <summary>
+        /// The OS update mode performed using this maintenance update.
+        /// </summary>
+        public readonly string UpdateMode;
+        /// <summary>
         /// The type of VM cluster maintenance update.
         /// </summary>
         public readonly string UpdateType;
@@ -194,6 +198,8 @@ namespace Pulumi.Oci.Database
 
             string updateId,
 
+            string updateMode,
+
             string updateType,
 
             string vmClusterId)
@@ -206,6 +212,7 @@ namespace Pulumi.Oci.Database
             UpdateAction = updateAction;
             UpdateHistoryEntryId = updateHistoryEntryId;
             UpdateId = updateId;
+            UpdateMode = updateMode;
             UpdateType = updateType;
             VmClusterId = vmClusterId;
         }

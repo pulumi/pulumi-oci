@@ -76,6 +76,8 @@ type GetVmClusterUpdateHistoryEntryResult struct {
 	UpdateHistoryEntryId string `pulumi:"updateHistoryEntryId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 	UpdateId string `pulumi:"updateId"`
+	// The OS update mode performed using this maintenance update.
+	UpdateMode string `pulumi:"updateMode"`
 	// The type of VM cluster maintenance update.
 	UpdateType  string `pulumi:"updateType"`
 	VmClusterId string `pulumi:"vmClusterId"`
@@ -154,6 +156,11 @@ func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateHistoryEntryId() pulum
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
 func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.UpdateId }).(pulumi.StringOutput)
+}
+
+// The OS update mode performed using this maintenance update.
+func (o GetVmClusterUpdateHistoryEntryResultOutput) UpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateHistoryEntryResult) string { return v.UpdateMode }).(pulumi.StringOutput)
 }
 
 // The type of VM cluster maintenance update.

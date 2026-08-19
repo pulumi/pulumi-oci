@@ -14,6 +14,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseUpgradeDataGuardGroup {
     /**
+     * @return Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    private @Nullable String managedAutoFailOverReadiness;
+    /**
      * @return List of Data Guard members, representing each database that is part of Data Guard.
      * 
      */
@@ -25,6 +30,13 @@ public final class DatabaseUpgradeDataGuardGroup {
     private @Nullable String protectionMode;
 
     private DatabaseUpgradeDataGuardGroup() {}
+    /**
+     * @return Specifies readiness of Managed Automatic failover.
+     * 
+     */
+    public Optional<String> managedAutoFailOverReadiness() {
+        return Optional.ofNullable(this.managedAutoFailOverReadiness);
+    }
     /**
      * @return List of Data Guard members, representing each database that is part of Data Guard.
      * 
@@ -49,15 +61,23 @@ public final class DatabaseUpgradeDataGuardGroup {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String managedAutoFailOverReadiness;
         private @Nullable List<DatabaseUpgradeDataGuardGroupMember> members;
         private @Nullable String protectionMode;
         public Builder() {}
         public Builder(DatabaseUpgradeDataGuardGroup defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.managedAutoFailOverReadiness = defaults.managedAutoFailOverReadiness;
     	      this.members = defaults.members;
     	      this.protectionMode = defaults.protectionMode;
         }
 
+        @CustomType.Setter
+        public Builder managedAutoFailOverReadiness(@Nullable String managedAutoFailOverReadiness) {
+
+            this.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
+            return this;
+        }
         @CustomType.Setter
         public Builder members(@Nullable List<DatabaseUpgradeDataGuardGroupMember> members) {
 
@@ -75,6 +95,7 @@ public final class DatabaseUpgradeDataGuardGroup {
         }
         public DatabaseUpgradeDataGuardGroup build() {
             final var _resultValue = new DatabaseUpgradeDataGuardGroup();
+            _resultValue.managedAutoFailOverReadiness = managedAutoFailOverReadiness;
             _resultValue.members = members;
             _resultValue.protectionMode = protectionMode;
             return _resultValue;

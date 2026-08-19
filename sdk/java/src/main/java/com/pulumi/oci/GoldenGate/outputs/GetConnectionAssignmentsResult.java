@@ -30,6 +30,12 @@ public final class GetConnectionAssignmentsResult {
      * 
      */
     private @Nullable String connectionId;
+    private @Nullable List<String> connectionTypeNotEqualTos;
+    /**
+     * @return The connection type.
+     * 
+     */
+    private @Nullable List<String> connectionTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
@@ -69,6 +75,16 @@ public final class GetConnectionAssignmentsResult {
      */
     public Optional<String> connectionId() {
         return Optional.ofNullable(this.connectionId);
+    }
+    public List<String> connectionTypeNotEqualTos() {
+        return this.connectionTypeNotEqualTos == null ? List.of() : this.connectionTypeNotEqualTos;
+    }
+    /**
+     * @return The connection type.
+     * 
+     */
+    public List<String> connectionTypes() {
+        return this.connectionTypes == null ? List.of() : this.connectionTypes;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -110,6 +126,8 @@ public final class GetConnectionAssignmentsResult {
         private String compartmentId;
         private List<GetConnectionAssignmentsConnectionAssignmentCollection> connectionAssignmentCollections;
         private @Nullable String connectionId;
+        private @Nullable List<String> connectionTypeNotEqualTos;
+        private @Nullable List<String> connectionTypes;
         private @Nullable String deploymentId;
         private @Nullable List<GetConnectionAssignmentsFilter> filters;
         private String id;
@@ -121,6 +139,8 @@ public final class GetConnectionAssignmentsResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionAssignmentCollections = defaults.connectionAssignmentCollections;
     	      this.connectionId = defaults.connectionId;
+    	      this.connectionTypeNotEqualTos = defaults.connectionTypeNotEqualTos;
+    	      this.connectionTypes = defaults.connectionTypes;
     	      this.deploymentId = defaults.deploymentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -152,6 +172,24 @@ public final class GetConnectionAssignmentsResult {
 
             this.connectionId = connectionId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder connectionTypeNotEqualTos(@Nullable List<String> connectionTypeNotEqualTos) {
+
+            this.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            return this;
+        }
+        public Builder connectionTypeNotEqualTos(String... connectionTypeNotEqualTos) {
+            return connectionTypeNotEqualTos(List.of(connectionTypeNotEqualTos));
+        }
+        @CustomType.Setter
+        public Builder connectionTypes(@Nullable List<String> connectionTypes) {
+
+            this.connectionTypes = connectionTypes;
+            return this;
+        }
+        public Builder connectionTypes(String... connectionTypes) {
+            return connectionTypes(List.of(connectionTypes));
         }
         @CustomType.Setter
         public Builder deploymentId(@Nullable String deploymentId) {
@@ -193,6 +231,8 @@ public final class GetConnectionAssignmentsResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionAssignmentCollections = connectionAssignmentCollections;
             _resultValue.connectionId = connectionId;
+            _resultValue.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            _resultValue.connectionTypes = connectionTypes;
             _resultValue.deploymentId = deploymentId;
             _resultValue.filters = filters;
             _resultValue.id = id;

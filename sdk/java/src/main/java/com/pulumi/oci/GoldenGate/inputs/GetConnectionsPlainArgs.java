@@ -78,6 +78,21 @@ public final class GetConnectionsPlainArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * The array of connection types to exclude.
+     * 
+     */
+    @Import(name="connectionTypeNotEqualTos")
+    private @Nullable List<String> connectionTypeNotEqualTos;
+
+    /**
+     * @return The array of connection types to exclude.
+     * 
+     */
+    public Optional<List<String>> connectionTypeNotEqualTos() {
+        return Optional.ofNullable(this.connectionTypeNotEqualTos);
+    }
+
+    /**
      * The array of connection types.
      * 
      */
@@ -151,6 +166,7 @@ public final class GetConnectionsPlainArgs extends com.pulumi.resources.InvokeAr
         this.assignableDeploymentType = $.assignableDeploymentType;
         this.assignedDeploymentId = $.assignedDeploymentId;
         this.compartmentId = $.compartmentId;
+        this.connectionTypeNotEqualTos = $.connectionTypeNotEqualTos;
         this.connectionTypes = $.connectionTypes;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -218,6 +234,27 @@ public final class GetConnectionsPlainArgs extends com.pulumi.resources.InvokeAr
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
             return this;
+        }
+
+        /**
+         * @param connectionTypeNotEqualTos The array of connection types to exclude.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypeNotEqualTos(@Nullable List<String> connectionTypeNotEqualTos) {
+            $.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            return this;
+        }
+
+        /**
+         * @param connectionTypeNotEqualTos The array of connection types to exclude.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionTypeNotEqualTos(String... connectionTypeNotEqualTos) {
+            return connectionTypeNotEqualTos(List.of(connectionTypeNotEqualTos));
         }
 
         /**

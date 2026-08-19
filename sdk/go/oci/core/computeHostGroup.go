@@ -41,9 +41,12 @@ import (
 //				Configurations: core.ComputeHostGroupConfigurationArray{
 //					&core.ComputeHostGroupConfigurationArgs{
 //						FirmwareBundleId: pulumi.Any(testFirmwareBundle.Id),
-//						RecycleLevel:     pulumi.Any(computeHostGroupConfigurationsRecycleLevel),
-//						State:            pulumi.Any(computeHostGroupConfigurationsState),
-//						Target:           pulumi.Any(computeHostGroupConfigurationsTarget),
+//						QuickRecycleSettings: &core.ComputeHostGroupConfigurationQuickRecycleSettingsArgs{
+//							NvmeWipe: pulumi.Any(computeHostGroupConfigurationsQuickRecycleSettingsNvmeWipe),
+//						},
+//						RecycleLevel: pulumi.Any(computeHostGroupConfigurationsRecycleLevel),
+//						State:        pulumi.Any(computeHostGroupConfigurationsState),
+//						Target:       pulumi.Any(computeHostGroupConfigurationsTarget),
 //					},
 //				},
 //				DefinedTags: pulumi.StringMap{

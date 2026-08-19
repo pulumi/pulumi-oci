@@ -225,8 +225,12 @@ __all__ = [
     'CloudVmClusterIormConfigCacheDbPlanArgsDict',
     'CloudVmClusterIormConfigDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgsDict',
+    'CloudVmClusterLiveImageVersionDetailArgs',
+    'CloudVmClusterLiveImageVersionDetailArgsDict',
     'CloudVmClusterMultiCloudIdentityConnectorConfigArgs',
     'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict',
+    'CloudVmClusterUpdateDetailsArgs',
+    'CloudVmClusterUpdateDetailsArgsDict',
     'DataGuardAssociationDataCollectionOptionsArgs',
     'DataGuardAssociationDataCollectionOptionsArgsDict',
     'DataPatchDataPatchOptionArgs',
@@ -239,6 +243,8 @@ __all__ = [
     'DatabaseDataGuardGroupMemberArgsDict',
     'DatabaseDatabaseArgs',
     'DatabaseDatabaseArgsDict',
+    'DatabaseDatabaseAutoFailoverConfigurationArgs',
+    'DatabaseDatabaseAutoFailoverConfigurationArgsDict',
     'DatabaseDatabaseDbBackupConfigArgs',
     'DatabaseDatabaseDbBackupConfigArgsDict',
     'DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs',
@@ -417,6 +423,8 @@ __all__ = [
     'ExadbVmClusterIormConfigCacheArgsDict',
     'ExadbVmClusterIormConfigCacheDbPlanArgs',
     'ExadbVmClusterIormConfigCacheDbPlanArgsDict',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfigArgs',
+    'ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict',
     'ExadbVmClusterNodeConfigArgs',
     'ExadbVmClusterNodeConfigArgsDict',
     'ExadbVmClusterNodeResourceArgs',
@@ -521,6 +529,8 @@ __all__ = [
     'VmClusterDataCollectionOptionsArgsDict',
     'VmClusterFileSystemConfigurationDetailArgs',
     'VmClusterFileSystemConfigurationDetailArgsDict',
+    'VmClusterLiveImageVersionDetailArgs',
+    'VmClusterLiveImageVersionDetailArgsDict',
     'VmClusterNetworkDrScanArgs',
     'VmClusterNetworkDrScanArgsDict',
     'VmClusterNetworkScanArgs',
@@ -541,12 +551,16 @@ __all__ = [
     'VmClusterRemoveVirtualMachineDbServerArgsDict',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs',
     'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict',
+    'VmClusterUpdateDetailsArgs',
+    'VmClusterUpdateDetailsArgsDict',
     'GetAdvancedClusterFileSystemsFilterArgs',
     'GetAdvancedClusterFileSystemsFilterArgsDict',
     'GetApplicationVipsFilterArgs',
     'GetApplicationVipsFilterArgsDict',
     'GetAutonomousCharacterSetsFilterArgs',
     'GetAutonomousCharacterSetsFilterArgsDict',
+    'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs',
+    'GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict',
     'GetAutonomousContainerDatabaseBackupsFilterArgs',
     'GetAutonomousContainerDatabaseBackupsFilterArgsDict',
     'GetAutonomousContainerDatabaseDataguardAssociationsFilterArgs',
@@ -7104,7 +7118,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
 class AutonomousDatabaseLocalStandbyDbArgsDict(TypedDict):
     availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+    (Updatable) The Autonomous Database Serverless instance's availability domain.
     """
     external_location_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -7157,7 +7171,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
                  time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -7193,7 +7207,7 @@ class AutonomousDatabaseLocalStandbyDbArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -7906,7 +7920,7 @@ class AutonomousDatabaseScheduledOperationDayOfWeekArgs:
 class AutonomousDatabaseStandbyDbArgsDict(TypedDict):
     availability_domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+    (Updatable) The Autonomous Database Serverless instance's availability domain.
     """
     external_location_zone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -7959,7 +7973,7 @@ class AutonomousDatabaseStandbyDbArgs:
                  time_maintenance_begin: pulumi.Input[Optional[_builtins.str]] = None,
                  time_maintenance_end: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] availability_domain: The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        :param pulumi.Input[_builtins.str] availability_domain: (Updatable) The Autonomous Database Serverless instance's availability domain.
         :param pulumi.Input[_builtins.str] external_location_zone: The external logical zone where the local Autonomous Data Guard is located (Intended for multicloud use).
         :param pulumi.Input[_builtins.int] lag_time_in_seconds: The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -7995,7 +8009,7 @@ class AutonomousDatabaseStandbyDbArgs:
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        (Updatable) The Autonomous Database Serverless instance's availability domain.
         """
         return pulumi.get(self, "availability_domain")
 
@@ -12019,6 +12033,95 @@ class CloudVmClusterIormConfigDbPlanArgs:
         pulumi.set(self, "flash_cache_limit", value)
 
 
+class CloudVmClusterLiveImageVersionDetailArgsDict(TypedDict):
+    has_pending_updates: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+    """
+    time_released: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The release date and time for the applied Live Exadata Image OS version.
+    """
+    update_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OS live update mode performed most recently on the VM Cluster.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Live Exadata Image Version of the Guest OS Update applied.
+    """
+
+@pulumi.input_type
+class CloudVmClusterLiveImageVersionDetailArgs:
+    def __init__(__self__, *,
+                 has_pending_updates: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] has_pending_updates: Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+        :param pulumi.Input[_builtins.str] time_released: The release date and time for the applied Live Exadata Image OS version.
+        :param pulumi.Input[_builtins.str] update_mode: The OS live update mode performed most recently on the VM Cluster.
+        :param pulumi.Input[_builtins.str] version: Live Exadata Image Version of the Guest OS Update applied.
+        """
+        if has_pending_updates is not None:
+            pulumi.set(__self__, "has_pending_updates", has_pending_updates)
+        if time_released is not None:
+            pulumi.set(__self__, "time_released", time_released)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="hasPendingUpdates")
+    def has_pending_updates(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+        """
+        return pulumi.get(self, "has_pending_updates")
+
+    @has_pending_updates.setter
+    def has_pending_updates(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "has_pending_updates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The release date and time for the applied Live Exadata Image OS version.
+        """
+        return pulumi.get(self, "time_released")
+
+    @time_released.setter
+    def time_released(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_released", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OS live update mode performed most recently on the VM Cluster.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Live Exadata Image Version of the Guest OS Update applied.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
 class CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
     cloud_provider: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -12066,6 +12169,75 @@ class CloudVmClusterMultiCloudIdentityConnectorConfigArgs:
     @id.setter
     def id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "id", value)
+
+
+class CloudVmClusterUpdateDetailsArgsDict(TypedDict):
+    update_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The update action. Supported values include `ROLLING_APPLY`, `NON_ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+    """
+    update_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+    """
+    update_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+    """
+
+@pulumi.input_type
+class CloudVmClusterUpdateDetailsArgs:
+    def __init__(__self__, *,
+                 update_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] update_action: (Updatable) The update action. Supported values include `ROLLING_APPLY`, `NON_ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+        :param pulumi.Input[_builtins.str] update_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        :param pulumi.Input[_builtins.str] update_mode: (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+        """
+        if update_action is not None:
+            pulumi.set(__self__, "update_action", update_action)
+        if update_id is not None:
+            pulumi.set(__self__, "update_id", update_id)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="updateAction")
+    def update_action(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The update action. Supported values include `ROLLING_APPLY`, `NON_ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+        """
+        return pulumi.get(self, "update_action")
+
+    @update_action.setter
+    def update_action(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateId")
+    def update_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        """
+        return pulumi.get(self, "update_id")
+
+    @update_id.setter
+    def update_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_mode", value)
 
 
 class DataGuardAssociationDataCollectionOptionsArgsDict(TypedDict):
@@ -12227,6 +12399,10 @@ class DatabaseConnectionStringArgs:
 
 
 class DatabaseDataGuardGroupArgsDict(TypedDict):
+    managed_auto_fail_over_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies readiness of Managed Automatic failover.
+    """
     members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgsDict']]]]]
     """
     List of Data Guard members, representing each database that is part of Data Guard.
@@ -12239,16 +12415,32 @@ class DatabaseDataGuardGroupArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseDataGuardGroupArgs:
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  members: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]]] = None,
                  protection_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseDataGuardGroupMemberArgs']]] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        if managed_auto_fail_over_readiness is not None:
+            pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
+
+    @managed_auto_fail_over_readiness.setter
+    def managed_auto_fail_over_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "managed_auto_fail_over_readiness", value)
 
     @_builtins.property
     @pulumi.getter
@@ -12298,15 +12490,23 @@ class DatabaseDataGuardGroupMemberArgsDict(TypedDict):
     """
     failover_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The failover readiness status of the Data Guard member.
+    The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
     """
     failover_readiness_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The message explaining failover readiness status. Example: `This standby database is not failover ready.`
     """
+    failover_targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+    """
     is_active_data_guard_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if active Data Guard is enabled.
+    """
+    managed_auto_failover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of managed auto failover.
     """
     role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -12315,6 +12515,7 @@ class DatabaseDataGuardGroupMemberArgsDict(TypedDict):
     switchover_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The switchover readiness status of the Data Guard member.
+    * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
     """
     switchover_readiness_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -12350,7 +12551,9 @@ class DatabaseDataGuardGroupMemberArgs:
                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  failover_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  failover_readiness_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 failover_targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 managed_auto_failover: pulumi.Input[Optional[_builtins.str]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_readiness_message: pulumi.Input[Optional[_builtins.str]] = None,
@@ -12364,11 +12567,14 @@ class DatabaseDataGuardGroupMemberArgs:
         :param pulumi.Input[_builtins.str] data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[_builtins.str] failover_readiness: The failover readiness status of the Data Guard member.
+        :param pulumi.Input[_builtins.str] failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param pulumi.Input[_builtins.str] failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] managed_auto_failover: The state of managed auto failover.
         :param pulumi.Input[_builtins.str] role: The role of the reporting database in this Data Guard association.
         :param pulumi.Input[_builtins.str] switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param pulumi.Input[_builtins.str] switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param pulumi.Input[_builtins.str] time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param pulumi.Input[_builtins.str] transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -12392,8 +12598,12 @@ class DatabaseDataGuardGroupMemberArgs:
             pulumi.set(__self__, "failover_readiness", failover_readiness)
         if failover_readiness_message is not None:
             pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         if role is not None:
             pulumi.set(__self__, "role", role)
         if switchover_readiness is not None:
@@ -12473,7 +12683,7 @@ class DatabaseDataGuardGroupMemberArgs:
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -12494,6 +12704,18 @@ class DatabaseDataGuardGroupMemberArgs:
         pulumi.set(self, "failover_readiness_message", value)
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @failover_targets.setter
+    def failover_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "failover_targets", value)
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -12504,6 +12726,18 @@ class DatabaseDataGuardGroupMemberArgs:
     @is_active_data_guard_enabled.setter
     def is_active_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
+
+    @managed_auto_failover.setter
+    def managed_auto_failover(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "managed_auto_failover", value)
 
     @_builtins.property
     @pulumi.getter
@@ -12522,6 +12756,7 @@ class DatabaseDataGuardGroupMemberArgs:
     def switchover_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -12597,6 +12832,10 @@ class DatabaseDatabaseArgsDict(TypedDict):
     admin_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+    """
+    auto_failover_configuration: NotRequired[pulumi.Input[Optional['DatabaseDatabaseAutoFailoverConfigurationArgsDict']]]
+    """
+    The properties for defining auto failover configuration.
     """
     backup_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -12741,6 +12980,7 @@ class DatabaseDatabaseArgsDict(TypedDict):
 class DatabaseDatabaseArgs:
     def __init__(__self__, *,
                  admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_failover_configuration: pulumi.Input[Optional['DatabaseDatabaseAutoFailoverConfigurationArgs']] = None,
                  backup_id: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_tde_password: pulumi.Input[Optional[_builtins.str]] = None,
                  character_set: pulumi.Input[Optional[_builtins.str]] = None,
@@ -12775,6 +13015,7 @@ class DatabaseDatabaseArgs:
                  vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] admin_password: A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
+        :param pulumi.Input['DatabaseDatabaseAutoFailoverConfigurationArgs'] auto_failover_configuration: The properties for defining auto failover configuration.
         :param pulumi.Input[_builtins.str] backup_id: The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] backup_tde_password: The password to open the TDE wallet.
         :param pulumi.Input[_builtins.str] character_set: The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -12822,6 +13063,8 @@ class DatabaseDatabaseArgs:
         """
         if admin_password is not None:
             pulumi.set(__self__, "admin_password", admin_password)
+        if auto_failover_configuration is not None:
+            pulumi.set(__self__, "auto_failover_configuration", auto_failover_configuration)
         if backup_id is not None:
             pulumi.set(__self__, "backup_id", backup_id)
         if backup_tde_password is not None:
@@ -12898,6 +13141,18 @@ class DatabaseDatabaseArgs:
     @admin_password.setter
     def admin_password(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoFailoverConfiguration")
+    def auto_failover_configuration(self) -> pulumi.Input[Optional['DatabaseDatabaseAutoFailoverConfigurationArgs']]:
+        """
+        The properties for defining auto failover configuration.
+        """
+        return pulumi.get(self, "auto_failover_configuration")
+
+    @auto_failover_configuration.setter
+    def auto_failover_configuration(self, value: pulumi.Input[Optional['DatabaseDatabaseAutoFailoverConfigurationArgs']]):
+        pulumi.set(self, "auto_failover_configuration", value)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -13292,6 +13547,55 @@ class DatabaseDatabaseArgs:
     @vm_cluster_id.setter
     def vm_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
+
+
+class DatabaseDatabaseAutoFailoverConfigurationArgsDict(TypedDict):
+    failover_targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+    """
+    managed_auto_failover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of managed auto failover.
+    """
+
+@pulumi.input_type
+class DatabaseDatabaseAutoFailoverConfigurationArgs:
+    def __init__(__self__, *,
+                 failover_targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_auto_failover: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        :param pulumi.Input[_builtins.str] managed_auto_failover: The state of managed auto failover.
+        """
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
+
+    @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @failover_targets.setter
+    def failover_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "failover_targets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
+
+    @managed_auto_failover.setter
+    def managed_auto_failover(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "managed_auto_failover", value)
 
 
 class DatabaseDatabaseDbBackupConfigArgsDict(TypedDict):
@@ -15909,6 +16213,10 @@ class DatabaseUpgradeConnectionStringArgs:
 
 
 class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
+    managed_auto_fail_over_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies readiness of Managed Automatic failover.
+    """
     members: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgsDict']]]]]
     """
     List of Data Guard members, representing each database that is part of Data Guard.
@@ -15921,16 +16229,32 @@ class DatabaseUpgradeDataGuardGroupArgsDict(TypedDict):
 @pulumi.input_type
 class DatabaseUpgradeDataGuardGroupArgs:
     def __init__(__self__, *,
+                 managed_auto_fail_over_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  members: pulumi.Input[Optional[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]]] = None,
                  protection_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] managed_auto_fail_over_readiness: Specifies readiness of Managed Automatic failover.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseUpgradeDataGuardGroupMemberArgs']]] members: List of Data Guard members, representing each database that is part of Data Guard.
         :param pulumi.Input[_builtins.str] protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
+        if managed_auto_fail_over_readiness is not None:
+            pulumi.set(__self__, "managed_auto_fail_over_readiness", managed_auto_fail_over_readiness)
         if members is not None:
             pulumi.set(__self__, "members", members)
         if protection_mode is not None:
             pulumi.set(__self__, "protection_mode", protection_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailOverReadiness")
+    def managed_auto_fail_over_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies readiness of Managed Automatic failover.
+        """
+        return pulumi.get(self, "managed_auto_fail_over_readiness")
+
+    @managed_auto_fail_over_readiness.setter
+    def managed_auto_fail_over_readiness(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "managed_auto_fail_over_readiness", value)
 
     @_builtins.property
     @pulumi.getter
@@ -15980,15 +16304,23 @@ class DatabaseUpgradeDataGuardGroupMemberArgsDict(TypedDict):
     """
     failover_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The failover readiness status of the Data Guard member.
+    The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
     """
     failover_readiness_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The message explaining failover readiness status. Example: `This standby database is not failover ready.`
     """
+    failover_targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+    """
     is_active_data_guard_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     True if active Data Guard is enabled.
+    """
+    managed_auto_failover: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of managed auto failover.
     """
     role: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -15997,6 +16329,7 @@ class DatabaseUpgradeDataGuardGroupMemberArgsDict(TypedDict):
     switchover_readiness: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     The switchover readiness status of the Data Guard member.
+    * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
     """
     switchover_readiness_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -16032,7 +16365,9 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
                  db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                  failover_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  failover_readiness_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 failover_targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  is_active_data_guard_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 managed_auto_failover: pulumi.Input[Optional[_builtins.str]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_readiness: pulumi.Input[Optional[_builtins.str]] = None,
                  switchover_readiness_message: pulumi.Input[Optional[_builtins.str]] = None,
@@ -16046,11 +16381,14 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
         :param pulumi.Input[_builtins.str] data_loss_exposure: The Data loss exposure is the redo transport lag between the primary and standby databases.   Example: `2 seconds`
         :param pulumi.Input[_builtins.str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        :param pulumi.Input[_builtins.str] failover_readiness: The failover readiness status of the Data Guard member.
+        :param pulumi.Input[_builtins.str] failover_readiness: The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         :param pulumi.Input[_builtins.str] failover_readiness_message: The message explaining failover readiness status. Example: `This standby database is not failover ready.`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] failover_targets: Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
         :param pulumi.Input[_builtins.bool] is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param pulumi.Input[_builtins.str] managed_auto_failover: The state of managed auto failover.
         :param pulumi.Input[_builtins.str] role: The role of the reporting database in this Data Guard association.
         :param pulumi.Input[_builtins.str] switchover_readiness: The switchover readiness status of the Data Guard member.
+               * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         :param pulumi.Input[_builtins.str] switchover_readiness_message: The message explaining switchover readiness status. Example: `Address failed checks to avoid extended downtime.`
         :param pulumi.Input[_builtins.str] time_updated: The date and time when the last successful Data Guard refresh occurred.
         :param pulumi.Input[_builtins.str] transport_lag: The rate at which redo logs are transported between the associated databases.  Example: `1 second`
@@ -16074,8 +16412,12 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
             pulumi.set(__self__, "failover_readiness", failover_readiness)
         if failover_readiness_message is not None:
             pulumi.set(__self__, "failover_readiness_message", failover_readiness_message)
+        if failover_targets is not None:
+            pulumi.set(__self__, "failover_targets", failover_targets)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if managed_auto_failover is not None:
+            pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         if role is not None:
             pulumi.set(__self__, "role", role)
         if switchover_readiness is not None:
@@ -16155,7 +16497,7 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
     @pulumi.getter(name="failoverReadiness")
     def failover_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The failover readiness status of the Data Guard member.
+        The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         """
         return pulumi.get(self, "failover_readiness")
 
@@ -16176,6 +16518,18 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
         pulumi.set(self, "failover_readiness_message", value)
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        """
+        return pulumi.get(self, "failover_targets")
+
+    @failover_targets.setter
+    def failover_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "failover_targets", value)
+
+    @_builtins.property
     @pulumi.getter(name="isActiveDataGuardEnabled")
     def is_active_data_guard_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -16186,6 +16540,18 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
     @is_active_data_guard_enabled.setter
     def is_active_data_guard_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_active_data_guard_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of managed auto failover.
+        """
+        return pulumi.get(self, "managed_auto_failover")
+
+    @managed_auto_failover.setter
+    def managed_auto_failover(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "managed_auto_failover", value)
 
     @_builtins.property
     @pulumi.getter
@@ -16204,6 +16570,7 @@ class DatabaseUpgradeDataGuardGroupMemberArgs:
     def switchover_readiness(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The switchover readiness status of the Data Guard member.
+        * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         """
         return pulumi.get(self, "switchover_readiness")
 
@@ -23165,6 +23532,55 @@ class ExadbVmClusterIormConfigCacheDbPlanArgs:
         pulumi.set(self, "share", value)
 
 
+class ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
+    cloud_provider: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloud provider
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OCID of the identity connector
+    """
+
+@pulumi.input_type
+class ExadbVmClusterMultiCloudIdentityConnectorConfigArgs:
+    def __init__(__self__, *,
+                 cloud_provider: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cloud_provider: Cloud provider
+        :param pulumi.Input[_builtins.str] id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @cloud_provider.setter
+    def cloud_provider(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cloud_provider", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
 class ExadbVmClusterNodeConfigArgsDict(TypedDict):
     enabled_ecpu_count_per_node: pulumi.Input[_builtins.int]
     """
@@ -26442,6 +26858,95 @@ class VmClusterFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
+class VmClusterLiveImageVersionDetailArgsDict(TypedDict):
+    has_pending_updates: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+    """
+    time_released: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The release date and time for the applied Live Exadata Image OS version.
+    """
+    update_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The OS live update mode performed most recently on the VM Cluster.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Live Exadata Image Version of the Guest OS Update applied.
+    """
+
+@pulumi.input_type
+class VmClusterLiveImageVersionDetailArgs:
+    def __init__(__self__, *,
+                 has_pending_updates: pulumi.Input[Optional[_builtins.bool]] = None,
+                 time_released: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] has_pending_updates: Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+        :param pulumi.Input[_builtins.str] time_released: The release date and time for the applied Live Exadata Image OS version.
+        :param pulumi.Input[_builtins.str] update_mode: The OS live update mode performed most recently on the VM Cluster.
+        :param pulumi.Input[_builtins.str] version: Live Exadata Image Version of the Guest OS Update applied.
+        """
+        if has_pending_updates is not None:
+            pulumi.set(__self__, "has_pending_updates", has_pending_updates)
+        if time_released is not None:
+            pulumi.set(__self__, "time_released", time_released)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="hasPendingUpdates")
+    def has_pending_updates(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+        """
+        return pulumi.get(self, "has_pending_updates")
+
+    @has_pending_updates.setter
+    def has_pending_updates(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "has_pending_updates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The release date and time for the applied Live Exadata Image OS version.
+        """
+        return pulumi.get(self, "time_released")
+
+    @time_released.setter
+    def time_released(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_released", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OS live update mode performed most recently on the VM Cluster.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Live Exadata Image Version of the Guest OS Update applied.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
 class VmClusterNetworkDrScanArgsDict(TypedDict):
     hostname: pulumi.Input[_builtins.str]
     """
@@ -27231,6 +27736,75 @@ class VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs:
         pulumi.set(self, "mount_point", value)
 
 
+class VmClusterUpdateDetailsArgsDict(TypedDict):
+    update_action: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The update action. Supported values include `ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+    """
+    update_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+    """
+    update_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+    """
+
+@pulumi.input_type
+class VmClusterUpdateDetailsArgs:
+    def __init__(__self__, *,
+                 update_action: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 update_mode: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] update_action: (Updatable) The update action. Supported values include `ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+        :param pulumi.Input[_builtins.str] update_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        :param pulumi.Input[_builtins.str] update_mode: (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+        """
+        if update_action is not None:
+            pulumi.set(__self__, "update_action", update_action)
+        if update_id is not None:
+            pulumi.set(__self__, "update_id", update_id)
+        if update_mode is not None:
+            pulumi.set(__self__, "update_mode", update_mode)
+
+    @_builtins.property
+    @pulumi.getter(name="updateAction")
+    def update_action(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The update action. Supported values include `ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+        """
+        return pulumi.get(self, "update_action")
+
+    @update_action.setter
+    def update_action(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_action", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateId")
+    def update_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        """
+        return pulumi.get(self, "update_id")
+
+    @update_id.setter
+    def update_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="updateMode")
+    def update_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+        """
+        return pulumi.get(self, "update_mode")
+
+    @update_mode.setter
+    def update_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "update_mode", value)
+
+
 class GetAdvancedClusterFileSystemsFilterArgsDict(TypedDict):
     name: _builtins.str
     """
@@ -27356,6 +27930,50 @@ class GetAutonomousCharacterSetsFilterArgs:
         """
         A valid Oracle character set.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
         return pulumi.get(self, "name")
 
     @name.setter

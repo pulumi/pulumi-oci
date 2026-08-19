@@ -556,18 +556,18 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.mlNodeStorageGb;
     }
     /**
-     * The OCID of the NSG where the private endpoint vnic will be attached.
+     * (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      * 
      */
     @Export(name="nsgId", refs={String.class}, tree="[0]")
-    private Output<String> nsgId;
+    private Output</* @Nullable */ String> nsgId;
 
     /**
-     * @return The OCID of the NSG where the private endpoint vnic will be attached.
+     * @return (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
      * 
      */
-    public Output<String> nsgId() {
-        return this.nsgId;
+    public Output<Optional<String>> nsgId() {
+        return Codegen.optional(this.nsgId);
     }
     /**
      * The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.

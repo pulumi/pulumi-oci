@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.ComputeHostGroupConfigurationQuickRecycleSettingsArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -28,6 +29,21 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
      */
     public Optional<Output<String>> firmwareBundleId() {
         return Optional.ofNullable(this.firmwareBundleId);
+    }
+
+    /**
+     * (Updatable) Additional quick recycle settings.
+     * 
+     */
+    @Import(name="quickRecycleSettings")
+    private @Nullable Output<ComputeHostGroupConfigurationQuickRecycleSettingsArgs> quickRecycleSettings;
+
+    /**
+     * @return (Updatable) Additional quick recycle settings.
+     * 
+     */
+    public Optional<Output<ComputeHostGroupConfigurationQuickRecycleSettingsArgs>> quickRecycleSettings() {
+        return Optional.ofNullable(this.quickRecycleSettings);
     }
 
     /**
@@ -83,6 +99,7 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
 
     private ComputeHostGroupConfigurationArgs(ComputeHostGroupConfigurationArgs $) {
         this.firmwareBundleId = $.firmwareBundleId;
+        this.quickRecycleSettings = $.quickRecycleSettings;
         this.recycleLevel = $.recycleLevel;
         this.state = $.state;
         this.target = $.target;
@@ -125,6 +142,27 @@ public final class ComputeHostGroupConfigurationArgs extends com.pulumi.resource
          */
         public Builder firmwareBundleId(String firmwareBundleId) {
             return firmwareBundleId(Output.of(firmwareBundleId));
+        }
+
+        /**
+         * @param quickRecycleSettings (Updatable) Additional quick recycle settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quickRecycleSettings(@Nullable Output<ComputeHostGroupConfigurationQuickRecycleSettingsArgs> quickRecycleSettings) {
+            $.quickRecycleSettings = quickRecycleSettings;
+            return this;
+        }
+
+        /**
+         * @param quickRecycleSettings (Updatable) Additional quick recycle settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder quickRecycleSettings(ComputeHostGroupConfigurationQuickRecycleSettingsArgs quickRecycleSettings) {
+            return quickRecycleSettings(Output.of(quickRecycleSettings));
         }
 
         /**

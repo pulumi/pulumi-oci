@@ -42,13 +42,16 @@ class ExadbVmClusterArgs:
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  shape_attribute: pulumi.Input[Optional[_builtins.str]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_zone: pulumi.Input[Optional[_builtins.str]] = None):
+                 tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 unregister_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None):
         """
         The set of arguments for constructing a ExadbVmCluster resource.
 
@@ -80,13 +83,16 @@ class ExadbVmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[_builtins.str] shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] system_version: (Updatable) Operating system version of the image.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -122,6 +128,8 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_zone_id is not None:
             pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if register_pkcs_trigger is not None:
+            pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if scan_listener_port_tcp is not None:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
@@ -134,8 +142,12 @@ class ExadbVmClusterArgs:
             pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if unregister_pkcs_trigger is not None:
+            pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -397,6 +409,18 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "private_zone_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @register_pkcs_trigger.setter
+    def register_pkcs_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "register_pkcs_trigger", value)
+
+    @_builtins.property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -469,19 +493,43 @@ class ExadbVmClusterArgs:
         pulumi.set(self, "system_version", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
     def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "unregister_pkcs_trigger")
+
+    @unregister_pkcs_trigger.setter
+    def unregister_pkcs_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unregister_pkcs_trigger", value)
 
 
 @pulumi.input_type
@@ -508,10 +556,12 @@ class _ExadbVmClusterState:
                  license_model: pulumi.Input[Optional[_builtins.str]] = None,
                  lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
                  listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+                 multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs']]]] = None,
                  node_config: pulumi.Input[Optional['ExadbVmClusterNodeConfigArgs']] = None,
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
                  scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
                  scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -526,8 +576,10 @@ class _ExadbVmClusterState:
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 unregister_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  zone_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -560,11 +612,13 @@ class _ExadbVmClusterState:
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs']]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input['ExadbVmClusterNodeConfigArgs'] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterNodeResourceArgs']]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -579,8 +633,10 @@ class _ExadbVmClusterState:
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] system_version: (Updatable) Operating system version of the image.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -629,6 +685,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if multi_cloud_identity_connector_configs is not None:
+            pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         if node_config is not None:
             pulumi.set(__self__, "node_config", node_config)
         if node_resources is not None:
@@ -637,6 +695,8 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_zone_id is not None:
             pulumi.set(__self__, "private_zone_id", private_zone_id)
+        if register_pkcs_trigger is not None:
+            pulumi.set(__self__, "register_pkcs_trigger", register_pkcs_trigger)
         if scan_dns_name is not None:
             pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         if scan_dns_record_id is not None:
@@ -665,10 +725,14 @@ class _ExadbVmClusterState:
             pulumi.set(__self__, "system_tags", system_tags)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
+        if unregister_pkcs_trigger is not None:
+            pulumi.set(__self__, "unregister_pkcs_trigger", unregister_pkcs_trigger)
         if vip_ids is not None:
             pulumi.set(__self__, "vip_ids", vip_ids)
         if zone_id is not None:
@@ -933,6 +997,18 @@ class _ExadbVmClusterState:
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs']]]]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @multi_cloud_identity_connector_configs.setter
+    def multi_cloud_identity_connector_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs']]]]):
+        pulumi.set(self, "multi_cloud_identity_connector_configs", value)
+
+    @_builtins.property
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> pulumi.Input[Optional['ExadbVmClusterNodeConfigArgs']]:
         """
@@ -980,6 +1056,18 @@ class _ExadbVmClusterState:
     @private_zone_id.setter
     def private_zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "private_zone_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
+
+    @register_pkcs_trigger.setter
+    def register_pkcs_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "register_pkcs_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
@@ -1150,6 +1238,18 @@ class _ExadbVmClusterState:
         pulumi.set(self, "system_version", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1166,15 +1266,27 @@ class _ExadbVmClusterState:
     def time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
     def time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_zone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "unregister_pkcs_trigger")
+
+    @unregister_pkcs_trigger.setter
+    def unregister_pkcs_trigger(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "unregister_pkcs_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="vipIds")
@@ -1225,6 +1337,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1234,7 +1347,9 @@ class ExadbVmCluster(pulumi.CustomResource):
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 unregister_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -1334,6 +1449,7 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[_builtins.int] scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
@@ -1343,7 +1459,9 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[_builtins.str] system_version: (Updatable) Operating system version of the image.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1458,6 +1576,7 @@ class ExadbVmCluster(pulumi.CustomResource):
                  node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
                  nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 register_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp: pulumi.Input[Optional[_builtins.int]] = None,
                  scan_listener_port_tcp_ssl: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -1467,7 +1586,9 @@ class ExadbVmCluster(pulumi.CustomResource):
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
                  system_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+                 unregister_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1511,6 +1632,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             __props__.__dict__["node_resources"] = node_resources
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_zone_id"] = private_zone_id
+            __props__.__dict__["register_pkcs_trigger"] = register_pkcs_trigger
             __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
             __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
             __props__.__dict__["security_attributes"] = security_attributes
@@ -1526,7 +1648,9 @@ class ExadbVmCluster(pulumi.CustomResource):
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["system_version"] = system_version
+            __props__.__dict__["tde_key_store_type"] = tde_key_store_type
             __props__.__dict__["time_zone"] = time_zone
+            __props__.__dict__["unregister_pkcs_trigger"] = unregister_pkcs_trigger
             __props__.__dict__["cluster_placement_group_id"] = None
             __props__.__dict__["gi_version"] = None
             __props__.__dict__["grid_image_type"] = None
@@ -1534,6 +1658,7 @@ class ExadbVmCluster(pulumi.CustomResource):
             __props__.__dict__["last_update_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["listener_port"] = None
+            __props__.__dict__["multi_cloud_identity_connector_configs"] = None
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
             __props__.__dict__["scan_ip_ids"] = None
@@ -1573,10 +1698,12 @@ class ExadbVmCluster(pulumi.CustomResource):
             license_model: pulumi.Input[Optional[_builtins.str]] = None,
             lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
             listener_port: pulumi.Input[Optional[_builtins.str]] = None,
+            multi_cloud_identity_connector_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs', 'ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]]] = None,
             node_config: pulumi.Input[Optional[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']]] = None,
             node_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]]] = None,
             nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             private_zone_id: pulumi.Input[Optional[_builtins.str]] = None,
+            register_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
             scan_dns_record_id: pulumi.Input[Optional[_builtins.str]] = None,
             scan_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -1591,8 +1718,10 @@ class ExadbVmCluster(pulumi.CustomResource):
             subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            tde_key_store_type: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
             time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            unregister_pkcs_trigger: pulumi.Input[Optional[_builtins.int]] = None,
             vip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'ExadbVmCluster':
         """
@@ -1629,11 +1758,13 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] license_model: (Updatable) The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[_builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[_builtins.str] listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterMultiCloudIdentityConnectorConfigArgs', 'ExadbVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[Union['ExadbVmClusterNodeConfigArgs', 'ExadbVmClusterNodeConfigArgsDict']] node_config: (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExadbVmClusterNodeResourceArgs', 'ExadbVmClusterNodeResourceArgsDict']]]] node_resources: Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[_builtins.str] private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param pulumi.Input[_builtins.int] register_pkcs_trigger: (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
         :param pulumi.Input[_builtins.str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -1648,8 +1779,10 @@ class ExadbVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] system_version: (Updatable) Operating system version of the image.
+        :param pulumi.Input[_builtins.str] tde_key_store_type: TDE keystore type
         :param pulumi.Input[_builtins.str] time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         :param pulumi.Input[_builtins.str] time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param pulumi.Input[_builtins.int] unregister_pkcs_trigger: (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1681,10 +1814,12 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["listener_port"] = listener_port
+        __props__.__dict__["multi_cloud_identity_connector_configs"] = multi_cloud_identity_connector_configs
         __props__.__dict__["node_config"] = node_config
         __props__.__dict__["node_resources"] = node_resources
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_zone_id"] = private_zone_id
+        __props__.__dict__["register_pkcs_trigger"] = register_pkcs_trigger
         __props__.__dict__["scan_dns_name"] = scan_dns_name
         __props__.__dict__["scan_dns_record_id"] = scan_dns_record_id
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
@@ -1699,8 +1834,10 @@ class ExadbVmCluster(pulumi.CustomResource):
         __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["system_version"] = system_version
+        __props__.__dict__["tde_key_store_type"] = tde_key_store_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
+        __props__.__dict__["unregister_pkcs_trigger"] = unregister_pkcs_trigger
         __props__.__dict__["vip_ids"] = vip_ids
         __props__.__dict__["zone_id"] = zone_id
         return ExadbVmCluster(resource_name, opts=opts, __props__=__props__)
@@ -1880,6 +2017,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> pulumi.Output[Sequence['outputs.ExadbVmClusterMultiCloudIdentityConnectorConfig']]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @_builtins.property
     @pulumi.getter(name="nodeConfig")
     def node_config(self) -> pulumi.Output['outputs.ExadbVmClusterNodeConfig']:
         """
@@ -1911,6 +2056,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         The private zone ID in which you want DNS records to be created.
         """
         return pulumi.get(self, "private_zone_id")
+
+    @_builtins.property
+    @pulumi.getter(name="registerPkcsTrigger")
+    def register_pkcs_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        """
+        return pulumi.get(self, "register_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="scanDnsName")
@@ -2025,6 +2178,14 @@ class ExadbVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "system_version")
 
     @_builtins.property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        TDE keystore type
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
@@ -2037,11 +2198,19 @@ class ExadbVmCluster(pulumi.CustomResource):
     def time_zone(self) -> pulumi.Output[_builtins.str]:
         """
         The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
+
+    @_builtins.property
+    @pulumi.getter(name="unregisterPkcsTrigger")
+    def unregister_pkcs_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "time_zone")
+        return pulumi.get(self, "unregister_pkcs_trigger")
 
     @_builtins.property
     @pulumi.getter(name="vipIds")

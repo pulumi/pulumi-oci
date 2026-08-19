@@ -28,6 +28,7 @@ public final class GetConnectionsResult {
      * 
      */
     private List<GetConnectionsConnectionCollection> connectionCollections;
+    private @Nullable List<String> connectionTypeNotEqualTos;
     /**
      * @return The connection type.
      * 
@@ -74,6 +75,9 @@ public final class GetConnectionsResult {
      */
     public List<GetConnectionsConnectionCollection> connectionCollections() {
         return this.connectionCollections;
+    }
+    public List<String> connectionTypeNotEqualTos() {
+        return this.connectionTypeNotEqualTos == null ? List.of() : this.connectionTypeNotEqualTos;
     }
     /**
      * @return The connection type.
@@ -124,6 +128,7 @@ public final class GetConnectionsResult {
         private @Nullable String assignedDeploymentId;
         private String compartmentId;
         private List<GetConnectionsConnectionCollection> connectionCollections;
+        private @Nullable List<String> connectionTypeNotEqualTos;
         private @Nullable List<String> connectionTypes;
         private @Nullable String displayName;
         private @Nullable List<GetConnectionsFilter> filters;
@@ -138,6 +143,7 @@ public final class GetConnectionsResult {
     	      this.assignedDeploymentId = defaults.assignedDeploymentId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.connectionCollections = defaults.connectionCollections;
+    	      this.connectionTypeNotEqualTos = defaults.connectionTypeNotEqualTos;
     	      this.connectionTypes = defaults.connectionTypes;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
@@ -182,6 +188,15 @@ public final class GetConnectionsResult {
         }
         public Builder connectionCollections(GetConnectionsConnectionCollection... connectionCollections) {
             return connectionCollections(List.of(connectionCollections));
+        }
+        @CustomType.Setter
+        public Builder connectionTypeNotEqualTos(@Nullable List<String> connectionTypeNotEqualTos) {
+
+            this.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
+            return this;
+        }
+        public Builder connectionTypeNotEqualTos(String... connectionTypeNotEqualTos) {
+            return connectionTypeNotEqualTos(List.of(connectionTypeNotEqualTos));
         }
         @CustomType.Setter
         public Builder connectionTypes(@Nullable List<String> connectionTypes) {
@@ -237,6 +252,7 @@ public final class GetConnectionsResult {
             _resultValue.assignedDeploymentId = assignedDeploymentId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.connectionCollections = connectionCollections;
+            _resultValue.connectionTypeNotEqualTos = connectionTypeNotEqualTos;
             _resultValue.connectionTypes = connectionTypes;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,6 +44,10 @@ export interface GetLetterOfAuthorityArgs {
  */
 export interface GetLetterOfAuthorityResult {
     /**
+     * Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+     */
+    readonly authorizedAgent: string;
+    /**
      * The name of the entity authorized by this Letter of Authority.
      */
     readonly authorizedEntityName: string;
@@ -53,6 +59,10 @@ export interface GetLetterOfAuthorityResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
      */
     readonly crossConnectId: string;
+    /**
+     * Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+     */
+    readonly extensionDetails: outputs.Core.GetLetterOfAuthorityExtensionDetail[];
     /**
      * The address of the FastConnect location.
      */

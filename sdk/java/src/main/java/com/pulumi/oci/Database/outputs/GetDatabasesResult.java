@@ -35,12 +35,14 @@ public final class GetDatabasesResult {
      * 
      */
     private @Nullable String dbName;
+    private @Nullable String failoverTargets;
     private @Nullable List<GetDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
     private String id;
+    private @Nullable String managedAutoFailover;
     /**
      * @return The current state of the database.
      * 
@@ -77,6 +79,9 @@ public final class GetDatabasesResult {
     public Optional<String> dbName() {
         return Optional.ofNullable(this.dbName);
     }
+    public Optional<String> failoverTargets() {
+        return Optional.ofNullable(this.failoverTargets);
+    }
     public List<GetDatabasesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -86,6 +91,9 @@ public final class GetDatabasesResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> managedAutoFailover() {
+        return Optional.ofNullable(this.managedAutoFailover);
     }
     /**
      * @return The current state of the database.
@@ -111,8 +119,10 @@ public final class GetDatabasesResult {
         private List<GetDatabasesDatabase> databases;
         private @Nullable String dbHomeId;
         private @Nullable String dbName;
+        private @Nullable String failoverTargets;
         private @Nullable List<GetDatabasesFilter> filters;
         private String id;
+        private @Nullable String managedAutoFailover;
         private @Nullable String state;
         private @Nullable String systemId;
         public Builder() {}
@@ -122,8 +132,10 @@ public final class GetDatabasesResult {
     	      this.databases = defaults.databases;
     	      this.dbHomeId = defaults.dbHomeId;
     	      this.dbName = defaults.dbName;
+    	      this.failoverTargets = defaults.failoverTargets;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.managedAutoFailover = defaults.managedAutoFailover;
     	      this.state = defaults.state;
     	      this.systemId = defaults.systemId;
         }
@@ -160,6 +172,12 @@ public final class GetDatabasesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder failoverTargets(@Nullable String failoverTargets) {
+
+            this.failoverTargets = failoverTargets;
+            return this;
+        }
+        @CustomType.Setter
         public Builder filters(@Nullable List<GetDatabasesFilter> filters) {
 
             this.filters = filters;
@@ -174,6 +192,12 @@ public final class GetDatabasesResult {
               throw new MissingRequiredPropertyException("GetDatabasesResult", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder managedAutoFailover(@Nullable String managedAutoFailover) {
+
+            this.managedAutoFailover = managedAutoFailover;
             return this;
         }
         @CustomType.Setter
@@ -194,8 +218,10 @@ public final class GetDatabasesResult {
             _resultValue.databases = databases;
             _resultValue.dbHomeId = dbHomeId;
             _resultValue.dbName = dbName;
+            _resultValue.failoverTargets = failoverTargets;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.managedAutoFailover = managedAutoFailover;
             _resultValue.state = state;
             _resultValue.systemId = systemId;
             return _resultValue;

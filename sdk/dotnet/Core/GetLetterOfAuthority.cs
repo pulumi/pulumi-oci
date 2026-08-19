@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Core
     public sealed class GetLetterOfAuthorityResult
     {
         /// <summary>
+        /// Name of a customer authorized agent which will be appended to the LOA as 'Authorized Agent'.
+        /// </summary>
+        public readonly string AuthorizedAgent;
+        /// <summary>
         /// The name of the entity authorized by this Letter of Authority.
         /// </summary>
         public readonly string AuthorizedEntityName;
@@ -135,6 +139,10 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect.
         /// </summary>
         public readonly string CrossConnectId;
+        /// <summary>
+        /// Data related to the extension of the Expiry date of the LOA. It gives you number of remaining extensions along with a history of past extensions made on the LOA.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetLetterOfAuthorityExtensionDetailResult> ExtensionDetails;
         /// <summary>
         /// The address of the FastConnect location.
         /// </summary>
@@ -158,11 +166,15 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetLetterOfAuthorityResult(
+            string authorizedAgent,
+
             string authorizedEntityName,
 
             string circuitType,
 
             string crossConnectId,
+
+            ImmutableArray<Outputs.GetLetterOfAuthorityExtensionDetailResult> extensionDetails,
 
             string facilityLocation,
 
@@ -174,9 +186,11 @@ namespace Pulumi.Oci.Core
 
             string timeIssued)
         {
+            AuthorizedAgent = authorizedAgent;
             AuthorizedEntityName = authorizedEntityName;
             CircuitType = circuitType;
             CrossConnectId = crossConnectId;
+            ExtensionDetails = extensionDetails;
             FacilityLocation = facilityLocation;
             Id = id;
             PortName = portName;

@@ -113,6 +113,9 @@ class GetAutonomousContainerDatabaseBackupsResult:
     @_builtins.property
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the backup destination is cross-region or local.
+        """
         return pulumi.get(self, "is_remote")
 
     @_builtins.property

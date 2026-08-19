@@ -20,7 +20,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
      */
     private String networkEndpointType;
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     private @Nullable List<String> networkSecurityGroupIds;
@@ -40,7 +40,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
      */
     private @Nullable List<String> whitelistedIps;
     /**
-     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * @return Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     private @Nullable List<String> whitelistedServices;
@@ -59,7 +59,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         return this.networkEndpointType;
     }
     /**
-     * @return Network Security Group OCIDs for an Analytics instance.
+     * @return Network Security Group OCIDs for the Analytics instance.
      * 
      */
     public List<String> networkSecurityGroupIds() {
@@ -87,7 +87,7 @@ public final class AnalyticsInstanceNetworkEndpointDetails {
         return this.whitelistedIps == null ? List.of() : this.whitelistedIps;
     }
     /**
-     * @return Oracle Cloud Services that are allowed to access this Analytics instance.
+     * @return Oracle Cloud services that are allowed to access this Analytics instance.
      * 
      */
     public List<String> whitelistedServices() {

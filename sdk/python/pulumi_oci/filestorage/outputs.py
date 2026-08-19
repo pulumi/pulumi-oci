@@ -1889,6 +1889,7 @@ class GetFileSystemsFileSystemResult(dict):
                  clone_attach_status: _builtins.str,
                  clone_count: _builtins.int,
                  compartment_id: _builtins.str,
+                 compartment_quota_enforcement_state: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  detach_clone_trigger: _builtins.int,
                  display_name: _builtins.str,
@@ -1917,6 +1918,7 @@ class GetFileSystemsFileSystemResult(dict):
         :param _builtins.str clone_attach_status: Specifies whether the file system is attached to its parent file system.
         :param _builtins.int clone_count: Specifies the total number of children of a file system.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str compartment_quota_enforcement_state: Displays the compartment-level quota enforcement state affecting this file system.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         :param _builtins.str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
@@ -1943,6 +1945,7 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "clone_attach_status", clone_attach_status)
         pulumi.set(__self__, "clone_count", clone_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_quota_enforcement_state", compartment_quota_enforcement_state)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "detach_clone_trigger", detach_clone_trigger)
         pulumi.set(__self__, "display_name", display_name)
@@ -2005,6 +2008,14 @@ class GetFileSystemsFileSystemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentQuotaEnforcementState")
+    def compartment_quota_enforcement_state(self) -> _builtins.str:
+        """
+        Displays the compartment-level quota enforcement state affecting this file system.
+        """
+        return pulumi.get(self, "compartment_quota_enforcement_state")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -4489,6 +4500,7 @@ class GetSnapshotsFilterResult(dict):
 class GetSnapshotsSnapshotResult(dict):
     def __init__(__self__, *,
                  defined_tags: Mapping[str, _builtins.str],
+                 exclusive_bytes: _builtins.str,
                  expiration_time: _builtins.str,
                  file_system_id: _builtins.str,
                  filesystem_snapshot_policy_id: _builtins.str,
@@ -4509,6 +4521,7 @@ class GetSnapshotsSnapshotResult(dict):
                  time_locked: _builtins.str):
         """
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str exclusive_bytes: Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
         :param _builtins.str expiration_time: The time when this snapshot will be deleted.
         :param _builtins.str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         :param _builtins.str filesystem_snapshot_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is used to create the snapshots.
@@ -4531,6 +4544,7 @@ class GetSnapshotsSnapshotResult(dict):
         :param _builtins.str time_locked: The date and time as per [RFC 3339](https://tools.ietf.org/html/rfc3339) when this snapshot was locked. It is a read-only property because the user should not be able to set it, it is set by our service.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "exclusive_bytes", exclusive_bytes)
         pulumi.set(__self__, "expiration_time", expiration_time)
         pulumi.set(__self__, "file_system_id", file_system_id)
         pulumi.set(__self__, "filesystem_snapshot_policy_id", filesystem_snapshot_policy_id)
@@ -4557,6 +4571,14 @@ class GetSnapshotsSnapshotResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveBytes")
+    def exclusive_bytes(self) -> _builtins.str:
+        """
+        Bytes referenced only by this snapshot; deducted from compartment usage immediately upon deletion.
+        """
+        return pulumi.get(self, "exclusive_bytes")
 
     @_builtins.property
     @pulumi.getter(name="expirationTime")

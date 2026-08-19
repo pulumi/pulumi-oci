@@ -17,6 +17,7 @@ from . import outputs
 
 __all__ = [
     'BootVolumeAutotunePolicy',
+    'BootVolumeBackupRetentionPeriod',
     'BootVolumeBackupSourceDetails',
     'BootVolumeBootVolumeReplica',
     'BootVolumeSourceDetails',
@@ -62,9 +63,11 @@ __all__ = [
     'ComputeHostConfigurationData',
     'ComputeHostConfigurationDataCheckDetail',
     'ComputeHostGroupConfiguration',
+    'ComputeHostGroupConfigurationQuickRecycleSettings',
     'ComputeHostRecycleDetail',
     'CrossConnectGroupMacsecProperties',
     'CrossConnectGroupMacsecPropertiesPrimaryKey',
+    'CrossConnectLoaProperties',
     'CrossConnectMacsecProperties',
     'CrossConnectMacsecPropertiesPrimaryKey',
     'DedicatedVmHostCapacityBin',
@@ -211,8 +214,11 @@ __all__ = [
     'VolumeAttachmentMultipathDevice',
     'VolumeAutotunePolicy',
     'VolumeBackupPolicySchedule',
+    'VolumeBackupPolicyScheduleRetentionPeriod',
+    'VolumeBackupRetentionPeriod',
     'VolumeBackupSourceDetails',
     'VolumeBlockVolumeReplica',
+    'VolumeGroupBackupRetentionPeriod',
     'VolumeGroupBackupSourceDetails',
     'VolumeGroupSourceDetails',
     'VolumeGroupVolumeGroupReplica',
@@ -228,8 +234,10 @@ __all__ = [
     'GetBootVolumeAttachmentsBootVolumeAttachmentResult',
     'GetBootVolumeAttachmentsFilterResult',
     'GetBootVolumeAutotunePolicyResult',
+    'GetBootVolumeBackupRetentionPeriodResult',
     'GetBootVolumeBackupSourceDetailResult',
     'GetBootVolumeBackupsBootVolumeBackupResult',
+    'GetBootVolumeBackupsBootVolumeBackupRetentionPeriodResult',
     'GetBootVolumeBackupsBootVolumeBackupSourceDetailResult',
     'GetBootVolumeBackupsFilterResult',
     'GetBootVolumeBootVolumeReplicaResult',
@@ -373,9 +381,11 @@ __all__ = [
     'GetComputeHostConfigurationDataResult',
     'GetComputeHostConfigurationDataCheckDetailResult',
     'GetComputeHostGroupConfigurationResult',
+    'GetComputeHostGroupConfigurationQuickRecycleSettingResult',
     'GetComputeHostGroupsComputeHostGroupCollectionResult',
     'GetComputeHostGroupsComputeHostGroupCollectionItemResult',
     'GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult',
+    'GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingResult',
     'GetComputeHostGroupsFilterResult',
     'GetComputeHostRecycleDetailResult',
     'GetComputeHostsComputeHostCollectionResult',
@@ -398,6 +408,7 @@ __all__ = [
     'GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult',
     'GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyResult',
     'GetCrossConnectGroupsFilterResult',
+    'GetCrossConnectLoaPropertyResult',
     'GetCrossConnectLocationsCrossConnectLocationResult',
     'GetCrossConnectLocationsFilterResult',
     'GetCrossConnectMacsecPropertyResult',
@@ -405,6 +416,7 @@ __all__ = [
     'GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShapeResult',
     'GetCrossConnectPortSpeedShapeFilterResult',
     'GetCrossConnectsCrossConnectResult',
+    'GetCrossConnectsCrossConnectLoaPropertyResult',
     'GetCrossConnectsCrossConnectMacsecPropertyResult',
     'GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyResult',
     'GetCrossConnectsFilterResult',
@@ -680,6 +692,7 @@ __all__ = [
     'GetIpsecStatusTunnelResult',
     'GetIpv6sFilterResult',
     'GetIpv6sIpv6Result',
+    'GetLetterOfAuthorityExtensionDetailResult',
     'GetListingResourceVersionsAppCatalogListingResourceVersionResult',
     'GetListingResourceVersionsFilterResult',
     'GetLocalPeeringGatewaysFilterResult',
@@ -806,14 +819,17 @@ __all__ = [
     'GetVolumeBackupPoliciesFilterResult',
     'GetVolumeBackupPoliciesVolumeBackupPolicyResult',
     'GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult',
+    'GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult',
     'GetVolumeBackupPolicyAssignmentsFilterResult',
     'GetVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentResult',
     'GetVolumeBackupsFilterResult',
     'GetVolumeBackupsVolumeBackupResult',
+    'GetVolumeBackupsVolumeBackupRetentionPeriodResult',
     'GetVolumeBackupsVolumeBackupSourceDetailResult',
     'GetVolumeBlockVolumeReplicaResult',
     'GetVolumeGroupBackupsFilterResult',
     'GetVolumeGroupBackupsVolumeGroupBackupResult',
+    'GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult',
     'GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult',
     'GetVolumeGroupReplicaMemberReplicaResult',
     'GetVolumeGroupReplicasFilterResult',
@@ -880,6 +896,54 @@ class BootVolumeAutotunePolicy(dict):
         (Updatable) This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
         """
         return pulumi.get(self, "max_vpus_per_gb")
+
+
+@pulumi.output_type
+class BootVolumeBackupRetentionPeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "retentionTimeAmount":
+            suggest = "retention_time_amount"
+        elif key == "retentionTimeUnit":
+            suggest = "retention_time_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BootVolumeBackupRetentionPeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BootVolumeBackupRetentionPeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BootVolumeBackupRetentionPeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -3875,6 +3939,8 @@ class ComputeHostGroupConfiguration(dict):
         suggest = None
         if key == "firmwareBundleId":
             suggest = "firmware_bundle_id"
+        elif key == "quickRecycleSettings":
+            suggest = "quick_recycle_settings"
         elif key == "recycleLevel":
             suggest = "recycle_level"
 
@@ -3891,11 +3957,13 @@ class ComputeHostGroupConfiguration(dict):
 
     def __init__(__self__, *,
                  firmware_bundle_id: Optional[_builtins.str] = None,
+                 quick_recycle_settings: Optional['outputs.ComputeHostGroupConfigurationQuickRecycleSettings'] = None,
                  recycle_level: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  target: Optional[_builtins.str] = None):
         """
         :param _builtins.str firmware_bundle_id: (Updatable) The OCID for firmware bundle
+        :param 'ComputeHostGroupConfigurationQuickRecycleSettingsArgs' quick_recycle_settings: (Updatable) Additional quick recycle settings.
         :param _builtins.str recycle_level: (Updatable) Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -3904,6 +3972,8 @@ class ComputeHostGroupConfiguration(dict):
         """
         if firmware_bundle_id is not None:
             pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        if quick_recycle_settings is not None:
+            pulumi.set(__self__, "quick_recycle_settings", quick_recycle_settings)
         if recycle_level is not None:
             pulumi.set(__self__, "recycle_level", recycle_level)
         if state is not None:
@@ -3918,6 +3988,14 @@ class ComputeHostGroupConfiguration(dict):
         (Updatable) The OCID for firmware bundle
         """
         return pulumi.get(self, "firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quickRecycleSettings")
+    def quick_recycle_settings(self) -> Optional['outputs.ComputeHostGroupConfigurationQuickRecycleSettings']:
+        """
+        (Updatable) Additional quick recycle settings.
+        """
+        return pulumi.get(self, "quick_recycle_settings")
 
     @_builtins.property
     @pulumi.getter(name="recycleLevel")
@@ -3944,6 +4022,42 @@ class ComputeHostGroupConfiguration(dict):
         (Updatable) Either the platform name or compute shape that the configuration is targeting
         """
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class ComputeHostGroupConfigurationQuickRecycleSettings(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nvmeWipe":
+            suggest = "nvme_wipe"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeHostGroupConfigurationQuickRecycleSettings. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeHostGroupConfigurationQuickRecycleSettings.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeHostGroupConfigurationQuickRecycleSettings.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 nvme_wipe: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.bool nvme_wipe: (Updatable) Whether to wipe NVMe data during quick recycle.
+        """
+        if nvme_wipe is not None:
+            pulumi.set(__self__, "nvme_wipe", nvme_wipe)
+
+    @_builtins.property
+    @pulumi.getter(name="nvmeWipe")
+    def nvme_wipe(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether to wipe NVMe data during quick recycle.
+        """
+        return pulumi.get(self, "nvme_wipe")
 
 
 @pulumi.output_type
@@ -4030,9 +4144,6 @@ class CrossConnectGroupMacsecProperties(dict):
                  primary_key: Optional['outputs.CrossConnectGroupMacsecPropertiesPrimaryKey'] = None):
         """
         :param _builtins.str state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param _builtins.str encryption_cipher: (Updatable) Type of encryption cipher suite to use for the MACsec connection.
         :param _builtins.bool is_unprotected_traffic_allowed: (Updatable) Indicates whether unencrypted traffic is allowed if MACsec Key Agreement protocol (MKA) fails.
         :param 'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs' primary_key: (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
@@ -4050,9 +4161,6 @@ class CrossConnectGroupMacsecProperties(dict):
     def state(self) -> _builtins.str:
         """
         (Updatable) Indicates whether or not MACsec is enabled.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -4163,6 +4271,56 @@ class CrossConnectGroupMacsecPropertiesPrimaryKey(dict):
         NOTE: Only the latest secret version will be used.
         """
         return pulumi.get(self, "connectivity_association_name_secret_version")
+
+
+@pulumi.output_type
+class CrossConnectLoaProperties(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authorizedAgent":
+            suggest = "authorized_agent"
+        elif key == "expiryExtensionCount":
+            suggest = "expiry_extension_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CrossConnectLoaProperties. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CrossConnectLoaProperties.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CrossConnectLoaProperties.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authorized_agent: Optional[_builtins.str] = None,
+                 expiry_extension_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str authorized_agent: (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        :param _builtins.int expiry_extension_count: (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        if authorized_agent is not None:
+            pulumi.set(__self__, "authorized_agent", authorized_agent)
+        if expiry_extension_count is not None:
+            pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+        """
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+        """
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -17034,10 +17192,16 @@ class VolumeBackupPolicySchedule(dict):
             suggest = "day_of_week"
         elif key == "hourOfDay":
             suggest = "hour_of_day"
+        elif key == "isPreventDeletionEnabled":
+            suggest = "is_prevent_deletion_enabled"
+        elif key == "isRetentionLockEnabled":
+            suggest = "is_retention_lock_enabled"
         elif key == "offsetSeconds":
             suggest = "offset_seconds"
         elif key == "offsetType":
             suggest = "offset_type"
+        elif key == "retentionPeriod":
+            suggest = "retention_period"
         elif key == "timeZone":
             suggest = "time_zone"
 
@@ -17059,9 +17223,12 @@ class VolumeBackupPolicySchedule(dict):
                  day_of_month: Optional[_builtins.int] = None,
                  day_of_week: Optional[_builtins.str] = None,
                  hour_of_day: Optional[_builtins.int] = None,
+                 is_prevent_deletion_enabled: Optional[_builtins.bool] = None,
+                 is_retention_lock_enabled: Optional[_builtins.bool] = None,
                  month: Optional[_builtins.str] = None,
                  offset_seconds: Optional[_builtins.int] = None,
                  offset_type: Optional[_builtins.str] = None,
+                 retention_period: Optional['outputs.VolumeBackupPolicyScheduleRetentionPeriod'] = None,
                  time_zone: Optional[_builtins.str] = None):
         """
         :param _builtins.str backup_type: (Updatable) The type of volume backup to create.
@@ -17070,6 +17237,8 @@ class VolumeBackupPolicySchedule(dict):
         :param _builtins.int day_of_month: (Updatable) The day of the month to schedule the volume backup.
         :param _builtins.str day_of_week: (Updatable) The day of the week to schedule the volume backup.
         :param _builtins.int hour_of_day: (Updatable) The hour of the day to schedule the volume backup.
+        :param _builtins.bool is_prevent_deletion_enabled: (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param _builtins.bool is_retention_lock_enabled: (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param _builtins.str month: (Updatable) The month of the year to schedule the volume backup.
         :param _builtins.int offset_seconds: (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
         :param _builtins.str offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
@@ -17087,6 +17256,7 @@ class VolumeBackupPolicySchedule(dict):
                If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
                
                For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+        :param 'VolumeBackupPolicyScheduleRetentionPeriodArgs' retention_period: (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
                - `UTC`
@@ -17104,12 +17274,18 @@ class VolumeBackupPolicySchedule(dict):
             pulumi.set(__self__, "day_of_week", day_of_week)
         if hour_of_day is not None:
             pulumi.set(__self__, "hour_of_day", hour_of_day)
+        if is_prevent_deletion_enabled is not None:
+            pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        if is_retention_lock_enabled is not None:
+            pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         if month is not None:
             pulumi.set(__self__, "month", month)
         if offset_seconds is not None:
             pulumi.set(__self__, "offset_seconds", offset_seconds)
         if offset_type is not None:
             pulumi.set(__self__, "offset_type", offset_type)
+        if retention_period is not None:
+            pulumi.set(__self__, "retention_period", retention_period)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -17162,6 +17338,22 @@ class VolumeBackupPolicySchedule(dict):
         return pulumi.get(self, "hour_of_day")
 
     @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter
     def month(self) -> Optional[_builtins.str]:
         """
@@ -17200,6 +17392,14 @@ class VolumeBackupPolicySchedule(dict):
         return pulumi.get(self, "offset_type")
 
     @_builtins.property
+    @pulumi.getter(name="retentionPeriod")
+    def retention_period(self) -> Optional['outputs.VolumeBackupPolicyScheduleRetentionPeriod']:
+        """
+        (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_period")
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[_builtins.str]:
         """
@@ -17212,6 +17412,102 @@ class VolumeBackupPolicySchedule(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class VolumeBackupPolicyScheduleRetentionPeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "retentionTimeAmount":
+            suggest = "retention_time_amount"
+        elif key == "retentionTimeUnit":
+            suggest = "retention_time_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VolumeBackupPolicyScheduleRetentionPeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VolumeBackupPolicyScheduleRetentionPeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VolumeBackupPolicyScheduleRetentionPeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+
+@pulumi.output_type
+class VolumeBackupRetentionPeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "retentionTimeAmount":
+            suggest = "retention_time_amount"
+        elif key == "retentionTimeUnit":
+            suggest = "retention_time_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VolumeBackupRetentionPeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VolumeBackupRetentionPeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VolumeBackupRetentionPeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -17369,6 +17665,54 @@ class VolumeBlockVolumeReplica(dict):
         (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "xrr_kms_key_id")
+
+
+@pulumi.output_type
+class VolumeGroupBackupRetentionPeriod(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "retentionTimeAmount":
+            suggest = "retention_time_amount"
+        elif key == "retentionTimeUnit":
+            suggest = "retention_time_unit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VolumeGroupBackupRetentionPeriod. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VolumeGroupBackupRetentionPeriod.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VolumeGroupBackupRetentionPeriod.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -18447,6 +18791,35 @@ class GetBootVolumeAutotunePolicyResult(dict):
 
 
 @pulumi.output_type
+class GetBootVolumeBackupRetentionPeriodResult(dict):
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
+
+
+@pulumi.output_type
 class GetBootVolumeBackupSourceDetailResult(dict):
     def __init__(__self__, *,
                  boot_volume_backup_id: _builtins.str,
@@ -18493,7 +18866,11 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  image_id: _builtins.str,
+                 is_indefinite_retention_enabled: _builtins.bool,
+                 is_prevent_deletion_enabled: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
+                 retention_periods: Sequence['outputs.GetBootVolumeBackupsBootVolumeBackupRetentionPeriodResult'],
                  size_in_gbs: _builtins.str,
                  source_boot_volume_backup_id: _builtins.str,
                  source_details: Sequence['outputs.GetBootVolumeBackupsBootVolumeBackupSourceDetailResult'],
@@ -18502,8 +18879,10 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_request_received: _builtins.str,
+                 time_retention_expires_at: _builtins.str,
                  type: _builtins.str,
-                 unique_size_in_gbs: _builtins.str):
+                 unique_size_in_gbs: _builtins.str,
+                 volume_group_backup_id: _builtins.str):
         """
         :param _builtins.str boot_volume_id: The OCID of the boot volume.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -18513,7 +18892,11 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the boot volume backup.
         :param _builtins.str image_id: The image OCID used to create the boot volume the backup is taken from.
+        :param _builtins.bool is_indefinite_retention_enabled: feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param _builtins.bool is_prevent_deletion_enabled: Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param _builtins.bool is_retention_lock_enabled: feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param _builtins.str kms_key_id: The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param Sequence['GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs'] retention_periods: This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str size_in_gbs: The size of the boot volume, in GBs.
         :param _builtins.str source_boot_volume_backup_id: A filter to return only resources that originated from the given source boot volume backup.
         :param _builtins.str source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
@@ -18521,8 +18904,10 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str time_created: The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_request_received: The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_retention_expires_at: The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str type: The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
         :param _builtins.str unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
+        :param _builtins.str volume_group_backup_id: The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
         """
         pulumi.set(__self__, "boot_volume_id", boot_volume_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -18532,7 +18917,11 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "image_id", image_id)
+        pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "retention_periods", retention_periods)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "source_boot_volume_backup_id", source_boot_volume_backup_id)
         pulumi.set(__self__, "source_details", source_details)
@@ -18541,8 +18930,10 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_request_received", time_request_received)
+        pulumi.set(__self__, "time_retention_expires_at", time_retention_expires_at)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
+        pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
 
     @_builtins.property
     @pulumi.getter(name="bootVolumeId")
@@ -18609,12 +19000,44 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         return pulumi.get(self, "image_id")
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> _builtins.bool:
+        """
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> _builtins.bool:
+        """
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriods")
+    def retention_periods(self) -> Sequence['outputs.GetBootVolumeBackupsBootVolumeBackupRetentionPeriodResult']:
+        """
+        This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_periods")
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -18678,6 +19101,14 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         return pulumi.get(self, "time_request_received")
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> _builtins.str:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -18692,6 +19123,43 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
         """
         return pulumi.get(self, "unique_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="volumeGroupBackupId")
+    def volume_group_backup_id(self) -> _builtins.str:
+        """
+        The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        """
+        return pulumi.get(self, "volume_group_backup_id")
+
+
+@pulumi.output_type
+class GetBootVolumeBackupsBootVolumeBackupRetentionPeriodResult(dict):
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -26076,11 +26544,13 @@ class GetComputeHostConfigurationDataCheckDetailResult(dict):
 class GetComputeHostGroupConfigurationResult(dict):
     def __init__(__self__, *,
                  firmware_bundle_id: _builtins.str,
+                 quick_recycle_settings: Sequence['outputs.GetComputeHostGroupConfigurationQuickRecycleSettingResult'],
                  recycle_level: _builtins.str,
                  state: _builtins.str,
                  target: _builtins.str):
         """
         :param _builtins.str firmware_bundle_id: The OCID for firmware bundle
+        :param Sequence['GetComputeHostGroupConfigurationQuickRecycleSettingArgs'] quick_recycle_settings: Additional quick recycle settings.
         :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -26088,6 +26558,7 @@ class GetComputeHostGroupConfigurationResult(dict):
         :param _builtins.str target: Either the platform name or compute shape that the configuration is targeting
         """
         pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        pulumi.set(__self__, "quick_recycle_settings", quick_recycle_settings)
         pulumi.set(__self__, "recycle_level", recycle_level)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target", target)
@@ -26099,6 +26570,14 @@ class GetComputeHostGroupConfigurationResult(dict):
         The OCID for firmware bundle
         """
         return pulumi.get(self, "firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quickRecycleSettings")
+    def quick_recycle_settings(self) -> Sequence['outputs.GetComputeHostGroupConfigurationQuickRecycleSettingResult']:
+        """
+        Additional quick recycle settings.
+        """
+        return pulumi.get(self, "quick_recycle_settings")
 
     @_builtins.property
     @pulumi.getter(name="recycleLevel")
@@ -26125,6 +26604,24 @@ class GetComputeHostGroupConfigurationResult(dict):
         Either the platform name or compute shape that the configuration is targeting
         """
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetComputeHostGroupConfigurationQuickRecycleSettingResult(dict):
+    def __init__(__self__, *,
+                 nvme_wipe: _builtins.bool):
+        """
+        :param _builtins.bool nvme_wipe: Whether to wipe NVMe data during quick recycle.
+        """
+        pulumi.set(__self__, "nvme_wipe", nvme_wipe)
+
+    @_builtins.property
+    @pulumi.getter(name="nvmeWipe")
+    def nvme_wipe(self) -> _builtins.bool:
+        """
+        Whether to wipe NVMe data during quick recycle.
+        """
+        return pulumi.get(self, "nvme_wipe")
 
 
 @pulumi.output_type
@@ -26282,11 +26779,13 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemResult(dict):
 class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
                  firmware_bundle_id: _builtins.str,
+                 quick_recycle_settings: Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingResult'],
                  recycle_level: _builtins.str,
                  state: _builtins.str,
                  target: _builtins.str):
         """
         :param _builtins.str firmware_bundle_id: The OCID for firmware bundle
+        :param Sequence['GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs'] quick_recycle_settings: Additional quick recycle settings.
         :param _builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
                * `SKIP_RECYCLE` - Skips host wipe.
                * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -26294,6 +26793,7 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict
         :param _builtins.str target: Either the platform name or compute shape that the configuration is targeting
         """
         pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        pulumi.set(__self__, "quick_recycle_settings", quick_recycle_settings)
         pulumi.set(__self__, "recycle_level", recycle_level)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "target", target)
@@ -26305,6 +26805,14 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict
         The OCID for firmware bundle
         """
         return pulumi.get(self, "firmware_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="quickRecycleSettings")
+    def quick_recycle_settings(self) -> Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingResult']:
+        """
+        Additional quick recycle settings.
+        """
+        return pulumi.get(self, "quick_recycle_settings")
 
     @_builtins.property
     @pulumi.getter(name="recycleLevel")
@@ -26331,6 +26839,24 @@ class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict
         Either the platform name or compute shape that the configuration is targeting
         """
         return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingResult(dict):
+    def __init__(__self__, *,
+                 nvme_wipe: _builtins.bool):
+        """
+        :param _builtins.bool nvme_wipe: Whether to wipe NVMe data during quick recycle.
+        """
+        pulumi.set(__self__, "nvme_wipe", nvme_wipe)
+
+    @_builtins.property
+    @pulumi.getter(name="nvmeWipe")
+    def nvme_wipe(self) -> _builtins.bool:
+        """
+        Whether to wipe NVMe data during quick recycle.
+        """
+        return pulumi.get(self, "nvme_wipe")
 
 
 @pulumi.output_type
@@ -27386,7 +27912,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 interface_down_timer_value_in_milliseconds: _builtins.int,
+                 is_interface_hold_timer_enabled: _builtins.bool,
+                 is_qos_enabled: _builtins.bool,
                  macsec_properties: Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult'],
+                 minimum_links: _builtins.int,
                  oci_logical_device_name: _builtins.str,
                  oci_physical_device_name: _builtins.str,
                  state: _builtins.str,
@@ -27398,7 +27928,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The cross-connect group's Oracle ID (OCID).
+        :param _builtins.int interface_down_timer_value_in_milliseconds: The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param _builtins.bool is_interface_hold_timer_enabled: The flag to enable or disable the down timer for the interface.
+        :param _builtins.bool is_qos_enabled: The flag to enable or disable the Qos for the cross-connect-group.
         :param Sequence['GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
+        :param _builtins.int minimum_links: Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
         :param _builtins.str oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param _builtins.str oci_physical_device_name: The FastConnect device that terminates the physical connection.
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -27410,7 +27944,11 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
         pulumi.set(__self__, "macsec_properties", macsec_properties)
+        pulumi.set(__self__, "minimum_links", minimum_links)
         pulumi.set(__self__, "oci_logical_device_name", oci_logical_device_name)
         pulumi.set(__self__, "oci_physical_device_name", oci_physical_device_name)
         pulumi.set(__self__, "state", state)
@@ -27465,12 +28003,44 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect-group.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="macsecProperties")
     def macsec_properties(self) -> Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult']:
         """
         Properties used for MACsec (if capable).
         """
         return pulumi.get(self, "macsec_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumLinks")
+    def minimum_links(self) -> _builtins.int:
+        """
+        Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+        """
+        return pulumi.get(self, "minimum_links")
 
     @_builtins.property
     @pulumi.getter(name="ociLogicalDeviceName")
@@ -27632,6 +28202,25 @@ class GetCrossConnectGroupsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCrossConnectLoaPropertyResult(dict):
+    def __init__(__self__, *,
+                 authorized_agent: _builtins.str,
+                 expiry_extension_count: _builtins.int):
+        pulumi.set(__self__, "authorized_agent", authorized_agent)
+        pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> _builtins.str:
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> _builtins.int:
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -27871,8 +28460,12 @@ class GetCrossConnectsCrossConnectResult(dict):
                  far_cross_connect_or_cross_connect_group_id: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 interface_down_timer_value_in_milliseconds: _builtins.int,
                  interface_name: _builtins.str,
                  is_active: _builtins.bool,
+                 is_interface_hold_timer_enabled: _builtins.bool,
+                 is_qos_enabled: _builtins.bool,
+                 loa_properties: Sequence['outputs.GetCrossConnectsCrossConnectLoaPropertyResult'],
                  location_name: _builtins.str,
                  macsec_properties: Sequence['outputs.GetCrossConnectsCrossConnectMacsecPropertyResult'],
                  near_cross_connect_or_cross_connect_group_id: _builtins.str,
@@ -27890,6 +28483,10 @@ class GetCrossConnectsCrossConnectResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The cross-connect's Oracle ID (OCID).
+        :param _builtins.int interface_down_timer_value_in_milliseconds: The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        :param _builtins.str interface_name: The name of the FastConnect interface where this cross-connect is installed.
+        :param _builtins.bool is_interface_hold_timer_enabled: The flag to enable or disable the down timer for the interface.
+        :param _builtins.bool is_qos_enabled: The flag to enable or disable the Qos for the cross-connect.
         :param _builtins.str location_name: The name of the FastConnect location where this cross-connect is installed.
         :param Sequence['GetCrossConnectsCrossConnectMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
         :param _builtins.str oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -27907,8 +28504,12 @@ class GetCrossConnectsCrossConnectResult(dict):
         pulumi.set(__self__, "far_cross_connect_or_cross_connect_group_id", far_cross_connect_or_cross_connect_group_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
         pulumi.set(__self__, "interface_name", interface_name)
         pulumi.set(__self__, "is_active", is_active)
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
+        pulumi.set(__self__, "loa_properties", loa_properties)
         pulumi.set(__self__, "location_name", location_name)
         pulumi.set(__self__, "macsec_properties", macsec_properties)
         pulumi.set(__self__, "near_cross_connect_or_cross_connect_group_id", near_cross_connect_or_cross_connect_group_id)
@@ -27981,14 +28582,46 @@ class GetCrossConnectsCrossConnectResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> _builtins.str:
+        """
+        The name of the FastConnect interface where this cross-connect is installed.
+        """
         return pulumi.get(self, "interface_name")
 
     @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> _builtins.bool:
         return pulumi.get(self, "is_active")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> Sequence['outputs.GetCrossConnectsCrossConnectLoaPropertyResult']:
+        return pulumi.get(self, "loa_properties")
 
     @_builtins.property
     @pulumi.getter(name="locationName")
@@ -28058,6 +28691,25 @@ class GetCrossConnectsCrossConnectResult(dict):
         The date and time the cross-connect was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetCrossConnectsCrossConnectLoaPropertyResult(dict):
+    def __init__(__self__, *,
+                 authorized_agent: _builtins.str,
+                 expiry_extension_count: _builtins.int):
+        pulumi.set(__self__, "authorized_agent", authorized_agent)
+        pulumi.set(__self__, "expiry_extension_count", expiry_extension_count)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizedAgent")
+    def authorized_agent(self) -> _builtins.str:
+        return pulumi.get(self, "authorized_agent")
+
+    @_builtins.property
+    @pulumi.getter(name="expiryExtensionCount")
+    def expiry_extension_count(self) -> _builtins.int:
+        return pulumi.get(self, "expiry_extension_count")
 
 
 @pulumi.output_type
@@ -46869,6 +47521,35 @@ class GetIpv6sIpv6Result(dict):
 
 
 @pulumi.output_type
+class GetLetterOfAuthorityExtensionDetailResult(dict):
+    def __init__(__self__, *,
+                 histories: Sequence[_builtins.str],
+                 remaining_extensions: _builtins.str):
+        """
+        :param Sequence[_builtins.str] histories: Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+        :param _builtins.str remaining_extensions: The number of self-service LOA expiry extensions still available.
+        """
+        pulumi.set(__self__, "histories", histories)
+        pulumi.set(__self__, "remaining_extensions", remaining_extensions)
+
+    @_builtins.property
+    @pulumi.getter
+    def histories(self) -> Sequence[_builtins.str]:
+        """
+        Chronologically sorted list of date and time when the Letter of Authority's expiration was last updated,  most recent first, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). List is empty if the LOA's expiration date has never been extended.
+        """
+        return pulumi.get(self, "histories")
+
+    @_builtins.property
+    @pulumi.getter(name="remainingExtensions")
+    def remaining_extensions(self) -> _builtins.str:
+        """
+        The number of self-service LOA expiry extensions still available.
+        """
+        return pulumi.get(self, "remaining_extensions")
+
+
+@pulumi.output_type
 class GetListingResourceVersionsAppCatalogListingResourceVersionResult(dict):
     def __init__(__self__, *,
                  accessible_ports: Sequence[_builtins.int],
@@ -52582,16 +53263,20 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
                  is_bfd_enabled: _builtins.bool,
                  is_transport_mode: _builtins.bool,
                  oracle_bgp_asn: _builtins.int,
+                 provider_remote_region: _builtins.str,
                  provider_service_id: _builtins.str,
                  provider_service_key_name: _builtins.str,
                  provider_state: _builtins.str,
                  public_prefixes: Sequence['outputs.GetVirtualCircuitsVirtualCircuitPublicPrefixResult'],
                  reference_comment: _builtins.str,
                  region: _builtins.str,
+                 remote_account_id: _builtins.str,
                  routing_policies: Sequence[_builtins.str],
                  service_type: _builtins.str,
+                 shared_connection_uuid: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
+                 traffic_mode: _builtins.str,
                  type: _builtins.str,
                  virtual_circuit_id: _builtins.str,
                  virtual_circuit_redundancy_metadatas: Sequence['outputs.GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataResult']):
@@ -52614,16 +53299,20 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         :param _builtins.bool is_bfd_enabled: Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param _builtins.bool is_transport_mode: Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param _builtins.int oracle_bgp_asn: The Oracle BGP ASN.
-        :param _builtins.str provider_service_id: The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        :param _builtins.str provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        :param _builtins.str provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
         :param _builtins.str provider_service_key_name: The service key name offered by the provider (if the customer is connecting via a provider).
         :param _builtins.str provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         :param Sequence['GetVirtualCircuitsVirtualCircuitPublicPrefixArgs'] public_prefixes: For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection. All prefix sizes are allowed.
         :param _builtins.str reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         :param _builtins.str region: The Oracle Cloud Infrastructure region where this virtual circuit is located.
+        :param _builtins.str remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param Sequence[_builtins.str] routing_policies: The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         :param _builtins.str service_type: Provider service type.
+        :param _builtins.str shared_connection_uuid: The Shared unique identifier for the connection between the multicloud interconnect providers
         :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param _builtins.str time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str traffic_mode: The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
         :param _builtins.str type: Whether the virtual circuit supports private or public peering. For more information, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param Sequence['GetVirtualCircuitsVirtualCircuitVirtualCircuitRedundancyMetadataArgs'] virtual_circuit_redundancy_metadatas: This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
         """
@@ -52645,16 +53334,20 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
         pulumi.set(__self__, "is_transport_mode", is_transport_mode)
         pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
+        pulumi.set(__self__, "provider_remote_region", provider_remote_region)
         pulumi.set(__self__, "provider_service_id", provider_service_id)
         pulumi.set(__self__, "provider_service_key_name", provider_service_key_name)
         pulumi.set(__self__, "provider_state", provider_state)
         pulumi.set(__self__, "public_prefixes", public_prefixes)
         pulumi.set(__self__, "reference_comment", reference_comment)
         pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "remote_account_id", remote_account_id)
         pulumi.set(__self__, "routing_policies", routing_policies)
         pulumi.set(__self__, "service_type", service_type)
+        pulumi.set(__self__, "shared_connection_uuid", shared_connection_uuid)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "traffic_mode", traffic_mode)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "virtual_circuit_id", virtual_circuit_id)
         pulumi.set(__self__, "virtual_circuit_redundancy_metadatas", virtual_circuit_redundancy_metadatas)
@@ -52806,10 +53499,18 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         return pulumi.get(self, "oracle_bgp_asn")
 
     @_builtins.property
+    @pulumi.getter(name="providerRemoteRegion")
+    def provider_remote_region(self) -> _builtins.str:
+        """
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        """
+        return pulumi.get(self, "provider_remote_region")
+
+    @_builtins.property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> _builtins.str:
         """
-        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if the customer is connecting via a provider).
         """
         return pulumi.get(self, "provider_service_id")
 
@@ -52854,6 +53555,14 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         return pulumi.get(self, "region")
 
     @_builtins.property
+    @pulumi.getter(name="remoteAccountId")
+    def remote_account_id(self) -> _builtins.str:
+        """
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        """
+        return pulumi.get(self, "remote_account_id")
+
+    @_builtins.property
     @pulumi.getter(name="routingPolicies")
     def routing_policies(self) -> Sequence[_builtins.str]:
         """
@@ -52870,6 +53579,14 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         return pulumi.get(self, "service_type")
 
     @_builtins.property
+    @pulumi.getter(name="sharedConnectionUuid")
+    def shared_connection_uuid(self) -> _builtins.str:
+        """
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+        """
+        return pulumi.get(self, "shared_connection_uuid")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -52884,6 +53601,14 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> _builtins.str:
+        """
+        The current traffic mode for the Virtual Circuit. This indicates whether the traffic is drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
 
     @_builtins.property
     @pulumi.getter
@@ -54270,10 +54995,13 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
                  day_of_month: _builtins.int,
                  day_of_week: _builtins.str,
                  hour_of_day: _builtins.int,
+                 is_prevent_deletion_enabled: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  month: _builtins.str,
                  offset_seconds: _builtins.int,
                  offset_type: _builtins.str,
                  period: _builtins.str,
+                 retention_periods: Sequence['outputs.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult'],
                  retention_seconds: _builtins.int,
                  time_zone: _builtins.str):
         """
@@ -54281,10 +55009,13 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
         :param _builtins.int day_of_month: The day of the month to schedule the volume backup.
         :param _builtins.str day_of_week: The day of the week to schedule the volume backup.
         :param _builtins.int hour_of_day: The hour of the day to schedule the volume backup.
+        :param _builtins.bool is_prevent_deletion_enabled: Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param _builtins.bool is_retention_lock_enabled: feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param _builtins.str month: The month of the year to schedule the volume backup.
         :param _builtins.int offset_seconds: The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
         :param _builtins.str offset_type: Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
         :param _builtins.str period: The volume backup frequency.
+        :param Sequence['GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodArgs'] retention_periods: This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.int retention_seconds: How long, in seconds, to keep the volume backups created by this schedule.
         :param _builtins.str time_zone: Specifies what time zone is the schedule in
         """
@@ -54292,10 +55023,13 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
         pulumi.set(__self__, "day_of_month", day_of_month)
         pulumi.set(__self__, "day_of_week", day_of_week)
         pulumi.set(__self__, "hour_of_day", hour_of_day)
+        pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "month", month)
         pulumi.set(__self__, "offset_seconds", offset_seconds)
         pulumi.set(__self__, "offset_type", offset_type)
         pulumi.set(__self__, "period", period)
+        pulumi.set(__self__, "retention_periods", retention_periods)
         pulumi.set(__self__, "retention_seconds", retention_seconds)
         pulumi.set(__self__, "time_zone", time_zone)
 
@@ -54332,6 +55066,22 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
         return pulumi.get(self, "hour_of_day")
 
     @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> _builtins.bool:
+        """
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter
     def month(self) -> _builtins.str:
         """
@@ -54364,6 +55114,14 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
         return pulumi.get(self, "period")
 
     @_builtins.property
+    @pulumi.getter(name="retentionPeriods")
+    def retention_periods(self) -> Sequence['outputs.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult']:
+        """
+        This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_periods")
+
+    @_builtins.property
     @pulumi.getter(name="retentionSeconds")
     def retention_seconds(self) -> _builtins.int:
         """
@@ -54378,6 +55136,35 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult(dict):
         Specifies what time zone is the schedule in
         """
         return pulumi.get(self, "time_zone")
+
+
+@pulumi.output_type
+class GetVolumeBackupPoliciesVolumeBackupPolicyScheduleRetentionPeriodResult(dict):
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -54505,7 +55292,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
                  expiration_time: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_indefinite_retention_enabled: _builtins.bool,
+                 is_prevent_deletion_enabled: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
                  kms_key_id: _builtins.str,
+                 retention_periods: Sequence['outputs.GetVolumeBackupsVolumeBackupRetentionPeriodResult'],
                  size_in_gbs: _builtins.str,
                  size_in_mbs: _builtins.str,
                  source_details: Sequence['outputs.GetVolumeBackupsVolumeBackupSourceDetailResult'],
@@ -54515,9 +55306,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_request_received: _builtins.str,
+                 time_retention_expires_at: _builtins.str,
                  type: _builtins.str,
                  unique_size_in_gbs: _builtins.str,
                  unique_size_in_mbs: _builtins.str,
+                 volume_group_backup_id: _builtins.str,
                  volume_id: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -54526,7 +55319,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         :param _builtins.str expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the volume backup.
+        :param _builtins.bool is_indefinite_retention_enabled: feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param _builtins.bool is_prevent_deletion_enabled: Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param _builtins.bool is_retention_lock_enabled: feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
         :param _builtins.str kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+        :param Sequence['GetVolumeBackupsVolumeBackupRetentionPeriodArgs'] retention_periods: This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str size_in_gbs: The size of the volume, in GBs.
         :param _builtins.str size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param _builtins.str source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
@@ -54535,9 +55332,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
+        :param _builtins.str time_retention_expires_at: The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str type: The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
         :param _builtins.str unique_size_in_gbs: The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the volume and whether the backup is full or incremental.
         :param _builtins.str unique_size_in_mbs: The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
+        :param _builtins.str volume_group_backup_id: The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
         :param _builtins.str volume_id: The OCID of the volume.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -54546,7 +55345,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         pulumi.set(__self__, "expiration_time", expiration_time)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "retention_periods", retention_periods)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -54556,9 +55359,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_request_received", time_request_received)
+        pulumi.set(__self__, "time_retention_expires_at", time_retention_expires_at)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
         pulumi.set(__self__, "unique_size_in_mbs", unique_size_in_mbs)
+        pulumi.set(__self__, "volume_group_backup_id", volume_group_backup_id)
         pulumi.set(__self__, "volume_id", volume_id)
 
     @_builtins.property
@@ -54610,12 +55415,44 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> _builtins.bool:
+        """
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> _builtins.bool:
+        """
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
         The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         """
         return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriods")
+    def retention_periods(self) -> Sequence['outputs.GetVolumeBackupsVolumeBackupRetentionPeriodResult']:
+        """
+        This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_periods")
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -54688,6 +55525,14 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         return pulumi.get(self, "time_request_received")
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> _builtins.str:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -54713,12 +55558,49 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         return pulumi.get(self, "unique_size_in_mbs")
 
     @_builtins.property
+    @pulumi.getter(name="volumeGroupBackupId")
+    def volume_group_backup_id(self) -> _builtins.str:
+        """
+        The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+        """
+        return pulumi.get(self, "volume_group_backup_id")
+
+    @_builtins.property
     @pulumi.getter(name="volumeId")
     def volume_id(self) -> _builtins.str:
         """
         The OCID of the volume.
         """
         return pulumi.get(self, "volume_id")
+
+
+@pulumi.output_type
+class GetVolumeBackupsVolumeBackupRetentionPeriodResult(dict):
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type
@@ -54847,6 +55729,10 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
                  expiration_time: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_indefinite_retention_enabled: _builtins.bool,
+                 is_prevent_deletion_enabled: _builtins.bool,
+                 is_retention_lock_enabled: _builtins.bool,
+                 retention_periods: Sequence['outputs.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult'],
                  size_in_gbs: _builtins.str,
                  size_in_mbs: _builtins.str,
                  source_details: Sequence['outputs.GetVolumeGroupBackupsVolumeGroupBackupSourceDetailResult'],
@@ -54855,6 +55741,7 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
                  state: _builtins.str,
                  time_created: _builtins.str,
                  time_request_received: _builtins.str,
+                 time_retention_expires_at: _builtins.str,
                  type: _builtins.str,
                  unique_size_in_gbs: _builtins.str,
                  unique_size_in_mbs: _builtins.str,
@@ -54867,6 +55754,10 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         :param _builtins.str expiration_time: The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the volume group backup.
+        :param _builtins.bool is_indefinite_retention_enabled: feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        :param _builtins.bool is_prevent_deletion_enabled: Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        :param _builtins.bool is_retention_lock_enabled: feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        :param Sequence['GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodArgs'] retention_periods: This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str size_in_gbs: The aggregate size of the volume group backup, in GBs.
         :param _builtins.str size_in_mbs: The aggregate size of the volume group backup, in MBs.
         :param _builtins.str source_type: Specifies whether the volume group backup was created manually, or via scheduled backup policy.
@@ -54874,6 +55765,7 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         :param _builtins.str state: The current state of a volume group backup.
         :param _builtins.str time_created: The date and time the volume group backup was created. This is the time the actual point-in-time image of the volume group data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_request_received: The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str time_retention_expires_at: The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
         :param _builtins.str type: The type of backup.
         :param _builtins.str unique_size_in_gbs: The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         :param _builtins.str unique_size_in_mbs: The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
@@ -54886,6 +55778,10 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         pulumi.set(__self__, "expiration_time", expiration_time)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_indefinite_retention_enabled", is_indefinite_retention_enabled)
+        pulumi.set(__self__, "is_prevent_deletion_enabled", is_prevent_deletion_enabled)
+        pulumi.set(__self__, "is_retention_lock_enabled", is_retention_lock_enabled)
+        pulumi.set(__self__, "retention_periods", retention_periods)
         pulumi.set(__self__, "size_in_gbs", size_in_gbs)
         pulumi.set(__self__, "size_in_mbs", size_in_mbs)
         pulumi.set(__self__, "source_details", source_details)
@@ -54894,6 +55790,7 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_request_received", time_request_received)
+        pulumi.set(__self__, "time_retention_expires_at", time_retention_expires_at)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "unique_size_in_gbs", unique_size_in_gbs)
         pulumi.set(__self__, "unique_size_in_mbs", unique_size_in_mbs)
@@ -54947,6 +55844,38 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         The OCID of the volume group backup.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isIndefiniteRetentionEnabled")
+    def is_indefinite_retention_enabled(self) -> _builtins.bool:
+        """
+        feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+        """
+        return pulumi.get(self, "is_indefinite_retention_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isPreventDeletionEnabled")
+    def is_prevent_deletion_enabled(self) -> _builtins.bool:
+        """
+        Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        """
+        return pulumi.get(self, "is_prevent_deletion_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isRetentionLockEnabled")
+    def is_retention_lock_enabled(self) -> _builtins.bool:
+        """
+        feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        """
+        return pulumi.get(self, "is_retention_lock_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionPeriods")
+    def retention_periods(self) -> Sequence['outputs.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult']:
+        """
+        This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "retention_periods")
 
     @_builtins.property
     @pulumi.getter(name="sizeInGbs")
@@ -55010,6 +55939,14 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         return pulumi.get(self, "time_request_received")
 
     @_builtins.property
+    @pulumi.getter(name="timeRetentionExpiresAt")
+    def time_retention_expires_at(self) -> _builtins.str:
+        """
+        The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        """
+        return pulumi.get(self, "time_retention_expires_at")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -55048,6 +55985,35 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
         The OCID of the volume group.
         """
         return pulumi.get(self, "volume_group_id")
+
+
+@pulumi.output_type
+class GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriodResult(dict):
+    def __init__(__self__, *,
+                 retention_time_amount: _builtins.int,
+                 retention_time_unit: _builtins.str):
+        """
+        :param _builtins.int retention_time_amount: The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        :param _builtins.str retention_time_unit: The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        pulumi.set(__self__, "retention_time_amount", retention_time_amount)
+        pulumi.set(__self__, "retention_time_unit", retention_time_unit)
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeAmount")
+    def retention_time_amount(self) -> _builtins.int:
+        """
+        The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+        """
+        return pulumi.get(self, "retention_time_amount")
+
+    @_builtins.property
+    @pulumi.getter(name="retentionTimeUnit")
+    def retention_time_unit(self) -> _builtins.str:
+        """
+        The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+        """
+        return pulumi.get(self, "retention_time_unit")
 
 
 @pulumi.output_type

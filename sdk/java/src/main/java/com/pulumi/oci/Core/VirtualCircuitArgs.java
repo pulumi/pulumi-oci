@@ -226,6 +226,21 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    @Import(name="providerRemoteRegion")
+    private @Nullable Output<String> providerRemoteRegion;
+
+    /**
+     * @return The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+     * 
+     */
+    public Optional<Output<String>> providerRemoteRegion() {
+        return Optional.ofNullable(this.providerRemoteRegion);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
      * 
      */
@@ -286,6 +301,21 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    @Import(name="remoteAccountId")
+    private @Nullable Output<String> remoteAccountId;
+
+    /**
+     * @return Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+     * 
+     */
+    public Optional<Output<String>> remoteAccountId() {
+        return Optional.ofNullable(this.remoteAccountId);
+    }
+
+    /**
      * (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
      * 
      */
@@ -298,6 +328,21 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<List<String>>> routingPolicies() {
         return Optional.ofNullable(this.routingPolicies);
+    }
+
+    /**
+     * (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    @Import(name="trafficMode")
+    private @Nullable Output<String> trafficMode;
+
+    /**
+     * @return (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+     * 
+     */
+    public Optional<Output<String>> trafficMode() {
+        return Optional.ofNullable(this.trafficMode);
     }
 
     /**
@@ -337,11 +382,14 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         this.ipMtu = $.ipMtu;
         this.isBfdEnabled = $.isBfdEnabled;
         this.isTransportMode = $.isTransportMode;
+        this.providerRemoteRegion = $.providerRemoteRegion;
         this.providerServiceId = $.providerServiceId;
         this.providerServiceKeyName = $.providerServiceKeyName;
         this.publicPrefixes = $.publicPrefixes;
         this.region = $.region;
+        this.remoteAccountId = $.remoteAccountId;
         this.routingPolicies = $.routingPolicies;
+        this.trafficMode = $.trafficMode;
         this.type = $.type;
     }
 
@@ -655,6 +703,27 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param providerRemoteRegion The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder providerRemoteRegion(@Nullable Output<String> providerRemoteRegion) {
+            $.providerRemoteRegion = providerRemoteRegion;
+            return this;
+        }
+
+        /**
+         * @param providerRemoteRegion The OCI&#39;s FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+         * 
+         * @return builder
+         * 
+         */
+        public Builder providerRemoteRegion(String providerRemoteRegion) {
+            return providerRemoteRegion(Output.of(providerRemoteRegion));
+        }
+
+        /**
          * @param providerServiceId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you&#39;re connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
          * 
          * @return builder
@@ -749,6 +818,27 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
+         * @param remoteAccountId Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteAccountId(@Nullable Output<String> remoteAccountId) {
+            $.remoteAccountId = remoteAccountId;
+            return this;
+        }
+
+        /**
+         * @param remoteAccountId Customer&#39;s account on Provider/Partner cloud (AWS, GCP or any other)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteAccountId(String remoteAccountId) {
+            return remoteAccountId(Output.of(remoteAccountId));
+        }
+
+        /**
          * @param routingPolicies (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
          * 
          * @return builder
@@ -777,6 +867,27 @@ public final class VirtualCircuitArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder routingPolicies(String... routingPolicies) {
             return routingPolicies(List.of(routingPolicies));
+        }
+
+        /**
+         * @param trafficMode (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trafficMode(@Nullable Output<String> trafficMode) {
+            $.trafficMode = trafficMode;
+            return this;
+        }
+
+        /**
+         * @param trafficMode (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder trafficMode(String trafficMode) {
+            return trafficMode(Output.of(trafficMode));
         }
 
         /**

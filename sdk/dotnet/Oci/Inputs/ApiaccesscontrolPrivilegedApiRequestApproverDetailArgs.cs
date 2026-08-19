@@ -25,6 +25,12 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? ApprovalComment { get; set; }
 
         /// <summary>
+        /// The group level at which the approver approved.
+        /// </summary>
+        [Input("approverGroupLevel")]
+        public Input<int>? ApproverGroupLevel { get; set; }
+
+        /// <summary>
         /// The userId of the approver.
         /// </summary>
         [Input("approverId")]

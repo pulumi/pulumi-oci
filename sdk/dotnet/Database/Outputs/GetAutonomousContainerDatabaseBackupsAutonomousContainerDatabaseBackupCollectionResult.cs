@@ -13,9 +13,6 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionResult
     {
-        /// <summary>
-        /// List of Autonomous container database backups.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemResult> Items;
 
         [OutputConstructor]

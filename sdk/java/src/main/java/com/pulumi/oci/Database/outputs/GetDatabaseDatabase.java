@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseAutoFailoverConfiguration;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetail;
@@ -20,6 +21,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDatabase {
     private String adminPassword;
+    private List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations;
     private String backupId;
     private String backupTdePassword;
     /**
@@ -151,6 +153,9 @@ public final class GetDatabaseDatabase {
     private GetDatabaseDatabase() {}
     public String adminPassword() {
         return this.adminPassword;
+    }
+    public List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations() {
+        return this.autoFailoverConfigurations;
     }
     public String backupId() {
         return this.backupId;
@@ -354,6 +359,7 @@ public final class GetDatabaseDatabase {
     @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
+        private List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations;
         private String backupId;
         private String backupTdePassword;
         private String characterSet;
@@ -390,6 +396,7 @@ public final class GetDatabaseDatabase {
         public Builder(GetDatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
+    	      this.autoFailoverConfigurations = defaults.autoFailoverConfigurations;
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
@@ -431,6 +438,17 @@ public final class GetDatabaseDatabase {
             }
             this.adminPassword = adminPassword;
             return this;
+        }
+        @CustomType.Setter
+        public Builder autoFailoverConfigurations(List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations) {
+            if (autoFailoverConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "autoFailoverConfigurations");
+            }
+            this.autoFailoverConfigurations = autoFailoverConfigurations;
+            return this;
+        }
+        public Builder autoFailoverConfigurations(GetDatabaseDatabaseAutoFailoverConfiguration... autoFailoverConfigurations) {
+            return autoFailoverConfigurations(List.of(autoFailoverConfigurations));
         }
         @CustomType.Setter
         public Builder backupId(String backupId) {
@@ -712,6 +730,7 @@ public final class GetDatabaseDatabase {
         public GetDatabaseDatabase build() {
             final var _resultValue = new GetDatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
+            _resultValue.autoFailoverConfigurations = autoFailoverConfigurations;
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;

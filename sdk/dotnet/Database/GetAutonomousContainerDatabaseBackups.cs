@@ -242,6 +242,9 @@ namespace Pulumi.Oci.Database
         /// The infrastructure type this resource belongs to.
         /// </summary>
         public readonly string? InfrastructureType;
+        /// <summary>
+        /// Indicates whether the backup destination is cross-region or local.
+        /// </summary>
         public readonly bool? IsRemote;
         /// <summary>
         /// The current state of the backup.

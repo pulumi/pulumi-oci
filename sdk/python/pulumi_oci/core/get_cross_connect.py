@@ -27,7 +27,7 @@ class GetCrossConnectResult:
     """
     A collection of values returned by getCrossConnect.
     """
-    def __init__(__self__, compartment_id=None, cross_connect_group_id=None, cross_connect_id=None, customer_reference_name=None, defined_tags=None, display_name=None, far_cross_connect_or_cross_connect_group_id=None, freeform_tags=None, id=None, interface_name=None, is_active=None, location_name=None, macsec_properties=None, near_cross_connect_or_cross_connect_group_id=None, oci_logical_device_name=None, oci_physical_device_name=None, port_name=None, port_speed_shape_name=None, state=None, time_created=None):
+    def __init__(__self__, compartment_id=None, cross_connect_group_id=None, cross_connect_id=None, customer_reference_name=None, defined_tags=None, display_name=None, far_cross_connect_or_cross_connect_group_id=None, freeform_tags=None, id=None, interface_down_timer_value_in_milliseconds=None, interface_name=None, is_active=None, is_interface_hold_timer_enabled=None, is_qos_enabled=None, loa_properties=None, location_name=None, macsec_properties=None, near_cross_connect_or_cross_connect_group_id=None, oci_logical_device_name=None, oci_physical_device_name=None, port_name=None, port_speed_shape_name=None, state=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,12 +55,24 @@ class GetCrossConnectResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if interface_down_timer_value_in_milliseconds and not isinstance(interface_down_timer_value_in_milliseconds, int):
+            raise TypeError("Expected argument 'interface_down_timer_value_in_milliseconds' to be a int")
+        pulumi.set(__self__, "interface_down_timer_value_in_milliseconds", interface_down_timer_value_in_milliseconds)
         if interface_name and not isinstance(interface_name, str):
             raise TypeError("Expected argument 'interface_name' to be a str")
         pulumi.set(__self__, "interface_name", interface_name)
         if is_active and not isinstance(is_active, bool):
             raise TypeError("Expected argument 'is_active' to be a bool")
         pulumi.set(__self__, "is_active", is_active)
+        if is_interface_hold_timer_enabled and not isinstance(is_interface_hold_timer_enabled, bool):
+            raise TypeError("Expected argument 'is_interface_hold_timer_enabled' to be a bool")
+        pulumi.set(__self__, "is_interface_hold_timer_enabled", is_interface_hold_timer_enabled)
+        if is_qos_enabled and not isinstance(is_qos_enabled, bool):
+            raise TypeError("Expected argument 'is_qos_enabled' to be a bool")
+        pulumi.set(__self__, "is_qos_enabled", is_qos_enabled)
+        if loa_properties and not isinstance(loa_properties, list):
+            raise TypeError("Expected argument 'loa_properties' to be a list")
+        pulumi.set(__self__, "loa_properties", loa_properties)
         if location_name and not isinstance(location_name, str):
             raise TypeError("Expected argument 'location_name' to be a str")
         pulumi.set(__self__, "location_name", location_name)
@@ -156,14 +168,46 @@ class GetCrossConnectResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="interfaceDownTimerValueInMilliseconds")
+    def interface_down_timer_value_in_milliseconds(self) -> _builtins.int:
+        """
+        The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        """
+        return pulumi.get(self, "interface_down_timer_value_in_milliseconds")
+
+    @_builtins.property
     @pulumi.getter(name="interfaceName")
     def interface_name(self) -> _builtins.str:
+        """
+        The name of the FastConnect interface where this cross-connect is installed.
+        """
         return pulumi.get(self, "interface_name")
 
     @_builtins.property
     @pulumi.getter(name="isActive")
     def is_active(self) -> _builtins.bool:
         return pulumi.get(self, "is_active")
+
+    @_builtins.property
+    @pulumi.getter(name="isInterfaceHoldTimerEnabled")
+    def is_interface_hold_timer_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the down timer for the interface.
+        """
+        return pulumi.get(self, "is_interface_hold_timer_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isQosEnabled")
+    def is_qos_enabled(self) -> _builtins.bool:
+        """
+        The flag to enable or disable the Qos for the cross-connect.
+        """
+        return pulumi.get(self, "is_qos_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="loaProperties")
+    def loa_properties(self) -> Sequence['outputs.GetCrossConnectLoaPropertyResult']:
+        return pulumi.get(self, "loa_properties")
 
     @_builtins.property
     @pulumi.getter(name="locationName")
@@ -250,8 +294,12 @@ class AwaitableGetCrossConnectResult(GetCrossConnectResult):
             far_cross_connect_or_cross_connect_group_id=self.far_cross_connect_or_cross_connect_group_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            interface_down_timer_value_in_milliseconds=self.interface_down_timer_value_in_milliseconds,
             interface_name=self.interface_name,
             is_active=self.is_active,
+            is_interface_hold_timer_enabled=self.is_interface_hold_timer_enabled,
+            is_qos_enabled=self.is_qos_enabled,
+            loa_properties=self.loa_properties,
             location_name=self.location_name,
             macsec_properties=self.macsec_properties,
             near_cross_connect_or_cross_connect_group_id=self.near_cross_connect_or_cross_connect_group_id,
@@ -297,8 +345,12 @@ def get_cross_connect(cross_connect_id: Optional[_builtins.str] = None,
         far_cross_connect_or_cross_connect_group_id=pulumi.get(__ret__, 'far_cross_connect_or_cross_connect_group_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        interface_down_timer_value_in_milliseconds=pulumi.get(__ret__, 'interface_down_timer_value_in_milliseconds'),
         interface_name=pulumi.get(__ret__, 'interface_name'),
         is_active=pulumi.get(__ret__, 'is_active'),
+        is_interface_hold_timer_enabled=pulumi.get(__ret__, 'is_interface_hold_timer_enabled'),
+        is_qos_enabled=pulumi.get(__ret__, 'is_qos_enabled'),
+        loa_properties=pulumi.get(__ret__, 'loa_properties'),
         location_name=pulumi.get(__ret__, 'location_name'),
         macsec_properties=pulumi.get(__ret__, 'macsec_properties'),
         near_cross_connect_or_cross_connect_group_id=pulumi.get(__ret__, 'near_cross_connect_or_cross_connect_group_id'),
@@ -341,8 +393,12 @@ def get_cross_connect_output(cross_connect_id: pulumi.Input[Optional[_builtins.s
         far_cross_connect_or_cross_connect_group_id=pulumi.get(__response__, 'far_cross_connect_or_cross_connect_group_id'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        interface_down_timer_value_in_milliseconds=pulumi.get(__response__, 'interface_down_timer_value_in_milliseconds'),
         interface_name=pulumi.get(__response__, 'interface_name'),
         is_active=pulumi.get(__response__, 'is_active'),
+        is_interface_hold_timer_enabled=pulumi.get(__response__, 'is_interface_hold_timer_enabled'),
+        is_qos_enabled=pulumi.get(__response__, 'is_qos_enabled'),
+        loa_properties=pulumi.get(__response__, 'loa_properties'),
         location_name=pulumi.get(__response__, 'location_name'),
         macsec_properties=pulumi.get(__response__, 'macsec_properties'),
         near_cross_connect_or_cross_connect_group_id=pulumi.get(__response__, 'near_cross_connect_or_cross_connect_group_id'),

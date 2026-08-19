@@ -14,6 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabaseDatabaseResult
     {
         public readonly string AdminPassword;
+        public readonly ImmutableArray<Outputs.GetDatabaseDatabaseAutoFailoverConfigurationResult> AutoFailoverConfigurations;
         public readonly string BackupId;
         public readonly string BackupTdePassword;
         /// <summary>
@@ -123,6 +124,8 @@ namespace Pulumi.Oci.Database.Outputs
         private GetDatabaseDatabaseResult(
             string adminPassword,
 
+            ImmutableArray<Outputs.GetDatabaseDatabaseAutoFailoverConfigurationResult> autoFailoverConfigurations,
+
             string backupId,
 
             string backupTdePassword,
@@ -188,6 +191,7 @@ namespace Pulumi.Oci.Database.Outputs
             string vmClusterId)
         {
             AdminPassword = adminPassword;
+            AutoFailoverConfigurations = autoFailoverConfigurations;
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;

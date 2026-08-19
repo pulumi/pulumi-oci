@@ -43,6 +43,13 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				IsIndefiniteRetentionEnabled: pulumi.Any(volumeGroupBackupIsIndefiniteRetentionEnabled),
+//				IsPreventDeletionEnabled:     pulumi.Any(volumeGroupBackupIsPreventDeletionEnabled),
+//				IsRetentionLockEnabled:       pulumi.Any(volumeGroupBackupIsRetentionLockEnabled),
+//				RetentionPeriod: &core.VolumeGroupBackupRetentionPeriodArgs{
+//					RetentionTimeAmount: pulumi.Any(volumeGroupBackupRetentionPeriodRetentionTimeAmount),
+//					RetentionTimeUnit:   pulumi.Any(volumeGroupBackupRetentionPeriodRetentionTimeUnit),
+//				},
 //				Type: pulumi.Any(volumeGroupBackupType),
 //			})
 //			if err != nil {
@@ -74,6 +81,14 @@ type VolumeGroupBackup struct {
 	ExpirationTime pulumi.StringOutput `pulumi:"expirationTime"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled pulumi.BoolOutput `pulumi:"isIndefiniteRetentionEnabled"`
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled pulumi.BoolOutput `pulumi:"isPreventDeletionEnabled"`
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled pulumi.BoolOutput `pulumi:"isRetentionLockEnabled"`
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod VolumeGroupBackupRetentionPeriodOutput `pulumi:"retentionPeriod"`
 	// The aggregate size of the volume group backup, in GBs.
 	SizeInGbs pulumi.StringOutput `pulumi:"sizeInGbs"`
 	// The aggregate size of the volume group backup, in MBs.
@@ -90,6 +105,8 @@ type VolumeGroupBackup struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived pulumi.StringOutput `pulumi:"timeRequestReceived"`
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt pulumi.StringOutput `pulumi:"timeRetentionExpiresAt"`
 	// The type of backup to create. If omitted, defaults to incremental.
 	// * Allowed values are :
 	// * FULL
@@ -145,6 +162,14 @@ type volumeGroupBackupState struct {
 	ExpirationTime *string `pulumi:"expirationTime"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled *bool `pulumi:"isIndefiniteRetentionEnabled"`
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled *bool `pulumi:"isPreventDeletionEnabled"`
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled *bool `pulumi:"isRetentionLockEnabled"`
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod *VolumeGroupBackupRetentionPeriod `pulumi:"retentionPeriod"`
 	// The aggregate size of the volume group backup, in GBs.
 	SizeInGbs *string `pulumi:"sizeInGbs"`
 	// The aggregate size of the volume group backup, in MBs.
@@ -161,6 +186,8 @@ type volumeGroupBackupState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived *string `pulumi:"timeRequestReceived"`
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt *string `pulumi:"timeRetentionExpiresAt"`
 	// The type of backup to create. If omitted, defaults to incremental.
 	// * Allowed values are :
 	// * FULL
@@ -187,6 +214,14 @@ type VolumeGroupBackupState struct {
 	ExpirationTime pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled pulumi.BoolPtrInput
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled pulumi.BoolPtrInput
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled pulumi.BoolPtrInput
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod VolumeGroupBackupRetentionPeriodPtrInput
 	// The aggregate size of the volume group backup, in GBs.
 	SizeInGbs pulumi.StringPtrInput
 	// The aggregate size of the volume group backup, in MBs.
@@ -203,6 +238,8 @@ type VolumeGroupBackupState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived pulumi.StringPtrInput
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt pulumi.StringPtrInput
 	// The type of backup to create. If omitted, defaults to incremental.
 	// * Allowed values are :
 	// * FULL
@@ -231,6 +268,14 @@ type volumeGroupBackupArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled *bool `pulumi:"isIndefiniteRetentionEnabled"`
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled *bool `pulumi:"isPreventDeletionEnabled"`
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled *bool `pulumi:"isRetentionLockEnabled"`
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod *VolumeGroupBackupRetentionPeriod `pulumi:"retentionPeriod"`
 	// Details of the volume group backup source in the cloud.
 	SourceDetails *VolumeGroupBackupSourceDetails `pulumi:"sourceDetails"`
 	// The type of backup to create. If omitted, defaults to incremental.
@@ -252,6 +297,14 @@ type VolumeGroupBackupArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled pulumi.BoolPtrInput
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled pulumi.BoolPtrInput
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled pulumi.BoolPtrInput
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod VolumeGroupBackupRetentionPeriodPtrInput
 	// Details of the volume group backup source in the cloud.
 	SourceDetails VolumeGroupBackupSourceDetailsPtrInput
 	// The type of backup to create. If omitted, defaults to incremental.
@@ -375,6 +428,26 @@ func (o VolumeGroupBackupOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+func (o VolumeGroupBackupOutput) IsIndefiniteRetentionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.BoolOutput { return v.IsIndefiniteRetentionEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+func (o VolumeGroupBackupOutput) IsPreventDeletionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.BoolOutput { return v.IsPreventDeletionEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+func (o VolumeGroupBackupOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.BoolOutput { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
+// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o VolumeGroupBackupOutput) RetentionPeriod() VolumeGroupBackupRetentionPeriodOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) VolumeGroupBackupRetentionPeriodOutput { return v.RetentionPeriod }).(VolumeGroupBackupRetentionPeriodOutput)
+}
+
 // The aggregate size of the volume group backup, in GBs.
 func (o VolumeGroupBackupOutput) SizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.SizeInGbs }).(pulumi.StringOutput)
@@ -413,6 +486,11 @@ func (o VolumeGroupBackupOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the request to create the volume group backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 func (o VolumeGroupBackupOutput) TimeRequestReceived() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.TimeRequestReceived }).(pulumi.StringOutput)
+}
+
+// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o VolumeGroupBackupOutput) TimeRetentionExpiresAt() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupBackup) pulumi.StringOutput { return v.TimeRetentionExpiresAt }).(pulumi.StringOutput)
 }
 
 // The type of backup to create. If omitted, defaults to incremental.

@@ -131,6 +131,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double ActualUsedDataStorageSizeInTbs;
         /// <summary>
+        /// The Availability Domain which is planned for Scheduled Update
+        /// </summary>
+        public readonly string AdScheduledForUpdate;
+        /// <summary>
         /// Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdditionalAttributes;
@@ -363,6 +367,7 @@ namespace Pulumi.Oci.Database
         /// Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
         /// </summary>
         public readonly bool IsDevTier;
+        public readonly bool IsDisableAdUpdateSchedule;
         public readonly bool IsDisableDbVersionUpgradeSchedule;
         public readonly bool IsDisconnectPeer;
         /// <summary>
@@ -398,6 +403,7 @@ namespace Pulumi.Oci.Database
         /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         /// </summary>
         public readonly bool IsReplicateAutomaticBackups;
+        public readonly bool IsScheduleAdUpdateToEarliest;
         public readonly bool IsScheduleDbVersionUpgradeToEarliest;
         public readonly bool IsShrinkOnly;
         /// <summary>
@@ -621,9 +627,17 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeDisasterRecoveryRoleChanged;
         /// <summary>
+        /// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        public readonly string TimeEarliestAvailableAdUpdate;
+        /// <summary>
         /// The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
         public readonly string TimeEarliestAvailableDbVersionUpgrade;
+        /// <summary>
+        /// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        public readonly string TimeLatestAvailableAdUpdate;
         /// <summary>
         /// The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
@@ -677,6 +691,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeReclamationOfFreeAutonomousDatabase;
         /// <summary>
+        /// The date and time to which the Autonomous Database availability domain update is scheduled.
+        /// </summary>
+        public readonly string TimeScheduledAdUpdate;
+        /// <summary>
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         /// </summary>
         public readonly string TimeScheduledDbVersionUpgrade;
@@ -723,6 +741,8 @@ namespace Pulumi.Oci.Database
         [OutputConstructor]
         private GetAutonomousDatabaseResult(
             double actualUsedDataStorageSizeInTbs,
+
+            string adScheduledForUpdate,
 
             ImmutableDictionary<string, string> additionalAttributes,
 
@@ -844,6 +864,8 @@ namespace Pulumi.Oci.Database
 
             bool isDevTier,
 
+            bool isDisableAdUpdateSchedule,
+
             bool isDisableDbVersionUpgradeSchedule,
 
             bool isDisconnectPeer,
@@ -865,6 +887,8 @@ namespace Pulumi.Oci.Database
             bool isRemoteDataGuardEnabled,
 
             bool isReplicateAutomaticBackups,
+
+            bool isScheduleAdUpdateToEarliest,
 
             bool isScheduleDbVersionUpgradeToEarliest,
 
@@ -996,7 +1020,11 @@ namespace Pulumi.Oci.Database
 
             string timeDisasterRecoveryRoleChanged,
 
+            string timeEarliestAvailableAdUpdate,
+
             string timeEarliestAvailableDbVersionUpgrade,
+
+            string timeLatestAvailableAdUpdate,
 
             string timeLatestAvailableDbVersionUpgrade,
 
@@ -1023,6 +1051,8 @@ namespace Pulumi.Oci.Database
             string timeOfNextRefresh,
 
             string timeReclamationOfFreeAutonomousDatabase,
+
+            string timeScheduledAdUpdate,
 
             string timeScheduledDbVersionUpgrade,
 
@@ -1051,6 +1081,7 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> whitelistedIps)
         {
             ActualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            AdScheduledForUpdate = adScheduledForUpdate;
             AdditionalAttributes = additionalAttributes;
             AdminPassword = adminPassword;
             AllocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
@@ -1111,6 +1142,7 @@ namespace Pulumi.Oci.Database
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsDevTier = isDevTier;
+            IsDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
             IsDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             IsDisconnectPeer = isDisconnectPeer;
             IsFreeTier = isFreeTier;
@@ -1122,6 +1154,7 @@ namespace Pulumi.Oci.Database
             IsRefreshableClone = isRefreshableClone;
             IsRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             IsReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            IsScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
             IsScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             IsShrinkOnly = isShrinkOnly;
             KeyHistoryEntries = keyHistoryEntries;
@@ -1187,7 +1220,9 @@ namespace Pulumi.Oci.Database
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            TimeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
             TimeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            TimeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             TimeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
@@ -1201,6 +1236,7 @@ namespace Pulumi.Oci.Database
             TimeOfLastSwitchover = timeOfLastSwitchover;
             TimeOfNextRefresh = timeOfNextRefresh;
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            TimeScheduledAdUpdate = timeScheduledAdUpdate;
             TimeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;

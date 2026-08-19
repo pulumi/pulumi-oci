@@ -28,7 +28,7 @@ class GetDatabasesResult:
     """
     A collection of values returned by getDatabases.
     """
-    def __init__(__self__, compartment_id=None, databases=None, db_home_id=None, db_name=None, filters=None, id=None, state=None, system_id=None):
+    def __init__(__self__, compartment_id=None, databases=None, db_home_id=None, db_name=None, failover_targets=None, filters=None, id=None, managed_auto_failover=None, state=None, system_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -41,12 +41,18 @@ class GetDatabasesResult:
         if db_name and not isinstance(db_name, str):
             raise TypeError("Expected argument 'db_name' to be a str")
         pulumi.set(__self__, "db_name", db_name)
+        if failover_targets and not isinstance(failover_targets, str):
+            raise TypeError("Expected argument 'failover_targets' to be a str")
+        pulumi.set(__self__, "failover_targets", failover_targets)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if managed_auto_failover and not isinstance(managed_auto_failover, str):
+            raise TypeError("Expected argument 'managed_auto_failover' to be a str")
+        pulumi.set(__self__, "managed_auto_failover", managed_auto_failover)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -87,6 +93,11 @@ class GetDatabasesResult:
         return pulumi.get(self, "db_name")
 
     @_builtins.property
+    @pulumi.getter(name="failoverTargets")
+    def failover_targets(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "failover_targets")
+
+    @_builtins.property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetDatabasesFilterResult']]:
         return pulumi.get(self, "filters")
@@ -98,6 +109,11 @@ class GetDatabasesResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="managedAutoFailover")
+    def managed_auto_failover(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "managed_auto_failover")
 
     @_builtins.property
     @pulumi.getter
@@ -123,8 +139,10 @@ class AwaitableGetDatabasesResult(GetDatabasesResult):
             databases=self.databases,
             db_home_id=self.db_home_id,
             db_name=self.db_name,
+            failover_targets=self.failover_targets,
             filters=self.filters,
             id=self.id,
+            managed_auto_failover=self.managed_auto_failover,
             state=self.state,
             system_id=self.system_id)
 
@@ -132,7 +150,9 @@ class AwaitableGetDatabasesResult(GetDatabasesResult):
 def get_databases(compartment_id: Optional[_builtins.str] = None,
                   db_home_id: Optional[_builtins.str] = None,
                   db_name: Optional[_builtins.str] = None,
+                  failover_targets: Optional[_builtins.str] = None,
                   filters: Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]] = None,
+                  managed_auto_failover: Optional[_builtins.str] = None,
                   state: Optional[_builtins.str] = None,
                   system_id: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabasesResult:
@@ -150,6 +170,8 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
     test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
+        failover_targets=database_failover_targets,
+        managed_auto_failover=database_managed_auto_failover,
         state=database_state,
         system_id=test_system["id"])
     ```
@@ -158,6 +180,8 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str db_home_id: A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
     :param _builtins.str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
+    :param _builtins.str failover_targets: Filter the databases by failoverTargets param.
+    :param _builtins.str managed_auto_failover: Filter the databases by managed auto failover param.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     :param _builtins.str system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
     """
@@ -165,7 +189,9 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['dbHomeId'] = db_home_id
     __args__['dbName'] = db_name
+    __args__['failoverTargets'] = failover_targets
     __args__['filters'] = filters
+    __args__['managedAutoFailover'] = managed_auto_failover
     __args__['state'] = state
     __args__['systemId'] = system_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -176,14 +202,18 @@ def get_databases(compartment_id: Optional[_builtins.str] = None,
         databases=pulumi.get(__ret__, 'databases'),
         db_home_id=pulumi.get(__ret__, 'db_home_id'),
         db_name=pulumi.get(__ret__, 'db_name'),
+        failover_targets=pulumi.get(__ret__, 'failover_targets'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        managed_auto_failover=pulumi.get(__ret__, 'managed_auto_failover'),
         state=pulumi.get(__ret__, 'state'),
         system_id=pulumi.get(__ret__, 'system_id'))
 def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                          db_home_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          db_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         failover_targets: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDatabasesFilterArgs', 'GetDatabasesFilterArgsDict']]]]] = None,
+                         managed_auto_failover: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          system_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDatabasesResult]:
@@ -201,6 +231,8 @@ def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] =
     test_databases = oci.database.get_databases(compartment_id=compartment_id,
         db_home_id=test_db_home["id"],
         db_name=database_db_name,
+        failover_targets=database_failover_targets,
+        managed_auto_failover=database_managed_auto_failover,
         state=database_state,
         system_id=test_system["id"])
     ```
@@ -209,6 +241,8 @@ def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] =
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str db_home_id: A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
     :param _builtins.str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
+    :param _builtins.str failover_targets: Filter the databases by failoverTargets param.
+    :param _builtins.str managed_auto_failover: Filter the databases by managed auto failover param.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     :param _builtins.str system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
     """
@@ -216,7 +250,9 @@ def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] =
     __args__['compartmentId'] = compartment_id
     __args__['dbHomeId'] = db_home_id
     __args__['dbName'] = db_name
+    __args__['failoverTargets'] = failover_targets
     __args__['filters'] = filters
+    __args__['managedAutoFailover'] = managed_auto_failover
     __args__['state'] = state
     __args__['systemId'] = system_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -226,7 +262,9 @@ def get_databases_output(compartment_id: pulumi.Input[Optional[_builtins.str]] =
         databases=pulumi.get(__response__, 'databases'),
         db_home_id=pulumi.get(__response__, 'db_home_id'),
         db_name=pulumi.get(__response__, 'db_name'),
+        failover_targets=pulumi.get(__response__, 'failover_targets'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        managed_auto_failover=pulumi.get(__response__, 'managed_auto_failover'),
         state=pulumi.get(__response__, 'state'),
         system_id=pulumi.get(__response__, 'system_id')))

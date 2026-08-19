@@ -107,10 +107,14 @@ type LookupVmClusterResult struct {
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails []GetVmClusterLiveImageVersionDetail `pulumi:"liveImageVersionDetails"`
 	// The memory allocated in GBs.
 	MemorySizeInGbs int     `pulumi:"memorySizeInGbs"`
 	OcpuCount       float64 `pulumi:"ocpuCount"`
 	OcpusEnabled    float64 `pulumi:"ocpusEnabled"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage int `pulumi:"recoStoragePercentage"`
 	// The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -130,7 +134,8 @@ type LookupVmClusterResult struct {
 	// The date and time that the VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone      string                     `pulumi:"timeZone"`
+	UpdateDetails []GetVmClusterUpdateDetail `pulumi:"updateDetails"`
 	// Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
 	VmBackupStorageType string `pulumi:"vmBackupStorageType"`
 	VmClusterId         string `pulumi:"vmClusterId"`
@@ -304,6 +309,11 @@ func (o LookupVmClusterResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+func (o LookupVmClusterResultOutput) LiveImageVersionDetails() GetVmClusterLiveImageVersionDetailArrayOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) []GetVmClusterLiveImageVersionDetail { return v.LiveImageVersionDetails }).(GetVmClusterLiveImageVersionDetailArrayOutput)
+}
+
 // The memory allocated in GBs.
 func (o LookupVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -315,6 +325,11 @@ func (o LookupVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 
 func (o LookupVmClusterResultOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupVmClusterResult) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o LookupVmClusterResultOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 // The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -365,6 +380,10 @@ func (o LookupVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 // The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o LookupVmClusterResultOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o LookupVmClusterResultOutput) UpdateDetails() GetVmClusterUpdateDetailArrayOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) []GetVmClusterUpdateDetail { return v.UpdateDetails }).(GetVmClusterUpdateDetailArrayOutput)
 }
 
 // Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.

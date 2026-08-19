@@ -35,11 +35,14 @@ class VirtualCircuitArgs:
                  ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
                  is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
-                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a VirtualCircuit resource.
 
@@ -60,11 +63,14 @@ class VirtualCircuitArgs:
         :param pulumi.Input[_builtins.str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        :param pulumi.Input[_builtins.str] provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "type", type)
@@ -95,6 +101,8 @@ class VirtualCircuitArgs:
             pulumi.set(__self__, "is_bfd_enabled", is_bfd_enabled)
         if is_transport_mode is not None:
             pulumi.set(__self__, "is_transport_mode", is_transport_mode)
+        if provider_remote_region is not None:
+            pulumi.set(__self__, "provider_remote_region", provider_remote_region)
         if provider_service_id is not None:
             pulumi.set(__self__, "provider_service_id", provider_service_id)
         if provider_service_key_name is not None:
@@ -103,8 +111,12 @@ class VirtualCircuitArgs:
             pulumi.set(__self__, "public_prefixes", public_prefixes)
         if region is not None:
             pulumi.set(__self__, "region", region)
+        if remote_account_id is not None:
+            pulumi.set(__self__, "remote_account_id", remote_account_id)
         if routing_policies is not None:
             pulumi.set(__self__, "routing_policies", routing_policies)
+        if traffic_mode is not None:
+            pulumi.set(__self__, "traffic_mode", traffic_mode)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -279,6 +291,18 @@ class VirtualCircuitArgs:
         pulumi.set(self, "is_transport_mode", value)
 
     @_builtins.property
+    @pulumi.getter(name="providerRemoteRegion")
+    def provider_remote_region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        """
+        return pulumi.get(self, "provider_remote_region")
+
+    @provider_remote_region.setter
+    def provider_remote_region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_remote_region", value)
+
+    @_builtins.property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -327,6 +351,18 @@ class VirtualCircuitArgs:
         pulumi.set(self, "region", value)
 
     @_builtins.property
+    @pulumi.getter(name="remoteAccountId")
+    def remote_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        """
+        return pulumi.get(self, "remote_account_id")
+
+    @remote_account_id.setter
+    def remote_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "remote_account_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="routingPolicies")
     def routing_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -337,6 +373,18 @@ class VirtualCircuitArgs:
     @routing_policies.setter
     def routing_policies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "routing_policies", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @traffic_mode.setter
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "traffic_mode", value)
 
 
 @pulumi.input_type
@@ -359,16 +407,20 @@ class _VirtualCircuitState:
                  is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
                  oracle_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+                 provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_state: pulumi.Input[Optional[_builtins.str]] = None,
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]]] = None,
                  reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  service_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 shared_connection_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualCircuitVirtualCircuitRedundancyMetadataArgs']]]] = None):
         """
@@ -391,16 +443,20 @@ class _VirtualCircuitState:
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.int] oracle_bgp_asn: The Oracle BGP ASN.
+        :param pulumi.Input[_builtins.str] provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualCircuitPublicPrefixArgs']]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         :param pulumi.Input[_builtins.str] service_type: Provider service type.
+        :param pulumi.Input[_builtins.str] shared_connection_uuid: The Shared unique identifier for the connection between the multicloud interconnect providers
         :param pulumi.Input[_builtins.str] state: The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -447,6 +503,8 @@ class _VirtualCircuitState:
             pulumi.set(__self__, "is_transport_mode", is_transport_mode)
         if oracle_bgp_asn is not None:
             pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
+        if provider_remote_region is not None:
+            pulumi.set(__self__, "provider_remote_region", provider_remote_region)
         if provider_service_id is not None:
             pulumi.set(__self__, "provider_service_id", provider_service_id)
         if provider_service_key_name is not None:
@@ -459,14 +517,20 @@ class _VirtualCircuitState:
             pulumi.set(__self__, "reference_comment", reference_comment)
         if region is not None:
             pulumi.set(__self__, "region", region)
+        if remote_account_id is not None:
+            pulumi.set(__self__, "remote_account_id", remote_account_id)
         if routing_policies is not None:
             pulumi.set(__self__, "routing_policies", routing_policies)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
+        if shared_connection_uuid is not None:
+            pulumi.set(__self__, "shared_connection_uuid", shared_connection_uuid)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if traffic_mode is not None:
+            pulumi.set(__self__, "traffic_mode", traffic_mode)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if virtual_circuit_redundancy_metadatas is not None:
@@ -679,6 +743,18 @@ class _VirtualCircuitState:
         pulumi.set(self, "oracle_bgp_asn", value)
 
     @_builtins.property
+    @pulumi.getter(name="providerRemoteRegion")
+    def provider_remote_region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        """
+        return pulumi.get(self, "provider_remote_region")
+
+    @provider_remote_region.setter
+    def provider_remote_region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_remote_region", value)
+
+    @_builtins.property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -751,6 +827,18 @@ class _VirtualCircuitState:
         pulumi.set(self, "region", value)
 
     @_builtins.property
+    @pulumi.getter(name="remoteAccountId")
+    def remote_account_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        """
+        return pulumi.get(self, "remote_account_id")
+
+    @remote_account_id.setter
+    def remote_account_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "remote_account_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="routingPolicies")
     def routing_policies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -775,6 +863,18 @@ class _VirtualCircuitState:
         pulumi.set(self, "service_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="sharedConnectionUuid")
+    def shared_connection_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+        """
+        return pulumi.get(self, "shared_connection_uuid")
+
+    @shared_connection_uuid.setter
+    def shared_connection_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "shared_connection_uuid", value)
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -797,6 +897,18 @@ class _VirtualCircuitState:
     @time_created.setter
     def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
+
+    @traffic_mode.setter
+    def traffic_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "traffic_mode", value)
 
     @_builtins.property
     @pulumi.getter
@@ -845,11 +957,14 @@ class VirtualCircuit(pulumi.CustomResource):
                  ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
                  is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -912,6 +1027,7 @@ class VirtualCircuit(pulumi.CustomResource):
             ip_mtu=virtual_circuit_ip_mtu,
             is_bfd_enabled=virtual_circuit_is_bfd_enabled == "true",
             is_transport_mode=virtual_circuit_is_transport_mode == "true",
+            provider_remote_region=virtual_circuit_provider_remote_region,
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
@@ -919,7 +1035,9 @@ class VirtualCircuit(pulumi.CustomResource):
                 "cidr_block": virtual_circuit_public_prefixes_cidr_block,
             }],
             region=virtual_circuit_region,
-            routing_policies=virtual_circuit_routing_policy)
+            remote_account_id=test_remote_account["id"],
+            routing_policies=virtual_circuit_routing_policy,
+            traffic_mode=virtual_circuit_traffic_mode)
         ```
 
         ## Import
@@ -946,11 +1064,14 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ip_mtu: (Updatable) The layer 3 IP MTU to use with this virtual circuit.
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        :param pulumi.Input[_builtins.str] provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -1022,6 +1143,7 @@ class VirtualCircuit(pulumi.CustomResource):
             ip_mtu=virtual_circuit_ip_mtu,
             is_bfd_enabled=virtual_circuit_is_bfd_enabled == "true",
             is_transport_mode=virtual_circuit_is_transport_mode == "true",
+            provider_remote_region=virtual_circuit_provider_remote_region,
             gateway_id=test_gateway["id"],
             provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"],
             provider_service_key_name=virtual_circuit_provider_service_key_name,
@@ -1029,7 +1151,9 @@ class VirtualCircuit(pulumi.CustomResource):
                 "cidr_block": virtual_circuit_public_prefixes_cidr_block,
             }],
             region=virtual_circuit_region,
-            routing_policies=virtual_circuit_routing_policy)
+            remote_account_id=test_remote_account["id"],
+            routing_policies=virtual_circuit_routing_policy,
+            traffic_mode=virtual_circuit_traffic_mode)
         ```
 
         ## Import
@@ -1069,11 +1193,14 @@ class VirtualCircuit(pulumi.CustomResource):
                  ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
                  is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+                 provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
                  provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
                  public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
+                 remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
                  routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1099,11 +1226,14 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["ip_mtu"] = ip_mtu
             __props__.__dict__["is_bfd_enabled"] = is_bfd_enabled
             __props__.__dict__["is_transport_mode"] = is_transport_mode
+            __props__.__dict__["provider_remote_region"] = provider_remote_region
             __props__.__dict__["provider_service_id"] = provider_service_id
             __props__.__dict__["provider_service_key_name"] = provider_service_key_name
             __props__.__dict__["public_prefixes"] = public_prefixes
             __props__.__dict__["region"] = region
+            __props__.__dict__["remote_account_id"] = remote_account_id
             __props__.__dict__["routing_policies"] = routing_policies
+            __props__.__dict__["traffic_mode"] = traffic_mode
             if type is None and not opts.urn:
                 raise TypeError("Missing required property 'type'")
             __props__.__dict__["type"] = type
@@ -1114,6 +1244,7 @@ class VirtualCircuit(pulumi.CustomResource):
             __props__.__dict__["provider_state"] = None
             __props__.__dict__["reference_comment"] = None
             __props__.__dict__["service_type"] = None
+            __props__.__dict__["shared_connection_uuid"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["virtual_circuit_redundancy_metadatas"] = None
@@ -1144,16 +1275,20 @@ class VirtualCircuit(pulumi.CustomResource):
             is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
             is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
             oracle_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
             provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
             provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
             provider_state: pulumi.Input[Optional[_builtins.str]] = None,
             public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]]] = None,
             reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
             region: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
             routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             service_type: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_connection_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict']]]]] = None) -> 'VirtualCircuit':
         """
@@ -1180,16 +1315,20 @@ class VirtualCircuit(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_bfd_enabled: (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.bool] is_transport_mode: (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
         :param pulumi.Input[_builtins.int] oracle_bgp_asn: The Oracle BGP ASN.
+        :param pulumi.Input[_builtins.str] provider_remote_region: The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
         :param pulumi.Input[_builtins.str] provider_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service offered by the provider (if you're connecting via a provider). To get a list of the available service offerings, see [ListFastConnectProviderServices](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderServices).
         :param pulumi.Input[_builtins.str] provider_service_key_name: (Updatable) The service key name or activation key offered by the provider (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] provider_state: The provider's state in relation to this virtual circuit (if the customer is connecting via a provider). ACTIVE means the provider has provisioned the virtual circuit from their end. INACTIVE means the provider has not yet provisioned the virtual circuit, or has de-provisioned it.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict']]]] public_prefixes: (Updatable) For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to advertise across the connection.
         :param pulumi.Input[_builtins.str] reference_comment: Provider-supplied reference information about this virtual circuit (if the customer is connecting via a provider).
         :param pulumi.Input[_builtins.str] region: The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        :param pulumi.Input[_builtins.str] remote_account_id: Customer's account on Provider/Partner cloud (AWS, GCP or any other)
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] routing_policies: (Updatable) The routing policy sets how routing information about the Oracle cloud is shared over a public virtual circuit. Policies available are: `ORACLE_SERVICE_NETWORK`, `REGIONAL`, `MARKET_LEVEL`, and `GLOBAL`. See [Route Filtering](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/routingonprem.htm#route_filtering) for details. By default, routing information is shared for all routes in the same market.
         :param pulumi.Input[_builtins.str] service_type: Provider service type.
+        :param pulumi.Input[_builtins.str] shared_connection_uuid: The Shared unique identifier for the connection between the multicloud interconnect providers
         :param pulumi.Input[_builtins.str] state: The virtual circuit's current state. For information about the different states, see [FastConnect Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm).
         :param pulumi.Input[_builtins.str] time_created: The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[_builtins.str] traffic_mode: (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
         :param pulumi.Input[_builtins.str] type: The type of IP addresses used in this virtual circuit. PRIVATE means [RFC 1918](https://tools.ietf.org/html/rfc1918) addresses (10.0.0.0/8, 172.16/12, and 192.168/16).
                
                ** IMPORTANT **
@@ -1217,16 +1356,20 @@ class VirtualCircuit(pulumi.CustomResource):
         __props__.__dict__["is_bfd_enabled"] = is_bfd_enabled
         __props__.__dict__["is_transport_mode"] = is_transport_mode
         __props__.__dict__["oracle_bgp_asn"] = oracle_bgp_asn
+        __props__.__dict__["provider_remote_region"] = provider_remote_region
         __props__.__dict__["provider_service_id"] = provider_service_id
         __props__.__dict__["provider_service_key_name"] = provider_service_key_name
         __props__.__dict__["provider_state"] = provider_state
         __props__.__dict__["public_prefixes"] = public_prefixes
         __props__.__dict__["reference_comment"] = reference_comment
         __props__.__dict__["region"] = region
+        __props__.__dict__["remote_account_id"] = remote_account_id
         __props__.__dict__["routing_policies"] = routing_policies
         __props__.__dict__["service_type"] = service_type
+        __props__.__dict__["shared_connection_uuid"] = shared_connection_uuid
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["traffic_mode"] = traffic_mode
         __props__.__dict__["type"] = type
         __props__.__dict__["virtual_circuit_redundancy_metadatas"] = virtual_circuit_redundancy_metadatas
         return VirtualCircuit(resource_name, opts=opts, __props__=__props__)
@@ -1370,6 +1513,14 @@ class VirtualCircuit(pulumi.CustomResource):
         return pulumi.get(self, "oracle_bgp_asn")
 
     @_builtins.property
+    @pulumi.getter(name="providerRemoteRegion")
+    def provider_remote_region(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCI's FastConnect MultiCloud Provider/Partner remote region name associated with the Oracle Cloud Infrastructure region. To get the list of associated provider remote region use the ListProviderRemoteRegions operation
+        """
+        return pulumi.get(self, "provider_remote_region")
+
+    @_builtins.property
     @pulumi.getter(name="providerServiceId")
     def provider_service_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1418,6 +1569,14 @@ class VirtualCircuit(pulumi.CustomResource):
         return pulumi.get(self, "region")
 
     @_builtins.property
+    @pulumi.getter(name="remoteAccountId")
+    def remote_account_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Customer's account on Provider/Partner cloud (AWS, GCP or any other)
+        """
+        return pulumi.get(self, "remote_account_id")
+
+    @_builtins.property
     @pulumi.getter(name="routingPolicies")
     def routing_policies(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
@@ -1434,6 +1593,14 @@ class VirtualCircuit(pulumi.CustomResource):
         return pulumi.get(self, "service_type")
 
     @_builtins.property
+    @pulumi.getter(name="sharedConnectionUuid")
+    def shared_connection_uuid(self) -> pulumi.Output[_builtins.str]:
+        """
+        The Shared unique identifier for the connection between the multicloud interconnect providers
+        """
+        return pulumi.get(self, "shared_connection_uuid")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1448,6 +1615,14 @@ class VirtualCircuit(pulumi.CustomResource):
         The date and time the virtual circuit was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="trafficMode")
+    def traffic_mode(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The traffic mode to be set with this Virtual Circuit. This controls whether the traffic is to be drained for the associated Virtual Circuit or not.
+        """
+        return pulumi.get(self, "traffic_mode")
 
     @_builtins.property
     @pulumi.getter

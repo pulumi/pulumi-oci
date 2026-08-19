@@ -19,6 +19,72 @@ import (
 //
 // This API creates a schedule. You must provide either resources or resourceFilters.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v4/go/oci/resourcescheduler"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := resourcescheduler.NewSchedule(ctx, "test_schedule", &resourcescheduler.ScheduleArgs{
+//				Action:            pulumi.Any(scheduleAction),
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				RecurrenceDetails: pulumi.Any(scheduleRecurrenceDetails),
+//				RecurrenceType:    pulumi.Any(scheduleRecurrenceType),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(scheduleDescription),
+//				DisplayName: pulumi.Any(scheduleDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				LocalTimeZone: pulumi.Any(scheduleLocalTimeZone),
+//				ResourceFilters: resourcescheduler.ScheduleResourceFilterArray{
+//					&resourcescheduler.ScheduleResourceFilterArgs{
+//						Attribute:                      pulumi.Any(scheduleResourceFiltersAttribute),
+//						Condition:                      pulumi.Any(scheduleResourceFiltersCondition),
+//						ShouldIncludeChildCompartments: pulumi.Any(scheduleResourceFiltersShouldIncludeChildCompartments),
+//						Values: resourcescheduler.ScheduleResourceFilterValueArray{
+//							&resourcescheduler.ScheduleResourceFilterValueArgs{
+//								Namespace: pulumi.Any(scheduleResourceFiltersValueNamespace),
+//								TagKey:    pulumi.Any(scheduleResourceFiltersValueTagKey),
+//								Value:     pulumi.Any(scheduleResourceFiltersValueValue),
+//							},
+//						},
+//					},
+//				},
+//				Resources: resourcescheduler.ScheduleResourceArray{
+//					&resourcescheduler.ScheduleResourceArgs{
+//						Id:       pulumi.Any(scheduleResourcesId),
+//						Metadata: pulumi.Any(scheduleResourcesMetadata),
+//						Parameters: resourcescheduler.ScheduleResourceParameterArray{
+//							&resourcescheduler.ScheduleResourceParameterArgs{
+//								ParameterType: pulumi.Any(scheduleResourcesParametersParameterType),
+//								Value:         pulumi.Any(scheduleResourcesParametersValue[0]),
+//							},
+//						},
+//					},
+//				},
+//				TimeEnds:   pulumi.Any(scheduleTimeEnds),
+//				TimeStarts: pulumi.Any(scheduleTimeStarts),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Schedules can be imported using the `id`, e.g.
@@ -43,6 +109,8 @@ type Schedule struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// This is the status of the last work request.
 	LastRunStatus pulumi.StringOutput `pulumi:"lastRunStatus"`
+	// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone pulumi.StringOutput `pulumi:"localTimeZone"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringOutput `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -128,6 +196,8 @@ type scheduleState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the status of the last work request.
 	LastRunStatus *string `pulumi:"lastRunStatus"`
+	// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone *string `pulumi:"localTimeZone"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails *string `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -172,6 +242,8 @@ type ScheduleState struct {
 	FreeformTags pulumi.StringMapInput
 	// This is the status of the last work request.
 	LastRunStatus pulumi.StringPtrInput
+	// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone pulumi.StringPtrInput
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringPtrInput
 	// (Updatable) Type of recurrence of a schedule
@@ -218,6 +290,8 @@ type scheduleArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone *string `pulumi:"localTimeZone"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -251,6 +325,8 @@ type ScheduleArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone pulumi.StringPtrInput
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringInput
 	// (Updatable) Type of recurrence of a schedule
@@ -390,6 +466,11 @@ func (o ScheduleOutput) FreeformTags() pulumi.StringMapOutput {
 // This is the status of the last work request.
 func (o ScheduleOutput) LastRunStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.LastRunStatus }).(pulumi.StringOutput)
+}
+
+// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+func (o ScheduleOutput) LocalTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringOutput { return v.LocalTimeZone }).(pulumi.StringOutput)
 }
 
 // (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

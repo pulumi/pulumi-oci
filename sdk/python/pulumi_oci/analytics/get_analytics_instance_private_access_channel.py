@@ -74,7 +74,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display Name of the Private Access Channel.
+        Display name of the private access channel.
         """
         return pulumi.get(self, "display_name")
 
@@ -82,7 +82,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="egressSourceIpAddresses")
     def egress_source_ip_addresses(self) -> Sequence[_builtins.str]:
         """
-        The list of IP addresses from the customer subnet connected to private access channel, used as a source Ip by Private Access Channel for network traffic from the AnalyticsInstance to Private Sources.
+        List of IP addresses from the customer subnet connected to the private access channel, used as a source IP by the private access channel for network traffic from the Analytics instance to the private sources.
         """
         return pulumi.get(self, "egress_source_ip_addresses")
 
@@ -95,7 +95,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> _builtins.str:
         """
-        IP Address of the Private Access channel.
+        IP address of the private access channel.
         """
         return pulumi.get(self, "ip_address")
 
@@ -103,7 +103,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter
     def key(self) -> _builtins.str:
         """
-        Private Access Channel unique identifier key.
+        Private access channel unique identifier key.
         """
         return pulumi.get(self, "key")
 
@@ -111,7 +111,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Sequence[_builtins.str]:
         """
-        Network Security Group OCIDs for an Analytics instance.
+        Network Security Group OCIDs for the Analytics instance.
         """
         return pulumi.get(self, "network_security_group_ids")
 
@@ -124,7 +124,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="privateSourceDnsZones")
     def private_source_dns_zones(self) -> Sequence['outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneResult']:
         """
-        List of Private Source DNS zones registered with Private Access Channel, where datasource hostnames from these dns zones / domains will be resolved in the peered VCN for access from Analytics Instance. Min of 1 is required and Max of 30 Private Source DNS zones can be registered.
+        List of private source DNS zones registered with the private access channel. The datasource hostnames from these DNS zones / domains will be resolved in the peered VCN for access from  the Analytics instance. Minimum 1 private source is required. Maximum 30 private source DNS zones can be registered.
         """
         return pulumi.get(self, "private_source_dns_zones")
 
@@ -132,7 +132,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="privateSourceScanHosts")
     def private_source_scan_hosts(self) -> Sequence['outputs.GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostResult']:
         """
-        List of Private Source DB SCAN hosts registered with Private Access Channel for access from Analytics Instance.
+        List of private source database SCAN hosts registered with the private access channel for access from the Analytics instance.
         """
         return pulumi.get(self, "private_source_scan_hosts")
 
@@ -140,7 +140,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         """
-        OCID of the customer subnet connected to private access channel.
+        OCID of the customer subnet connected to the private access channel.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -148,7 +148,7 @@ class GetAnalyticsInstancePrivateAccessChannelResult:
     @pulumi.getter(name="vcnId")
     def vcn_id(self) -> _builtins.str:
         """
-        OCID of the customer VCN peered with private access channel.
+        OCID of the customer VCN peered with the private access channel.
         """
         return pulumi.get(self, "vcn_id")
 
@@ -179,7 +179,7 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     """
     This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
 
-    Retrieve private access channel in the specified Analytics Instance.
+    Retrieve private access channel for the specified Analytics Instance.
 
     ## Example Usage
 
@@ -192,8 +192,8 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     ```
 
 
-    :param _builtins.str analytics_instance_id: The OCID of the AnalyticsInstance.
-    :param _builtins.str private_access_channel_key: The unique identifier key of the Private Access Channel.
+    :param _builtins.str analytics_instance_id: The OCID of the Analytics instance.
+    :param _builtins.str private_access_channel_key: The unique identifier key of the private access channel.
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
@@ -220,7 +220,7 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     """
     This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
 
-    Retrieve private access channel in the specified Analytics Instance.
+    Retrieve private access channel for the specified Analytics Instance.
 
     ## Example Usage
 
@@ -233,8 +233,8 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     ```
 
 
-    :param _builtins.str analytics_instance_id: The OCID of the AnalyticsInstance.
-    :param _builtins.str private_access_channel_key: The unique identifier key of the Private Access Channel.
+    :param _builtins.str analytics_instance_id: The OCID of the Analytics instance.
+    :param _builtins.str private_access_channel_key: The unique identifier key of the private access channel.
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id

@@ -229,6 +229,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ListenerPort { get; private set; } = null!;
 
         /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        [Output("multiCloudIdentityConnectorConfigs")]
+        public Output<ImmutableArray<Outputs.ExadbVmClusterMultiCloudIdentityConnectorConfig>> MultiCloudIdentityConnectorConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         [Output("nodeConfig")]
@@ -252,6 +258,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("privateZoneId")]
         public Output<string> PrivateZoneId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Output("registerPkcsTrigger")]
+        public Output<int?> RegisterPkcsTrigger { get; private set; } = null!;
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -338,20 +350,31 @@ namespace Pulumi.Oci.Database
         public Output<string> SystemVersion { get; private set; } = null!;
 
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        [Output("tdeKeyStoreType")]
+        public Output<string> TdeKeyStoreType { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-        /// 
+        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Output("timeZone")]
+        public Output<string> TimeZone { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("timeZone")]
-        public Output<string> TimeZone { get; private set; } = null!;
+        [Output("unregisterPkcsTrigger")]
+        public Output<int?> UnregisterPkcsTrigger { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
@@ -557,6 +580,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? PrivateZoneId { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Input("registerPkcsTrigger")]
+        public Input<int>? RegisterPkcsTrigger { get; set; }
+
+        /// <summary>
         /// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         /// </summary>
         [Input("scanListenerPortTcp")]
@@ -623,14 +652,25 @@ namespace Pulumi.Oci.Database
         public Input<string>? SystemVersion { get; set; }
 
         /// <summary>
-        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-        /// 
+        /// TDE keystore type
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
+
+        /// <summary>
+        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("timeZone")]
+        public Input<string>? TimeZone { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeZone")]
-        public Input<string>? TimeZone { get; set; }
+        [Input("unregisterPkcsTrigger")]
+        public Input<int>? UnregisterPkcsTrigger { get; set; }
 
         public ExadbVmClusterArgs()
         {
@@ -796,6 +836,18 @@ namespace Pulumi.Oci.Database
         [Input("listenerPort")]
         public Input<string>? ListenerPort { get; set; }
 
+        [Input("multiCloudIdentityConnectorConfigs")]
+        private InputList<Inputs.ExadbVmClusterMultiCloudIdentityConnectorConfigGetArgs>? _multiCloudIdentityConnectorConfigs;
+
+        /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.ExadbVmClusterMultiCloudIdentityConnectorConfigGetArgs> MultiCloudIdentityConnectorConfigs
+        {
+            get => _multiCloudIdentityConnectorConfigs ?? (_multiCloudIdentityConnectorConfigs = new InputList<Inputs.ExadbVmClusterMultiCloudIdentityConnectorConfigGetArgs>());
+            set => _multiCloudIdentityConnectorConfigs = value;
+        }
+
         /// <summary>
         /// (Updatable) The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
@@ -832,6 +884,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("privateZoneId")]
         public Input<string>? PrivateZoneId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Register Pkcs. Could be set to any integer value.
+        /// </summary>
+        [Input("registerPkcsTrigger")]
+        public Input<int>? RegisterPkcsTrigger { get; set; }
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -942,20 +1000,31 @@ namespace Pulumi.Oci.Database
         public Input<string>? SystemVersion { get; set; }
 
         /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
+
+        /// <summary>
         /// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-        /// 
+        /// The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        /// </summary>
+        [Input("timeZone")]
+        public Input<string>? TimeZone { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Unregister Pkcs. Could be set to any integer value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("timeZone")]
-        public Input<string>? TimeZone { get; set; }
+        [Input("unregisterPkcsTrigger")]
+        public Input<int>? UnregisterPkcsTrigger { get; set; }
 
         [Input("vipIds")]
         private InputList<string>? _vipIds;

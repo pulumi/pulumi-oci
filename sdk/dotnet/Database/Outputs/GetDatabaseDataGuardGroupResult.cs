@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabaseDataGuardGroupResult
     {
         /// <summary>
+        /// Specifies readiness of Managed Automatic failover.
+        /// </summary>
+        public readonly string ManagedAutoFailOverReadiness;
+        /// <summary>
         /// List of Data Guard members, representing each database that is part of Data Guard.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseDataGuardGroupMemberResult> Members;
@@ -24,10 +28,13 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabaseDataGuardGroupResult(
+            string managedAutoFailOverReadiness,
+
             ImmutableArray<Outputs.GetDatabaseDataGuardGroupMemberResult> members,
 
             string protectionMode)
         {
+            ManagedAutoFailOverReadiness = managedAutoFailOverReadiness;
             Members = members;
             ProtectionMode = protectionMode;
         }

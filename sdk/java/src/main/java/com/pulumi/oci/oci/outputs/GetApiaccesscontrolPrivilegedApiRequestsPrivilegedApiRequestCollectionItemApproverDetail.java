@@ -5,6 +5,7 @@ package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -20,6 +21,11 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
      * 
      */
     private String approvalComment;
+    /**
+     * @return The group level at which the approver approved.
+     * 
+     */
+    private Integer approverGroupLevel;
     /**
      * @return The userId of the approver.
      * 
@@ -50,6 +56,13 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
      */
     public String approvalComment() {
         return this.approvalComment;
+    }
+    /**
+     * @return The group level at which the approver approved.
+     * 
+     */
+    public Integer approverGroupLevel() {
+        return this.approverGroupLevel;
     }
     /**
      * @return The userId of the approver.
@@ -84,6 +97,7 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
     public static final class Builder {
         private String approvalAction;
         private String approvalComment;
+        private Integer approverGroupLevel;
         private String approverId;
         private String timeApprovedForAccess;
         private String timeOfAuthorization;
@@ -92,6 +106,7 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
     	      Objects.requireNonNull(defaults);
     	      this.approvalAction = defaults.approvalAction;
     	      this.approvalComment = defaults.approvalComment;
+    	      this.approverGroupLevel = defaults.approverGroupLevel;
     	      this.approverId = defaults.approverId;
     	      this.timeApprovedForAccess = defaults.timeApprovedForAccess;
     	      this.timeOfAuthorization = defaults.timeOfAuthorization;
@@ -111,6 +126,14 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
               throw new MissingRequiredPropertyException("GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetail", "approvalComment");
             }
             this.approvalComment = approvalComment;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approverGroupLevel(Integer approverGroupLevel) {
+            if (approverGroupLevel == null) {
+              throw new MissingRequiredPropertyException("GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetail", "approverGroupLevel");
+            }
+            this.approverGroupLevel = approverGroupLevel;
             return this;
         }
         @CustomType.Setter
@@ -141,6 +164,7 @@ public final class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestC
             final var _resultValue = new GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetail();
             _resultValue.approvalAction = approvalAction;
             _resultValue.approvalComment = approvalComment;
+            _resultValue.approverGroupLevel = approverGroupLevel;
             _resultValue.approverId = approverId;
             _resultValue.timeApprovedForAccess = timeApprovedForAccess;
             _resultValue.timeOfAuthorization = timeOfAuthorization;

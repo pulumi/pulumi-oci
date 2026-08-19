@@ -27,7 +27,7 @@ class GetScheduleResult:
     """
     A collection of values returned by getSchedule.
     """
-    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_run_status=None, recurrence_details=None, recurrence_type=None, resource_filters=None, resources=None, schedule_id=None, state=None, system_tags=None, time_created=None, time_ends=None, time_last_run=None, time_next_run=None, time_starts=None, time_updated=None):
+    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, last_run_status=None, local_time_zone=None, recurrence_details=None, recurrence_type=None, resource_filters=None, resources=None, schedule_id=None, state=None, system_tags=None, time_created=None, time_ends=None, time_last_run=None, time_next_run=None, time_starts=None, time_updated=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -52,6 +52,9 @@ class GetScheduleResult:
         if last_run_status and not isinstance(last_run_status, str):
             raise TypeError("Expected argument 'last_run_status' to be a str")
         pulumi.set(__self__, "last_run_status", last_run_status)
+        if local_time_zone and not isinstance(local_time_zone, str):
+            raise TypeError("Expected argument 'local_time_zone' to be a str")
+        pulumi.set(__self__, "local_time_zone", local_time_zone)
         if recurrence_details and not isinstance(recurrence_details, str):
             raise TypeError("Expected argument 'recurrence_details' to be a str")
         pulumi.set(__self__, "recurrence_details", recurrence_details)
@@ -155,6 +158,14 @@ class GetScheduleResult:
         This is the status of the last work request.
         """
         return pulumi.get(self, "last_run_status")
+
+    @_builtins.property
+    @pulumi.getter(name="localTimeZone")
+    def local_time_zone(self) -> _builtins.str:
+        """
+        IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        """
+        return pulumi.get(self, "local_time_zone")
 
     @_builtins.property
     @pulumi.getter(name="recurrenceDetails")
@@ -272,6 +283,7 @@ class AwaitableGetScheduleResult(GetScheduleResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             last_run_status=self.last_run_status,
+            local_time_zone=self.local_time_zone,
             recurrence_details=self.recurrence_details,
             recurrence_type=self.recurrence_type,
             resource_filters=self.resource_filters,
@@ -320,6 +332,7 @@ def get_schedule(schedule_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         last_run_status=pulumi.get(__ret__, 'last_run_status'),
+        local_time_zone=pulumi.get(__ret__, 'local_time_zone'),
         recurrence_details=pulumi.get(__ret__, 'recurrence_details'),
         recurrence_type=pulumi.get(__ret__, 'recurrence_type'),
         resource_filters=pulumi.get(__ret__, 'resource_filters'),
@@ -365,6 +378,7 @@ def get_schedule_output(schedule_id: pulumi.Input[Optional[_builtins.str]] = Non
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         last_run_status=pulumi.get(__response__, 'last_run_status'),
+        local_time_zone=pulumi.get(__response__, 'local_time_zone'),
         recurrence_details=pulumi.get(__response__, 'recurrence_details'),
         recurrence_type=pulumi.get(__response__, 'recurrence_type'),
         resource_filters=pulumi.get(__response__, 'resource_filters'),

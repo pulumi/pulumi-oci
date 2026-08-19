@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.DatabaseDatabaseAutoFailoverConfiguration;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseEncryptionKeyLocationDetails;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagedSoftwareUpdateDetail;
@@ -25,6 +26,11 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable String adminPassword;
+    /**
+     * @return The properties for defining auto failover configuration.
+     * 
+     */
+    private @Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration;
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -202,6 +208,13 @@ public final class DatabaseDatabase {
      */
     public Optional<String> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
+    }
+    /**
+     * @return The properties for defining auto failover configuration.
+     * 
+     */
+    public Optional<DatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfiguration() {
+        return Optional.ofNullable(this.autoFailoverConfiguration);
     }
     /**
      * @return The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -447,6 +460,7 @@ public final class DatabaseDatabase {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String adminPassword;
+        private @Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration;
         private @Nullable String backupId;
         private @Nullable String backupTdePassword;
         private @Nullable String characterSet;
@@ -483,6 +497,7 @@ public final class DatabaseDatabase {
         public Builder(DatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
+    	      this.autoFailoverConfiguration = defaults.autoFailoverConfiguration;
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
@@ -521,6 +536,12 @@ public final class DatabaseDatabase {
         public Builder adminPassword(@Nullable String adminPassword) {
 
             this.adminPassword = adminPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder autoFailoverConfiguration(@Nullable DatabaseDatabaseAutoFailoverConfiguration autoFailoverConfiguration) {
+
+            this.autoFailoverConfiguration = autoFailoverConfiguration;
             return this;
         }
         @CustomType.Setter
@@ -724,6 +745,7 @@ public final class DatabaseDatabase {
         public DatabaseDatabase build() {
             final var _resultValue = new DatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
+            _resultValue.autoFailoverConfiguration = autoFailoverConfiguration;
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;

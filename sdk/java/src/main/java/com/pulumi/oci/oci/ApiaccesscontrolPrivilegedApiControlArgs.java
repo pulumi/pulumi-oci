@@ -6,6 +6,7 @@ package com.pulumi.oci.oci;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs;
 import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -33,6 +34,21 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
      */
     public Output<List<String>> approverGroupIdLists() {
         return this.approverGroupIdLists;
+    }
+
+    /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    @Import(name="approverGroupLevelLists")
+    private @Nullable Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>> approverGroupLevelLists;
+
+    /**
+     * @return (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    public Optional<Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>>> approverGroupLevelLists() {
+        return Optional.ofNullable(this.approverGroupLevelLists);
     }
 
     /**
@@ -111,14 +127,14 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     @Import(name="notificationTopicId", required=true)
     private Output<String> notificationTopicId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     public Output<String> notificationTopicId() {
@@ -177,8 +193,8 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Import(name="resources", required=true)
-    private Output<List<String>> resources;
+    @Import(name="resources")
+    private @Nullable Output<List<String>> resources;
 
     /**
      * @return (Updatable) contains Resource details
@@ -187,14 +203,15 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<List<String>> resources() {
-        return this.resources;
+    public Optional<Output<List<String>>> resources() {
+        return Optional.ofNullable(this.resources);
     }
 
     private ApiaccesscontrolPrivilegedApiControlArgs() {}
 
     private ApiaccesscontrolPrivilegedApiControlArgs(ApiaccesscontrolPrivilegedApiControlArgs $) {
         this.approverGroupIdLists = $.approverGroupIdLists;
+        this.approverGroupLevelLists = $.approverGroupLevelLists;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -254,6 +271,37 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
          */
         public Builder approverGroupIdLists(String... approverGroupIdLists) {
             return approverGroupIdLists(List.of(approverGroupIdLists));
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(@Nullable Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs>> approverGroupLevelLists) {
+            $.approverGroupLevelLists = approverGroupLevelLists;
+            return this;
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs> approverGroupLevelLists) {
+            return approverGroupLevelLists(Output.of(approverGroupLevelLists));
+        }
+
+        /**
+         * @param approverGroupLevelLists (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approverGroupLevelLists(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs... approverGroupLevelLists) {
+            return approverGroupLevelLists(List.of(approverGroupLevelLists));
         }
 
         /**
@@ -362,7 +410,7 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
         }
 
         /**
-         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
          * 
          * @return builder
          * 
@@ -373,7 +421,7 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
         }
 
         /**
-         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+         * @param notificationTopicId (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
          * 
          * @return builder
          * 
@@ -464,7 +512,7 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
          * @return builder
          * 
          */
-        public Builder resources(Output<List<String>> resources) {
+        public Builder resources(@Nullable Output<List<String>> resources) {
             $.resources = resources;
             return this;
         }
@@ -510,9 +558,6 @@ public final class ApiaccesscontrolPrivilegedApiControlArgs extends com.pulumi.r
             }
             if ($.resourceType == null) {
                 throw new MissingRequiredPropertyException("ApiaccesscontrolPrivilegedApiControlArgs", "resourceType");
-            }
-            if ($.resources == null) {
-                throw new MissingRequiredPropertyException("ApiaccesscontrolPrivilegedApiControlArgs", "resources");
             }
             return $;
         }

@@ -17,6 +17,74 @@ namespace Pulumi.Oci.ResourceScheduler
     /// 
     /// This API creates a schedule. You must provide either resources or resourceFilters.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSchedule = new Oci.ResourceScheduler.Schedule("test_schedule", new()
+    ///     {
+    ///         Action = scheduleAction,
+    ///         CompartmentId = compartmentId,
+    ///         RecurrenceDetails = scheduleRecurrenceDetails,
+    ///         RecurrenceType = scheduleRecurrenceType,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = scheduleDescription,
+    ///         DisplayName = scheduleDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         LocalTimeZone = scheduleLocalTimeZone,
+    ///         ResourceFilters = new[]
+    ///         {
+    ///             new Oci.ResourceScheduler.Inputs.ScheduleResourceFilterArgs
+    ///             {
+    ///                 Attribute = scheduleResourceFiltersAttribute,
+    ///                 Condition = scheduleResourceFiltersCondition,
+    ///                 ShouldIncludeChildCompartments = scheduleResourceFiltersShouldIncludeChildCompartments,
+    ///                 Values = new[]
+    ///                 {
+    ///                     new Oci.ResourceScheduler.Inputs.ScheduleResourceFilterValueArgs
+    ///                     {
+    ///                         Namespace = scheduleResourceFiltersValueNamespace,
+    ///                         TagKey = scheduleResourceFiltersValueTagKey,
+    ///                         Value = scheduleResourceFiltersValueValue,
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         Resources = new[]
+    ///         {
+    ///             new Oci.ResourceScheduler.Inputs.ScheduleResourceArgs
+    ///             {
+    ///                 Id = scheduleResourcesId,
+    ///                 Metadata = scheduleResourcesMetadata,
+    ///                 Parameters = new[]
+    ///                 {
+    ///                     new Oci.ResourceScheduler.Inputs.ScheduleResourceParameterArgs
+    ///                     {
+    ///                         ParameterType = scheduleResourcesParametersParameterType,
+    ///                         Value = scheduleResourcesParametersValue[0],
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
+    ///         TimeEnds = scheduleTimeEnds,
+    ///         TimeStarts = scheduleTimeStarts,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Schedules can be imported using the `Id`, e.g.
@@ -69,6 +137,12 @@ namespace Pulumi.Oci.ResourceScheduler
         /// </summary>
         [Output("lastRunStatus")]
         public Output<string> LastRunStatus { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        /// </summary>
+        [Output("localTimeZone")]
+        public Output<string> LocalTimeZone { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -241,6 +315,12 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
+        /// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        /// </summary>
+        [Input("localTimeZone")]
+        public Input<string>? LocalTimeZone { get; set; }
+
+        /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         /// </summary>
         [Input("recurrenceDetails", required: true)]
@@ -359,6 +439,12 @@ namespace Pulumi.Oci.ResourceScheduler
         /// </summary>
         [Input("lastRunStatus")]
         public Input<string>? LastRunStatus { get; set; }
+
+        /// <summary>
+        /// (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        /// </summary>
+        [Input("localTimeZone")]
+        public Input<string>? LocalTimeZone { get; set; }
 
         /// <summary>
         /// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

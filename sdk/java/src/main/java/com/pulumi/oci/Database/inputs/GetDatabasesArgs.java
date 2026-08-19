@@ -63,11 +63,41 @@ public final class GetDatabasesArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.dbName);
     }
 
+    /**
+     * Filter the databases by failoverTargets param.
+     * 
+     */
+    @Import(name="failoverTargets")
+    private @Nullable Output<String> failoverTargets;
+
+    /**
+     * @return Filter the databases by failoverTargets param.
+     * 
+     */
+    public Optional<Output<String>> failoverTargets() {
+        return Optional.ofNullable(this.failoverTargets);
+    }
+
     @Import(name="filters")
     private @Nullable Output<List<GetDatabasesFilterArgs>> filters;
 
     public Optional<Output<List<GetDatabasesFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * Filter the databases by managed auto failover param.
+     * 
+     */
+    @Import(name="managedAutoFailover")
+    private @Nullable Output<String> managedAutoFailover;
+
+    /**
+     * @return Filter the databases by managed auto failover param.
+     * 
+     */
+    public Optional<Output<String>> managedAutoFailover() {
+        return Optional.ofNullable(this.managedAutoFailover);
     }
 
     /**
@@ -106,7 +136,9 @@ public final class GetDatabasesArgs extends com.pulumi.resources.InvokeArgs {
         this.compartmentId = $.compartmentId;
         this.dbHomeId = $.dbHomeId;
         this.dbName = $.dbName;
+        this.failoverTargets = $.failoverTargets;
         this.filters = $.filters;
+        this.managedAutoFailover = $.managedAutoFailover;
         this.state = $.state;
         this.systemId = $.systemId;
     }
@@ -192,6 +224,27 @@ public final class GetDatabasesArgs extends com.pulumi.resources.InvokeArgs {
             return dbName(Output.of(dbName));
         }
 
+        /**
+         * @param failoverTargets Filter the databases by failoverTargets param.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTargets(@Nullable Output<String> failoverTargets) {
+            $.failoverTargets = failoverTargets;
+            return this;
+        }
+
+        /**
+         * @param failoverTargets Filter the databases by failoverTargets param.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder failoverTargets(String failoverTargets) {
+            return failoverTargets(Output.of(failoverTargets));
+        }
+
         public Builder filters(@Nullable Output<List<GetDatabasesFilterArgs>> filters) {
             $.filters = filters;
             return this;
@@ -203,6 +256,27 @@ public final class GetDatabasesArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetDatabasesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param managedAutoFailover Filter the databases by managed auto failover param.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailover(@Nullable Output<String> managedAutoFailover) {
+            $.managedAutoFailover = managedAutoFailover;
+            return this;
+        }
+
+        /**
+         * @param managedAutoFailover Filter the databases by managed auto failover param.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedAutoFailover(String managedAutoFailover) {
+            return managedAutoFailover(Output.of(managedAutoFailover));
         }
 
         /**

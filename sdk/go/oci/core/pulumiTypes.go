@@ -119,6 +119,162 @@ func (o BootVolumeAutotunePolicyArrayOutput) Index(i pulumi.IntInput) BootVolume
 	}).(BootVolumeAutotunePolicyOutput)
 }
 
+type BootVolumeBackupRetentionPeriod struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// BootVolumeBackupRetentionPeriodInput is an input type that accepts BootVolumeBackupRetentionPeriodArgs and BootVolumeBackupRetentionPeriodOutput values.
+// You can construct a concrete instance of `BootVolumeBackupRetentionPeriodInput` via:
+//
+//	BootVolumeBackupRetentionPeriodArgs{...}
+type BootVolumeBackupRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToBootVolumeBackupRetentionPeriodOutput() BootVolumeBackupRetentionPeriodOutput
+	ToBootVolumeBackupRetentionPeriodOutputWithContext(context.Context) BootVolumeBackupRetentionPeriodOutput
+}
+
+type BootVolumeBackupRetentionPeriodArgs struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (BootVolumeBackupRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i BootVolumeBackupRetentionPeriodArgs) ToBootVolumeBackupRetentionPeriodOutput() BootVolumeBackupRetentionPeriodOutput {
+	return i.ToBootVolumeBackupRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i BootVolumeBackupRetentionPeriodArgs) ToBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupRetentionPeriodOutput)
+}
+
+func (i BootVolumeBackupRetentionPeriodArgs) ToBootVolumeBackupRetentionPeriodPtrOutput() BootVolumeBackupRetentionPeriodPtrOutput {
+	return i.ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i BootVolumeBackupRetentionPeriodArgs) ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupRetentionPeriodOutput).ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(ctx)
+}
+
+// BootVolumeBackupRetentionPeriodPtrInput is an input type that accepts BootVolumeBackupRetentionPeriodArgs, BootVolumeBackupRetentionPeriodPtr and BootVolumeBackupRetentionPeriodPtrOutput values.
+// You can construct a concrete instance of `BootVolumeBackupRetentionPeriodPtrInput` via:
+//
+//	        BootVolumeBackupRetentionPeriodArgs{...}
+//
+//	or:
+//
+//	        nil
+type BootVolumeBackupRetentionPeriodPtrInput interface {
+	pulumi.Input
+
+	ToBootVolumeBackupRetentionPeriodPtrOutput() BootVolumeBackupRetentionPeriodPtrOutput
+	ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(context.Context) BootVolumeBackupRetentionPeriodPtrOutput
+}
+
+type bootVolumeBackupRetentionPeriodPtrType BootVolumeBackupRetentionPeriodArgs
+
+func BootVolumeBackupRetentionPeriodPtr(v *BootVolumeBackupRetentionPeriodArgs) BootVolumeBackupRetentionPeriodPtrInput {
+	return (*bootVolumeBackupRetentionPeriodPtrType)(v)
+}
+
+func (*bootVolumeBackupRetentionPeriodPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i *bootVolumeBackupRetentionPeriodPtrType) ToBootVolumeBackupRetentionPeriodPtrOutput() BootVolumeBackupRetentionPeriodPtrOutput {
+	return i.ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i *bootVolumeBackupRetentionPeriodPtrType) ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BootVolumeBackupRetentionPeriodPtrOutput)
+}
+
+type BootVolumeBackupRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (BootVolumeBackupRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o BootVolumeBackupRetentionPeriodOutput) ToBootVolumeBackupRetentionPeriodOutput() BootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o BootVolumeBackupRetentionPeriodOutput) ToBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o BootVolumeBackupRetentionPeriodOutput) ToBootVolumeBackupRetentionPeriodPtrOutput() BootVolumeBackupRetentionPeriodPtrOutput {
+	return o.ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (o BootVolumeBackupRetentionPeriodOutput) ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BootVolumeBackupRetentionPeriod) *BootVolumeBackupRetentionPeriod {
+		return &v
+	}).(BootVolumeBackupRetentionPeriodPtrOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o BootVolumeBackupRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v BootVolumeBackupRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o BootVolumeBackupRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v BootVolumeBackupRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type BootVolumeBackupRetentionPeriodPtrOutput struct{ *pulumi.OutputState }
+
+func (BootVolumeBackupRetentionPeriodPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o BootVolumeBackupRetentionPeriodPtrOutput) ToBootVolumeBackupRetentionPeriodPtrOutput() BootVolumeBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o BootVolumeBackupRetentionPeriodPtrOutput) ToBootVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) BootVolumeBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o BootVolumeBackupRetentionPeriodPtrOutput) Elem() BootVolumeBackupRetentionPeriodOutput {
+	return o.ApplyT(func(v *BootVolumeBackupRetentionPeriod) BootVolumeBackupRetentionPeriod {
+		if v != nil {
+			return *v
+		}
+		var ret BootVolumeBackupRetentionPeriod
+		return ret
+	}).(BootVolumeBackupRetentionPeriodOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o BootVolumeBackupRetentionPeriodPtrOutput) RetentionTimeAmount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackupRetentionPeriod) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeAmount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o BootVolumeBackupRetentionPeriodPtrOutput) RetentionTimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BootVolumeBackupRetentionPeriod) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeUnit
+	}).(pulumi.StringPtrOutput)
+}
+
 type BootVolumeBackupSourceDetails struct {
 	BootVolumeBackupId string `pulumi:"bootVolumeBackupId"`
 	// The OCID of the KMS key in the destination region which will be the master encryption key for the copied volume backup.
@@ -7106,6 +7262,8 @@ func (o ComputeHostConfigurationDataCheckDetailArrayOutput) Index(i pulumi.IntIn
 type ComputeHostGroupConfiguration struct {
 	// (Updatable) The OCID for firmware bundle
 	FirmwareBundleId *string `pulumi:"firmwareBundleId"`
+	// (Updatable) Additional quick recycle settings.
+	QuickRecycleSettings *ComputeHostGroupConfigurationQuickRecycleSettings `pulumi:"quickRecycleSettings"`
 	// (Updatable) Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -7130,6 +7288,8 @@ type ComputeHostGroupConfigurationInput interface {
 type ComputeHostGroupConfigurationArgs struct {
 	// (Updatable) The OCID for firmware bundle
 	FirmwareBundleId pulumi.StringPtrInput `pulumi:"firmwareBundleId"`
+	// (Updatable) Additional quick recycle settings.
+	QuickRecycleSettings ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput `pulumi:"quickRecycleSettings"`
 	// (Updatable) Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -7196,6 +7356,13 @@ func (o ComputeHostGroupConfigurationOutput) FirmwareBundleId() pulumi.StringPtr
 	return o.ApplyT(func(v ComputeHostGroupConfiguration) *string { return v.FirmwareBundleId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Additional quick recycle settings.
+func (o ComputeHostGroupConfigurationOutput) QuickRecycleSettings() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return o.ApplyT(func(v ComputeHostGroupConfiguration) *ComputeHostGroupConfigurationQuickRecycleSettings {
+		return v.QuickRecycleSettings
+	}).(ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput)
+}
+
 // (Updatable) Preferred recycle level for hosts associated with the reservation config.
 // * `SKIP_RECYCLE` - Skips host wipe.
 // * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -7231,6 +7398,143 @@ func (o ComputeHostGroupConfigurationArrayOutput) Index(i pulumi.IntInput) Compu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ComputeHostGroupConfiguration {
 		return vs[0].([]ComputeHostGroupConfiguration)[vs[1].(int)]
 	}).(ComputeHostGroupConfigurationOutput)
+}
+
+type ComputeHostGroupConfigurationQuickRecycleSettings struct {
+	// (Updatable) Whether to wipe NVMe data during quick recycle.
+	NvmeWipe *bool `pulumi:"nvmeWipe"`
+}
+
+// ComputeHostGroupConfigurationQuickRecycleSettingsInput is an input type that accepts ComputeHostGroupConfigurationQuickRecycleSettingsArgs and ComputeHostGroupConfigurationQuickRecycleSettingsOutput values.
+// You can construct a concrete instance of `ComputeHostGroupConfigurationQuickRecycleSettingsInput` via:
+//
+//	ComputeHostGroupConfigurationQuickRecycleSettingsArgs{...}
+type ComputeHostGroupConfigurationQuickRecycleSettingsInput interface {
+	pulumi.Input
+
+	ToComputeHostGroupConfigurationQuickRecycleSettingsOutput() ComputeHostGroupConfigurationQuickRecycleSettingsOutput
+	ToComputeHostGroupConfigurationQuickRecycleSettingsOutputWithContext(context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsOutput
+}
+
+type ComputeHostGroupConfigurationQuickRecycleSettingsArgs struct {
+	// (Updatable) Whether to wipe NVMe data during quick recycle.
+	NvmeWipe pulumi.BoolPtrInput `pulumi:"nvmeWipe"`
+}
+
+func (ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ComputeHostGroupConfigurationQuickRecycleSettings)(nil)).Elem()
+}
+
+func (i ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ToComputeHostGroupConfigurationQuickRecycleSettingsOutput() ComputeHostGroupConfigurationQuickRecycleSettingsOutput {
+	return i.ToComputeHostGroupConfigurationQuickRecycleSettingsOutputWithContext(context.Background())
+}
+
+func (i ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ToComputeHostGroupConfigurationQuickRecycleSettingsOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeHostGroupConfigurationQuickRecycleSettingsOutput)
+}
+
+func (i ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return i.ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeHostGroupConfigurationQuickRecycleSettingsOutput).ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(ctx)
+}
+
+// ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput is an input type that accepts ComputeHostGroupConfigurationQuickRecycleSettingsArgs, ComputeHostGroupConfigurationQuickRecycleSettingsPtr and ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput values.
+// You can construct a concrete instance of `ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput` via:
+//
+//	        ComputeHostGroupConfigurationQuickRecycleSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput interface {
+	pulumi.Input
+
+	ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput
+	ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput
+}
+
+type computeHostGroupConfigurationQuickRecycleSettingsPtrType ComputeHostGroupConfigurationQuickRecycleSettingsArgs
+
+func ComputeHostGroupConfigurationQuickRecycleSettingsPtr(v *ComputeHostGroupConfigurationQuickRecycleSettingsArgs) ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput {
+	return (*computeHostGroupConfigurationQuickRecycleSettingsPtrType)(v)
+}
+
+func (*computeHostGroupConfigurationQuickRecycleSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ComputeHostGroupConfigurationQuickRecycleSettings)(nil)).Elem()
+}
+
+func (i *computeHostGroupConfigurationQuickRecycleSettingsPtrType) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return i.ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *computeHostGroupConfigurationQuickRecycleSettingsPtrType) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput)
+}
+
+type ComputeHostGroupConfigurationQuickRecycleSettingsOutput struct{ *pulumi.OutputState }
+
+func (ComputeHostGroupConfigurationQuickRecycleSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ComputeHostGroupConfigurationQuickRecycleSettings)(nil)).Elem()
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsOutput() ComputeHostGroupConfigurationQuickRecycleSettingsOutput {
+	return o
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsOutput {
+	return o
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return o.ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ComputeHostGroupConfigurationQuickRecycleSettings) *ComputeHostGroupConfigurationQuickRecycleSettings {
+		return &v
+	}).(ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput)
+}
+
+// (Updatable) Whether to wipe NVMe data during quick recycle.
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsOutput) NvmeWipe() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ComputeHostGroupConfigurationQuickRecycleSettings) *bool { return v.NvmeWipe }).(pulumi.BoolPtrOutput)
+}
+
+type ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ComputeHostGroupConfigurationQuickRecycleSettings)(nil)).Elem()
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput() ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return o
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput) ToComputeHostGroupConfigurationQuickRecycleSettingsPtrOutputWithContext(ctx context.Context) ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput {
+	return o
+}
+
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput) Elem() ComputeHostGroupConfigurationQuickRecycleSettingsOutput {
+	return o.ApplyT(func(v *ComputeHostGroupConfigurationQuickRecycleSettings) ComputeHostGroupConfigurationQuickRecycleSettings {
+		if v != nil {
+			return *v
+		}
+		var ret ComputeHostGroupConfigurationQuickRecycleSettings
+		return ret
+	}).(ComputeHostGroupConfigurationQuickRecycleSettingsOutput)
+}
+
+// (Updatable) Whether to wipe NVMe data during quick recycle.
+func (o ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput) NvmeWipe() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ComputeHostGroupConfigurationQuickRecycleSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.NvmeWipe
+	}).(pulumi.BoolPtrOutput)
 }
 
 type ComputeHostRecycleDetail struct {
@@ -7353,9 +7657,6 @@ type CrossConnectGroupMacsecProperties struct {
 	// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
 	PrimaryKey *CrossConnectGroupMacsecPropertiesPrimaryKey `pulumi:"primaryKey"`
 	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State string `pulumi:"state"`
 }
 
@@ -7378,9 +7679,6 @@ type CrossConnectGroupMacsecPropertiesArgs struct {
 	// (Updatable) Defines the secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s held in Vault that represent the MACsec key.
 	PrimaryKey CrossConnectGroupMacsecPropertiesPrimaryKeyPtrInput `pulumi:"primaryKey"`
 	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringInput `pulumi:"state"`
 }
 
@@ -7479,9 +7777,6 @@ func (o CrossConnectGroupMacsecPropertiesOutput) PrimaryKey() CrossConnectGroupM
 }
 
 // (Updatable) Indicates whether or not MACsec is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CrossConnectGroupMacsecPropertiesOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v CrossConnectGroupMacsecProperties) string { return v.State }).(pulumi.StringOutput)
 }
@@ -7541,9 +7836,6 @@ func (o CrossConnectGroupMacsecPropertiesPtrOutput) PrimaryKey() CrossConnectGro
 }
 
 // (Updatable) Indicates whether or not MACsec is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CrossConnectGroupMacsecPropertiesPtrOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CrossConnectGroupMacsecProperties) *string {
 		if v == nil {
@@ -7769,6 +8061,162 @@ func (o CrossConnectGroupMacsecPropertiesPrimaryKeyPtrOutput) ConnectivityAssoci
 		}
 		return v.ConnectivityAssociationNameSecretVersion
 	}).(pulumi.StringPtrOutput)
+}
+
+type CrossConnectLoaProperties struct {
+	// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+	AuthorizedAgent *string `pulumi:"authorizedAgent"`
+	// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+	ExpiryExtensionCount *int `pulumi:"expiryExtensionCount"`
+}
+
+// CrossConnectLoaPropertiesInput is an input type that accepts CrossConnectLoaPropertiesArgs and CrossConnectLoaPropertiesOutput values.
+// You can construct a concrete instance of `CrossConnectLoaPropertiesInput` via:
+//
+//	CrossConnectLoaPropertiesArgs{...}
+type CrossConnectLoaPropertiesInput interface {
+	pulumi.Input
+
+	ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput
+	ToCrossConnectLoaPropertiesOutputWithContext(context.Context) CrossConnectLoaPropertiesOutput
+}
+
+type CrossConnectLoaPropertiesArgs struct {
+	// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+	AuthorizedAgent pulumi.StringPtrInput `pulumi:"authorizedAgent"`
+	// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+	ExpiryExtensionCount pulumi.IntPtrInput `pulumi:"expiryExtensionCount"`
+}
+
+func (CrossConnectLoaPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput {
+	return i.ToCrossConnectLoaPropertiesOutputWithContext(context.Background())
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesOutput)
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return i.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i CrossConnectLoaPropertiesArgs) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesOutput).ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx)
+}
+
+// CrossConnectLoaPropertiesPtrInput is an input type that accepts CrossConnectLoaPropertiesArgs, CrossConnectLoaPropertiesPtr and CrossConnectLoaPropertiesPtrOutput values.
+// You can construct a concrete instance of `CrossConnectLoaPropertiesPtrInput` via:
+//
+//	        CrossConnectLoaPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type CrossConnectLoaPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput
+	ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Context) CrossConnectLoaPropertiesPtrOutput
+}
+
+type crossConnectLoaPropertiesPtrType CrossConnectLoaPropertiesArgs
+
+func CrossConnectLoaPropertiesPtr(v *CrossConnectLoaPropertiesArgs) CrossConnectLoaPropertiesPtrInput {
+	return (*crossConnectLoaPropertiesPtrType)(v)
+}
+
+func (*crossConnectLoaPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (i *crossConnectLoaPropertiesPtrType) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return i.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *crossConnectLoaPropertiesPtrType) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CrossConnectLoaPropertiesPtrOutput)
+}
+
+type CrossConnectLoaPropertiesOutput struct{ *pulumi.OutputState }
+
+func (CrossConnectLoaPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesOutput() CrossConnectLoaPropertiesOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return o.ToCrossConnectLoaPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o CrossConnectLoaPropertiesOutput) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CrossConnectLoaProperties) *CrossConnectLoaProperties {
+		return &v
+	}).(CrossConnectLoaPropertiesPtrOutput)
+}
+
+// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+func (o CrossConnectLoaPropertiesOutput) AuthorizedAgent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CrossConnectLoaProperties) *string { return v.AuthorizedAgent }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+func (o CrossConnectLoaPropertiesOutput) ExpiryExtensionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CrossConnectLoaProperties) *int { return v.ExpiryExtensionCount }).(pulumi.IntPtrOutput)
+}
+
+type CrossConnectLoaPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (CrossConnectLoaPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CrossConnectLoaProperties)(nil)).Elem()
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) ToCrossConnectLoaPropertiesPtrOutput() CrossConnectLoaPropertiesPtrOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) ToCrossConnectLoaPropertiesPtrOutputWithContext(ctx context.Context) CrossConnectLoaPropertiesPtrOutput {
+	return o
+}
+
+func (o CrossConnectLoaPropertiesPtrOutput) Elem() CrossConnectLoaPropertiesOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) CrossConnectLoaProperties {
+		if v != nil {
+			return *v
+		}
+		var ret CrossConnectLoaProperties
+		return ret
+	}).(CrossConnectLoaPropertiesOutput)
+}
+
+// (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+func (o CrossConnectLoaPropertiesPtrOutput) AuthorizedAgent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AuthorizedAgent
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+func (o CrossConnectLoaPropertiesPtrOutput) ExpiryExtensionCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CrossConnectLoaProperties) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExpiryExtensionCount
+	}).(pulumi.IntPtrOutput)
 }
 
 type CrossConnectMacsecProperties struct {
@@ -36991,6 +37439,10 @@ type VolumeBackupPolicySchedule struct {
 	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) The hour of the day to schedule the volume backup.
 	HourOfDay *int `pulumi:"hourOfDay"`
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled *bool `pulumi:"isPreventDeletionEnabled"`
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled *bool `pulumi:"isRetentionLockEnabled"`
 	// (Updatable) The month of the year to schedule the volume backup.
 	Month *string `pulumi:"month"`
 	// (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
@@ -37013,6 +37465,8 @@ type VolumeBackupPolicySchedule struct {
 	OffsetType *string `pulumi:"offsetType"`
 	// (Updatable) The volume backup frequency.
 	Period string `pulumi:"period"`
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod *VolumeBackupPolicyScheduleRetentionPeriod `pulumi:"retentionPeriod"`
 	// (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
 	RetentionSeconds int `pulumi:"retentionSeconds"`
 	// (Updatable) Specifies what time zone is the schedule in
@@ -37045,6 +37499,10 @@ type VolumeBackupPolicyScheduleArgs struct {
 	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
 	// (Updatable) The hour of the day to schedule the volume backup.
 	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
+	// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled pulumi.BoolPtrInput `pulumi:"isPreventDeletionEnabled"`
+	// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled pulumi.BoolPtrInput `pulumi:"isRetentionLockEnabled"`
 	// (Updatable) The month of the year to schedule the volume backup.
 	Month pulumi.StringPtrInput `pulumi:"month"`
 	// (Updatable) The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
@@ -37067,6 +37525,8 @@ type VolumeBackupPolicyScheduleArgs struct {
 	OffsetType pulumi.StringPtrInput `pulumi:"offsetType"`
 	// (Updatable) The volume backup frequency.
 	Period pulumi.StringInput `pulumi:"period"`
+	// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriod VolumeBackupPolicyScheduleRetentionPeriodPtrInput `pulumi:"retentionPeriod"`
 	// (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
 	RetentionSeconds pulumi.IntInput `pulumi:"retentionSeconds"`
 	// (Updatable) Specifies what time zone is the schedule in
@@ -37150,6 +37610,16 @@ func (o VolumeBackupPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v VolumeBackupPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+func (o VolumeBackupPolicyScheduleOutput) IsPreventDeletionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VolumeBackupPolicySchedule) *bool { return v.IsPreventDeletionEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+func (o VolumeBackupPolicyScheduleOutput) IsRetentionLockEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VolumeBackupPolicySchedule) *bool { return v.IsRetentionLockEnabled }).(pulumi.BoolPtrOutput)
+}
+
 // (Updatable) The month of the year to schedule the volume backup.
 func (o VolumeBackupPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VolumeBackupPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
@@ -37182,6 +37652,13 @@ func (o VolumeBackupPolicyScheduleOutput) OffsetType() pulumi.StringPtrOutput {
 // (Updatable) The volume backup frequency.
 func (o VolumeBackupPolicyScheduleOutput) Period() pulumi.StringOutput {
 	return o.ApplyT(func(v VolumeBackupPolicySchedule) string { return v.Period }).(pulumi.StringOutput)
+}
+
+// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o VolumeBackupPolicyScheduleOutput) RetentionPeriod() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return o.ApplyT(func(v VolumeBackupPolicySchedule) *VolumeBackupPolicyScheduleRetentionPeriod {
+		return v.RetentionPeriod
+	}).(VolumeBackupPolicyScheduleRetentionPeriodPtrOutput)
 }
 
 // (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
@@ -37218,6 +37695,318 @@ func (o VolumeBackupPolicyScheduleArrayOutput) Index(i pulumi.IntInput) VolumeBa
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VolumeBackupPolicySchedule {
 		return vs[0].([]VolumeBackupPolicySchedule)[vs[1].(int)]
 	}).(VolumeBackupPolicyScheduleOutput)
+}
+
+type VolumeBackupPolicyScheduleRetentionPeriod struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// VolumeBackupPolicyScheduleRetentionPeriodInput is an input type that accepts VolumeBackupPolicyScheduleRetentionPeriodArgs and VolumeBackupPolicyScheduleRetentionPeriodOutput values.
+// You can construct a concrete instance of `VolumeBackupPolicyScheduleRetentionPeriodInput` via:
+//
+//	VolumeBackupPolicyScheduleRetentionPeriodArgs{...}
+type VolumeBackupPolicyScheduleRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToVolumeBackupPolicyScheduleRetentionPeriodOutput() VolumeBackupPolicyScheduleRetentionPeriodOutput
+	ToVolumeBackupPolicyScheduleRetentionPeriodOutputWithContext(context.Context) VolumeBackupPolicyScheduleRetentionPeriodOutput
+}
+
+type VolumeBackupPolicyScheduleRetentionPeriodArgs struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (VolumeBackupPolicyScheduleRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeBackupPolicyScheduleRetentionPeriod)(nil)).Elem()
+}
+
+func (i VolumeBackupPolicyScheduleRetentionPeriodArgs) ToVolumeBackupPolicyScheduleRetentionPeriodOutput() VolumeBackupPolicyScheduleRetentionPeriodOutput {
+	return i.ToVolumeBackupPolicyScheduleRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i VolumeBackupPolicyScheduleRetentionPeriodArgs) ToVolumeBackupPolicyScheduleRetentionPeriodOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyScheduleRetentionPeriodOutput)
+}
+
+func (i VolumeBackupPolicyScheduleRetentionPeriodArgs) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutput() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return i.ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i VolumeBackupPolicyScheduleRetentionPeriodArgs) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyScheduleRetentionPeriodOutput).ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(ctx)
+}
+
+// VolumeBackupPolicyScheduleRetentionPeriodPtrInput is an input type that accepts VolumeBackupPolicyScheduleRetentionPeriodArgs, VolumeBackupPolicyScheduleRetentionPeriodPtr and VolumeBackupPolicyScheduleRetentionPeriodPtrOutput values.
+// You can construct a concrete instance of `VolumeBackupPolicyScheduleRetentionPeriodPtrInput` via:
+//
+//	        VolumeBackupPolicyScheduleRetentionPeriodArgs{...}
+//
+//	or:
+//
+//	        nil
+type VolumeBackupPolicyScheduleRetentionPeriodPtrInput interface {
+	pulumi.Input
+
+	ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutput() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput
+	ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(context.Context) VolumeBackupPolicyScheduleRetentionPeriodPtrOutput
+}
+
+type volumeBackupPolicyScheduleRetentionPeriodPtrType VolumeBackupPolicyScheduleRetentionPeriodArgs
+
+func VolumeBackupPolicyScheduleRetentionPeriodPtr(v *VolumeBackupPolicyScheduleRetentionPeriodArgs) VolumeBackupPolicyScheduleRetentionPeriodPtrInput {
+	return (*volumeBackupPolicyScheduleRetentionPeriodPtrType)(v)
+}
+
+func (*volumeBackupPolicyScheduleRetentionPeriodPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeBackupPolicyScheduleRetentionPeriod)(nil)).Elem()
+}
+
+func (i *volumeBackupPolicyScheduleRetentionPeriodPtrType) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutput() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return i.ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i *volumeBackupPolicyScheduleRetentionPeriodPtrType) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupPolicyScheduleRetentionPeriodPtrOutput)
+}
+
+type VolumeBackupPolicyScheduleRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (VolumeBackupPolicyScheduleRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeBackupPolicyScheduleRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) ToVolumeBackupPolicyScheduleRetentionPeriodOutput() VolumeBackupPolicyScheduleRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) ToVolumeBackupPolicyScheduleRetentionPeriodOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutput() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return o.ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VolumeBackupPolicyScheduleRetentionPeriod) *VolumeBackupPolicyScheduleRetentionPeriod {
+		return &v
+	}).(VolumeBackupPolicyScheduleRetentionPeriodPtrOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v VolumeBackupPolicyScheduleRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeBackupPolicyScheduleRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v VolumeBackupPolicyScheduleRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type VolumeBackupPolicyScheduleRetentionPeriodPtrOutput struct{ *pulumi.OutputState }
+
+func (VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeBackupPolicyScheduleRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutput() VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) ToVolumeBackupPolicyScheduleRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupPolicyScheduleRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) Elem() VolumeBackupPolicyScheduleRetentionPeriodOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicyScheduleRetentionPeriod) VolumeBackupPolicyScheduleRetentionPeriod {
+		if v != nil {
+			return *v
+		}
+		var ret VolumeBackupPolicyScheduleRetentionPeriod
+		return ret
+	}).(VolumeBackupPolicyScheduleRetentionPeriodOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) RetentionTimeAmount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicyScheduleRetentionPeriod) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeAmount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeBackupPolicyScheduleRetentionPeriodPtrOutput) RetentionTimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupPolicyScheduleRetentionPeriod) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeUnit
+	}).(pulumi.StringPtrOutput)
+}
+
+type VolumeBackupRetentionPeriod struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// VolumeBackupRetentionPeriodInput is an input type that accepts VolumeBackupRetentionPeriodArgs and VolumeBackupRetentionPeriodOutput values.
+// You can construct a concrete instance of `VolumeBackupRetentionPeriodInput` via:
+//
+//	VolumeBackupRetentionPeriodArgs{...}
+type VolumeBackupRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToVolumeBackupRetentionPeriodOutput() VolumeBackupRetentionPeriodOutput
+	ToVolumeBackupRetentionPeriodOutputWithContext(context.Context) VolumeBackupRetentionPeriodOutput
+}
+
+type VolumeBackupRetentionPeriodArgs struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (VolumeBackupRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i VolumeBackupRetentionPeriodArgs) ToVolumeBackupRetentionPeriodOutput() VolumeBackupRetentionPeriodOutput {
+	return i.ToVolumeBackupRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i VolumeBackupRetentionPeriodArgs) ToVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupRetentionPeriodOutput)
+}
+
+func (i VolumeBackupRetentionPeriodArgs) ToVolumeBackupRetentionPeriodPtrOutput() VolumeBackupRetentionPeriodPtrOutput {
+	return i.ToVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i VolumeBackupRetentionPeriodArgs) ToVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupRetentionPeriodOutput).ToVolumeBackupRetentionPeriodPtrOutputWithContext(ctx)
+}
+
+// VolumeBackupRetentionPeriodPtrInput is an input type that accepts VolumeBackupRetentionPeriodArgs, VolumeBackupRetentionPeriodPtr and VolumeBackupRetentionPeriodPtrOutput values.
+// You can construct a concrete instance of `VolumeBackupRetentionPeriodPtrInput` via:
+//
+//	        VolumeBackupRetentionPeriodArgs{...}
+//
+//	or:
+//
+//	        nil
+type VolumeBackupRetentionPeriodPtrInput interface {
+	pulumi.Input
+
+	ToVolumeBackupRetentionPeriodPtrOutput() VolumeBackupRetentionPeriodPtrOutput
+	ToVolumeBackupRetentionPeriodPtrOutputWithContext(context.Context) VolumeBackupRetentionPeriodPtrOutput
+}
+
+type volumeBackupRetentionPeriodPtrType VolumeBackupRetentionPeriodArgs
+
+func VolumeBackupRetentionPeriodPtr(v *VolumeBackupRetentionPeriodArgs) VolumeBackupRetentionPeriodPtrInput {
+	return (*volumeBackupRetentionPeriodPtrType)(v)
+}
+
+func (*volumeBackupRetentionPeriodPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i *volumeBackupRetentionPeriodPtrType) ToVolumeBackupRetentionPeriodPtrOutput() VolumeBackupRetentionPeriodPtrOutput {
+	return i.ToVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i *volumeBackupRetentionPeriodPtrType) ToVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeBackupRetentionPeriodPtrOutput)
+}
+
+type VolumeBackupRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (VolumeBackupRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeBackupRetentionPeriodOutput) ToVolumeBackupRetentionPeriodOutput() VolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeBackupRetentionPeriodOutput) ToVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeBackupRetentionPeriodOutput) ToVolumeBackupRetentionPeriodPtrOutput() VolumeBackupRetentionPeriodPtrOutput {
+	return o.ToVolumeBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (o VolumeBackupRetentionPeriodOutput) ToVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VolumeBackupRetentionPeriod) *VolumeBackupRetentionPeriod {
+		return &v
+	}).(VolumeBackupRetentionPeriodPtrOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeBackupRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v VolumeBackupRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeBackupRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v VolumeBackupRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type VolumeBackupRetentionPeriodPtrOutput struct{ *pulumi.OutputState }
+
+func (VolumeBackupRetentionPeriodPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeBackupRetentionPeriodPtrOutput) ToVolumeBackupRetentionPeriodPtrOutput() VolumeBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeBackupRetentionPeriodPtrOutput) ToVolumeBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeBackupRetentionPeriodPtrOutput) Elem() VolumeBackupRetentionPeriodOutput {
+	return o.ApplyT(func(v *VolumeBackupRetentionPeriod) VolumeBackupRetentionPeriod {
+		if v != nil {
+			return *v
+		}
+		var ret VolumeBackupRetentionPeriod
+		return ret
+	}).(VolumeBackupRetentionPeriodOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeBackupRetentionPeriodPtrOutput) RetentionTimeAmount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupRetentionPeriod) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeAmount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeBackupRetentionPeriodPtrOutput) RetentionTimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeBackupRetentionPeriod) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeUnit
+	}).(pulumi.StringPtrOutput)
 }
 
 type VolumeBackupSourceDetails struct {
@@ -37538,6 +38327,162 @@ func (o VolumeBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) VolumeBloc
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VolumeBlockVolumeReplica {
 		return vs[0].([]VolumeBlockVolumeReplica)[vs[1].(int)]
 	}).(VolumeBlockVolumeReplicaOutput)
+}
+
+type VolumeGroupBackupRetentionPeriod struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// VolumeGroupBackupRetentionPeriodInput is an input type that accepts VolumeGroupBackupRetentionPeriodArgs and VolumeGroupBackupRetentionPeriodOutput values.
+// You can construct a concrete instance of `VolumeGroupBackupRetentionPeriodInput` via:
+//
+//	VolumeGroupBackupRetentionPeriodArgs{...}
+type VolumeGroupBackupRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToVolumeGroupBackupRetentionPeriodOutput() VolumeGroupBackupRetentionPeriodOutput
+	ToVolumeGroupBackupRetentionPeriodOutputWithContext(context.Context) VolumeGroupBackupRetentionPeriodOutput
+}
+
+type VolumeGroupBackupRetentionPeriodArgs struct {
+	// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (VolumeGroupBackupRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeGroupBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i VolumeGroupBackupRetentionPeriodArgs) ToVolumeGroupBackupRetentionPeriodOutput() VolumeGroupBackupRetentionPeriodOutput {
+	return i.ToVolumeGroupBackupRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i VolumeGroupBackupRetentionPeriodArgs) ToVolumeGroupBackupRetentionPeriodOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupRetentionPeriodOutput)
+}
+
+func (i VolumeGroupBackupRetentionPeriodArgs) ToVolumeGroupBackupRetentionPeriodPtrOutput() VolumeGroupBackupRetentionPeriodPtrOutput {
+	return i.ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i VolumeGroupBackupRetentionPeriodArgs) ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupRetentionPeriodOutput).ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(ctx)
+}
+
+// VolumeGroupBackupRetentionPeriodPtrInput is an input type that accepts VolumeGroupBackupRetentionPeriodArgs, VolumeGroupBackupRetentionPeriodPtr and VolumeGroupBackupRetentionPeriodPtrOutput values.
+// You can construct a concrete instance of `VolumeGroupBackupRetentionPeriodPtrInput` via:
+//
+//	        VolumeGroupBackupRetentionPeriodArgs{...}
+//
+//	or:
+//
+//	        nil
+type VolumeGroupBackupRetentionPeriodPtrInput interface {
+	pulumi.Input
+
+	ToVolumeGroupBackupRetentionPeriodPtrOutput() VolumeGroupBackupRetentionPeriodPtrOutput
+	ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(context.Context) VolumeGroupBackupRetentionPeriodPtrOutput
+}
+
+type volumeGroupBackupRetentionPeriodPtrType VolumeGroupBackupRetentionPeriodArgs
+
+func VolumeGroupBackupRetentionPeriodPtr(v *VolumeGroupBackupRetentionPeriodArgs) VolumeGroupBackupRetentionPeriodPtrInput {
+	return (*volumeGroupBackupRetentionPeriodPtrType)(v)
+}
+
+func (*volumeGroupBackupRetentionPeriodPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeGroupBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i *volumeGroupBackupRetentionPeriodPtrType) ToVolumeGroupBackupRetentionPeriodPtrOutput() VolumeGroupBackupRetentionPeriodPtrOutput {
+	return i.ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (i *volumeGroupBackupRetentionPeriodPtrType) ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VolumeGroupBackupRetentionPeriodPtrOutput)
+}
+
+type VolumeGroupBackupRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (VolumeGroupBackupRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VolumeGroupBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeGroupBackupRetentionPeriodOutput) ToVolumeGroupBackupRetentionPeriodOutput() VolumeGroupBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeGroupBackupRetentionPeriodOutput) ToVolumeGroupBackupRetentionPeriodOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o VolumeGroupBackupRetentionPeriodOutput) ToVolumeGroupBackupRetentionPeriodPtrOutput() VolumeGroupBackupRetentionPeriodPtrOutput {
+	return o.ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(context.Background())
+}
+
+func (o VolumeGroupBackupRetentionPeriodOutput) ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VolumeGroupBackupRetentionPeriod) *VolumeGroupBackupRetentionPeriod {
+		return &v
+	}).(VolumeGroupBackupRetentionPeriodPtrOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeGroupBackupRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v VolumeGroupBackupRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeGroupBackupRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v VolumeGroupBackupRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type VolumeGroupBackupRetentionPeriodPtrOutput struct{ *pulumi.OutputState }
+
+func (VolumeGroupBackupRetentionPeriodPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VolumeGroupBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o VolumeGroupBackupRetentionPeriodPtrOutput) ToVolumeGroupBackupRetentionPeriodPtrOutput() VolumeGroupBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeGroupBackupRetentionPeriodPtrOutput) ToVolumeGroupBackupRetentionPeriodPtrOutputWithContext(ctx context.Context) VolumeGroupBackupRetentionPeriodPtrOutput {
+	return o
+}
+
+func (o VolumeGroupBackupRetentionPeriodPtrOutput) Elem() VolumeGroupBackupRetentionPeriodOutput {
+	return o.ApplyT(func(v *VolumeGroupBackupRetentionPeriod) VolumeGroupBackupRetentionPeriod {
+		if v != nil {
+			return *v
+		}
+		var ret VolumeGroupBackupRetentionPeriod
+		return ret
+	}).(VolumeGroupBackupRetentionPeriodOutput)
+}
+
+// (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o VolumeGroupBackupRetentionPeriodPtrOutput) RetentionTimeAmount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackupRetentionPeriod) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeAmount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o VolumeGroupBackupRetentionPeriodPtrOutput) RetentionTimeUnit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VolumeGroupBackupRetentionPeriod) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.RetentionTimeUnit
+	}).(pulumi.StringPtrOutput)
 }
 
 type VolumeGroupBackupSourceDetails struct {
@@ -39825,6 +40770,112 @@ func (o GetBootVolumeAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetBoot
 	}).(GetBootVolumeAutotunePolicyOutput)
 }
 
+type GetBootVolumeBackupRetentionPeriod struct {
+	// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// GetBootVolumeBackupRetentionPeriodInput is an input type that accepts GetBootVolumeBackupRetentionPeriodArgs and GetBootVolumeBackupRetentionPeriodOutput values.
+// You can construct a concrete instance of `GetBootVolumeBackupRetentionPeriodInput` via:
+//
+//	GetBootVolumeBackupRetentionPeriodArgs{...}
+type GetBootVolumeBackupRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToGetBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupRetentionPeriodOutput
+	ToGetBootVolumeBackupRetentionPeriodOutputWithContext(context.Context) GetBootVolumeBackupRetentionPeriodOutput
+}
+
+type GetBootVolumeBackupRetentionPeriodArgs struct {
+	// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (GetBootVolumeBackupRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i GetBootVolumeBackupRetentionPeriodArgs) ToGetBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupRetentionPeriodOutput {
+	return i.ToGetBootVolumeBackupRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i GetBootVolumeBackupRetentionPeriodArgs) ToGetBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) GetBootVolumeBackupRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBootVolumeBackupRetentionPeriodOutput)
+}
+
+// GetBootVolumeBackupRetentionPeriodArrayInput is an input type that accepts GetBootVolumeBackupRetentionPeriodArray and GetBootVolumeBackupRetentionPeriodArrayOutput values.
+// You can construct a concrete instance of `GetBootVolumeBackupRetentionPeriodArrayInput` via:
+//
+//	GetBootVolumeBackupRetentionPeriodArray{ GetBootVolumeBackupRetentionPeriodArgs{...} }
+type GetBootVolumeBackupRetentionPeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupRetentionPeriodArrayOutput
+	ToGetBootVolumeBackupRetentionPeriodArrayOutputWithContext(context.Context) GetBootVolumeBackupRetentionPeriodArrayOutput
+}
+
+type GetBootVolumeBackupRetentionPeriodArray []GetBootVolumeBackupRetentionPeriodInput
+
+func (GetBootVolumeBackupRetentionPeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i GetBootVolumeBackupRetentionPeriodArray) ToGetBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupRetentionPeriodArrayOutput {
+	return i.ToGetBootVolumeBackupRetentionPeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetBootVolumeBackupRetentionPeriodArray) ToGetBootVolumeBackupRetentionPeriodArrayOutputWithContext(ctx context.Context) GetBootVolumeBackupRetentionPeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBootVolumeBackupRetentionPeriodArrayOutput)
+}
+
+type GetBootVolumeBackupRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (GetBootVolumeBackupRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o GetBootVolumeBackupRetentionPeriodOutput) ToGetBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupRetentionPeriodOutput) ToGetBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) GetBootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o GetBootVolumeBackupRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o GetBootVolumeBackupRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type GetBootVolumeBackupRetentionPeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBootVolumeBackupRetentionPeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o GetBootVolumeBackupRetentionPeriodArrayOutput) ToGetBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupRetentionPeriodArrayOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupRetentionPeriodArrayOutput) ToGetBootVolumeBackupRetentionPeriodArrayOutputWithContext(ctx context.Context) GetBootVolumeBackupRetentionPeriodArrayOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupRetentionPeriodArrayOutput) Index(i pulumi.IntInput) GetBootVolumeBackupRetentionPeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBootVolumeBackupRetentionPeriod {
+		return vs[0].([]GetBootVolumeBackupRetentionPeriod)[vs[1].(int)]
+	}).(GetBootVolumeBackupRetentionPeriodOutput)
+}
+
 type GetBootVolumeBackupSourceDetail struct {
 	// The OCID of the boot volume backup.
 	BootVolumeBackupId string `pulumi:"bootVolumeBackupId"`
@@ -39954,8 +41005,16 @@ type GetBootVolumeBackupsBootVolumeBackup struct {
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId string `pulumi:"imageId"`
+	// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled bool `pulumi:"isIndefiniteRetentionEnabled"`
+	// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled bool `pulumi:"isPreventDeletionEnabled"`
+	// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled bool `pulumi:"isRetentionLockEnabled"`
 	// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId string `pulumi:"kmsKeyId"`
+	// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriods []GetBootVolumeBackupsBootVolumeBackupRetentionPeriod `pulumi:"retentionPeriods"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs string `pulumi:"sizeInGbs"`
 	// A filter to return only resources that originated from the given source boot volume backup.
@@ -39971,10 +41030,14 @@ type GetBootVolumeBackupsBootVolumeBackup struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived string `pulumi:"timeRequestReceived"`
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt string `pulumi:"timeRetentionExpiresAt"`
 	// The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
 	Type string `pulumi:"type"`
 	// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
 	UniqueSizeInGbs string `pulumi:"uniqueSizeInGbs"`
+	// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+	VolumeGroupBackupId string `pulumi:"volumeGroupBackupId"`
 }
 
 // GetBootVolumeBackupsBootVolumeBackupInput is an input type that accepts GetBootVolumeBackupsBootVolumeBackupArgs and GetBootVolumeBackupsBootVolumeBackupOutput values.
@@ -40005,8 +41068,16 @@ type GetBootVolumeBackupsBootVolumeBackupArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The image OCID used to create the boot volume the backup is taken from.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+	IsIndefiniteRetentionEnabled pulumi.BoolInput `pulumi:"isIndefiniteRetentionEnabled"`
+	// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+	IsPreventDeletionEnabled pulumi.BoolInput `pulumi:"isPreventDeletionEnabled"`
+	// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+	IsRetentionLockEnabled pulumi.BoolInput `pulumi:"isRetentionLockEnabled"`
 	// The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	RetentionPeriods GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayInput `pulumi:"retentionPeriods"`
 	// The size of the boot volume, in GBs.
 	SizeInGbs pulumi.StringInput `pulumi:"sizeInGbs"`
 	// A filter to return only resources that originated from the given source boot volume backup.
@@ -40022,10 +41093,14 @@ type GetBootVolumeBackupsBootVolumeBackupArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeRequestReceived pulumi.StringInput `pulumi:"timeRequestReceived"`
+	// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+	TimeRetentionExpiresAt pulumi.StringInput `pulumi:"timeRetentionExpiresAt"`
 	// The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
 	UniqueSizeInGbs pulumi.StringInput `pulumi:"uniqueSizeInGbs"`
+	// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+	VolumeGroupBackupId pulumi.StringInput `pulumi:"volumeGroupBackupId"`
 }
 
 func (GetBootVolumeBackupsBootVolumeBackupArgs) ElementType() reflect.Type {
@@ -40119,9 +41194,31 @@ func (o GetBootVolumeBackupsBootVolumeBackupOutput) ImageId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
+// feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) IsIndefiniteRetentionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) bool { return v.IsIndefiniteRetentionEnabled }).(pulumi.BoolOutput)
+}
+
+// Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) IsPreventDeletionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) bool { return v.IsPreventDeletionEnabled }).(pulumi.BoolOutput)
+}
+
+// feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) IsRetentionLockEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) bool { return v.IsRetentionLockEnabled }).(pulumi.BoolOutput)
+}
+
 // The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
 func (o GetBootVolumeBackupsBootVolumeBackupOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) RetentionPeriods() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) []GetBootVolumeBackupsBootVolumeBackupRetentionPeriod {
+		return v.RetentionPeriods
+	}).(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput)
 }
 
 // The size of the boot volume, in GBs.
@@ -40165,6 +41262,11 @@ func (o GetBootVolumeBackupsBootVolumeBackupOutput) TimeRequestReceived() pulumi
 	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.TimeRequestReceived }).(pulumi.StringOutput)
 }
 
+// The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) TimeRetentionExpiresAt() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.TimeRetentionExpiresAt }).(pulumi.StringOutput)
+}
+
 // The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
 func (o GetBootVolumeBackupsBootVolumeBackupOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.Type }).(pulumi.StringOutput)
@@ -40173,6 +41275,11 @@ func (o GetBootVolumeBackupsBootVolumeBackupOutput) Type() pulumi.StringOutput {
 // The size used by the backup, in GBs. It is typically smaller than sizeInGBs, depending on the space consumed on the boot volume and whether the backup is full or incremental.
 func (o GetBootVolumeBackupsBootVolumeBackupOutput) UniqueSizeInGbs() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.UniqueSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+func (o GetBootVolumeBackupsBootVolumeBackupOutput) VolumeGroupBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackup) string { return v.VolumeGroupBackupId }).(pulumi.StringOutput)
 }
 
 type GetBootVolumeBackupsBootVolumeBackupArrayOutput struct{ *pulumi.OutputState }
@@ -40193,6 +41300,112 @@ func (o GetBootVolumeBackupsBootVolumeBackupArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBootVolumeBackupsBootVolumeBackup {
 		return vs[0].([]GetBootVolumeBackupsBootVolumeBackup)[vs[1].(int)]
 	}).(GetBootVolumeBackupsBootVolumeBackupOutput)
+}
+
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriod struct {
+	// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount int `pulumi:"retentionTimeAmount"`
+	// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit string `pulumi:"retentionTimeUnit"`
+}
+
+// GetBootVolumeBackupsBootVolumeBackupRetentionPeriodInput is an input type that accepts GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs and GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput values.
+// You can construct a concrete instance of `GetBootVolumeBackupsBootVolumeBackupRetentionPeriodInput` via:
+//
+//	GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs{...}
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodInput interface {
+	pulumi.Input
+
+	ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput
+	ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutputWithContext(context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput
+}
+
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs struct {
+	// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+	RetentionTimeAmount pulumi.IntInput `pulumi:"retentionTimeAmount"`
+	// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+	RetentionTimeUnit pulumi.StringInput `pulumi:"retentionTimeUnit"`
+}
+
+func (GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput {
+	return i.ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutputWithContext(context.Background())
+}
+
+func (i GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput)
+}
+
+// GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayInput is an input type that accepts GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray and GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput values.
+// You can construct a concrete instance of `GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayInput` via:
+//
+//	GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray{ GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs{...} }
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayInput interface {
+	pulumi.Input
+
+	ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput
+	ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutputWithContext(context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput
+}
+
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray []GetBootVolumeBackupsBootVolumeBackupRetentionPeriodInput
+
+func (GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBootVolumeBackupsBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (i GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput {
+	return i.ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutputWithContext(context.Background())
+}
+
+func (i GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutputWithContext(ctx context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput)
+}
+
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput struct{ *pulumi.OutputState }
+
+func (GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutputWithContext(ctx context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput {
+	return o
+}
+
+// The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput) RetentionTimeAmount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackupRetentionPeriod) int { return v.RetentionTimeAmount }).(pulumi.IntOutput)
+}
+
+// The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput) RetentionTimeUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBootVolumeBackupsBootVolumeBackupRetentionPeriod) string { return v.RetentionTimeUnit }).(pulumi.StringOutput)
+}
+
+type GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBootVolumeBackupsBootVolumeBackupRetentionPeriod)(nil)).Elem()
+}
+
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput() GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput) ToGetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutputWithContext(ctx context.Context) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput {
+	return o
+}
+
+func (o GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput) Index(i pulumi.IntInput) GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBootVolumeBackupsBootVolumeBackupRetentionPeriod {
+		return vs[0].([]GetBootVolumeBackupsBootVolumeBackupRetentionPeriod)[vs[1].(int)]
+	}).(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput)
 }
 
 type GetBootVolumeBackupsBootVolumeBackupSourceDetail struct {
@@ -58480,6 +59693,8 @@ func (o GetComputeHostConfigurationDataCheckDetailArrayOutput) Index(i pulumi.In
 type GetComputeHostGroupConfiguration struct {
 	// The OCID for firmware bundle
 	FirmwareBundleId string `pulumi:"firmwareBundleId"`
+	// Additional quick recycle settings.
+	QuickRecycleSettings []GetComputeHostGroupConfigurationQuickRecycleSetting `pulumi:"quickRecycleSettings"`
 	// Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -58504,6 +59719,8 @@ type GetComputeHostGroupConfigurationInput interface {
 type GetComputeHostGroupConfigurationArgs struct {
 	// The OCID for firmware bundle
 	FirmwareBundleId pulumi.StringInput `pulumi:"firmwareBundleId"`
+	// Additional quick recycle settings.
+	QuickRecycleSettings GetComputeHostGroupConfigurationQuickRecycleSettingArrayInput `pulumi:"quickRecycleSettings"`
 	// Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -58570,6 +59787,13 @@ func (o GetComputeHostGroupConfigurationOutput) FirmwareBundleId() pulumi.String
 	return o.ApplyT(func(v GetComputeHostGroupConfiguration) string { return v.FirmwareBundleId }).(pulumi.StringOutput)
 }
 
+// Additional quick recycle settings.
+func (o GetComputeHostGroupConfigurationOutput) QuickRecycleSettings() GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput {
+	return o.ApplyT(func(v GetComputeHostGroupConfiguration) []GetComputeHostGroupConfigurationQuickRecycleSetting {
+		return v.QuickRecycleSettings
+	}).(GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput)
+}
+
 // Preferred recycle level for hosts associated with the reservation config.
 // * `SKIP_RECYCLE` - Skips host wipe.
 // * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -58605,6 +59829,103 @@ func (o GetComputeHostGroupConfigurationArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeHostGroupConfiguration {
 		return vs[0].([]GetComputeHostGroupConfiguration)[vs[1].(int)]
 	}).(GetComputeHostGroupConfigurationOutput)
+}
+
+type GetComputeHostGroupConfigurationQuickRecycleSetting struct {
+	// Whether to wipe NVMe data during quick recycle.
+	NvmeWipe bool `pulumi:"nvmeWipe"`
+}
+
+// GetComputeHostGroupConfigurationQuickRecycleSettingInput is an input type that accepts GetComputeHostGroupConfigurationQuickRecycleSettingArgs and GetComputeHostGroupConfigurationQuickRecycleSettingOutput values.
+// You can construct a concrete instance of `GetComputeHostGroupConfigurationQuickRecycleSettingInput` via:
+//
+//	GetComputeHostGroupConfigurationQuickRecycleSettingArgs{...}
+type GetComputeHostGroupConfigurationQuickRecycleSettingInput interface {
+	pulumi.Input
+
+	ToGetComputeHostGroupConfigurationQuickRecycleSettingOutput() GetComputeHostGroupConfigurationQuickRecycleSettingOutput
+	ToGetComputeHostGroupConfigurationQuickRecycleSettingOutputWithContext(context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingOutput
+}
+
+type GetComputeHostGroupConfigurationQuickRecycleSettingArgs struct {
+	// Whether to wipe NVMe data during quick recycle.
+	NvmeWipe pulumi.BoolInput `pulumi:"nvmeWipe"`
+}
+
+func (GetComputeHostGroupConfigurationQuickRecycleSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeHostGroupConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (i GetComputeHostGroupConfigurationQuickRecycleSettingArgs) ToGetComputeHostGroupConfigurationQuickRecycleSettingOutput() GetComputeHostGroupConfigurationQuickRecycleSettingOutput {
+	return i.ToGetComputeHostGroupConfigurationQuickRecycleSettingOutputWithContext(context.Background())
+}
+
+func (i GetComputeHostGroupConfigurationQuickRecycleSettingArgs) ToGetComputeHostGroupConfigurationQuickRecycleSettingOutputWithContext(ctx context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeHostGroupConfigurationQuickRecycleSettingOutput)
+}
+
+// GetComputeHostGroupConfigurationQuickRecycleSettingArrayInput is an input type that accepts GetComputeHostGroupConfigurationQuickRecycleSettingArray and GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput values.
+// You can construct a concrete instance of `GetComputeHostGroupConfigurationQuickRecycleSettingArrayInput` via:
+//
+//	GetComputeHostGroupConfigurationQuickRecycleSettingArray{ GetComputeHostGroupConfigurationQuickRecycleSettingArgs{...} }
+type GetComputeHostGroupConfigurationQuickRecycleSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput
+	ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutputWithContext(context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput
+}
+
+type GetComputeHostGroupConfigurationQuickRecycleSettingArray []GetComputeHostGroupConfigurationQuickRecycleSettingInput
+
+func (GetComputeHostGroupConfigurationQuickRecycleSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeHostGroupConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (i GetComputeHostGroupConfigurationQuickRecycleSettingArray) ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput {
+	return i.ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetComputeHostGroupConfigurationQuickRecycleSettingArray) ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutputWithContext(ctx context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput)
+}
+
+type GetComputeHostGroupConfigurationQuickRecycleSettingOutput struct{ *pulumi.OutputState }
+
+func (GetComputeHostGroupConfigurationQuickRecycleSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeHostGroupConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingOutput) ToGetComputeHostGroupConfigurationQuickRecycleSettingOutput() GetComputeHostGroupConfigurationQuickRecycleSettingOutput {
+	return o
+}
+
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingOutput) ToGetComputeHostGroupConfigurationQuickRecycleSettingOutputWithContext(ctx context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingOutput {
+	return o
+}
+
+// Whether to wipe NVMe data during quick recycle.
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingOutput) NvmeWipe() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetComputeHostGroupConfigurationQuickRecycleSetting) bool { return v.NvmeWipe }).(pulumi.BoolOutput)
+}
+
+type GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeHostGroupConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput) ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput {
+	return o
+}
+
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput) ToGetComputeHostGroupConfigurationQuickRecycleSettingArrayOutputWithContext(ctx context.Context) GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput {
+	return o
+}
+
+func (o GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput) Index(i pulumi.IntInput) GetComputeHostGroupConfigurationQuickRecycleSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeHostGroupConfigurationQuickRecycleSetting {
+		return vs[0].([]GetComputeHostGroupConfigurationQuickRecycleSetting)[vs[1].(int)]
+	}).(GetComputeHostGroupConfigurationQuickRecycleSettingOutput)
 }
 
 type GetComputeHostGroupsComputeHostGroupCollection struct {
@@ -58904,6 +60225,8 @@ func (o GetComputeHostGroupsComputeHostGroupCollectionItemArrayOutput) Index(i p
 type GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration struct {
 	// The OCID for firmware bundle
 	FirmwareBundleId string `pulumi:"firmwareBundleId"`
+	// Additional quick recycle settings.
+	QuickRecycleSettings []GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting `pulumi:"quickRecycleSettings"`
 	// Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -58928,6 +60251,8 @@ type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationInput interf
 type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArgs struct {
 	// The OCID for firmware bundle
 	FirmwareBundleId pulumi.StringInput `pulumi:"firmwareBundleId"`
+	// Additional quick recycle settings.
+	QuickRecycleSettings GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayInput `pulumi:"quickRecycleSettings"`
 	// Preferred recycle level for hosts associated with the reservation config.
 	// * `SKIP_RECYCLE` - Skips host wipe.
 	// * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -58996,6 +60321,13 @@ func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationOutput) F
 	}).(pulumi.StringOutput)
 }
 
+// Additional quick recycle settings.
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationOutput) QuickRecycleSettings() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput {
+	return o.ApplyT(func(v GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration) []GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting {
+		return v.QuickRecycleSettings
+	}).(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput)
+}
+
 // Preferred recycle level for hosts associated with the reservation config.
 // * `SKIP_RECYCLE` - Skips host wipe.
 // * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -59031,6 +60363,105 @@ func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArrayOutp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration {
 		return vs[0].([]GetComputeHostGroupsComputeHostGroupCollectionItemConfiguration)[vs[1].(int)]
 	}).(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationOutput)
+}
+
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting struct {
+	// Whether to wipe NVMe data during quick recycle.
+	NvmeWipe bool `pulumi:"nvmeWipe"`
+}
+
+// GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingInput is an input type that accepts GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs and GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput values.
+// You can construct a concrete instance of `GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingInput` via:
+//
+//	GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs{...}
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingInput interface {
+	pulumi.Input
+
+	ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput
+	ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutputWithContext(context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput
+}
+
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs struct {
+	// Whether to wipe NVMe data during quick recycle.
+	NvmeWipe pulumi.BoolInput `pulumi:"nvmeWipe"`
+}
+
+func (GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (i GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput {
+	return i.ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutputWithContext(context.Background())
+}
+
+func (i GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutputWithContext(ctx context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput)
+}
+
+// GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayInput is an input type that accepts GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray and GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput values.
+// You can construct a concrete instance of `GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayInput` via:
+//
+//	GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray{ GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs{...} }
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput
+	ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutputWithContext(context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput
+}
+
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray []GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingInput
+
+func (GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (i GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput {
+	return i.ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutputWithContext(ctx context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput)
+}
+
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput struct{ *pulumi.OutputState }
+
+func (GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput {
+	return o
+}
+
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutputWithContext(ctx context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput {
+	return o
+}
+
+// Whether to wipe NVMe data during quick recycle.
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput) NvmeWipe() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting) bool {
+		return v.NvmeWipe
+	}).(pulumi.BoolOutput)
+}
+
+type GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting)(nil)).Elem()
+}
+
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput() GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput {
+	return o
+}
+
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput) ToGetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutputWithContext(ctx context.Context) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput {
+	return o
+}
+
+func (o GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput) Index(i pulumi.IntInput) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting {
+		return vs[0].([]GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSetting)[vs[1].(int)]
+	}).(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput)
 }
 
 type GetComputeHostGroupsFilter struct {
@@ -61422,8 +62853,16 @@ type GetCrossConnectGroupsCrossConnectGroup struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
 	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect-group.
+	IsQosEnabled bool `pulumi:"isQosEnabled"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties []GetCrossConnectGroupsCrossConnectGroupMacsecProperty `pulumi:"macsecProperties"`
+	// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+	MinimumLinks int `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -61458,8 +62897,16 @@ type GetCrossConnectGroupsCrossConnectGroupArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The cross-connect group's Oracle ID (OCID).
 	Id pulumi.StringInput `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntInput `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolInput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect-group.
+	IsQosEnabled pulumi.BoolInput `pulumi:"isQosEnabled"`
 	// Properties used for MACsec (if capable).
 	MacsecProperties GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayInput `pulumi:"macsecProperties"`
+	// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+	MinimumLinks pulumi.IntInput `pulumi:"minimumLinks"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
 	OciLogicalDeviceName pulumi.StringInput `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
@@ -61551,11 +62998,31 @@ func (o GetCrossConnectGroupsCrossConnectGroupOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect-group.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
 // Properties used for MACsec (if capable).
 func (o GetCrossConnectGroupsCrossConnectGroupOutput) MacsecProperties() GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayOutput {
 	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) []GetCrossConnectGroupsCrossConnectGroupMacsecProperty {
 		return v.MacsecProperties
 	}).(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArrayOutput)
+}
+
+// Minimum number of active cross-connects required for the cross-connect group to be considered operational. If the number of active cross-connects falls below this value, the group is not considered operational. If this value was not explicitly set when the group was created or updated, it defaults to 1.
+func (o GetCrossConnectGroupsCrossConnectGroupOutput) MinimumLinks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectGroupsCrossConnectGroup) int { return v.MinimumLinks }).(pulumi.IntOutput)
 }
 
 // The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -61962,6 +63429,106 @@ func (o GetCrossConnectGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetCros
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectGroupsFilter {
 		return vs[0].([]GetCrossConnectGroupsFilter)[vs[1].(int)]
 	}).(GetCrossConnectGroupsFilterOutput)
+}
+
+type GetCrossConnectLoaProperty struct {
+	AuthorizedAgent      string `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount int    `pulumi:"expiryExtensionCount"`
+}
+
+// GetCrossConnectLoaPropertyInput is an input type that accepts GetCrossConnectLoaPropertyArgs and GetCrossConnectLoaPropertyOutput values.
+// You can construct a concrete instance of `GetCrossConnectLoaPropertyInput` via:
+//
+//	GetCrossConnectLoaPropertyArgs{...}
+type GetCrossConnectLoaPropertyInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput
+	ToGetCrossConnectLoaPropertyOutputWithContext(context.Context) GetCrossConnectLoaPropertyOutput
+}
+
+type GetCrossConnectLoaPropertyArgs struct {
+	AuthorizedAgent      pulumi.StringInput `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount pulumi.IntInput    `pulumi:"expiryExtensionCount"`
+}
+
+func (GetCrossConnectLoaPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectLoaPropertyArgs) ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput {
+	return i.ToGetCrossConnectLoaPropertyOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectLoaPropertyArgs) ToGetCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectLoaPropertyOutput)
+}
+
+// GetCrossConnectLoaPropertyArrayInput is an input type that accepts GetCrossConnectLoaPropertyArray and GetCrossConnectLoaPropertyArrayOutput values.
+// You can construct a concrete instance of `GetCrossConnectLoaPropertyArrayInput` via:
+//
+//	GetCrossConnectLoaPropertyArray{ GetCrossConnectLoaPropertyArgs{...} }
+type GetCrossConnectLoaPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput
+	ToGetCrossConnectLoaPropertyArrayOutputWithContext(context.Context) GetCrossConnectLoaPropertyArrayOutput
+}
+
+type GetCrossConnectLoaPropertyArray []GetCrossConnectLoaPropertyInput
+
+func (GetCrossConnectLoaPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectLoaPropertyArray) ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput {
+	return i.ToGetCrossConnectLoaPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectLoaPropertyArray) ToGetCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectLoaPropertyArrayOutput)
+}
+
+type GetCrossConnectLoaPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectLoaPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ToGetCrossConnectLoaPropertyOutput() GetCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ToGetCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyOutput) AuthorizedAgent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCrossConnectLoaProperty) string { return v.AuthorizedAgent }).(pulumi.StringOutput)
+}
+
+func (o GetCrossConnectLoaPropertyOutput) ExpiryExtensionCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectLoaProperty) int { return v.ExpiryExtensionCount }).(pulumi.IntOutput)
+}
+
+type GetCrossConnectLoaPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectLoaPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectLoaPropertyArrayOutput() GetCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectLoaPropertyArrayOutput) Index(i pulumi.IntInput) GetCrossConnectLoaPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectLoaProperty {
+		return vs[0].([]GetCrossConnectLoaProperty)[vs[1].(int)]
+	}).(GetCrossConnectLoaPropertyOutput)
 }
 
 type GetCrossConnectLocationsCrossConnectLocation struct {
@@ -62661,9 +64228,17 @@ type GetCrossConnectsCrossConnect struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id            string `pulumi:"id"`
+	Id string `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds int `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The name of the FastConnect interface where this cross-connect is installed.
 	InterfaceName string `pulumi:"interfaceName"`
 	IsActive      bool   `pulumi:"isActive"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled bool `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect.
+	IsQosEnabled  bool                                      `pulumi:"isQosEnabled"`
+	LoaProperties []GetCrossConnectsCrossConnectLoaProperty `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName string `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -62709,9 +64284,17 @@ type GetCrossConnectsCrossConnectArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The cross-connect's Oracle ID (OCID).
-	Id            pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringInput `pulumi:"id"`
+	// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+	InterfaceDownTimerValueInMilliseconds pulumi.IntInput `pulumi:"interfaceDownTimerValueInMilliseconds"`
+	// The name of the FastConnect interface where this cross-connect is installed.
 	InterfaceName pulumi.StringInput `pulumi:"interfaceName"`
 	IsActive      pulumi.BoolInput   `pulumi:"isActive"`
+	// The flag to enable or disable the down timer for the interface.
+	IsInterfaceHoldTimerEnabled pulumi.BoolInput `pulumi:"isInterfaceHoldTimerEnabled"`
+	// The flag to enable or disable the Qos for the cross-connect.
+	IsQosEnabled  pulumi.BoolInput                                  `pulumi:"isQosEnabled"`
+	LoaProperties GetCrossConnectsCrossConnectLoaPropertyArrayInput `pulumi:"loaProperties"`
 	// The name of the FastConnect location where this cross-connect is installed.
 	LocationName pulumi.StringInput `pulumi:"locationName"`
 	// Properties used for MACsec (if capable).
@@ -62821,12 +64404,32 @@ func (o GetCrossConnectsCrossConnectOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+func (o GetCrossConnectsCrossConnectOutput) InterfaceDownTimerValueInMilliseconds() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) int { return v.InterfaceDownTimerValueInMilliseconds }).(pulumi.IntOutput)
+}
+
+// The name of the FastConnect interface where this cross-connect is installed.
 func (o GetCrossConnectsCrossConnectOutput) InterfaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) string { return v.InterfaceName }).(pulumi.StringOutput)
 }
 
 func (o GetCrossConnectsCrossConnectOutput) IsActive() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsActive }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the down timer for the interface.
+func (o GetCrossConnectsCrossConnectOutput) IsInterfaceHoldTimerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsInterfaceHoldTimerEnabled }).(pulumi.BoolOutput)
+}
+
+// The flag to enable or disable the Qos for the cross-connect.
+func (o GetCrossConnectsCrossConnectOutput) IsQosEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) bool { return v.IsQosEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetCrossConnectsCrossConnectOutput) LoaProperties() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnect) []GetCrossConnectsCrossConnectLoaProperty { return v.LoaProperties }).(GetCrossConnectsCrossConnectLoaPropertyArrayOutput)
 }
 
 // The name of the FastConnect location where this cross-connect is installed.
@@ -62893,6 +64496,106 @@ func (o GetCrossConnectsCrossConnectArrayOutput) Index(i pulumi.IntInput) GetCro
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectsCrossConnect {
 		return vs[0].([]GetCrossConnectsCrossConnect)[vs[1].(int)]
 	}).(GetCrossConnectsCrossConnectOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaProperty struct {
+	AuthorizedAgent      string `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount int    `pulumi:"expiryExtensionCount"`
+}
+
+// GetCrossConnectsCrossConnectLoaPropertyInput is an input type that accepts GetCrossConnectsCrossConnectLoaPropertyArgs and GetCrossConnectsCrossConnectLoaPropertyOutput values.
+// You can construct a concrete instance of `GetCrossConnectsCrossConnectLoaPropertyInput` via:
+//
+//	GetCrossConnectsCrossConnectLoaPropertyArgs{...}
+type GetCrossConnectsCrossConnectLoaPropertyInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput
+	ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArgs struct {
+	AuthorizedAgent      pulumi.StringInput `pulumi:"authorizedAgent"`
+	ExpiryExtensionCount pulumi.IntInput    `pulumi:"expiryExtensionCount"`
+}
+
+func (GetCrossConnectsCrossConnectLoaPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArgs) ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return i.ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArgs) ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectsCrossConnectLoaPropertyOutput)
+}
+
+// GetCrossConnectsCrossConnectLoaPropertyArrayInput is an input type that accepts GetCrossConnectsCrossConnectLoaPropertyArray and GetCrossConnectsCrossConnectLoaPropertyArrayOutput values.
+// You can construct a concrete instance of `GetCrossConnectsCrossConnectLoaPropertyArrayInput` via:
+//
+//	GetCrossConnectsCrossConnectLoaPropertyArray{ GetCrossConnectsCrossConnectLoaPropertyArgs{...} }
+type GetCrossConnectsCrossConnectLoaPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput
+	ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArray []GetCrossConnectsCrossConnectLoaPropertyInput
+
+func (GetCrossConnectsCrossConnectLoaPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArray) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return i.ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetCrossConnectsCrossConnectLoaPropertyArray) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCrossConnectsCrossConnectLoaPropertyArrayOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectsCrossConnectLoaPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ToGetCrossConnectsCrossConnectLoaPropertyOutput() GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ToGetCrossConnectsCrossConnectLoaPropertyOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) AuthorizedAgent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnectLoaProperty) string { return v.AuthorizedAgent }).(pulumi.StringOutput)
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyOutput) ExpiryExtensionCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCrossConnectsCrossConnectLoaProperty) int { return v.ExpiryExtensionCount }).(pulumi.IntOutput)
+}
+
+type GetCrossConnectsCrossConnectLoaPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCrossConnectsCrossConnectLoaProperty)(nil)).Elem()
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutput() GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) ToGetCrossConnectsCrossConnectLoaPropertyArrayOutputWithContext(ctx context.Context) GetCrossConnectsCrossConnectLoaPropertyArrayOutput {
+	return o
+}
+
+func (o GetCrossConnectsCrossConnectLoaPropertyArrayOutput) Index(i pulumi.IntInput) GetCrossConnectsCrossConnectLoaPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCrossConnectsCrossConnectLoaProperty {
+		return vs[0].([]GetCrossConnectsCrossConnectLoaProperty)[vs[1].(int)]
+	}).(GetCrossConnectsCrossConnectLoaPropertyOutput)
 }
 
 type GetCrossConnectsCrossConnectMacsecProperty struct {
@@ -76708,1710 +78411,11 @@ func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray
 	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput)
 }
 
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig struct {
-	// Whether the plugin should be enabled or disabled.
-	DesiredState string `pulumi:"desiredState"`
-	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name string `pulumi:"name"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs struct {
-	// Whether the plugin should be enabled or disabled.
-	DesiredState pulumi.StringInput `pulumi:"desiredState"`
-	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
-	return o
-}
-
-// Whether the plugin should be enabled or disabled.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig) string {
-		return v.DesiredState
-	}).(pulumi.StringOutput)
-}
-
-// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig struct {
-	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
-	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-	RecoveryAction string `pulumi:"recoveryAction"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs struct {
-	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
-	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
-	return o
-}
-
-// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) IsLiveMigrationPreferred() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig) bool {
-		return v.IsLiveMigrationPreferred
-	}).(pulumi.BoolOutput)
-}
-
-// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
-// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
-// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig) string {
-		return v.RecoveryAction
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail struct {
-	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
-	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPrivateDnsRecord bool `pulumi:"assignPrivateDnsRecord"`
-	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPublicIp bool `pulumi:"assignPublicIp"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	HostnameLabel string `pulumi:"hostnameLabel"`
-	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-	Ipv6addressIpv6subnetCidrPairDetails []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
-	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-	NsgIds []string `pulumi:"nsgIds"`
-	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIp string `pulumi:"privateIp"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIpId string `pulumi:"privateIpId"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
-	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetCidr string `pulumi:"subnetCidr"`
-	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs struct {
-	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
-	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPrivateDnsRecord pulumi.BoolInput `pulumi:"assignPrivateDnsRecord"`
-	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
-	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-	Ipv6addressIpv6subnetCidrPairDetails GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
-	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	PrivateIpId pulumi.StringInput `pulumi:"privateIpId"`
-	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
-	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
-	// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetCidr pulumi.StringInput `pulumi:"subnetCidr"`
-	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
-	return o
-}
-
-// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
-		return v.AssignIpv6ip
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
-		return v.AssignPrivateDnsRecord
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
-		return v.AssignPublicIp
-	}).(pulumi.BoolOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.HostnameLabel
-	}).(pulumi.StringOutput)
-}
-
-// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-		return v.Ipv6addressIpv6subnetCidrPairDetails
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
-}
-
-// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) []string {
-		return v.NsgIds
-	}).(pulumi.StringArrayOutput)
-}
-
-// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.PrivateIp
-	}).(pulumi.StringOutput)
-}
-
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved IP address to use for this VNIC. See the `privateIpId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) PrivateIpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.PrivateIpId
-	}).(pulumi.StringOutput)
-}
-
-// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
-		return v.SecurityAttributes
-	}).(pulumi.StringMapOutput)
-}
-
-// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
-		return v.SkipSourceDestCheck
-	}).(pulumi.BoolOutput)
-}
-
-// One of the IPv4 CIDR blocks allocated to the subnet. Represents the IP range from which the VNIC's private IP address will be assigned if `privateIp` or `privateIpId` is not specified. Either this field or the `privateIp` (or `privateIpId`, if applicable) field must be provided, but not both simultaneously. Example: `192.168.1.0/28` See the `subnetCidr` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SubnetCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.SubnetCidr
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
-		return v.SubnetId
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
-	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-	Ipv6address string `pulumi:"ipv6address"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-	Ipv6id string `pulumi:"ipv6id"`
-	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
-	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-	Ipv6id pulumi.StringInput `pulumi:"ipv6id"`
-	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return o
-}
-
-// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6address
-	}).(pulumi.StringOutput)
-}
-
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that specifies a previously-reserved ipv6 to use.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6id
-	}).(pulumi.StringOutput)
-}
-
-// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
-		return v.Ipv6subnetCidr
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption struct {
-	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-	AreLegacyImdsEndpointsDisabled bool `pulumi:"areLegacyImdsEndpointsDisabled"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs struct {
-	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-	AreLegacyImdsEndpointsDisabled pulumi.BoolInput `pulumi:"areLegacyImdsEndpointsDisabled"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
-	return o
-}
-
-// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption) bool {
-		return v.AreLegacyImdsEndpointsDisabled
-	}).(pulumi.BoolOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption struct {
-	// Emulation type for the boot volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	BootVolumeType string `pulumi:"bootVolumeType"`
-	// Firmware used to boot VM. Select the option that matches your operating system.
-	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-	Firmware string `pulumi:"firmware"`
-	// Whether to enable consistent volume naming feature. Defaults to false.
-	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Emulation type for the physical network interface card (NIC).
-	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	NetworkType string `pulumi:"networkType"`
-	// Emulation type for volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs struct {
-	// Emulation type for the boot volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
-	// Firmware used to boot VM. Select the option that matches your operating system.
-	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-	Firmware pulumi.StringInput `pulumi:"firmware"`
-	// Whether to enable consistent volume naming feature. Defaults to false.
-	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
-	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
-	// Emulation type for the physical network interface card (NIC).
-	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-	// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-	NetworkType pulumi.StringInput `pulumi:"networkType"`
-	// Emulation type for volume.
-	// * `ISCSI` - ISCSI attached block storage device.
-	// * `SCSI` - Emulated SCSI disk.
-	// * `IDE` - Emulated IDE disk.
-	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
-	return o
-}
-
-// Emulation type for the boot volume.
-// * `ISCSI` - ISCSI attached block storage device.
-// * `SCSI` - Emulated SCSI disk.
-// * `IDE` - Emulated IDE disk.
-// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
-		return v.BootVolumeType
-	}).(pulumi.StringOutput)
-}
-
-// Firmware used to boot VM. Select the option that matches your operating system.
-// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
-// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) Firmware() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string { return v.Firmware }).(pulumi.StringOutput)
-}
-
-// Whether to enable consistent volume naming feature. Defaults to false.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
-		return v.IsConsistentVolumeNamingEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
-		return v.IsPvEncryptionInTransitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Emulation type for the physical network interface card (NIC).
-// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
-// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
-// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
-// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
-		return v.NetworkType
-	}).(pulumi.StringOutput)
-}
-
-// Emulation type for volume.
-// * `ISCSI` - ISCSI attached block storage device.
-// * `SCSI` - Emulated SCSI disk.
-// * `IDE` - Emulated IDE disk.
-// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
-// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
-		return v.RemoteDataVolumeType
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig struct {
-	// License Type for the OS license.
-	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-	// * `PARTNER_PROVIDED` - Partner provided license.
-	LicenseType string `pulumi:"licenseType"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs struct {
-	// License Type for the OS license.
-	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-	// * `PARTNER_PROVIDED` - Partner provided license.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
-	return o
-}
-
-// License Type for the OS license.
-// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
-// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
-// * `PARTNER_PROVIDED` - Partner provided license.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig) string {
-		return v.LicenseType
-	}).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail struct {
-	// The OCID of the compute host group. This is only available for dedicated capacity customers.
-	ComputeHostGroupId string `pulumi:"computeHostGroupId"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs struct {
-	// The OCID of the compute host group. This is only available for dedicated capacity customers.
-	ComputeHostGroupId pulumi.StringInput `pulumi:"computeHostGroupId"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput {
-	return o
-}
-
-// The OCID of the compute host group. This is only available for dedicated capacity customers.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput) ComputeHostGroupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail) string {
-		return v.ComputeHostGroupId
-	}).(pulumi.StringOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetail)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig struct {
-	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-	AreVirtualInstructionsEnabled bool `pulumi:"areVirtualInstructionsEnabled"`
-	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-	IsAccessControlServiceEnabled bool `pulumi:"isAccessControlServiceEnabled"`
-	// Whether the input-output memory management unit is enabled.
-	IsInputOutputMemoryManagementUnitEnabled bool `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
-	// Whether the Measured Boot feature is enabled on the instance.
-	IsMeasuredBootEnabled bool `pulumi:"isMeasuredBootEnabled"`
-	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-	IsMemoryEncryptionEnabled bool `pulumi:"isMemoryEncryptionEnabled"`
-	// Whether Secure Boot is enabled on the instance.
-	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
-	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-	IsSymmetricMultiThreadingEnabled bool `pulumi:"isSymmetricMultiThreadingEnabled"`
-	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-	IsTrustedPlatformModuleEnabled bool `pulumi:"isTrustedPlatformModuleEnabled"`
-	// The number of NUMA nodes per socket (NPS).
-	NumaNodesPerSocket string `pulumi:"numaNodesPerSocket"`
-	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-	PercentageOfCoresEnabled int `pulumi:"percentageOfCoresEnabled"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs struct {
-	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-	AreVirtualInstructionsEnabled pulumi.BoolInput `pulumi:"areVirtualInstructionsEnabled"`
-	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-	IsAccessControlServiceEnabled pulumi.BoolInput `pulumi:"isAccessControlServiceEnabled"`
-	// Whether the input-output memory management unit is enabled.
-	IsInputOutputMemoryManagementUnitEnabled pulumi.BoolInput `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
-	// Whether the Measured Boot feature is enabled on the instance.
-	IsMeasuredBootEnabled pulumi.BoolInput `pulumi:"isMeasuredBootEnabled"`
-	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-	IsMemoryEncryptionEnabled pulumi.BoolInput `pulumi:"isMemoryEncryptionEnabled"`
-	// Whether Secure Boot is enabled on the instance.
-	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
-	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-	IsSymmetricMultiThreadingEnabled pulumi.BoolInput `pulumi:"isSymmetricMultiThreadingEnabled"`
-	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-	IsTrustedPlatformModuleEnabled pulumi.BoolInput `pulumi:"isTrustedPlatformModuleEnabled"`
-	// The number of NUMA nodes per socket (NPS).
-	NumaNodesPerSocket pulumi.StringInput `pulumi:"numaNodesPerSocket"`
-	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-	PercentageOfCoresEnabled pulumi.IntInput `pulumi:"percentageOfCoresEnabled"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
-	return o
-}
-
-// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) AreVirtualInstructionsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.AreVirtualInstructionsEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsAccessControlServiceEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsAccessControlServiceEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the input-output memory management unit is enabled.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsInputOutputMemoryManagementUnitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsInputOutputMemoryManagementUnitEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the Measured Boot feature is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsMeasuredBootEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsMeasuredBootEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsMemoryEncryptionEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsMemoryEncryptionEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether Secure Boot is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsSecureBootEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsSecureBootEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsSymmetricMultiThreadingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsSymmetricMultiThreadingEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// Whether the Trusted Platform Module (TPM) is enabled on the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsTrustedPlatformModuleEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
-		return v.IsTrustedPlatformModuleEnabled
-	}).(pulumi.BoolOutput)
-}
-
-// The number of NUMA nodes per socket (NPS).
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) NumaNodesPerSocket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) string {
-		return v.NumaNodesPerSocket
-	}).(pulumi.StringOutput)
-}
-
-// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) PercentageOfCoresEnabled() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) int {
-		return v.PercentageOfCoresEnabled
-	}).(pulumi.IntOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs struct {
-	// The action to run when the preemptible instance is interrupted for eviction.
-	PreemptionActions GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return o
-}
-
-// The action to run when the preemptible instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput) PreemptionActions() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig) []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return v.PreemptionActions
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type string `pulumi:"type"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs struct {
-	// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
-	// The type of action to run when the instance is interrupted for eviction.
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return o
-}
-
-// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) bool {
-		return v.PreserveBootVolume
-	}).(pulumi.BoolOutput)
-}
-
-// The type of action to run when the instance is interrupted for eviction.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs int `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes int `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement string `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus int `pulumi:"vcpus"`
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...}
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
-	// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-	LocalVolumeSizeInGbs pulumi.IntInput `pulumi:"localVolumeSizeInGbs"`
-	// The total amount of memory available to the instance, in gigabytes.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-	Nvmes pulumi.IntInput `pulumi:"nvmes"`
-	// The total number of OCPUs available to the instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// This field is reserved for internal use.
-	ResourceManagement pulumi.StringInput `pulumi:"resourceManagement"`
-	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-	Vcpus pulumi.IntInput `pulumi:"vcpus"`
-}
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
-}
-
-// GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput is an input type that accepts GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray and GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput values.
-// You can construct a concrete instance of `GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput` via:
-//
-//	GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{ GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{...} }
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
-	ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray []GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return i.ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
-		return v.BaselineOcpuUtilization
-	}).(pulumi.StringOutput)
-}
-
-// The NVMe-backed local storage capacity, in GB, for flexible dense (DenseLV) VM shapes. If the selected shape  is DenseLV, the value must be greater than 0. For all other shapes, the value must be null (if specified);  any non-null value for a non-DenseLV shape results in an error.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) LocalVolumeSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int {
-		return v.LocalVolumeSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// The total amount of memory available to the instance, in gigabytes.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Nvmes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
-}
-
-// The total number of OCPUs available to the instance.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
-}
-
-// This field is reserved for internal use.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) ResourceManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) string {
-		return v.ResourceManagement
-	}).(pulumi.StringOutput)
-}
-
-// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput) Vcpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig) int { return v.Vcpus }).(pulumi.IntOutput)
-}
-
-type GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)(nil)).Elem()
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput() GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) ToGetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
-	return o
-}
-
-func (o GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig {
-		return vs[0].([]GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig)[vs[1].(int)]
-	}).(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyInput)(nil)).Elem(), BootVolumeAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeAutotunePolicyArrayInput)(nil)).Elem(), BootVolumeAutotunePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeBackupRetentionPeriodInput)(nil)).Elem(), BootVolumeBackupRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeBackupRetentionPeriodPtrInput)(nil)).Elem(), BootVolumeBackupRetentionPeriodArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeBackupSourceDetailsInput)(nil)).Elem(), BootVolumeBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeBackupSourceDetailsPtrInput)(nil)).Elem(), BootVolumeBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BootVolumeBootVolumeReplicaInput)(nil)).Elem(), BootVolumeBootVolumeReplicaArgs{})
@@ -78502,12 +78506,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostConfigurationDataCheckDetailArrayInput)(nil)).Elem(), ComputeHostConfigurationDataCheckDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostGroupConfigurationInput)(nil)).Elem(), ComputeHostGroupConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostGroupConfigurationArrayInput)(nil)).Elem(), ComputeHostGroupConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostGroupConfigurationQuickRecycleSettingsInput)(nil)).Elem(), ComputeHostGroupConfigurationQuickRecycleSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostGroupConfigurationQuickRecycleSettingsPtrInput)(nil)).Elem(), ComputeHostGroupConfigurationQuickRecycleSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostRecycleDetailInput)(nil)).Elem(), ComputeHostRecycleDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeHostRecycleDetailArrayInput)(nil)).Elem(), ComputeHostRecycleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPtrInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPrimaryKeyInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesPrimaryKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectGroupMacsecPropertiesPrimaryKeyPtrInput)(nil)).Elem(), CrossConnectGroupMacsecPropertiesPrimaryKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectLoaPropertiesInput)(nil)).Elem(), CrossConnectLoaPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectLoaPropertiesPtrInput)(nil)).Elem(), CrossConnectLoaPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesInput)(nil)).Elem(), CrossConnectMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesPtrInput)(nil)).Elem(), CrossConnectMacsecPropertiesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CrossConnectMacsecPropertiesPrimaryKeyInput)(nil)).Elem(), CrossConnectMacsecPropertiesPrimaryKeyArgs{})
@@ -78800,10 +78808,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeAutotunePolicyArrayInput)(nil)).Elem(), VolumeAutotunePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupPolicyScheduleInput)(nil)).Elem(), VolumeBackupPolicyScheduleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupPolicyScheduleArrayInput)(nil)).Elem(), VolumeBackupPolicyScheduleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupPolicyScheduleRetentionPeriodInput)(nil)).Elem(), VolumeBackupPolicyScheduleRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupPolicyScheduleRetentionPeriodPtrInput)(nil)).Elem(), VolumeBackupPolicyScheduleRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupRetentionPeriodInput)(nil)).Elem(), VolumeBackupRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupRetentionPeriodPtrInput)(nil)).Elem(), VolumeBackupRetentionPeriodArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupSourceDetailsInput)(nil)).Elem(), VolumeBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBackupSourceDetailsPtrInput)(nil)).Elem(), VolumeBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBlockVolumeReplicaInput)(nil)).Elem(), VolumeBlockVolumeReplicaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeBlockVolumeReplicaArrayInput)(nil)).Elem(), VolumeBlockVolumeReplicaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeGroupBackupRetentionPeriodInput)(nil)).Elem(), VolumeGroupBackupRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VolumeGroupBackupRetentionPeriodPtrInput)(nil)).Elem(), VolumeGroupBackupRetentionPeriodArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeGroupBackupSourceDetailsInput)(nil)).Elem(), VolumeGroupBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeGroupBackupSourceDetailsPtrInput)(nil)).Elem(), VolumeGroupBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VolumeGroupSourceDetailsInput)(nil)).Elem(), VolumeGroupSourceDetailsArgs{})
@@ -78834,10 +78848,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeAttachmentsFilterArrayInput)(nil)).Elem(), GetBootVolumeAttachmentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeAutotunePolicyInput)(nil)).Elem(), GetBootVolumeAutotunePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeAutotunePolicyArrayInput)(nil)).Elem(), GetBootVolumeAutotunePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupRetentionPeriodInput)(nil)).Elem(), GetBootVolumeBackupRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupRetentionPeriodArrayInput)(nil)).Elem(), GetBootVolumeBackupRetentionPeriodArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupSourceDetailInput)(nil)).Elem(), GetBootVolumeBackupSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupSourceDetailArrayInput)(nil)).Elem(), GetBootVolumeBackupSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupArrayInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupRetentionPeriodInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupSourceDetailInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsBootVolumeBackupSourceDetailArrayInput)(nil)).Elem(), GetBootVolumeBackupsBootVolumeBackupSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBootVolumeBackupsFilterInput)(nil)).Elem(), GetBootVolumeBackupsFilterArgs{})
@@ -79124,12 +79142,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostConfigurationDataCheckDetailArrayInput)(nil)).Elem(), GetComputeHostConfigurationDataCheckDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupConfigurationInput)(nil)).Elem(), GetComputeHostGroupConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupConfigurationArrayInput)(nil)).Elem(), GetComputeHostGroupConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupConfigurationQuickRecycleSettingInput)(nil)).Elem(), GetComputeHostGroupConfigurationQuickRecycleSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupConfigurationQuickRecycleSettingArrayInput)(nil)).Elem(), GetComputeHostGroupConfigurationQuickRecycleSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionArrayInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemArrayInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArrayInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayInput)(nil)).Elem(), GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsFilterInput)(nil)).Elem(), GetComputeHostGroupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostGroupsFilterArrayInput)(nil)).Elem(), GetComputeHostGroupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetComputeHostRecycleDetailInput)(nil)).Elem(), GetComputeHostRecycleDetailArgs{})
@@ -79174,6 +79196,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArrayInput)(nil)).Elem(), GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsFilterInput)(nil)).Elem(), GetCrossConnectGroupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectGroupsFilterArrayInput)(nil)).Elem(), GetCrossConnectGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLoaPropertyInput)(nil)).Elem(), GetCrossConnectLoaPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLoaPropertyArrayInput)(nil)).Elem(), GetCrossConnectLoaPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsCrossConnectLocationInput)(nil)).Elem(), GetCrossConnectLocationsCrossConnectLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsCrossConnectLocationArrayInput)(nil)).Elem(), GetCrossConnectLocationsCrossConnectLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectLocationsFilterInput)(nil)).Elem(), GetCrossConnectLocationsFilterArgs{})
@@ -79188,6 +79212,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectPortSpeedShapeFilterArrayInput)(nil)).Elem(), GetCrossConnectPortSpeedShapeFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectInput)(nil)).Elem(), GetCrossConnectsCrossConnectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectLoaPropertyInput)(nil)).Elem(), GetCrossConnectsCrossConnectLoaPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectLoaPropertyArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectLoaPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyArrayInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyInput)(nil)).Elem(), GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyArgs{})
@@ -79386,32 +79412,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArray{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(BootVolumeAutotunePolicyArrayOutput{})
+	pulumi.RegisterOutputType(BootVolumeBackupRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(BootVolumeBackupRetentionPeriodPtrOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupSourceDetailsOutput{})
 	pulumi.RegisterOutputType(BootVolumeBackupSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(BootVolumeBootVolumeReplicaOutput{})
@@ -79502,12 +79506,16 @@ func init() {
 	pulumi.RegisterOutputType(ComputeHostConfigurationDataCheckDetailArrayOutput{})
 	pulumi.RegisterOutputType(ComputeHostGroupConfigurationOutput{})
 	pulumi.RegisterOutputType(ComputeHostGroupConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(ComputeHostGroupConfigurationQuickRecycleSettingsOutput{})
+	pulumi.RegisterOutputType(ComputeHostGroupConfigurationQuickRecycleSettingsPtrOutput{})
 	pulumi.RegisterOutputType(ComputeHostRecycleDetailOutput{})
 	pulumi.RegisterOutputType(ComputeHostRecycleDetailArrayOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPrimaryKeyOutput{})
 	pulumi.RegisterOutputType(CrossConnectGroupMacsecPropertiesPrimaryKeyPtrOutput{})
+	pulumi.RegisterOutputType(CrossConnectLoaPropertiesOutput{})
+	pulumi.RegisterOutputType(CrossConnectLoaPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesPtrOutput{})
 	pulumi.RegisterOutputType(CrossConnectMacsecPropertiesPrimaryKeyOutput{})
@@ -79800,10 +79808,16 @@ func init() {
 	pulumi.RegisterOutputType(VolumeAutotunePolicyArrayOutput{})
 	pulumi.RegisterOutputType(VolumeBackupPolicyScheduleOutput{})
 	pulumi.RegisterOutputType(VolumeBackupPolicyScheduleArrayOutput{})
+	pulumi.RegisterOutputType(VolumeBackupPolicyScheduleRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(VolumeBackupPolicyScheduleRetentionPeriodPtrOutput{})
+	pulumi.RegisterOutputType(VolumeBackupRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(VolumeBackupRetentionPeriodPtrOutput{})
 	pulumi.RegisterOutputType(VolumeBackupSourceDetailsOutput{})
 	pulumi.RegisterOutputType(VolumeBackupSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(VolumeBlockVolumeReplicaOutput{})
 	pulumi.RegisterOutputType(VolumeBlockVolumeReplicaArrayOutput{})
+	pulumi.RegisterOutputType(VolumeGroupBackupRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(VolumeGroupBackupRetentionPeriodPtrOutput{})
 	pulumi.RegisterOutputType(VolumeGroupBackupSourceDetailsOutput{})
 	pulumi.RegisterOutputType(VolumeGroupBackupSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(VolumeGroupSourceDetailsOutput{})
@@ -79834,10 +79848,14 @@ func init() {
 	pulumi.RegisterOutputType(GetBootVolumeAttachmentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeAutotunePolicyOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeAutotunePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetBootVolumeBackupRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(GetBootVolumeBackupRetentionPeriodArrayOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodOutput{})
+	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupRetentionPeriodArrayOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupsBootVolumeBackupSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBootVolumeBackupsFilterOutput{})
@@ -80124,12 +80142,16 @@ func init() {
 	pulumi.RegisterOutputType(GetComputeHostConfigurationDataCheckDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupConfigurationOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetComputeHostGroupConfigurationQuickRecycleSettingOutput{})
+	pulumi.RegisterOutputType(GetComputeHostGroupConfigurationQuickRecycleSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingOutput{})
+	pulumi.RegisterOutputType(GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationQuickRecycleSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsFilterOutput{})
 	pulumi.RegisterOutputType(GetComputeHostGroupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetComputeHostRecycleDetailOutput{})
@@ -80174,6 +80196,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectGroupsFilterOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectLoaPropertyOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectLoaPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsCrossConnectLocationOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsCrossConnectLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectLocationsFilterOutput{})
@@ -80188,6 +80212,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCrossConnectPortSpeedShapeFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectArrayOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectLoaPropertyOutput{})
+	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectLoaPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyOutput{})
@@ -80386,28 +80412,4 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArrayOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigOutput{})
-	pulumi.RegisterOutputType(GetInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput{})
 }

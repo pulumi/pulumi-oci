@@ -55,6 +55,11 @@ public final class GetScheduleResult {
      */
     private String lastRunStatus;
     /**
+     * @return IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    private String localTimeZone;
+    /**
      * @return This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
@@ -174,6 +179,13 @@ public final class GetScheduleResult {
         return this.lastRunStatus;
     }
     /**
+     * @return IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    public String localTimeZone() {
+        return this.localTimeZone;
+    }
+    /**
      * @return This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
@@ -278,6 +290,7 @@ public final class GetScheduleResult {
         private Map<String,String> freeformTags;
         private String id;
         private String lastRunStatus;
+        private String localTimeZone;
         private String recurrenceDetails;
         private String recurrenceType;
         private List<GetScheduleResourceFilter> resourceFilters;
@@ -302,6 +315,7 @@ public final class GetScheduleResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lastRunStatus = defaults.lastRunStatus;
+    	      this.localTimeZone = defaults.localTimeZone;
     	      this.recurrenceDetails = defaults.recurrenceDetails;
     	      this.recurrenceType = defaults.recurrenceType;
     	      this.resourceFilters = defaults.resourceFilters;
@@ -379,6 +393,14 @@ public final class GetScheduleResult {
               throw new MissingRequiredPropertyException("GetScheduleResult", "lastRunStatus");
             }
             this.lastRunStatus = lastRunStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localTimeZone(String localTimeZone) {
+            if (localTimeZone == null) {
+              throw new MissingRequiredPropertyException("GetScheduleResult", "localTimeZone");
+            }
+            this.localTimeZone = localTimeZone;
             return this;
         }
         @CustomType.Setter
@@ -501,6 +523,7 @@ public final class GetScheduleResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lastRunStatus = lastRunStatus;
+            _resultValue.localTimeZone = localTimeZone;
             _resultValue.recurrenceDetails = recurrenceDetails;
             _resultValue.recurrenceType = recurrenceType;
             _resultValue.resourceFilters = resourceFilters;

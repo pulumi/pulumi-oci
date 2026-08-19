@@ -17,14 +17,14 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
     public static final AutonomousDatabaseLocalStandbyDbArgs Empty = new AutonomousDatabaseLocalStandbyDbArgs();
 
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -200,7 +200,7 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * @param availabilityDomain (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class AutonomousDatabaseLocalStandbyDbArgs extends com.pulumi.resou
         }
 
         /**
-         * @param availabilityDomain The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * @param availabilityDomain (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
          * 
          * @return builder
          * 

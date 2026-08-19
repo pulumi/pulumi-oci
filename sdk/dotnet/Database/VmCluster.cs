@@ -83,6 +83,12 @@ namespace Pulumi.Oci.Database
     ///         SparseStoragePercentage = vmClusterSparseStoragePercentage,
     ///         SystemVersion = vmClusterSystemVersion,
     ///         TimeZone = vmClusterTimeZone,
+    ///         UpdateDetails = new Oci.Database.Inputs.VmClusterUpdateDetailsArgs
+    ///         {
+    ///             UpdateAction = vmClusterUpdateDetailsUpdateAction,
+    ///             UpdateId = vmClusterUpdateDetailsUpdateId,
+    ///             UpdateMode = vmClusterUpdateDetailsUpdateMode,
+    ///         },
     ///         VmBackupStorageType = vmClusterVmBackupStorageType,
     ///         VmClusterType = vmClusterVmClusterType,
     ///         VmFileSystemStorageType = vmClusterVmFileSystemStorageType,
@@ -247,6 +253,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        [Output("liveImageVersionDetails")]
+        public Output<ImmutableArray<Outputs.VmClusterLiveImageVersionDetail>> LiveImageVersionDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The memory to be allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
@@ -257,6 +269,12 @@ namespace Pulumi.Oci.Database
 
         [Output("ocpusEnabled")]
         public Output<double> OcpusEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        [Output("oracleLinuxVersion")]
+        public Output<string> OracleLinuxVersion { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -317,6 +335,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Output("updateDetails")]
+        public Output<Outputs.VmClusterUpdateDetails?> UpdateDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
@@ -576,6 +600,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Input("updateDetails")]
+        public Input<Inputs.VmClusterUpdateDetailsArgs>? UpdateDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         /// </summary>
         [Input("vmBackupStorageType")]
@@ -779,6 +809,18 @@ namespace Pulumi.Oci.Database
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("liveImageVersionDetails")]
+        private InputList<Inputs.VmClusterLiveImageVersionDetailGetArgs>? _liveImageVersionDetails;
+
+        /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        public InputList<Inputs.VmClusterLiveImageVersionDetailGetArgs> LiveImageVersionDetails
+        {
+            get => _liveImageVersionDetails ?? (_liveImageVersionDetails = new InputList<Inputs.VmClusterLiveImageVersionDetailGetArgs>());
+            set => _liveImageVersionDetails = value;
+        }
+
         /// <summary>
         /// (Updatable) The memory to be allocated in GBs.
         /// </summary>
@@ -790,6 +832,12 @@ namespace Pulumi.Oci.Database
 
         [Input("ocpusEnabled")]
         public Input<double>? OcpusEnabled { get; set; }
+
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        [Input("oracleLinuxVersion")]
+        public Input<string>? OracleLinuxVersion { get; set; }
 
         /// <summary>
         /// (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -862,6 +910,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Input("updateDetails")]
+        public Input<Inputs.VmClusterUpdateDetailsGetArgs>? UpdateDetails { get; set; }
 
         /// <summary>
         /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL

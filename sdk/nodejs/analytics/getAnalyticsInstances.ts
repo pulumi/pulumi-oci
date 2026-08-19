@@ -82,7 +82,7 @@ export interface GetAnalyticsInstancesResult {
      */
     readonly compartmentId: string;
     /**
-     * Analytics feature set.
+     * The feature set. Either `SELF_SERVICE_ANALYTICS` (Professional Edition) or `ENTERPRISE_ANALYTICS` (Enterprise Edition).
      */
     readonly featureSet?: string;
     readonly filters?: outputs.Analytics.GetAnalyticsInstancesFilter[];
@@ -91,11 +91,11 @@ export interface GetAnalyticsInstancesResult {
      */
     readonly id: string;
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and can't be changed. The name must start with a letter and can contain only letters, numbers and dash (-).
      */
     readonly name?: string;
     /**
-     * The current state of an instance.
+     * The current state of the Analytics instance.
      */
     readonly state?: string;
 }

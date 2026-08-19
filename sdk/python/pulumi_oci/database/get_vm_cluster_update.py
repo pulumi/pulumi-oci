@@ -26,10 +26,13 @@ class GetVmClusterUpdateResult:
     """
     A collection of values returned by getVmClusterUpdate.
     """
-    def __init__(__self__, available_actions=None, description=None, id=None, last_action=None, lifecycle_details=None, state=None, time_released=None, update_id=None, update_type=None, version=None, vm_cluster_id=None):
+    def __init__(__self__, available_actions=None, available_update_modes=None, description=None, id=None, last_action=None, last_update_mode=None, lifecycle_details=None, oracle_linux_version=None, state=None, time_released=None, update_id=None, update_type=None, version=None, vm_cluster_id=None):
         if available_actions and not isinstance(available_actions, list):
             raise TypeError("Expected argument 'available_actions' to be a list")
         pulumi.set(__self__, "available_actions", available_actions)
+        if available_update_modes and not isinstance(available_update_modes, list):
+            raise TypeError("Expected argument 'available_update_modes' to be a list")
+        pulumi.set(__self__, "available_update_modes", available_update_modes)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -39,9 +42,15 @@ class GetVmClusterUpdateResult:
         if last_action and not isinstance(last_action, str):
             raise TypeError("Expected argument 'last_action' to be a str")
         pulumi.set(__self__, "last_action", last_action)
+        if last_update_mode and not isinstance(last_update_mode, str):
+            raise TypeError("Expected argument 'last_update_mode' to be a str")
+        pulumi.set(__self__, "last_update_mode", last_update_mode)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if oracle_linux_version and not isinstance(oracle_linux_version, str):
+            raise TypeError("Expected argument 'oracle_linux_version' to be a str")
+        pulumi.set(__self__, "oracle_linux_version", oracle_linux_version)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -70,6 +79,14 @@ class GetVmClusterUpdateResult:
         return pulumi.get(self, "available_actions")
 
     @_builtins.property
+    @pulumi.getter(name="availableUpdateModes")
+    def available_update_modes(self) -> Sequence[_builtins.str]:
+        """
+        The possible update options that can be performed using this maintenance update (only valid for OS Update).
+        """
+        return pulumi.get(self, "available_update_modes")
+
+    @_builtins.property
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
@@ -94,12 +111,28 @@ class GetVmClusterUpdateResult:
         return pulumi.get(self, "last_action")
 
     @_builtins.property
+    @pulumi.getter(name="lastUpdateMode")
+    def last_update_mode(self) -> _builtins.str:
+        """
+        The update mode performed most recently using this maintenance update (only valid for OS Update).
+        """
+        return pulumi.get(self, "last_update_mode")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         Descriptive text providing additional details about the lifecycle state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> _builtins.str:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
 
     @_builtins.property
     @pulumi.getter
@@ -151,10 +184,13 @@ class AwaitableGetVmClusterUpdateResult(GetVmClusterUpdateResult):
             yield self
         return GetVmClusterUpdateResult(
             available_actions=self.available_actions,
+            available_update_modes=self.available_update_modes,
             description=self.description,
             id=self.id,
             last_action=self.last_action,
+            last_update_mode=self.last_update_mode,
             lifecycle_details=self.lifecycle_details,
+            oracle_linux_version=self.oracle_linux_version,
             state=self.state,
             time_released=self.time_released,
             update_id=self.update_id,
@@ -193,10 +229,13 @@ def get_vm_cluster_update(update_id: Optional[_builtins.str] = None,
 
     return AwaitableGetVmClusterUpdateResult(
         available_actions=pulumi.get(__ret__, 'available_actions'),
+        available_update_modes=pulumi.get(__ret__, 'available_update_modes'),
         description=pulumi.get(__ret__, 'description'),
         id=pulumi.get(__ret__, 'id'),
         last_action=pulumi.get(__ret__, 'last_action'),
+        last_update_mode=pulumi.get(__ret__, 'last_update_mode'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        oracle_linux_version=pulumi.get(__ret__, 'oracle_linux_version'),
         state=pulumi.get(__ret__, 'state'),
         time_released=pulumi.get(__ret__, 'time_released'),
         update_id=pulumi.get(__ret__, 'update_id'),
@@ -232,10 +271,13 @@ def get_vm_cluster_update_output(update_id: pulumi.Input[Optional[_builtins.str]
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getVmClusterUpdate:getVmClusterUpdate', __args__, opts=opts, typ=GetVmClusterUpdateResult)
     return __ret__.apply(lambda __response__: GetVmClusterUpdateResult(
         available_actions=pulumi.get(__response__, 'available_actions'),
+        available_update_modes=pulumi.get(__response__, 'available_update_modes'),
         description=pulumi.get(__response__, 'description'),
         id=pulumi.get(__response__, 'id'),
         last_action=pulumi.get(__response__, 'last_action'),
+        last_update_mode=pulumi.get(__response__, 'last_update_mode'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        oracle_linux_version=pulumi.get(__response__, 'oracle_linux_version'),
         state=pulumi.get(__response__, 'state'),
         time_released=pulumi.get(__response__, 'time_released'),
         update_id=pulumi.get(__response__, 'update_id'),

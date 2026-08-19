@@ -68,6 +68,9 @@ export interface GetApiaccesscontrolApiMetadataByEntityTypesResult {
      * The list of api_metadata_by_entity_type_collection.
      */
     readonly apiMetadataByEntityTypeCollections: outputs.oci.GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection[];
+    /**
+     * The OCID of the compartment that contains the Service Provider Action.
+     */
     readonly compartmentId?: string;
     /**
      * Name of the Api.

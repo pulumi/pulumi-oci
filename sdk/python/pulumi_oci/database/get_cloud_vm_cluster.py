@@ -27,7 +27,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, reco_storage_percentage=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_automation_update_details=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, compute_model=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, live_image_version_details=None, memory_size_in_gbs=None, multi_cloud_identity_connector_configs=None, node_count=None, nsg_ids=None, ocpu_count=None, oracle_linux_version=None, private_zone_id=None, reco_storage_percentage=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_ipv6ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, sparse_storage_percentage=None, ssh_public_keys=None, state=None, storage_management_type=None, storage_size_in_gbs=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, tde_key_store_type=None, time_created=None, time_zone=None, update_details=None, vip_ids=None, vipv6ids=None, vm_backup_storage_type=None, vm_cluster_type=None, vm_file_system_storage_type=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -127,6 +127,9 @@ class GetCloudVmClusterResult:
         if listener_port and not isinstance(listener_port, str):
             raise TypeError("Expected argument 'listener_port' to be a str")
         pulumi.set(__self__, "listener_port", listener_port)
+        if live_image_version_details and not isinstance(live_image_version_details, list):
+            raise TypeError("Expected argument 'live_image_version_details' to be a list")
+        pulumi.set(__self__, "live_image_version_details", live_image_version_details)
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
@@ -142,6 +145,9 @@ class GetCloudVmClusterResult:
         if ocpu_count and not isinstance(ocpu_count, float):
             raise TypeError("Expected argument 'ocpu_count' to be a float")
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if oracle_linux_version and not isinstance(oracle_linux_version, str):
+            raise TypeError("Expected argument 'oracle_linux_version' to be a str")
+        pulumi.set(__self__, "oracle_linux_version", oracle_linux_version)
         if private_zone_id and not isinstance(private_zone_id, str):
             raise TypeError("Expected argument 'private_zone_id' to be a str")
         pulumi.set(__self__, "private_zone_id", private_zone_id)
@@ -208,6 +214,9 @@ class GetCloudVmClusterResult:
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
+        if update_details and not isinstance(update_details, list):
+            raise TypeError("Expected argument 'update_details' to be a list")
+        pulumi.set(__self__, "update_details", update_details)
         if vip_ids and not isinstance(vip_ids, list):
             raise TypeError("Expected argument 'vip_ids' to be a list")
         pulumi.set(__self__, "vip_ids", vip_ids)
@@ -486,6 +495,14 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "listener_port")
 
     @_builtins.property
+    @pulumi.getter(name="liveImageVersionDetails")
+    def live_image_version_details(self) -> Sequence['outputs.GetCloudVmClusterLiveImageVersionDetailResult']:
+        """
+        Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        """
+        return pulumi.get(self, "live_image_version_details")
+
+    @_builtins.property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> _builtins.int:
         """
@@ -525,6 +542,14 @@ class GetCloudVmClusterResult:
         The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleLinuxVersion")
+    def oracle_linux_version(self) -> _builtins.str:
+        """
+        Oracle Linux version for the respective Exadata Image.
+        """
+        return pulumi.get(self, "oracle_linux_version")
 
     @_builtins.property
     @pulumi.getter(name="privateZoneId")
@@ -700,6 +725,11 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "time_zone")
 
     @_builtins.property
+    @pulumi.getter(name="updateDetails")
+    def update_details(self) -> Sequence['outputs.GetCloudVmClusterUpdateDetailResult']:
+        return pulumi.get(self, "update_details")
+
+    @_builtins.property
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Sequence[_builtins.str]:
         """
@@ -787,11 +817,13 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             listener_port=self.listener_port,
+            live_image_version_details=self.live_image_version_details,
             memory_size_in_gbs=self.memory_size_in_gbs,
             multi_cloud_identity_connector_configs=self.multi_cloud_identity_connector_configs,
             node_count=self.node_count,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
+            oracle_linux_version=self.oracle_linux_version,
             private_zone_id=self.private_zone_id,
             reco_storage_percentage=self.reco_storage_percentage,
             scan_dns_name=self.scan_dns_name,
@@ -814,6 +846,7 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             tde_key_store_type=self.tde_key_store_type,
             time_created=self.time_created,
             time_zone=self.time_zone,
+            update_details=self.update_details,
             vip_ids=self.vip_ids,
             vipv6ids=self.vipv6ids,
             vm_backup_storage_type=self.vm_backup_storage_type,
@@ -880,11 +913,13 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         listener_port=pulumi.get(__ret__, 'listener_port'),
+        live_image_version_details=pulumi.get(__ret__, 'live_image_version_details'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         multi_cloud_identity_connector_configs=pulumi.get(__ret__, 'multi_cloud_identity_connector_configs'),
         node_count=pulumi.get(__ret__, 'node_count'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         ocpu_count=pulumi.get(__ret__, 'ocpu_count'),
+        oracle_linux_version=pulumi.get(__ret__, 'oracle_linux_version'),
         private_zone_id=pulumi.get(__ret__, 'private_zone_id'),
         reco_storage_percentage=pulumi.get(__ret__, 'reco_storage_percentage'),
         scan_dns_name=pulumi.get(__ret__, 'scan_dns_name'),
@@ -907,6 +942,7 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[_builtins.str] = None,
         tde_key_store_type=pulumi.get(__ret__, 'tde_key_store_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
+        update_details=pulumi.get(__ret__, 'update_details'),
         vip_ids=pulumi.get(__ret__, 'vip_ids'),
         vipv6ids=pulumi.get(__ret__, 'vipv6ids'),
         vm_backup_storage_type=pulumi.get(__ret__, 'vm_backup_storage_type'),
@@ -970,11 +1006,13 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: pulumi.Input[Optional[_buil
         license_model=pulumi.get(__response__, 'license_model'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         listener_port=pulumi.get(__response__, 'listener_port'),
+        live_image_version_details=pulumi.get(__response__, 'live_image_version_details'),
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         multi_cloud_identity_connector_configs=pulumi.get(__response__, 'multi_cloud_identity_connector_configs'),
         node_count=pulumi.get(__response__, 'node_count'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
         ocpu_count=pulumi.get(__response__, 'ocpu_count'),
+        oracle_linux_version=pulumi.get(__response__, 'oracle_linux_version'),
         private_zone_id=pulumi.get(__response__, 'private_zone_id'),
         reco_storage_percentage=pulumi.get(__response__, 'reco_storage_percentage'),
         scan_dns_name=pulumi.get(__response__, 'scan_dns_name'),
@@ -997,6 +1035,7 @@ def get_cloud_vm_cluster_output(cloud_vm_cluster_id: pulumi.Input[Optional[_buil
         tde_key_store_type=pulumi.get(__response__, 'tde_key_store_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
+        update_details=pulumi.get(__response__, 'update_details'),
         vip_ids=pulumi.get(__response__, 'vip_ids'),
         vipv6ids=pulumi.get(__response__, 'vipv6ids'),
         vm_backup_storage_type=pulumi.get(__response__, 'vm_backup_storage_type'),

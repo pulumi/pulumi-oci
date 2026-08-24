@@ -14,6 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabasesDatabaseDatabaseResult
     {
         public readonly string AdminPassword;
+        public readonly ImmutableArray<Outputs.GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult> AutoFailoverConfigurations;
         public readonly string BackupId;
         public readonly string BackupTdePassword;
         /// <summary>
@@ -87,6 +88,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         public readonly string ProtectionMode;
+        public readonly string RecoveryApplianceVpcPassword;
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
@@ -119,6 +121,8 @@ namespace Pulumi.Oci.Database.Outputs
         [OutputConstructor]
         private GetDatabasesDatabaseDatabaseResult(
             string adminPassword,
+
+            ImmutableArray<Outputs.GetDatabasesDatabaseDatabaseAutoFailoverConfigurationResult> autoFailoverConfigurations,
 
             string backupId,
 
@@ -164,6 +168,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string protectionMode,
 
+            string recoveryApplianceVpcPassword,
+
             string sidPrefix,
 
             string sourceDatabaseId,
@@ -185,6 +191,7 @@ namespace Pulumi.Oci.Database.Outputs
             string vmClusterId)
         {
             AdminPassword = adminPassword;
+            AutoFailoverConfigurations = autoFailoverConfigurations;
             BackupId = backupId;
             BackupTdePassword = backupTdePassword;
             CharacterSet = characterSet;
@@ -207,6 +214,7 @@ namespace Pulumi.Oci.Database.Outputs
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
             ProtectionMode = protectionMode;
+            RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;

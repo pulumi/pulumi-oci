@@ -63,14 +63,20 @@ type GetVmClusterUpdateArgs struct {
 type GetVmClusterUpdateResult struct {
 	// The possible actions that can be performed using this maintenance update.
 	AvailableActions []string `pulumi:"availableActions"`
+	// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+	AvailableUpdateModes []string `pulumi:"availableUpdateModes"`
 	// Details of the maintenance update package.
 	Description string `pulumi:"description"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The update action performed most recently using this maintenance update.
 	LastAction string `pulumi:"lastAction"`
+	// The update mode performed most recently using this maintenance update (only valid for OS Update).
+	LastUpdateMode string `pulumi:"lastUpdateMode"`
 	// Descriptive text providing additional details about the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
 	// The current state of the maintenance update. Dependent on value of `lastAction`.
 	State string `pulumi:"state"`
 	// The date and time the maintenance update was released.
@@ -124,6 +130,11 @@ func (o GetVmClusterUpdateResultOutput) AvailableActions() pulumi.StringArrayOut
 	return o.ApplyT(func(v GetVmClusterUpdateResult) []string { return v.AvailableActions }).(pulumi.StringArrayOutput)
 }
 
+// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+func (o GetVmClusterUpdateResultOutput) AvailableUpdateModes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateResult) []string { return v.AvailableUpdateModes }).(pulumi.StringArrayOutput)
+}
+
 // Details of the maintenance update package.
 func (o GetVmClusterUpdateResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateResult) string { return v.Description }).(pulumi.StringOutput)
@@ -139,9 +150,19 @@ func (o GetVmClusterUpdateResultOutput) LastAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateResult) string { return v.LastAction }).(pulumi.StringOutput)
 }
 
+// The update mode performed most recently using this maintenance update (only valid for OS Update).
+func (o GetVmClusterUpdateResultOutput) LastUpdateMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateResult) string { return v.LastUpdateMode }).(pulumi.StringOutput)
+}
+
 // Descriptive text providing additional details about the lifecycle state.
 func (o GetVmClusterUpdateResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterUpdateResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o GetVmClusterUpdateResultOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterUpdateResult) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 // The current state of the maintenance update. Dependent on value of `lastAction`.

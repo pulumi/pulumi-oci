@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.ConnectionArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionState;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionAdditionalAttribute;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionAuthDetails;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionCatalog;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionIngressIp;
@@ -44,6 +45,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GoldenGate.Connection;
  * import com.pulumi.oci.GoldenGate.ConnectionArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionAuthDetailsArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionCatalogArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
@@ -73,6 +75,16 @@ import javax.annotation.Nullable;
  *             .additionalAttributes(ConnectionAdditionalAttributeArgs.builder()
  *                 .name(connectionAdditionalAttributesName)
  *                 .value(connectionAdditionalAttributesValue)
+ *                 .build())
+ *             .authDetails(ConnectionAuthDetailsArgs.builder()
+ *                 .authType(connectionAuthDetailsAuthType)
+ *                 .apiKey(connectionAuthDetailsApiKey)
+ *                 .apiKeySecretId(testSecret.id())
+ *                 .baseUrl(connectionAuthDetailsBaseUrl)
+ *                 .keyFingerprint(connectionAuthDetailsKeyFingerprint)
+ *                 .region(connectionAuthDetailsRegion)
+ *                 .tenancyId(testTenancy.id())
+ *                 .userId(testUser.id())
  *                 .build())
  *             .authenticationMode(connectionAuthenticationMode)
  *             .authenticationType(connectionAuthenticationType)
@@ -131,6 +143,8 @@ import javax.annotation.Nullable;
  *                 .type(connectionLocksType)
  *                 .message(connectionLocksMessage)
  *                 .build())
+ *             .maxInputChars(connectionMaxInputChars)
+ *             .modelKey(connectionModelKey)
  *             .nsgIds(connectionNsgIds)
  *             .password(connectionPassword)
  *             .passwordSecretId(testSecret.id())
@@ -140,6 +154,7 @@ import javax.annotation.Nullable;
  *             .privateKeyPassphrase(connectionPrivateKeyPassphrase)
  *             .privateKeyPassphraseSecretId(testSecret.id())
  *             .producerProperties(connectionProducerProperties)
+ *             .providerType(connectionProviderType)
  *             .publicKeyFingerprint(connectionPublicKeyFingerprint)
  *             .redisClusterId(testRedisCluster.id())
  *             .region(connectionRegion)
@@ -227,21 +242,27 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:GoldenGate/connection:Connection")
 public class Connection extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * (Updatable) Access key ID for Amazon connection types.
+     * * AMAZON_KINESIS: Access key ID to access Amazon Kinesis.
+     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     @Export(name="accessKeyId", refs={String.class}, tree="[0]")
     private Output<String> accessKeyId;
 
     /**
-     * @return (Updatable) Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * @return (Updatable) Access key ID for Amazon connection types.
+     * * AMAZON_KINESIS: Access key ID to access Amazon Kinesis.
+     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     public Output<String> accessKeyId() {
         return this.accessKeyId;
     }
     /**
-     * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
@@ -252,7 +273,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> accountKey;
 
     /**
-     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> accountKey() {
@@ -301,6 +322,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.additionalAttributes;
     }
     /**
+     * (Updatable) The information about new authentication details for an AI Model connection.
+     * 
+     */
+    @Export(name="authDetails", refs={ConnectionAuthDetails.class}, tree="[0]")
+    private Output<ConnectionAuthDetails> authDetails;
+
+    /**
+     * @return (Updatable) The information about new authentication details for an AI Model connection.
+     * 
+     */
+    public Output<ConnectionAuthDetails> authDetails() {
+        return this.authDetails;
+    }
+    /**
      * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      * 
      */
@@ -315,14 +350,24 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.authenticationMode;
     }
     /**
-     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * (Updatable) Used authentication mechanism to be provided for the following connection types:
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DATABRICKS - Required fields by authentication types:
+     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
+     * * OAUTH_M2M: user must enter clientId and clientSecret
      * 
      */
     @Export(name="authenticationType", refs={String.class}, tree="[0]")
     private Output<String> authenticationType;
 
     /**
-     * @return (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * @return (Updatable) Used authentication mechanism to be provided for the following connection types:
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DATABRICKS - Required fields by authentication types:
+     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
+     * * OAUTH_M2M: user must enter clientId and clientSecret
      * 
      */
     public Output<String> authenticationType() {
@@ -389,21 +434,31 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.catalog;
     }
     /**
-     * (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     @Export(name="clientId", refs={String.class}, tree="[0]")
     private Output<String> clientId;
 
     /**
-     * @return (Updatable) Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * @return (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
     public Output<String> clientId() {
         return this.clientId;
     }
     /**
-     * (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * * DATABRICKS: OAuth client secret, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Client secret associated with the client id.
+     *   Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
@@ -414,21 +469,33 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> clientSecret;
 
     /**
-     * @return (Updatable) Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: Azure client secret (aka application password) for authentication. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * * DATABRICKS: OAuth client secret, only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: Client secret associated with the client id.
+     *   Deprecated: This field is deprecated and replaced by &#34;clientSecretSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> clientSecret() {
         return Codegen.optional(this.clientSecret);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     @Export(name="clientSecretSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> clientSecretSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, &#39;clientSecret&#39; field must not be provided.
+     * @return (Updatable)
+     * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> clientSecretSecretId() {
@@ -491,14 +558,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.connectionFactory;
     }
     /**
-     * (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * (Updatable)
+     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+     * * MONGODB: MongoDB connection string. e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;
+     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     @Export(name="connectionString", refs={String.class}, tree="[0]")
     private Output<String> connectionString;
 
     /**
-     * @return (Updatable) JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
+     * @return (Updatable)
+     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+     * * MONGODB: MongoDB connection string. e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;
+     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     public Output<String> connectionString() {
@@ -519,14 +592,24 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.connectionType;
     }
     /**
-     * (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * (Updatable)
+     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
+     * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
+     * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with &#39;jdbc:spark://&#39;
      * 
      */
     @Export(name="connectionUrl", refs={String.class}, tree="[0]")
     private Output<String> connectionUrl;
 
     /**
-     * @return (Updatable) Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * @return (Updatable)
+     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
+     * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
+     * * DATABRICKS: Connection URL. e.g.: &#39;jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb&#39;
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with &#39;jdbc:spark://&#39;
      * 
      */
     public Output<String> connectionUrl() {
@@ -661,6 +744,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Indicates that sensitive attributes are provided via Secrets.
      * 
+     * Deprecated: This field is deprecated. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * When set to `true`, all sensitive information must be provided as Oracle Cloud Infrastructure Vault secrets using the corresponding `*SecretId` attributes of the connection (for example, `passwordSecretId`). Plain-text sensitive attributes (for example, `password`) must not be used. This ensures that sensitive information remains stored and managed in the customer&#39;s Oracle Cloud Infrastructure Vault rather than by the GoldenGate service.
+     * 
+     * When set to false, sensitive information must be provided in the corresponding plain-text attributes (for example, `password`) rather than in secret OCID attributes. In this mode, the sensitive information is stored by the GoldenGate service. If `vaultId` and `keyId` are not specified, the GoldenGate service uses Oracle-managed encryption keys to encrypt the stored data.
+     * 
+     * If `vaultId` and `keyId` are provided, the specified customer-managed key is used.
+     * 
      */
     @Export(name="doesUseSecretIds", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> doesUseSecretIds;
@@ -668,19 +759,39 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Indicates that sensitive attributes are provided via Secrets.
      * 
+     * Deprecated: This field is deprecated. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * When set to `true`, all sensitive information must be provided as Oracle Cloud Infrastructure Vault secrets using the corresponding `*SecretId` attributes of the connection (for example, `passwordSecretId`). Plain-text sensitive attributes (for example, `password`) must not be used. This ensures that sensitive information remains stored and managed in the customer&#39;s Oracle Cloud Infrastructure Vault rather than by the GoldenGate service.
+     * 
+     * When set to false, sensitive information must be provided in the corresponding plain-text attributes (for example, `password`) rather than in secret OCID attributes. In this mode, the sensitive information is stored by the GoldenGate service. If `vaultId` and `keyId` are not specified, the GoldenGate service uses Oracle-managed encryption keys to encrypt the stored data.
+     * 
+     * If `vaultId` and `keyId` are provided, the specified customer-managed key is used.
+     * 
      */
     public Output<Boolean> doesUseSecretIds() {
         return this.doesUseSecretIds;
     }
     /**
-     * (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
+     * (Updatable)
+     * * AMAZON_KINESIS: The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
+     * * AMAZON_S3: The Amazon Endpoint for S3. e.g.: &#39;https://my-bucket.s3.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://s3.&lt;region&gt;.amazonaws.com&#39;.
+     * * AZURE_DATA_LAKE_STORAGE: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * * GOOGLE_BIGQUERY: A legal URL to connect to BigQuery including scheme, server name and port, if not the default port. Default: https://bigquery.googleapis.com
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * MICROSOFT_FABRIC: Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
-     * @return (Updatable) The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
+     * @return (Updatable)
+     * * AMAZON_KINESIS: The endpoint URL of the Amazon Kinesis service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://kinesis.&lt;region&gt;.amazonaws.com&#39;.
+     * * AMAZON_S3: The Amazon Endpoint for S3. e.g.: &#39;https://my-bucket.s3.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to &#39;https://s3.&lt;region&gt;.amazonaws.com&#39;.
+     * * AZURE_DATA_LAKE_STORAGE: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+     * * GOOGLE_BIGQUERY: A legal URL to connect to BigQuery including scheme, server name and port, if not the default port. Default: https://bigquery.googleapis.com
+     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+     * * MICROSOFT_FABRIC: Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
      * 
      */
     public Output<String> endpoint() {
@@ -795,7 +906,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.jndiProviderUrl;
     }
     /**
-     * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
@@ -806,7 +917,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> jndiSecurityCredentials;
 
     /**
-     * @return (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> jndiSecurityCredentials() {
@@ -841,21 +952,29 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.jndiSecurityPrincipal;
     }
     /**
-     * (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     * (Updatable) References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
+     * 
+     * Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * The GoldenGate service uses this key to encrypt sensitive information (for example, `password`) that is provided in plain-text connection attributes through the API. This field is applicable only when `doesUseSecretIds` is set to `false`. If both `vaultId` and `keyId` are provided, the GoldenGate service uses the specified customer-managed key to encrypt the sensitive data. If neither `vaultId` nor `keyId` is provided, the GoldenGate service uses Oracle-managed encryption keys.
      * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
-     * @return (Updatable) Refers to the customer&#39;s master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     * @return (Updatable) References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
+     * 
+     * Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * The GoldenGate service uses this key to encrypt sensitive information (for example, `password`) that is provided in plain-text connection attributes through the API. This field is applicable only when `doesUseSecretIds` is set to `false`. If both `vaultId` and `keyId` are provided, the GoldenGate service uses the specified customer-managed key to encrypt the sensitive data. If neither `vaultId` nor `keyId` is provided, the GoldenGate service uses Oracle-managed encryption keys.
      * 
      */
     public Output<String> keyId() {
         return this.keyId;
     }
     /**
-     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
@@ -866,14 +985,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> keyStore;
 
     /**
-     * @return (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> keyStore() {
         return Codegen.optional(this.keyStore);
     }
     /**
-     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
@@ -884,21 +1003,31 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> keyStorePassword;
 
     /**
-     * @return (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> keyStorePassword() {
         return Codegen.optional(this.keyStorePassword);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * (Updatable)
+     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
      * 
      */
     @Export(name="keyStorePasswordSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> keyStorePasswordSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * @return (Updatable)
+     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> keyStorePasswordSecretId() {
@@ -947,6 +1076,34 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.locks;
     }
     /**
+     * (Updatable) Maximum number of input characters supported by this AI model connection.
+     * 
+     */
+    @Export(name="maxInputChars", refs={Integer.class}, tree="[0]")
+    private Output<Integer> maxInputChars;
+
+    /**
+     * @return (Updatable) Maximum number of input characters supported by this AI model connection.
+     * 
+     */
+    public Output<Integer> maxInputChars() {
+        return this.maxInputChars;
+    }
+    /**
+     * (Updatable) AI model identifier.
+     * 
+     */
+    @Export(name="modelKey", refs={String.class}, tree="[0]")
+    private Output<String> modelKey;
+
+    /**
+     * @return (Updatable) AI model identifier.
+     * 
+     */
+    public Output<String> modelKey() {
+        return this.modelKey;
+    }
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -961,7 +1118,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.nsgIds;
     }
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
@@ -972,7 +1129,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> password;
 
     /**
-     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> password() {
@@ -1021,7 +1178,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.privateIp;
     }
     /**
-     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
@@ -1032,7 +1189,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> privateKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> privateKeyFile() {
@@ -1053,7 +1210,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.privateKeyFileSecretId);
     }
     /**
-     * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
@@ -1064,7 +1221,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> privateKeyPassphrase;
 
     /**
-     * @return (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> privateKeyPassphrase() {
@@ -1099,6 +1256,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.producerProperties;
     }
     /**
+     * AI Provider type used by the AI Model Connection.
+     * 
+     */
+    @Export(name="providerType", refs={String.class}, tree="[0]")
+    private Output<String> providerType;
+
+    /**
+     * @return AI Provider type used by the AI Model Connection.
+     * 
+     */
+    public Output<String> providerType() {
+        return this.providerType;
+    }
+    /**
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      * 
      */
@@ -1127,35 +1298,45 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.redisClusterId;
     }
     /**
-     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
+     * (Updatable) The name of the region:
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL - OCI region, e.g.: &#39;us-ashburn-1&#39;. If not provided, backend will default to the default region.
+     * * AMAZON_KINESIS - AWS region, e.g.: &#39;us-west-1&#39;. If not provided, GoldenGate will default to &#39;us-west-1&#39;. Note: this property will become mandatory after July 30, 2026.
+     * * AMAZON_S3 - AWS region where the bucket is created, e.g.: &#39;us-west-2&#39;. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
-     * @return (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
+     * @return (Updatable) The name of the region:
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL - OCI region, e.g.: &#39;us-ashburn-1&#39;. If not provided, backend will default to the default region.
+     * * AMAZON_KINESIS - AWS region, e.g.: &#39;us-west-1&#39;. If not provided, GoldenGate will default to &#39;us-west-1&#39;. Note: this property will become mandatory after July 30, 2026.
+     * * AMAZON_S3 - AWS region where the bucket is created, e.g.: &#39;us-west-2&#39;. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
      * 
      */
     public Output<String> region() {
         return this.region;
     }
     /**
-     * (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * (Updatable) Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
+     * 
+     * Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     @Export(name="routingMethod", refs={String.class}, tree="[0]")
     private Output<String> routingMethod;
 
     /**
-     * @return (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * @return (Updatable) Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
+     * 
+     * Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<String> routingMethod() {
         return this.routingMethod;
     }
     /**
-     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
@@ -1166,7 +1347,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> sasToken;
 
     /**
-     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> sasToken() {
@@ -1187,7 +1368,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sasTokenSecretId);
     }
     /**
-     * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable)
+     * * AMAZON_KINESIS: Secret access key to access the Amazon Kinesis.
+     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
@@ -1198,21 +1382,30 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> secretAccessKey;
 
     /**
-     * @return (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34; Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * AMAZON_KINESIS: Secret access key to access the Amazon Kinesis.
+     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> secretAccessKey() {
         return Codegen.optional(this.secretAccessKey);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * (Updatable)
+     * * AMAZON_KINESIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     *   Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
      * 
      */
     @Export(name="secretAccessKeySecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretAccessKeySecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * @return (Updatable)
+     * * AMAZON_KINESIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     *   Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> secretAccessKeySecretId() {
@@ -1233,35 +1426,61 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.securityAttributes;
     }
     /**
-     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * (Updatable)
+     * * DB2: Security protocol for the DB2 database.
+     * * ELASTICSEARCH: Security protocol for Elasticsearch.
+     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * * KAFKA: Security Type for Kafka.
+     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+     * * MONGODB: Security Type for MongoDB.
+     * * MYSQL: Security Type for MySQL.
+     * * POSTGRESQL: Security protocol for PostgreSQL.
+     * * REDIS: Security protocol for Redis.
      * 
      */
     @Export(name="securityProtocol", refs={String.class}, tree="[0]")
     private Output<String> securityProtocol;
 
     /**
-     * @return (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * @return (Updatable)
+     * * DB2: Security protocol for the DB2 database.
+     * * ELASTICSEARCH: Security protocol for Elasticsearch.
+     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+     * * KAFKA: Security Type for Kafka.
+     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+     * * MONGODB: Security Type for MongoDB.
+     * * MYSQL: Security Type for MySQL.
+     * * POSTGRESQL: Security protocol for PostgreSQL.
+     * * REDIS: Security protocol for Redis.
      * 
      */
     public Output<String> securityProtocol() {
         return this.securityProtocol;
     }
     /**
-     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * (Updatable)
+     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
      * 
      */
     @Export(name="servers", refs={String.class}, tree="[0]")
     private Output<String> servers;
 
     /**
-     * @return (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * @return (Updatable)
+     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
      * 
      */
     public Output<String> servers() {
         return this.servers;
     }
     /**
-     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable)
+     * * GOOGLE_BIGQUERY: The base64 encoded content of the service account key file containing the credentials required to use Google BigQuery.
+     * * GOOGLE_CLOUD_STORAGE: The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * * GOOGLE_PUBSUB: The base64 encoded content of the service account key file containing the credentials required to use Google PubSub.
+     *   Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
@@ -1272,21 +1491,33 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> serviceAccountKeyFile;
 
     /**
-     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * GOOGLE_BIGQUERY: The base64 encoded content of the service account key file containing the credentials required to use Google BigQuery.
+     * * GOOGLE_CLOUD_STORAGE: The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * * GOOGLE_PUBSUB: The base64 encoded content of the service account key file containing the credentials required to use Google PubSub.
+     *   Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> serviceAccountKeyFile() {
         return Codegen.optional(this.serviceAccountKeyFile);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * (Updatable)
+     * * GOOGLE_BIGQUERY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google BigQuery.
+     * * GOOGLE_CLOUD_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+     * * GOOGLE_PUBSUB: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google PubSub.
+     *   Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     @Export(name="serviceAccountKeyFileSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> serviceAccountKeyFileSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * @return (Updatable)
+     * * GOOGLE_BIGQUERY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google BigQuery.
+     * * GOOGLE_CLOUD_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+     * * GOOGLE_PUBSUB: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google PubSub.
+     *   Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> serviceAccountKeyFileSecretId() {
@@ -1297,7 +1528,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
      * 
-     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      * 
      */
     @Export(name="sessionMode", refs={String.class}, tree="[0]")
@@ -1308,7 +1539,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * The default is DIRECT, except when databaseId is provided and the discovered database relies on the SCAN listener. In this case, the default is REDIRECT.
      * 
-     * Deprecated: Defaulting to the REDIRECT session mode will be removed after March 1, 2027.
+     * Deprecated: Defaulting to the REDIRECT session mode will be removed after April 21, 2027.
      * 
      */
     public Output<String> sessionMode() {
@@ -1329,14 +1560,18 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.shouldUseJndi;
     }
     /**
-     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * (Updatable)
+     * * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     @Export(name="shouldUseResourcePrincipal", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldUseResourcePrincipal;
 
     /**
-     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * @return (Updatable)
+     * * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, &#39;username&#39;/&#39;password&#39;/&#39;passwordSecretId&#39; fields must not be provided. Default: false
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     public Output<Boolean> shouldUseResourcePrincipal() {
@@ -1357,28 +1592,38 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.shouldValidateServerCertificate;
     }
     /**
-     * (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable)
+     * * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+     * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCa", refs={String.class}, tree="[0]")
     private Output<String> sslCa;
 
     /**
-     * @return (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return (Updatable)
+     * * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+     * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCa() {
         return this.sslCa;
     }
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable)
+     * * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCert", refs={String.class}, tree="[0]")
     private Output<String> sslCert;
 
     /**
-     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return (Updatable)
+     * * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCert() {
@@ -1387,7 +1632,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
-     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
@@ -1400,7 +1645,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
-     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> sslClientKeystash() {
@@ -1427,7 +1672,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
-     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
@@ -1440,7 +1685,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
-     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> sslClientKeystoredb() {
@@ -1465,21 +1710,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.sslClientKeystoredbSecretId);
     }
     /**
-     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable)
+     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     @Export(name="sslCrl", refs={String.class}, tree="[0]")
     private Output<String> sslCrl;
 
     /**
-     * @return (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return (Updatable)
+     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public Output<String> sslCrl() {
         return this.sslCrl;
     }
     /**
-     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable)
+     * * MYSQL: Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
@@ -1490,14 +1742,17 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> sslKey;
 
     /**
-     * @return (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable)
+     * * MYSQL: Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> sslKey() {
         return Codegen.optional(this.sslKey);
     }
     /**
-     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
@@ -1508,51 +1763,65 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> sslKeyPassword;
 
     /**
-     * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> sslKeyPassword() {
         return Codegen.optional(this.sslKeyPassword);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * (Updatable)
+     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
      * 
      */
     @Export(name="sslKeyPasswordSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKeyPasswordSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * @return (Updatable)
+     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> sslKeyPasswordSecretId() {
         return Codegen.optional(this.sslKeyPasswordSecretId);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * (Updatable)
+     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     @Export(name="sslKeySecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKeySecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * @return (Updatable)
+     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> sslKeySecretId() {
         return Codegen.optional(this.sslKeySecretId);
     }
     /**
-     * (Updatable) SSL modes for PostgreSQL.
+     * (Updatable)
+     * * MYSQL: SSL modes for MySQL.
+     * * POSTGRESQL: SSL modes for PostgreSQL.
      * 
      */
     @Export(name="sslMode", refs={String.class}, tree="[0]")
     private Output<String> sslMode;
 
     /**
-     * @return (Updatable) SSL modes for PostgreSQL.
+     * @return (Updatable)
+     * * MYSQL: SSL modes for MySQL.
+     * * POSTGRESQL: SSL modes for PostgreSQL.
      * 
      */
     public Output<String> sslMode() {
@@ -1671,14 +1940,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The Kafka (e.g. Confluent) Schema Registry technology type.
+     * The technology type.
      * 
      */
     @Export(name="technologyType", refs={String.class}, tree="[0]")
     private Output<String> technologyType;
 
     /**
-     * @return The Kafka (e.g. Confluent) Schema Registry technology type.
+     * @return The technology type.
      * 
      */
     public Output<String> technologyType() {
@@ -1755,7 +2024,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.tlsCaFile;
     }
     /**
-     * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
@@ -1766,14 +2035,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output<String> tlsCertificateKeyFile;
 
     /**
-     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<String> tlsCertificateKeyFile() {
         return this.tlsCertificateKeyFile;
     }
     /**
-     * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
@@ -1784,7 +2053,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output<String> tlsCertificateKeyFilePassword;
 
     /**
-     * @return (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<String> tlsCertificateKeyFilePassword() {
@@ -1827,7 +2096,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.triggerRefresh);
     }
     /**
-     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
@@ -1838,14 +2107,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> trustStore;
 
     /**
-     * @return (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> trustStore() {
         return Codegen.optional(this.trustStore);
     }
     /**
-     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
@@ -1856,21 +2125,31 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> trustStorePassword;
 
     /**
-     * @return (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> trustStorePassword() {
         return Codegen.optional(this.trustStorePassword);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * (Updatable)
+     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
      * 
      */
     @Export(name="trustStorePasswordSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustStorePasswordSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * @return (Updatable)
+     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> trustStorePasswordSecretId() {
@@ -1905,14 +2184,18 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.url;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * (Updatable)
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * @return (Updatable)
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
      * 
      */
     public Output<String> userId() {
@@ -1933,21 +2216,29 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.username;
     }
     /**
-     * (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+     * (Updatable) References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
+     * 
+     * Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
      * 
      */
     @Export(name="vaultId", refs={String.class}, tree="[0]")
     private Output<String> vaultId;
 
     /**
-     * @return (Updatable) Refers to the customer&#39;s vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+     * @return (Updatable) References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
+     * 
+     * Deprecated: This field is deprecated for GoldenGate connections. Sensitive attributes should be provided using the corresponding Secret OCID attributes of the connection (for example, `passwordSecretId`) instead of plain-text attributes encrypted with `vaultId` and `keyId`. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * 
+     * This field is applicable only when `doesUseSecretIds` is set to `false`. If `vaultId` is provided, `keyId` must also be provided.
      * 
      */
     public Output<String> vaultId() {
         return this.vaultId;
     }
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
@@ -1958,7 +2249,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> wallet;
 
     /**
-     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      */
     public Output<Optional<String>> wallet() {

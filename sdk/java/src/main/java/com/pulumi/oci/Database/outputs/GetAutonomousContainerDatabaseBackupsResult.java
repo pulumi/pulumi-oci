@@ -47,6 +47,10 @@ public final class GetAutonomousContainerDatabaseBackupsResult {
      * 
      */
     private @Nullable String infrastructureType;
+    /**
+     * @return Indicates whether the backup destination is cross-region or local.
+     * 
+     */
     private @Nullable Boolean isRemote;
     /**
      * @return The current state of the backup.
@@ -100,6 +104,10 @@ public final class GetAutonomousContainerDatabaseBackupsResult {
     public Optional<String> infrastructureType() {
         return Optional.ofNullable(this.infrastructureType);
     }
+    /**
+     * @return Indicates whether the backup destination is cross-region or local.
+     * 
+     */
     public Optional<Boolean> isRemote() {
         return Optional.ofNullable(this.isRemote);
     }

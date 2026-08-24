@@ -12,6 +12,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DbHomeDatabaseEncryptionKeyLocationDetails {
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     private @Nullable String awsEncryptionKeyId;
     /**
      * @return Provide the key OCID of a registered Azure key.
@@ -31,6 +35,10 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
     private String providerType;
 
     private DbHomeDatabaseEncryptionKeyLocationDetails() {}
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
     public Optional<String> awsEncryptionKeyId() {
         return Optional.ofNullable(this.awsEncryptionKeyId);
     }

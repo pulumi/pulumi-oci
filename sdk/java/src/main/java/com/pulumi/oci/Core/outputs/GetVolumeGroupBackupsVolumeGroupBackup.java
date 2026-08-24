@@ -5,7 +5,9 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Core.outputs.GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod;
 import com.pulumi.oci.Core.outputs.GetVolumeGroupBackupsVolumeGroupBackupSourceDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,6 +46,26 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
      */
     private String id;
     /**
+     * @return feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    private Boolean isIndefiniteRetentionEnabled;
+    /**
+     * @return Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    private Boolean isPreventDeletionEnabled;
+    /**
+     * @return feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    private Boolean isRetentionLockEnabled;
+    /**
+     * @return This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    private List<GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod> retentionPeriods;
+    /**
      * @return The aggregate size of the volume group backup, in GBs.
      * 
      */
@@ -79,6 +101,11 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
      * 
      */
     private String timeRequestReceived;
+    /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    private String timeRetentionExpiresAt;
     /**
      * @return The type of backup.
      * 
@@ -149,6 +176,34 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         return this.id;
     }
     /**
+     * @return feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     * 
+     */
+    public Boolean isIndefiniteRetentionEnabled() {
+        return this.isIndefiniteRetentionEnabled;
+    }
+    /**
+     * @return Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     * 
+     */
+    public Boolean isPreventDeletionEnabled() {
+        return this.isPreventDeletionEnabled;
+    }
+    /**
+     * @return feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     * 
+     */
+    public Boolean isRetentionLockEnabled() {
+        return this.isRetentionLockEnabled;
+    }
+    /**
+     * @return This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public List<GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod> retentionPeriods() {
+        return this.retentionPeriods;
+    }
+    /**
      * @return The aggregate size of the volume group backup, in GBs.
      * 
      */
@@ -201,6 +256,13 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         return this.timeRequestReceived;
     }
     /**
+     * @return The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     * 
+     */
+    public String timeRetentionExpiresAt() {
+        return this.timeRetentionExpiresAt;
+    }
+    /**
      * @return The type of backup.
      * 
      */
@@ -251,6 +313,10 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         private String expirationTime;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isIndefiniteRetentionEnabled;
+        private Boolean isPreventDeletionEnabled;
+        private Boolean isRetentionLockEnabled;
+        private List<GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod> retentionPeriods;
         private String sizeInGbs;
         private String sizeInMbs;
         private List<GetVolumeGroupBackupsVolumeGroupBackupSourceDetail> sourceDetails;
@@ -259,6 +325,7 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
         private String state;
         private String timeCreated;
         private String timeRequestReceived;
+        private String timeRetentionExpiresAt;
         private String type;
         private String uniqueSizeInGbs;
         private String uniqueSizeInMbs;
@@ -273,6 +340,10 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
     	      this.expirationTime = defaults.expirationTime;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isIndefiniteRetentionEnabled = defaults.isIndefiniteRetentionEnabled;
+    	      this.isPreventDeletionEnabled = defaults.isPreventDeletionEnabled;
+    	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
+    	      this.retentionPeriods = defaults.retentionPeriods;
     	      this.sizeInGbs = defaults.sizeInGbs;
     	      this.sizeInMbs = defaults.sizeInMbs;
     	      this.sourceDetails = defaults.sourceDetails;
@@ -281,6 +352,7 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeRequestReceived = defaults.timeRequestReceived;
+    	      this.timeRetentionExpiresAt = defaults.timeRetentionExpiresAt;
     	      this.type = defaults.type;
     	      this.uniqueSizeInGbs = defaults.uniqueSizeInGbs;
     	      this.uniqueSizeInMbs = defaults.uniqueSizeInMbs;
@@ -335,6 +407,41 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder isIndefiniteRetentionEnabled(Boolean isIndefiniteRetentionEnabled) {
+            if (isIndefiniteRetentionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "isIndefiniteRetentionEnabled");
+            }
+            this.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isPreventDeletionEnabled(Boolean isPreventDeletionEnabled) {
+            if (isPreventDeletionEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "isPreventDeletionEnabled");
+            }
+            this.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRetentionLockEnabled(Boolean isRetentionLockEnabled) {
+            if (isRetentionLockEnabled == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "isRetentionLockEnabled");
+            }
+            this.isRetentionLockEnabled = isRetentionLockEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder retentionPeriods(List<GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod> retentionPeriods) {
+            if (retentionPeriods == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "retentionPeriods");
+            }
+            this.retentionPeriods = retentionPeriods;
+            return this;
+        }
+        public Builder retentionPeriods(GetVolumeGroupBackupsVolumeGroupBackupRetentionPeriod... retentionPeriods) {
+            return retentionPeriods(List.of(retentionPeriods));
         }
         @CustomType.Setter
         public Builder sizeInGbs(String sizeInGbs) {
@@ -404,6 +511,14 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder timeRetentionExpiresAt(String timeRetentionExpiresAt) {
+            if (timeRetentionExpiresAt == null) {
+              throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "timeRetentionExpiresAt");
+            }
+            this.timeRetentionExpiresAt = timeRetentionExpiresAt;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetVolumeGroupBackupsVolumeGroupBackup", "type");
@@ -454,6 +569,10 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
             _resultValue.expirationTime = expirationTime;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isIndefiniteRetentionEnabled = isIndefiniteRetentionEnabled;
+            _resultValue.isPreventDeletionEnabled = isPreventDeletionEnabled;
+            _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
+            _resultValue.retentionPeriods = retentionPeriods;
             _resultValue.sizeInGbs = sizeInGbs;
             _resultValue.sizeInMbs = sizeInMbs;
             _resultValue.sourceDetails = sourceDetails;
@@ -462,6 +581,7 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeRequestReceived = timeRequestReceived;
+            _resultValue.timeRetentionExpiresAt = timeRetentionExpiresAt;
             _resultValue.type = type;
             _resultValue.uniqueSizeInGbs = uniqueSizeInGbs;
             _resultValue.uniqueSizeInMbs = uniqueSizeInMbs;

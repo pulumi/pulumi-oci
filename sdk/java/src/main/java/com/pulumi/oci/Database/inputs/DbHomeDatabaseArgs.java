@@ -360,6 +360,21 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    @Import(name="recoveryApplianceVpcPassword")
+    private @Nullable Output<String> recoveryApplianceVpcPassword;
+
+    /**
+     * @return The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    public Optional<Output<String>> recoveryApplianceVpcPassword() {
+        return Optional.ofNullable(this.recoveryApplianceVpcPassword);
+    }
+
+    /**
      * Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -505,6 +520,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.oneOffPatches = $.oneOffPatches;
         this.pdbName = $.pdbName;
         this.pluggableDatabases = $.pluggableDatabases;
+        this.recoveryApplianceVpcPassword = $.recoveryApplianceVpcPassword;
         this.sidPrefix = $.sidPrefix;
         this.state = $.state;
         this.storageSizeDetails = $.storageSizeDetails;
@@ -1022,6 +1038,27 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder pluggableDatabases(String... pluggableDatabases) {
             return pluggableDatabases(List.of(pluggableDatabases));
+        }
+
+        /**
+         * @param recoveryApplianceVpcPassword The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryApplianceVpcPassword(@Nullable Output<String> recoveryApplianceVpcPassword) {
+            $.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            return this;
+        }
+
+        /**
+         * @param recoveryApplianceVpcPassword The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder recoveryApplianceVpcPassword(String recoveryApplianceVpcPassword) {
+            return recoveryApplianceVpcPassword(Output.of(recoveryApplianceVpcPassword));
         }
 
         /**

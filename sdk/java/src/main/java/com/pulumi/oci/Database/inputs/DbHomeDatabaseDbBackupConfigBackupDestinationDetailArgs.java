@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
@@ -107,6 +108,21 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
     }
 
     /**
+     * Backup destination for the TDE wallet backups.
+     * 
+     */
+    @Import(name="tdeWalletBackupDestination")
+    private @Nullable Output<DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs> tdeWalletBackupDestination;
+
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    public Optional<Output<DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs>> tdeWalletBackupDestination() {
+        return Optional.ofNullable(this.tdeWalletBackupDestination);
+    }
+
+    /**
      * Type of the database backup destination. Supported values: `NFS`.
      * 
      */
@@ -144,6 +160,7 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
         this.isRemote = $.isRemote;
         this.isRetentionLockEnabled = $.isRetentionLockEnabled;
         this.remoteRegion = $.remoteRegion;
+        this.tdeWalletBackupDestination = $.tdeWalletBackupDestination;
         this.type = $.type;
         this.vpcPassword = $.vpcPassword;
         this.vpcUser = $.vpcUser;
@@ -291,6 +308,27 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs exten
          */
         public Builder remoteRegion(String remoteRegion) {
             return remoteRegion(Output.of(remoteRegion));
+        }
+
+        /**
+         * @param tdeWalletBackupDestination Backup destination for the TDE wallet backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeWalletBackupDestination(@Nullable Output<DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs> tdeWalletBackupDestination) {
+            $.tdeWalletBackupDestination = tdeWalletBackupDestination;
+            return this;
+        }
+
+        /**
+         * @param tdeWalletBackupDestination Backup destination for the TDE wallet backups.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeWalletBackupDestination(DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationArgs tdeWalletBackupDestination) {
+            return tdeWalletBackupDestination(Output.of(tdeWalletBackupDestination));
         }
 
         /**

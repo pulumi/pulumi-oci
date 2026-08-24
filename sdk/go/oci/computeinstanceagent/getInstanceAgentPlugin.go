@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
 //
-// The API to get information for a plugin.
+// Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
 //
 // ## Example Usage
 //
@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := computeinstanceagent.GetInstanceAgentPlugin(ctx, &computeinstanceagent.GetInstanceAgentPluginArgs{
-//				InstanceagentId: testInstanceagent.Id,
+//				CompartmentId:   compartmentId,
+//				InstanceagentId: instanceagent.Id,
 //				PluginName:      instanceAgentPluginPluginName,
 //			}, nil)
 //			if err != nil {
@@ -53,8 +54,9 @@ func GetInstanceAgentPlugin(ctx *pulumi.Context, args *GetInstanceAgentPluginArg
 
 // A collection of arguments for invoking getInstanceAgentPlugin.
 type GetInstanceAgentPluginArgs struct {
+	// The ID of the compartment in which the instance resides
 	CompartmentId string `pulumi:"compartmentId"`
-	// The OCID of the instance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceagentId string `pulumi:"instanceagentId"`
 	// The name of the plugin.
 	PluginName string `pulumi:"pluginName"`
@@ -66,14 +68,14 @@ type GetInstanceAgentPluginResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id              string `pulumi:"id"`
 	InstanceagentId string `pulumi:"instanceagentId"`
-	// The optional message from the agent plugin
+	// An optional message from the plugin.
 	Message string `pulumi:"message"`
-	// The plugin name
+	// The plugin name.
 	Name       string `pulumi:"name"`
 	PluginName string `pulumi:"pluginName"`
-	// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+	// The plugin status.
 	Status string `pulumi:"status"`
-	// The last update time of the plugin in UTC
+	// The last updated time of the plugin, in UTC.
 	TimeLastUpdatedUtc string `pulumi:"timeLastUpdatedUtc"`
 }
 
@@ -88,8 +90,9 @@ func GetInstanceAgentPluginOutput(ctx *pulumi.Context, args GetInstanceAgentPlug
 
 // A collection of arguments for invoking getInstanceAgentPlugin.
 type GetInstanceAgentPluginOutputArgs struct {
+	// The ID of the compartment in which the instance resides
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The OCID of the instance.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
 	InstanceagentId pulumi.StringInput `pulumi:"instanceagentId"`
 	// The name of the plugin.
 	PluginName pulumi.StringInput `pulumi:"pluginName"`
@@ -127,12 +130,12 @@ func (o GetInstanceAgentPluginResultOutput) InstanceagentId() pulumi.StringOutpu
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.InstanceagentId }).(pulumi.StringOutput)
 }
 
-// The optional message from the agent plugin
+// An optional message from the plugin.
 func (o GetInstanceAgentPluginResultOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAgentPluginResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -141,12 +144,12 @@ func (o GetInstanceAgentPluginResultOutput) PluginName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.PluginName }).(pulumi.StringOutput)
 }
 
-// The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+// The plugin status.
 func (o GetInstanceAgentPluginResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// The last update time of the plugin in UTC
+// The last updated time of the plugin, in UTC.
 func (o GetInstanceAgentPluginResultOutput) TimeLastUpdatedUtc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginResult) string { return v.TimeLastUpdatedUtc }).(pulumi.StringOutput)
 }

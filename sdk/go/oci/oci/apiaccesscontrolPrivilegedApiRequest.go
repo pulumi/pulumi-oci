@@ -34,6 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := oci.NewApiaccesscontrolPrivilegedApiRequest(ctx, "test_privileged_api_request", &oci.ApiaccesscontrolPrivilegedApiRequestArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				PrivilegedOperationLists: oci.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArray{
 //					&oci.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs{
 //						ApiName:        pulumi.Any(testApi.Name),
@@ -42,7 +43,6 @@ import (
 //				},
 //				ReasonSummary: pulumi.Any(privilegedApiRequestReasonSummary),
 //				ResourceId:    pulumi.Any(testResource.Id),
-//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -81,7 +81,7 @@ type ApiaccesscontrolPrivilegedApiRequest struct {
 	// The comment entered by the operator while closing the request.
 	ClosureComment pulumi.StringOutput `pulumi:"closureComment"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Name of the privilegedApi control. The name must be unique.
@@ -480,8 +480,8 @@ func (o ApiaccesscontrolPrivilegedApiRequestOutput) ClosureComment() pulumi.Stri
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o ApiaccesscontrolPrivilegedApiRequestOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiRequest) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o ApiaccesscontrolPrivilegedApiRequestOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ApiaccesscontrolPrivilegedApiRequest) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

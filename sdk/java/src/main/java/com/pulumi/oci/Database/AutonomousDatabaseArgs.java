@@ -166,6 +166,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * (Updatable) Retention period, in days, for long-term backups
      * 
      */
@@ -710,6 +725,13 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.isDevTier);
     }
 
+    @Import(name="isDisableAdUpdateSchedule")
+    private @Nullable Output<Boolean> isDisableAdUpdateSchedule;
+
+    public Optional<Output<Boolean>> isDisableAdUpdateSchedule() {
+        return Optional.ofNullable(this.isDisableAdUpdateSchedule);
+    }
+
     @Import(name="isDisableDbVersionUpgradeSchedule")
     private @Nullable Output<Boolean> isDisableDbVersionUpgradeSchedule;
 
@@ -830,6 +852,13 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<Boolean>> isReplicateAutomaticBackups() {
         return Optional.ofNullable(this.isReplicateAutomaticBackups);
+    }
+
+    @Import(name="isScheduleAdUpdateToEarliest")
+    private @Nullable Output<Boolean> isScheduleAdUpdateToEarliest;
+
+    public Optional<Output<Boolean>> isScheduleAdUpdateToEarliest() {
+        return Optional.ofNullable(this.isScheduleAdUpdateToEarliest);
     }
 
     @Import(name="isScheduleDbVersionUpgradeToEarliest")
@@ -1443,6 +1472,21 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    @Import(name="timeScheduledAdUpdate")
+    private @Nullable Output<String> timeScheduledAdUpdate;
+
+    /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    public Optional<Output<String>> timeScheduledAdUpdate() {
+        return Optional.ofNullable(this.timeScheduledAdUpdate);
+    }
+
+    /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      * 
      */
@@ -1571,6 +1615,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.autonomousDatabaseId = $.autonomousDatabaseId;
         this.autonomousDatabaseMaintenanceWindow = $.autonomousDatabaseMaintenanceWindow;
         this.autonomousMaintenanceScheduleType = $.autonomousMaintenanceScheduleType;
+        this.availabilityDomain = $.availabilityDomain;
         this.backupRetentionPeriodInDays = $.backupRetentionPeriodInDays;
         this.byolComputeCountLimit = $.byolComputeCountLimit;
         this.characterSet = $.characterSet;
@@ -1604,6 +1649,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.isDataGuardEnabled = $.isDataGuardEnabled;
         this.isDedicated = $.isDedicated;
         this.isDevTier = $.isDevTier;
+        this.isDisableAdUpdateSchedule = $.isDisableAdUpdateSchedule;
         this.isDisableDbVersionUpgradeSchedule = $.isDisableDbVersionUpgradeSchedule;
         this.isDisconnectPeer = $.isDisconnectPeer;
         this.isFreeTier = $.isFreeTier;
@@ -1612,6 +1658,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.isPreviewVersionWithServiceTermsAccepted = $.isPreviewVersionWithServiceTermsAccepted;
         this.isRefreshableClone = $.isRefreshableClone;
         this.isReplicateAutomaticBackups = $.isReplicateAutomaticBackups;
+        this.isScheduleAdUpdateToEarliest = $.isScheduleAdUpdateToEarliest;
         this.isScheduleDbVersionUpgradeToEarliest = $.isScheduleDbVersionUpgradeToEarliest;
         this.isShrinkOnly = $.isShrinkOnly;
         this.keyVersionId = $.keyVersionId;
@@ -1650,6 +1697,7 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
         this.switchoverToRemotePeerId = $.switchoverToRemotePeerId;
         this.timeMaintenancePauseUntil = $.timeMaintenancePauseUntil;
         this.timeOfAutoRefreshStart = $.timeOfAutoRefreshStart;
+        this.timeScheduledAdUpdate = $.timeScheduledAdUpdate;
         this.timeScheduledDbVersionUpgrade = $.timeScheduledDbVersionUpgrade;
         this.timestamp = $.timestamp;
         this.transportableTablespace = $.transportableTablespace;
@@ -1864,6 +1912,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder autonomousMaintenanceScheduleType(String autonomousMaintenanceScheduleType) {
             return autonomousMaintenanceScheduleType(Output.of(autonomousMaintenanceScheduleType));
+        }
+
+        /**
+         * @param availabilityDomain (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**
@@ -2637,6 +2706,15 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
             return isDevTier(Output.of(isDevTier));
         }
 
+        public Builder isDisableAdUpdateSchedule(@Nullable Output<Boolean> isDisableAdUpdateSchedule) {
+            $.isDisableAdUpdateSchedule = isDisableAdUpdateSchedule;
+            return this;
+        }
+
+        public Builder isDisableAdUpdateSchedule(Boolean isDisableAdUpdateSchedule) {
+            return isDisableAdUpdateSchedule(Output.of(isDisableAdUpdateSchedule));
+        }
+
         public Builder isDisableDbVersionUpgradeSchedule(@Nullable Output<Boolean> isDisableDbVersionUpgradeSchedule) {
             $.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             return this;
@@ -2797,6 +2875,15 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
             return isReplicateAutomaticBackups(Output.of(isReplicateAutomaticBackups));
+        }
+
+        public Builder isScheduleAdUpdateToEarliest(@Nullable Output<Boolean> isScheduleAdUpdateToEarliest) {
+            $.isScheduleAdUpdateToEarliest = isScheduleAdUpdateToEarliest;
+            return this;
+        }
+
+        public Builder isScheduleAdUpdateToEarliest(Boolean isScheduleAdUpdateToEarliest) {
+            return isScheduleAdUpdateToEarliest(Output.of(isScheduleAdUpdateToEarliest));
         }
 
         public Builder isScheduleDbVersionUpgradeToEarliest(@Nullable Output<Boolean> isScheduleDbVersionUpgradeToEarliest) {
@@ -3664,6 +3751,27 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          */
         public Builder timeOfAutoRefreshStart(String timeOfAutoRefreshStart) {
             return timeOfAutoRefreshStart(Output.of(timeOfAutoRefreshStart));
+        }
+
+        /**
+         * @param timeScheduledAdUpdate The date and time to which the Autonomous Database availability domain update is scheduled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduledAdUpdate(@Nullable Output<String> timeScheduledAdUpdate) {
+            $.timeScheduledAdUpdate = timeScheduledAdUpdate;
+            return this;
+        }
+
+        /**
+         * @param timeScheduledAdUpdate The date and time to which the Autonomous Database availability domain update is scheduled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeScheduledAdUpdate(String timeScheduledAdUpdate) {
+            return timeScheduledAdUpdate(Output.of(timeScheduledAdUpdate));
         }
 
         /**

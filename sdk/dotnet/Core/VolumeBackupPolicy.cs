@@ -53,9 +53,16 @@ namespace Pulumi.Oci.Core
     ///                 DayOfMonth = volumeBackupPolicySchedulesDayOfMonth,
     ///                 DayOfWeek = volumeBackupPolicySchedulesDayOfWeek,
     ///                 HourOfDay = volumeBackupPolicySchedulesHourOfDay,
+    ///                 IsPreventDeletionEnabled = volumeBackupPolicySchedulesIsPreventDeletionEnabled,
+    ///                 IsRetentionLockEnabled = volumeBackupPolicySchedulesIsRetentionLockEnabled,
     ///                 Month = volumeBackupPolicySchedulesMonth,
     ///                 OffsetSeconds = volumeBackupPolicySchedulesOffsetSeconds,
     ///                 OffsetType = volumeBackupPolicySchedulesOffsetType,
+    ///                 RetentionPeriod = new Oci.Core.Inputs.VolumeBackupPolicyScheduleRetentionPeriodArgs
+    ///                 {
+    ///                     RetentionTimeAmount = volumeBackupPolicySchedulesRetentionPeriodRetentionTimeAmount,
+    ///                     RetentionTimeUnit = volumeBackupPolicySchedulesRetentionPeriodRetentionTimeUnit,
+    ///                 },
     ///                 TimeZone = volumeBackupPolicySchedulesTimeZone,
     ///             },
     ///         },

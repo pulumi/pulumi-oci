@@ -28,7 +28,7 @@ class GetInstanceAgentPluginsFilterResult(dict):
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The plugin name
+        :param _builtins.str name: The plugin name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -39,7 +39,7 @@ class GetInstanceAgentPluginsFilterResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -62,10 +62,10 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
                  status: _builtins.str,
                  time_last_updated_utc: _builtins.str):
         """
-        :param _builtins.str message: The optional message from the agent plugin
-        :param _builtins.str name: The plugin name
-        :param _builtins.str status: The plugin status
-        :param _builtins.str time_last_updated_utc: The last update time of the plugin in UTC
+        :param _builtins.str message: An optional message from the plugin.
+        :param _builtins.str name: The plugin name.
+        :param _builtins.str status: The plugin status.
+        :param _builtins.str time_last_updated_utc: The last updated time of the plugin, in UTC.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "name", name)
@@ -76,7 +76,7 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     @pulumi.getter
     def message(self) -> _builtins.str:
         """
-        The optional message from the agent plugin
+        An optional message from the plugin.
         """
         return pulumi.get(self, "message")
 
@@ -84,7 +84,7 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -92,7 +92,7 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     @pulumi.getter
     def status(self) -> _builtins.str:
         """
-        The plugin status
+        The plugin status.
         """
         return pulumi.get(self, "status")
 
@@ -100,7 +100,7 @@ class GetInstanceAgentPluginsInstanceAgentPluginResult(dict):
     @pulumi.getter(name="timeLastUpdatedUtc")
     def time_last_updated_utc(self) -> _builtins.str:
         """
-        The last update time of the plugin in UTC
+        The last updated time of the plugin, in UTC.
         """
         return pulumi.get(self, "time_last_updated_utc")
 
@@ -113,10 +113,10 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
                  name: _builtins.str,
                  summary: _builtins.str):
         """
-        :param _builtins.bool is_enabled_by_default: Is the plugin enabled or disabled by default
-        :param _builtins.bool is_supported: Is the plugin supported or not
-        :param _builtins.str name: The plugin name
-        :param _builtins.str summary: A brief description of the plugin functionality
+        :param _builtins.bool is_enabled_by_default: Whether the plugin is enabled or disabled by default.
+        :param _builtins.bool is_supported: Whether the plugin is supported.
+        :param _builtins.str name: The plugin name.
+        :param _builtins.str summary: A brief description of the plugin's functionality.
         """
         pulumi.set(__self__, "is_enabled_by_default", is_enabled_by_default)
         pulumi.set(__self__, "is_supported", is_supported)
@@ -127,7 +127,7 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
     @pulumi.getter(name="isEnabledByDefault")
     def is_enabled_by_default(self) -> _builtins.bool:
         """
-        Is the plugin enabled or disabled by default
+        Whether the plugin is enabled or disabled by default.
         """
         return pulumi.get(self, "is_enabled_by_default")
 
@@ -135,7 +135,7 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
     @pulumi.getter(name="isSupported")
     def is_supported(self) -> _builtins.bool:
         """
-        Is the plugin supported or not
+        Whether the plugin is supported.
         """
         return pulumi.get(self, "is_supported")
 
@@ -143,7 +143,7 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -151,7 +151,7 @@ class GetInstanceAvailablePluginAvailablePluginResult(dict):
     @pulumi.getter
     def summary(self) -> _builtins.str:
         """
-        A brief description of the plugin functionality
+        A brief description of the plugin's functionality.
         """
         return pulumi.get(self, "summary")
 
@@ -163,7 +163,7 @@ class GetInstanceAvailablePluginFilterResult(dict):
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The plugin name
+        :param _builtins.str name: The plugin name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -174,7 +174,7 @@ class GetInstanceAvailablePluginFilterResult(dict):
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 

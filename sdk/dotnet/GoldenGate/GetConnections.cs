@@ -34,6 +34,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         AssignableDeploymentType = connectionAssignableDeploymentType,
         ///         AssignedDeploymentId = testDeployment.Id,
         ///         ConnectionTypes = connectionConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionConnectionTypeNotEqualTo,
         ///         DisplayName = connectionDisplayName,
         ///         State = connectionState,
         ///         TechnologyTypes = connectionTechnologyType,
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         AssignableDeploymentType = connectionAssignableDeploymentType,
         ///         AssignedDeploymentId = testDeployment.Id,
         ///         ConnectionTypes = connectionConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionConnectionTypeNotEqualTo,
         ///         DisplayName = connectionDisplayName,
         ///         State = connectionState,
         ///         TechnologyTypes = connectionTechnologyType,
@@ -102,6 +104,7 @@ namespace Pulumi.Oci.GoldenGate
         ///         AssignableDeploymentType = connectionAssignableDeploymentType,
         ///         AssignedDeploymentId = testDeployment.Id,
         ///         ConnectionTypes = connectionConnectionType,
+        ///         ConnectionTypeNotEqualTos = connectionConnectionTypeNotEqualTo,
         ///         DisplayName = connectionDisplayName,
         ///         State = connectionState,
         ///         TechnologyTypes = connectionTechnologyType,
@@ -140,6 +143,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        [Input("connectionTypeNotEqualTos")]
+        private List<string>? _connectionTypeNotEqualTos;
+
+        /// <summary>
+        /// The array of connection types to exclude.
+        /// </summary>
+        public List<string> ConnectionTypeNotEqualTos
+        {
+            get => _connectionTypeNotEqualTos ?? (_connectionTypeNotEqualTos = new List<string>());
+            set => _connectionTypeNotEqualTos = value;
+        }
 
         [Input("connectionTypes")]
         private List<string>? _connectionTypes;
@@ -217,6 +232,18 @@ namespace Pulumi.Oci.GoldenGate
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("connectionTypeNotEqualTos")]
+        private InputList<string>? _connectionTypeNotEqualTos;
+
+        /// <summary>
+        /// The array of connection types to exclude.
+        /// </summary>
+        public InputList<string> ConnectionTypeNotEqualTos
+        {
+            get => _connectionTypeNotEqualTos ?? (_connectionTypeNotEqualTos = new InputList<string>());
+            set => _connectionTypeNotEqualTos = value;
+        }
+
         [Input("connectionTypes")]
         private InputList<string>? _connectionTypes;
 
@@ -282,6 +309,7 @@ namespace Pulumi.Oci.GoldenGate
         /// The list of connection_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionResult> ConnectionCollections;
+        public readonly ImmutableArray<string> ConnectionTypeNotEqualTos;
         /// <summary>
         /// The connection type.
         /// </summary>
@@ -313,6 +341,8 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionResult> connectionCollections,
 
+            ImmutableArray<string> connectionTypeNotEqualTos,
+
             ImmutableArray<string> connectionTypes,
 
             string? displayName,
@@ -330,6 +360,7 @@ namespace Pulumi.Oci.GoldenGate
             AssignedDeploymentId = assignedDeploymentId;
             CompartmentId = compartmentId;
             ConnectionCollections = connectionCollections;
+            ConnectionTypeNotEqualTos = connectionTypeNotEqualTos;
             ConnectionTypes = connectionTypes;
             DisplayName = displayName;
             Filters = filters;

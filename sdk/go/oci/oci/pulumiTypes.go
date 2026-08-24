@@ -216,6 +216,112 @@ func (o ApiPlatformApiPlatformInstanceUriArrayOutput) Index(i pulumi.IntInput) A
 	}).(ApiPlatformApiPlatformInstanceUriOutput)
 }
 
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList struct {
+	// (Updatable) id of the group.
+	GroupIds []string `pulumi:"groupIds"`
+	// (Updatable) level of the group.
+	GroupLevel int `pulumi:"groupLevel"`
+}
+
+// ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput is an input type that accepts ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs and ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput values.
+// You can construct a concrete instance of `ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput` via:
+//
+//	ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{...}
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput interface {
+	pulumi.Input
+
+	ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput
+	ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput
+}
+
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs struct {
+	// (Updatable) id of the group.
+	GroupIds pulumi.StringArrayInput `pulumi:"groupIds"`
+	// (Updatable) level of the group.
+	GroupLevel pulumi.IntInput `pulumi:"groupLevel"`
+}
+
+func (ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return i.ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(context.Background())
+}
+
+func (i ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(ctx context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput)
+}
+
+// ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput is an input type that accepts ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray and ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput values.
+// You can construct a concrete instance of `ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput` via:
+//
+//	ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray{ ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{...} }
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput interface {
+	pulumi.Input
+
+	ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput
+	ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput
+}
+
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray []ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput
+
+func (ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return i.ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(context.Background())
+}
+
+func (i ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(ctx context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput)
+}
+
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput struct{ *pulumi.OutputState }
+
+func (ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return o
+}
+
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(ctx context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return o
+}
+
+// (Updatable) id of the group.
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) GroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList) []string { return v.GroupIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) level of the group.
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) GroupLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList) int { return v.GroupLevel }).(pulumi.IntOutput)
+}
+
+type ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput struct{ *pulumi.OutputState }
+
+func (ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ToApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(ctx context.Context) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) Index(i pulumi.IntInput) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+		return vs[0].([]ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)[vs[1].(int)]
+	}).(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput)
+}
+
 type ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList struct {
 	// (Updatable) name of the api which needs to be protected.
 	ApiName string `pulumi:"apiName"`
@@ -336,6 +442,8 @@ type ApiaccesscontrolPrivilegedApiRequestApproverDetail struct {
 	ApprovalAction *string `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment *string `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel *int `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId *string `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -360,6 +468,8 @@ type ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs struct {
 	ApprovalAction pulumi.StringPtrInput `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment pulumi.StringPtrInput `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel pulumi.IntPtrInput `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId pulumi.StringPtrInput `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -427,6 +537,11 @@ func (o ApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApprovalAction
 // Comment specified by the approver of the request.
 func (o ApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApprovalComment() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ApiaccesscontrolPrivilegedApiRequestApproverDetail) *string { return v.ApprovalComment }).(pulumi.StringPtrOutput)
+}
+
+// The group level at which the approver approved.
+func (o ApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApproverGroupLevel() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ApiaccesscontrolPrivilegedApiRequestApproverDetail) *int { return v.ApproverGroupLevel }).(pulumi.IntPtrOutput)
 }
 
 // The userId of the approver.
@@ -22783,6 +22898,8 @@ func (o GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollec
 type GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem struct {
 	// List of apiMetadataSummary.
 	ApiMetadatas []GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata `pulumi:"apiMetadatas"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The entity Type to which the Api belongs to.
@@ -22807,6 +22924,8 @@ type GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectio
 type GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemArgs struct {
 	// List of apiMetadataSummary.
 	ApiMetadatas GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataArrayInput `pulumi:"apiMetadatas"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The entity Type to which the Api belongs to.
@@ -22873,6 +22992,13 @@ func (o GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollec
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem) []GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadata {
 		return v.ApiMetadatas
 	}).(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -23359,13 +23485,15 @@ func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionArrayOutput) Index(i
 type GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem struct {
 	// The name of the api to execute the api request.
 	ApiName string `pulumi:"apiName"`
+	// List of the fields that is use while calling post or put for the data.
+	Attributes []string `pulumi:"attributes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// ResourceType to which the apiMetadata belongs to.
 	EntityType string `pulumi:"entityType"`
-	// List of the fields that is use while calling post or put for the data.
+	// deprecated; Use attributes field instead.
 	Fields []string `pulumi:"fields"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -23403,13 +23531,15 @@ type GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemInput interface {
 type GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemArgs struct {
 	// The name of the api to execute the api request.
 	ApiName pulumi.StringInput `pulumi:"apiName"`
+	// List of the fields that is use while calling post or put for the data.
+	Attributes pulumi.StringArrayInput `pulumi:"attributes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// ResourceType to which the apiMetadata belongs to.
 	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// List of the fields that is use while calling post or put for the data.
+	// deprecated; Use attributes field instead.
 	Fields pulumi.StringArrayInput `pulumi:"fields"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
@@ -23489,6 +23619,11 @@ func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemOutput) ApiName(
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem) string { return v.ApiName }).(pulumi.StringOutput)
 }
 
+// List of the fields that is use while calling post or put for the data.
+func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemOutput) Attributes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem) []string { return v.Attributes }).(pulumi.StringArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem) map[string]string {
@@ -23506,7 +23641,7 @@ func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemOutput) EntityTy
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem) string { return v.EntityType }).(pulumi.StringOutput)
 }
 
-// List of the fields that is use while calling post or put for the data.
+// deprecated; Use attributes field instead.
 func (o GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemOutput) Fields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolApiMetadatasApiMetadataCollectionItem) []string { return v.Fields }).(pulumi.StringArrayOutput)
 }
@@ -23689,6 +23824,112 @@ func (o GetApiaccesscontrolApiMetadatasFilterArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolApiMetadatasFilter {
 		return vs[0].([]GetApiaccesscontrolApiMetadatasFilter)[vs[1].(int)]
 	}).(GetApiaccesscontrolApiMetadatasFilterOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList struct {
+	// id of the group.
+	GroupIds []string `pulumi:"groupIds"`
+	// level of the group.
+	GroupLevel int `pulumi:"groupLevel"`
+}
+
+// GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput is an input type that accepts GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs and GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput values.
+// You can construct a concrete instance of `GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput` via:
+//
+//	GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{...}
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput interface {
+	pulumi.Input
+
+	ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput
+	ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput
+}
+
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs struct {
+	// id of the group.
+	GroupIds pulumi.StringArrayInput `pulumi:"groupIds"`
+	// level of the group.
+	GroupLevel pulumi.IntInput `pulumi:"groupLevel"`
+}
+
+func (GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return i.ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(context.Background())
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput)
+}
+
+// GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput is an input type that accepts GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray and GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput values.
+// You can construct a concrete instance of `GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput` via:
+//
+//	GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray{ GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{...} }
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput interface {
+	pulumi.Input
+
+	ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput
+	ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput
+}
+
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray []GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput
+
+func (GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return i.ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput struct{ *pulumi.OutputState }
+
+func (GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return o
+}
+
+// id of the group.
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) GroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList) []string { return v.GroupIds }).(pulumi.StringArrayOutput)
+}
+
+// level of the group.
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput) GroupLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList) int { return v.GroupLevel }).(pulumi.IntOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) ToGetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput) Index(i pulumi.IntInput) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+		return vs[0].([]GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList)[vs[1].(int)]
+	}).(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput)
 }
 
 type GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationList struct {
@@ -24013,6 +24254,8 @@ func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionAr
 type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem struct {
 	// List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
 	ApproverGroupIdLists []string `pulumi:"approverGroupIdLists"`
+	// List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists []GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList `pulumi:"approverGroupLevelLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -24043,7 +24286,7 @@ type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem 
 	StateDetails string `pulumi:"stateDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted string `pulumi:"timeDeleted"`
@@ -24065,6 +24308,8 @@ type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemI
 type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemArgs struct {
 	// List of IAM user group ids who can approve an privilegedApi request associated with a target resource under the governance of this operator control.
 	ApproverGroupIdLists pulumi.StringArrayInput `pulumi:"approverGroupIdLists"`
+	// List of Group containing the levels at which the users belonging to the group can authorize.
+	ApproverGroupLevelLists GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayInput `pulumi:"approverGroupLevelLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -24095,7 +24340,7 @@ type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemA
 	StateDetails pulumi.StringInput `pulumi:"stateDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the PrivilegedApiControl was marked for delete, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeDeleted pulumi.StringInput `pulumi:"timeDeleted"`
@@ -24159,6 +24404,13 @@ func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionIt
 	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem) []string {
 		return v.ApproverGroupIdLists
 	}).(pulumi.StringArrayOutput)
+}
+
+// List of Group containing the levels at which the users belonging to the group can authorize.
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemOutput) ApproverGroupLevelLists() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem) []GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList {
+		return v.ApproverGroupLevelLists
+	}).(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -24264,7 +24516,7 @@ func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionIt
 	}).(pulumi.StringMapOutput)
 }
 
-// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+// The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem) string {
 		return v.TimeCreated
@@ -24303,6 +24555,116 @@ func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionIt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem {
 		return vs[0].([]GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItem)[vs[1].(int)]
 	}).(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList struct {
+	// id of the group.
+	GroupIds []string `pulumi:"groupIds"`
+	// level of the group.
+	GroupLevel int `pulumi:"groupLevel"`
+}
+
+// GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListInput is an input type that accepts GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs and GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput values.
+// You can construct a concrete instance of `GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListInput` via:
+//
+//	GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs{...}
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListInput interface {
+	pulumi.Input
+
+	ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput
+	ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutputWithContext(context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput
+}
+
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs struct {
+	// id of the group.
+	GroupIds pulumi.StringArrayInput `pulumi:"groupIds"`
+	// level of the group.
+	GroupLevel pulumi.IntInput `pulumi:"groupLevel"`
+}
+
+func (GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput {
+	return i.ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutputWithContext(context.Background())
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput)
+}
+
+// GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayInput is an input type that accepts GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray and GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput values.
+// You can construct a concrete instance of `GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayInput` via:
+//
+//	GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray{ GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs{...} }
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayInput interface {
+	pulumi.Input
+
+	ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput
+	ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutputWithContext(context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput
+}
+
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray []GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListInput
+
+func (GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList)(nil)).Elem()
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput {
+	return i.ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput struct{ *pulumi.OutputState }
+
+func (GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput {
+	return o
+}
+
+// id of the group.
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput) GroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList) []string {
+		return v.GroupIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// level of the group.
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput) GroupLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList) int {
+		return v.GroupLevel
+	}).(pulumi.IntOutput)
+}
+
+type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList)(nil)).Elem()
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput() GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput) ToGetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutputWithContext(ctx context.Context) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput {
+	return o
+}
+
+func (o GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput) Index(i pulumi.IntInput) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList {
+		return vs[0].([]GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelList)[vs[1].(int)]
+	}).(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput)
 }
 
 type GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationList struct {
@@ -24431,6 +24793,8 @@ type GetApiaccesscontrolPrivilegedApiRequestApproverDetail struct {
 	ApprovalAction string `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment string `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel int `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId string `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -24455,6 +24819,8 @@ type GetApiaccesscontrolPrivilegedApiRequestApproverDetailArgs struct {
 	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel pulumi.IntInput `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId pulumi.StringInput `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -24522,6 +24888,11 @@ func (o GetApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApprovalAct
 // Comment specified by the approver of the request.
 func (o GetApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApprovalComment() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiRequestApproverDetail) string { return v.ApprovalComment }).(pulumi.StringOutput)
+}
+
+// The group level at which the approver approved.
+func (o GetApiaccesscontrolPrivilegedApiRequestApproverDetailOutput) ApproverGroupLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiRequestApproverDetail) int { return v.ApproverGroupLevel }).(pulumi.IntOutput)
 }
 
 // The userId of the approver.
@@ -25301,6 +25672,8 @@ type GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemA
 	ApprovalAction string `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment string `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel int `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId string `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -25325,6 +25698,8 @@ type GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemA
 	ApprovalAction pulumi.StringInput `pulumi:"approvalAction"`
 	// Comment specified by the approver of the request.
 	ApprovalComment pulumi.StringInput `pulumi:"approvalComment"`
+	// The group level at which the approver approved.
+	ApproverGroupLevel pulumi.IntInput `pulumi:"approverGroupLevel"`
 	// The userId of the approver.
 	ApproverId pulumi.StringInput `pulumi:"approverId"`
 	// Time for when the privilegedApi request should start that is authorized by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.Example: '2020-05-22T21:10:29.600Z'
@@ -25396,6 +25771,13 @@ func (o GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionIt
 	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetail) string {
 		return v.ApprovalComment
 	}).(pulumi.StringOutput)
+}
+
+// The group level at which the approver approved.
+func (o GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailOutput) ApproverGroupLevel() pulumi.IntOutput {
+	return o.ApplyT(func(v GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetail) int {
+		return v.ApproverGroupLevel
+	}).(pulumi.IntOutput)
 }
 
 // The userId of the approver.
@@ -46202,6 +46584,411 @@ func (o GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItem {
 		return vs[0].([]GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItem)[vs[1].(int)]
 	}).(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput)
+}
+
+type GetDdfsInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDdfsInstancesFilterInput is an input type that accepts GetDdfsInstancesFilterArgs and GetDdfsInstancesFilterOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesFilterInput` via:
+//
+//	GetDdfsInstancesFilterArgs{...}
+type GetDdfsInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesFilterOutput() GetDdfsInstancesFilterOutput
+	ToGetDdfsInstancesFilterOutputWithContext(context.Context) GetDdfsInstancesFilterOutput
+}
+
+type GetDdfsInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDdfsInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesFilterArgs) ToGetDdfsInstancesFilterOutput() GetDdfsInstancesFilterOutput {
+	return i.ToGetDdfsInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesFilterArgs) ToGetDdfsInstancesFilterOutputWithContext(ctx context.Context) GetDdfsInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesFilterOutput)
+}
+
+// GetDdfsInstancesFilterArrayInput is an input type that accepts GetDdfsInstancesFilterArray and GetDdfsInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesFilterArrayInput` via:
+//
+//	GetDdfsInstancesFilterArray{ GetDdfsInstancesFilterArgs{...} }
+type GetDdfsInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesFilterArrayOutput() GetDdfsInstancesFilterArrayOutput
+	ToGetDdfsInstancesFilterArrayOutputWithContext(context.Context) GetDdfsInstancesFilterArrayOutput
+}
+
+type GetDdfsInstancesFilterArray []GetDdfsInstancesFilterInput
+
+func (GetDdfsInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesFilterArray) ToGetDdfsInstancesFilterArrayOutput() GetDdfsInstancesFilterArrayOutput {
+	return i.ToGetDdfsInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesFilterArray) ToGetDdfsInstancesFilterArrayOutputWithContext(ctx context.Context) GetDdfsInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesFilterArrayOutput)
+}
+
+type GetDdfsInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesFilterOutput) ToGetDdfsInstancesFilterOutput() GetDdfsInstancesFilterOutput {
+	return o
+}
+
+func (o GetDdfsInstancesFilterOutput) ToGetDdfsInstancesFilterOutputWithContext(ctx context.Context) GetDdfsInstancesFilterOutput {
+	return o
+}
+
+func (o GetDdfsInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDdfsInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDdfsInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDdfsInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDdfsInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDdfsInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesFilterArrayOutput) ToGetDdfsInstancesFilterArrayOutput() GetDdfsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesFilterArrayOutput) ToGetDdfsInstancesFilterArrayOutputWithContext(ctx context.Context) GetDdfsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetDdfsInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDdfsInstancesFilter {
+		return vs[0].([]GetDdfsInstancesFilter)[vs[1].(int)]
+	}).(GetDdfsInstancesFilterOutput)
+}
+
+type GetDdfsInstancesInstanceCollection struct {
+	Items []GetDdfsInstancesInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetDdfsInstancesInstanceCollectionInput is an input type that accepts GetDdfsInstancesInstanceCollectionArgs and GetDdfsInstancesInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesInstanceCollectionInput` via:
+//
+//	GetDdfsInstancesInstanceCollectionArgs{...}
+type GetDdfsInstancesInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesInstanceCollectionOutput() GetDdfsInstancesInstanceCollectionOutput
+	ToGetDdfsInstancesInstanceCollectionOutputWithContext(context.Context) GetDdfsInstancesInstanceCollectionOutput
+}
+
+type GetDdfsInstancesInstanceCollectionArgs struct {
+	Items GetDdfsInstancesInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDdfsInstancesInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesInstanceCollectionArgs) ToGetDdfsInstancesInstanceCollectionOutput() GetDdfsInstancesInstanceCollectionOutput {
+	return i.ToGetDdfsInstancesInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesInstanceCollectionArgs) ToGetDdfsInstancesInstanceCollectionOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesInstanceCollectionOutput)
+}
+
+// GetDdfsInstancesInstanceCollectionArrayInput is an input type that accepts GetDdfsInstancesInstanceCollectionArray and GetDdfsInstancesInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesInstanceCollectionArrayInput` via:
+//
+//	GetDdfsInstancesInstanceCollectionArray{ GetDdfsInstancesInstanceCollectionArgs{...} }
+type GetDdfsInstancesInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesInstanceCollectionArrayOutput() GetDdfsInstancesInstanceCollectionArrayOutput
+	ToGetDdfsInstancesInstanceCollectionArrayOutputWithContext(context.Context) GetDdfsInstancesInstanceCollectionArrayOutput
+}
+
+type GetDdfsInstancesInstanceCollectionArray []GetDdfsInstancesInstanceCollectionInput
+
+func (GetDdfsInstancesInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesInstanceCollectionArray) ToGetDdfsInstancesInstanceCollectionArrayOutput() GetDdfsInstancesInstanceCollectionArrayOutput {
+	return i.ToGetDdfsInstancesInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesInstanceCollectionArray) ToGetDdfsInstancesInstanceCollectionArrayOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesInstanceCollectionArrayOutput)
+}
+
+type GetDdfsInstancesInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesInstanceCollectionOutput) ToGetDdfsInstancesInstanceCollectionOutput() GetDdfsInstancesInstanceCollectionOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionOutput) ToGetDdfsInstancesInstanceCollectionOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionOutput) Items() GetDdfsInstancesInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollection) []GetDdfsInstancesInstanceCollectionItem { return v.Items }).(GetDdfsInstancesInstanceCollectionItemArrayOutput)
+}
+
+type GetDdfsInstancesInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesInstanceCollectionArrayOutput) ToGetDdfsInstancesInstanceCollectionArrayOutput() GetDdfsInstancesInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionArrayOutput) ToGetDdfsInstancesInstanceCollectionArrayOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetDdfsInstancesInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDdfsInstancesInstanceCollection {
+		return vs[0].([]GetDdfsInstancesInstanceCollection)[vs[1].(int)]
+	}).(GetDdfsInstancesInstanceCollectionOutput)
+}
+
+type GetDdfsInstancesInstanceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+	FhirServiceEndpoint string `pulumi:"fhirServiceEndpoint"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+	Id string `pulumi:"id"`
+	// The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+	IdcsUrl string `pulumi:"idcsUrl"`
+	// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The public IP address for the instance's FHIR service endpoint.
+	PublicIp string `pulumi:"publicIp"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDdfsInstancesInstanceCollectionItemInput is an input type that accepts GetDdfsInstancesInstanceCollectionItemArgs and GetDdfsInstancesInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesInstanceCollectionItemInput` via:
+//
+//	GetDdfsInstancesInstanceCollectionItemArgs{...}
+type GetDdfsInstancesInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesInstanceCollectionItemOutput() GetDdfsInstancesInstanceCollectionItemOutput
+	ToGetDdfsInstancesInstanceCollectionItemOutputWithContext(context.Context) GetDdfsInstancesInstanceCollectionItemOutput
+}
+
+type GetDdfsInstancesInstanceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+	FhirServiceEndpoint pulumi.StringInput `pulumi:"fhirServiceEndpoint"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
+	// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The public IP address for the instance's FHIR service endpoint.
+	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDdfsInstancesInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesInstanceCollectionItemArgs) ToGetDdfsInstancesInstanceCollectionItemOutput() GetDdfsInstancesInstanceCollectionItemOutput {
+	return i.ToGetDdfsInstancesInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesInstanceCollectionItemArgs) ToGetDdfsInstancesInstanceCollectionItemOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesInstanceCollectionItemOutput)
+}
+
+// GetDdfsInstancesInstanceCollectionItemArrayInput is an input type that accepts GetDdfsInstancesInstanceCollectionItemArray and GetDdfsInstancesInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDdfsInstancesInstanceCollectionItemArrayInput` via:
+//
+//	GetDdfsInstancesInstanceCollectionItemArray{ GetDdfsInstancesInstanceCollectionItemArgs{...} }
+type GetDdfsInstancesInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDdfsInstancesInstanceCollectionItemArrayOutput() GetDdfsInstancesInstanceCollectionItemArrayOutput
+	ToGetDdfsInstancesInstanceCollectionItemArrayOutputWithContext(context.Context) GetDdfsInstancesInstanceCollectionItemArrayOutput
+}
+
+type GetDdfsInstancesInstanceCollectionItemArray []GetDdfsInstancesInstanceCollectionItemInput
+
+func (GetDdfsInstancesInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetDdfsInstancesInstanceCollectionItemArray) ToGetDdfsInstancesInstanceCollectionItemArrayOutput() GetDdfsInstancesInstanceCollectionItemArrayOutput {
+	return i.ToGetDdfsInstancesInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDdfsInstancesInstanceCollectionItemArray) ToGetDdfsInstancesInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDdfsInstancesInstanceCollectionItemArrayOutput)
+}
+
+type GetDdfsInstancesInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDdfsInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesInstanceCollectionItemOutput) ToGetDdfsInstancesInstanceCollectionItemOutput() GetDdfsInstancesInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionItemOutput) ToGetDdfsInstancesInstanceCollectionItemOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The HTTPS endpoint for the instance's Fast Healthcare Interoperability Resources (FHIR) service.  Example: `https://example.ddfs.oraclecloud.com/api/fhir`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) FhirServiceEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.FhirServiceEndpoint }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The Oracle Identity Cloud Service (IDCS) URL for the identity domain associated with the instance. Use the IDCS tenant URL from your identity domain configuration.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) IdcsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.IdcsUrl }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The public IP address for the instance's FHIR service endpoint.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDdfsInstancesInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetDdfsInstancesInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDdfsInstancesInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetDdfsInstancesInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDdfsInstancesInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDdfsInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetDdfsInstancesInstanceCollectionItemArrayOutput) ToGetDdfsInstancesInstanceCollectionItemArrayOutput() GetDdfsInstancesInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionItemArrayOutput) ToGetDdfsInstancesInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetDdfsInstancesInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDdfsInstancesInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDdfsInstancesInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDdfsInstancesInstanceCollectionItem {
+		return vs[0].([]GetDdfsInstancesInstanceCollectionItem)[vs[1].(int)]
+	}).(GetDdfsInstancesInstanceCollectionItemOutput)
 }
 
 type GetDifStackAdb struct {
@@ -73483,844 +74270,13 @@ func (o GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput) 
 	}).(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput)
 }
 
-type GetIotDigitalTwinInstancesFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetIotDigitalTwinInstancesFilterInput is an input type that accepts GetIotDigitalTwinInstancesFilterArgs and GetIotDigitalTwinInstancesFilterOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterInput` via:
-//
-//	GetIotDigitalTwinInstancesFilterArgs{...}
-type GetIotDigitalTwinInstancesFilterInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput
-	ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterOutput
-}
-
-type GetIotDigitalTwinInstancesFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetIotDigitalTwinInstancesFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
-	return i.ToGetIotDigitalTwinInstancesFilterOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinInstancesFilterArgs) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterOutput)
-}
-
-// GetIotDigitalTwinInstancesFilterArrayInput is an input type that accepts GetIotDigitalTwinInstancesFilterArray and GetIotDigitalTwinInstancesFilterArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinInstancesFilterArrayInput` via:
-//
-//	GetIotDigitalTwinInstancesFilterArray{ GetIotDigitalTwinInstancesFilterArgs{...} }
-type GetIotDigitalTwinInstancesFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput
-	ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinInstancesFilterArrayOutput
-}
-
-type GetIotDigitalTwinInstancesFilterArray []GetIotDigitalTwinInstancesFilterInput
-
-func (GetIotDigitalTwinInstancesFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
-	return i.ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinInstancesFilterArray) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinInstancesFilterArrayOutput)
-}
-
-type GetIotDigitalTwinInstancesFilterOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinInstancesFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinInstancesFilter)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutput() GetIotDigitalTwinInstancesFilterOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinInstancesFilterOutput) ToGetIotDigitalTwinInstancesFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinInstancesFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetIotDigitalTwinInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetIotDigitalTwinInstancesFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetIotDigitalTwinInstancesFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinInstancesFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinInstancesFilter)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutput() GetIotDigitalTwinInstancesFilterArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinInstancesFilterArrayOutput) ToGetIotDigitalTwinInstancesFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinInstancesFilterArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinInstancesFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinInstancesFilter {
-		return vs[0].([]GetIotDigitalTwinInstancesFilter)[vs[1].(int)]
-	}).(GetIotDigitalTwinInstancesFilterOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollection struct {
-	Items []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem `pulumi:"items"`
-}
-
-// GetIotDigitalTwinModelsDigitalTwinModelCollectionInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionInput` via:
-//
-//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...}
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs struct {
-	Items GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput `pulumi:"items"`
-}
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
-	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
-}
-
-// GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput` via:
-//
-//	GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{...} }
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionInput
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
-	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput) Items() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollection) []GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
-		return v.Items
-	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollection)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollection {
-		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollection)[vs[1].(int)]
-	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItem struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A short description of the resource. If left blank, the description will be derived from the spec.
-	Description string `pulumi:"description"`
-	// Filter resources whose display name matches the specified value.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-	Id string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-	IotDomainId string `pulumi:"iotDomainId"`
-	Spec        string `pulumi:"spec"`
-	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
-	SpecUri string `pulumi:"specUri"`
-	// Filter resources whose lifecycleState matches the specified value.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput` via:
-//
-//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...}
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs struct {
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A short description of the resource. If left blank, the description will be derived from the spec.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Filter resources whose display name matches the specified value.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
-	Spec        pulumi.StringInput `pulumi:"spec"`
-	// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
-	SpecUri pulumi.StringInput `pulumi:"specUri"`
-	// Filter resources whose lifecycleState matches the specified value.
-	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
-	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
-}
-
-// GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray and GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput` via:
-//
-//	GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{ GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{...} }
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
-	ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray []GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
-	return i.ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
-	return o
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
-}
-
-// A short description of the resource. If left blank, the description will be derived from the spec.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Filter resources whose display name matches the specified value.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) IotDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.IotDomainId }).(pulumi.StringOutput)
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) Spec() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.Spec }).(pulumi.StringOutput)
-}
-
-// This is the DTMI (Digital Twin Model Identifier) of the digital twin model as defined in DTDL specification.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SpecUri() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.SpecUri }).(pulumi.StringOutput)
-}
-
-// Filter resources whose lifecycleState matches the specified value.
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
-}
-
-// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsDigitalTwinModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput() GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) ToGetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsDigitalTwinModelCollectionItem {
-		return vs[0].([]GetIotDigitalTwinModelsDigitalTwinModelCollectionItem)[vs[1].(int)]
-	}).(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput)
-}
-
-type GetIotDigitalTwinModelsFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetIotDigitalTwinModelsFilterInput is an input type that accepts GetIotDigitalTwinModelsFilterArgs and GetIotDigitalTwinModelsFilterOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterInput` via:
-//
-//	GetIotDigitalTwinModelsFilterArgs{...}
-type GetIotDigitalTwinModelsFilterInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput
-	ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterOutput
-}
-
-type GetIotDigitalTwinModelsFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetIotDigitalTwinModelsFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
-	return i.ToGetIotDigitalTwinModelsFilterOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsFilterArgs) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterOutput)
-}
-
-// GetIotDigitalTwinModelsFilterArrayInput is an input type that accepts GetIotDigitalTwinModelsFilterArray and GetIotDigitalTwinModelsFilterArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinModelsFilterArrayInput` via:
-//
-//	GetIotDigitalTwinModelsFilterArray{ GetIotDigitalTwinModelsFilterArgs{...} }
-type GetIotDigitalTwinModelsFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput
-	ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Context) GetIotDigitalTwinModelsFilterArrayOutput
-}
-
-type GetIotDigitalTwinModelsFilterArray []GetIotDigitalTwinModelsFilterInput
-
-func (GetIotDigitalTwinModelsFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
-	return i.ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinModelsFilterArray) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinModelsFilterArrayOutput)
-}
-
-type GetIotDigitalTwinModelsFilterOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinModelsFilter)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutput() GetIotDigitalTwinModelsFilterOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsFilterOutput) ToGetIotDigitalTwinModelsFilterOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetIotDigitalTwinModelsFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetIotDigitalTwinModelsFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinModelsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetIotDigitalTwinModelsFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinModelsFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinModelsFilter)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutput() GetIotDigitalTwinModelsFilterArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsFilterArrayOutput) ToGetIotDigitalTwinModelsFilterArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinModelsFilterArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinModelsFilterArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinModelsFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinModelsFilter {
-		return vs[0].([]GetIotDigitalTwinModelsFilter)[vs[1].(int)]
-	}).(GetIotDigitalTwinModelsFilterOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection struct {
-	Items []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem `pulumi:"items"`
-}
-
-// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput` via:
-//
-//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...}
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs struct {
-	Items GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput `pulumi:"items"`
-}
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
-	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
-}
-
-// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput` via:
-//
-//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{...} }
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
-	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput) Items() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection) []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
-		return v.Items
-	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection {
-		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollection)[vs[1].(int)]
-	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem struct {
-	// The value(s) of the relationship properties defined in the source digital twin model.
-	Content string `pulumi:"content"`
-	// Filters resources that match the content path of the digital twin relationship.
-	ContentPath string `pulumi:"contentPath"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A short description of the resource.
-	Description string `pulumi:"description"`
-	// Filter resources whose display name matches the specified value.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-	Id string `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-	IotDomainId string `pulumi:"iotDomainId"`
-	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
-	SourceDigitalTwinInstanceId string `pulumi:"sourceDigitalTwinInstanceId"`
-	// Filter resources whose lifecycleState matches the specified value.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
-	TargetDigitalTwinInstanceId string `pulumi:"targetDigitalTwinInstanceId"`
-	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput` via:
-//
-//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...}
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs struct {
-	// The value(s) of the relationship properties defined in the source digital twin model.
-	Content pulumi.StringInput `pulumi:"content"`
-	// Filters resources that match the content path of the digital twin relationship.
-	ContentPath pulumi.StringInput `pulumi:"contentPath"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A short description of the resource.
-	Description pulumi.StringInput `pulumi:"description"`
-	// Filter resources whose display name matches the specified value.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-	Id pulumi.StringInput `pulumi:"id"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-	IotDomainId pulumi.StringInput `pulumi:"iotDomainId"`
-	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
-	SourceDigitalTwinInstanceId pulumi.StringInput `pulumi:"sourceDigitalTwinInstanceId"`
-	// Filter resources whose lifecycleState matches the specified value.
-	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
-	TargetDigitalTwinInstanceId pulumi.StringInput `pulumi:"targetDigitalTwinInstanceId"`
-	// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
-	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
-}
-
-// GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput is an input type that accepts GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray and GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput values.
-// You can construct a concrete instance of `GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput` via:
-//
-//	GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{ GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{...} }
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput interface {
-	pulumi.Input
-
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
-	ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray []GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
-	return i.ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
-	return o
-}
-
-// The value(s) of the relationship properties defined in the source digital twin model.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Content }).(pulumi.StringOutput)
-}
-
-// Filters resources that match the content path of the digital twin relationship.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) ContentPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.ContentPath
-	}).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A short description of the resource.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.Description
-	}).(pulumi.StringOutput)
-}
-
-// Filter resources whose display name matches the specified value.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// Filter resources by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be a valid OCID of the resource type.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IoT domain in which to list digital twin resources.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) IotDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.IotDomainId
-	}).(pulumi.StringOutput)
-}
-
-// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source digital twin instance.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SourceDigitalTwinInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.SourceDigitalTwinInstanceId
-	}).(pulumi.StringOutput)
-}
-
-// Filter resources whose lifecycleState matches the specified value.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) map[string]string {
-		return v.SystemTags
-	}).(pulumi.StringMapOutput)
-}
-
-// Filter resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target digital twin instance.
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TargetDigitalTwinInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.TargetDigitalTwinInstanceId
-	}).(pulumi.StringOutput)
-}
-
-// The date and time when the resource was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.TimeCreated
-	}).(pulumi.StringOutput)
-}
-
-// The date and time when the resource was last updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem) string {
-		return v.TimeUpdated
-	}).(pulumi.StringOutput)
-}
-
-type GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)(nil)).Elem()
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput() GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) ToGetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutputWithContext(ctx context.Context) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput) Index(i pulumi.IntInput) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem {
-		return vs[0].([]GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItem)[vs[1].(int)]
-	}).(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceUriInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceUriArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceUriArrayInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceUriArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestApproverDetailInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs{})
@@ -74624,6 +74580,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemArrayInput)(nil)).Elem(), GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadatasFilterInput)(nil)).Elem(), GetApiaccesscontrolApiMetadatasFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadatasFilterArrayInput)(nil)).Elem(), GetApiaccesscontrolApiMetadatasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsFilterInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsFilterArgs{})
@@ -74632,6 +74590,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestApproverDetailInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestApproverDetailArgs{})
@@ -74936,6 +74896,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesFilterInput)(nil)).Elem(), GetDdfsInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesFilterArrayInput)(nil)).Elem(), GetDdfsInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesInstanceCollectionInput)(nil)).Elem(), GetDdfsInstancesInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesInstanceCollectionArrayInput)(nil)).Elem(), GetDdfsInstancesInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesInstanceCollectionItemInput)(nil)).Elem(), GetDdfsInstancesInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDdfsInstancesInstanceCollectionItemArrayInput)(nil)).Elem(), GetDdfsInstancesInstanceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbInput)(nil)).Elem(), GetDifStackAdbArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbArrayInput)(nil)).Elem(), GetDifStackAdbArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDifStackAdbDbCredentialInput)(nil)).Elem(), GetDifStackAdbDbCredentialArgs{})
@@ -75304,22 +75270,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinInstancesFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinInstancesFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinModelsFilterArrayInput)(nil)).Elem(), GetIotDigitalTwinModelsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayInput)(nil)).Elem(), GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArray{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriArrayOutput{})
+	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput{})
+	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestApproverDetailOutput{})
@@ -75623,6 +75579,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadatasApiMetadataCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadatasFilterOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadatasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListOutput{})
+	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsFilterOutput{})
@@ -75631,6 +75589,8 @@ func init() {
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListOutput{})
+	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemApproverGroupLevelListArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiControlsPrivilegedApiControlCollectionItemPrivilegedOperationListArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestApproverDetailOutput{})
@@ -75935,6 +75895,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDdfsInstancesInstanceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackAdbOutput{})
 	pulumi.RegisterOutputType(GetDifStackAdbArrayOutput{})
 	pulumi.RegisterOutputType(GetDifStackAdbDbCredentialOutput{})
@@ -76303,16 +76269,4 @@ func init() {
 	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesDigitalTwinInstanceCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinInstancesFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsDigitalTwinModelCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinModelsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemOutput{})
-	pulumi.RegisterOutputType(GetIotDigitalTwinRelationshipsDigitalTwinRelationshipCollectionItemArrayOutput{})
 }

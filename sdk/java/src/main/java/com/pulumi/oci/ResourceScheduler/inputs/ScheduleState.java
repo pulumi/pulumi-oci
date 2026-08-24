@@ -125,6 +125,21 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    @Import(name="localTimeZone")
+    private @Nullable Output<String> localTimeZone;
+
+    /**
+     * @return (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+     * 
+     */
+    public Optional<Output<String>> localTimeZone() {
+        return Optional.ofNullable(this.localTimeZone);
+    }
+
+    /**
      * (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
      * 
      */
@@ -320,6 +335,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lastRunStatus = $.lastRunStatus;
+        this.localTimeZone = $.localTimeZone;
         this.recurrenceDetails = $.recurrenceDetails;
         this.recurrenceType = $.recurrenceType;
         this.resourceFilters = $.resourceFilters;
@@ -497,6 +513,27 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lastRunStatus(String lastRunStatus) {
             return lastRunStatus(Output.of(lastRunStatus));
+        }
+
+        /**
+         * @param localTimeZone (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localTimeZone(@Nullable Output<String> localTimeZone) {
+            $.localTimeZone = localTimeZone;
+            return this;
+        }
+
+        /**
+         * @param localTimeZone (Updatable) IANA timezone identifier (e.g., &#39;America/New_York&#39;, &#39;UTC&#39;, &#39;Europe/London&#39;). This determines the timezone context for evaluating the recurrence expression.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localTimeZone(String localTimeZone) {
+            return localTimeZone(Output.of(localTimeZone));
         }
 
         /**

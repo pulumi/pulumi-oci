@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -46,6 +48,11 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
      * 
      */
     private String remoteRegion;
+    /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    private List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
     /**
      * @return Type of the database backup destination.
      * 
@@ -105,6 +112,13 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
         return this.remoteRegion;
     }
     /**
+     * @return Backup destination for the TDE wallet backups.
+     * 
+     */
+    public List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations() {
+        return this.tdeWalletBackupDestinations;
+    }
+    /**
      * @return Type of the database backup destination.
      * 
      */
@@ -134,6 +148,7 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
         private Boolean isRetentionLockEnabled;
         private Boolean isZeroDataLossEnabled;
         private String remoteRegion;
+        private List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
         private String type;
         private String vpcPassword;
         private String vpcUser;
@@ -147,6 +162,7 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.isZeroDataLossEnabled = defaults.isZeroDataLossEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
+    	      this.tdeWalletBackupDestinations = defaults.tdeWalletBackupDestinations;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -209,6 +225,17 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
             return this;
         }
         @CustomType.Setter
+        public Builder tdeWalletBackupDestinations(List<GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations) {
+            if (tdeWalletBackupDestinations == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail", "tdeWalletBackupDestinations");
+            }
+            this.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
+            return this;
+        }
+        public Builder tdeWalletBackupDestinations(GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination... tdeWalletBackupDestinations) {
+            return tdeWalletBackupDestinations(List.of(tdeWalletBackupDestinations));
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetail", "type");
@@ -241,6 +268,7 @@ public final class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDe
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.isZeroDataLossEnabled = isZeroDataLossEnabled;
             _resultValue.remoteRegion = remoteRegion;
+            _resultValue.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

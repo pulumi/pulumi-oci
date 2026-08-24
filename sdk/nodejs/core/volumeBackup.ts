@@ -34,7 +34,14 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isIndefiniteRetentionEnabled: volumeBackupIsIndefiniteRetentionEnabled === "true",
+ *     isPreventDeletionEnabled: volumeBackupIsPreventDeletionEnabled === "true",
+ *     isRetentionLockEnabled: volumeBackupIsRetentionLockEnabled === "true",
  *     kmsKeyId: testKey.id,
+ *     retentionPeriod: {
+ *         retentionTimeAmount: Number(volumeBackupRetentionPeriodRetentionTimeAmount),
+ *         retentionTimeUnit: volumeBackupRetentionPeriodRetentionTimeUnit,
+ *     },
  *     type: volumeBackupType,
  * });
  * ```
@@ -96,9 +103,25 @@ export class VolumeBackup extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     */
+    declare public readonly isIndefiniteRetentionEnabled: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     */
+    declare public readonly isPreventDeletionEnabled: pulumi.Output<boolean>;
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     */
+    declare public readonly isRetentionLockEnabled: pulumi.Output<boolean>;
+    /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     declare public readonly kmsKeyId: pulumi.Output<string>;
+    /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     */
+    declare public readonly retentionPeriod: pulumi.Output<outputs.Core.VolumeBackupRetentionPeriod>;
     /**
      * The size of the volume, in GBs.
      */
@@ -138,6 +161,10 @@ export class VolumeBackup extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeRequestReceived: pulumi.Output<string>;
     /**
+     * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     */
+    declare public /*out*/ readonly timeRetentionExpiresAt: pulumi.Output<string>;
+    /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
      */
     declare public readonly type: pulumi.Output<string>;
@@ -151,6 +178,10 @@ export class VolumeBackup extends pulumi.CustomResource {
      * @deprecated The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
      */
     declare public /*out*/ readonly uniqueSizeInMbs: pulumi.Output<string>;
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     */
+    declare public /*out*/ readonly volumeGroupBackupId: pulumi.Output<string>;
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      */
@@ -174,7 +205,11 @@ export class VolumeBackup extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["expirationTime"] = state?.expirationTime;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["isIndefiniteRetentionEnabled"] = state?.isIndefiniteRetentionEnabled;
+            resourceInputs["isPreventDeletionEnabled"] = state?.isPreventDeletionEnabled;
+            resourceInputs["isRetentionLockEnabled"] = state?.isRetentionLockEnabled;
             resourceInputs["kmsKeyId"] = state?.kmsKeyId;
+            resourceInputs["retentionPeriod"] = state?.retentionPeriod;
             resourceInputs["sizeInGbs"] = state?.sizeInGbs;
             resourceInputs["sizeInMbs"] = state?.sizeInMbs;
             resourceInputs["sourceDetails"] = state?.sourceDetails;
@@ -184,9 +219,11 @@ export class VolumeBackup extends pulumi.CustomResource {
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeRequestReceived"] = state?.timeRequestReceived;
+            resourceInputs["timeRetentionExpiresAt"] = state?.timeRetentionExpiresAt;
             resourceInputs["type"] = state?.type;
             resourceInputs["uniqueSizeInGbs"] = state?.uniqueSizeInGbs;
             resourceInputs["uniqueSizeInMbs"] = state?.uniqueSizeInMbs;
+            resourceInputs["volumeGroupBackupId"] = state?.volumeGroupBackupId;
             resourceInputs["volumeId"] = state?.volumeId;
         } else {
             const args = argsOrState as VolumeBackupArgs | undefined;
@@ -194,7 +231,11 @@ export class VolumeBackup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["isIndefiniteRetentionEnabled"] = args?.isIndefiniteRetentionEnabled;
+            resourceInputs["isPreventDeletionEnabled"] = args?.isPreventDeletionEnabled;
+            resourceInputs["isRetentionLockEnabled"] = args?.isRetentionLockEnabled;
             resourceInputs["kmsKeyId"] = args?.kmsKeyId;
+            resourceInputs["retentionPeriod"] = args?.retentionPeriod;
             resourceInputs["sourceDetails"] = args?.sourceDetails;
             resourceInputs["type"] = args?.type;
             resourceInputs["volumeId"] = args?.volumeId;
@@ -207,8 +248,10 @@ export class VolumeBackup extends pulumi.CustomResource {
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeRequestReceived"] = undefined /*out*/;
+            resourceInputs["timeRetentionExpiresAt"] = undefined /*out*/;
             resourceInputs["uniqueSizeInGbs"] = undefined /*out*/;
             resourceInputs["uniqueSizeInMbs"] = undefined /*out*/;
+            resourceInputs["volumeGroupBackupId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VolumeBackup.__pulumiType, name, resourceInputs, opts);
@@ -240,9 +283,25 @@ export interface VolumeBackupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     */
+    isIndefiniteRetentionEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     */
+    isPreventDeletionEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     */
+    isRetentionLockEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     kmsKeyId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     */
+    retentionPeriod?: pulumi.Input<inputs.Core.VolumeBackupRetentionPeriod | undefined>;
     /**
      * The size of the volume, in GBs.
      */
@@ -282,6 +341,10 @@ export interface VolumeBackupState {
      */
     timeRequestReceived?: pulumi.Input<string | undefined>;
     /**
+     * The date and time when a backup’s retention period ends and it is set to expire. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     */
+    timeRetentionExpiresAt?: pulumi.Input<string | undefined>;
+    /**
      * The type of backup to create. If omitted, defaults to INCREMENTAL. Supported values are 'FULL' or 'INCREMENTAL'.
      */
     type?: pulumi.Input<string | undefined>;
@@ -295,6 +358,10 @@ export interface VolumeBackupState {
      * @deprecated The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.
      */
     uniqueSizeInMbs?: pulumi.Input<string | undefined>;
+    /**
+     * The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
+     */
+    volumeGroupBackupId?: pulumi.Input<string | undefined>;
     /**
      * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      */
@@ -322,9 +389,25 @@ export interface VolumeBackupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) feature that preserves backup data from modification or deletion to ensure it remains available for legal or regulatory investigations or litigation, regardless of standard retention policies. This is an optional field. If it is not specified, it is set to null, no legal hold will be applied to the backups.
+     */
+    isIndefiniteRetentionEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+     */
+    isPreventDeletionEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+     */
+    isRetentionLockEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * (Updatable) The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      */
     kmsKeyId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+     */
+    retentionPeriod?: pulumi.Input<inputs.Core.VolumeBackupRetentionPeriod | undefined>;
     /**
      * Details of the volume backup source in the cloud.
      */

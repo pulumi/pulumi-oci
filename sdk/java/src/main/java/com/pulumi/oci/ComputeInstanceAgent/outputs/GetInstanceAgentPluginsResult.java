@@ -29,12 +29,12 @@ public final class GetInstanceAgentPluginsResult {
     private List<GetInstanceAgentPluginsInstanceAgentPlugin> instanceAgentPlugins;
     private String instanceagentId;
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private @Nullable String name;
     /**
-     * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * @return The plugin status.
      * 
      */
     private @Nullable String status;
@@ -64,14 +64,14 @@ public final class GetInstanceAgentPluginsResult {
         return this.instanceagentId;
     }
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * @return The plugin status.
      * 
      */
     public Optional<String> status() {

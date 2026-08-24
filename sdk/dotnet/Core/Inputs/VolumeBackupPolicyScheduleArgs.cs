@@ -37,6 +37,18 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? HourOfDay { get; set; }
 
         /// <summary>
+        /// (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+        /// </summary>
+        [Input("isPreventDeletionEnabled")]
+        public Input<bool>? IsPreventDeletionEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+        /// </summary>
+        [Input("isRetentionLockEnabled")]
+        public Input<bool>? IsRetentionLockEnabled { get; set; }
+
+        /// <summary>
         /// (Updatable) The month of the year to schedule the volume backup.
         /// </summary>
         [Input("month")]
@@ -73,6 +85,12 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("period", required: true)]
         public Input<string> Period { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+        /// </summary>
+        [Input("retentionPeriod")]
+        public Input<Inputs.VolumeBackupPolicyScheduleRetentionPeriodArgs>? RetentionPeriod { get; set; }
 
         /// <summary>
         /// (Updatable) How long, in seconds, to keep the volume backups created by this schedule.

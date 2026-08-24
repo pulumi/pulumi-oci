@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
         ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         IsPitrEligible = autonomousDatabaseBackupIsPitrEligible,
         ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
@@ -68,6 +69,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
         ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         IsPitrEligible = autonomousDatabaseBackupIsPitrEligible,
         ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
@@ -102,6 +104,7 @@ namespace Pulumi.Oci.Database
         ///         CompartmentId = compartmentId,
         ///         DisplayName = autonomousDatabaseBackupDisplayName,
         ///         InfrastructureType = autonomousDatabaseBackupInfrastructureType,
+        ///         IsPitrEligible = autonomousDatabaseBackupIsPitrEligible,
         ///         KeyStoreId = testKeyStore.Id,
         ///         State = autonomousDatabaseBackupState,
         ///         Type = autonomousDatabaseBackupType,
@@ -154,6 +157,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("infrastructureType")]
         public string? InfrastructureType { get; set; }
+
+        /// <summary>
+        /// Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+        /// </summary>
+        [Input("isPitrEligible")]
+        public bool? IsPitrEligible { get; set; }
 
         /// <summary>
         /// A filter to return only resources that have the given key store id.
@@ -220,6 +229,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
+        /// Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+        /// </summary>
+        [Input("isPitrEligible")]
+        public Input<bool>? IsPitrEligible { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that have the given key store id.
         /// </summary>
         [Input("keyStoreId")]
@@ -273,6 +288,7 @@ namespace Pulumi.Oci.Database
         /// The infrastructure type this resource belongs to.
         /// </summary>
         public readonly string? InfrastructureType;
+        public readonly bool? IsPitrEligible;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         /// </summary>
@@ -304,6 +320,8 @@ namespace Pulumi.Oci.Database
 
             string? infrastructureType,
 
+            bool? isPitrEligible,
+
             string? keyStoreId,
 
             string? state,
@@ -318,6 +336,7 @@ namespace Pulumi.Oci.Database
             Filters = filters;
             Id = id;
             InfrastructureType = infrastructureType;
+            IsPitrEligible = isPitrEligible;
             KeyStoreId = keyStoreId;
             State = state;
             Type = type;

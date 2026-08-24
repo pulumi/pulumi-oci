@@ -71,6 +71,7 @@ public final class GetDbHomesDbHomeDatabase {
     private List<String> oneOffPatches;
     private String pdbName;
     private List<String> pluggableDatabases;
+    private String recoveryApplianceVpcPassword;
     private String sidPrefix;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -194,6 +195,9 @@ public final class GetDbHomesDbHomeDatabase {
     public List<String> pluggableDatabases() {
         return this.pluggableDatabases;
     }
+    public String recoveryApplianceVpcPassword() {
+        return this.recoveryApplianceVpcPassword;
+    }
     public String sidPrefix() {
         return this.sidPrefix;
     }
@@ -263,6 +267,7 @@ public final class GetDbHomesDbHomeDatabase {
         private List<String> oneOffPatches;
         private String pdbName;
         private List<String> pluggableDatabases;
+        private String recoveryApplianceVpcPassword;
         private String sidPrefix;
         private String state;
         private List<GetDbHomesDbHomeDatabaseStorageSizeDetail> storageSizeDetails;
@@ -297,6 +302,7 @@ public final class GetDbHomesDbHomeDatabase {
     	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
@@ -507,6 +513,14 @@ public final class GetDbHomesDbHomeDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder recoveryApplianceVpcPassword(String recoveryApplianceVpcPassword) {
+            if (recoveryApplianceVpcPassword == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "recoveryApplianceVpcPassword");
+            }
+            this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             if (sidPrefix == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "sidPrefix");
@@ -598,6 +612,7 @@ public final class GetDbHomesDbHomeDatabase {
             _resultValue.oneOffPatches = oneOffPatches;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
             _resultValue.storageSizeDetails = storageSizeDetails;

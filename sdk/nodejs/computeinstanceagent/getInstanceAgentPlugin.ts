@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
  *
- * The API to get information for a plugin.
+ * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
  *
  * ## Example Usage
  *
@@ -16,7 +16,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceAgentPlugin = oci.computeinstanceagent.getInstanceAgentPlugin({
- *     instanceagentId: testInstanceagent.id,
+ *     compartmentId: compartmentId,
+ *     instanceagentId: instanceagent.id,
  *     pluginName: instanceAgentPluginPluginName,
  * });
  * ```
@@ -34,9 +35,12 @@ export function getInstanceAgentPlugin(args: GetInstanceAgentPluginArgs, opts?: 
  * A collection of arguments for invoking getInstanceAgentPlugin.
  */
 export interface GetInstanceAgentPluginArgs {
+    /**
+     * The ID of the compartment in which the instance resides
+     */
     compartmentId: string;
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     instanceagentId: string;
     /**
@@ -56,27 +60,27 @@ export interface GetInstanceAgentPluginResult {
     readonly id: string;
     readonly instanceagentId: string;
     /**
-     * The optional message from the agent plugin
+     * An optional message from the plugin.
      */
     readonly message: string;
     /**
-     * The plugin name
+     * The plugin name.
      */
     readonly name: string;
     readonly pluginName: string;
     /**
-     * The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * The plugin status.
      */
     readonly status: string;
     /**
-     * The last update time of the plugin in UTC
+     * The last updated time of the plugin, in UTC.
      */
     readonly timeLastUpdatedUtc: string;
 }
 /**
  * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
  *
- * The API to get information for a plugin.
+ * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
  *
  * ## Example Usage
  *
@@ -85,7 +89,8 @@ export interface GetInstanceAgentPluginResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceAgentPlugin = oci.computeinstanceagent.getInstanceAgentPlugin({
- *     instanceagentId: testInstanceagent.id,
+ *     compartmentId: compartmentId,
+ *     instanceagentId: instanceagent.id,
  *     pluginName: instanceAgentPluginPluginName,
  * });
  * ```
@@ -103,9 +108,12 @@ export function getInstanceAgentPluginOutput(args: GetInstanceAgentPluginOutputA
  * A collection of arguments for invoking getInstanceAgentPlugin.
  */
 export interface GetInstanceAgentPluginOutputArgs {
+    /**
+     * The ID of the compartment in which the instance resides
+     */
     compartmentId: pulumi.Input<string>;
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      */
     instanceagentId: pulumi.Input<string>;
     /**

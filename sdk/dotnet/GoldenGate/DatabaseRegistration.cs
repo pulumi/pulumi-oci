@@ -149,7 +149,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         /// </summary>
         [Output("password")]
         public Output<string> Password { get; private set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> VaultId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -362,7 +362,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         /// </summary>
         public Input<string>? Password
         {
@@ -405,7 +405,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -516,7 +516,7 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _password;
 
         /// <summary>
-        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         /// </summary>
         public Input<string>? Password
         {
@@ -601,7 +601,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? VaultId { get; set; }
 
         /// <summary>
-        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026. 
+        /// (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by "walletSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate 
         /// 
         /// 
         /// ** IMPORTANT **

@@ -74,6 +74,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.actualUsedDataStorageSizeInTbs;
     }
     /**
+     * The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    @Export(name="adScheduledForUpdate", refs={String.class}, tree="[0]")
+    private Output<String> adScheduledForUpdate;
+
+    /**
+     * @return The Availability Domain which is planned for Scheduled Update
+     * 
+     */
+    public Output<String> adScheduledForUpdate() {
+        return this.adScheduledForUpdate;
+    }
+    /**
      * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ &#34;gcpAccountName&#34;: &#34;gcpName&#34; }`
      * 
      */
@@ -242,14 +256,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.autonomousMaintenanceScheduleType;
     }
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * @return (Updatable) The Autonomous Database Serverless instance&#39;s availability domain.
      * 
      */
     public Output<String> availabilityDomain() {
@@ -949,6 +963,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isDevTier() {
         return this.isDevTier;
     }
+    @Export(name="isDisableAdUpdateSchedule", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isDisableAdUpdateSchedule;
+
+    public Output<Boolean> isDisableAdUpdateSchedule() {
+        return this.isDisableAdUpdateSchedule;
+    }
     @Export(name="isDisableDbVersionUpgradeSchedule", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDisableDbVersionUpgradeSchedule;
 
@@ -1104,6 +1124,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
+    }
+    @Export(name="isScheduleAdUpdateToEarliest", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isScheduleAdUpdateToEarliest;
+
+    public Output<Boolean> isScheduleAdUpdateToEarliest() {
+        return this.isScheduleAdUpdateToEarliest;
     }
     @Export(name="isScheduleDbVersionUpgradeToEarliest", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isScheduleDbVersionUpgradeToEarliest;
@@ -2052,6 +2078,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    @Export(name="timeEarliestAvailableAdUpdate", refs={String.class}, tree="[0]")
+    private Output<String> timeEarliestAvailableAdUpdate;
+
+    /**
+     * @return The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public Output<String> timeEarliestAvailableAdUpdate() {
+        return this.timeEarliestAvailableAdUpdate;
+    }
+    /**
      * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      * 
      */
@@ -2064,6 +2104,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeEarliestAvailableDbVersionUpgrade() {
         return this.timeEarliestAvailableDbVersionUpgrade;
+    }
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    @Export(name="timeLatestAvailableAdUpdate", refs={String.class}, tree="[0]")
+    private Output<String> timeLatestAvailableAdUpdate;
+
+    /**
+     * @return The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     * 
+     */
+    public Output<String> timeLatestAvailableAdUpdate() {
+        return this.timeLatestAvailableAdUpdate;
     }
     /**
      * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -2246,6 +2300,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeReclamationOfFreeAutonomousDatabase() {
         return this.timeReclamationOfFreeAutonomousDatabase;
+    }
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    @Export(name="timeScheduledAdUpdate", refs={String.class}, tree="[0]")
+    private Output<String> timeScheduledAdUpdate;
+
+    /**
+     * @return The date and time to which the Autonomous Database availability domain update is scheduled.
+     * 
+     */
+    public Output<String> timeScheduledAdUpdate() {
+        return this.timeScheduledAdUpdate;
     }
     /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.

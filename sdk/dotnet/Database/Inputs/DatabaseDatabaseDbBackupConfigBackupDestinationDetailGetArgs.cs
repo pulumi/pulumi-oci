@@ -55,6 +55,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? RemoteRegion { get; set; }
 
         /// <summary>
+        /// Backup destination for the TDE wallet backups.
+        /// </summary>
+        [Input("tdeWalletBackupDestination")]
+        public Input<Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationGetArgs>? TdeWalletBackupDestination { get; set; }
+
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         [Input("type")]

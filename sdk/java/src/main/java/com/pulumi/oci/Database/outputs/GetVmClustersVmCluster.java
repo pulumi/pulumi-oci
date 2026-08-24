@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterCloudAutomationUpdateDetail;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterFileSystemConfigurationDetail;
+import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterLiveImageVersionDetail;
+import com.pulumi.oci.Database.outputs.GetVmClustersVmClusterUpdateDetail;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -140,12 +142,22 @@ public final class GetVmClustersVmCluster {
      */
     private String lifecycleDetails;
     /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    private List<GetVmClustersVmClusterLiveImageVersionDetail> liveImageVersionDetails;
+    /**
      * @return The memory allocated in GBs.
      * 
      */
     private Integer memorySizeInGbs;
     private Double ocpuCount;
     private Double ocpusEnabled;
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    private String oracleLinuxVersion;
     /**
      * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      * 
@@ -196,6 +208,7 @@ public final class GetVmClustersVmCluster {
      * 
      */
     private String timeZone;
+    private List<GetVmClustersVmClusterUpdateDetail> updateDetails;
     /**
      * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
      * 
@@ -390,6 +403,13 @@ public final class GetVmClustersVmCluster {
         return this.lifecycleDetails;
     }
     /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public List<GetVmClustersVmClusterLiveImageVersionDetail> liveImageVersionDetails() {
+        return this.liveImageVersionDetails;
+    }
+    /**
      * @return The memory allocated in GBs.
      * 
      */
@@ -401,6 +421,13 @@ public final class GetVmClustersVmCluster {
     }
     public Double ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public String oracleLinuxVersion() {
+        return this.oracleLinuxVersion;
     }
     /**
      * @return The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -472,6 +499,9 @@ public final class GetVmClustersVmCluster {
     public String timeZone() {
         return this.timeZone;
     }
+    public List<GetVmClustersVmClusterUpdateDetail> updateDetails() {
+        return this.updateDetails;
+    }
     /**
      * @return Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL.
      * 
@@ -535,9 +565,11 @@ public final class GetVmClustersVmCluster {
         private String lastPatchHistoryEntryId;
         private String licenseModel;
         private String lifecycleDetails;
+        private List<GetVmClustersVmClusterLiveImageVersionDetail> liveImageVersionDetails;
         private Integer memorySizeInGbs;
         private Double ocpuCount;
         private Double ocpusEnabled;
+        private String oracleLinuxVersion;
         private Integer recoStoragePercentage;
         private String shape;
         private Integer sparseStoragePercentage;
@@ -548,6 +580,7 @@ public final class GetVmClustersVmCluster {
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
+        private List<GetVmClustersVmClusterUpdateDetail> updateDetails;
         private String vmBackupStorageType;
         private String vmClusterNetworkId;
         private String vmClusterType;
@@ -580,9 +613,11 @@ public final class GetVmClustersVmCluster {
     	      this.lastPatchHistoryEntryId = defaults.lastPatchHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.liveImageVersionDetails = defaults.liveImageVersionDetails;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
+    	      this.oracleLinuxVersion = defaults.oracleLinuxVersion;
     	      this.recoStoragePercentage = defaults.recoStoragePercentage;
     	      this.shape = defaults.shape;
     	      this.sparseStoragePercentage = defaults.sparseStoragePercentage;
@@ -593,6 +628,7 @@ public final class GetVmClustersVmCluster {
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
+    	      this.updateDetails = defaults.updateDetails;
     	      this.vmBackupStorageType = defaults.vmBackupStorageType;
     	      this.vmClusterNetworkId = defaults.vmClusterNetworkId;
     	      this.vmClusterType = defaults.vmClusterType;
@@ -812,6 +848,17 @@ public final class GetVmClustersVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder liveImageVersionDetails(List<GetVmClustersVmClusterLiveImageVersionDetail> liveImageVersionDetails) {
+            if (liveImageVersionDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "liveImageVersionDetails");
+            }
+            this.liveImageVersionDetails = liveImageVersionDetails;
+            return this;
+        }
+        public Builder liveImageVersionDetails(GetVmClustersVmClusterLiveImageVersionDetail... liveImageVersionDetails) {
+            return liveImageVersionDetails(List.of(liveImageVersionDetails));
+        }
+        @CustomType.Setter
         public Builder memorySizeInGbs(Integer memorySizeInGbs) {
             if (memorySizeInGbs == null) {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "memorySizeInGbs");
@@ -833,6 +880,14 @@ public final class GetVmClustersVmCluster {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "ocpusEnabled");
             }
             this.ocpusEnabled = ocpusEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            if (oracleLinuxVersion == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "oracleLinuxVersion");
+            }
+            this.oracleLinuxVersion = oracleLinuxVersion;
             return this;
         }
         @CustomType.Setter
@@ -919,6 +974,17 @@ public final class GetVmClustersVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder updateDetails(List<GetVmClustersVmClusterUpdateDetail> updateDetails) {
+            if (updateDetails == null) {
+              throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "updateDetails");
+            }
+            this.updateDetails = updateDetails;
+            return this;
+        }
+        public Builder updateDetails(GetVmClustersVmClusterUpdateDetail... updateDetails) {
+            return updateDetails(List.of(updateDetails));
+        }
+        @CustomType.Setter
         public Builder vmBackupStorageType(String vmBackupStorageType) {
             if (vmBackupStorageType == null) {
               throw new MissingRequiredPropertyException("GetVmClustersVmCluster", "vmBackupStorageType");
@@ -977,9 +1043,11 @@ public final class GetVmClustersVmCluster {
             _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.liveImageVersionDetails = liveImageVersionDetails;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.ocpusEnabled = ocpusEnabled;
+            _resultValue.oracleLinuxVersion = oracleLinuxVersion;
             _resultValue.recoStoragePercentage = recoStoragePercentage;
             _resultValue.shape = shape;
             _resultValue.sparseStoragePercentage = sparseStoragePercentage;
@@ -990,6 +1058,7 @@ public final class GetVmClustersVmCluster {
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
+            _resultValue.updateDetails = updateDetails;
             _resultValue.vmBackupStorageType = vmBackupStorageType;
             _resultValue.vmClusterNetworkId = vmClusterNetworkId;
             _resultValue.vmClusterType = vmClusterType;

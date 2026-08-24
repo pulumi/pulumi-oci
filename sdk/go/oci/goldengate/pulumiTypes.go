@@ -119,6 +119,276 @@ func (o ConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) Conne
 	}).(ConnectionAdditionalAttributeOutput)
 }
 
+type ConnectionAuthDetails struct {
+	// (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey *string `pulumi:"apiKey"`
+	// (Updatable) API key secret OCID for the AI model connection.
+	ApiKeySecretId *string `pulumi:"apiKeySecretId"`
+	// (Updatable) Authentication type used by the AI model connection.
+	AuthType string `pulumi:"authType"`
+	// (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl *string `pulumi:"baseUrl"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint *string `pulumi:"keyFingerprint"`
+	// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+	Region *string `pulumi:"region"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+	TenancyId *string `pulumi:"tenancyId"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+	UserId *string `pulumi:"userId"`
+}
+
+// ConnectionAuthDetailsInput is an input type that accepts ConnectionAuthDetailsArgs and ConnectionAuthDetailsOutput values.
+// You can construct a concrete instance of `ConnectionAuthDetailsInput` via:
+//
+//	ConnectionAuthDetailsArgs{...}
+type ConnectionAuthDetailsInput interface {
+	pulumi.Input
+
+	ToConnectionAuthDetailsOutput() ConnectionAuthDetailsOutput
+	ToConnectionAuthDetailsOutputWithContext(context.Context) ConnectionAuthDetailsOutput
+}
+
+type ConnectionAuthDetailsArgs struct {
+	// (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey pulumi.StringPtrInput `pulumi:"apiKey"`
+	// (Updatable) API key secret OCID for the AI model connection.
+	ApiKeySecretId pulumi.StringPtrInput `pulumi:"apiKeySecretId"`
+	// (Updatable) Authentication type used by the AI model connection.
+	AuthType pulumi.StringInput `pulumi:"authType"`
+	// (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl pulumi.StringPtrInput `pulumi:"baseUrl"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint pulumi.StringPtrInput `pulumi:"keyFingerprint"`
+	// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`
+	// (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+	UserId pulumi.StringPtrInput `pulumi:"userId"`
+}
+
+func (ConnectionAuthDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAuthDetails)(nil)).Elem()
+}
+
+func (i ConnectionAuthDetailsArgs) ToConnectionAuthDetailsOutput() ConnectionAuthDetailsOutput {
+	return i.ToConnectionAuthDetailsOutputWithContext(context.Background())
+}
+
+func (i ConnectionAuthDetailsArgs) ToConnectionAuthDetailsOutputWithContext(ctx context.Context) ConnectionAuthDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAuthDetailsOutput)
+}
+
+func (i ConnectionAuthDetailsArgs) ToConnectionAuthDetailsPtrOutput() ConnectionAuthDetailsPtrOutput {
+	return i.ToConnectionAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConnectionAuthDetailsArgs) ToConnectionAuthDetailsPtrOutputWithContext(ctx context.Context) ConnectionAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAuthDetailsOutput).ToConnectionAuthDetailsPtrOutputWithContext(ctx)
+}
+
+// ConnectionAuthDetailsPtrInput is an input type that accepts ConnectionAuthDetailsArgs, ConnectionAuthDetailsPtr and ConnectionAuthDetailsPtrOutput values.
+// You can construct a concrete instance of `ConnectionAuthDetailsPtrInput` via:
+//
+//	        ConnectionAuthDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConnectionAuthDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConnectionAuthDetailsPtrOutput() ConnectionAuthDetailsPtrOutput
+	ToConnectionAuthDetailsPtrOutputWithContext(context.Context) ConnectionAuthDetailsPtrOutput
+}
+
+type connectionAuthDetailsPtrType ConnectionAuthDetailsArgs
+
+func ConnectionAuthDetailsPtr(v *ConnectionAuthDetailsArgs) ConnectionAuthDetailsPtrInput {
+	return (*connectionAuthDetailsPtrType)(v)
+}
+
+func (*connectionAuthDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionAuthDetails)(nil)).Elem()
+}
+
+func (i *connectionAuthDetailsPtrType) ToConnectionAuthDetailsPtrOutput() ConnectionAuthDetailsPtrOutput {
+	return i.ToConnectionAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *connectionAuthDetailsPtrType) ToConnectionAuthDetailsPtrOutputWithContext(ctx context.Context) ConnectionAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAuthDetailsPtrOutput)
+}
+
+type ConnectionAuthDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAuthDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAuthDetails)(nil)).Elem()
+}
+
+func (o ConnectionAuthDetailsOutput) ToConnectionAuthDetailsOutput() ConnectionAuthDetailsOutput {
+	return o
+}
+
+func (o ConnectionAuthDetailsOutput) ToConnectionAuthDetailsOutputWithContext(ctx context.Context) ConnectionAuthDetailsOutput {
+	return o
+}
+
+func (o ConnectionAuthDetailsOutput) ToConnectionAuthDetailsPtrOutput() ConnectionAuthDetailsPtrOutput {
+	return o.ToConnectionAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConnectionAuthDetailsOutput) ToConnectionAuthDetailsPtrOutputWithContext(ctx context.Context) ConnectionAuthDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectionAuthDetails) *ConnectionAuthDetails {
+		return &v
+	}).(ConnectionAuthDetailsPtrOutput)
+}
+
+// (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+func (o ConnectionAuthDetailsOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.ApiKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) API key secret OCID for the AI model connection.
+func (o ConnectionAuthDetailsOutput) ApiKeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.ApiKeySecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Authentication type used by the AI model connection.
+func (o ConnectionAuthDetailsOutput) AuthType() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) string { return v.AuthType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+func (o ConnectionAuthDetailsOutput) BaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.BaseUrl }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+func (o ConnectionAuthDetailsOutput) KeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.KeyFingerprint }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+func (o ConnectionAuthDetailsOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+func (o ConnectionAuthDetailsOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.TenancyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+func (o ConnectionAuthDetailsOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAuthDetails) *string { return v.UserId }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionAuthDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAuthDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConnectionAuthDetails)(nil)).Elem()
+}
+
+func (o ConnectionAuthDetailsPtrOutput) ToConnectionAuthDetailsPtrOutput() ConnectionAuthDetailsPtrOutput {
+	return o
+}
+
+func (o ConnectionAuthDetailsPtrOutput) ToConnectionAuthDetailsPtrOutputWithContext(ctx context.Context) ConnectionAuthDetailsPtrOutput {
+	return o
+}
+
+func (o ConnectionAuthDetailsPtrOutput) Elem() ConnectionAuthDetailsOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) ConnectionAuthDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConnectionAuthDetails
+		return ret
+	}).(ConnectionAuthDetailsOutput)
+}
+
+// (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+func (o ConnectionAuthDetailsPtrOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApiKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) API key secret OCID for the AI model connection.
+func (o ConnectionAuthDetailsPtrOutput) ApiKeySecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ApiKeySecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Authentication type used by the AI model connection.
+func (o ConnectionAuthDetailsPtrOutput) AuthType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.AuthType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+func (o ConnectionAuthDetailsPtrOutput) BaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BaseUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+func (o ConnectionAuthDetailsPtrOutput) KeyFingerprint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyFingerprint
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+func (o ConnectionAuthDetailsPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+func (o ConnectionAuthDetailsPtrOutput) TenancyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TenancyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+func (o ConnectionAuthDetailsPtrOutput) UserId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConnectionAuthDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserId
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConnectionBootstrapServer struct {
 	// (Updatable) The name or address of a host.
 	Host *string `pulumi:"host"`
@@ -259,7 +529,10 @@ type ConnectionCatalog struct {
 	Properties *string `pulumi:"properties"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId *string `pulumi:"propertiesSecretId"`
-	// (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// (Updatable)
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri *string `pulumi:"uri"`
 }
 
@@ -299,7 +572,10 @@ type ConnectionCatalogArgs struct {
 	Properties pulumi.StringPtrInput `pulumi:"properties"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId pulumi.StringPtrInput `pulumi:"propertiesSecretId"`
-	// (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// (Updatable)
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri pulumi.StringPtrInput `pulumi:"uri"`
 }
 
@@ -434,7 +710,10 @@ func (o ConnectionCatalogOutput) PropertiesSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionCatalog) *string { return v.PropertiesSecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// (Updatable)
+// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 func (o ConnectionCatalogOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionCatalog) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
@@ -567,7 +846,10 @@ func (o ConnectionCatalogPtrOutput) PropertiesSecretId() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// (Updatable)
+// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 func (o ConnectionCatalogPtrOutput) Uri() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionCatalog) *string {
 		if v == nil {
@@ -799,9 +1081,12 @@ func (o ConnectionLockArrayOutput) Index(i pulumi.IntInput) ConnectionLockOutput
 }
 
 type ConnectionStorage struct {
-	// (Updatable) Access key ID to access the Amazon S3 bucket.
+	// (Updatable)
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId *string `pulumi:"accessKeyId"`
-	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey *string `pulumi:"accountKey"`
@@ -809,11 +1094,18 @@ type ConnectionStorage struct {
 	AccountKeySecretId *string `pulumi:"accountKeySecretId"`
 	// (Updatable) Sets the Azure storage account name.
 	AccountName *string `pulumi:"accountName"`
-	// (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// (Updatable)
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket *string `pulumi:"bucket"`
 	// (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
 	Container *string `pulumi:"container"`
-	// (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// (Updatable)
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint *string `pulumi:"endpoint"`
 	// (Updatable) The Google Cloud Project where the bucket exists.
 	ProjectId *string `pulumi:"projectId"`
@@ -821,13 +1113,18 @@ type ConnectionStorage struct {
 	Region *string `pulumi:"region"`
 	// (Updatable) The scheme of the storage.
 	SchemeType *string `pulumi:"schemeType"`
-	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+	// (Updatable)
+	// * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey *string `pulumi:"secretAccessKey"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// (Updatable)
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId *string `pulumi:"secretAccessKeySecretId"`
-	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile *string `pulumi:"serviceAccountKeyFile"`
@@ -849,9 +1146,12 @@ type ConnectionStorageInput interface {
 }
 
 type ConnectionStorageArgs struct {
-	// (Updatable) Access key ID to access the Amazon S3 bucket.
+	// (Updatable)
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
-	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+	// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey pulumi.StringPtrInput `pulumi:"accountKey"`
@@ -859,11 +1159,18 @@ type ConnectionStorageArgs struct {
 	AccountKeySecretId pulumi.StringPtrInput `pulumi:"accountKeySecretId"`
 	// (Updatable) Sets the Azure storage account name.
 	AccountName pulumi.StringPtrInput `pulumi:"accountName"`
-	// (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// (Updatable)
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
 	Container pulumi.StringPtrInput `pulumi:"container"`
-	// (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// (Updatable)
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint pulumi.StringPtrInput `pulumi:"endpoint"`
 	// (Updatable) The Google Cloud Project where the bucket exists.
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
@@ -871,13 +1178,18 @@ type ConnectionStorageArgs struct {
 	Region pulumi.StringPtrInput `pulumi:"region"`
 	// (Updatable) The scheme of the storage.
 	SchemeType pulumi.StringPtrInput `pulumi:"schemeType"`
-	// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+	// (Updatable)
+	// * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// (Updatable)
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId pulumi.StringPtrInput `pulumi:"secretAccessKeySecretId"`
-	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+	// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 	//
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile pulumi.StringPtrInput `pulumi:"serviceAccountKeyFile"`
@@ -964,12 +1276,15 @@ func (o ConnectionStorageOutput) ToConnectionStoragePtrOutputWithContext(ctx con
 	}).(ConnectionStoragePtrOutput)
 }
 
-// (Updatable) Access key ID to access the Amazon S3 bucket.
+// (Updatable)
+//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 func (o ConnectionStorageOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 func (o ConnectionStorageOutput) AccountKey() pulumi.StringPtrOutput {
@@ -986,7 +1301,10 @@ func (o ConnectionStorageOutput) AccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.AccountName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// (Updatable)
+// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 func (o ConnectionStorageOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
@@ -996,7 +1314,11 @@ func (o ConnectionStorageOutput) Container() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.Container }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// (Updatable)
+// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o ConnectionStorageOutput) Endpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.Endpoint }).(pulumi.StringPtrOutput)
 }
@@ -1016,19 +1338,24 @@ func (o ConnectionStorageOutput) SchemeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.SchemeType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+// (Updatable)
+//   - AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 func (o ConnectionStorageOutput) SecretAccessKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// (Updatable)
+// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 func (o ConnectionStorageOutput) SecretAccessKeySecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionStorage) *string { return v.SecretAccessKeySecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 func (o ConnectionStorageOutput) ServiceAccountKeyFile() pulumi.StringPtrOutput {
@@ -1069,7 +1396,10 @@ func (o ConnectionStoragePtrOutput) Elem() ConnectionStorageOutput {
 	}).(ConnectionStorageOutput)
 }
 
-// (Updatable) Access key ID to access the Amazon S3 bucket.
+// (Updatable)
+//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 func (o ConnectionStoragePtrOutput) AccessKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionStorage) *string {
 		if v == nil {
@@ -1079,7 +1409,7 @@ func (o ConnectionStoragePtrOutput) AccessKeyId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+// (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 func (o ConnectionStoragePtrOutput) AccountKey() pulumi.StringPtrOutput {
@@ -1111,7 +1441,10 @@ func (o ConnectionStoragePtrOutput) AccountName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// (Updatable)
+// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 func (o ConnectionStoragePtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionStorage) *string {
 		if v == nil {
@@ -1131,7 +1464,11 @@ func (o ConnectionStoragePtrOutput) Container() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// (Updatable)
+// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o ConnectionStoragePtrOutput) Endpoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionStorage) *string {
 		if v == nil {
@@ -1171,7 +1508,10 @@ func (o ConnectionStoragePtrOutput) SchemeType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+// (Updatable)
+//   - AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 func (o ConnectionStoragePtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
@@ -1183,7 +1523,9 @@ func (o ConnectionStoragePtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// (Updatable)
+// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 func (o ConnectionStoragePtrOutput) SecretAccessKeySecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectionStorage) *string {
 		if v == nil {
@@ -1193,7 +1535,7 @@ func (o ConnectionStoragePtrOutput) SecretAccessKeySecretId() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+// (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
 //
 // Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 func (o ConnectionStoragePtrOutput) ServiceAccountKeyFile() pulumi.StringPtrOutput {
@@ -4344,6 +4686,804 @@ func (o PipelineTargetConnectionDetailsPtrOutput) ConnectionId() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
+type GetAiModelsAiModelCollection struct {
+	// An array of AI models.
+	Items []GetAiModelsAiModelCollectionItem `pulumi:"items"`
+}
+
+// GetAiModelsAiModelCollectionInput is an input type that accepts GetAiModelsAiModelCollectionArgs and GetAiModelsAiModelCollectionOutput values.
+// You can construct a concrete instance of `GetAiModelsAiModelCollectionInput` via:
+//
+//	GetAiModelsAiModelCollectionArgs{...}
+type GetAiModelsAiModelCollectionInput interface {
+	pulumi.Input
+
+	ToGetAiModelsAiModelCollectionOutput() GetAiModelsAiModelCollectionOutput
+	ToGetAiModelsAiModelCollectionOutputWithContext(context.Context) GetAiModelsAiModelCollectionOutput
+}
+
+type GetAiModelsAiModelCollectionArgs struct {
+	// An array of AI models.
+	Items GetAiModelsAiModelCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAiModelsAiModelCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsAiModelCollection)(nil)).Elem()
+}
+
+func (i GetAiModelsAiModelCollectionArgs) ToGetAiModelsAiModelCollectionOutput() GetAiModelsAiModelCollectionOutput {
+	return i.ToGetAiModelsAiModelCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsAiModelCollectionArgs) ToGetAiModelsAiModelCollectionOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsAiModelCollectionOutput)
+}
+
+// GetAiModelsAiModelCollectionArrayInput is an input type that accepts GetAiModelsAiModelCollectionArray and GetAiModelsAiModelCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAiModelsAiModelCollectionArrayInput` via:
+//
+//	GetAiModelsAiModelCollectionArray{ GetAiModelsAiModelCollectionArgs{...} }
+type GetAiModelsAiModelCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAiModelsAiModelCollectionArrayOutput() GetAiModelsAiModelCollectionArrayOutput
+	ToGetAiModelsAiModelCollectionArrayOutputWithContext(context.Context) GetAiModelsAiModelCollectionArrayOutput
+}
+
+type GetAiModelsAiModelCollectionArray []GetAiModelsAiModelCollectionInput
+
+func (GetAiModelsAiModelCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsAiModelCollection)(nil)).Elem()
+}
+
+func (i GetAiModelsAiModelCollectionArray) ToGetAiModelsAiModelCollectionArrayOutput() GetAiModelsAiModelCollectionArrayOutput {
+	return i.ToGetAiModelsAiModelCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsAiModelCollectionArray) ToGetAiModelsAiModelCollectionArrayOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsAiModelCollectionArrayOutput)
+}
+
+type GetAiModelsAiModelCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsAiModelCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsAiModelCollection)(nil)).Elem()
+}
+
+func (o GetAiModelsAiModelCollectionOutput) ToGetAiModelsAiModelCollectionOutput() GetAiModelsAiModelCollectionOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionOutput) ToGetAiModelsAiModelCollectionOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionOutput {
+	return o
+}
+
+// An array of AI models.
+func (o GetAiModelsAiModelCollectionOutput) Items() GetAiModelsAiModelCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAiModelsAiModelCollection) []GetAiModelsAiModelCollectionItem { return v.Items }).(GetAiModelsAiModelCollectionItemArrayOutput)
+}
+
+type GetAiModelsAiModelCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsAiModelCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsAiModelCollection)(nil)).Elem()
+}
+
+func (o GetAiModelsAiModelCollectionArrayOutput) ToGetAiModelsAiModelCollectionArrayOutput() GetAiModelsAiModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionArrayOutput) ToGetAiModelsAiModelCollectionArrayOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionArrayOutput) Index(i pulumi.IntInput) GetAiModelsAiModelCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiModelsAiModelCollection {
+		return vs[0].([]GetAiModelsAiModelCollection)[vs[1].(int)]
+	}).(GetAiModelsAiModelCollectionOutput)
+}
+
+type GetAiModelsAiModelCollectionItem struct {
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName string `pulumi:"displayName"`
+	// The identifier of the AI model offered by a provider.
+	Key string `pulumi:"key"`
+	// The AI provider type for which model information is requested.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetAiModelsAiModelCollectionItemInput is an input type that accepts GetAiModelsAiModelCollectionItemArgs and GetAiModelsAiModelCollectionItemOutput values.
+// You can construct a concrete instance of `GetAiModelsAiModelCollectionItemInput` via:
+//
+//	GetAiModelsAiModelCollectionItemArgs{...}
+type GetAiModelsAiModelCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAiModelsAiModelCollectionItemOutput() GetAiModelsAiModelCollectionItemOutput
+	ToGetAiModelsAiModelCollectionItemOutputWithContext(context.Context) GetAiModelsAiModelCollectionItemOutput
+}
+
+type GetAiModelsAiModelCollectionItemArgs struct {
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The identifier of the AI model offered by a provider.
+	Key pulumi.StringInput `pulumi:"key"`
+	// The AI provider type for which model information is requested.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetAiModelsAiModelCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsAiModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiModelsAiModelCollectionItemArgs) ToGetAiModelsAiModelCollectionItemOutput() GetAiModelsAiModelCollectionItemOutput {
+	return i.ToGetAiModelsAiModelCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsAiModelCollectionItemArgs) ToGetAiModelsAiModelCollectionItemOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsAiModelCollectionItemOutput)
+}
+
+// GetAiModelsAiModelCollectionItemArrayInput is an input type that accepts GetAiModelsAiModelCollectionItemArray and GetAiModelsAiModelCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAiModelsAiModelCollectionItemArrayInput` via:
+//
+//	GetAiModelsAiModelCollectionItemArray{ GetAiModelsAiModelCollectionItemArgs{...} }
+type GetAiModelsAiModelCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAiModelsAiModelCollectionItemArrayOutput() GetAiModelsAiModelCollectionItemArrayOutput
+	ToGetAiModelsAiModelCollectionItemArrayOutputWithContext(context.Context) GetAiModelsAiModelCollectionItemArrayOutput
+}
+
+type GetAiModelsAiModelCollectionItemArray []GetAiModelsAiModelCollectionItemInput
+
+func (GetAiModelsAiModelCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsAiModelCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiModelsAiModelCollectionItemArray) ToGetAiModelsAiModelCollectionItemArrayOutput() GetAiModelsAiModelCollectionItemArrayOutput {
+	return i.ToGetAiModelsAiModelCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsAiModelCollectionItemArray) ToGetAiModelsAiModelCollectionItemArrayOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsAiModelCollectionItemArrayOutput)
+}
+
+type GetAiModelsAiModelCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsAiModelCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsAiModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiModelsAiModelCollectionItemOutput) ToGetAiModelsAiModelCollectionItemOutput() GetAiModelsAiModelCollectionItemOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionItemOutput) ToGetAiModelsAiModelCollectionItemOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionItemOutput {
+	return o
+}
+
+// Metadata about this specific object.
+func (o GetAiModelsAiModelCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiModelsAiModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An object's Display Name.
+func (o GetAiModelsAiModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiModelsAiModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The identifier of the AI model offered by a provider.
+func (o GetAiModelsAiModelCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiModelsAiModelCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// The AI provider type for which model information is requested.
+func (o GetAiModelsAiModelCollectionItemOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiModelsAiModelCollectionItem) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetAiModelsAiModelCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsAiModelCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsAiModelCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiModelsAiModelCollectionItemArrayOutput) ToGetAiModelsAiModelCollectionItemArrayOutput() GetAiModelsAiModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionItemArrayOutput) ToGetAiModelsAiModelCollectionItemArrayOutputWithContext(ctx context.Context) GetAiModelsAiModelCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiModelsAiModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAiModelsAiModelCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiModelsAiModelCollectionItem {
+		return vs[0].([]GetAiModelsAiModelCollectionItem)[vs[1].(int)]
+	}).(GetAiModelsAiModelCollectionItemOutput)
+}
+
+type GetAiModelsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAiModelsFilterInput is an input type that accepts GetAiModelsFilterArgs and GetAiModelsFilterOutput values.
+// You can construct a concrete instance of `GetAiModelsFilterInput` via:
+//
+//	GetAiModelsFilterArgs{...}
+type GetAiModelsFilterInput interface {
+	pulumi.Input
+
+	ToGetAiModelsFilterOutput() GetAiModelsFilterOutput
+	ToGetAiModelsFilterOutputWithContext(context.Context) GetAiModelsFilterOutput
+}
+
+type GetAiModelsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAiModelsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsFilter)(nil)).Elem()
+}
+
+func (i GetAiModelsFilterArgs) ToGetAiModelsFilterOutput() GetAiModelsFilterOutput {
+	return i.ToGetAiModelsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsFilterArgs) ToGetAiModelsFilterOutputWithContext(ctx context.Context) GetAiModelsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsFilterOutput)
+}
+
+// GetAiModelsFilterArrayInput is an input type that accepts GetAiModelsFilterArray and GetAiModelsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAiModelsFilterArrayInput` via:
+//
+//	GetAiModelsFilterArray{ GetAiModelsFilterArgs{...} }
+type GetAiModelsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAiModelsFilterArrayOutput() GetAiModelsFilterArrayOutput
+	ToGetAiModelsFilterArrayOutputWithContext(context.Context) GetAiModelsFilterArrayOutput
+}
+
+type GetAiModelsFilterArray []GetAiModelsFilterInput
+
+func (GetAiModelsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsFilter)(nil)).Elem()
+}
+
+func (i GetAiModelsFilterArray) ToGetAiModelsFilterArrayOutput() GetAiModelsFilterArrayOutput {
+	return i.ToGetAiModelsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiModelsFilterArray) ToGetAiModelsFilterArrayOutputWithContext(ctx context.Context) GetAiModelsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiModelsFilterArrayOutput)
+}
+
+type GetAiModelsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiModelsFilter)(nil)).Elem()
+}
+
+func (o GetAiModelsFilterOutput) ToGetAiModelsFilterOutput() GetAiModelsFilterOutput {
+	return o
+}
+
+func (o GetAiModelsFilterOutput) ToGetAiModelsFilterOutputWithContext(ctx context.Context) GetAiModelsFilterOutput {
+	return o
+}
+
+func (o GetAiModelsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiModelsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAiModelsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAiModelsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAiModelsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAiModelsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAiModelsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiModelsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiModelsFilter)(nil)).Elem()
+}
+
+func (o GetAiModelsFilterArrayOutput) ToGetAiModelsFilterArrayOutput() GetAiModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetAiModelsFilterArrayOutput) ToGetAiModelsFilterArrayOutputWithContext(ctx context.Context) GetAiModelsFilterArrayOutput {
+	return o
+}
+
+func (o GetAiModelsFilterArrayOutput) Index(i pulumi.IntInput) GetAiModelsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiModelsFilter {
+		return vs[0].([]GetAiModelsFilter)[vs[1].(int)]
+	}).(GetAiModelsFilterOutput)
+}
+
+type GetAiProvidersAiProviderCollection struct {
+	// An array of AI providers.
+	Items []GetAiProvidersAiProviderCollectionItem `pulumi:"items"`
+}
+
+// GetAiProvidersAiProviderCollectionInput is an input type that accepts GetAiProvidersAiProviderCollectionArgs and GetAiProvidersAiProviderCollectionOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionInput` via:
+//
+//	GetAiProvidersAiProviderCollectionArgs{...}
+type GetAiProvidersAiProviderCollectionInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionOutput() GetAiProvidersAiProviderCollectionOutput
+	ToGetAiProvidersAiProviderCollectionOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionOutput
+}
+
+type GetAiProvidersAiProviderCollectionArgs struct {
+	// An array of AI providers.
+	Items GetAiProvidersAiProviderCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAiProvidersAiProviderCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollection)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionArgs) ToGetAiProvidersAiProviderCollectionOutput() GetAiProvidersAiProviderCollectionOutput {
+	return i.ToGetAiProvidersAiProviderCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionArgs) ToGetAiProvidersAiProviderCollectionOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionOutput)
+}
+
+// GetAiProvidersAiProviderCollectionArrayInput is an input type that accepts GetAiProvidersAiProviderCollectionArray and GetAiProvidersAiProviderCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionArrayInput` via:
+//
+//	GetAiProvidersAiProviderCollectionArray{ GetAiProvidersAiProviderCollectionArgs{...} }
+type GetAiProvidersAiProviderCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionArrayOutput() GetAiProvidersAiProviderCollectionArrayOutput
+	ToGetAiProvidersAiProviderCollectionArrayOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionArrayOutput
+}
+
+type GetAiProvidersAiProviderCollectionArray []GetAiProvidersAiProviderCollectionInput
+
+func (GetAiProvidersAiProviderCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollection)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionArray) ToGetAiProvidersAiProviderCollectionArrayOutput() GetAiProvidersAiProviderCollectionArrayOutput {
+	return i.ToGetAiProvidersAiProviderCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionArray) ToGetAiProvidersAiProviderCollectionArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionArrayOutput)
+}
+
+type GetAiProvidersAiProviderCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollection)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionOutput) ToGetAiProvidersAiProviderCollectionOutput() GetAiProvidersAiProviderCollectionOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionOutput) ToGetAiProvidersAiProviderCollectionOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionOutput {
+	return o
+}
+
+// An array of AI providers.
+func (o GetAiProvidersAiProviderCollectionOutput) Items() GetAiProvidersAiProviderCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollection) []GetAiProvidersAiProviderCollectionItem { return v.Items }).(GetAiProvidersAiProviderCollectionItemArrayOutput)
+}
+
+type GetAiProvidersAiProviderCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollection)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionArrayOutput) ToGetAiProvidersAiProviderCollectionArrayOutput() GetAiProvidersAiProviderCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionArrayOutput) ToGetAiProvidersAiProviderCollectionArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionArrayOutput) Index(i pulumi.IntInput) GetAiProvidersAiProviderCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiProvidersAiProviderCollection {
+		return vs[0].([]GetAiProvidersAiProviderCollection)[vs[1].(int)]
+	}).(GetAiProvidersAiProviderCollectionOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItem struct {
+	// Authentication types supported by the AI provider.
+	AuthTypes []string `pulumi:"authTypes"`
+	// Default base URL for the AI provider.
+	DefaultBaseUrl string `pulumi:"defaultBaseUrl"`
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName string `pulumi:"displayName"`
+	// List of AI models supported by this provider, when available. This field is null when the provider's models can be retrieved only after supplying additional context. For example, OCI_GENERATIVE_AI model availability may vary by region.
+	Models []GetAiProvidersAiProviderCollectionItemModel `pulumi:"models"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetAiProvidersAiProviderCollectionItemInput is an input type that accepts GetAiProvidersAiProviderCollectionItemArgs and GetAiProvidersAiProviderCollectionItemOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionItemInput` via:
+//
+//	GetAiProvidersAiProviderCollectionItemArgs{...}
+type GetAiProvidersAiProviderCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionItemOutput() GetAiProvidersAiProviderCollectionItemOutput
+	ToGetAiProvidersAiProviderCollectionItemOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionItemOutput
+}
+
+type GetAiProvidersAiProviderCollectionItemArgs struct {
+	// Authentication types supported by the AI provider.
+	AuthTypes pulumi.StringArrayInput `pulumi:"authTypes"`
+	// Default base URL for the AI provider.
+	DefaultBaseUrl pulumi.StringInput `pulumi:"defaultBaseUrl"`
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of AI models supported by this provider, when available. This field is null when the provider's models can be retrieved only after supplying additional context. For example, OCI_GENERATIVE_AI model availability may vary by region.
+	Models GetAiProvidersAiProviderCollectionItemModelArrayInput `pulumi:"models"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetAiProvidersAiProviderCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionItemArgs) ToGetAiProvidersAiProviderCollectionItemOutput() GetAiProvidersAiProviderCollectionItemOutput {
+	return i.ToGetAiProvidersAiProviderCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionItemArgs) ToGetAiProvidersAiProviderCollectionItemOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionItemOutput)
+}
+
+// GetAiProvidersAiProviderCollectionItemArrayInput is an input type that accepts GetAiProvidersAiProviderCollectionItemArray and GetAiProvidersAiProviderCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionItemArrayInput` via:
+//
+//	GetAiProvidersAiProviderCollectionItemArray{ GetAiProvidersAiProviderCollectionItemArgs{...} }
+type GetAiProvidersAiProviderCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionItemArrayOutput() GetAiProvidersAiProviderCollectionItemArrayOutput
+	ToGetAiProvidersAiProviderCollectionItemArrayOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionItemArrayOutput
+}
+
+type GetAiProvidersAiProviderCollectionItemArray []GetAiProvidersAiProviderCollectionItemInput
+
+func (GetAiProvidersAiProviderCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollectionItem)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionItemArray) ToGetAiProvidersAiProviderCollectionItemArrayOutput() GetAiProvidersAiProviderCollectionItemArrayOutput {
+	return i.ToGetAiProvidersAiProviderCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionItemArray) ToGetAiProvidersAiProviderCollectionItemArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionItemArrayOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionItemOutput) ToGetAiProvidersAiProviderCollectionItemOutput() GetAiProvidersAiProviderCollectionItemOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemOutput) ToGetAiProvidersAiProviderCollectionItemOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemOutput {
+	return o
+}
+
+// Authentication types supported by the AI provider.
+func (o GetAiProvidersAiProviderCollectionItemOutput) AuthTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) []string { return v.AuthTypes }).(pulumi.StringArrayOutput)
+}
+
+// Default base URL for the AI provider.
+func (o GetAiProvidersAiProviderCollectionItemOutput) DefaultBaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) string { return v.DefaultBaseUrl }).(pulumi.StringOutput)
+}
+
+// Metadata about this specific object.
+func (o GetAiProvidersAiProviderCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An object's Display Name.
+func (o GetAiProvidersAiProviderCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// List of AI models supported by this provider, when available. This field is null when the provider's models can be retrieved only after supplying additional context. For example, OCI_GENERATIVE_AI model availability may vary by region.
+func (o GetAiProvidersAiProviderCollectionItemOutput) Models() GetAiProvidersAiProviderCollectionItemModelArrayOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) []GetAiProvidersAiProviderCollectionItemModel {
+		return v.Models
+	}).(GetAiProvidersAiProviderCollectionItemModelArrayOutput)
+}
+
+// AI Provider type used by the AI Model Connection.
+func (o GetAiProvidersAiProviderCollectionItemOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItem) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollectionItem)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionItemArrayOutput) ToGetAiProvidersAiProviderCollectionItemArrayOutput() GetAiProvidersAiProviderCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemArrayOutput) ToGetAiProvidersAiProviderCollectionItemArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAiProvidersAiProviderCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiProvidersAiProviderCollectionItem {
+		return vs[0].([]GetAiProvidersAiProviderCollectionItem)[vs[1].(int)]
+	}).(GetAiProvidersAiProviderCollectionItemOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItemModel struct {
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName string `pulumi:"displayName"`
+	// The identifier of the AI model offered by a provider.
+	Key string `pulumi:"key"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetAiProvidersAiProviderCollectionItemModelInput is an input type that accepts GetAiProvidersAiProviderCollectionItemModelArgs and GetAiProvidersAiProviderCollectionItemModelOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionItemModelInput` via:
+//
+//	GetAiProvidersAiProviderCollectionItemModelArgs{...}
+type GetAiProvidersAiProviderCollectionItemModelInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionItemModelOutput() GetAiProvidersAiProviderCollectionItemModelOutput
+	ToGetAiProvidersAiProviderCollectionItemModelOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionItemModelOutput
+}
+
+type GetAiProvidersAiProviderCollectionItemModelArgs struct {
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// An object's Display Name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The identifier of the AI model offered by a provider.
+	Key pulumi.StringInput `pulumi:"key"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetAiProvidersAiProviderCollectionItemModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemModel)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionItemModelArgs) ToGetAiProvidersAiProviderCollectionItemModelOutput() GetAiProvidersAiProviderCollectionItemModelOutput {
+	return i.ToGetAiProvidersAiProviderCollectionItemModelOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionItemModelArgs) ToGetAiProvidersAiProviderCollectionItemModelOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionItemModelOutput)
+}
+
+// GetAiProvidersAiProviderCollectionItemModelArrayInput is an input type that accepts GetAiProvidersAiProviderCollectionItemModelArray and GetAiProvidersAiProviderCollectionItemModelArrayOutput values.
+// You can construct a concrete instance of `GetAiProvidersAiProviderCollectionItemModelArrayInput` via:
+//
+//	GetAiProvidersAiProviderCollectionItemModelArray{ GetAiProvidersAiProviderCollectionItemModelArgs{...} }
+type GetAiProvidersAiProviderCollectionItemModelArrayInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersAiProviderCollectionItemModelArrayOutput() GetAiProvidersAiProviderCollectionItemModelArrayOutput
+	ToGetAiProvidersAiProviderCollectionItemModelArrayOutputWithContext(context.Context) GetAiProvidersAiProviderCollectionItemModelArrayOutput
+}
+
+type GetAiProvidersAiProviderCollectionItemModelArray []GetAiProvidersAiProviderCollectionItemModelInput
+
+func (GetAiProvidersAiProviderCollectionItemModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollectionItemModel)(nil)).Elem()
+}
+
+func (i GetAiProvidersAiProviderCollectionItemModelArray) ToGetAiProvidersAiProviderCollectionItemModelArrayOutput() GetAiProvidersAiProviderCollectionItemModelArrayOutput {
+	return i.ToGetAiProvidersAiProviderCollectionItemModelArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersAiProviderCollectionItemModelArray) ToGetAiProvidersAiProviderCollectionItemModelArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersAiProviderCollectionItemModelArrayOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItemModelOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionItemModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemModel)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) ToGetAiProvidersAiProviderCollectionItemModelOutput() GetAiProvidersAiProviderCollectionItemModelOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) ToGetAiProvidersAiProviderCollectionItemModelOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemModelOutput {
+	return o
+}
+
+// Metadata about this specific object.
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItemModel) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// An object's Display Name.
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItemModel) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The identifier of the AI model offered by a provider.
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItemModel) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// AI Provider type used by the AI Model Connection.
+func (o GetAiProvidersAiProviderCollectionItemModelOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersAiProviderCollectionItemModel) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetAiProvidersAiProviderCollectionItemModelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersAiProviderCollectionItemModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersAiProviderCollectionItemModel)(nil)).Elem()
+}
+
+func (o GetAiProvidersAiProviderCollectionItemModelArrayOutput) ToGetAiProvidersAiProviderCollectionItemModelArrayOutput() GetAiProvidersAiProviderCollectionItemModelArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemModelArrayOutput) ToGetAiProvidersAiProviderCollectionItemModelArrayOutputWithContext(ctx context.Context) GetAiProvidersAiProviderCollectionItemModelArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersAiProviderCollectionItemModelArrayOutput) Index(i pulumi.IntInput) GetAiProvidersAiProviderCollectionItemModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiProvidersAiProviderCollectionItemModel {
+		return vs[0].([]GetAiProvidersAiProviderCollectionItemModel)[vs[1].(int)]
+	}).(GetAiProvidersAiProviderCollectionItemModelOutput)
+}
+
+type GetAiProvidersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAiProvidersFilterInput is an input type that accepts GetAiProvidersFilterArgs and GetAiProvidersFilterOutput values.
+// You can construct a concrete instance of `GetAiProvidersFilterInput` via:
+//
+//	GetAiProvidersFilterArgs{...}
+type GetAiProvidersFilterInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersFilterOutput() GetAiProvidersFilterOutput
+	ToGetAiProvidersFilterOutputWithContext(context.Context) GetAiProvidersFilterOutput
+}
+
+type GetAiProvidersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAiProvidersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersFilter)(nil)).Elem()
+}
+
+func (i GetAiProvidersFilterArgs) ToGetAiProvidersFilterOutput() GetAiProvidersFilterOutput {
+	return i.ToGetAiProvidersFilterOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersFilterArgs) ToGetAiProvidersFilterOutputWithContext(ctx context.Context) GetAiProvidersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersFilterOutput)
+}
+
+// GetAiProvidersFilterArrayInput is an input type that accepts GetAiProvidersFilterArray and GetAiProvidersFilterArrayOutput values.
+// You can construct a concrete instance of `GetAiProvidersFilterArrayInput` via:
+//
+//	GetAiProvidersFilterArray{ GetAiProvidersFilterArgs{...} }
+type GetAiProvidersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAiProvidersFilterArrayOutput() GetAiProvidersFilterArrayOutput
+	ToGetAiProvidersFilterArrayOutputWithContext(context.Context) GetAiProvidersFilterArrayOutput
+}
+
+type GetAiProvidersFilterArray []GetAiProvidersFilterInput
+
+func (GetAiProvidersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersFilter)(nil)).Elem()
+}
+
+func (i GetAiProvidersFilterArray) ToGetAiProvidersFilterArrayOutput() GetAiProvidersFilterArrayOutput {
+	return i.ToGetAiProvidersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAiProvidersFilterArray) ToGetAiProvidersFilterArrayOutputWithContext(ctx context.Context) GetAiProvidersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAiProvidersFilterArrayOutput)
+}
+
+type GetAiProvidersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAiProvidersFilter)(nil)).Elem()
+}
+
+func (o GetAiProvidersFilterOutput) ToGetAiProvidersFilterOutput() GetAiProvidersFilterOutput {
+	return o
+}
+
+func (o GetAiProvidersFilterOutput) ToGetAiProvidersFilterOutputWithContext(ctx context.Context) GetAiProvidersFilterOutput {
+	return o
+}
+
+func (o GetAiProvidersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAiProvidersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAiProvidersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAiProvidersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAiProvidersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAiProvidersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAiProvidersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAiProvidersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAiProvidersFilter)(nil)).Elem()
+}
+
+func (o GetAiProvidersFilterArrayOutput) ToGetAiProvidersFilterArrayOutput() GetAiProvidersFilterArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersFilterArrayOutput) ToGetAiProvidersFilterArrayOutputWithContext(ctx context.Context) GetAiProvidersFilterArrayOutput {
+	return o
+}
+
+func (o GetAiProvidersFilterArrayOutput) Index(i pulumi.IntInput) GetAiProvidersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAiProvidersFilter {
+		return vs[0].([]GetAiProvidersFilter)[vs[1].(int)]
+	}).(GetAiProvidersFilterOutput)
+}
+
 type GetConnectionAdditionalAttribute struct {
 	// The catalog name within Polaris where Iceberg tables are registered.
 	Name string `pulumi:"name"`
@@ -4553,6 +5693,8 @@ type GetConnectionAssignmentsConnectionAssignmentCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId string `pulumi:"connectionId"`
+	// The array of connection types.
+	ConnectionType string `pulumi:"connectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId string `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
@@ -4584,6 +5726,8 @@ type GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The array of connection types.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
@@ -4661,6 +5805,11 @@ func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) Compar
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
 func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The array of connection types.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
@@ -4821,6 +5970,169 @@ func (o GetConnectionAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetC
 	}).(GetConnectionAssignmentsFilterOutput)
 }
 
+type GetConnectionAuthDetail struct {
+	// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey string `pulumi:"apiKey"`
+	// API key secret OCID for the AI model connection.
+	ApiKeySecretId string `pulumi:"apiKeySecretId"`
+	// Authentication type used by the AI model connection.
+	AuthType string `pulumi:"authType"`
+	// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl string `pulumi:"baseUrl"`
+	// Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint string `pulumi:"keyFingerprint"`
+	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+	Region string `pulumi:"region"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId string `pulumi:"tenancyId"`
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	UserId string `pulumi:"userId"`
+}
+
+// GetConnectionAuthDetailInput is an input type that accepts GetConnectionAuthDetailArgs and GetConnectionAuthDetailOutput values.
+// You can construct a concrete instance of `GetConnectionAuthDetailInput` via:
+//
+//	GetConnectionAuthDetailArgs{...}
+type GetConnectionAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetConnectionAuthDetailOutput() GetConnectionAuthDetailOutput
+	ToGetConnectionAuthDetailOutputWithContext(context.Context) GetConnectionAuthDetailOutput
+}
+
+type GetConnectionAuthDetailArgs struct {
+	// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+	// API key secret OCID for the AI model connection.
+	ApiKeySecretId pulumi.StringInput `pulumi:"apiKeySecretId"`
+	// Authentication type used by the AI model connection.
+	AuthType pulumi.StringInput `pulumi:"authType"`
+	// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl pulumi.StringInput `pulumi:"baseUrl"`
+	// Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint pulumi.StringInput `pulumi:"keyFingerprint"`
+	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+	Region pulumi.StringInput `pulumi:"region"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	UserId pulumi.StringInput `pulumi:"userId"`
+}
+
+func (GetConnectionAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAuthDetail)(nil)).Elem()
+}
+
+func (i GetConnectionAuthDetailArgs) ToGetConnectionAuthDetailOutput() GetConnectionAuthDetailOutput {
+	return i.ToGetConnectionAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAuthDetailArgs) ToGetConnectionAuthDetailOutputWithContext(ctx context.Context) GetConnectionAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAuthDetailOutput)
+}
+
+// GetConnectionAuthDetailArrayInput is an input type that accepts GetConnectionAuthDetailArray and GetConnectionAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAuthDetailArrayInput` via:
+//
+//	GetConnectionAuthDetailArray{ GetConnectionAuthDetailArgs{...} }
+type GetConnectionAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAuthDetailArrayOutput() GetConnectionAuthDetailArrayOutput
+	ToGetConnectionAuthDetailArrayOutputWithContext(context.Context) GetConnectionAuthDetailArrayOutput
+}
+
+type GetConnectionAuthDetailArray []GetConnectionAuthDetailInput
+
+func (GetConnectionAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAuthDetail)(nil)).Elem()
+}
+
+func (i GetConnectionAuthDetailArray) ToGetConnectionAuthDetailArrayOutput() GetConnectionAuthDetailArrayOutput {
+	return i.ToGetConnectionAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAuthDetailArray) ToGetConnectionAuthDetailArrayOutputWithContext(ctx context.Context) GetConnectionAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAuthDetailArrayOutput)
+}
+
+type GetConnectionAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAuthDetail)(nil)).Elem()
+}
+
+func (o GetConnectionAuthDetailOutput) ToGetConnectionAuthDetailOutput() GetConnectionAuthDetailOutput {
+	return o
+}
+
+func (o GetConnectionAuthDetailOutput) ToGetConnectionAuthDetailOutputWithContext(ctx context.Context) GetConnectionAuthDetailOutput {
+	return o
+}
+
+// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+func (o GetConnectionAuthDetailOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+// API key secret OCID for the AI model connection.
+func (o GetConnectionAuthDetailOutput) ApiKeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.ApiKeySecretId }).(pulumi.StringOutput)
+}
+
+// Authentication type used by the AI model connection.
+func (o GetConnectionAuthDetailOutput) AuthType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.AuthType }).(pulumi.StringOutput)
+}
+
+// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+func (o GetConnectionAuthDetailOutput) BaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.BaseUrl }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Generative AI key fingerprint.
+func (o GetConnectionAuthDetailOutput) KeyFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.KeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+func (o GetConnectionAuthDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+func (o GetConnectionAuthDetailOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+func (o GetConnectionAuthDetailOutput) UserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAuthDetail) string { return v.UserId }).(pulumi.StringOutput)
+}
+
+type GetConnectionAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAuthDetail)(nil)).Elem()
+}
+
+func (o GetConnectionAuthDetailArrayOutput) ToGetConnectionAuthDetailArrayOutput() GetConnectionAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetConnectionAuthDetailArrayOutput) ToGetConnectionAuthDetailArrayOutputWithContext(ctx context.Context) GetConnectionAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetConnectionAuthDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAuthDetail {
+		return vs[0].([]GetConnectionAuthDetail)[vs[1].(int)]
+	}).(GetConnectionAuthDetailOutput)
+}
+
 type GetConnectionBootstrapServer struct {
 	// The name or address of a host.
 	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -4947,11 +6259,16 @@ type GetConnectionCatalog struct {
 	Branch string `pulumi:"branch"`
 	// The catalog type.
 	CatalogType string `pulumi:"catalogType"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId string `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret string `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId string `pulumi:"clientSecretSecretId"`
 	// The AWS Glue Catalog ID where Iceberg tables are registered.
 	GlueId string `pulumi:"glueId"`
@@ -4963,7 +6280,9 @@ type GetConnectionCatalog struct {
 	Properties string `pulumi:"properties"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId string `pulumi:"propertiesSecretId"`
-	// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri string `pulumi:"uri"`
 }
 
@@ -4983,11 +6302,16 @@ type GetConnectionCatalogArgs struct {
 	Branch pulumi.StringInput `pulumi:"branch"`
 	// The catalog type.
 	CatalogType pulumi.StringInput `pulumi:"catalogType"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringInput `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId pulumi.StringInput `pulumi:"clientSecretSecretId"`
 	// The AWS Glue Catalog ID where Iceberg tables are registered.
 	GlueId pulumi.StringInput `pulumi:"glueId"`
@@ -4999,7 +6323,9 @@ type GetConnectionCatalogArgs struct {
 	Properties pulumi.StringInput `pulumi:"properties"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId pulumi.StringInput `pulumi:"propertiesSecretId"`
-	// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri pulumi.StringInput `pulumi:"uri"`
 }
 
@@ -5064,7 +6390,9 @@ func (o GetConnectionCatalogOutput) CatalogType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.CatalogType }).(pulumi.StringOutput)
 }
 
-// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 func (o GetConnectionCatalogOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.ClientId }).(pulumi.StringOutput)
 }
@@ -5074,7 +6402,10 @@ func (o GetConnectionCatalogOutput) ClientSecret() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+//   - AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//   - DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+//   - MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//     Note: When provided, 'clientSecret' field must not be provided.
 func (o GetConnectionCatalogOutput) ClientSecretSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.ClientSecretSecretId }).(pulumi.StringOutput)
 }
@@ -5104,7 +6435,9 @@ func (o GetConnectionCatalogOutput) PropertiesSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.PropertiesSecretId }).(pulumi.StringOutput)
 }
 
-// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 func (o GetConnectionCatalogOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionCatalog) string { return v.Uri }).(pulumi.StringOutput)
 }
@@ -5351,7 +6684,9 @@ func (o GetConnectionLockArrayOutput) Index(i pulumi.IntInput) GetConnectionLock
 }
 
 type GetConnectionStorage struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey string `pulumi:"accountKey"`
@@ -5359,11 +6694,16 @@ type GetConnectionStorage struct {
 	AccountKeySecretId string `pulumi:"accountKeySecretId"`
 	// Sets the Azure storage account name.
 	AccountName string `pulumi:"accountName"`
-	// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket string `pulumi:"bucket"`
 	// The Azure Blob Storage container where Iceberg tables are stored.
 	Container string `pulumi:"container"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint string `pulumi:"endpoint"`
 	// The Google Cloud Project where the bucket exists.
 	ProjectId string `pulumi:"projectId"`
@@ -5373,7 +6713,8 @@ type GetConnectionStorage struct {
 	SchemeType string `pulumi:"schemeType"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
@@ -5395,7 +6736,9 @@ type GetConnectionStorageInput interface {
 }
 
 type GetConnectionStorageArgs struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey pulumi.StringInput `pulumi:"accountKey"`
@@ -5403,11 +6746,16 @@ type GetConnectionStorageArgs struct {
 	AccountKeySecretId pulumi.StringInput `pulumi:"accountKeySecretId"`
 	// Sets the Azure storage account name.
 	AccountName pulumi.StringInput `pulumi:"accountName"`
-	// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The Azure Blob Storage container where Iceberg tables are stored.
 	Container pulumi.StringInput `pulumi:"container"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 	// The Google Cloud Project where the bucket exists.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
@@ -5417,7 +6765,8 @@ type GetConnectionStorageArgs struct {
 	SchemeType pulumi.StringInput `pulumi:"schemeType"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId pulumi.StringInput `pulumi:"secretAccessKeySecretId"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile pulumi.StringInput `pulumi:"serviceAccountKeyFile"`
@@ -5478,7 +6827,9 @@ func (o GetConnectionStorageOutput) ToGetConnectionStorageOutputWithContext(ctx 
 	return o
 }
 
-// Access key ID to access the Amazon S3 bucket.
+//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 func (o GetConnectionStorageOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -5498,7 +6849,9 @@ func (o GetConnectionStorageOutput) AccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 func (o GetConnectionStorageOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -5508,7 +6861,10 @@ func (o GetConnectionStorageOutput) Container() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.Container }).(pulumi.StringOutput)
 }
 
-// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o GetConnectionStorageOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -5533,7 +6889,8 @@ func (o GetConnectionStorageOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 func (o GetConnectionStorageOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionStorage) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
@@ -5668,7 +7025,9 @@ func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetConnectionsConnectionCollectionItem struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey string `pulumi:"accountKey"`
@@ -5678,6 +7037,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionsConnectionCollectionItemAdditionalAttribute `pulumi:"additionalAttributes"`
+	// Represents authentication details for an AI Model connection.
+	AuthDetails []GetConnectionsConnectionCollectionItemAuthDetail `pulumi:"authDetails"`
 	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
 	AuthenticationMode string `pulumi:"authenticationMode"`
 	// Used authentication mechanism to be provided for the following connection types:
@@ -5697,11 +7058,16 @@ type GetConnectionsConnectionCollectionItem struct {
 	BootstrapServers []GetConnectionsConnectionCollectionItemBootstrapServer `pulumi:"bootstrapServers"`
 	// Represents the catalog of given type used in an Iceberg connection.
 	Catalogs []GetConnectionsConnectionCollectionItemCatalog `pulumi:"catalogs"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId string `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret string `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId string `pulumi:"clientSecretSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
 	ClusterId string `pulumi:"clusterId"`
@@ -5721,6 +7087,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
 	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 	// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+	// * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
 	ConnectionUrl string `pulumi:"connectionUrl"`
 	// The base64 encoded content of the consumer.properties file.
 	ConsumerProperties string `pulumi:"consumerProperties"`
@@ -5742,7 +7109,10 @@ type GetConnectionsConnectionCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds bool `pulumi:"doesUseSecretIds"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint string `pulumi:"endpoint"`
 	// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint string `pulumi:"fingerprint"`
@@ -5769,13 +7139,17 @@ type GetConnectionsConnectionCollectionItem struct {
 	JndiSecurityCredentialsSecretId string `pulumi:"jndiSecurityCredentialsSecretId"`
 	// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal string `pulumi:"jndiSecurityPrincipal"`
-	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+	// References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
 	KeyId string `pulumi:"keyId"`
 	// Deprecated: The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
 	KeyStore string `pulumi:"keyStore"`
 	// Deprecated: The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
 	KeyStorePassword string `pulumi:"keyStorePassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+	//   Note: When provided, 'keyStorePassword' field must not be provided.
 	KeyStorePasswordSecretId string `pulumi:"keyStorePasswordSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
 	KeyStoreSecretId string `pulumi:"keyStoreSecretId"`
@@ -5783,6 +7157,10 @@ type GetConnectionsConnectionCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks []GetConnectionsConnectionCollectionItemLock `pulumi:"locks"`
+	// Maximum number of input characters supported by this AI model connection.
+	MaxInputChars int `pulumi:"maxInputChars"`
+	// AI model identifier.
+	ModelKey string `pulumi:"modelKey"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deprecated: The 'password' field has been deprecated. Please use 'password_secret_id' instead.
@@ -5803,13 +7181,15 @@ type GetConnectionsConnectionCollectionItem struct {
 	PrivateKeyPassphraseSecretId string `pulumi:"privateKeyPassphraseSecretId"`
 	// The base64 encoded content of the producer.properties file.
 	ProducerProperties string `pulumi:"producerProperties"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType string `pulumi:"providerType"`
 	// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId string `pulumi:"redisClusterId"`
 	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
 	Region string `pulumi:"region"`
-	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+	// Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
 	RoutingMethod string `pulumi:"routingMethod"`
 	// Deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
 	SasToken string `pulumi:"sasToken"`
@@ -5817,16 +7197,23 @@ type GetConnectionsConnectionCollectionItem struct {
 	SasTokenSecretId string `pulumi:"sasTokenSecretId"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// Security Protocol to be provided for the following connection types:
-	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+	// * DB2: Security protocol for the DB2 database.
+	// * ELASTICSEARCH: Security protocol for Elasticsearch.
+	// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+	// * KAFKA: Security Type for Kafka.
+	// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+	// * MONGODB: Security Type for MongoDB.
+	// * MYSQL: Security Type for MySQL.
+	// * POSTGRESQL: Security protocol for PostgreSQL.
+	// * REDIS: Security protocol for Redis.
 	SecurityProtocol string `pulumi:"securityProtocol"`
-	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
-	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+	// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+	// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
 	Servers string `pulumi:"servers"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
@@ -5836,13 +7223,17 @@ type GetConnectionsConnectionCollectionItem struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
-	// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+	// * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
-	// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+	// * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa string `pulumi:"sslCa"`
-	// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert string `pulumi:"sslCert"`
 	// Deprecated: The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.
 	SslClientKeystash string `pulumi:"sslClientKeystash"`
@@ -5852,18 +7243,23 @@ type GetConnectionsConnectionCollectionItem struct {
 	SslClientKeystoredb string `pulumi:"sslClientKeystoredb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId string `pulumi:"sslClientKeystoredbSecretId"`
-	// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl string `pulumi:"sslCrl"`
 	// Deprecated: The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
 	SslKey string `pulumi:"sslKey"`
 	// Deprecated: The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
 	SslKeyPassword string `pulumi:"sslKeyPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+	//   Note: When provided, 'sslKeyPassword' field must not be provided.
 	SslKeyPasswordSecretId string `pulumi:"sslKeyPasswordSecretId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	// * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+	//   Note: When provided, 'sslKey' field must not be provided.
 	SslKeySecretId string `pulumi:"sslKeySecretId"`
-	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+	// * MYSQL: SSL modes for MySQL.
+	// * POSTGRESQL: SSL modes for PostgreSQL.
 	SslMode string `pulumi:"sslMode"`
 	// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate string `pulumi:"sslServerCertificate"`
@@ -5907,17 +7303,22 @@ type GetConnectionsConnectionCollectionItem struct {
 	TrustStore string `pulumi:"trustStore"`
 	// Deprecated: The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
 	TrustStorePassword string `pulumi:"trustStorePassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+	//   Note: When provided, 'trustStorePassword' field must not be provided.
 	TrustStorePasswordSecretId string `pulumi:"trustStorePasswordSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
 	TrustStoreSecretId string `pulumi:"trustStoreSecretId"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url string `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
 	UserId string `pulumi:"userId"`
 	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username string `pulumi:"username"`
-	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+	// References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
 	VaultId string `pulumi:"vaultId"`
 	// Deprecated: The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.
 	Wallet string `pulumi:"wallet"`
@@ -5937,7 +7338,9 @@ type GetConnectionsConnectionCollectionItemInput interface {
 }
 
 type GetConnectionsConnectionCollectionItemArgs struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey pulumi.StringInput `pulumi:"accountKey"`
@@ -5947,6 +7350,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	AccountName pulumi.StringInput `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	// Represents authentication details for an AI Model connection.
+	AuthDetails GetConnectionsConnectionCollectionItemAuthDetailArrayInput `pulumi:"authDetails"`
 	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
 	AuthenticationMode pulumi.StringInput `pulumi:"authenticationMode"`
 	// Used authentication mechanism to be provided for the following connection types:
@@ -5966,11 +7371,16 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	BootstrapServers GetConnectionsConnectionCollectionItemBootstrapServerArrayInput `pulumi:"bootstrapServers"`
 	// Represents the catalog of given type used in an Iceberg connection.
 	Catalogs GetConnectionsConnectionCollectionItemCatalogArrayInput `pulumi:"catalogs"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringInput `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId pulumi.StringInput `pulumi:"clientSecretSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
@@ -5990,6 +7400,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
 	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 	// * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+	// * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
 	ConnectionUrl pulumi.StringInput `pulumi:"connectionUrl"`
 	// The base64 encoded content of the consumer.properties file.
 	ConsumerProperties pulumi.StringInput `pulumi:"consumerProperties"`
@@ -6011,7 +7422,10 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolInput `pulumi:"doesUseSecretIds"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 	// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
@@ -6038,13 +7452,17 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	JndiSecurityCredentialsSecretId pulumi.StringInput `pulumi:"jndiSecurityCredentialsSecretId"`
 	// Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
 	JndiSecurityPrincipal pulumi.StringInput `pulumi:"jndiSecurityPrincipal"`
-	// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+	// References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// Deprecated: The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
 	KeyStore pulumi.StringInput `pulumi:"keyStore"`
 	// Deprecated: The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
 	KeyStorePassword pulumi.StringInput `pulumi:"keyStorePassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+	//   Note: When provided, 'keyStorePassword' field must not be provided.
 	KeyStorePasswordSecretId pulumi.StringInput `pulumi:"keyStorePasswordSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
 	KeyStoreSecretId pulumi.StringInput `pulumi:"keyStoreSecretId"`
@@ -6052,6 +7470,10 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks GetConnectionsConnectionCollectionItemLockArrayInput `pulumi:"locks"`
+	// Maximum number of input characters supported by this AI model connection.
+	MaxInputChars pulumi.IntInput `pulumi:"maxInputChars"`
+	// AI model identifier.
+	ModelKey pulumi.StringInput `pulumi:"modelKey"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Deprecated: The 'password' field has been deprecated. Please use 'password_secret_id' instead.
@@ -6072,13 +7494,15 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	PrivateKeyPassphraseSecretId pulumi.StringInput `pulumi:"privateKeyPassphraseSecretId"`
 	// The base64 encoded content of the producer.properties file.
 	ProducerProperties pulumi.StringInput `pulumi:"producerProperties"`
+	// AI Provider type used by the AI Model Connection.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
 	// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint pulumi.StringInput `pulumi:"publicKeyFingerprint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
 	RedisClusterId pulumi.StringInput `pulumi:"redisClusterId"`
 	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
 	Region pulumi.StringInput `pulumi:"region"`
-	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+	// Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
 	RoutingMethod pulumi.StringInput `pulumi:"routingMethod"`
 	// Deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
 	SasToken pulumi.StringInput `pulumi:"sasToken"`
@@ -6086,16 +7510,23 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	SasTokenSecretId pulumi.StringInput `pulumi:"sasTokenSecretId"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId pulumi.StringInput `pulumi:"secretAccessKeySecretId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
-	// Security Protocol to be provided for the following connection types:
-	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+	// * DB2: Security protocol for the DB2 database.
+	// * ELASTICSEARCH: Security protocol for Elasticsearch.
+	// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+	// * KAFKA: Security Type for Kafka.
+	// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+	// * MONGODB: Security Type for MongoDB.
+	// * MYSQL: Security Type for MySQL.
+	// * POSTGRESQL: Security protocol for PostgreSQL.
+	// * REDIS: Security protocol for Redis.
 	SecurityProtocol pulumi.StringInput `pulumi:"securityProtocol"`
-	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
-	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+	// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+	// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
 	Servers pulumi.StringInput `pulumi:"servers"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile pulumi.StringInput `pulumi:"serviceAccountKeyFile"`
@@ -6105,13 +7536,17 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi pulumi.BoolInput `pulumi:"shouldUseJndi"`
-	// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+	// * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 	ShouldUseResourcePrincipal pulumi.BoolInput `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolInput `pulumi:"shouldValidateServerCertificate"`
-	// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+	// * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCa pulumi.StringInput `pulumi:"sslCa"`
-	// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert pulumi.StringInput `pulumi:"sslCert"`
 	// Deprecated: The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead.
 	SslClientKeystash pulumi.StringInput `pulumi:"sslClientKeystash"`
@@ -6121,18 +7556,23 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	SslClientKeystoredb pulumi.StringInput `pulumi:"sslClientKeystoredb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
 	SslClientKeystoredbSecretId pulumi.StringInput `pulumi:"sslClientKeystoredbSecretId"`
-	// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl pulumi.StringInput `pulumi:"sslCrl"`
 	// Deprecated: The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
 	SslKey pulumi.StringInput `pulumi:"sslKey"`
 	// Deprecated: The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
 	SslKeyPassword pulumi.StringInput `pulumi:"sslKeyPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+	//   Note: When provided, 'sslKeyPassword' field must not be provided.
 	SslKeyPasswordSecretId pulumi.StringInput `pulumi:"sslKeyPasswordSecretId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+	// * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+	// * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+	//   Note: When provided, 'sslKey' field must not be provided.
 	SslKeySecretId pulumi.StringInput `pulumi:"sslKeySecretId"`
-	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+	// * MYSQL: SSL modes for MySQL.
+	// * POSTGRESQL: SSL modes for PostgreSQL.
 	SslMode pulumi.StringInput `pulumi:"sslMode"`
 	// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate pulumi.StringInput `pulumi:"sslServerCertificate"`
@@ -6176,17 +7616,22 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	TrustStore pulumi.StringInput `pulumi:"trustStore"`
 	// Deprecated: The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
 	TrustStorePassword pulumi.StringInput `pulumi:"trustStorePassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+	//   Note: When provided, 'trustStorePassword' field must not be provided.
 	TrustStorePasswordSecretId pulumi.StringInput `pulumi:"trustStorePasswordSecretId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
 	TrustStoreSecretId pulumi.StringInput `pulumi:"trustStoreSecretId"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url pulumi.StringInput `pulumi:"url"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
 	UserId pulumi.StringInput `pulumi:"userId"`
 	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username pulumi.StringInput `pulumi:"username"`
-	// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+	// References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
 	VaultId pulumi.StringInput `pulumi:"vaultId"`
 	// Deprecated: The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead.
 	Wallet pulumi.StringInput `pulumi:"wallet"`
@@ -6245,7 +7690,9 @@ func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnection
 	return o
 }
 
-// Access key ID to access the Amazon S3 bucket.
+//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 func (o GetConnectionsConnectionCollectionItemOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -6270,6 +7717,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) AdditionalAttributes() Get
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemAdditionalAttribute {
 		return v.AdditionalAttributes
 	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+// Represents authentication details for an AI Model connection.
+func (o GetConnectionsConnectionCollectionItemOutput) AuthDetails() GetConnectionsConnectionCollectionItemAuthDetailArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemAuthDetail {
+		return v.AuthDetails
+	}).(GetConnectionsConnectionCollectionItemAuthDetailArrayOutput)
 }
 
 // Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -6313,7 +7767,9 @@ func (o GetConnectionsConnectionCollectionItemOutput) Catalogs() GetConnectionsC
 	}).(GetConnectionsConnectionCollectionItemCatalogArrayOutput)
 }
 
-// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 func (o GetConnectionsConnectionCollectionItemOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientId }).(pulumi.StringOutput)
 }
@@ -6323,7 +7779,10 @@ func (o GetConnectionsConnectionCollectionItemOutput) ClientSecret() pulumi.Stri
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+//   - AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//   - DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+//   - MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//     Note: When provided, 'clientSecret' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemOutput) ClientSecretSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientSecretSecretId }).(pulumi.StringOutput)
 }
@@ -6364,6 +7823,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.St
 // * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
 // * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 // * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
+// * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
 func (o GetConnectionsConnectionCollectionItemOutput) ConnectionUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionUrl }).(pulumi.StringOutput)
 }
@@ -6418,7 +7878,10 @@ func (o GetConnectionsConnectionCollectionItemOutput) DoesUseSecretIds() pulumi.
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
-// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o GetConnectionsConnectionCollectionItemOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -6486,7 +7949,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) JndiSecurityPrincipal() pu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiSecurityPrincipal }).(pulumi.StringOutput)
 }
 
-// Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+// References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
 func (o GetConnectionsConnectionCollectionItemOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyId }).(pulumi.StringOutput)
 }
@@ -6501,7 +7964,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) KeyStorePassword() pulumi.
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyStorePassword }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored. Note: When provided, 'keyStorePassword' field must not be provided.
+//   - JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+//   - KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
+//   - REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
+//     Note: When provided, 'keyStorePassword' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemOutput) KeyStorePasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyStorePasswordSecretId }).(pulumi.StringOutput)
 }
@@ -6521,6 +7988,16 @@ func (o GetConnectionsConnectionCollectionItemOutput) Locks() GetConnectionsConn
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemLock {
 		return v.Locks
 	}).(GetConnectionsConnectionCollectionItemLockArrayOutput)
+}
+
+// Maximum number of input characters supported by this AI model connection.
+func (o GetConnectionsConnectionCollectionItemOutput) MaxInputChars() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) int { return v.MaxInputChars }).(pulumi.IntOutput)
+}
+
+// AI model identifier.
+func (o GetConnectionsConnectionCollectionItemOutput) ModelKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ModelKey }).(pulumi.StringOutput)
 }
 
 // An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -6573,6 +8050,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) ProducerProperties() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ProducerProperties }).(pulumi.StringOutput)
 }
 
+// AI Provider type used by the AI Model Connection.
+func (o GetConnectionsConnectionCollectionItemOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
 // The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 func (o GetConnectionsConnectionCollectionItemOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
@@ -6588,7 +8070,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) Region() pulumi.StringOutp
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Region }).(pulumi.StringOutput)
 }
 
-// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+// Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
 func (o GetConnectionsConnectionCollectionItemOutput) RoutingMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.RoutingMethod }).(pulumi.StringOutput)
 }
@@ -6608,7 +8090,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) SecretAccessKey() pulumi.S
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 func (o GetConnectionsConnectionCollectionItemOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
@@ -6618,15 +8101,21 @@ func (o GetConnectionsConnectionCollectionItemOutput) SecurityAttributes() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
-// Security Protocol to be provided for the following connection types:
-// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+// * DB2: Security protocol for the DB2 database.
+// * ELASTICSEARCH: Security protocol for Elasticsearch.
+// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
+// * KAFKA: Security Type for Kafka.
+// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
+// * MONGODB: Security Type for MongoDB.
+// * MYSQL: Security Type for MySQL.
+// * POSTGRESQL: Security protocol for PostgreSQL.
+// * REDIS: Security protocol for Redis.
 func (o GetConnectionsConnectionCollectionItemOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecurityProtocol }).(pulumi.StringOutput)
 }
 
-// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
-// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
 func (o GetConnectionsConnectionCollectionItemOutput) Servers() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Servers }).(pulumi.StringOutput)
 }
@@ -6651,7 +8140,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) ShouldUseJndi() pulumi.Boo
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
 }
 
-// Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+// * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
+// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 func (o GetConnectionsConnectionCollectionItemOutput) ShouldUseResourcePrincipal() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldUseResourcePrincipal }).(pulumi.BoolOutput)
 }
@@ -6661,12 +8151,15 @@ func (o GetConnectionsConnectionCollectionItemOutput) ShouldValidateServerCertif
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldValidateServerCertificate }).(pulumi.BoolOutput)
 }
 
-// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
+// * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o GetConnectionsConnectionCollectionItemOutput) SslCa() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCa }).(pulumi.StringOutput)
 }
 
-// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o GetConnectionsConnectionCollectionItemOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCert }).(pulumi.StringOutput)
 }
@@ -6691,7 +8184,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) SslClientKeystoredbSecretI
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslClientKeystoredbSecretId }).(pulumi.StringOutput)
 }
 
-// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o GetConnectionsConnectionCollectionItemOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -6706,18 +8200,22 @@ func (o GetConnectionsConnectionCollectionItemOutput) SslKeyPassword() pulumi.St
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKeyPassword }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
+//   - JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
+//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+//     Note: When provided, 'sslKeyPassword' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemOutput) SslKeyPasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKeyPasswordSecretId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
-// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+//   - MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+//   - POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
+//     Note: When provided, 'sslKey' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemOutput) SslKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKeySecretId }).(pulumi.StringOutput)
 }
 
-// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+// * MYSQL: SSL modes for MySQL.
+// * POSTGRESQL: SSL modes for PostgreSQL.
 func (o GetConnectionsConnectionCollectionItemOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
 }
@@ -6829,7 +8327,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) TrustStorePassword() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TrustStorePassword }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored. Note: When provided, 'trustStorePassword' field must not be provided.
+//   - JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+//   - KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
+//   - REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
+//     Note: When provided, 'trustStorePassword' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemOutput) TrustStorePasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TrustStorePasswordSecretId }).(pulumi.StringOutput)
 }
@@ -6844,7 +8346,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) Url() pulumi.StringOutput 
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
 func (o GetConnectionsConnectionCollectionItemOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
 }
@@ -6854,7 +8357,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
 }
 
-// Refers to the customer's vault OCID.  If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained within this vault.
+// References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
 func (o GetConnectionsConnectionCollectionItemOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
 }
@@ -6995,6 +8498,169 @@ func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) In
 	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput)
 }
 
+type GetConnectionsConnectionCollectionItemAuthDetail struct {
+	// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey string `pulumi:"apiKey"`
+	// API key secret OCID for the AI model connection.
+	ApiKeySecretId string `pulumi:"apiKeySecretId"`
+	// Authentication type used by the AI model connection.
+	AuthType string `pulumi:"authType"`
+	// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl string `pulumi:"baseUrl"`
+	// Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint string `pulumi:"keyFingerprint"`
+	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+	Region string `pulumi:"region"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId string `pulumi:"tenancyId"`
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	UserId string `pulumi:"userId"`
+}
+
+// GetConnectionsConnectionCollectionItemAuthDetailInput is an input type that accepts GetConnectionsConnectionCollectionItemAuthDetailArgs and GetConnectionsConnectionCollectionItemAuthDetailOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAuthDetailInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAuthDetailArgs{...}
+type GetConnectionsConnectionCollectionItemAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAuthDetailOutput() GetConnectionsConnectionCollectionItemAuthDetailOutput
+	ToGetConnectionsConnectionCollectionItemAuthDetailOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAuthDetailOutput
+}
+
+type GetConnectionsConnectionCollectionItemAuthDetailArgs struct {
+	// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+	// API key secret OCID for the AI model connection.
+	ApiKeySecretId pulumi.StringInput `pulumi:"apiKeySecretId"`
+	// Authentication type used by the AI model connection.
+	AuthType pulumi.StringInput `pulumi:"authType"`
+	// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+	BaseUrl pulumi.StringInput `pulumi:"baseUrl"`
+	// Oracle Cloud Infrastructure Generative AI key fingerprint.
+	KeyFingerprint pulumi.StringInput `pulumi:"keyFingerprint"`
+	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+	Region pulumi.StringInput `pulumi:"region"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	UserId pulumi.StringInput `pulumi:"userId"`
+}
+
+func (GetConnectionsConnectionCollectionItemAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAuthDetail)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAuthDetailArgs) ToGetConnectionsConnectionCollectionItemAuthDetailOutput() GetConnectionsConnectionCollectionItemAuthDetailOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAuthDetailArgs) ToGetConnectionsConnectionCollectionItemAuthDetailOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAuthDetailOutput)
+}
+
+// GetConnectionsConnectionCollectionItemAuthDetailArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemAuthDetailArray and GetConnectionsConnectionCollectionItemAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAuthDetailArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAuthDetailArray{ GetConnectionsConnectionCollectionItemAuthDetailArgs{...} }
+type GetConnectionsConnectionCollectionItemAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutput() GetConnectionsConnectionCollectionItemAuthDetailArrayOutput
+	ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAuthDetailArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemAuthDetailArray []GetConnectionsConnectionCollectionItemAuthDetailInput
+
+func (GetConnectionsConnectionCollectionItemAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAuthDetail)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAuthDetailArray) ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutput() GetConnectionsConnectionCollectionItemAuthDetailArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAuthDetailArray) ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAuthDetailArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAuthDetail)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) ToGetConnectionsConnectionCollectionItemAuthDetailOutput() GetConnectionsConnectionCollectionItemAuthDetailOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) ToGetConnectionsConnectionCollectionItemAuthDetailOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAuthDetailOutput {
+	return o
+}
+
+// API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+// API key secret OCID for the AI model connection.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) ApiKeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.ApiKeySecretId }).(pulumi.StringOutput)
+}
+
+// Authentication type used by the AI model connection.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) AuthType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.AuthType }).(pulumi.StringOutput)
+}
+
+// Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) BaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.BaseUrl }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure Generative AI key fingerprint.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) KeyFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.KeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+func (o GetConnectionsConnectionCollectionItemAuthDetailOutput) UserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAuthDetail) string { return v.UserId }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAuthDetail)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAuthDetailArrayOutput) ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutput() GetConnectionsConnectionCollectionItemAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAuthDetailArrayOutput) ToGetConnectionsConnectionCollectionItemAuthDetailArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAuthDetailArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemAuthDetail {
+		return vs[0].([]GetConnectionsConnectionCollectionItemAuthDetail)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemAuthDetailOutput)
+}
+
 type GetConnectionsConnectionCollectionItemBootstrapServer struct {
 	// The name or address of a host.
 	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -7121,11 +8787,16 @@ type GetConnectionsConnectionCollectionItemCatalog struct {
 	Branch string `pulumi:"branch"`
 	// The catalog type.
 	CatalogType string `pulumi:"catalogType"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId string `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret string `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId string `pulumi:"clientSecretSecretId"`
 	// The AWS Glue Catalog ID where Iceberg tables are registered.
 	GlueId string `pulumi:"glueId"`
@@ -7137,7 +8808,9 @@ type GetConnectionsConnectionCollectionItemCatalog struct {
 	Properties string `pulumi:"properties"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId string `pulumi:"propertiesSecretId"`
-	// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri string `pulumi:"uri"`
 }
 
@@ -7157,11 +8830,16 @@ type GetConnectionsConnectionCollectionItemCatalogArgs struct {
 	Branch pulumi.StringInput `pulumi:"branch"`
 	// The catalog type.
 	CatalogType pulumi.StringInput `pulumi:"catalogType"`
-	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId pulumi.StringInput `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId pulumi.StringInput `pulumi:"clientSecretSecretId"`
 	// The AWS Glue Catalog ID where Iceberg tables are registered.
 	GlueId pulumi.StringInput `pulumi:"glueId"`
@@ -7173,7 +8851,9 @@ type GetConnectionsConnectionCollectionItemCatalogArgs struct {
 	Properties pulumi.StringInput `pulumi:"properties"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PropertiesSecretId pulumi.StringInput `pulumi:"propertiesSecretId"`
-	// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+	// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+	// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 	Uri pulumi.StringInput `pulumi:"uri"`
 }
 
@@ -7238,7 +8918,9 @@ func (o GetConnectionsConnectionCollectionItemCatalogOutput) CatalogType() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.CatalogType }).(pulumi.StringOutput)
 }
 
-// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 func (o GetConnectionsConnectionCollectionItemCatalogOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.ClientId }).(pulumi.StringOutput)
 }
@@ -7248,7 +8930,10 @@ func (o GetConnectionsConnectionCollectionItemCatalogOutput) ClientSecret() pulu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M. Note: When provided, 'clientSecret' field must not be provided.
+//   - AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//   - DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+//   - MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+//     Note: When provided, 'clientSecret' field must not be provided.
 func (o GetConnectionsConnectionCollectionItemCatalogOutput) ClientSecretSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.ClientSecretSecretId }).(pulumi.StringOutput)
 }
@@ -7278,7 +8963,9 @@ func (o GetConnectionsConnectionCollectionItemCatalogOutput) PropertiesSecretId(
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.PropertiesSecretId }).(pulumi.StringOutput)
 }
 
-// The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
 func (o GetConnectionsConnectionCollectionItemCatalogOutput) Uri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemCatalog) string { return v.Uri }).(pulumi.StringOutput)
 }
@@ -7525,7 +9212,9 @@ func (o GetConnectionsConnectionCollectionItemLockArrayOutput) Index(i pulumi.In
 }
 
 type GetConnectionsConnectionCollectionItemStorage struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey string `pulumi:"accountKey"`
@@ -7533,11 +9222,16 @@ type GetConnectionsConnectionCollectionItemStorage struct {
 	AccountKeySecretId string `pulumi:"accountKeySecretId"`
 	// Sets the Azure storage account name.
 	AccountName string `pulumi:"accountName"`
-	// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket string `pulumi:"bucket"`
 	// The Azure Blob Storage container where Iceberg tables are stored.
 	Container string `pulumi:"container"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint string `pulumi:"endpoint"`
 	// The Google Cloud Project where the bucket exists.
 	ProjectId string `pulumi:"projectId"`
@@ -7547,7 +9241,8 @@ type GetConnectionsConnectionCollectionItemStorage struct {
 	SchemeType string `pulumi:"schemeType"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
@@ -7569,7 +9264,9 @@ type GetConnectionsConnectionCollectionItemStorageInput interface {
 }
 
 type GetConnectionsConnectionCollectionItemStorageArgs struct {
-	// Access key ID to access the Amazon S3 bucket.
+	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey pulumi.StringInput `pulumi:"accountKey"`
@@ -7577,11 +9274,16 @@ type GetConnectionsConnectionCollectionItemStorageArgs struct {
 	AccountKeySecretId pulumi.StringInput `pulumi:"accountKeySecretId"`
 	// Sets the Azure storage account name.
 	AccountName pulumi.StringInput `pulumi:"accountName"`
-	// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+	// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+	// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The Azure Blob Storage container where Iceberg tables are stored.
 	Container pulumi.StringInput `pulumi:"container"`
-	// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 	// The Google Cloud Project where the bucket exists.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
@@ -7591,7 +9293,8 @@ type GetConnectionsConnectionCollectionItemStorageArgs struct {
 	SchemeType pulumi.StringInput `pulumi:"schemeType"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 	SecretAccessKeySecretId pulumi.StringInput `pulumi:"secretAccessKeySecretId"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile pulumi.StringInput `pulumi:"serviceAccountKeyFile"`
@@ -7652,7 +9355,9 @@ func (o GetConnectionsConnectionCollectionItemStorageOutput) ToGetConnectionsCon
 	return o
 }
 
-// Access key ID to access the Amazon S3 bucket.
+//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
 func (o GetConnectionsConnectionCollectionItemStorageOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -7672,7 +9377,9 @@ func (o GetConnectionsConnectionCollectionItemStorageOutput) AccountName() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.AccountName }).(pulumi.StringOutput)
 }
 
-// Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
 func (o GetConnectionsConnectionCollectionItemStorageOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -7682,7 +9389,10 @@ func (o GetConnectionsConnectionCollectionItemStorageOutput) Container() pulumi.
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.Container }).(pulumi.StringOutput)
 }
 
-// A legal URL to connect to Google Cloud Storage including scheme, server name and port (if not the default port). Default: https://storage.googleapis.com
+// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o GetConnectionsConnectionCollectionItemStorageOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -7707,7 +9417,8 @@ func (o GetConnectionsConnectionCollectionItemStorageOutput) SecretAccessKey() p
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
 func (o GetConnectionsConnectionCollectionItemStorageOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemStorage) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
@@ -20676,6 +22387,8 @@ func (o GetTrailSequencesTrailSequenceCollectionItemArrayOutput) Index(i pulumi.
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeInput)(nil)).Elem(), ConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAuthDetailsInput)(nil)).Elem(), ConnectionAuthDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAuthDetailsPtrInput)(nil)).Elem(), ConnectionAuthDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionBootstrapServerInput)(nil)).Elem(), ConnectionBootstrapServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionBootstrapServerArrayInput)(nil)).Elem(), ConnectionBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionCatalogInput)(nil)).Elem(), ConnectionCatalogArgs{})
@@ -20724,6 +22437,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineSourceConnectionDetailsPtrInput)(nil)).Elem(), PipelineSourceConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineTargetConnectionDetailsInput)(nil)).Elem(), PipelineTargetConnectionDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineTargetConnectionDetailsPtrInput)(nil)).Elem(), PipelineTargetConnectionDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsAiModelCollectionInput)(nil)).Elem(), GetAiModelsAiModelCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsAiModelCollectionArrayInput)(nil)).Elem(), GetAiModelsAiModelCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsAiModelCollectionItemInput)(nil)).Elem(), GetAiModelsAiModelCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsAiModelCollectionItemArrayInput)(nil)).Elem(), GetAiModelsAiModelCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsFilterInput)(nil)).Elem(), GetAiModelsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiModelsFilterArrayInput)(nil)).Elem(), GetAiModelsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionArrayInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemArrayInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemModelInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionItemModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersAiProviderCollectionItemModelArrayInput)(nil)).Elem(), GetAiProvidersAiProviderCollectionItemModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersFilterInput)(nil)).Elem(), GetAiProvidersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAiProvidersFilterArrayInput)(nil)).Elem(), GetAiProvidersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionArgs{})
@@ -20732,6 +22459,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsFilterInput)(nil)).Elem(), GetConnectionAssignmentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsFilterArrayInput)(nil)).Elem(), GetConnectionAssignmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAuthDetailInput)(nil)).Elem(), GetConnectionAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAuthDetailArrayInput)(nil)).Elem(), GetConnectionAuthDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionBootstrapServerInput)(nil)).Elem(), GetConnectionBootstrapServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionBootstrapServerArrayInput)(nil)).Elem(), GetConnectionBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionCatalogInput)(nil)).Elem(), GetConnectionCatalogArgs{})
@@ -20748,6 +22477,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAuthDetailInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAuthDetailArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAuthDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServerInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemBootstrapServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServerArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemCatalogInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemCatalogArgs{})
@@ -20950,6 +22681,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionItemArrayInput)(nil)).Elem(), GetTrailSequencesTrailSequenceCollectionItemArray{})
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(ConnectionAuthDetailsOutput{})
+	pulumi.RegisterOutputType(ConnectionAuthDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ConnectionBootstrapServerOutput{})
 	pulumi.RegisterOutputType(ConnectionBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionCatalogOutput{})
@@ -20998,6 +22731,20 @@ func init() {
 	pulumi.RegisterOutputType(PipelineSourceConnectionDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineTargetConnectionDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineTargetConnectionDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetAiModelsAiModelCollectionOutput{})
+	pulumi.RegisterOutputType(GetAiModelsAiModelCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAiModelsAiModelCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAiModelsAiModelCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAiModelsFilterOutput{})
+	pulumi.RegisterOutputType(GetAiModelsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionItemModelOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersAiProviderCollectionItemModelArrayOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersFilterOutput{})
+	pulumi.RegisterOutputType(GetAiProvidersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionOutput{})
@@ -21006,6 +22753,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionAssignmentsFilterOutput{})
 	pulumi.RegisterOutputType(GetConnectionAssignmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetConnectionAuthDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionBootstrapServerOutput{})
 	pulumi.RegisterOutputType(GetConnectionBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionCatalogOutput{})
@@ -21022,6 +22771,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAuthDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemBootstrapServerOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemCatalogOutput{})

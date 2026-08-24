@@ -19,14 +19,14 @@ public final class GetInstanceAvailablePluginFilterArgs extends com.pulumi.resou
     public static final GetInstanceAvailablePluginFilterArgs Empty = new GetInstanceAvailablePluginFilterArgs();
 
     /**
-     * The plugin name
+     * The plugin name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetInstanceAvailablePluginFilterArgs extends com.pulumi.resou
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetInstanceAvailablePluginFilterArgs extends com.pulumi.resou
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 

@@ -13,7 +13,9 @@ import com.pulumi.oci.Database.outputs.CloudVmClusterCloudAutomationUpdateDetail
 import com.pulumi.oci.Database.outputs.CloudVmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.CloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigCache;
+import com.pulumi.oci.Database.outputs.CloudVmClusterLiveImageVersionDetail;
 import com.pulumi.oci.Database.outputs.CloudVmClusterMultiCloudIdentityConnectorConfig;
+import com.pulumi.oci.Database.outputs.CloudVmClusterUpdateDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -48,6 +50,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetailsFreezePeriodArgs;
  * import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
  * import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
+ * import com.pulumi.oci.Database.inputs.CloudVmClusterUpdateDetailsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -117,6 +120,11 @@ import javax.annotation.Nullable;
  *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(cloudVmClusterSystemVersion)
  *             .timeZone(cloudVmClusterTimeZone)
+ *             .updateDetails(CloudVmClusterUpdateDetailsArgs.builder()
+ *                 .updateAction(cloudVmClusterUpdateDetailsUpdateAction)
+ *                 .updateId(cloudVmClusterUpdateDetailsUpdateId)
+ *                 .updateMode(cloudVmClusterUpdateDetailsUpdateMode)
+ *                 .build())
  *             .vmBackupStorageType(cloudVmClusterVmBackupStorageType)
  *             .vmClusterType(cloudVmClusterVmClusterType)
  *             .vmFileSystemStorageType(cloudVmClusterVmFileSystemStorageType)
@@ -603,6 +611,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.listenerPort;
     }
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    @Export(name="liveImageVersionDetails", refs={List.class,CloudVmClusterLiveImageVersionDetail.class}, tree="[0,1]")
+    private Output<List<CloudVmClusterLiveImageVersionDetail>> liveImageVersionDetails;
+
+    /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public Output<List<CloudVmClusterLiveImageVersionDetail>> liveImageVersionDetails() {
+        return this.liveImageVersionDetails;
+    }
+    /**
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
@@ -673,6 +695,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    @Export(name="oracleLinuxVersion", refs={String.class}, tree="[0]")
+    private Output<String> oracleLinuxVersion;
+
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public Output<String> oracleLinuxVersion() {
+        return this.oracleLinuxVersion;
     }
     /**
      * The private zone id in which DNS records need to be created.
@@ -981,6 +1017,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeZone() {
         return this.timeZone;
+    }
+    /**
+     * (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Export(name="updateDetails", refs={CloudVmClusterUpdateDetails.class}, tree="[0]")
+    private Output</* @Nullable */ CloudVmClusterUpdateDetails> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Output<Optional<CloudVmClusterUpdateDetails>> updateDetails() {
+        return Codegen.optional(this.updateDetails);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.

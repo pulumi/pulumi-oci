@@ -1165,6 +1165,8 @@ type GetSchedulesScheduleCollectionItem struct {
 	Id string `pulumi:"id"`
 	// This is the status of the last work request.
 	LastRunStatus string `pulumi:"lastRunStatus"`
+	// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone string `pulumi:"localTimeZone"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -1219,6 +1221,8 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is the status of the last work request.
 	LastRunStatus pulumi.StringInput `pulumi:"lastRunStatus"`
+	// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+	LocalTimeZone pulumi.StringInput `pulumi:"localTimeZone"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringInput `pulumi:"recurrenceDetails"`
 	// Type of recurrence of a schedule
@@ -1334,6 +1338,11 @@ func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
 // This is the status of the last work request.
 func (o GetSchedulesScheduleCollectionItemOutput) LastRunStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.LastRunStatus }).(pulumi.StringOutput)
+}
+
+// IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+func (o GetSchedulesScheduleCollectionItemOutput) LocalTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.LocalTimeZone }).(pulumi.StringOutput)
 }
 
 // This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.

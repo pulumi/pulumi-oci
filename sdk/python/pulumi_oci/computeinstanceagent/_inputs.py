@@ -24,7 +24,7 @@ __all__ = [
 class GetInstanceAgentPluginsFilterArgsDict(TypedDict):
     name: _builtins.str
     """
-    The plugin name
+    The plugin name.
     """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
@@ -36,7 +36,7 @@ class GetInstanceAgentPluginsFilterArgs:
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The plugin name
+        :param _builtins.str name: The plugin name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -47,7 +47,7 @@ class GetInstanceAgentPluginsFilterArgs:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 
@@ -77,7 +77,7 @@ class GetInstanceAgentPluginsFilterArgs:
 class GetInstanceAvailablePluginFilterArgsDict(TypedDict):
     name: _builtins.str
     """
-    The plugin name
+    The plugin name.
     """
     values: Sequence[_builtins.str]
     regex: NotRequired[_builtins.bool]
@@ -89,7 +89,7 @@ class GetInstanceAvailablePluginFilterArgs:
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str name: The plugin name
+        :param _builtins.str name: The plugin name.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -100,7 +100,7 @@ class GetInstanceAvailablePluginFilterArgs:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        The plugin name
+        The plugin name.
         """
         return pulumi.get(self, "name")
 

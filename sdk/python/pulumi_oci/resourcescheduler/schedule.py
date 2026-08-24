@@ -29,6 +29,7 @@ class ScheduleArgs:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]]] = None,
                  resources: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -45,6 +46,7 @@ class ScheduleArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceArgs']]] resources: (Updatable) This is the list of resources to which the scheduled operation is applied.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
@@ -66,6 +68,8 @@ class ScheduleArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if local_time_zone is not None:
+            pulumi.set(__self__, "local_time_zone", local_time_zone)
         if resource_filters is not None:
             pulumi.set(__self__, "resource_filters", resource_filters)
         if resources is not None:
@@ -174,6 +178,18 @@ class ScheduleArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="localTimeZone")
+    def local_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        """
+        return pulumi.get(self, "local_time_zone")
+
+    @local_time_zone.setter
+    def local_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "local_time_zone", value)
+
+    @_builtins.property
     @pulumi.getter(name="resourceFilters")
     def resource_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]]]:
         """
@@ -247,6 +263,7 @@ class _ScheduleState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  last_run_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]]] = None,
@@ -269,6 +286,7 @@ class _ScheduleState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] last_run_status: This is the status of the last work request.
+        :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input['ScheduleResourceFilterArgs']]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
@@ -299,6 +317,8 @@ class _ScheduleState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if last_run_status is not None:
             pulumi.set(__self__, "last_run_status", last_run_status)
+        if local_time_zone is not None:
+            pulumi.set(__self__, "local_time_zone", local_time_zone)
         if recurrence_details is not None:
             pulumi.set(__self__, "recurrence_details", recurrence_details)
         if recurrence_type is not None:
@@ -407,6 +427,18 @@ class _ScheduleState:
     @last_run_status.setter
     def last_run_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_run_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localTimeZone")
+    def local_time_zone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        """
+        return pulumi.get(self, "local_time_zone")
+
+    @local_time_zone.setter
+    def local_time_zone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "local_time_zone", value)
 
     @_builtins.property
     @pulumi.getter(name="recurrenceDetails")
@@ -568,6 +600,7 @@ class Schedule(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
@@ -583,6 +616,48 @@ class Schedule(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/resourcescheduler
 
         This API creates a schedule. You must provide either resources or resourceFilters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_schedule = oci.resourcescheduler.Schedule("test_schedule",
+            action=schedule_action,
+            compartment_id=compartment_id,
+            recurrence_details=schedule_recurrence_details,
+            recurrence_type=schedule_recurrence_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=schedule_description,
+            display_name=schedule_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            local_time_zone=schedule_local_time_zone,
+            resource_filters=[{
+                "attribute": schedule_resource_filters_attribute,
+                "condition": schedule_resource_filters_condition,
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments == "true",
+                "values": [{
+                    "namespace": schedule_resource_filters_value_namespace,
+                    "tag_key": schedule_resource_filters_value_tag_key,
+                    "value": schedule_resource_filters_value_value,
+                }],
+            }],
+            resources=[{
+                "id": schedule_resources_id,
+                "metadata": schedule_resources_metadata,
+                "parameters": [{
+                    "parameter_type": schedule_resources_parameters_parameter_type,
+                    "value": schedule_resources_parameters_value[0],
+                }],
+            }],
+            time_ends=schedule_time_ends,
+            time_starts=schedule_time_starts)
+        ```
 
         ## Import
 
@@ -601,6 +676,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) This is the description of the schedule.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
@@ -625,6 +701,48 @@ class Schedule(pulumi.CustomResource):
         Example terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/resourcescheduler
 
         This API creates a schedule. You must provide either resources or resourceFilters.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_schedule = oci.resourcescheduler.Schedule("test_schedule",
+            action=schedule_action,
+            compartment_id=compartment_id,
+            recurrence_details=schedule_recurrence_details,
+            recurrence_type=schedule_recurrence_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=schedule_description,
+            display_name=schedule_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            local_time_zone=schedule_local_time_zone,
+            resource_filters=[{
+                "attribute": schedule_resource_filters_attribute,
+                "condition": schedule_resource_filters_condition,
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments == "true",
+                "values": [{
+                    "namespace": schedule_resource_filters_value_namespace,
+                    "tag_key": schedule_resource_filters_value_tag_key,
+                    "value": schedule_resource_filters_value_value,
+                }],
+            }],
+            resources=[{
+                "id": schedule_resources_id,
+                "metadata": schedule_resources_metadata,
+                "parameters": [{
+                    "parameter_type": schedule_resources_parameters_parameter_type,
+                    "value": schedule_resources_parameters_value[0],
+                }],
+            }],
+            time_ends=schedule_time_ends,
+            time_starts=schedule_time_starts)
+        ```
 
         ## Import
 
@@ -656,6 +774,7 @@ class Schedule(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
                  recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
                  resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
@@ -682,6 +801,7 @@ class Schedule(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["local_time_zone"] = local_time_zone
             if recurrence_details is None and not opts.urn:
                 raise TypeError("Missing required property 'recurrence_details'")
             __props__.__dict__["recurrence_details"] = recurrence_details
@@ -716,6 +836,7 @@ class Schedule(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             last_run_status: pulumi.Input[Optional[_builtins.str]] = None,
+            local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
             recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
             recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
             resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]]] = None,
@@ -742,6 +863,7 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] last_run_status: This is the status of the last work request.
+        :param pulumi.Input[_builtins.str] local_time_zone: (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
         :param pulumi.Input[_builtins.str] recurrence_details: (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param pulumi.Input[_builtins.str] recurrence_type: (Updatable) Type of recurrence of a schedule
         :param pulumi.Input[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict']]]] resource_filters: (Updatable) This is a list of resources filters.  The schedule will be applied to resources matching all of them.
@@ -769,6 +891,7 @@ class Schedule(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["last_run_status"] = last_run_status
+        __props__.__dict__["local_time_zone"] = local_time_zone
         __props__.__dict__["recurrence_details"] = recurrence_details
         __props__.__dict__["recurrence_type"] = recurrence_type
         __props__.__dict__["resource_filters"] = resource_filters
@@ -838,6 +961,14 @@ class Schedule(pulumi.CustomResource):
         This is the status of the last work request.
         """
         return pulumi.get(self, "last_run_status")
+
+    @_builtins.property
+    @pulumi.getter(name="localTimeZone")
+    def local_time_zone(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) IANA timezone identifier (e.g., 'America/New_York', 'UTC', 'Europe/London'). This determines the timezone context for evaluating the recurrence expression.
+        """
+        return pulumi.get(self, "local_time_zone")
 
     @_builtins.property
     @pulumi.getter(name="recurrenceDetails")

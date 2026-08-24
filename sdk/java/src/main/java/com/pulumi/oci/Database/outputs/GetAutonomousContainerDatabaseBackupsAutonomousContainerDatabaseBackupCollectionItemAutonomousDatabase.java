@@ -20,6 +20,11 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
      * 
      */
     private String displayName;
+    /**
+     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    private String state;
 
     private GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase() {}
     /**
@@ -36,6 +41,13 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
     public String displayName() {
         return this.displayName;
     }
+    /**
+     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +60,13 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
     public static final class Builder {
         private String compartmentId;
         private String displayName;
+        private String state;
         public Builder() {}
         public Builder(GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.displayName = defaults.displayName;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -71,10 +85,19 @@ public final class GetAutonomousContainerDatabaseBackupsAutonomousContainerDatab
             this.displayName = displayName;
             return this;
         }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase", "state");
+            }
+            this.state = state;
+            return this;
+        }
         public GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase build() {
             final var _resultValue = new GetAutonomousContainerDatabaseBackupsAutonomousContainerDatabaseBackupCollectionItemAutonomousDatabase();
             _resultValue.compartmentId = compartmentId;
             _resultValue.displayName = displayName;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

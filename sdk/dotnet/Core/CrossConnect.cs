@@ -62,7 +62,10 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         InterfaceDownTimerValueInMilliseconds = crossConnectInterfaceDownTimerValueInMilliseconds,
     ///         InterfaceName = crossConnectInterfaceName,
+    ///         IsInterfaceHoldTimerEnabled = crossConnectIsInterfaceHoldTimerEnabled,
+    ///         IsQosEnabled = crossConnectIsQosEnabled,
     ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectMacsecPropertiesArgs
     ///         {
     ///             State = crossConnectMacsecPropertiesState,
@@ -76,6 +79,10 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         NearCrossConnectOrCrossConnectGroupId = testCrossConnectGroup.Id,
     ///         OciPhysicalDeviceName = crossConnectOciPhysicalDeviceName,
+    ///         LoaProperties = new Oci.Core.Inputs.CrossConnectLoaPropertiesArgs
+    ///         {
+    ///             AuthorizedAgent = crossConnectLoaPropertiesAuthorizedAgent,
+    ///         },
     ///     });
     /// 
     /// });
@@ -135,6 +142,12 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Output("interfaceDownTimerValueInMilliseconds")]
+        public Output<int> InterfaceDownTimerValueInMilliseconds { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         /// </summary>
         [Output("interfaceName")]
@@ -145,6 +158,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Output("isActive")]
         public Output<bool?> IsActive { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Output("isInterfaceHoldTimerEnabled")]
+        public Output<bool> IsInterfaceHoldTimerEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Output("isQosEnabled")]
+        public Output<bool> IsQosEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        /// </summary>
+        [Output("loaProperties")]
+        public Output<Outputs.CrossConnectLoaProperties> LoaProperties { get; private set; } = null!;
 
         /// <summary>
         /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -305,6 +336,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Input("interfaceDownTimerValueInMilliseconds")]
+        public Input<int>? InterfaceDownTimerValueInMilliseconds { get; set; }
+
+        /// <summary>
         /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         /// </summary>
         [Input("interfaceName")]
@@ -315,6 +352,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isActive")]
         public Input<bool>? IsActive { get; set; }
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Input("isInterfaceHoldTimerEnabled")]
+        public Input<bool>? IsInterfaceHoldTimerEnabled { get; set; }
+
+        /// <summary>
+        /// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Input("isQosEnabled")]
+        public Input<bool>? IsQosEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        /// </summary>
+        [Input("loaProperties")]
+        public Input<Inputs.CrossConnectLoaPropertiesArgs>? LoaProperties { get; set; }
 
         /// <summary>
         /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`
@@ -413,6 +468,12 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
+        /// (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+        /// </summary>
+        [Input("interfaceDownTimerValueInMilliseconds")]
+        public Input<int>? InterfaceDownTimerValueInMilliseconds { get; set; }
+
+        /// <summary>
         /// The name of the FastConnect interface where this cross-connect is installed. Option will be provided only on request for select tenancies.
         /// </summary>
         [Input("interfaceName")]
@@ -423,6 +484,24 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("isActive")]
         public Input<bool>? IsActive { get; set; }
+
+        /// <summary>
+        /// (Updatable) The flag to enable or disable the down timer for the interface.
+        /// </summary>
+        [Input("isInterfaceHoldTimerEnabled")]
+        public Input<bool>? IsInterfaceHoldTimerEnabled { get; set; }
+
+        /// <summary>
+        /// When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+        /// </summary>
+        [Input("isQosEnabled")]
+        public Input<bool>? IsQosEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Properties used to manage the Letter of Authority associated with this cross-connect.
+        /// </summary>
+        [Input("loaProperties")]
+        public Input<Inputs.CrossConnectLoaPropertiesGetArgs>? LoaProperties { get; set; }
 
         /// <summary>
         /// The name of the FastConnect location where this cross-connect will be installed. To get a list of the available locations, see [ListCrossConnectLocations](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CrossConnectLocation/ListCrossConnectLocations).  Example: `CyrusOne, Chandler, AZ`

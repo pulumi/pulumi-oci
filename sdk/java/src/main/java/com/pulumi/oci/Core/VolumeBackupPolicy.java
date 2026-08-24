@@ -40,6 +40,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Core.VolumeBackupPolicy;
  * import com.pulumi.oci.Core.VolumeBackupPolicyArgs;
  * import com.pulumi.oci.Core.inputs.VolumeBackupPolicyScheduleArgs;
+ * import com.pulumi.oci.Core.inputs.VolumeBackupPolicyScheduleRetentionPeriodArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -66,9 +67,15 @@ import javax.annotation.Nullable;
  *                 .dayOfMonth(volumeBackupPolicySchedulesDayOfMonth)
  *                 .dayOfWeek(volumeBackupPolicySchedulesDayOfWeek)
  *                 .hourOfDay(volumeBackupPolicySchedulesHourOfDay)
+ *                 .isPreventDeletionEnabled(volumeBackupPolicySchedulesIsPreventDeletionEnabled)
+ *                 .isRetentionLockEnabled(volumeBackupPolicySchedulesIsRetentionLockEnabled)
  *                 .month(volumeBackupPolicySchedulesMonth)
  *                 .offsetSeconds(volumeBackupPolicySchedulesOffsetSeconds)
  *                 .offsetType(volumeBackupPolicySchedulesOffsetType)
+ *                 .retentionPeriod(VolumeBackupPolicyScheduleRetentionPeriodArgs.builder()
+ *                     .retentionTimeAmount(volumeBackupPolicySchedulesRetentionPeriodRetentionTimeAmount)
+ *                     .retentionTimeUnit(volumeBackupPolicySchedulesRetentionPeriodRetentionTimeUnit)
+ *                     .build())
  *                 .timeZone(volumeBackupPolicySchedulesTimeZone)
  *                 .build())
  *             .build());

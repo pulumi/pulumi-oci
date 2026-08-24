@@ -35,6 +35,7 @@ import (
 //				CompartmentId:        pulumi.StringRef(compartmentId),
 //				DisplayName:          pulumi.StringRef(autonomousDatabaseBackupDisplayName),
 //				InfrastructureType:   pulumi.StringRef(autonomousDatabaseBackupInfrastructureType),
+//				IsPitrEligible:       pulumi.BoolRef(autonomousDatabaseBackupIsPitrEligible),
 //				KeyStoreId:           pulumi.StringRef(testKeyStore.Id),
 //				State:                pulumi.StringRef(autonomousDatabaseBackupState),
 //				Type:                 pulumi.StringRef(autonomousDatabaseBackupType),
@@ -70,6 +71,8 @@ type GetAutonomousDatabaseBackupsArgs struct {
 	Filters     []GetAutonomousDatabaseBackupsFilter `pulumi:"filters"`
 	// A filter to return only resources that match the given Infrastructure Type.
 	InfrastructureType *string `pulumi:"infrastructureType"`
+	// Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+	IsPitrEligible *bool `pulumi:"isPitrEligible"`
 	// A filter to return only resources that have the given key store id.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -94,6 +97,7 @@ type GetAutonomousDatabaseBackupsResult struct {
 	Id string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
+	IsPitrEligible     *bool   `pulumi:"isPitrEligible"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
 	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The current state of the backup.
@@ -124,6 +128,8 @@ type GetAutonomousDatabaseBackupsOutputArgs struct {
 	Filters     GetAutonomousDatabaseBackupsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that match the given Infrastructure Type.
 	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
+	// Filters backups based on the current Autonomous AI Database configuration; returns only those relevant for point-in-time recovery (PITR). Does not guarantee exclusion of backups in orphan ranges.
+	IsPitrEligible pulumi.BoolPtrInput `pulumi:"isPitrEligible"`
 	// A filter to return only resources that have the given key store id.
 	KeyStoreId pulumi.StringPtrInput `pulumi:"keyStoreId"`
 	// A filter to return only resources that match the given lifecycle state exactly.
@@ -189,6 +195,10 @@ func (o GetAutonomousDatabaseBackupsResultOutput) Id() pulumi.StringOutput {
 // The infrastructure type this resource belongs to.
 func (o GetAutonomousDatabaseBackupsResultOutput) InfrastructureType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAutonomousDatabaseBackupsResultOutput) IsPitrEligible() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseBackupsResult) *bool { return v.IsPitrEligible }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.

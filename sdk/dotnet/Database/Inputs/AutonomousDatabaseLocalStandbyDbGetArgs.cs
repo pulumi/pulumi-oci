@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseLocalStandbyDbGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+        /// (Updatable) The Autonomous Database Serverless instance's availability domain.
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }

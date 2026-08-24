@@ -768,13 +768,13 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_privileged_api_request = oci.oci.ApiaccesscontrolPrivilegedApiRequest("test_privileged_api_request",
+            compartment_id=compartment_id,
             privileged_operation_lists=[{
                 "api_name": test_api["name"],
                 "attribute_names": privileged_api_request_privileged_operation_list_attribute_names,
             }],
             reason_summary=privileged_api_request_reason_summary,
             resource_id=test_resource["id"],
-            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -839,13 +839,13 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_privileged_api_request = oci.oci.ApiaccesscontrolPrivilegedApiRequest("test_privileged_api_request",
+            compartment_id=compartment_id,
             privileged_operation_lists=[{
                 "api_name": test_api["name"],
                 "attribute_names": privileged_api_request_privileged_operation_list_attribute_names,
             }],
             reason_summary=privileged_api_request_reason_summary,
             resource_id=test_resource["id"],
-            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -1078,7 +1078,7 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[_builtins.str]:
+    def compartment_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """

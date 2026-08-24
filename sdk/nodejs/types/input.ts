@@ -1502,7 +1502,7 @@ export namespace Analytics {
          */
         capacityType: pulumi.Input<string>;
         /**
-         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the instance.
+         * (Updatable) The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other resources allocated to the Analytics instance.
          */
         capacityValue: pulumi.Input<number>;
     }
@@ -1513,7 +1513,7 @@ export namespace Analytics {
          */
         networkEndpointType: pulumi.Input<string>;
         /**
-         * Network Security Group OCIDs for an Analytics instance.
+         * Network Security Group OCIDs for the Analytics instance.
          */
         networkSecurityGroupIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
@@ -1529,7 +1529,7 @@ export namespace Analytics {
          */
         whitelistedIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
-         * Oracle Cloud Services that are allowed to access this Analytics instance.
+         * Oracle Cloud services that are allowed to access this Analytics instance.
          */
         whitelistedServices?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
@@ -1551,28 +1551,69 @@ export namespace Analytics {
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
         /**
-         * (Updatable) Description of private source dns zone.
+         * (Updatable) Description of the private source DNS zone.
          */
         description?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
+         * (Updatable) Private source DNS zone. For example: example-vcn.oraclevcn.com, corp.example.com.
          */
         dnsZone: pulumi.Input<string>;
     }
 
     export interface AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
         /**
-         * (Updatable) Description of private source scan host zone.
+         * (Updatable) Description of private source SCAN host zone.
          */
         description?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
+         * (Updatable) Private source SCAN hostname. For example: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
          */
         scanHostname: pulumi.Input<string>;
         /**
-         * (Updatable) Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
+         * (Updatable) Private source SCAN host port. This is the source port where the SCAN protocol connects (for example, 1521).
          */
         scanPort: pulumi.Input<number>;
+    }
+
+    export interface AnalyticsInstanceResourceGroup {
+        /**
+         * Service instance capacity metadata (for example, OLPU count, number of users, and so on).
+         */
+        capacity?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Optional description.
+         */
+        description?: pulumi.Input<string | undefined>;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        displayName?: pulumi.Input<string | undefined>;
+        /**
+         * Unique identifier and name of resource group.  Must be unique within the instance
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Meaningful name of resource group for end user
+         */
+        resourceName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilter {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAnalyticsInstanceResourceGroupsFilterArgs {
+        /**
+         * A filter to return only resources that match the given name exactly.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAnalyticsInstancesFilter {
@@ -12414,7 +12455,7 @@ export namespace ComputeCloud {
 export namespace ComputeInstanceAgent {
     export interface GetInstanceAgentPluginsFilter {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         regex?: boolean;
@@ -12423,7 +12464,7 @@ export namespace ComputeInstanceAgent {
 
     export interface GetInstanceAgentPluginsFilterArgs {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
@@ -12432,7 +12473,7 @@ export namespace ComputeInstanceAgent {
 
     export interface GetInstanceAvailablePluginFilter {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: string;
         regex?: boolean;
@@ -12441,7 +12482,7 @@ export namespace ComputeInstanceAgent {
 
     export interface GetInstanceAvailablePluginFilterArgs {
         /**
-         * The plugin name
+         * The plugin name.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
@@ -13849,6 +13890,17 @@ export namespace Core {
         maxVpusPerGb?: pulumi.Input<string | undefined>;
     }
 
+    export interface BootVolumeBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: pulumi.Input<number>;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: pulumi.Input<string>;
+    }
+
     export interface BootVolumeBackupSourceDetails {
         bootVolumeBackupId: pulumi.Input<string>;
         /**
@@ -14653,6 +14705,10 @@ export namespace Core {
          */
         firmwareBundleId?: pulumi.Input<string | undefined>;
         /**
+         * (Updatable) Additional quick recycle settings.
+         */
+        quickRecycleSettings?: pulumi.Input<inputs.Core.ComputeHostGroupConfigurationQuickRecycleSettings | undefined>;
+        /**
          * (Updatable) Preferred recycle level for hosts associated with the reservation config.
          * * `SKIP_RECYCLE` - Skips host wipe.
          * * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
@@ -14666,6 +14722,13 @@ export namespace Core {
          * (Updatable) Either the platform name or compute shape that the configuration is targeting
          */
         target?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ComputeHostGroupConfigurationQuickRecycleSettings {
+        /**
+         * (Updatable) Whether to wipe NVMe data during quick recycle.
+         */
+        nvmeWipe?: pulumi.Input<boolean | undefined>;
     }
 
     export interface ComputeHostRecycleDetail {
@@ -14696,9 +14759,6 @@ export namespace Core {
         primaryKey?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecPropertiesPrimaryKey | undefined>;
         /**
          * (Updatable) Indicates whether or not MACsec is enabled.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         state: pulumi.Input<string>;
     }
@@ -14724,6 +14784,17 @@ export namespace Core {
          * NOTE: Only the latest secret version will be used.
          */
         connectivityAssociationNameSecretVersion?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CrossConnectLoaProperties {
+        /**
+         * (Updatable) Name of a customer authorized agent to append to the LOA as `Authorized Agent`. Set this to an empty string to remove the current authorized agent.
+         */
+        authorizedAgent?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Terraform-managed count of self-service expiry extensions requested for the LOA. Increase this value by 1 to request one additional expiry extension. This value cannot be decreased or increased by more than 1 in a single update. The service enforces the maximum number of allowed extensions.
+         */
+        expiryExtensionCount?: pulumi.Input<number | undefined>;
     }
 
     export interface CrossConnectMacsecProperties {
@@ -19526,6 +19597,14 @@ export namespace Core {
          */
         hourOfDay?: pulumi.Input<number | undefined>;
         /**
+         * (Updatable) Prevent backups from being deleted during the configured retention period. This is an optional field. If it is not specified, it is set to null, prevent deletion will not be applied to the backups.
+         */
+        isPreventDeletionEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * (Updatable) feature that prevents deletion or alteration of backup data for a specified period to ensure data protection and regulatory compliance. This is an optional field. If it is not specified, it is set to null, no retention lock will be applied to the backups. This feature should be used in conjunction with the retention-period field.
+         */
+        isRetentionLockEnabled?: pulumi.Input<boolean | undefined>;
+        /**
          * (Updatable) The month of the year to schedule the volume backup.
          */
         month?: pulumi.Input<string | undefined>;
@@ -19556,6 +19635,10 @@ export namespace Core {
          */
         period: pulumi.Input<string>;
         /**
+         * (Updatable) This field is used to define the retention period for backups. This is an optional field. If it is not specified, it is set to null, no retention period will be applied to the backups.
+         */
+        retentionPeriod?: pulumi.Input<inputs.Core.VolumeBackupPolicyScheduleRetentionPeriod | undefined>;
+        /**
          * (Updatable) How long, in seconds, to keep the volume backups created by this schedule.
          */
         retentionSeconds: pulumi.Input<number>;
@@ -19569,6 +19652,28 @@ export namespace Core {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         timeZone?: pulumi.Input<string | undefined>;
+    }
+
+    export interface VolumeBackupPolicyScheduleRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: pulumi.Input<number>;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: pulumi.Input<string>;
+    }
+
+    export interface VolumeBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: pulumi.Input<number>;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: pulumi.Input<string>;
     }
 
     export interface VolumeBackupSourceDetails {
@@ -19610,6 +19715,17 @@ export namespace Core {
          * (Updatable) The OCID of the Vault service key which is the master encryption key for the cross region block volume replicas, which will be used in the destination region to encrypt the block volume replica's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          */
         xrrKmsKeyId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface VolumeGroupBackupRetentionPeriod {
+        /**
+         * (Updatable) The value to enter for the amount of retention time should be a numerical figure (such as 1, 7, 30, etc.) that corresponds to the period specified in the retention time unit property (such as YEARS, DAYS). The combination of these two properties determines the total length of the retention period.
+         */
+        retentionTimeAmount: pulumi.Input<number>;
+        /**
+         * (Updatable) The value you can assign to the Time Unit property for this Duration may be either "YEARS" or "DAYS".
+         */
+        retentionTimeUnit: pulumi.Input<string>;
     }
 
     export interface VolumeGroupBackupSourceDetails {
@@ -31231,7 +31347,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseLocalStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * (Updatable) The Autonomous Database Serverless instance's availability domain.
          */
         availabilityDomain?: pulumi.Input<string | undefined>;
         /**
@@ -31400,7 +31516,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseStandbyDb {
         /**
-         * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+         * (Updatable) The Autonomous Database Serverless instance's availability domain.
          */
         availabilityDomain?: pulumi.Input<string | undefined>;
         /**
@@ -32270,6 +32386,25 @@ export namespace Database {
         share: pulumi.Input<number>;
     }
 
+    export interface CloudVmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates?: pulumi.Input<boolean | undefined>;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased?: pulumi.Input<string | undefined>;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode?: pulumi.Input<string | undefined>;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
     export interface CloudVmClusterMultiCloudIdentityConnectorConfig {
         /**
          * Cloud provider
@@ -32279,6 +32414,21 @@ export namespace Database {
          * The OCID of the identity connector
          */
         id?: pulumi.Input<string | undefined>;
+    }
+
+    export interface CloudVmClusterUpdateDetails {
+        /**
+         * (Updatable) The update action. Supported values include `ROLLING_APPLY`, `NON_ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+         */
+        updateAction?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         */
+        updateId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+         */
+        updateMode?: pulumi.Input<string | undefined>;
     }
 
     export interface DataGuardAssociationDataCollectionOptions {
@@ -32317,6 +32467,10 @@ export namespace Database {
 
     export interface DatabaseDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness?: pulumi.Input<string | undefined>;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDataGuardGroupMember>[] | undefined>;
@@ -32348,7 +32502,7 @@ export namespace Database {
          */
         dbSystemId?: pulumi.Input<string | undefined>;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness?: pulumi.Input<string | undefined>;
         /**
@@ -32356,15 +32510,24 @@ export namespace Database {
          */
         failoverReadinessMessage?: pulumi.Input<string | undefined>;
         /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover?: pulumi.Input<string | undefined>;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role?: pulumi.Input<string | undefined>;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness?: pulumi.Input<string | undefined>;
         /**
@@ -32397,6 +32560,10 @@ export namespace Database {
          * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
          */
         adminPassword?: pulumi.Input<string | undefined>;
+        /**
+         * The properties for defining auto failover configuration.
+         */
+        autoFailoverConfiguration?: pulumi.Input<inputs.Database.DatabaseDatabaseAutoFailoverConfiguration | undefined>;
         /**
          * The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
@@ -32492,6 +32659,10 @@ export namespace Database {
          */
         protectionMode?: pulumi.Input<string | undefined>;
         /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         */
+        recoveryApplianceVpcPassword?: pulumi.Input<string | undefined>;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix?: pulumi.Input<string | undefined>;
@@ -32535,6 +32706,17 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          */
         vmClusterId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DatabaseDatabaseAutoFailoverConfiguration {
+        /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover?: pulumi.Input<string | undefined>;
     }
 
     export interface DatabaseDatabaseDbBackupConfig {
@@ -32602,11 +32784,26 @@ export namespace Database {
          */
         remoteRegion?: pulumi.Input<string | undefined>;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestination?: pulumi.Input<inputs.Database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination | undefined>;
+        /**
          * Type of the database backup destination.
          */
         type?: pulumi.Input<string | undefined>;
         vpcPassword?: pulumi.Input<string | undefined>;
         vpcUser?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId?: pulumi.Input<string | undefined>;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType?: pulumi.Input<string | undefined>;
     }
 
     export interface DatabaseDatabaseEncryptionKeyLocationDetails {
@@ -32829,11 +33026,26 @@ export namespace Database {
          */
         remoteRegion?: pulumi.Input<string | undefined>;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestinations?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination>[] | undefined>;
+        /**
          * Type of the database backup destination.
          */
         type?: pulumi.Input<string | undefined>;
         vpcPassword?: pulumi.Input<string | undefined>;
         vpcUser?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId?: pulumi.Input<string | undefined>;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType?: pulumi.Input<string | undefined>;
     }
 
     export interface DatabaseManagedSoftwareUpdateDetail {
@@ -33089,6 +33301,10 @@ export namespace Database {
 
     export interface DatabaseUpgradeDataGuardGroup {
         /**
+         * Specifies readiness of Managed Automatic failover.
+         */
+        managedAutoFailOverReadiness?: pulumi.Input<string | undefined>;
+        /**
          * List of Data Guard members, representing each database that is part of Data Guard.
          */
         members?: pulumi.Input<pulumi.Input<inputs.Database.DatabaseUpgradeDataGuardGroupMember>[] | undefined>;
@@ -33120,7 +33336,7 @@ export namespace Database {
          */
         dbSystemId?: pulumi.Input<string | undefined>;
         /**
-         * The failover readiness status of the Data Guard member.
+         * The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
          */
         failoverReadiness?: pulumi.Input<string | undefined>;
         /**
@@ -33128,15 +33344,24 @@ export namespace Database {
          */
         failoverReadinessMessage?: pulumi.Input<string | undefined>;
         /**
+         * Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+         */
+        failoverTargets?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
+        /**
+         * The state of managed auto failover.
+         */
+        managedAutoFailover?: pulumi.Input<string | undefined>;
         /**
          * The role of the reporting database in this Data Guard association.
          */
         role?: pulumi.Input<string | undefined>;
         /**
          * The switchover readiness status of the Data Guard member.
+         * * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
          */
         switchoverReadiness?: pulumi.Input<string | undefined>;
         /**
@@ -33360,6 +33585,10 @@ export namespace Database {
          */
         pluggableDatabases?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
+         * The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+         */
+        recoveryApplianceVpcPassword?: pulumi.Input<string | undefined>;
+        /**
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix?: pulumi.Input<string | undefined>;
@@ -33460,6 +33689,10 @@ export namespace Database {
          */
         remoteRegion?: pulumi.Input<string | undefined>;
         /**
+         * Backup destination for the TDE wallet backups.
+         */
+        tdeWalletBackupDestination?: pulumi.Input<inputs.Database.DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination | undefined>;
+        /**
          * Type of the database backup destination. Supported values: `NFS`.
          */
         type?: pulumi.Input<string | undefined>;
@@ -33467,7 +33700,21 @@ export namespace Database {
         vpcUser?: pulumi.Input<string | undefined>;
     }
 
+    export interface DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         */
+        backupDestinationId?: pulumi.Input<string | undefined>;
+        /**
+         * Destination where TDE Wallet backups are to be placed.
+         */
+        backupDestinationType?: pulumi.Input<string | undefined>;
+    }
+
     export interface DbHomeDatabaseEncryptionKeyLocationDetails {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
         awsEncryptionKeyId?: pulumi.Input<string | undefined>;
         /**
          * Provide the key OCID of a registered Azure key.
@@ -34581,6 +34828,17 @@ export namespace Database {
         share?: pulumi.Input<number | undefined>;
     }
 
+    export interface ExadbVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider?: pulumi.Input<string | undefined>;
+        /**
+         * The OCID of the identity connector
+         */
+        id?: pulumi.Input<string | undefined>;
+    }
+
     export interface ExadbVmClusterNodeConfig {
         /**
          * (Updatable) The number of ECPUs to enable for each node.
@@ -34859,6 +35117,18 @@ export namespace Database {
         /**
          * A valid Oracle character set.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -36540,6 +36810,25 @@ export namespace Database {
         mountPoint?: pulumi.Input<string | undefined>;
     }
 
+    export interface VmClusterLiveImageVersionDetail {
+        /**
+         * Indicates whether OS updates that require node reboot are pending after the previous online update was applied.
+         */
+        hasPendingUpdates?: pulumi.Input<boolean | undefined>;
+        /**
+         * The release date and time for the applied Live Exadata Image OS version.
+         */
+        timeReleased?: pulumi.Input<string | undefined>;
+        /**
+         * The OS live update mode performed most recently on the VM Cluster.
+         */
+        updateMode?: pulumi.Input<string | undefined>;
+        /**
+         * Live Exadata Image Version of the Guest OS Update applied.
+         */
+        version?: pulumi.Input<string | undefined>;
+    }
+
     export interface VmClusterNetworkDrScan {
         /**
          * (Updatable) The Disaster recovery SCAN hostname.
@@ -36711,6 +37000,21 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint?: pulumi.Input<string | undefined>;
+    }
+
+    export interface VmClusterUpdateDetails {
+        /**
+         * (Updatable) The update action. Supported values include `ROLLING_APPLY`, `PRECHECK`, and `ROLLBACK`.
+         */
+        updateAction?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         */
+        updateId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OS update mode. Supported values are `ONLINE_HIGHCVSS`, `ONLINE_ALLCVSS`, `ONLINE_ALL_UPDATES`, `PENDING_UPDATES`, and `FULL_UPDATE`.
+         */
+        updateMode?: pulumi.Input<string | undefined>;
     }
 }
 
@@ -51975,6 +52279,66 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetHostedApplicationIamsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationIamsFilterArgs {
+        /**
+         * Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostedApplicationStoragesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationStoragesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostedApplicationsFilter {
+        /**
+         * Name of the environment variable.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedApplicationsFilterArgs {
+        /**
+         * Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetHostedDeploymentsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetHostedDeploymentsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetImportedModelsFilter {
         name: string;
         regex?: boolean;
@@ -52021,6 +52385,296 @@ export namespace GenerativeAi {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface HostedApplicationEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationIamEnvironmentVariable {
+        /**
+         * (Updatable) Name of the environment variable.
+         */
+        name: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the environment variable (PLAINTEXT or VAULT, no default value).
+         */
+        type: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the environment variable.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationIamNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationIamNetworkingConfigInboundNetworkingConfig>;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationIamNetworkingConfigOutboundNetworkingConfig>;
+    }
+
+    export interface HostedApplicationIamNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: pulumi.Input<string>;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface HostedApplicationIamNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: pulumi.Input<string>;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface HostedApplicationIamScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: pulumi.Input<string>;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold?: pulumi.Input<number | undefined>;
+    }
+
+    export interface HostedApplicationIamStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: pulumi.Input<string>;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationInboundAuthConfig {
+        /**
+         * (Updatable) Oracle Identity Cloud Service (IDCS) configuration used when inboundAuthConfigType is set to IDCS_AUTH_CONFIG. This object must be specified when inboundAuthConfigType is IDCS_AUTH_CONFIG.
+         */
+        idcsConfig?: pulumi.Input<inputs.GenerativeAi.HostedApplicationInboundAuthConfigIdcsConfig | undefined>;
+        /**
+         * (Updatable) Inbound authentication configuration type of network access (IDCS_AUTH_CONFIG).
+         */
+        inboundAuthConfigType: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationInboundAuthConfigIdcsConfig {
+        /**
+         * (Updatable) Audience for IDCS.
+         */
+        audience?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Domain URL for IDCS.
+         */
+        domainUrl: pulumi.Input<string>;
+        /**
+         * (Updatable) Scope for IDCS.
+         */
+        scope: pulumi.Input<string>;
+    }
+
+    export interface HostedApplicationNetworkingConfig {
+        /**
+         * Inbound Networking configuration.
+         */
+        inboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationNetworkingConfigInboundNetworkingConfig>;
+        /**
+         * Outbound Networking configuration.
+         */
+        outboundNetworkingConfig: pulumi.Input<inputs.GenerativeAi.HostedApplicationNetworkingConfigOutboundNetworkingConfig>;
+    }
+
+    export interface HostedApplicationNetworkingConfigInboundNetworkingConfig {
+        /**
+         * inbounding from public or private endpoint.
+         */
+        endpointMode: pulumi.Input<string>;
+        /**
+         * The [OCID] of Private Endpoint when endpointMode=Private
+         */
+        privateEndpointId?: pulumi.Input<string | undefined>;
+    }
+
+    export interface HostedApplicationNetworkingConfigOutboundNetworkingConfig {
+        /**
+         * ocid of customer subnet when networkMode=Custom
+         */
+        customSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * outbounding to managed internet or customer network.
+         */
+        networkMode: pulumi.Input<string>;
+        /**
+         * A list of the OCIDs of the network security groups that the private endpoint's VNIC belongs to.
+         */
+        nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    }
+
+    export interface HostedApplicationScalingConfig {
+        /**
+         * (Updatable) Maximum number of replicas allowed.
+         */
+        maxReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Minimum number of replicas to keep running.
+         */
+        minReplica?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) scaling type for application.
+         */
+        scalingType: pulumi.Input<string>;
+        /**
+         * (Updatable) number of simultaneous requests that can be processed by each replica.
+         */
+        targetConcurrencyThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average CPU utilization exceeds this threshold.
+         */
+        targetCpuThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Scale up if average memory utilization exceeds this threshold.
+         */
+        targetMemoryThreshold?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) requests-per-second per replica of an application.
+         */
+        targetRpsThreshold?: pulumi.Input<number | undefined>;
+    }
+
+    export interface HostedApplicationStorageConfig {
+        /**
+         * The key of environment variable to store the database connection.
+         */
+        environmentVariableKey: pulumi.Input<string>;
+        /**
+         * The [OCID] of ApplicationStorage.
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        storageId: pulumi.Input<string>;
+    }
+
+    export interface HostedDeploymentActiveArtifact {
+        /**
+         * (Updatable) The type of the artifact.
+         */
+        artifactType?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) image url.
+         */
+        containerUri?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) if put artifact to a table, the id is needed
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired?: pulumi.Input<boolean | undefined>;
+        /**
+         * (Updatable) The current status of the artifact.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) image tag.
+         */
+        tag?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The date and time the artifact was created.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+    }
+
+    export interface HostedDeploymentArtifact {
+        /**
+         * The type of the artifact.
+         */
+        artifactType?: pulumi.Input<string | undefined>;
+        /**
+         * image url.
+         */
+        containerUri?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
+         */
+        hostedDeploymentId?: pulumi.Input<string | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the hosted deployment.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Optional flag that requires an Oracle Cloud Infrastructure Vulnerability Scanning Service compliance report for this artifact before it can become active. When not provided, the value defaults to false and the artifact is not blocked on a scan result.
+         */
+        isVulnerabilityScanRequired?: pulumi.Input<boolean | undefined>;
+        /**
+         * The current status of the artifact.
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * image tag.
+         */
+        tag?: pulumi.Input<string | undefined>;
+        /**
+         * The date and time the hosted deployment was created, in the format defined by RFC 3339
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
     }
 
     export interface ImportedModelDataSource {
@@ -52323,6 +52977,41 @@ export namespace GoldenGate {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface ConnectionAuthDetails {
+        /**
+         * (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        apiKey?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) API key secret OCID for the AI model connection.
+         */
+        apiKeySecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Authentication type used by the AI model connection.
+         */
+        authType: pulumi.Input<string>;
+        /**
+         * (Updatable) Base URL of the AI model endpoint. If not specified, the default base URL for the selected AI provider will be used.
+         */
+        baseUrl?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI key fingerprint.
+         */
+        keyFingerprint?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI tenancy OCID. If this value is not provided, or is updated to an empty value, it defaults to the tenancy OCID of the user who is executing the operation.
+         */
+        tenancyId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Generative AI user OCID. If this value is not provided, or is updated to an empty value, it defaults to the OCID of the user who is executing the operation.
+         */
+        userId?: pulumi.Input<string | undefined>;
+    }
+
     export interface ConnectionBootstrapServer {
         /**
          * (Updatable) The name or address of a host.
@@ -52384,7 +53073,10 @@ export namespace GoldenGate {
          */
         propertiesSecretId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * (Updatable)
+         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
+         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
          */
         uri?: pulumi.Input<string | undefined>;
     }
@@ -52417,11 +53109,14 @@ export namespace GoldenGate {
 
     export interface ConnectionStorage {
         /**
-         * (Updatable) Access key ID to access the Amazon S3 bucket.
+         * (Updatable)
+         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be removed after February 15 2026.
+         * (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
          */
@@ -52435,7 +53130,10 @@ export namespace GoldenGate {
          */
         accountName?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * (Updatable)
+         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
+         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket?: pulumi.Input<string | undefined>;
         /**
@@ -52443,7 +53141,11 @@ export namespace GoldenGate {
          */
         container?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * (Updatable)
+         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
+         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
+         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint?: pulumi.Input<string | undefined>;
         /**
@@ -52459,17 +53161,22 @@ export namespace GoldenGate {
          */
         schemeType?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         * (Updatable)
+         * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
+         * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
          */
         secretAccessKey?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * (Updatable)
+         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
          */
         secretAccessKeySecretId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
+         * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
          */
@@ -52694,6 +53401,30 @@ export namespace GoldenGate {
          * (Updatable) The fault domain of a placement.
          */
         faultDomain?: pulumi.Input<string | undefined>;
+    }
+
+    export interface GetAiModelsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAiModelsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAiProvidersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAiProvidersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetConnectionAssignmentsFilter {
@@ -102683,6 +103414,17 @@ export namespace oci {
         managementPortalUri?: pulumi.Input<string | undefined>;
     }
 
+    export interface ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList {
+        /**
+         * (Updatable) id of the group.
+         */
+        groupIds: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) level of the group.
+         */
+        groupLevel: pulumi.Input<number>;
+    }
+
     export interface ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList {
         /**
          * (Updatable) name of the api which needs to be protected.
@@ -102707,6 +103449,10 @@ export namespace oci {
          * Comment specified by the approver of the request.
          */
         approvalComment?: pulumi.Input<string | undefined>;
+        /**
+         * The group level at which the approver approved.
+         */
+        approverGroupLevel?: pulumi.Input<number | undefined>;
         /**
          * The userId of the approver.
          */
@@ -105809,6 +106555,18 @@ export namespace oci {
     }
 
     export interface GetDbmulticloudOracleDbGcpKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDdfsInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDdfsInstancesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;

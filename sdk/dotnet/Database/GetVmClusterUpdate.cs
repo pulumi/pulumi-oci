@@ -146,6 +146,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<string> AvailableActions;
         /// <summary>
+        /// The possible update options that can be performed using this maintenance update (only valid for OS Update).
+        /// </summary>
+        public readonly ImmutableArray<string> AvailableUpdateModes;
+        /// <summary>
         /// Details of the maintenance update package.
         /// </summary>
         public readonly string Description;
@@ -158,9 +162,17 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LastAction;
         /// <summary>
+        /// The update mode performed most recently using this maintenance update (only valid for OS Update).
+        /// </summary>
+        public readonly string LastUpdateMode;
+        /// <summary>
         /// Descriptive text providing additional details about the lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        public readonly string OracleLinuxVersion;
         /// <summary>
         /// The current state of the maintenance update. Dependent on value of `lastAction`.
         /// </summary>
@@ -184,13 +196,19 @@ namespace Pulumi.Oci.Database
         private GetVmClusterUpdateResult(
             ImmutableArray<string> availableActions,
 
+            ImmutableArray<string> availableUpdateModes,
+
             string description,
 
             string id,
 
             string lastAction,
 
+            string lastUpdateMode,
+
             string lifecycleDetails,
+
+            string oracleLinuxVersion,
 
             string state,
 
@@ -205,10 +223,13 @@ namespace Pulumi.Oci.Database
             string vmClusterId)
         {
             AvailableActions = availableActions;
+            AvailableUpdateModes = availableUpdateModes;
             Description = description;
             Id = id;
             LastAction = lastAction;
+            LastUpdateMode = lastUpdateMode;
             LifecycleDetails = lifecycleDetails;
+            OracleLinuxVersion = oracleLinuxVersion;
             State = state;
             TimeReleased = timeReleased;
             UpdateId = updateId;

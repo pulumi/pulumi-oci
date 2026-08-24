@@ -39,6 +39,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DedicatedAiCluster{}
 	case "oci:GenerativeAi/endpoint:Endpoint":
 		r = &Endpoint{}
+	case "oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint":
+		r = &GenerativeAiPrivateEndpoint{}
+	case "oci:GenerativeAi/hostedApplication:HostedApplication":
+		r = &HostedApplication{}
+	case "oci:GenerativeAi/hostedApplicationIam:HostedApplicationIam":
+		r = &HostedApplicationIam{}
+	case "oci:GenerativeAi/hostedApplicationStorage:HostedApplicationStorage":
+		r = &HostedApplicationStorage{}
+	case "oci:GenerativeAi/hostedDeployment:HostedDeployment":
+		r = &HostedDeployment{}
 	case "oci:GenerativeAi/importedModel:ImportedModel":
 		r = &ImportedModel{}
 	case "oci:GenerativeAi/model:Model":
@@ -103,6 +113,31 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GenerativeAi/endpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/generativeAiPrivateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/hostedApplication",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/hostedApplicationIam",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/hostedApplicationStorage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GenerativeAi/hostedDeployment",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

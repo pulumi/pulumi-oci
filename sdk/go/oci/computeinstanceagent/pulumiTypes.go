@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type GetInstanceAgentPluginsFilter struct {
-	// The plugin name
+	// The plugin name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -32,7 +32,7 @@ type GetInstanceAgentPluginsFilterInput interface {
 }
 
 type GetInstanceAgentPluginsFilterArgs struct {
-	// The plugin name
+	// The plugin name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -89,7 +89,7 @@ func (o GetInstanceAgentPluginsFilterOutput) ToGetInstanceAgentPluginsFilterOutp
 	return o
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAgentPluginsFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -123,13 +123,13 @@ func (o GetInstanceAgentPluginsFilterArrayOutput) Index(i pulumi.IntInput) GetIn
 }
 
 type GetInstanceAgentPluginsInstanceAgentPlugin struct {
-	// The optional message from the agent plugin
+	// An optional message from the plugin.
 	Message string `pulumi:"message"`
-	// The plugin name
+	// The plugin name.
 	Name string `pulumi:"name"`
-	// The plugin status
+	// The plugin status.
 	Status string `pulumi:"status"`
-	// The last update time of the plugin in UTC
+	// The last updated time of the plugin, in UTC.
 	TimeLastUpdatedUtc string `pulumi:"timeLastUpdatedUtc"`
 }
 
@@ -145,13 +145,13 @@ type GetInstanceAgentPluginsInstanceAgentPluginInput interface {
 }
 
 type GetInstanceAgentPluginsInstanceAgentPluginArgs struct {
-	// The optional message from the agent plugin
+	// An optional message from the plugin.
 	Message pulumi.StringInput `pulumi:"message"`
-	// The plugin name
+	// The plugin name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// The plugin status
+	// The plugin status.
 	Status pulumi.StringInput `pulumi:"status"`
-	// The last update time of the plugin in UTC
+	// The last updated time of the plugin, in UTC.
 	TimeLastUpdatedUtc pulumi.StringInput `pulumi:"timeLastUpdatedUtc"`
 }
 
@@ -206,22 +206,22 @@ func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) ToGetInstanceAgentPlug
 	return o
 }
 
-// The optional message from the agent plugin
+// An optional message from the plugin.
 func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) Message() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsInstanceAgentPlugin) string { return v.Message }).(pulumi.StringOutput)
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsInstanceAgentPlugin) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// The plugin status
+// The plugin status.
 func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsInstanceAgentPlugin) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// The last update time of the plugin in UTC
+// The last updated time of the plugin, in UTC.
 func (o GetInstanceAgentPluginsInstanceAgentPluginOutput) TimeLastUpdatedUtc() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAgentPluginsInstanceAgentPlugin) string { return v.TimeLastUpdatedUtc }).(pulumi.StringOutput)
 }
@@ -247,13 +247,13 @@ func (o GetInstanceAgentPluginsInstanceAgentPluginArrayOutput) Index(i pulumi.In
 }
 
 type GetInstanceAvailablePluginAvailablePlugin struct {
-	// Is the plugin enabled or disabled by default
+	// Whether the plugin is enabled or disabled by default.
 	IsEnabledByDefault bool `pulumi:"isEnabledByDefault"`
-	// Is the plugin supported or not
+	// Whether the plugin is supported.
 	IsSupported bool `pulumi:"isSupported"`
-	// The plugin name
+	// The plugin name.
 	Name string `pulumi:"name"`
-	// A brief description of the plugin functionality
+	// A brief description of the plugin's functionality.
 	Summary string `pulumi:"summary"`
 }
 
@@ -269,13 +269,13 @@ type GetInstanceAvailablePluginAvailablePluginInput interface {
 }
 
 type GetInstanceAvailablePluginAvailablePluginArgs struct {
-	// Is the plugin enabled or disabled by default
+	// Whether the plugin is enabled or disabled by default.
 	IsEnabledByDefault pulumi.BoolInput `pulumi:"isEnabledByDefault"`
-	// Is the plugin supported or not
+	// Whether the plugin is supported.
 	IsSupported pulumi.BoolInput `pulumi:"isSupported"`
-	// The plugin name
+	// The plugin name.
 	Name pulumi.StringInput `pulumi:"name"`
-	// A brief description of the plugin functionality
+	// A brief description of the plugin's functionality.
 	Summary pulumi.StringInput `pulumi:"summary"`
 }
 
@@ -330,22 +330,22 @@ func (o GetInstanceAvailablePluginAvailablePluginOutput) ToGetInstanceAvailableP
 	return o
 }
 
-// Is the plugin enabled or disabled by default
+// Whether the plugin is enabled or disabled by default.
 func (o GetInstanceAvailablePluginAvailablePluginOutput) IsEnabledByDefault() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginAvailablePlugin) bool { return v.IsEnabledByDefault }).(pulumi.BoolOutput)
 }
 
-// Is the plugin supported or not
+// Whether the plugin is supported.
 func (o GetInstanceAvailablePluginAvailablePluginOutput) IsSupported() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginAvailablePlugin) bool { return v.IsSupported }).(pulumi.BoolOutput)
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAvailablePluginAvailablePluginOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginAvailablePlugin) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// A brief description of the plugin functionality
+// A brief description of the plugin's functionality.
 func (o GetInstanceAvailablePluginAvailablePluginOutput) Summary() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginAvailablePlugin) string { return v.Summary }).(pulumi.StringOutput)
 }
@@ -371,7 +371,7 @@ func (o GetInstanceAvailablePluginAvailablePluginArrayOutput) Index(i pulumi.Int
 }
 
 type GetInstanceAvailablePluginFilter struct {
-	// The plugin name
+	// The plugin name.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -389,7 +389,7 @@ type GetInstanceAvailablePluginFilterInput interface {
 }
 
 type GetInstanceAvailablePluginFilterArgs struct {
-	// The plugin name
+	// The plugin name.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -446,7 +446,7 @@ func (o GetInstanceAvailablePluginFilterOutput) ToGetInstanceAvailablePluginFilt
 	return o
 }
 
-// The plugin name
+// The plugin name.
 func (o GetInstanceAvailablePluginFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceAvailablePluginFilter) string { return v.Name }).(pulumi.StringOutput)
 }

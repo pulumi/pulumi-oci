@@ -60,6 +60,8 @@ type LookupAutonomousDatabaseArgs struct {
 type LookupAutonomousDatabaseResult struct {
 	// The current amount of storage in use for user and system data, in terabytes (TB).
 	ActualUsedDataStorageSizeInTbs float64 `pulumi:"actualUsedDataStorageSizeInTbs"`
+	// The Availability Domain which is planned for Scheduled Update
+	AdScheduledForUpdate string `pulumi:"adScheduledForUpdate"`
 	// Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
 	AdditionalAttributes map[string]string `pulumi:"additionalAttributes"`
 	AdminPassword        string            `pulumi:"adminPassword"`
@@ -181,6 +183,7 @@ type LookupAutonomousDatabaseResult struct {
 	IsDedicated bool `pulumi:"isDedicated"`
 	// Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
 	IsDevTier                         bool `pulumi:"isDevTier"`
+	IsDisableAdUpdateSchedule         bool `pulumi:"isDisableAdUpdateSchedule"`
 	IsDisableDbVersionUpgradeSchedule bool `pulumi:"isDisableDbVersionUpgradeSchedule"`
 	IsDisconnectPeer                  bool `pulumi:"isDisconnectPeer"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous AI Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
@@ -200,6 +203,7 @@ type LookupAutonomousDatabaseResult struct {
 	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 	IsReplicateAutomaticBackups          bool `pulumi:"isReplicateAutomaticBackups"`
+	IsScheduleAdUpdateToEarliest         bool `pulumi:"isScheduleAdUpdateToEarliest"`
 	IsScheduleDbVersionUpgradeToEarliest bool `pulumi:"isScheduleDbVersionUpgradeToEarliest"`
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly bool `pulumi:"isShrinkOnly"`
@@ -319,8 +323,12 @@ type LookupAutonomousDatabaseResult struct {
 	TimeDeletionOfFreeAutonomousDatabase string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
 	// The date and time the Disaster Recovery role was switched for the standby Autonomous AI Database.
 	TimeDisasterRecoveryRoleChanged string `pulumi:"timeDisasterRecoveryRoleChanged"`
+	// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+	TimeEarliestAvailableAdUpdate string `pulumi:"timeEarliestAvailableAdUpdate"`
 	// The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 	TimeEarliestAvailableDbVersionUpgrade string `pulumi:"timeEarliestAvailableDbVersionUpgrade"`
+	// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+	TimeLatestAvailableAdUpdate string `pulumi:"timeLatestAvailableAdUpdate"`
 	// The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 	TimeLatestAvailableDbVersionUpgrade string `pulumi:"timeLatestAvailableDbVersionUpgrade"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous AI Database where the standby was provisioned in the same region as the primary database.
@@ -347,6 +355,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeOfNextRefresh string `pulumi:"timeOfNextRefresh"`
 	// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 	TimeReclamationOfFreeAutonomousDatabase string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
+	// The date and time to which the Autonomous Database availability domain update is scheduled.
+	TimeScheduledAdUpdate string `pulumi:"timeScheduledAdUpdate"`
 	// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
 	TimeScheduledDbVersionUpgrade string `pulumi:"timeScheduledDbVersionUpgrade"`
 	// The date and time the Autonomous AI Database was most recently undeleted.
@@ -409,6 +419,11 @@ func (o LookupAutonomousDatabaseResultOutput) ToLookupAutonomousDatabaseResultOu
 // The current amount of storage in use for user and system data, in terabytes (TB).
 func (o LookupAutonomousDatabaseResultOutput) ActualUsedDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ActualUsedDataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The Availability Domain which is planned for Scheduled Update
+func (o LookupAutonomousDatabaseResultOutput) AdScheduledForUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.AdScheduledForUpdate }).(pulumi.StringOutput)
 }
 
 // Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
@@ -722,6 +737,10 @@ func (o LookupAutonomousDatabaseResultOutput) IsDevTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDevTier }).(pulumi.BoolOutput)
 }
 
+func (o LookupAutonomousDatabaseResultOutput) IsDisableAdUpdateSchedule() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDisableAdUpdateSchedule }).(pulumi.BoolOutput)
+}
+
 func (o LookupAutonomousDatabaseResultOutput) IsDisableDbVersionUpgradeSchedule() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDisableDbVersionUpgradeSchedule }).(pulumi.BoolOutput)
 }
@@ -772,6 +791,10 @@ func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.
 // If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 func (o LookupAutonomousDatabaseResultOutput) IsReplicateAutomaticBackups() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsReplicateAutomaticBackups }).(pulumi.BoolOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) IsScheduleAdUpdateToEarliest() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsScheduleAdUpdateToEarliest }).(pulumi.BoolOutput)
 }
 
 func (o LookupAutonomousDatabaseResultOutput) IsScheduleDbVersionUpgradeToEarliest() pulumi.BoolOutput {
@@ -1100,9 +1123,19 @@ func (o LookupAutonomousDatabaseResultOutput) TimeDisasterRecoveryRoleChanged() 
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringOutput)
 }
 
+// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+func (o LookupAutonomousDatabaseResultOutput) TimeEarliestAvailableAdUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeEarliestAvailableAdUpdate }).(pulumi.StringOutput)
+}
+
 // The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
 func (o LookupAutonomousDatabaseResultOutput) TimeEarliestAvailableDbVersionUpgrade() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeEarliestAvailableDbVersionUpgrade }).(pulumi.StringOutput)
+}
+
+// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+func (o LookupAutonomousDatabaseResultOutput) TimeLatestAvailableAdUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeLatestAvailableAdUpdate }).(pulumi.StringOutput)
 }
 
 // The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
@@ -1168,6 +1201,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeOfNextRefresh() pulumi.StringO
 // The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 func (o LookupAutonomousDatabaseResultOutput) TimeReclamationOfFreeAutonomousDatabase() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeReclamationOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+}
+
+// The date and time to which the Autonomous Database availability domain update is scheduled.
+func (o LookupAutonomousDatabaseResultOutput) TimeScheduledAdUpdate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeScheduledAdUpdate }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous AI Database scheduled to upgrade to 26ai.

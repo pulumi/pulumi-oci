@@ -170,6 +170,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly listenerPort: string;
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     */
+    readonly liveImageVersionDetails: outputs.Database.GetCloudVmClusterLiveImageVersionDetail[];
+    /**
      * The memory to be allocated in GBs.
      */
     readonly memorySizeInGbs: number;
@@ -190,6 +194,10 @@ export interface GetCloudVmClusterResult {
      * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     readonly ocpuCount: number;
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     */
+    readonly oracleLinuxVersion: string;
     readonly privateZoneId: string;
     /**
      * The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -275,6 +283,7 @@ export interface GetCloudVmClusterResult {
      * The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
     readonly timeZone: string;
+    readonly updateDetails: outputs.Database.GetCloudVmClusterUpdateDetail[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
      */

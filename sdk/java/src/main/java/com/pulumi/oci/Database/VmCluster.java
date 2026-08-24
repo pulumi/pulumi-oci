@@ -12,6 +12,8 @@ import com.pulumi.oci.Database.inputs.VmClusterState;
 import com.pulumi.oci.Database.outputs.VmClusterCloudAutomationUpdateDetails;
 import com.pulumi.oci.Database.outputs.VmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.VmClusterFileSystemConfigurationDetail;
+import com.pulumi.oci.Database.outputs.VmClusterLiveImageVersionDetail;
+import com.pulumi.oci.Database.outputs.VmClusterUpdateDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -19,6 +21,7 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -45,6 +48,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Database.inputs.VmClusterCloudAutomationUpdateDetailsFreezePeriodArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterDataCollectionOptionsArgs;
  * import com.pulumi.oci.Database.inputs.VmClusterFileSystemConfigurationDetailArgs;
+ * import com.pulumi.oci.Database.inputs.VmClusterUpdateDetailsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -102,6 +106,11 @@ import javax.annotation.Nullable;
  *             .sparseStoragePercentage(vmClusterSparseStoragePercentage)
  *             .systemVersion(vmClusterSystemVersion)
  *             .timeZone(vmClusterTimeZone)
+ *             .updateDetails(VmClusterUpdateDetailsArgs.builder()
+ *                 .updateAction(vmClusterUpdateDetailsUpdateAction)
+ *                 .updateId(vmClusterUpdateDetailsUpdateId)
+ *                 .updateMode(vmClusterUpdateDetailsUpdateMode)
+ *                 .build())
  *             .vmBackupStorageType(vmClusterVmBackupStorageType)
  *             .vmClusterType(vmClusterVmClusterType)
  *             .vmFileSystemStorageType(vmClusterVmFileSystemStorageType)
@@ -460,6 +469,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    @Export(name="liveImageVersionDetails", refs={List.class,VmClusterLiveImageVersionDetail.class}, tree="[0,1]")
+    private Output<List<VmClusterLiveImageVersionDetail>> liveImageVersionDetails;
+
+    /**
+     * @return Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+     * 
+     */
+    public Output<List<VmClusterLiveImageVersionDetail>> liveImageVersionDetails() {
+        return this.liveImageVersionDetails;
+    }
+    /**
      * (Updatable) The memory to be allocated in GBs.
      * 
      */
@@ -484,6 +507,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
 
     public Output<Double> ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    /**
+     * Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    @Export(name="oracleLinuxVersion", refs={String.class}, tree="[0]")
+    private Output<String> oracleLinuxVersion;
+
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public Output<String> oracleLinuxVersion() {
+        return this.oracleLinuxVersion;
     }
     /**
      * (Updatable) The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
@@ -624,6 +661,20 @@ public class VmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeZone() {
         return this.timeZone;
+    }
+    /**
+     * (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    @Export(name="updateDetails", refs={VmClusterUpdateDetails.class}, tree="[0]")
+    private Output</* @Nullable */ VmClusterUpdateDetails> updateDetails;
+
+    /**
+     * @return (Updatable) Details specifying which maintenance update to apply to the VM cluster and which action to perform. Use `updateMode` for DomU live update modes or regular full OS update mode.
+     * 
+     */
+    public Output<Optional<VmClusterUpdateDetails>> updateDetails() {
+        return Codegen.optional(this.updateDetails);
     }
     /**
      * (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL

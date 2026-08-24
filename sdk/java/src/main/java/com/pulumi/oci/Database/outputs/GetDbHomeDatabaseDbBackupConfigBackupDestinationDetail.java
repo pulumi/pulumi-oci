@@ -5,8 +5,10 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -21,6 +23,7 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     private Boolean isRemote;
     private Boolean isRetentionLockEnabled;
     private String remoteRegion;
+    private List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
     private String type;
     private String vpcPassword;
     private String vpcUser;
@@ -48,6 +51,9 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     public String remoteRegion() {
         return this.remoteRegion;
     }
+    public List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations() {
+        return this.tdeWalletBackupDestinations;
+    }
     public String type() {
         return this.type;
     }
@@ -73,6 +79,7 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         private Boolean isRemote;
         private Boolean isRetentionLockEnabled;
         private String remoteRegion;
+        private List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations;
         private String type;
         private String vpcPassword;
         private String vpcUser;
@@ -85,6 +92,7 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     	      this.isRemote = defaults.isRemote;
     	      this.isRetentionLockEnabled = defaults.isRetentionLockEnabled;
     	      this.remoteRegion = defaults.remoteRegion;
+    	      this.tdeWalletBackupDestinations = defaults.tdeWalletBackupDestinations;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -139,6 +147,17 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeWalletBackupDestinations(List<GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination> tdeWalletBackupDestinations) {
+            if (tdeWalletBackupDestinations == null) {
+              throw new MissingRequiredPropertyException("GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "tdeWalletBackupDestinations");
+            }
+            this.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
+            return this;
+        }
+        public Builder tdeWalletBackupDestinations(GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestination... tdeWalletBackupDestinations) {
+            return tdeWalletBackupDestinations(List.of(tdeWalletBackupDestinations));
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "type");
@@ -170,6 +189,7 @@ public final class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             _resultValue.isRemote = isRemote;
             _resultValue.isRetentionLockEnabled = isRetentionLockEnabled;
             _resultValue.remoteRegion = remoteRegion;
+            _resultValue.tdeWalletBackupDestinations = tdeWalletBackupDestinations;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

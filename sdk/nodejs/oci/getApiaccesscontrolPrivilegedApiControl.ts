@@ -48,6 +48,10 @@ export interface GetApiaccesscontrolPrivilegedApiControlResult {
      */
     readonly approverGroupIdLists: string[];
     /**
+     * List of Group containing the levels at which the users belonging to the group can authorize.
+     */
+    readonly approverGroupLevelLists: outputs.oci.GetApiaccesscontrolPrivilegedApiControlApproverGroupLevelList[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
@@ -109,7 +113,7 @@ export interface GetApiaccesscontrolPrivilegedApiControlResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeCreated: string;
     /**

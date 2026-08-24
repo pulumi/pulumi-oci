@@ -18,9 +18,17 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
 
     public static final GetInstanceAgentPluginsArgs Empty = new GetInstanceAgentPluginsArgs();
 
+    /**
+     * The ID of the compartment in which the instance resides
+     * 
+     */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
+    /**
+     * @return The ID of the compartment in which the instance resides
+     * 
+     */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
@@ -33,14 +41,14 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The OCID of the instance.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
     @Import(name="instanceagentId", required=true)
     private Output<String> instanceagentId;
 
     /**
-     * @return The OCID of the instance.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * 
      */
     public Output<String> instanceagentId() {
@@ -48,14 +56,14 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The plugin name
+     * The plugin name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -63,14 +71,14 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
     }
 
     /**
-     * The plugin status
+     * The plugin status.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return The plugin status
+     * @return The plugin status.
      * 
      */
     public Optional<Output<String>> status() {
@@ -105,11 +113,23 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
             $ = new GetInstanceAgentPluginsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which the instance resides
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which the instance resides
+         * 
+         * @return builder
+         * 
+         */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }
@@ -128,7 +148,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param instanceagentId The OCID of the instance.
+         * @param instanceagentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          * 
          * @return builder
          * 
@@ -139,7 +159,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param instanceagentId The OCID of the instance.
+         * @param instanceagentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          * 
          * @return builder
          * 
@@ -149,7 +169,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 
@@ -160,7 +180,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 
@@ -170,7 +190,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param status The plugin status
+         * @param status The plugin status.
          * 
          * @return builder
          * 
@@ -181,7 +201,7 @@ public final class GetInstanceAgentPluginsArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param status The plugin status
+         * @param status The plugin status.
          * 
          * @return builder
          * 

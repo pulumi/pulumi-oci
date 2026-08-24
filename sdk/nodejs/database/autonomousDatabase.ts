@@ -55,6 +55,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly actualUsedDataStorageSizeInTbs: pulumi.Output<number>;
     /**
+     * The Availability Domain which is planned for Scheduled Update
+     */
+    declare public /*out*/ readonly adScheduledForUpdate: pulumi.Output<string>;
+    /**
      * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
      */
     declare public /*out*/ readonly additionalAttributes: pulumi.Output<{[key: string]: string}>;
@@ -103,9 +107,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public readonly autonomousMaintenanceScheduleType: pulumi.Output<string>;
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * (Updatable) The Autonomous Database Serverless instance's availability domain.
      */
-    declare public /*out*/ readonly availabilityDomain: pulumi.Output<string>;
+    declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
      * List of Oracle AI Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
      */
@@ -316,6 +320,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      */
     declare public readonly isDevTier: pulumi.Output<boolean>;
+    declare public readonly isDisableAdUpdateSchedule: pulumi.Output<boolean>;
     declare public readonly isDisableDbVersionUpgradeSchedule: pulumi.Output<boolean>;
     declare public readonly isDisconnectPeer: pulumi.Output<boolean | undefined>;
     /**
@@ -363,6 +368,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
     declare public readonly isReplicateAutomaticBackups: pulumi.Output<boolean>;
+    declare public readonly isScheduleAdUpdateToEarliest: pulumi.Output<boolean>;
     declare public readonly isScheduleDbVersionUpgradeToEarliest: pulumi.Output<boolean>;
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
@@ -647,9 +653,17 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly timeDisasterRecoveryRoleChanged: pulumi.Output<string>;
     /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    declare public /*out*/ readonly timeEarliestAvailableAdUpdate: pulumi.Output<string>;
+    /**
      * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
     declare public /*out*/ readonly timeEarliestAvailableDbVersionUpgrade: pulumi.Output<string>;
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    declare public /*out*/ readonly timeLatestAvailableAdUpdate: pulumi.Output<string>;
     /**
      * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
@@ -702,6 +716,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
     declare public /*out*/ readonly timeReclamationOfFreeAutonomousDatabase: pulumi.Output<string>;
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     */
+    declare public readonly timeScheduledAdUpdate: pulumi.Output<string>;
     /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */
@@ -775,6 +793,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as AutonomousDatabaseState | undefined;
             resourceInputs["actualUsedDataStorageSizeInTbs"] = state?.actualUsedDataStorageSizeInTbs;
+            resourceInputs["adScheduledForUpdate"] = state?.adScheduledForUpdate;
             resourceInputs["additionalAttributes"] = state?.additionalAttributes;
             resourceInputs["adminPassword"] = state?.adminPassword;
             resourceInputs["allocatedStorageSizeInTbs"] = state?.allocatedStorageSizeInTbs;
@@ -834,6 +853,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isDataGuardEnabled"] = state?.isDataGuardEnabled;
             resourceInputs["isDedicated"] = state?.isDedicated;
             resourceInputs["isDevTier"] = state?.isDevTier;
+            resourceInputs["isDisableAdUpdateSchedule"] = state?.isDisableAdUpdateSchedule;
             resourceInputs["isDisableDbVersionUpgradeSchedule"] = state?.isDisableDbVersionUpgradeSchedule;
             resourceInputs["isDisconnectPeer"] = state?.isDisconnectPeer;
             resourceInputs["isFreeTier"] = state?.isFreeTier;
@@ -845,6 +865,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isRefreshableClone"] = state?.isRefreshableClone;
             resourceInputs["isRemoteDataGuardEnabled"] = state?.isRemoteDataGuardEnabled;
             resourceInputs["isReplicateAutomaticBackups"] = state?.isReplicateAutomaticBackups;
+            resourceInputs["isScheduleAdUpdateToEarliest"] = state?.isScheduleAdUpdateToEarliest;
             resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = state?.isScheduleDbVersionUpgradeToEarliest;
             resourceInputs["isShrinkOnly"] = state?.isShrinkOnly;
             resourceInputs["keyHistoryEntries"] = state?.keyHistoryEntries;
@@ -910,7 +931,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeDataGuardRoleChanged"] = state?.timeDataGuardRoleChanged;
             resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = state?.timeDeletionOfFreeAutonomousDatabase;
             resourceInputs["timeDisasterRecoveryRoleChanged"] = state?.timeDisasterRecoveryRoleChanged;
+            resourceInputs["timeEarliestAvailableAdUpdate"] = state?.timeEarliestAvailableAdUpdate;
             resourceInputs["timeEarliestAvailableDbVersionUpgrade"] = state?.timeEarliestAvailableDbVersionUpgrade;
+            resourceInputs["timeLatestAvailableAdUpdate"] = state?.timeLatestAvailableAdUpdate;
             resourceInputs["timeLatestAvailableDbVersionUpgrade"] = state?.timeLatestAvailableDbVersionUpgrade;
             resourceInputs["timeLocalDataGuardEnabled"] = state?.timeLocalDataGuardEnabled;
             resourceInputs["timeMaintenanceBegin"] = state?.timeMaintenanceBegin;
@@ -924,6 +947,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeOfLastSwitchover"] = state?.timeOfLastSwitchover;
             resourceInputs["timeOfNextRefresh"] = state?.timeOfNextRefresh;
             resourceInputs["timeReclamationOfFreeAutonomousDatabase"] = state?.timeReclamationOfFreeAutonomousDatabase;
+            resourceInputs["timeScheduledAdUpdate"] = state?.timeScheduledAdUpdate;
             resourceInputs["timeScheduledDbVersionUpgrade"] = state?.timeScheduledDbVersionUpgrade;
             resourceInputs["timeUndeleted"] = state?.timeUndeleted;
             resourceInputs["timeUntilReconnectCloneEnabled"] = state?.timeUntilReconnectCloneEnabled;
@@ -954,6 +978,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseId"] = args?.autonomousDatabaseId;
             resourceInputs["autonomousDatabaseMaintenanceWindow"] = args?.autonomousDatabaseMaintenanceWindow;
             resourceInputs["autonomousMaintenanceScheduleType"] = args?.autonomousMaintenanceScheduleType;
+            resourceInputs["availabilityDomain"] = args?.availabilityDomain;
             resourceInputs["backupRetentionPeriodInDays"] = args?.backupRetentionPeriodInDays;
             resourceInputs["byolComputeCountLimit"] = args?.byolComputeCountLimit;
             resourceInputs["characterSet"] = args?.characterSet;
@@ -987,6 +1012,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isDataGuardEnabled"] = args?.isDataGuardEnabled;
             resourceInputs["isDedicated"] = args?.isDedicated;
             resourceInputs["isDevTier"] = args?.isDevTier;
+            resourceInputs["isDisableAdUpdateSchedule"] = args?.isDisableAdUpdateSchedule;
             resourceInputs["isDisableDbVersionUpgradeSchedule"] = args?.isDisableDbVersionUpgradeSchedule;
             resourceInputs["isDisconnectPeer"] = args?.isDisconnectPeer;
             resourceInputs["isFreeTier"] = args?.isFreeTier;
@@ -995,6 +1021,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["isPreviewVersionWithServiceTermsAccepted"] = args?.isPreviewVersionWithServiceTermsAccepted;
             resourceInputs["isRefreshableClone"] = args?.isRefreshableClone;
             resourceInputs["isReplicateAutomaticBackups"] = args?.isReplicateAutomaticBackups;
+            resourceInputs["isScheduleAdUpdateToEarliest"] = args?.isScheduleAdUpdateToEarliest;
             resourceInputs["isScheduleDbVersionUpgradeToEarliest"] = args?.isScheduleDbVersionUpgradeToEarliest;
             resourceInputs["isShrinkOnly"] = args?.isShrinkOnly;
             resourceInputs["keyVersionId"] = args?.keyVersionId;
@@ -1033,6 +1060,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["switchoverToRemotePeerId"] = args?.switchoverToRemotePeerId;
             resourceInputs["timeMaintenancePauseUntil"] = args?.timeMaintenancePauseUntil;
             resourceInputs["timeOfAutoRefreshStart"] = args?.timeOfAutoRefreshStart;
+            resourceInputs["timeScheduledAdUpdate"] = args?.timeScheduledAdUpdate;
             resourceInputs["timeScheduledDbVersionUpgrade"] = args?.timeScheduledDbVersionUpgrade;
             resourceInputs["timestamp"] = args?.timestamp;
             resourceInputs["transportableTablespace"] = args?.transportableTablespace;
@@ -1041,10 +1069,10 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["whitelistedIps"] = args?.whitelistedIps;
             resourceInputs["actualUsedDataStorageSizeInTbs"] = undefined /*out*/;
+            resourceInputs["adScheduledForUpdate"] = undefined /*out*/;
             resourceInputs["additionalAttributes"] = undefined /*out*/;
             resourceInputs["allocatedStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["apexDetails"] = undefined /*out*/;
-            resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableUpgradeVersions"] = undefined /*out*/;
             resourceInputs["backupConfigs"] = undefined /*out*/;
             resourceInputs["clusterPlacementGroupId"] = undefined /*out*/;
@@ -1090,7 +1118,9 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["timeDataGuardRoleChanged"] = undefined /*out*/;
             resourceInputs["timeDeletionOfFreeAutonomousDatabase"] = undefined /*out*/;
             resourceInputs["timeDisasterRecoveryRoleChanged"] = undefined /*out*/;
+            resourceInputs["timeEarliestAvailableAdUpdate"] = undefined /*out*/;
             resourceInputs["timeEarliestAvailableDbVersionUpgrade"] = undefined /*out*/;
+            resourceInputs["timeLatestAvailableAdUpdate"] = undefined /*out*/;
             resourceInputs["timeLatestAvailableDbVersionUpgrade"] = undefined /*out*/;
             resourceInputs["timeLocalDataGuardEnabled"] = undefined /*out*/;
             resourceInputs["timeMaintenanceBegin"] = undefined /*out*/;
@@ -1124,6 +1154,10 @@ export interface AutonomousDatabaseState {
      * The current amount of storage in use for user and system data, in terabytes (TB).
      */
     actualUsedDataStorageSizeInTbs?: pulumi.Input<number | undefined>;
+    /**
+     * The Availability Domain which is planned for Scheduled Update
+     */
+    adScheduledForUpdate?: pulumi.Input<string | undefined>;
     /**
      * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
      */
@@ -1173,7 +1207,7 @@ export interface AutonomousDatabaseState {
      */
     autonomousMaintenanceScheduleType?: pulumi.Input<string | undefined>;
     /**
-     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous AI Database Serverless instance.
+     * (Updatable) The Autonomous Database Serverless instance's availability domain.
      */
     availabilityDomain?: pulumi.Input<string | undefined>;
     /**
@@ -1386,6 +1420,7 @@ export interface AutonomousDatabaseState {
      * (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      */
     isDevTier?: pulumi.Input<boolean | undefined>;
+    isDisableAdUpdateSchedule?: pulumi.Input<boolean | undefined>;
     isDisableDbVersionUpgradeSchedule?: pulumi.Input<boolean | undefined>;
     isDisconnectPeer?: pulumi.Input<boolean | undefined>;
     /**
@@ -1433,6 +1468,7 @@ export interface AutonomousDatabaseState {
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
     isReplicateAutomaticBackups?: pulumi.Input<boolean | undefined>;
+    isScheduleAdUpdateToEarliest?: pulumi.Input<boolean | undefined>;
     isScheduleDbVersionUpgradeToEarliest?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
@@ -1717,9 +1753,17 @@ export interface AutonomousDatabaseState {
      */
     timeDisasterRecoveryRoleChanged?: pulumi.Input<string | undefined>;
     /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    timeEarliestAvailableAdUpdate?: pulumi.Input<string | undefined>;
+    /**
      * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
     timeEarliestAvailableDbVersionUpgrade?: pulumi.Input<string | undefined>;
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    timeLatestAvailableAdUpdate?: pulumi.Input<string | undefined>;
     /**
      * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
@@ -1772,6 +1816,10 @@ export interface AutonomousDatabaseState {
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
     timeReclamationOfFreeAutonomousDatabase?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     */
+    timeScheduledAdUpdate?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */
@@ -1872,6 +1920,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The maintenance schedule type of the Autonomous AI Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      */
     autonomousMaintenanceScheduleType?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The Autonomous Database Serverless instance's availability domain.
+     */
+    availabilityDomain?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Retention period, in days, for long-term backups
      */
@@ -2030,6 +2082,7 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      */
     isDevTier?: pulumi.Input<boolean | undefined>;
+    isDisableAdUpdateSchedule?: pulumi.Input<boolean | undefined>;
     isDisableDbVersionUpgradeSchedule?: pulumi.Input<boolean | undefined>;
     isDisconnectPeer?: pulumi.Input<boolean | undefined>;
     /**
@@ -2065,6 +2118,7 @@ export interface AutonomousDatabaseArgs {
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
     isReplicateAutomaticBackups?: pulumi.Input<boolean | undefined>;
+    isScheduleAdUpdateToEarliest?: pulumi.Input<boolean | undefined>;
     isScheduleDbVersionUpgradeToEarliest?: pulumi.Input<boolean | undefined>;
     /**
      * (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `isDedicated` is false.
@@ -2240,6 +2294,10 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) The the date and time that auto-refreshing will begin for an Autonomous AI Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
      */
     timeOfAutoRefreshStart?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     */
+    timeScheduledAdUpdate?: pulumi.Input<string | undefined>;
     /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */

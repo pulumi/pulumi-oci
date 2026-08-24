@@ -65,6 +65,8 @@ type LookupConnectionAssignmentResult struct {
 	ConnectionAssignmentId string `pulumi:"connectionAssignmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId string `pulumi:"connectionId"`
+	// The connection type.
+	ConnectionType string `pulumi:"connectionType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
@@ -129,6 +131,11 @@ func (o LookupConnectionAssignmentResultOutput) ConnectionAssignmentId() pulumi.
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 func (o LookupConnectionAssignmentResultOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The connection type.
+func (o LookupConnectionAssignmentResultOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.

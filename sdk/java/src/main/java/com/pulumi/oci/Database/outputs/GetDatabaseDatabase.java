@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseAutoFailoverConfiguration;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseEncryptionKeyLocationDetail;
 import com.pulumi.oci.Database.outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetail;
@@ -20,6 +21,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseDatabase {
     private String adminPassword;
+    private List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations;
     private String backupId;
     private String backupTdePassword;
     /**
@@ -114,6 +116,7 @@ public final class GetDatabaseDatabase {
      * 
      */
     private String protectionMode;
+    private String recoveryApplianceVpcPassword;
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
@@ -151,6 +154,9 @@ public final class GetDatabaseDatabase {
     private GetDatabaseDatabase() {}
     public String adminPassword() {
         return this.adminPassword;
+    }
+    public List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations() {
+        return this.autoFailoverConfigurations;
     }
     public String backupId() {
         return this.backupId;
@@ -290,6 +296,9 @@ public final class GetDatabaseDatabase {
     public String protectionMode() {
         return this.protectionMode;
     }
+    public String recoveryApplianceVpcPassword() {
+        return this.recoveryApplianceVpcPassword;
+    }
     /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
@@ -354,6 +363,7 @@ public final class GetDatabaseDatabase {
     @CustomType.Builder
     public static final class Builder {
         private String adminPassword;
+        private List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations;
         private String backupId;
         private String backupTdePassword;
         private String characterSet;
@@ -376,6 +386,7 @@ public final class GetDatabaseDatabase {
         private String pdbName;
         private List<String> pluggableDatabases;
         private String protectionMode;
+        private String recoveryApplianceVpcPassword;
         private String sidPrefix;
         private String sourceDatabaseId;
         private List<GetDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
@@ -390,6 +401,7 @@ public final class GetDatabaseDatabase {
         public Builder(GetDatabaseDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminPassword = defaults.adminPassword;
+    	      this.autoFailoverConfigurations = defaults.autoFailoverConfigurations;
     	      this.backupId = defaults.backupId;
     	      this.backupTdePassword = defaults.backupTdePassword;
     	      this.characterSet = defaults.characterSet;
@@ -412,6 +424,7 @@ public final class GetDatabaseDatabase {
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.protectionMode = defaults.protectionMode;
+    	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
@@ -431,6 +444,17 @@ public final class GetDatabaseDatabase {
             }
             this.adminPassword = adminPassword;
             return this;
+        }
+        @CustomType.Setter
+        public Builder autoFailoverConfigurations(List<GetDatabaseDatabaseAutoFailoverConfiguration> autoFailoverConfigurations) {
+            if (autoFailoverConfigurations == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "autoFailoverConfigurations");
+            }
+            this.autoFailoverConfigurations = autoFailoverConfigurations;
+            return this;
+        }
+        public Builder autoFailoverConfigurations(GetDatabaseDatabaseAutoFailoverConfiguration... autoFailoverConfigurations) {
+            return autoFailoverConfigurations(List.of(autoFailoverConfigurations));
         }
         @CustomType.Setter
         public Builder backupId(String backupId) {
@@ -624,6 +648,14 @@ public final class GetDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder recoveryApplianceVpcPassword(String recoveryApplianceVpcPassword) {
+            if (recoveryApplianceVpcPassword == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseDatabase", "recoveryApplianceVpcPassword");
+            }
+            this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(String sidPrefix) {
             if (sidPrefix == null) {
               throw new MissingRequiredPropertyException("GetDatabaseDatabase", "sidPrefix");
@@ -712,6 +744,7 @@ public final class GetDatabaseDatabase {
         public GetDatabaseDatabase build() {
             final var _resultValue = new GetDatabaseDatabase();
             _resultValue.adminPassword = adminPassword;
+            _resultValue.autoFailoverConfigurations = autoFailoverConfigurations;
             _resultValue.backupId = backupId;
             _resultValue.backupTdePassword = backupTdePassword;
             _resultValue.characterSet = characterSet;
@@ -734,6 +767,7 @@ public final class GetDatabaseDatabase {
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.protectionMode = protectionMode;
+            _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;

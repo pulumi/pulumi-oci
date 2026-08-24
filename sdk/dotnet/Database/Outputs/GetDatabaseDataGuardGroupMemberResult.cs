@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DbSystemId;
         /// <summary>
-        /// The failover readiness status of the Data Guard member.
+        /// The failover readiness status of the Data Guard member. HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take failover, when auto failover is enabled.
         /// </summary>
         public readonly string FailoverReadiness;
         /// <summary>
@@ -42,15 +42,24 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string FailoverReadinessMessage;
         /// <summary>
+        /// Specifies the `DB_UNIQUE_NAME` of the data guard group member databases.
+        /// </summary>
+        public readonly ImmutableArray<string> FailoverTargets;
+        /// <summary>
         /// True if active Data Guard is enabled.
         /// </summary>
         public readonly bool IsActiveDataGuardEnabled;
+        /// <summary>
+        /// The state of managed auto failover.
+        /// </summary>
+        public readonly string ManagedAutoFailover;
         /// <summary>
         /// The role of the reporting database in this Data Guard association.
         /// </summary>
         public readonly string Role;
         /// <summary>
         /// The switchover readiness status of the Data Guard member.
+        /// * HEALTHY_AND_NOT_ROLECHANGE_TARGET - Indicates that the respective standby member is healthy  but not currently designated to take switchover, when auto failover is enabled.
         /// </summary>
         public readonly string SwitchoverReadiness;
         /// <summary>
@@ -93,7 +102,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string failoverReadinessMessage,
 
+            ImmutableArray<string> failoverTargets,
+
             bool isActiveDataGuardEnabled,
+
+            string managedAutoFailover,
 
             string role,
 
@@ -116,7 +129,9 @@ namespace Pulumi.Oci.Database.Outputs
             DbSystemId = dbSystemId;
             FailoverReadiness = failoverReadiness;
             FailoverReadinessMessage = failoverReadinessMessage;
+            FailoverTargets = failoverTargets;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            ManagedAutoFailover = managedAutoFailover;
             Role = role;
             SwitchoverReadiness = switchoverReadiness;
             SwitchoverReadinessMessage = switchoverReadinessMessage;

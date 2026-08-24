@@ -62,6 +62,21 @@ public final class ConnectionAssignmentState extends com.pulumi.resources.Resour
     }
 
     /**
+     * The connection type.
+     * 
+     */
+    @Import(name="connectionType")
+    private @Nullable Output<String> connectionType;
+
+    /**
+     * @return The connection type.
+     * 
+     */
+    public Optional<Output<String>> connectionType() {
+        return Optional.ofNullable(this.connectionType);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
      */
@@ -148,6 +163,7 @@ public final class ConnectionAssignmentState extends com.pulumi.resources.Resour
         this.aliasName = $.aliasName;
         this.compartmentId = $.compartmentId;
         this.connectionId = $.connectionId;
+        this.connectionType = $.connectionType;
         this.deploymentId = $.deploymentId;
         this.isLockOverride = $.isLockOverride;
         this.state = $.state;
@@ -234,6 +250,27 @@ public final class ConnectionAssignmentState extends com.pulumi.resources.Resour
          */
         public Builder connectionId(String connectionId) {
             return connectionId(Output.of(connectionId));
+        }
+
+        /**
+         * @param connectionType The connection type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionType(@Nullable Output<String> connectionType) {
+            $.connectionType = connectionType;
+            return this;
+        }
+
+        /**
+         * @param connectionType The connection type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionType(String connectionType) {
+            return connectionType(Output.of(connectionType));
         }
 
         /**

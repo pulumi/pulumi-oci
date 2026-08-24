@@ -4,6 +4,7 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Core.outputs.ComputeHostGroupConfigurationQuickRecycleSettings;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,11 @@ public final class ComputeHostGroupConfiguration {
      * 
      */
     private @Nullable String firmwareBundleId;
+    /**
+     * @return (Updatable) Additional quick recycle settings.
+     * 
+     */
+    private @Nullable ComputeHostGroupConfigurationQuickRecycleSettings quickRecycleSettings;
     /**
      * @return (Updatable) Preferred recycle level for hosts associated with the reservation config.
      * * `SKIP_RECYCLE` - Skips host wipe.
@@ -41,6 +47,13 @@ public final class ComputeHostGroupConfiguration {
      */
     public Optional<String> firmwareBundleId() {
         return Optional.ofNullable(this.firmwareBundleId);
+    }
+    /**
+     * @return (Updatable) Additional quick recycle settings.
+     * 
+     */
+    public Optional<ComputeHostGroupConfigurationQuickRecycleSettings> quickRecycleSettings() {
+        return Optional.ofNullable(this.quickRecycleSettings);
     }
     /**
      * @return (Updatable) Preferred recycle level for hosts associated with the reservation config.
@@ -76,6 +89,7 @@ public final class ComputeHostGroupConfiguration {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String firmwareBundleId;
+        private @Nullable ComputeHostGroupConfigurationQuickRecycleSettings quickRecycleSettings;
         private @Nullable String recycleLevel;
         private @Nullable String state;
         private @Nullable String target;
@@ -83,6 +97,7 @@ public final class ComputeHostGroupConfiguration {
         public Builder(ComputeHostGroupConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.firmwareBundleId = defaults.firmwareBundleId;
+    	      this.quickRecycleSettings = defaults.quickRecycleSettings;
     	      this.recycleLevel = defaults.recycleLevel;
     	      this.state = defaults.state;
     	      this.target = defaults.target;
@@ -92,6 +107,12 @@ public final class ComputeHostGroupConfiguration {
         public Builder firmwareBundleId(@Nullable String firmwareBundleId) {
 
             this.firmwareBundleId = firmwareBundleId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder quickRecycleSettings(@Nullable ComputeHostGroupConfigurationQuickRecycleSettings quickRecycleSettings) {
+
+            this.quickRecycleSettings = quickRecycleSettings;
             return this;
         }
         @CustomType.Setter
@@ -115,6 +136,7 @@ public final class ComputeHostGroupConfiguration {
         public ComputeHostGroupConfiguration build() {
             final var _resultValue = new ComputeHostGroupConfiguration();
             _resultValue.firmwareBundleId = firmwareBundleId;
+            _resultValue.quickRecycleSettings = quickRecycleSettings;
             _resultValue.recycleLevel = recycleLevel;
             _resultValue.state = state;
             _resultValue.target = target;

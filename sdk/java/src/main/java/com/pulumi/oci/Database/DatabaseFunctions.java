@@ -19,6 +19,10 @@ import com.pulumi.oci.Database.inputs.GetApplicationVipsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousCharacterSetsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseDataguardAssociationArgs;
@@ -335,6 +339,8 @@ import com.pulumi.oci.Database.outputs.GetAdvancedClusterFileSystemsResult;
 import com.pulumi.oci.Database.outputs.GetApplicationVipResult;
 import com.pulumi.oci.Database.outputs.GetApplicationVipsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousCharacterSetsResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsResult;
@@ -1884,6 +1890,436 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousContainerDatabaseResult> getAutonomousContainerDatabasePlain(GetAutonomousContainerDatabasePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", TypeShape.of(GetAutonomousContainerDatabaseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackup = DatabaseFunctions.getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs.builder()
+     *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackupOciDatabaseAutonomousContainerDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupResult> getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs args) {
+        return getAutonomousContainerDatabaseBackup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackup = DatabaseFunctions.getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs.builder()
+     *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackupOciDatabaseAutonomousContainerDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupResult> getAutonomousContainerDatabaseBackupPlain(GetAutonomousContainerDatabaseBackupPlainArgs args) {
+        return getAutonomousContainerDatabaseBackupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackup = DatabaseFunctions.getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs.builder()
+     *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackupOciDatabaseAutonomousContainerDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupResult> getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackup:getAutonomousContainerDatabaseBackup", TypeShape.of(GetAutonomousContainerDatabaseBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackup = DatabaseFunctions.getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs.builder()
+     *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackupOciDatabaseAutonomousContainerDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupResult> getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackup:getAutonomousContainerDatabaseBackup", TypeShape.of(GetAutonomousContainerDatabaseBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Autonomous Container Database Backup resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Autonomous Container Database backup.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackup = DatabaseFunctions.getAutonomousContainerDatabaseBackup(GetAutonomousContainerDatabaseBackupArgs.builder()
+     *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackupOciDatabaseAutonomousContainerDatabaseBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupResult> getAutonomousContainerDatabaseBackupPlain(GetAutonomousContainerDatabaseBackupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseBackup:getAutonomousContainerDatabaseBackup", TypeShape.of(GetAutonomousContainerDatabaseBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backup List Autonomous Databases In Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container&#39;s compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .timeStampRequested(autonomousContainerDatabaseBackupListAutonomousDatabasesInBackupTimeStampRequested)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult> getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs args) {
+        return getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backup List Autonomous Databases In Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container&#39;s compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .timeStampRequested(autonomousContainerDatabaseBackupListAutonomousDatabasesInBackupTimeStampRequested)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult> getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlain(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlainArgs args) {
+        return getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backup List Autonomous Databases In Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container&#39;s compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .timeStampRequested(autonomousContainerDatabaseBackupListAutonomousDatabasesInBackupTimeStampRequested)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult> getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups:getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backup List Autonomous Databases In Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container&#39;s compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .timeStampRequested(autonomousContainerDatabaseBackupListAutonomousDatabasesInBackupTimeStampRequested)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult> getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups:getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Container Database Backup List Autonomous Databases In Backups in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of Autonomous Databases associated with backups at the given timestamp for the specified Autonomous Container Database. If `compartmentId` is provided, filters to that compartment; otherwise, uses the container&#39;s compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups = DatabaseFunctions.getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsArgs.builder()
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .timeStampRequested(autonomousContainerDatabaseBackupListAutonomousDatabasesInBackupTimeStampRequested)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult> getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlain(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups:getAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackups", TypeShape.of(GetAutonomousContainerDatabaseBackupListAutonomousDatabasesInBackupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Autonomous Container Database Backups in Oracle Cloud Infrastructure Database service.
@@ -3989,6 +4425,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4038,6 +4475,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4087,6 +4525,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4136,6 +4575,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4185,6 +4625,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4234,6 +4675,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -4283,6 +4725,7 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(autonomousDatabaseBackupDisplayName)
      *             .infrastructureType(autonomousDatabaseBackupInfrastructureType)
+     *             .isPitrEligible(autonomousDatabaseBackupIsPitrEligible)
      *             .keyStoreId(testKeyStore.id())
      *             .state(autonomousDatabaseBackupState)
      *             .type(autonomousDatabaseBackupType)
@@ -15298,6 +15741,8 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .dbHomeId(testDbHome.id())
      *             .dbName(databaseDbName)
+     *             .failoverTargets(databaseFailoverTargets)
+     *             .managedAutoFailover(databaseManagedAutoFailover)
      *             .state(databaseState)
      *             .systemId(testSystem.id())
      *             .build());
@@ -15344,6 +15789,8 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .dbHomeId(testDbHome.id())
      *             .dbName(databaseDbName)
+     *             .failoverTargets(databaseFailoverTargets)
+     *             .managedAutoFailover(databaseManagedAutoFailover)
      *             .state(databaseState)
      *             .systemId(testSystem.id())
      *             .build());
@@ -15390,6 +15837,8 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .dbHomeId(testDbHome.id())
      *             .dbName(databaseDbName)
+     *             .failoverTargets(databaseFailoverTargets)
+     *             .managedAutoFailover(databaseManagedAutoFailover)
      *             .state(databaseState)
      *             .systemId(testSystem.id())
      *             .build());
@@ -15436,6 +15885,8 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .dbHomeId(testDbHome.id())
      *             .dbName(databaseDbName)
+     *             .failoverTargets(databaseFailoverTargets)
+     *             .managedAutoFailover(databaseManagedAutoFailover)
      *             .state(databaseState)
      *             .systemId(testSystem.id())
      *             .build());
@@ -15482,6 +15933,8 @@ public final class DatabaseFunctions {
      *             .compartmentId(compartmentId)
      *             .dbHomeId(testDbHome.id())
      *             .dbName(databaseDbName)
+     *             .failoverTargets(databaseFailoverTargets)
+     *             .managedAutoFailover(databaseManagedAutoFailover)
      *             .state(databaseState)
      *             .systemId(testSystem.id())
      *             .build());

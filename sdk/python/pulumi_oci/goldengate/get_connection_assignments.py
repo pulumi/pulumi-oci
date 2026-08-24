@@ -28,7 +28,7 @@ class GetConnectionAssignmentsResult:
     """
     A collection of values returned by getConnectionAssignments.
     """
-    def __init__(__self__, compartment_id=None, connection_assignment_collections=None, connection_id=None, deployment_id=None, filters=None, id=None, name=None, state=None):
+    def __init__(__self__, compartment_id=None, connection_assignment_collections=None, connection_id=None, connection_type_not_equal_tos=None, connection_types=None, deployment_id=None, filters=None, id=None, name=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -38,6 +38,12 @@ class GetConnectionAssignmentsResult:
         if connection_id and not isinstance(connection_id, str):
             raise TypeError("Expected argument 'connection_id' to be a str")
         pulumi.set(__self__, "connection_id", connection_id)
+        if connection_type_not_equal_tos and not isinstance(connection_type_not_equal_tos, list):
+            raise TypeError("Expected argument 'connection_type_not_equal_tos' to be a list")
+        pulumi.set(__self__, "connection_type_not_equal_tos", connection_type_not_equal_tos)
+        if connection_types and not isinstance(connection_types, list):
+            raise TypeError("Expected argument 'connection_types' to be a list")
+        pulumi.set(__self__, "connection_types", connection_types)
         if deployment_id and not isinstance(deployment_id, str):
             raise TypeError("Expected argument 'deployment_id' to be a str")
         pulumi.set(__self__, "deployment_id", deployment_id)
@@ -77,6 +83,19 @@ class GetConnectionAssignmentsResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         """
         return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionTypeNotEqualTos")
+    def connection_type_not_equal_tos(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "connection_type_not_equal_tos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionTypes")
+    def connection_types(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The connection type.
+        """
+        return pulumi.get(self, "connection_types")
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
@@ -122,6 +141,8 @@ class AwaitableGetConnectionAssignmentsResult(GetConnectionAssignmentsResult):
             compartment_id=self.compartment_id,
             connection_assignment_collections=self.connection_assignment_collections,
             connection_id=self.connection_id,
+            connection_type_not_equal_tos=self.connection_type_not_equal_tos,
+            connection_types=self.connection_types,
             deployment_id=self.deployment_id,
             filters=self.filters,
             id=self.id,
@@ -131,6 +152,8 @@ class AwaitableGetConnectionAssignmentsResult(GetConnectionAssignmentsResult):
 
 def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
                                connection_id: Optional[_builtins.str] = None,
+                               connection_type_not_equal_tos: Optional[Sequence[_builtins.str]] = None,
+                               connection_types: Optional[Sequence[_builtins.str]] = None,
                                deployment_id: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]] = None,
                                name: Optional[_builtins.str] = None,
@@ -149,6 +172,8 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
 
     test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
+        connection_types=connection_assignment_connection_type,
+        connection_type_not_equal_tos=connection_assignment_connection_type_not_equal_to,
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,
         state=connection_assignment_state)
@@ -157,6 +182,8 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+    :param Sequence[_builtins.str] connection_type_not_equal_tos: The array of connection types to exclude.
+    :param Sequence[_builtins.str] connection_types: The array of connection types.
     :param _builtins.str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param _builtins.str name: The name of the connection in the assignment (aliasName).
     :param _builtins.str state: A filter to return only connection assignments having the 'lifecycleState' given.
@@ -164,6 +191,8 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['connectionId'] = connection_id
+    __args__['connectionTypeNotEqualTos'] = connection_type_not_equal_tos
+    __args__['connectionTypes'] = connection_types
     __args__['deploymentId'] = deployment_id
     __args__['filters'] = filters
     __args__['name'] = name
@@ -175,6 +204,8 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         connection_assignment_collections=pulumi.get(__ret__, 'connection_assignment_collections'),
         connection_id=pulumi.get(__ret__, 'connection_id'),
+        connection_type_not_equal_tos=pulumi.get(__ret__, 'connection_type_not_equal_tos'),
+        connection_types=pulumi.get(__ret__, 'connection_types'),
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -182,6 +213,8 @@ def get_connection_assignments(compartment_id: Optional[_builtins.str] = None,
         state=pulumi.get(__ret__, 'state'))
 def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       connection_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      connection_type_not_equal_tos: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
+                                      connection_types: pulumi.Input[Optional[Optional[Sequence[_builtins.str]]]] = None,
                                       deployment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetConnectionAssignmentsFilterArgs', 'GetConnectionAssignmentsFilterArgsDict']]]]] = None,
                                       name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -200,6 +233,8 @@ def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_bui
 
     test_connection_assignments = oci.goldengate.get_connection_assignments(compartment_id=compartment_id,
         connection_id=test_connection["id"],
+        connection_types=connection_assignment_connection_type,
+        connection_type_not_equal_tos=connection_assignment_connection_type_not_equal_to,
         deployment_id=test_deployment["id"],
         name=connection_assignment_name,
         state=connection_assignment_state)
@@ -208,6 +243,8 @@ def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_bui
 
     :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
     :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+    :param Sequence[_builtins.str] connection_type_not_equal_tos: The array of connection types to exclude.
+    :param Sequence[_builtins.str] connection_types: The array of connection types.
     :param _builtins.str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param _builtins.str name: The name of the connection in the assignment (aliasName).
     :param _builtins.str state: A filter to return only connection assignments having the 'lifecycleState' given.
@@ -215,6 +252,8 @@ def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_bui
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['connectionId'] = connection_id
+    __args__['connectionTypeNotEqualTos'] = connection_type_not_equal_tos
+    __args__['connectionTypes'] = connection_types
     __args__['deploymentId'] = deployment_id
     __args__['filters'] = filters
     __args__['name'] = name
@@ -225,6 +264,8 @@ def get_connection_assignments_output(compartment_id: pulumi.Input[Optional[_bui
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         connection_assignment_collections=pulumi.get(__response__, 'connection_assignment_collections'),
         connection_id=pulumi.get(__response__, 'connection_id'),
+        connection_type_not_equal_tos=pulumi.get(__response__, 'connection_type_not_equal_tos'),
+        connection_types=pulumi.get(__response__, 'connection_types'),
         deployment_id=pulumi.get(__response__, 'deployment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

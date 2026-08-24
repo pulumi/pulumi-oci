@@ -47,6 +47,10 @@ export interface GetApiaccesscontrolApiMetadataResult {
      */
     readonly apiName: string;
     /**
+     * List of the fields that is use while calling post or put for the data.
+     */
+    readonly attributes: string[];
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
@@ -59,7 +63,7 @@ export interface GetApiaccesscontrolApiMetadataResult {
      */
     readonly entityType: string;
     /**
-     * List of the fields that is use while calling post or put for the data.
+     * deprecated; Use attributes field instead.
      */
     readonly fields: string[];
     /**

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ActualUsedDataStorageSizeInTbs;
         /// <summary>
+        /// The Availability Domain which is planned for Scheduled Update
+        /// </summary>
+        public readonly string AdScheduledForUpdate;
+        /// <summary>
         /// Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdditionalAttributes;
@@ -472,9 +476,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeDisasterRecoveryRoleChanged;
         /// <summary>
+        /// The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        public readonly string TimeEarliestAvailableAdUpdate;
+        /// <summary>
         /// The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
         public readonly string TimeEarliestAvailableDbVersionUpgrade;
+        /// <summary>
+        /// The latest date and time to which you can schedule an Autonomous Database availability domain update.
+        /// </summary>
+        public readonly string TimeLatestAvailableAdUpdate;
         /// <summary>
         /// The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
         /// </summary>
@@ -525,6 +537,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeReclamationOfFreeAutonomousDatabase;
         /// <summary>
+        /// The date and time to which the Autonomous Database availability domain update is scheduled.
+        /// </summary>
+        public readonly string TimeScheduledAdUpdate;
+        /// <summary>
         /// The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
         /// </summary>
         public readonly string TimeScheduledDbVersionUpgrade;
@@ -568,6 +584,8 @@ namespace Pulumi.Oci.Database.Outputs
         [OutputConstructor]
         private GetAutonomousDatabasesClonesAutonomousDatabaseResult(
             double actualUsedDataStorageSizeInTbs,
+
+            string adScheduledForUpdate,
 
             ImmutableDictionary<string, string> additionalAttributes,
 
@@ -793,7 +811,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeDisasterRecoveryRoleChanged,
 
+            string timeEarliestAvailableAdUpdate,
+
             string timeEarliestAvailableDbVersionUpgrade,
+
+            string timeLatestAvailableAdUpdate,
 
             string timeLatestAvailableDbVersionUpgrade,
 
@@ -821,6 +843,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeReclamationOfFreeAutonomousDatabase,
 
+            string timeScheduledAdUpdate,
+
             string timeScheduledDbVersionUpgrade,
 
             string timeUndeleted,
@@ -842,6 +866,7 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<string> whitelistedIps)
         {
             ActualUsedDataStorageSizeInTbs = actualUsedDataStorageSizeInTbs;
+            AdScheduledForUpdate = adScheduledForUpdate;
             AdditionalAttributes = additionalAttributes;
             AllocatedStorageSizeInTbs = allocatedStorageSizeInTbs;
             ApexDetails = apexDetails;
@@ -954,7 +979,9 @@ namespace Pulumi.Oci.Database.Outputs
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            TimeEarliestAvailableAdUpdate = timeEarliestAvailableAdUpdate;
             TimeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            TimeLatestAvailableAdUpdate = timeLatestAvailableAdUpdate;
             TimeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
@@ -968,6 +995,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeOfLastSwitchover = timeOfLastSwitchover;
             TimeOfNextRefresh = timeOfNextRefresh;
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            TimeScheduledAdUpdate = timeScheduledAdUpdate;
             TimeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;

@@ -130,6 +130,11 @@ public final class DbHomeDatabase {
      */
     private @Nullable List<String> pluggableDatabases;
     /**
+     * @return The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    private @Nullable String recoveryApplianceVpcPassword;
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -329,6 +334,13 @@ public final class DbHomeDatabase {
         return this.pluggableDatabases == null ? List.of() : this.pluggableDatabases;
     }
     /**
+     * @return The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+     * 
+     */
+    public Optional<String> recoveryApplianceVpcPassword() {
+        return Optional.ofNullable(this.recoveryApplianceVpcPassword);
+    }
+    /**
      * @return Specifies a prefix for the `Oracle SID` of the database to be created.
      * 
      */
@@ -417,6 +429,7 @@ public final class DbHomeDatabase {
         private @Nullable List<String> oneOffPatches;
         private @Nullable String pdbName;
         private @Nullable List<String> pluggableDatabases;
+        private @Nullable String recoveryApplianceVpcPassword;
         private @Nullable String sidPrefix;
         private @Nullable String state;
         private @Nullable DbHomeDatabaseStorageSizeDetails storageSizeDetails;
@@ -451,6 +464,7 @@ public final class DbHomeDatabase {
     	      this.oneOffPatches = defaults.oneOffPatches;
     	      this.pdbName = defaults.pdbName;
     	      this.pluggableDatabases = defaults.pluggableDatabases;
+    	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
@@ -611,6 +625,12 @@ public final class DbHomeDatabase {
             return pluggableDatabases(List.of(pluggableDatabases));
         }
         @CustomType.Setter
+        public Builder recoveryApplianceVpcPassword(@Nullable String recoveryApplianceVpcPassword) {
+
+            this.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sidPrefix(@Nullable String sidPrefix) {
 
             this.sidPrefix = sidPrefix;
@@ -683,6 +703,7 @@ public final class DbHomeDatabase {
             _resultValue.oneOffPatches = oneOffPatches;
             _resultValue.pdbName = pdbName;
             _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
             _resultValue.storageSizeDetails = storageSizeDetails;

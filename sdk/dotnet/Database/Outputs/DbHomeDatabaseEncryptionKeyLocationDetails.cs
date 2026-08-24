@@ -13,6 +13,9 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetails
     {
+        /// <summary>
+        /// Provide the key OCID of a registered AWS key.
+        /// </summary>
         public readonly string? AwsEncryptionKeyId;
         /// <summary>
         /// Provide the key OCID of a registered Azure key.

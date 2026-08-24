@@ -17,6 +17,11 @@ public final class GetVmClusterUpdateResult {
      */
     private List<String> availableActions;
     /**
+     * @return The possible update options that can be performed using this maintenance update (only valid for OS Update).
+     * 
+     */
+    private List<String> availableUpdateModes;
+    /**
      * @return Details of the maintenance update package.
      * 
      */
@@ -32,10 +37,20 @@ public final class GetVmClusterUpdateResult {
      */
     private String lastAction;
     /**
+     * @return The update mode performed most recently using this maintenance update (only valid for OS Update).
+     * 
+     */
+    private String lastUpdateMode;
+    /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    private String oracleLinuxVersion;
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
      * 
@@ -68,6 +83,13 @@ public final class GetVmClusterUpdateResult {
         return this.availableActions;
     }
     /**
+     * @return The possible update options that can be performed using this maintenance update (only valid for OS Update).
+     * 
+     */
+    public List<String> availableUpdateModes() {
+        return this.availableUpdateModes;
+    }
+    /**
      * @return Details of the maintenance update package.
      * 
      */
@@ -89,11 +111,25 @@ public final class GetVmClusterUpdateResult {
         return this.lastAction;
     }
     /**
+     * @return The update mode performed most recently using this maintenance update (only valid for OS Update).
+     * 
+     */
+    public String lastUpdateMode() {
+        return this.lastUpdateMode;
+    }
+    /**
      * @return Descriptive text providing additional details about the lifecycle state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Oracle Linux version for the respective Exadata Image.
+     * 
+     */
+    public String oracleLinuxVersion() {
+        return this.oracleLinuxVersion;
     }
     /**
      * @return The current state of the maintenance update. Dependent on value of `lastAction`.
@@ -140,10 +176,13 @@ public final class GetVmClusterUpdateResult {
     @CustomType.Builder
     public static final class Builder {
         private List<String> availableActions;
+        private List<String> availableUpdateModes;
         private String description;
         private String id;
         private String lastAction;
+        private String lastUpdateMode;
         private String lifecycleDetails;
+        private String oracleLinuxVersion;
         private String state;
         private String timeReleased;
         private String updateId;
@@ -154,10 +193,13 @@ public final class GetVmClusterUpdateResult {
         public Builder(GetVmClusterUpdateResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availableActions = defaults.availableActions;
+    	      this.availableUpdateModes = defaults.availableUpdateModes;
     	      this.description = defaults.description;
     	      this.id = defaults.id;
     	      this.lastAction = defaults.lastAction;
+    	      this.lastUpdateMode = defaults.lastUpdateMode;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.oracleLinuxVersion = defaults.oracleLinuxVersion;
     	      this.state = defaults.state;
     	      this.timeReleased = defaults.timeReleased;
     	      this.updateId = defaults.updateId;
@@ -176,6 +218,17 @@ public final class GetVmClusterUpdateResult {
         }
         public Builder availableActions(String... availableActions) {
             return availableActions(List.of(availableActions));
+        }
+        @CustomType.Setter
+        public Builder availableUpdateModes(List<String> availableUpdateModes) {
+            if (availableUpdateModes == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "availableUpdateModes");
+            }
+            this.availableUpdateModes = availableUpdateModes;
+            return this;
+        }
+        public Builder availableUpdateModes(String... availableUpdateModes) {
+            return availableUpdateModes(List.of(availableUpdateModes));
         }
         @CustomType.Setter
         public Builder description(String description) {
@@ -202,11 +255,27 @@ public final class GetVmClusterUpdateResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lastUpdateMode(String lastUpdateMode) {
+            if (lastUpdateMode == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "lastUpdateMode");
+            }
+            this.lastUpdateMode = lastUpdateMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oracleLinuxVersion(String oracleLinuxVersion) {
+            if (oracleLinuxVersion == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterUpdateResult", "oracleLinuxVersion");
+            }
+            this.oracleLinuxVersion = oracleLinuxVersion;
             return this;
         }
         @CustomType.Setter
@@ -260,10 +329,13 @@ public final class GetVmClusterUpdateResult {
         public GetVmClusterUpdateResult build() {
             final var _resultValue = new GetVmClusterUpdateResult();
             _resultValue.availableActions = availableActions;
+            _resultValue.availableUpdateModes = availableUpdateModes;
             _resultValue.description = description;
             _resultValue.id = id;
             _resultValue.lastAction = lastAction;
+            _resultValue.lastUpdateMode = lastUpdateMode;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oracleLinuxVersion = oracleLinuxVersion;
             _resultValue.state = state;
             _resultValue.timeReleased = timeReleased;
             _resultValue.updateId = updateId;

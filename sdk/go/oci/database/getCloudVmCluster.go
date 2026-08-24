@@ -122,6 +122,8 @@ type LookupCloudVmClusterResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort string `pulumi:"listenerPort"`
+	// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+	LiveImageVersionDetails []GetCloudVmClusterLiveImageVersionDetail `pulumi:"liveImageVersionDetails"`
 	// The memory to be allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// Details of the multi cloud identity connectors of the VM cluster.
@@ -132,8 +134,10 @@ type LookupCloudVmClusterResult struct {
 	// * A network security group (NSG) is optional for Autonomous AI Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount     float64 `pulumi:"ocpuCount"`
-	PrivateZoneId string  `pulumi:"privateZoneId"`
+	OcpuCount float64 `pulumi:"ocpuCount"`
+	// Oracle Linux version for the respective Exadata Image.
+	OracleLinuxVersion string `pulumi:"oracleLinuxVersion"`
+	PrivateZoneId      string `pulumi:"privateZoneId"`
 	// The percentage assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	RecoStoragePercentage int `pulumi:"recoStoragePercentage"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -175,7 +179,8 @@ type LookupCloudVmClusterResult struct {
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
-	TimeZone string `pulumi:"timeZone"`
+	TimeZone      string                          `pulumi:"timeZone"`
+	UpdateDetails []GetCloudVmClusterUpdateDetail `pulumi:"updateDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
 	VipIds []string `pulumi:"vipIds"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv6 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv6 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -393,6 +398,13 @@ func (o LookupCloudVmClusterResultOutput) ListenerPort() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+func (o LookupCloudVmClusterResultOutput) LiveImageVersionDetails() GetCloudVmClusterLiveImageVersionDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterLiveImageVersionDetail {
+		return v.LiveImageVersionDetails
+	}).(GetCloudVmClusterLiveImageVersionDetailArrayOutput)
+}
+
 // The memory to be allocated in GBs.
 func (o LookupCloudVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
@@ -419,6 +431,11 @@ func (o LookupCloudVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 // The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o LookupCloudVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// Oracle Linux version for the respective Exadata Image.
+func (o LookupCloudVmClusterResultOutput) OracleLinuxVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.OracleLinuxVersion }).(pulumi.StringOutput)
 }
 
 func (o LookupCloudVmClusterResultOutput) PrivateZoneId() pulumi.StringOutput {
@@ -528,6 +545,10 @@ func (o LookupCloudVmClusterResultOutput) TimeCreated() pulumi.StringOutput {
 // The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 func (o LookupCloudVmClusterResultOutput) TimeZone() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+func (o LookupCloudVmClusterResultOutput) UpdateDetails() GetCloudVmClusterUpdateDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterUpdateDetail { return v.UpdateDetails }).(GetCloudVmClusterUpdateDetailArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.

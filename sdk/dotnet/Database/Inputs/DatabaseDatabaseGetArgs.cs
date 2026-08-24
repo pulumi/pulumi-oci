@@ -29,6 +29,12 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
+        /// The properties for defining auto failover configuration.
+        /// </summary>
+        [Input("autoFailoverConfiguration")]
+        public Input<Inputs.DatabaseDatabaseAutoFailoverConfigurationGetArgs>? AutoFailoverConfiguration { get; set; }
+
+        /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Input("backupId")]
@@ -209,6 +215,22 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("protectionMode")]
         public Input<string>? ProtectionMode { get; set; }
+
+        [Input("recoveryApplianceVpcPassword")]
+        private Input<string>? _recoveryApplianceVpcPassword;
+
+        /// <summary>
+        /// The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
+        /// </summary>
+        public Input<string>? RecoveryApplianceVpcPassword
+        {
+            get => _recoveryApplianceVpcPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _recoveryApplianceVpcPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Specifies a prefix for the `Oracle SID` of the database to be created.

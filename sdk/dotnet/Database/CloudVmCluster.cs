@@ -95,6 +95,12 @@ namespace Pulumi.Oci.Database
     ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = cloudVmClusterSystemVersion,
     ///         TimeZone = cloudVmClusterTimeZone,
+    ///         UpdateDetails = new Oci.Database.Inputs.CloudVmClusterUpdateDetailsArgs
+    ///         {
+    ///             UpdateAction = cloudVmClusterUpdateDetailsUpdateAction,
+    ///             UpdateId = cloudVmClusterUpdateDetailsUpdateId,
+    ///             UpdateMode = cloudVmClusterUpdateDetailsUpdateMode,
+    ///         },
     ///         VmBackupStorageType = cloudVmClusterVmBackupStorageType,
     ///         VmClusterType = cloudVmClusterVmClusterType,
     ///         VmFileSystemStorageType = cloudVmClusterVmFileSystemStorageType,
@@ -317,6 +323,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ListenerPort { get; private set; } = null!;
 
         /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        [Output("liveImageVersionDetails")]
+        public Output<ImmutableArray<Outputs.CloudVmClusterLiveImageVersionDetail>> LiveImageVersionDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The memory to be allocated in GBs.
         /// </summary>
         [Output("memorySizeInGbs")]
@@ -346,6 +358,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpuCount")]
         public Output<double> OcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        [Output("oracleLinuxVersion")]
+        public Output<string> OracleLinuxVersion { get; private set; } = null!;
 
         /// <summary>
         /// The private zone id in which DNS records need to be created.
@@ -478,6 +496,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("timeZone")]
         public Output<string> TimeZone { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Output("updateDetails")]
+        public Output<Outputs.CloudVmClusterUpdateDetails?> UpdateDetails { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -871,6 +895,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Input("updateDetails")]
+        public Input<Inputs.CloudVmClusterUpdateDetailsArgs>? UpdateDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) Specifies the type of VM Backups Storage and supported values are LOCAL and EXASCALE. - LOCAL if selected then VM Backups storage will be on DB Servers. - EXASCALE if selected then VM Backups storage will be on Exascale Storage Servers. Default Value is LOCAL
         /// </summary>
         [Input("vmBackupStorageType")]
@@ -1138,6 +1168,18 @@ namespace Pulumi.Oci.Database
         [Input("listenerPort")]
         public Input<string>? ListenerPort { get; set; }
 
+        [Input("liveImageVersionDetails")]
+        private InputList<Inputs.CloudVmClusterLiveImageVersionDetailGetArgs>? _liveImageVersionDetails;
+
+        /// <summary>
+        /// Details about the most recent live image version applied on the VM Cluster, if any. If a full OS update was applied, the fields would be blank.
+        /// </summary>
+        public InputList<Inputs.CloudVmClusterLiveImageVersionDetailGetArgs> LiveImageVersionDetails
+        {
+            get => _liveImageVersionDetails ?? (_liveImageVersionDetails = new InputList<Inputs.CloudVmClusterLiveImageVersionDetailGetArgs>());
+            set => _liveImageVersionDetails = value;
+        }
+
         /// <summary>
         /// (Updatable) The memory to be allocated in GBs.
         /// </summary>
@@ -1180,6 +1222,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// Oracle Linux version for the respective Exadata Image.
+        /// </summary>
+        [Input("oracleLinuxVersion")]
+        public Input<string>? OracleLinuxVersion { get; set; }
 
         /// <summary>
         /// The private zone id in which DNS records need to be created.
@@ -1342,6 +1390,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeZone")]
         public Input<string>? TimeZone { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details specifying which maintenance update to apply to the cloud VM cluster and which action to perform. Use `UpdateMode` for DomU live update modes or regular full OS update mode.
+        /// </summary>
+        [Input("updateDetails")]
+        public Input<Inputs.CloudVmClusterUpdateDetailsGetArgs>? UpdateDetails { get; set; }
 
         [Input("vipIds")]
         private InputList<string>? _vipIds;

@@ -29,6 +29,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// Indicates whether the backup destination is cross-region or local region.
         /// </summary>
         public readonly bool IsRemote;
+        /// <summary>
+        /// Indicates if backup retention is locked for all the database backups in the Autonomous Container Database (ACD). The retention window cannot be decreased if the backup retention lock is enabled. Once applied on the Autonomous Container Database, the retention lock cannot be removed, or the retention period cannot be decreased after a 14-day period. If the backup is a Long Term Backup and retention lock is enabled, the backup cannot be deleted and must expire. The retention lock set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination.
+        /// </summary>
         public readonly bool IsRetentionLockEnabled;
         /// <summary>
         /// Indicates whether Zero Data Loss functionality is enabled for a Recovery Appliance backup destination in an Autonomous Container Database. When enabled, the database automatically ships all redo logs in real-time to the Recovery Appliance for a Zero Data Loss recovery setup (sub-second RPO). Defaults to `TRUE` if no value is given.
@@ -38,6 +41,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The name of the remote region where the remote automatic incremental backups will be stored.
         /// </summary>
         public readonly string RemoteRegion;
+        /// <summary>
+        /// Backup destination for the TDE wallet backups.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationResult> TdeWalletBackupDestinations;
         /// <summary>
         /// Type of the database backup destination.
         /// </summary>
@@ -67,6 +74,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string remoteRegion,
 
+            ImmutableArray<Outputs.GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestinationResult> tdeWalletBackupDestinations,
+
             string type,
 
             string vpcPassword,
@@ -80,6 +89,7 @@ namespace Pulumi.Oci.Database.Outputs
             IsRetentionLockEnabled = isRetentionLockEnabled;
             IsZeroDataLossEnabled = isZeroDataLossEnabled;
             RemoteRegion = remoteRegion;
+            TdeWalletBackupDestinations = tdeWalletBackupDestinations;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

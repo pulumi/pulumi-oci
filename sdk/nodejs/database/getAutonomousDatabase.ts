@@ -48,6 +48,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly actualUsedDataStorageSizeInTbs: number;
     /**
+     * The Availability Domain which is planned for Scheduled Update
+     */
+    readonly adScheduledForUpdate: string;
+    /**
      * Additional attributes for this resource. Each attribute is a simple key-value pair with no predefined name, type, or namespace. Example: `{ "gcpAccountName": "gcpName" }`
      */
     readonly additionalAttributes: {[key: string]: string};
@@ -280,6 +284,7 @@ export interface GetAutonomousDatabaseResult {
      * Autonomous AI Database for Developers are fixed-shape Autonomous AI Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      */
     readonly isDevTier: boolean;
+    readonly isDisableAdUpdateSchedule: boolean;
     readonly isDisableDbVersionUpgradeSchedule: boolean;
     readonly isDisconnectPeer: boolean;
     /**
@@ -315,6 +320,7 @@ export interface GetAutonomousDatabaseResult {
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
     readonly isReplicateAutomaticBackups: boolean;
+    readonly isScheduleAdUpdateToEarliest: boolean;
     readonly isScheduleDbVersionUpgradeToEarliest: boolean;
     /**
      * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
@@ -541,9 +547,17 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly timeDisasterRecoveryRoleChanged: string;
     /**
+     * The earliest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    readonly timeEarliestAvailableAdUpdate: string;
+    /**
      * The earliest(min) date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
     readonly timeEarliestAvailableDbVersionUpgrade: string;
+    /**
+     * The latest date and time to which you can schedule an Autonomous Database availability domain update.
+     */
+    readonly timeLatestAvailableAdUpdate: string;
     /**
      * The max date and time the Autonomous AI Database can be scheduled to upgrade to 26ai.
      */
@@ -596,6 +610,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
     readonly timeReclamationOfFreeAutonomousDatabase: string;
+    /**
+     * The date and time to which the Autonomous Database availability domain update is scheduled.
+     */
+    readonly timeScheduledAdUpdate: string;
     /**
      * The date and time the Autonomous AI Database scheduled to upgrade to 26ai.
      */

@@ -18,23 +18,23 @@ public final class GetInstanceAgentPluginResult {
     private String id;
     private String instanceagentId;
     /**
-     * @return The optional message from the agent plugin
+     * @return An optional message from the plugin.
      * 
      */
     private String message;
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private String name;
     private String pluginName;
     /**
-     * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * @return The plugin status.
      * 
      */
     private String status;
     /**
-     * @return The last update time of the plugin in UTC
+     * @return The last updated time of the plugin, in UTC.
      * 
      */
     private String timeLastUpdatedUtc;
@@ -54,14 +54,14 @@ public final class GetInstanceAgentPluginResult {
         return this.instanceagentId;
     }
     /**
-     * @return The optional message from the agent plugin
+     * @return An optional message from the plugin.
      * 
      */
     public String message() {
         return this.message;
     }
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public String name() {
@@ -71,14 +71,14 @@ public final class GetInstanceAgentPluginResult {
         return this.pluginName;
     }
     /**
-     * @return The plugin status Specified the plugin state on the instance * `RUNNING` - The plugin is in running state * `STOPPED` - The plugin is in stopped state * `NOT_SUPPORTED` - The plugin is not supported on this platform * `INVALID` - The plugin state is not recognizable by the service
+     * @return The plugin status.
      * 
      */
     public String status() {
         return this.status;
     }
     /**
-     * @return The last update time of the plugin in UTC
+     * @return The last updated time of the plugin, in UTC.
      * 
      */
     public String timeLastUpdatedUtc() {

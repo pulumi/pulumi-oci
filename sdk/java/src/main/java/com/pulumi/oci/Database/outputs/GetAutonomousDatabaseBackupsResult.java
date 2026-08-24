@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsAutonomousDatabaseBackup;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -47,6 +48,7 @@ public final class GetAutonomousDatabaseBackupsResult {
      * 
      */
     private @Nullable String infrastructureType;
+    private @Nullable Boolean isPitrEligible;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
@@ -112,6 +114,9 @@ public final class GetAutonomousDatabaseBackupsResult {
     public Optional<String> infrastructureType() {
         return Optional.ofNullable(this.infrastructureType);
     }
+    public Optional<Boolean> isPitrEligible() {
+        return Optional.ofNullable(this.isPitrEligible);
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
      * 
@@ -151,6 +156,7 @@ public final class GetAutonomousDatabaseBackupsResult {
         private @Nullable List<GetAutonomousDatabaseBackupsFilter> filters;
         private String id;
         private @Nullable String infrastructureType;
+        private @Nullable Boolean isPitrEligible;
         private @Nullable String keyStoreId;
         private @Nullable String state;
         private @Nullable String type;
@@ -165,6 +171,7 @@ public final class GetAutonomousDatabaseBackupsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.infrastructureType = defaults.infrastructureType;
+    	      this.isPitrEligible = defaults.isPitrEligible;
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.state = defaults.state;
     	      this.type = defaults.type;
@@ -229,6 +236,12 @@ public final class GetAutonomousDatabaseBackupsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isPitrEligible(@Nullable Boolean isPitrEligible) {
+
+            this.isPitrEligible = isPitrEligible;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyStoreId(@Nullable String keyStoreId) {
 
             this.keyStoreId = keyStoreId;
@@ -256,6 +269,7 @@ public final class GetAutonomousDatabaseBackupsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.infrastructureType = infrastructureType;
+            _resultValue.isPitrEligible = isPitrEligible;
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.state = state;
             _resultValue.type = type;

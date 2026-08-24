@@ -44,6 +44,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     interfaceDownTimerValueInMilliseconds: Number(crossConnectGroupInterfaceDownTimerValueInMilliseconds),
+ *     isInterfaceHoldTimerEnabled: crossConnectGroupIsInterfaceHoldTimerEnabled === "true",
+ *     isQosEnabled: crossConnectGroupIsQosEnabled === "true",
  *     macsecProperties: {
  *         state: crossConnectGroupMacsecPropertiesState,
  *         encryptionCipher: crossConnectGroupMacsecPropertiesEncryptionCipher,
@@ -53,6 +56,7 @@ import * as utilities from "../utilities";
  *             connectivityAssociationNameSecretId: testSecret.id,
  *         },
  *     },
+ *     minimumLinks: Number(crossConnectGroupMinimumLinks),
  * });
  * ```
  *
@@ -113,9 +117,28 @@ export class CrossConnectGroup extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    declare public readonly interfaceDownTimerValueInMilliseconds: pulumi.Output<number>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    declare public readonly isInterfaceHoldTimerEnabled: pulumi.Output<boolean>;
+    /**
+     * (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    declare public readonly isQosEnabled: pulumi.Output<boolean>;
+    /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
     declare public readonly macsecProperties: pulumi.Output<outputs.Core.CrossConnectGroupMacsecProperties>;
+    /**
+     * (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly minimumLinks: pulumi.Output<number>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
@@ -151,7 +174,11 @@ export class CrossConnectGroup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["interfaceDownTimerValueInMilliseconds"] = state?.interfaceDownTimerValueInMilliseconds;
+            resourceInputs["isInterfaceHoldTimerEnabled"] = state?.isInterfaceHoldTimerEnabled;
+            resourceInputs["isQosEnabled"] = state?.isQosEnabled;
             resourceInputs["macsecProperties"] = state?.macsecProperties;
+            resourceInputs["minimumLinks"] = state?.minimumLinks;
             resourceInputs["ociLogicalDeviceName"] = state?.ociLogicalDeviceName;
             resourceInputs["ociPhysicalDeviceName"] = state?.ociPhysicalDeviceName;
             resourceInputs["state"] = state?.state;
@@ -166,7 +193,11 @@ export class CrossConnectGroup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["interfaceDownTimerValueInMilliseconds"] = args?.interfaceDownTimerValueInMilliseconds;
+            resourceInputs["isInterfaceHoldTimerEnabled"] = args?.isInterfaceHoldTimerEnabled;
+            resourceInputs["isQosEnabled"] = args?.isQosEnabled;
             resourceInputs["macsecProperties"] = args?.macsecProperties;
+            resourceInputs["minimumLinks"] = args?.minimumLinks;
             resourceInputs["ociLogicalDeviceName"] = undefined /*out*/;
             resourceInputs["ociPhysicalDeviceName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -202,9 +233,28 @@ export interface CrossConnectGroupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    interfaceDownTimerValueInMilliseconds?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    isInterfaceHoldTimerEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    isQosEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecProperties | undefined>;
+    /**
+     * (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    minimumLinks?: pulumi.Input<number | undefined>;
     /**
      * The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
      */
@@ -248,7 +298,26 @@ export interface CrossConnectGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * (Updatable) The duration of the interface down timer in milliseconds between 0 and 3000 in multiples of 500.
+     */
+    interfaceDownTimerValueInMilliseconds?: pulumi.Input<number | undefined>;
+    /**
+     * (Updatable) The flag to enable or disable the down timer for the interface.
+     */
+    isInterfaceHoldTimerEnabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * (Optional) When true, restricts placement so cross-connects lands only on QoS-capable devices. When false (default), placement may use any supported device. If no QoS-capable devices are available in the selected location, the request fails.
+     */
+    isQosEnabled?: pulumi.Input<boolean | undefined>;
+    /**
      * (Updatable) Properties used to configure MACsec (if capable).
      */
     macsecProperties?: pulumi.Input<inputs.Core.CrossConnectGroupMacsecProperties | undefined>;
+    /**
+     * (Updatable) (Optional) Minimum number of active cross-connects required for the cross-connect group to be considered operational. During create cross-connect-group operation this value can only be set to 1 (If not specified, this value defaults to 1) and can be edited using the update cross-connect group operation. Value must not exceed the total number of cross-connects in the cross-connect group.
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    minimumLinks?: pulumi.Input<number | undefined>;
 }

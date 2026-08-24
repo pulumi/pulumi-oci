@@ -19,14 +19,14 @@ public final class GetInstanceAgentPluginsFilterArgs extends com.pulumi.resource
     public static final GetInstanceAgentPluginsFilterArgs Empty = new GetInstanceAgentPluginsFilterArgs();
 
     /**
-     * The plugin name
+     * The plugin name.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetInstanceAgentPluginsFilterArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetInstanceAgentPluginsFilterArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name The plugin name
+         * @param name The plugin name.
          * 
          * @return builder
          * 

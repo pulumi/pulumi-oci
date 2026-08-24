@@ -12,50 +12,50 @@ import java.util.Objects;
 @CustomType
 public final class GetInstanceAvailablePluginAvailablePlugin {
     /**
-     * @return Is the plugin enabled or disabled by default
+     * @return Whether the plugin is enabled or disabled by default.
      * 
      */
     private Boolean isEnabledByDefault;
     /**
-     * @return Is the plugin supported or not
+     * @return Whether the plugin is supported.
      * 
      */
     private Boolean isSupported;
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     private String name;
     /**
-     * @return A brief description of the plugin functionality
+     * @return A brief description of the plugin&#39;s functionality.
      * 
      */
     private String summary;
 
     private GetInstanceAvailablePluginAvailablePlugin() {}
     /**
-     * @return Is the plugin enabled or disabled by default
+     * @return Whether the plugin is enabled or disabled by default.
      * 
      */
     public Boolean isEnabledByDefault() {
         return this.isEnabledByDefault;
     }
     /**
-     * @return Is the plugin supported or not
+     * @return Whether the plugin is supported.
      * 
      */
     public Boolean isSupported() {
         return this.isSupported;
     }
     /**
-     * @return The plugin name
+     * @return The plugin name.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return A brief description of the plugin functionality
+     * @return A brief description of the plugin&#39;s functionality.
      * 
      */
     public String summary() {

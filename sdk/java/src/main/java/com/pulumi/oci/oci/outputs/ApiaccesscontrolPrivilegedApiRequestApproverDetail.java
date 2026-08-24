@@ -4,6 +4,7 @@
 package com.pulumi.oci.oci.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,6 +22,11 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
      * 
      */
     private @Nullable String approvalComment;
+    /**
+     * @return The group level at which the approver approved.
+     * 
+     */
+    private @Nullable Integer approverGroupLevel;
     /**
      * @return The userId of the approver.
      * 
@@ -51,6 +57,13 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
      */
     public Optional<String> approvalComment() {
         return Optional.ofNullable(this.approvalComment);
+    }
+    /**
+     * @return The group level at which the approver approved.
+     * 
+     */
+    public Optional<Integer> approverGroupLevel() {
+        return Optional.ofNullable(this.approverGroupLevel);
     }
     /**
      * @return The userId of the approver.
@@ -85,6 +98,7 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
     public static final class Builder {
         private @Nullable String approvalAction;
         private @Nullable String approvalComment;
+        private @Nullable Integer approverGroupLevel;
         private @Nullable String approverId;
         private @Nullable String timeApprovedForAccess;
         private @Nullable String timeOfAuthorization;
@@ -93,6 +107,7 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
     	      Objects.requireNonNull(defaults);
     	      this.approvalAction = defaults.approvalAction;
     	      this.approvalComment = defaults.approvalComment;
+    	      this.approverGroupLevel = defaults.approverGroupLevel;
     	      this.approverId = defaults.approverId;
     	      this.timeApprovedForAccess = defaults.timeApprovedForAccess;
     	      this.timeOfAuthorization = defaults.timeOfAuthorization;
@@ -108,6 +123,12 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
         public Builder approvalComment(@Nullable String approvalComment) {
 
             this.approvalComment = approvalComment;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approverGroupLevel(@Nullable Integer approverGroupLevel) {
+
+            this.approverGroupLevel = approverGroupLevel;
             return this;
         }
         @CustomType.Setter
@@ -132,6 +153,7 @@ public final class ApiaccesscontrolPrivilegedApiRequestApproverDetail {
             final var _resultValue = new ApiaccesscontrolPrivilegedApiRequestApproverDetail();
             _resultValue.approvalAction = approvalAction;
             _resultValue.approvalComment = approvalComment;
+            _resultValue.approverGroupLevel = approverGroupLevel;
             _resultValue.approverId = approverId;
             _resultValue.timeApprovedForAccess = timeApprovedForAccess;
             _resultValue.timeOfAuthorization = timeOfAuthorization;

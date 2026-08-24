@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get the list of plugins that are available.
+        /// Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
         /// 
         /// ## Example Usage
         /// 
@@ -28,6 +28,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAvailablePlugins = Oci.ComputeInstanceAgent.GetInstanceAvailablePlugin.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         OsName = instanceAvailablePluginOsName,
         ///         OsVersion = instanceAvailablePluginOsVersion,
         ///         Name = instanceAvailablePluginName,
@@ -42,7 +43,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get the list of plugins that are available.
+        /// Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
         /// 
         /// ## Example Usage
         /// 
@@ -56,6 +57,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAvailablePlugins = Oci.ComputeInstanceAgent.GetInstanceAvailablePlugin.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         OsName = instanceAvailablePluginOsName,
         ///         OsVersion = instanceAvailablePluginOsVersion,
         ///         Name = instanceAvailablePluginName,
@@ -70,7 +72,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// <summary>
         /// This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
-        /// The API to get the list of plugins that are available.
+        /// Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
         /// 
         /// ## Example Usage
         /// 
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAvailablePlugins = Oci.ComputeInstanceAgent.GetInstanceAvailablePlugin.Invoke(new()
         ///     {
+        ///         CompartmentId = compartmentId,
         ///         OsName = instanceAvailablePluginOsName,
         ///         OsVersion = instanceAvailablePluginOsVersion,
         ///         Name = instanceAvailablePluginName,
@@ -99,6 +102,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
 
     public sealed class GetInstanceAvailablePluginArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment for which the plugins are available
+        /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
@@ -111,19 +117,27 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         }
 
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
+        /// The image (OS) for the compute instance.
+        /// 
+        /// If no match is found, all plugins are returned.
+        /// 
+        /// Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
         /// </summary>
         [Input("osName", required: true)]
         public string OsName { get; set; } = null!;
 
         /// <summary>
-        /// The OS version for which the plugin is supported.
+        /// The OS version for the instance.
+        /// 
+        /// If no match is found, all plugins are returned.
+        /// 
+        /// Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
         /// </summary>
         [Input("osVersion", required: true)]
         public string OsVersion { get; set; } = null!;
@@ -136,6 +150,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
 
     public sealed class GetInstanceAvailablePluginInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The ID of the compartment for which the plugins are available
+        /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
@@ -148,19 +165,27 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         }
 
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The OS for which the plugin is supported. Examples of OperatingSystemQueryParam:OperatingSystemVersionQueryParam are as follows: 'CentOS' '6.10' , 'CentOS Linux' '7', 'CentOS Linux' '8', 'Oracle Linux Server' '6.10', 'Oracle Linux Server' '8.0', 'Red Hat Enterprise Linux Server' '7.8', 'Windows' '10', 'Windows' '2008ServerR2', 'Windows' '2012ServerR2', 'Windows' '7', 'Windows' '8.1'
+        /// The image (OS) for the compute instance.
+        /// 
+        /// If no match is found, all plugins are returned.
+        /// 
+        /// Examples: `CentOS`, `Oracle Linux`, `Oracle Autonomous Linux`, `Canonical Ubuntu`, `Windows Server`
         /// </summary>
         [Input("osName", required: true)]
         public Input<string> OsName { get; set; } = null!;
 
         /// <summary>
-        /// The OS version for which the plugin is supported.
+        /// The OS version for the instance.
+        /// 
+        /// If no match is found, all plugins are returned.
+        /// 
+        /// Examples: `9.6`, `8` for CentOS and Oracle Linux. `22.04`, `22.04 Minimal` for Canonical Ubuntu. `2012 R2 Datacenter`, `2019 Standard` for Windows Server.
         /// </summary>
         [Input("osVersion", required: true)]
         public Input<string> OsVersion { get; set; } = null!;
@@ -186,7 +211,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The plugin name
+        /// The plugin name.
         /// </summary>
         public readonly string? Name;
         public readonly string OsName;

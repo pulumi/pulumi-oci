@@ -24,7 +24,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * 
      * ## Example Usage
      * 
@@ -51,7 +51,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -67,7 +68,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * 
      * ## Example Usage
      * 
@@ -94,7 +95,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -110,7 +112,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * 
      * ## Example Usage
      * 
@@ -137,7 +139,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -153,7 +156,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * 
      * ## Example Usage
      * 
@@ -180,7 +183,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -196,7 +200,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides details about a specific Instance Agent Plugin resource in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get information for a plugin.
+     * Gets information about a specific Oracle Cloud Agent plugin on a compute instance.
      * 
      * ## Example Usage
      * 
@@ -223,7 +227,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugin = ComputeInstanceAgentFunctions.getInstanceAgentPlugin(GetInstanceAgentPluginArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .pluginName(instanceAgentPluginPluginName)
      *             .build());
      * 
@@ -239,7 +244,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
      * 
      * ## Example Usage
      * 
@@ -266,7 +271,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -283,7 +289,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
      * 
      * ## Example Usage
      * 
@@ -310,7 +316,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -327,7 +334,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
      * 
      * ## Example Usage
      * 
@@ -354,7 +361,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -371,7 +379,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
      * 
      * ## Example Usage
      * 
@@ -398,7 +406,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -415,7 +424,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get one or more plugin information.
+     * Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
      * 
      * ## Example Usage
      * 
@@ -442,7 +451,8 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAgentPlugins = ComputeInstanceAgentFunctions.getInstanceAgentPlugins(GetInstanceAgentPluginsArgs.builder()
-     *             .instanceagentId(testInstanceagent.id())
+     *             .compartmentId(compartmentId)
+     *             .instanceagentId(instanceagent.id())
      *             .name(instanceAgentPluginName)
      *             .status(instanceAgentPluginStatus)
      *             .build());
@@ -459,7 +469,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
      * 
      * ## Example Usage
      * 
@@ -486,6 +496,7 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .osName(instanceAvailablePluginOsName)
      *             .osVersion(instanceAvailablePluginOsVersion)
      *             .name(instanceAvailablePluginName)
@@ -503,7 +514,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
      * 
      * ## Example Usage
      * 
@@ -530,6 +541,7 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .osName(instanceAvailablePluginOsName)
      *             .osVersion(instanceAvailablePluginOsVersion)
      *             .name(instanceAvailablePluginName)
@@ -547,7 +559,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
      * 
      * ## Example Usage
      * 
@@ -574,6 +586,7 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .osName(instanceAvailablePluginOsName)
      *             .osVersion(instanceAvailablePluginOsVersion)
      *             .name(instanceAvailablePluginName)
@@ -591,7 +604,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
      * 
      * ## Example Usage
      * 
@@ -618,6 +631,7 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .osName(instanceAvailablePluginOsName)
      *             .osVersion(instanceAvailablePluginOsVersion)
      *             .name(instanceAvailablePluginName)
@@ -635,7 +649,7 @@ public final class ComputeInstanceAgentFunctions {
     /**
      * This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
      * 
-     * The API to get the list of plugins that are available.
+     * Lists the Oracle Cloud Agent plugins that are available for compute instances in a specific compartment.
      * 
      * ## Example Usage
      * 
@@ -662,6 +676,7 @@ public final class ComputeInstanceAgentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceAvailablePlugins = ComputeInstanceAgentFunctions.getInstanceAvailablePlugin(GetInstanceAvailablePluginArgs.builder()
+     *             .compartmentId(compartmentId)
      *             .osName(instanceAvailablePluginOsName)
      *             .osVersion(instanceAvailablePluginOsVersion)
      *             .name(instanceAvailablePluginName)

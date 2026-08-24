@@ -290,9 +290,15 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 "day_of_month": int(volume_backup_policy_schedules_day_of_month),
                 "day_of_week": volume_backup_policy_schedules_day_of_week,
                 "hour_of_day": int(volume_backup_policy_schedules_hour_of_day),
+                "is_prevent_deletion_enabled": volume_backup_policy_schedules_is_prevent_deletion_enabled == "true",
+                "is_retention_lock_enabled": volume_backup_policy_schedules_is_retention_lock_enabled == "true",
                 "month": volume_backup_policy_schedules_month,
                 "offset_seconds": int(volume_backup_policy_schedules_offset_seconds),
                 "offset_type": volume_backup_policy_schedules_offset_type,
+                "retention_period": {
+                    "retention_time_amount": int(volume_backup_policy_schedules_retention_period_retention_time_amount),
+                    "retention_time_unit": volume_backup_policy_schedules_retention_period_retention_time_unit,
+                },
                 "time_zone": volume_backup_policy_schedules_time_zone,
             }])
         ```
@@ -355,9 +361,15 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 "day_of_month": int(volume_backup_policy_schedules_day_of_month),
                 "day_of_week": volume_backup_policy_schedules_day_of_week,
                 "hour_of_day": int(volume_backup_policy_schedules_hour_of_day),
+                "is_prevent_deletion_enabled": volume_backup_policy_schedules_is_prevent_deletion_enabled == "true",
+                "is_retention_lock_enabled": volume_backup_policy_schedules_is_retention_lock_enabled == "true",
                 "month": volume_backup_policy_schedules_month,
                 "offset_seconds": int(volume_backup_policy_schedules_offset_seconds),
                 "offset_type": volume_backup_policy_schedules_offset_type,
+                "retention_period": {
+                    "retention_time_amount": int(volume_backup_policy_schedules_retention_period_retention_time_amount),
+                    "retention_time_unit": volume_backup_policy_schedules_retention_period_retention_time_unit,
+                },
                 "time_zone": volume_backup_policy_schedules_time_zone,
             }])
         ```

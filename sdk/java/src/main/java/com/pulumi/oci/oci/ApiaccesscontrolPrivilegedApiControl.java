@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.oci.ApiaccesscontrolPrivilegedApiControlArgs;
 import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlState;
+import com.pulumi.oci.oci.outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList;
 import com.pulumi.oci.oci.outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList;
 import java.lang.Integer;
 import java.lang.String;
@@ -37,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.oci.ApiaccesscontrolPrivilegedApiControl;
  * import com.pulumi.oci.oci.ApiaccesscontrolPrivilegedApiControlArgs;
  * import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs;
+ * import com.pulumi.oci.oci.inputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -60,12 +62,16 @@ import javax.annotation.Nullable;
  *                 .entityType(privilegedApiControlPrivilegedOperationListEntityType)
  *                 .build())
  *             .resourceType(privilegedApiControlResourceType)
- *             .resources(privilegedApiControlResources)
+ *             .approverGroupLevelLists(ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs.builder()
+ *                 .groupIds(testGroup.id())
+ *                 .groupLevel(privilegedApiControlApproverGroupLevelListGroupLevel)
+ *                 .build())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(privilegedApiControlDescription)
  *             .displayName(privilegedApiControlDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .numberOfApprovers(privilegedApiControlNumberOfApprovers)
+ *             .resources(privilegedApiControlResources)
  *             .build());
  * 
  *     }
@@ -97,6 +103,20 @@ public class ApiaccesscontrolPrivilegedApiControl extends com.pulumi.resources.C
      */
     public Output<List<String>> approverGroupIdLists() {
         return this.approverGroupIdLists;
+    }
+    /**
+     * (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    @Export(name="approverGroupLevelLists", refs={List.class,ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList.class}, tree="[0,1]")
+    private Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList>> approverGroupLevelLists;
+
+    /**
+     * @return (Updatable) List of Group containing the levels at which the users belonging to the group can authorize.
+     * 
+     */
+    public Output<List<ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList>> approverGroupLevelLists() {
+        return this.approverGroupLevelLists;
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the PrivilegedApiControl in.
@@ -183,14 +203,14 @@ public class ApiaccesscontrolPrivilegedApiControl extends com.pulumi.resources.C
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     @Export(name="notificationTopicId", refs={String.class}, tree="[0]")
     private Output<String> notificationTopicId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Delegation Control.
+     * @return (Updatable) The OCID of the Oracle Cloud Infrastructure Notification topic to publish messages related to this Privileged Api Control.
      * 
      */
     public Output<String> notificationTopicId() {
@@ -301,14 +321,14 @@ public class ApiaccesscontrolPrivilegedApiControl extends com.pulumi.resources.C
         return this.systemTags;
     }
     /**
-     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     * @return The date and time the PrivilegedApiControl was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public Output<String> timeCreated() {

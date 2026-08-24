@@ -83,6 +83,7 @@ class _ConnectionAssignmentState:
                  alias_name: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 connection_type: pulumi.Input[Optional[_builtins.str]] = None,
                  deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -94,6 +95,7 @@ class _ConnectionAssignmentState:
         :param pulumi.Input[_builtins.str] alias_name: Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        :param pulumi.Input[_builtins.str] connection_type: The connection type.
         :param pulumi.Input[_builtins.str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
                
@@ -109,6 +111,8 @@ class _ConnectionAssignmentState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if connection_id is not None:
             pulumi.set(__self__, "connection_id", connection_id)
+        if connection_type is not None:
+            pulumi.set(__self__, "connection_type", connection_type)
         if deployment_id is not None:
             pulumi.set(__self__, "deployment_id", deployment_id)
         if is_lock_override is not None:
@@ -155,6 +159,18 @@ class _ConnectionAssignmentState:
     @connection_id.setter
     def connection_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "connection_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The connection type.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @connection_type.setter
+    def connection_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "connection_type", value)
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")
@@ -339,6 +355,7 @@ class ConnectionAssignment(pulumi.CustomResource):
             __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["alias_name"] = None
             __props__.__dict__["compartment_id"] = None
+            __props__.__dict__["connection_type"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -355,6 +372,7 @@ class ConnectionAssignment(pulumi.CustomResource):
             alias_name: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_type: pulumi.Input[Optional[_builtins.str]] = None,
             deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
             is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
@@ -370,6 +388,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] alias_name: Credential store alias.
         :param pulumi.Input[_builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[_builtins.str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        :param pulumi.Input[_builtins.str] connection_type: The connection type.
         :param pulumi.Input[_builtins.str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.bool] is_lock_override: Whether to override locks (if any exist).
                
@@ -386,6 +405,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         __props__.__dict__["alias_name"] = alias_name
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_id"] = connection_id
+        __props__.__dict__["connection_type"] = connection_type
         __props__.__dict__["deployment_id"] = deployment_id
         __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["state"] = state
@@ -416,6 +436,14 @@ class ConnectionAssignment(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         """
         return pulumi.get(self, "connection_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The connection type.
+        """
+        return pulumi.get(self, "connection_type")
 
     @_builtins.property
     @pulumi.getter(name="deploymentId")

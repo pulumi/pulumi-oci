@@ -60,6 +60,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly ImmutableArray<string> OneOffPatches;
         public readonly string PdbName;
         public readonly ImmutableArray<string> PluggableDatabases;
+        public readonly string RecoveryApplianceVpcPassword;
         public readonly string SidPrefix;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
@@ -126,6 +127,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> pluggableDatabases,
 
+            string recoveryApplianceVpcPassword,
+
             string sidPrefix,
 
             string state,
@@ -165,6 +168,7 @@ namespace Pulumi.Oci.Database.Outputs
             OneOffPatches = oneOffPatches;
             PdbName = pdbName;
             PluggableDatabases = pluggableDatabases;
+            RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
             State = state;
             StorageSizeDetails = storageSizeDetails;
